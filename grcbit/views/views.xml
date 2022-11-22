@@ -1,0 +1,171 @@
+<odoo>
+  <data>
+    <record id="grcbit.data_classification_action" model="ir.actions.act_window">
+		<field name="name">Data Classification</field>
+		<field name="res_model">data.classification</field>
+		<field name="view_mode">tree,form</field>
+   </record>
+    <record id="grcbit.it_inventory_action" model="ir.actions.act_window">
+		<field name="name">IT Inventory</field>
+		<field name="res_model">it.inventory</field>
+		<field name="view_mode">tree,form</field>
+   </record>
+    <record id="grcbit.data_inventory_action" model="ir.actions.act_window">
+		<field name="name">Data Inventory</field>
+		<field name="res_model">data.inventory</field>
+		<field name="view_mode">tree,form</field>
+   </record>
+
+    <record model="ir.ui.view" id="grcbit.data_classification_view">
+      <field name="name">Data Classification</field>
+      <field name="model">data.classification</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="grcbit.it_inventory_view">
+      <field name="name">IT Inventory</field>
+      <field name="model">it.inventory</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="ip"/>
+          <field name="responsible"/>
+          <field name="environment"/>
+          <field name="is_cloud"/>
+          <field name="os_version"/>
+          <field name="db_version"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="grcbit.it_inventory_form">
+      <field name="name">IT Inventory</field>
+      <field name="model">it.inventory</field>
+      <field name="arch" type="xml">
+        <form>
+		<group>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="ip"/>
+          <field name="url"/>
+          <field name="responsible"/>
+          <field name="environment"/>
+  </group>
+		<group>
+          <field name="is_cloud"/>
+          <field name="cloud_provider"/>
+          <field name="is_internet_exposed"/>
+          <field name="users_qty"/>
+          <field name="os_version"/>
+          <field name="db_version"/>
+  </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="grcbit.data_inventory_view">
+      <field name="name">Data Inventory</field>
+      <field name="model">data.inventory</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="data_classification_id"/>
+          <field name="location"/>
+          <field name="owner"/>
+          <field name="it_inventory_id"  widget="many2many_tags" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="grcbit.data_inventory_form">
+      <field name="name">Data Inventory</field>
+      <field name="model">data.inventory</field>
+      <field name="arch" type="xml">
+        <form>
+		<group>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="data_classification_id"/>
+  </group>
+		<group>
+          <field name="location"/>
+          <field name="owner"/>
+          <field name="it_inventory_id"  widget="many2many_tags"  />
+  </group>
+        </form>
+      </field>
+    </record>
+
+    <menuitem name="GRCbit" id="grcbit.menu_root"/>
+    <menuitem name="Asset Management" id="grcbit.menu_asset_management" parent="grcbit.menu_root" />
+    <menuitem name="Data Classification" id="grcbit.menu_data_classification" parent="grcbit.menu_asset_management" action="grcbit.data_classification_action" />
+    <menuitem name="IT Inventory" id="grcbit.menu_it_inventory" parent="grcbit.menu_asset_management" action="grcbit.it_inventory_action" />
+    <menuitem name="Data Inventory" id="grcbit.menu_data_inventory" parent="grcbit.menu_asset_management" action="grcbit.data_inventory_action" />
+
+
+
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="grcbit.list">
+      <field name="name">grcbit list</field>
+      <field name="model">grcbit.grcbit</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="grcbit.action_window">
+      <field name="name">grcbit window</field>
+      <field name="res_model">grcbit.grcbit</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="grcbit.action_server">
+      <field name="name">grcbit server</field>
+      <field name="model_id" ref="model_grcbit_grcbit"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="grcbit" id="grcbit.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="grcbit.menu_1" parent="grcbit.menu_root"/>
+    <menuitem name="Menu 2" id="grcbit.menu_2" parent="grcbit.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="grcbit.menu_1_list" parent="grcbit.menu_1"
+              action="grcbit.action_window"/>
+    <menuitem name="Server to list" id="grcbit" parent="grcbit.menu_2"
+              action="grcbit.action_server"/>
+-->
+  </data>
+</odoo>

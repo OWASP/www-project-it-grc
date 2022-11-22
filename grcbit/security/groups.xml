@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<record id="grcbit_admin" model="res.groups">
+		<field name="name">GRCbit Admin</field>
+		<field name="category_id" />
+	</record>
+	<record id="process_owner" model="res.groups">
+		<field name="name">Process Owner</field>
+		<field name="category_id" />
+	</record>
+	<record id="data_owner" model="res.groups">
+		<field name="name">Data Owner</field>
+		<field name="category_id" />
+	</record>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_data_classification,grcbit.data.classification,model_data_classification,grcbit.grcbit_admin,1,1,1,1
+access_it_inventory,grcbit.it.inventory,model_it_inventory,grcbit.grcbit_admin,1,1,1,1
+access_data_inventory,grcbit.data.inventory,model_data_inventory,grcbit.grcbit_admin,1,1,1,1
