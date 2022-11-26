@@ -1,36 +1,72 @@
 <odoo>
   <data>
+
+    <!-- ACTIONS -->
+
     <record id="grcbit.data_classification_action" model="ir.actions.act_window">
-		<field name="name">Data Classification</field>
-		<field name="res_model">data.classification</field>
-		<field name="view_mode">tree,form</field>
+	<field name="name">Data Classification</field>
+	<field name="res_model">data.classification</field>
+	<field name="view_mode">tree,form</field>
    </record>
-    <record id="grcbit.it_inventory_action" model="ir.actions.act_window">
-		<field name="name">IT Inventory</field>
-		<field name="res_model">it.inventory</field>
-		<field name="view_mode">tree,form</field>
+   <record id="grcbit.it_inventory_action" model="ir.actions.act_window">
+	<field name="name">IT Inventory</field>
+	<field name="res_model">it.inventory</field>
+	<field name="view_mode">tree,form</field>
    </record>
-    <record id="grcbit.data_inventory_action" model="ir.actions.act_window">
-		<field name="name">Data Inventory</field>
-		<field name="res_model">data.inventory</field>
-		<field name="view_mode">tree,form</field>
+   <record id="grcbit.data_inventory_action" model="ir.actions.act_window">
+	<field name="name">Data Inventory</field>
+	<field name="res_model">data.inventory</field>
+	<field name="view_mode">tree,form</field>
+   </record>
+   <record id="grcbit.control_type_action" model="ir.actions.act_window">
+	<field name="name">Control Type</field>
+	<field name="res_model">control.type</field>
+	<field name="view_mode">tree,form</field>
+   </record>
+   <record id="grcbit.security_property_action" model="ir.actions.act_window">
+	<field name="name">Security Property</field>
+	<field name="res_model">security.property</field>
+	<field name="view_mode">tree,form</field>
+   </record>
+   <record id="grcbit.cybersecurity_concept_action" model="ir.actions.act_window">
+	<field name="name">Cybersecurity Concept</field>
+	<field name="res_model">cybersecurity.concept</field>
+	<field name="view_mode">tree,form</field>
+   </record>
+   <record id="grcbit.operational_capability_action" model="ir.actions.act_window">
+	<field name="name">Operational Capability</field>
+	<field name="res_model">operational.capability</field>
+	<field name="view_mode">tree,form</field>
+   </record>
+   <record id="grcbit.security_domain_action" model="ir.actions.act_window">
+	<field name="name">Security Domain</field>
+	<field name="res_model">security.domain</field>
+	<field name="view_mode">tree,form</field>
+   </record>
+   <record id="grcbit.business_process_action" model="ir.actions.act_window">
+	<field name="name">Business Process</field>
+	<field name="res_model">business.process</field>
+	<field name="view_mode">tree,form</field>
    </record>
 
-    <record model="ir.ui.view" id="grcbit.data_classification_view">
-      <field name="name">Data Classification</field>
-      <field name="model">data.classification</field>
-      <field name="arch" type="xml">
+
+
+   <!-- VIEWS -->
+
+   <record model="ir.ui.view" id="grcbit.data_classification_view">
+   	<field name="name">Data Classification</field>
+        <field name="model">data.classification</field>
+        <field name="arch" type="xml">
         <tree>
           <field name="name"/>
           <field name="description"/>
         </tree>
-      </field>
-    </record>
-
-    <record model="ir.ui.view" id="grcbit.it_inventory_view">
-      <field name="name">IT Inventory</field>
-      <field name="model">it.inventory</field>
-      <field name="arch" type="xml">
+        </field>
+   </record>
+   <record model="ir.ui.view" id="grcbit.it_inventory_view">
+        <field name="name">IT Inventory</field>
+        <field name="model">it.inventory</field>
+        <field name="arch" type="xml">
         <tree>
           <field name="name"/>
           <field name="description"/>
@@ -41,34 +77,8 @@
           <field name="os_version"/>
           <field name="db_version"/>
         </tree>
-      </field>
-    </record>
-
-    <record model="ir.ui.view" id="grcbit.it_inventory_form">
-      <field name="name">IT Inventory</field>
-      <field name="model">it.inventory</field>
-      <field name="arch" type="xml">
-        <form>
-		<group>
-          <field name="name"/>
-          <field name="description"/>
-          <field name="ip"/>
-          <field name="url"/>
-          <field name="responsible"/>
-          <field name="environment"/>
-  </group>
-		<group>
-          <field name="is_cloud"/>
-          <field name="cloud_provider"/>
-          <field name="is_internet_exposed"/>
-          <field name="users_qty"/>
-          <field name="os_version"/>
-          <field name="db_version"/>
-  </group>
-        </form>
-      </field>
-    </record>
-
+        </field>
+   </record>
     <record model="ir.ui.view" id="grcbit.data_inventory_view">
       <field name="name">Data Inventory</field>
       <field name="model">data.inventory</field>
@@ -81,6 +91,98 @@
           <field name="owner"/>
           <field name="it_inventory_id"  widget="many2many_tags" />
         </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="grcbit.control_type_view">
+      <field name="name">Control Type</field>
+      <field name="model">control.type</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.security_property_view">
+      <field name="name">Security Property</field>
+      <field name="model">security.property</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.cybersecurity_concept_view">
+      <field name="name">Cybersecurity Concept</field>
+      <field name="model">cybersecurity.concept</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.operational_capability_view">
+      <field name="name">Operational Capability</field>
+      <field name="model">operational.capability</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.security_domain_view">
+      <field name="name">Security Domain</field>
+      <field name="model">security.domain</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.business_process_view">
+      <field name="name">Business Process</field>
+      <field name="model">business.process</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="process_file" filename="File"/>
+        </tree>
+      </field>
+    </record>
+
+
+
+
+    <!-- FORMS -->
+
+   <record model="ir.ui.view" id="grcbit.it_inventory_form">
+       <field name="name">IT Inventory</field>
+       <field name="model">it.inventory</field>
+       <field name="arch" type="xml">
+        <form>
+	<group>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="ip"/>
+          <field name="url"/>
+          <field name="responsible"/>
+          <field name="environment"/>
+        </group>
+	<group>
+          <field name="is_cloud"/>
+          <field name="cloud_provider"/>
+          <field name="is_internet_exposed"/>
+          <field name="users_qty"/>
+          <field name="os_version"/>
+          <field name="db_version"/>
+        </group>
+        </form>
       </field>
     </record>
 
@@ -103,11 +205,42 @@
       </field>
     </record>
 
+
+    <record model="ir.ui.view" id="grcbit.business_process_form">
+      <field name="name">Business Process</field>
+      <field name="model">business.process</field>
+      <field name="arch" type="xml">
+        <form>
+		<group>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="process_file" filename="File"/>
+  </group>
+        </form>
+      </field>
+    </record>
+
+
+
+
+
     <menuitem name="GRCbit" id="grcbit.menu_root"/>
+
+    <!-- ASSET MANAGEMET MENU -->
     <menuitem name="Asset Management" id="grcbit.menu_asset_management" parent="grcbit.menu_root" />
     <menuitem name="Data Classification" id="grcbit.menu_data_classification" parent="grcbit.menu_asset_management" action="grcbit.data_classification_action" />
+    <menuitem name="Business Process" id="grcbit.menu_business_process" parent="grcbit.menu_asset_management" action="grcbit.business_process_action" />
     <menuitem name="IT Inventory" id="grcbit.menu_it_inventory" parent="grcbit.menu_asset_management" action="grcbit.it_inventory_action" />
     <menuitem name="Data Inventory" id="grcbit.menu_data_inventory" parent="grcbit.menu_asset_management" action="grcbit.data_inventory_action" />
+
+    <!-- ISO27001:2022 SECURITY ATTRIBUTES -->
+    <menuitem name="Control Attribute" id="grcbit.menu_control_attribute" parent="grcbit.menu_root" />
+    <menuitem name="Control Type" id="grcbit.menu_control_type" parent="grcbit.menu_control_attribute" action="grcbit.control_type_action" />
+    <menuitem name="Security Property" id="grcbit.menu_security_property" parent="grcbit.menu_control_attribute" action="grcbit.security_property_action" />
+    <menuitem name="Cybersecurity Concept" id="grcbit.menu_cybersecurity_concept" parent="grcbit.menu_control_attribute" action="grcbit.cybersecurity_concept_action" />
+    <menuitem name="Operational Capability" id="grcbit.menu_opertaional_capability" parent="grcbit.menu_control_attribute" action="grcbit.operational_capability_action" />
+    <menuitem name="Security Domain" id="grcbit.menu_security_domain" parent="grcbit.menu_control_attribute" action="grcbit.security_domain_action" />
+
 
 
 

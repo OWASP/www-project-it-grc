@@ -2,3 +2,9 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_data_classification,grcbit.data.classification,model_data_classification,grcbit.grcbit_admin,1,1,1,1
 access_it_inventory,grcbit.it.inventory,model_it_inventory,grcbit.grcbit_admin,1,1,1,1
 access_data_inventory,grcbit.data.inventory,model_data_inventory,grcbit.grcbit_admin,1,1,1,1
+access_control_type,grcbit.control.type,model_control_type,grcbit.grcbit_admin,1,1,1,1
+access_security_property,grcbit.security.property,model_security_property,grcbit.grcbit_admin,1,1,1,1
+access_cybersecurity_concept,grcbit.cybersecurity.concept,model_cybersecurity_concept,grcbit.grcbit_admin,1,1,1,1
+access_operational_capability,grcbit.operational.capability,model_operational_capability,grcbit.grcbit_admin,1,1,1,1
+access_security_domain,grcbit.security.domain,model_security_domain,grcbit.grcbit_admin,1,1,1,1
+access_business_process,grcbit.business.process,model_business_process,grcbit.grcbit_admin,1,1,1,1
