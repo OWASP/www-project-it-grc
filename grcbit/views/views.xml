@@ -255,6 +255,7 @@
           <field name="quantification" optional="hide"/>
           <field name="comment" optional="hide"/>
           <field name="risk_factor_file" optional="hide"/>
+          <field name="control_design_id" widget="many2many_tags" />
         </tree>
       </field>
     </record>
@@ -265,6 +266,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name" />
+          <field name="description" />
           <field name="responsible" optional="hide"/>
           <field name="control_type_id" widget="many2many_tags" />
           <field name="security_property_id" widget="many2many_tags" />
@@ -420,15 +422,16 @@
           <field name="business_process_id" widget="many2many_tags"/>
           <field name="cause"/>
           <field name="consequence"/>
+          <field name="responsible" />
   </group>
 		<group>
           <field name="impact_level_id"/>
           <field name="probability_level_id"/>
-          <field name="responsible" optiona="hide"/>
           <field name="quantification" optional="hide"/>
           <field name="comment" optional="hide"/>
           <field name="risk_factor_file" filename="risk_factor_file_name"/>
           <field name="risk_factor_file_name" invisible="1" />
+	  <field name="control_design_id" widget="many2many_tags"/>
   </group>
         </form>
       </field>
@@ -442,6 +445,7 @@
         <form>
 		<group>
           <field name="name" />
+          <field name="description" />
           <field name="responsible" optional="hide"/>
           <field name="control_type_id" widget="many2many_tags" />
           <field name="security_property_id" widget="many2many_tags" />
@@ -457,6 +461,59 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="grcbit.control_type_form">
+      <field name="name">Control Type</field>
+      <field name="model">control.type</field>
+      <field name="arch" type="xml">
+        <form>
+          <field name="name"/>
+          <field name="description"/>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.security_property_form">
+      <field name="name">Security Property</field>
+      <field name="model">security.property</field>
+      <field name="arch" type="xml">
+        <form>
+          <field name="name"/>
+          <field name="description"/>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.cybersecurity_concept_form">
+      <field name="name">Cybersecurity Concept</field>
+      <field name="model">cybersecurity.concept</field>
+      <field name="arch" type="xml">
+        <form>
+          <field name="name"/>
+          <field name="description"/>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.operational_capability_form">
+      <field name="name">Operational Capability</field>
+      <field name="model">operational.capability</field>
+      <field name="arch" type="xml">
+        <form>
+          <field name="name"/>
+          <field name="description"/>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.security_domain_form">
+      <field name="name">Security Domain</field>
+      <field name="model">security.domain</field>
+      <field name="arch" type="xml">
+        <form>
+          <field name="name"/>
+          <field name="description"/>
+        </form>
+      </field>
+    </record>
+
+
+
 
 
 
@@ -466,18 +523,18 @@
     <!-- ASSET MANAGEMET MENU -->
     <menuitem name="Asset Management" id="grcbit.menu_asset_management" parent="grcbit.menu_root" />
     <menuitem name="Data Classification" id="grcbit.menu_data_classification" parent="grcbit.menu_asset_management" action="grcbit.data_classification_action" />
-    <menuitem name="Business Process" id="grcbit.menu_business_process" parent="grcbit.menu_asset_management" action="grcbit.business_process_action"  sequence="3"/>
+    <menuitem name="Policy / Process" id="grcbit.menu_business_process" parent="grcbit.menu_asset_management" action="grcbit.business_process_action"  sequence="3"/>
     <menuitem name="IT Inventory" id="grcbit.menu_it_inventory" parent="grcbit.menu_asset_management" action="grcbit.it_inventory_action" sequence="2" />
     <menuitem name="Data Inventory" id="grcbit.menu_data_inventory" parent="grcbit.menu_asset_management" action="grcbit.data_inventory_action" sequence="1" />
     <menuitem name="Third Party" id="grcbit.menu_third_party" parent="grcbit.menu_asset_management" action="grcbit.third_party_action" />
 
     <!-- ISO27001:2022 SECURITY ATTRIBUTES -->
-    <menuitem name="ISO Control Attribute" id="grcbit.menu_control_attribute" parent="grcbit.menu_root" />
-    <menuitem name="Control Type" id="grcbit.menu_control_type" parent="grcbit.menu_control_attribute" action="grcbit.control_type_action" />
-    <menuitem name="Security Property" id="grcbit.menu_security_property" parent="grcbit.menu_control_attribute" action="grcbit.security_property_action" />
-    <menuitem name="Cybersecurity Concept" id="grcbit.menu_cybersecurity_concept" parent="grcbit.menu_control_attribute" action="grcbit.cybersecurity_concept_action" />
-    <menuitem name="Operational Capability" id="grcbit.menu_opertaional_capability" parent="grcbit.menu_control_attribute" action="grcbit.operational_capability_action" />
-    <menuitem name="Security Domain" id="grcbit.menu_security_domain" parent="grcbit.menu_control_attribute" action="grcbit.security_domain_action"  />
+    <menuitem name="ISO Control" id="grcbit.menu_control_attribute" parent="grcbit.menu_root" />
+    <menuitem name="# Control Type" id="grcbit.menu_control_type" parent="grcbit.menu_control_attribute" action="grcbit.control_type_action" />
+    <menuitem name="# Security Property" id="grcbit.menu_security_property" parent="grcbit.menu_control_attribute" action="grcbit.security_property_action" />
+    <menuitem name="# Cybersecurity Concept" id="grcbit.menu_cybersecurity_concept" parent="grcbit.menu_control_attribute" action="grcbit.cybersecurity_concept_action" />
+    <menuitem name="# Operational Capability" id="grcbit.menu_opertaional_capability" parent="grcbit.menu_control_attribute" action="grcbit.operational_capability_action" />
+    <menuitem name="# Security Domain" id="grcbit.menu_security_domain" parent="grcbit.menu_control_attribute" action="grcbit.security_domain_action"  />
 
     <!-- RISK METRICS -->
     <menuitem name="Risk Management" id="grcbit.menu_risk_metric" parent="grcbit.menu_root" />

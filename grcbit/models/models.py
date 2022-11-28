@@ -110,13 +110,16 @@ class SecurityDomain(models.Model):
 class ControlCategory(models.Model):
     _name = 'control.category'
     _description = 'Control Category'
+    
+    id_control_category = fields.Char(string='ID', required=True)
     name = fields.Char(string='Control Category', required=True)
     description = fields.Text(string='Description', required=True)
-    _sql_constraints = [('name_uniq', 'unique(name)', "The control category name already exists.")]
+    _sql_constraints = [('name_uniq', 'unique(name)', "The control category name already exists."), ('id_uniq', 'unique(id_control_category)', "The ID control category name already exists.")]
 
 class IsoControl(models.Model):
     _name = 'iso.control'
     _description = 'ISO Control'
+    id_iso_control = fields.Char(string='ID', required=True)
     name = fields.Char(string='Control Title', required=True)
     control_category_id = fields.Many2one('control.category', string='Control Category', required=True)
     control_type_id = fields.Many2many('control.type', string='Control Type', required=True)
@@ -128,7 +131,7 @@ class IsoControl(models.Model):
     purpose = fields.Text(string='Purpose', required=True)
     guidance = fields.Text(string='Guidance', required=True)
     other_information = fields.Text(string='Other Information', required=True)
-    _sql_constraints = [('name_uniq', 'unique(name)', "The ISO control name already exists.")]
+    _sql_constraints = [('name_uniq', 'unique(name)', "The ISO control name already exists."), ('id_uniq', 'unique(id_iso_control)', "The ID ISO control name already exists.")]
 
 class StatementApplicability(models.Model):
     _name = 'statement.applicability'
@@ -139,9 +142,11 @@ class StatementApplicability(models.Model):
     is_implemented = fields.Boolean(string='Control Implemented?', required=True)
     reason_selection = fields.Text(string='Reason for Selection')
     #risk reference
-    business_process_id = fields.Many2many('business.process',string='Business Process')
+    business_process_id = fields.Many2many('business.process',string='Policy / Process')
     #evidence
     #control desing reference
+    evidence_file = fields.Binary(string='Upload Evidence')
+    evidence_file_name = fields.Char(string='Evidence Name')
     _sql_constraints = [('name_uniq', 'unique(name)', "The control name already exists.")]
 
 #------------------------
@@ -188,6 +193,7 @@ class RiskFactor(models.Model):
     comment = fields.Text(string='Comment')
     risk_factor_file = fields.Binary(string='Upload File')
     risk_factor_file_name = fields.Char(string='File Name')
+    control_design_id = fields.Many2many('control.design',string='Control Design')
 
 #--------------
 # Control
@@ -196,15 +202,16 @@ class ControlDesing(models.Model):
     _name = 'control.design'
     _description = 'Control Design'
     name = fields.Text(string='Control', required=True)
+    description = fields.Text(string='Description', required=True)
     responsible = fields.Many2one('res.users', string='Responsible', required=True)
     control_file = fields.Binary(string='Upload Evidence')
     control_file_name = fields.Char(string='Evidence Name')
     control_type_id = fields.Many2many('control.type', string='Control Type', required=True)
     security_property_id = fields.Many2many('security.property', string='Security Property', required=True)
-    cybersecurity_concept_id = fields.Many2many('cybersecurty.concept', string='Cybersecurity Concept', required=True)
+    cybersecurity_concept_id = fields.Many2many('cybersecurity.concept', string='Cybersecurity Concept', required=True)
     operational_capability_id = fields.Many2many('operational.capability', string='Operational Capability', required=True)
     security_domain_id = fields.Many2many('security.domain', string='Security Domain', required=True)
-    comment = fields.Text(string='Comment', required=True)
+    comment = fields.Text(string='Comment')
 
 
 # class grcbit(models.Model):
