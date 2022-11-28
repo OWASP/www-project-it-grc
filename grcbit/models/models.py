@@ -44,7 +44,7 @@ class DataInventory(models.Model):
     #ii_id   = fields.One2many('it.inventory','ii_id', string='IT System')
     it_inventory_id = fields.Many2many('it.inventory',string='IT System')
     third_party_id = fields.Many2many('third.party',string='Third Party')
-    business_process_id = fields.Many2many('business.process',string='Business Process')
+    business_process_id = fields.Many2many('business.process',string='Policy / Process')
     data_file = fields.Binary(string='Data Flow')
     _sql_constraints = [('name_uniq', 'unique(name)', "The data inventory name already exists.")]
 
@@ -58,10 +58,10 @@ class ThirdParty(models.Model):
 
 class BusinessProcess(models.Model):
     _name = 'business.process'
-    _decription = 'Business Process'
-    name = fields.Char(string='Business Process', required=True)
+    _decription = 'Policy / Process'
+    name = fields.Char(string='Policy / Process', required=True)
     description = fields.Text(string='Description', required=True)
-    process_file = fields.Binary(string='Process File')
+    process_file = fields.Binary(string='File')
     _sql_constraints = [('name_uniq', 'unique(name)', "The business process name already exists.")]
 
 #--------------------------------------
@@ -111,27 +111,27 @@ class ControlCategory(models.Model):
     _name = 'control.category'
     _description = 'Control Category'
     
-    id_control_category = fields.Char(string='ID', required=True)
+    id_control_category = fields.Char(string='ID Control Category', required=True)
     name = fields.Char(string='Control Category', required=True)
-    description = fields.Text(string='Description', required=True)
-    _sql_constraints = [('name_uniq', 'unique(name)', "The control category name already exists."), ('id_uniq', 'unique(id_control_category)', "The ID control category name already exists.")]
+    description = fields.Text(string='Description' )
+    _sql_constraints = [('name_uniq', 'unique(name)', "The control category name already exists."), ('id_control_category_uniq', 'unique(id_control_category)', "The control category ID already exists.")]
 
 class IsoControl(models.Model):
     _name = 'iso.control'
     _description = 'ISO Control'
-    id_iso_control = fields.Char(string='ID', required=True)
+    id_iso_control = fields.Char(string='ID ISO Control', required=True)
     name = fields.Char(string='Control Title', required=True)
     control_category_id = fields.Many2one('control.category', string='Control Category', required=True)
     control_type_id = fields.Many2many('control.type', string='Control Type', required=True)
     security_property_id = fields.Many2many('security.property', string='Security Property', required=True)
-    cybersecurity_concept_id = fields.Many2many('cybersecurty.concept', string='Cybersecurity Concept', required=True)
+    cybersecurity_concept_id = fields.Many2many('cybersecurity.concept', string='Cybersecurity Concept', required=True)
     operational_capability_id = fields.Many2many('operational.capability', string='Operational Capability', required=True)
     security_domain_id = fields.Many2many('security.domain', string='Security Domain', required=True)
     control = fields.Text(string='Control', required=True)
     purpose = fields.Text(string='Purpose', required=True)
     guidance = fields.Text(string='Guidance', required=True)
     other_information = fields.Text(string='Other Information', required=True)
-    _sql_constraints = [('name_uniq', 'unique(name)', "The ISO control name already exists."), ('id_uniq', 'unique(id_iso_control)', "The ID ISO control name already exists.")]
+    _sql_constraints = [('name_uniq', 'unique(name)', "The ISO control name already exists."), ('id_iso_control_uniq', 'unique(id_iso_control)', "The ISO control ID already exists.")]
 
 class StatementApplicability(models.Model):
     _name = 'statement.applicability'
@@ -143,8 +143,7 @@ class StatementApplicability(models.Model):
     reason_selection = fields.Text(string='Reason for Selection')
     #risk reference
     business_process_id = fields.Many2many('business.process',string='Policy / Process')
-    #evidence
-    #control desing reference
+    control_design_id = fields.Many2many('control.design',string='Control Design')
     evidence_file = fields.Binary(string='Upload Evidence')
     evidence_file_name = fields.Char(string='Evidence Name')
     _sql_constraints = [('name_uniq', 'unique(name)', "The control name already exists.")]
@@ -182,7 +181,7 @@ class RiskFactor(models.Model):
     name = fields.Text(string='Risk Factor', required=True)
     risk_classification_id = fields.Many2many('risk.classification',string='Risk Classification', required=True)
     it_inventory_id = fields.Many2many('it.inventory',string='IT System')
-    business_process_id = fields.Many2many('business.process',string='Business Process')
+    business_process_id = fields.Many2many('business.process',string='Policy / Process')
 
     cause = fields.Text(string='Cause', required=True)
     consequence = fields.Text(string='Consequence', required=True)

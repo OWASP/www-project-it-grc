@@ -14,3 +14,6 @@ access_probability_level,grcbit.probablity.level,model_probability_level,grcbit.
 access_risk_classification,grcbit.risk.classification,model_risk_classification,grcbit.grcbit_admin,1,1,1,1
 access_risk_factor,grcbit.risk.factor,model_risk_factor,grcbit.grcbit_admin,1,1,1,1
 access_control_design,grcbit.control.design,model_control_design,grcbit.grcbit_admin,1,1,1,1
+access_control_category,grcbit.control.category,model_control_category,grcbit.grcbit_admin,1,1,1,1
+access_iso_control,grcbit.iso.control,model_iso_control,grcbit.grcbit_admin,1,1,1,1
+access_statement_applicability,grcbit.statement.applicability,model_statement_applicability,grcbit.grcbit_admin,1,1,1,1

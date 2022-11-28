@@ -44,7 +44,7 @@
 	<field name="view_mode">tree,form</field>
    </record>
    <record id="grcbit.business_process_action" model="ir.actions.act_window">
-	<field name="name">Business Process</field>
+	   <field name="name">Policy / Process</field>
 	<field name="res_model">business.process</field>
 	<field name="view_mode">tree,form</field>
    </record>
@@ -76,6 +76,21 @@
    <record id="grcbit.control_design_action" model="ir.actions.act_window">
 	<field name="name">Control Design</field>
 	<field name="res_model">control.design</field>
+	<field name="view_mode">tree,form</field>
+   </record>
+   <record id="grcbit.iso_control_action" model="ir.actions.act_window">
+	<field name="name">ISO Control</field>
+	<field name="res_model">iso.control</field>
+	<field name="view_mode">tree,form</field>
+   </record>
+   <record id="grcbit.control_category_action" model="ir.actions.act_window">
+	<field name="name">Control Category</field>
+	<field name="res_model">control.category</field>
+	<field name="view_mode">tree,form</field>
+   </record>
+   <record id="grcbit.statement_applicability_action" model="ir.actions.act_window">
+	<field name="name">Statement Applicability</field>
+	<field name="res_model">statement.applicability</field>
 	<field name="view_mode">tree,form</field>
    </record>
 
@@ -183,7 +198,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.business_process_view">
-      <field name="name">Business Process</field>
+	    <field name="name">Policy / Process</field>
       <field name="model">business.process</field>
       <field name="arch" type="xml">
         <tree>
@@ -278,7 +293,53 @@
       </field>
     </record>
 
+   <record model="ir.ui.view" id="grcbit.control_category_view">
+   	<field name="name">Control Category</field>
+        <field name="model">control.category</field>
+        <field name="arch" type="xml">
+        <tree>
+          <field name="id_control_category"/>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+        </field>
+   </record>
 
+   <record model="ir.ui.view" id="grcbit.iso_control_view">
+   	<field name="name">ISO Control</field>
+        <field name="model">iso.control</field>
+        <field name="arch" type="xml">
+        <tree>
+          <field name="id_iso_control"/>
+          <field name="control_category_id" />
+          <field name="name"/>
+          <field name="control" />
+          <field name="control_type_id"  widget="many2many_tags"/>
+          <field name="security_property_id"  widget="many2many_tags"/>
+          <field name="cybersecurity_concept_id" widget="many2many_tags" />
+          <field name="operational_capability_id"  widget="many2many_tags" />
+          <field name="security_domain_id" widget="many2many_tags" />
+          <field name="purpose" optional="hide" />
+          <field name="guidance" optional="hide" />
+          <field name="other_information" optional="hide" />
+        </tree>
+        </field>
+   </record>
+
+   <record model="ir.ui.view" id="grcbit.statement_applicability_view">
+        <field name="name">Statement Applicability</field>
+        <field name="model">statement.applicability</field>
+        <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="is_applicable"/>
+          <field name="is_implemented"/>
+          <field name="reason_selection"  />
+          <field name="business_process_id" widget="many2many_tags"  />
+          <field name="control_design_id" widget="many2many_tags"  />
+        </tree>
+        </field>
+   </record>
 
 
 
@@ -342,7 +403,7 @@
 
 
     <record model="ir.ui.view" id="grcbit.business_process_form">
-      <field name="name">Business Process</field>
+	    <field name="name">Policy / Process</field>
       <field name="model">business.process</field>
       <field name="arch" type="xml">
         <form>
@@ -466,8 +527,10 @@
       <field name="model">control.type</field>
       <field name="arch" type="xml">
         <form>
+		<group>
           <field name="name"/>
           <field name="description"/>
+  </group>
         </form>
       </field>
     </record>
@@ -476,8 +539,10 @@
       <field name="model">security.property</field>
       <field name="arch" type="xml">
         <form>
+		<group>
           <field name="name"/>
           <field name="description"/>
+  </group>
         </form>
       </field>
     </record>
@@ -486,8 +551,10 @@
       <field name="model">cybersecurity.concept</field>
       <field name="arch" type="xml">
         <form>
+		<group>
           <field name="name"/>
           <field name="description"/>
+  </group>
         </form>
       </field>
     </record>
@@ -496,8 +563,10 @@
       <field name="model">operational.capability</field>
       <field name="arch" type="xml">
         <form>
+		<group>
           <field name="name"/>
           <field name="description"/>
+  </group>
         </form>
       </field>
     </record>
@@ -506,13 +575,71 @@
       <field name="model">security.domain</field>
       <field name="arch" type="xml">
         <form>
+		<group>
           <field name="name"/>
           <field name="description"/>
+  </group>
         </form>
       </field>
     </record>
 
+   <record model="ir.ui.view" id="grcbit.control_category_form">
+   	<field name="name">Control Category</field>
+        <field name="model">control.category</field>
+        <field name="arch" type="xml">
+        <form>
+		<group>
+          <field name="id_control_category"/>
+          <field name="name"/>
+          <field name="description"/>
+  </group>
+        </form>
+        </field>
+   </record>
 
+   <record model="ir.ui.view" id="grcbit.iso_control_form">
+   	<field name="name">ISO Control</field>
+        <field name="model">iso.control</field>
+        <field name="arch" type="xml">
+		<form>
+		<group>
+          <field name="id_iso_control"/>
+          <field name="control_category_id" />
+          <field name="name"/>
+          <field name="control" />
+          <field name="control_type_id"  widget="many2many_tags"/>
+          <field name="security_property_id"  widget="many2many_tags"/>
+  </group>
+		<group>
+          <field name="cybersecurity_concept_id" widget="many2many_tags" />
+          <field name="operational_capability_id"  widget="many2many_tags" />
+          <field name="security_domain_id" widget="many2many_tags" />
+          <field name="purpose"  />
+          <field name="guidance"  />
+          <field name="other_information"  />
+  </group>
+        </form>
+        </field>
+   </record>
+
+   <record model="ir.ui.view" id="grcbit.statement_applicability_form">
+        <field name="name">Statement Applicability</field>
+        <field name="model">statement.applicability</field>
+        <field name="arch" type="xml">
+        <form>
+		<group>
+          <field name="name"/>
+          <field name="is_applicable"/>
+          <field name="is_implemented"/>
+  </group>
+		<group>
+          <field name="reason_selection"  />
+          <field name="business_process_id" widget="many2many_tags"  />
+          <field name="control_design_id" widget="many2many_tags"  />
+  </group>
+        </form>
+        </field>
+   </record>
 
 
 
@@ -529,12 +656,15 @@
     <menuitem name="Third Party" id="grcbit.menu_third_party" parent="grcbit.menu_asset_management" action="grcbit.third_party_action" />
 
     <!-- ISO27001:2022 SECURITY ATTRIBUTES -->
-    <menuitem name="ISO Control" id="grcbit.menu_control_attribute" parent="grcbit.menu_root" />
-    <menuitem name="# Control Type" id="grcbit.menu_control_type" parent="grcbit.menu_control_attribute" action="grcbit.control_type_action" />
-    <menuitem name="# Security Property" id="grcbit.menu_security_property" parent="grcbit.menu_control_attribute" action="grcbit.security_property_action" />
-    <menuitem name="# Cybersecurity Concept" id="grcbit.menu_cybersecurity_concept" parent="grcbit.menu_control_attribute" action="grcbit.cybersecurity_concept_action" />
-    <menuitem name="# Operational Capability" id="grcbit.menu_opertaional_capability" parent="grcbit.menu_control_attribute" action="grcbit.operational_capability_action" />
-    <menuitem name="# Security Domain" id="grcbit.menu_security_domain" parent="grcbit.menu_control_attribute" action="grcbit.security_domain_action"  />
+    <menuitem name="ISO 27001" id="grcbit.menu_control_attribute" parent="grcbit.menu_root" />
+    <menuitem name="Statement Applicability" id="grcbit.menu_statement_applicability" parent="grcbit.menu_control_attribute" action="grcbit.statement_applicability_action" sequence="1"  />
+    <menuitem name="ISO Control" id="grcbit.menu_iso_control" parent="grcbit.menu_control_attribute" action="grcbit.iso_control_action" sequence="2"  />
+    <menuitem name="Control Category" id="grcbit.menu_control_category" parent="grcbit.menu_control_attribute" action="grcbit.control_category_action" sequence="3" />
+    <menuitem name="#Control_Type" id="grcbit.menu_control_type" parent="grcbit.menu_control_attribute" action="grcbit.control_type_action" sequence="4" />
+    <menuitem name="#Security_Property" id="grcbit.menu_security_property" parent="grcbit.menu_control_attribute" action="grcbit.security_property_action" sequence="5" />
+    <menuitem name="#Cybersecurity_Concept" id="grcbit.menu_cybersecurity_concept" parent="grcbit.menu_control_attribute" action="grcbit.cybersecurity_concept_action" sequence="6" />
+    <menuitem name="#Operational_Capability" id="grcbit.menu_opertaional_capability" parent="grcbit.menu_control_attribute" action="grcbit.operational_capability_action" sequence="7" />
+    <menuitem name="#Security_Domain" id="grcbit.menu_security_domain" parent="grcbit.menu_control_attribute" action="grcbit.security_domain_action"  sequence="8" />
 
     <!-- RISK METRICS -->
     <menuitem name="Risk Management" id="grcbit.menu_risk_metric" parent="grcbit.menu_root" />
