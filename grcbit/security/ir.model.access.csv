@@ -8,3 +8,9 @@ access_cybersecurity_concept,grcbit.cybersecurity.concept,model_cybersecurity_co
 access_operational_capability,grcbit.operational.capability,model_operational_capability,grcbit.grcbit_admin,1,1,1,1
 access_security_domain,grcbit.security.domain,model_security_domain,grcbit.grcbit_admin,1,1,1,1
 access_business_process,grcbit.business.process,model_business_process,grcbit.grcbit_admin,1,1,1,1
+access_third_party,grcbit.third.party,model_third_party,grcbit.grcbit_admin,1,1,1,1
+access_impact_level,grcbit.impact.level,model_impact_level,grcbit.grcbit_admin,1,1,1,1
+access_probability_level,grcbit.probablity.level,model_probability_level,grcbit.grcbit_admin,1,1,1,1
+access_risk_classification,grcbit.risk.classification,model_risk_classification,grcbit.grcbit_admin,1,1,1,1
+access_risk_factor,grcbit.risk.factor,model_risk_factor,grcbit.grcbit_admin,1,1,1,1
+access_control_design,grcbit.control.design,model_control_design,grcbit.grcbit_admin,1,1,1,1

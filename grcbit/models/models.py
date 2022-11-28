@@ -23,7 +23,8 @@ class ItInventory(models.Model):
     responsible = fields.Many2one('res.users', string='IT Admin', required=True)
     environment = fields.Selection([('prod', 'Production'), ('dev', 'Development'), ('stg','Staging')], string='Enviroment', required=True)
     is_cloud = fields.Boolean(string='Cloud Hosted?', required=True)
-    cloud_provider = fields.Char(string='Cloud Provider')
+    #cloud_provider = fields.Char(string='Cloud Provider')
+    cloud_provider = fields.Many2many('third.party',string='Third Party')
     is_internet_exposed = fields.Boolean(string='Internet Exposed?', required=True)
     users_qty = fields.Integer(string='User Quantity', required=True)
     os_version = fields.Char(string='OS Version')
@@ -62,7 +63,6 @@ class BusinessProcess(models.Model):
     description = fields.Text(string='Description', required=True)
     process_file = fields.Binary(string='Process File')
     _sql_constraints = [('name_uniq', 'unique(name)', "The business process name already exists.")]
-
 
 #--------------------------------------
 # ISO 27001:2022 - Control Attributes
@@ -143,6 +143,68 @@ class StatementApplicability(models.Model):
     #evidence
     #control desing reference
     _sql_constraints = [('name_uniq', 'unique(name)', "The control name already exists.")]
+
+#------------------------
+# Risk Management
+#------------------------
+
+class ImpactLevel(models.Model):
+    _name = 'impact.level'
+    _description = 'Impact Level'
+    name = fields.Char(string='Impact Level', required=True)
+    description = fields.Text(string='Description', required=True)
+    value = fields.Integer(string='Value', required=True)
+    _sql_constraints = [('name_uniq', 'unique(name)', "The impact level name already exists."),('level_uniq', 'unique(value)', "The impact level value already exists.")]
+
+class ProbabilityLevel(models.Model):
+    _name = 'probability.level'
+    _description = 'Probability Level'
+    name = fields.Char(string='Probability Level', required=True)
+    description = fields.Text(string='Description', required=True)
+    value = fields.Integer(string='Value', required=True)
+    _sql_constraints = [('name_uniq', 'unique(name)', "The probability level name already exists."),('level_uniq', 'unique(value)', "The probability level value already exists.")]
+
+class RiskClassification(models.Model):
+    _name = 'risk.classification'
+    _description = 'Risk Classification'
+    name = fields.Char(string='Risk Classification', required=True)
+    description = fields.Text(string='Description', required=True)
+    _sql_constraints = [('name_uniq', 'unique(name)', "The risk classification name already exists.")]
+
+class RiskFactor(models.Model):
+    _name = 'risk.factor'
+    _description = 'Risk Factor'
+    name = fields.Text(string='Risk Factor', required=True)
+    risk_classification_id = fields.Many2many('risk.classification',string='Risk Classification', required=True)
+    it_inventory_id = fields.Many2many('it.inventory',string='IT System')
+    business_process_id = fields.Many2many('business.process',string='Business Process')
+
+    cause = fields.Text(string='Cause', required=True)
+    consequence = fields.Text(string='Consequence', required=True)
+    impact_level_id = fields.Many2one('impact.level', string='Impact Level', required=True)
+    probability_level_id = fields.Many2one('probability.level', string='Probability Level', required=True)
+    responsible = fields.Many2one('res.users', string='IT Admin', required=True)
+    quantification = fields.Float(string='Quantification')
+    comment = fields.Text(string='Comment')
+    risk_factor_file = fields.Binary(string='Upload File')
+    risk_factor_file_name = fields.Char(string='File Name')
+
+#--------------
+# Control
+#--------------
+class ControlDesing(models.Model):
+    _name = 'control.design'
+    _description = 'Control Design'
+    name = fields.Text(string='Control', required=True)
+    responsible = fields.Many2one('res.users', string='Responsible', required=True)
+    control_file = fields.Binary(string='Upload Evidence')
+    control_file_name = fields.Char(string='Evidence Name')
+    control_type_id = fields.Many2many('control.type', string='Control Type', required=True)
+    security_property_id = fields.Many2many('security.property', string='Security Property', required=True)
+    cybersecurity_concept_id = fields.Many2many('cybersecurty.concept', string='Cybersecurity Concept', required=True)
+    operational_capability_id = fields.Many2many('operational.capability', string='Operational Capability', required=True)
+    security_domain_id = fields.Many2many('security.domain', string='Security Domain', required=True)
+    comment = fields.Text(string='Comment', required=True)
 
 
 # class grcbit(models.Model):

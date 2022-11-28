@@ -48,6 +48,36 @@
 	<field name="res_model">business.process</field>
 	<field name="view_mode">tree,form</field>
    </record>
+   <record id="grcbit.third_party_action" model="ir.actions.act_window">
+	<field name="name">Third Party</field>
+	<field name="res_model">third.party</field>
+	<field name="view_mode">tree,form</field>
+   </record>
+   <record id="grcbit.impact_level_action" model="ir.actions.act_window">
+	<field name="name">Impact Level</field>
+	<field name="res_model">impact.level</field>
+	<field name="view_mode">tree,form</field>
+   </record>
+   <record id="grcbit.probability_level_action" model="ir.actions.act_window">
+	<field name="name">Probability Level</field>
+	<field name="res_model">probability.level</field>
+	<field name="view_mode">tree,form</field>
+   </record>
+   <record id="grcbit.risk_classification_action" model="ir.actions.act_window">
+	<field name="name">Risk Classification"</field>
+	<field name="res_model">risk.classification</field>
+	<field name="view_mode">tree,form</field>
+   </record>
+   <record id="grcbit.risk_factor_action" model="ir.actions.act_window">
+	<field name="name">Risk Factor</field>
+	<field name="res_model">risk.factor</field>
+	<field name="view_mode">tree,form</field>
+   </record>
+   <record id="grcbit.control_design_action" model="ir.actions.act_window">
+	<field name="name">Control Design</field>
+	<field name="res_model">control.design</field>
+	<field name="view_mode">tree,form</field>
+   </record>
 
 
 
@@ -71,11 +101,16 @@
           <field name="name"/>
           <field name="description"/>
           <field name="ip"/>
+          <field name="url" optional="hide" />
           <field name="responsible"/>
-          <field name="environment"/>
+          <field name="environment" optional="hide" />
           <field name="is_cloud"/>
+          <field name="cloud_provider" widget="many2many_tags"  optional="hide" />
+          <field name="is_internet_exposed"/>
+          <field name="users_qty" optional="hide" />
           <field name="os_version"/>
           <field name="db_version"/>
+          <field name="it_file"/>
         </tree>
         </field>
    </record>
@@ -87,9 +122,12 @@
           <field name="name"/>
           <field name="description"/>
           <field name="data_classification_id"/>
-          <field name="location"/>
-          <field name="owner"/>
+          <field name="location" optional="hide" />
+          <field name="owner" optional="hide" />
           <field name="it_inventory_id"  widget="many2many_tags" />
+          <field name="third_party_id"  widget="many2many_tags" />
+          <field name="business_process_id"  widget="many2many_tags" />
+          <field name="data_file" optional="hide" />
         </tree>
       </field>
     </record>
@@ -155,6 +193,97 @@
         </tree>
       </field>
     </record>
+    <record model="ir.ui.view" id="grcbit.third_party_view">
+      <field name="name">Third Party</field>
+      <field name="model">third.party</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="third_party_file" filename="File"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="grcbit.impact_level_view">
+      <field name="name">Impact Level</field>
+      <field name="model">impact.level</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="value"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.probability_level_view">
+      <field name="name">Probability Level</field>
+      <field name="model">probability.level</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="value"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.risk_classification_view">
+      <field name="name">Risk Classification</field>
+      <field name="model">risk.classification</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="grcbit.risk_factor_view">
+      <field name="name">Risk Factor</field>
+      <field name="model">risk.factor</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="risk_classification_id" widget="many2many_tags" />
+          <field name="it_inventory_id" widget="many2many_tags" />
+          <field name="business_process_id" widget="many2many_tags" />
+          <field name="cause"/>
+          <field name="consequence"/>
+          <field name="impact_level_id"/>
+          <field name="probability_level_id"/>
+          <field name="responsible" optional="hide"/>
+          <field name="quantification" optional="hide"/>
+          <field name="comment" optional="hide"/>
+          <field name="risk_factor_file" optional="hide"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="grcbit.control_design_view">
+      <field name="name">Control Design</field>
+      <field name="model">control.design</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="responsible" optional="hide"/>
+          <field name="control_type_id" widget="many2many_tags" />
+          <field name="security_property_id" widget="many2many_tags" />
+          <field name="cybersecurity_concept_id" widget="many2many_tags" />
+          <field name="operational_capability_id" widget="many2many_tags" />
+          <field name="security_domain_id" widget="many2many_tags" />
+          <field name="comment" optional="hide"/>
+        </tree>
+      </field>
+    </record>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -176,11 +305,12 @@
         </group>
 	<group>
           <field name="is_cloud"/>
-          <field name="cloud_provider"/>
+          <field name="cloud_provider" widget="many2many_tags" />
           <field name="is_internet_exposed"/>
           <field name="users_qty"/>
           <field name="os_version"/>
           <field name="db_version"/>
+          <field name="it_file" filename="File"/>
         </group>
         </form>
       </field>
@@ -191,16 +321,19 @@
       <field name="model">data.inventory</field>
       <field name="arch" type="xml">
         <form>
-		<group>
+	<group>
           <field name="name"/>
           <field name="description"/>
           <field name="data_classification_id"/>
-  </group>
-		<group>
           <field name="location"/>
           <field name="owner"/>
+        </group>
+	<group>
           <field name="it_inventory_id"  widget="many2many_tags"  />
-  </group>
+          <field name="third_party_id"  widget="many2many_tags"  />
+          <field name="business_process_id"  widget="many2many_tags"  />
+          <field name="data_file" filename="File"/>
+        </group>
         </form>
       </field>
     </record>
@@ -211,10 +344,114 @@
       <field name="model">business.process</field>
       <field name="arch" type="xml">
         <form>
-		<group>
+	<group>
           <field name="name"/>
           <field name="description"/>
           <field name="process_file" filename="File"/>
+        </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="grcbit.third_party_form">
+      <field name="name">Third Party</field>
+      <field name="model">third.party</field>
+      <field name="arch" type="xml">
+        <form>
+	<group>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="third_party_file" filename="File"/>
+        </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="grcbit.impact_level_form">
+      <field name="name">Impact Level</field>
+      <field name="model">impact.level</field>
+      <field name="arch" type="xml">
+        <form>
+	<group>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="value"/>
+        </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="grcbit.probability_level_form">
+      <field name="name">Probability Level</field>
+      <field name="model">probability.level</field>
+      <field name="arch" type="xml">
+        <form>
+	<group>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="value"/>
+        </group>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.risk_classification_form">
+      <field name="name">Risk Classification</field>
+      <field name="model">risk.classification</field>
+      <field name="arch" type="xml">
+        <form>
+	<group>
+          <field name="name"/>
+          <field name="description"/>
+        </group>
+        </form>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="grcbit.risk_factor_form">
+      <field name="name">Risk Factor</field>
+      <field name="model">risk.factor</field>
+      <field name="arch" type="xml">
+        <form>
+		<group>
+          <field name="name"/>
+          <field name="risk_classification_id" widget="many2many_tags"/>
+          <field name="it_inventory_id" widget="many2many_tags"/>
+          <field name="business_process_id" widget="many2many_tags"/>
+          <field name="cause"/>
+          <field name="consequence"/>
+  </group>
+		<group>
+          <field name="impact_level_id"/>
+          <field name="probability_level_id"/>
+          <field name="responsible" optiona="hide"/>
+          <field name="quantification" optional="hide"/>
+          <field name="comment" optional="hide"/>
+          <field name="risk_factor_file" filename="risk_factor_file_name"/>
+          <field name="risk_factor_file_name" invisible="1" />
+  </group>
+        </form>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="grcbit.control_design_form">
+      <field name="name">Control Design</field>
+      <field name="model">control.design</field>
+      <field name="arch" type="xml">
+        <form>
+		<group>
+          <field name="name" />
+          <field name="responsible" optional="hide"/>
+          <field name="control_type_id" widget="many2many_tags" />
+          <field name="security_property_id" widget="many2many_tags" />
+  </group>
+		<group>
+          <field name="cybersecurity_concept_id" widget="many2many_tags" />
+          <field name="operational_capability_id" widget="many2many_tags" />
+          <field name="security_domain_id" widget="many2many_tags" />
+          <field name="comment" optional="hide"/>
+          <field name="control_file" optional="hide"/>
   </group>
         </form>
       </field>
@@ -229,20 +466,30 @@
     <!-- ASSET MANAGEMET MENU -->
     <menuitem name="Asset Management" id="grcbit.menu_asset_management" parent="grcbit.menu_root" />
     <menuitem name="Data Classification" id="grcbit.menu_data_classification" parent="grcbit.menu_asset_management" action="grcbit.data_classification_action" />
-    <menuitem name="Business Process" id="grcbit.menu_business_process" parent="grcbit.menu_asset_management" action="grcbit.business_process_action" />
-    <menuitem name="IT Inventory" id="grcbit.menu_it_inventory" parent="grcbit.menu_asset_management" action="grcbit.it_inventory_action" />
-    <menuitem name="Data Inventory" id="grcbit.menu_data_inventory" parent="grcbit.menu_asset_management" action="grcbit.data_inventory_action" />
+    <menuitem name="Business Process" id="grcbit.menu_business_process" parent="grcbit.menu_asset_management" action="grcbit.business_process_action"  sequence="3"/>
+    <menuitem name="IT Inventory" id="grcbit.menu_it_inventory" parent="grcbit.menu_asset_management" action="grcbit.it_inventory_action" sequence="2" />
+    <menuitem name="Data Inventory" id="grcbit.menu_data_inventory" parent="grcbit.menu_asset_management" action="grcbit.data_inventory_action" sequence="1" />
+    <menuitem name="Third Party" id="grcbit.menu_third_party" parent="grcbit.menu_asset_management" action="grcbit.third_party_action" />
 
     <!-- ISO27001:2022 SECURITY ATTRIBUTES -->
-    <menuitem name="Control Attribute" id="grcbit.menu_control_attribute" parent="grcbit.menu_root" />
+    <menuitem name="ISO Control Attribute" id="grcbit.menu_control_attribute" parent="grcbit.menu_root" />
     <menuitem name="Control Type" id="grcbit.menu_control_type" parent="grcbit.menu_control_attribute" action="grcbit.control_type_action" />
     <menuitem name="Security Property" id="grcbit.menu_security_property" parent="grcbit.menu_control_attribute" action="grcbit.security_property_action" />
     <menuitem name="Cybersecurity Concept" id="grcbit.menu_cybersecurity_concept" parent="grcbit.menu_control_attribute" action="grcbit.cybersecurity_concept_action" />
     <menuitem name="Operational Capability" id="grcbit.menu_opertaional_capability" parent="grcbit.menu_control_attribute" action="grcbit.operational_capability_action" />
-    <menuitem name="Security Domain" id="grcbit.menu_security_domain" parent="grcbit.menu_control_attribute" action="grcbit.security_domain_action" />
+    <menuitem name="Security Domain" id="grcbit.menu_security_domain" parent="grcbit.menu_control_attribute" action="grcbit.security_domain_action"  />
+
+    <!-- RISK METRICS -->
+    <menuitem name="Risk Management" id="grcbit.menu_risk_metric" parent="grcbit.menu_root" />
+    <menuitem name="Risk Factor" id="grcbit.menu_risk_factor" parent="grcbit.menu_risk_metric" action="grcbit.risk_factor_action" sequence="1" />
+    <menuitem name="Impact Level" id="grcbit.menu_impact_level" parent="grcbit.menu_risk_metric" action="grcbit.impact_level_action" />
+    <menuitem name="Probability Level" id="grcbit.menu_probability_level" parent="grcbit.menu_risk_metric" action="grcbit.probability_level_action" />
+    <menuitem name="Risk Classification" id="grcbit.menu_risk_classification" parent="grcbit.menu_risk_metric" action="grcbit.risk_classification_action" />
 
 
-
+    <!-- CONTROL DESIGN -->
+    <menuitem name="Control" id="grcbit.menu_control" parent="grcbit.menu_root" />
+    <menuitem name="Design" id="grcbit.menu_control_design" parent="grcbit.menu_control" action="grcbit.control_design_action" sequence="1" />
 
     <!-- explicit list view definition -->
 <!--
