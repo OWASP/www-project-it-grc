@@ -12,4 +12,8 @@
 		<field name="name">Data Owner</field>
 		<field name="category_id" />
 	</record>
+	<record id="guest" model="res.groups">
+		<field name="name">Guest</field>
+		<field name="category_id" />
+	</record>
 </odoo>

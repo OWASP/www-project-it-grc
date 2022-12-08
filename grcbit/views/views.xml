@@ -258,6 +258,7 @@
       <field name="model">risk.factor</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="risk_id" />
           <field name="name" />
           <field name="risk_classification_id" widget="many2many_tags" />
           <field name="it_inventory_id" widget="many2many_tags" />
@@ -280,6 +281,7 @@
       <field name="model">control.design</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="control_id" />
           <field name="name" />
           <field name="description" />
           <field name="responsible" optional="hide"/>
@@ -677,6 +679,47 @@
     <!-- CONTROL DESIGN -->
     <menuitem name="Control" id="grcbit.menu_control" parent="grcbit.menu_root" />
     <menuitem name="Design" id="grcbit.menu_control_design" parent="grcbit.menu_control" action="grcbit.control_design_action" sequence="1" />
+
+
+
+    <!-- SEQUENCES -->
+
+    <record id="risk_id_sequence" model="ir.sequence">
+            <field name="name">Risk ID sequence</field>
+            <field name="code">risk.id.sequence</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">R-</field>
+            <field name="number_increment">1</field>
+            <field name="number_next">1</field>
+            <field name="padding">3</field>
+            <field name="implementation">standard</field>
+    </record>
+
+
+    <record id="control_id_sequence" model="ir.sequence">
+            <field name="name">Control ID sequence</field>
+            <field name="code">control.id.sequence</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">C-</field>
+            <field name="number_increment">1</field>
+            <field name="number_next">1</field>
+            <field name="padding">3</field>
+            <field name="implementation">standard</field>
+    </record>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- explicit list view definition -->
 <!--

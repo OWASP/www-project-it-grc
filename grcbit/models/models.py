@@ -119,8 +119,11 @@ class ControlCategory(models.Model):
 class IsoControl(models.Model):
     _name = 'iso.control'
     _description = 'ISO Control'
+    _order = 'id_iso_control'
+    _rec_name = 'display_name'
     id_iso_control = fields.Char(string='ID ISO Control', required=True)
     name = fields.Char(string='Control Title', required=True)
+    display_name = fields.Char(string='Control Title', compute='_compute_display_name')
     control_category_id = fields.Many2one('control.category', string='Control Category', required=True)
     control_type_id = fields.Many2many('control.type', string='Control Type', required=True)
     security_property_id = fields.Many2many('security.property', string='Security Property', required=True)
@@ -131,11 +134,19 @@ class IsoControl(models.Model):
     purpose = fields.Text(string='Purpose', required=True)
     guidance = fields.Text(string='Guidance', required=True)
     other_information = fields.Text(string='Other Information', required=True)
+
     _sql_constraints = [('name_uniq', 'unique(name)', "The ISO control name already exists."), ('id_iso_control_uniq', 'unique(id_iso_control)', "The ISO control ID already exists.")]
+
+    @api.depends('id_iso_control','name')
+    def _compute_display_name(self):
+        for i in self:
+            i.display_name = i.id_iso_control + ' ' + i.name
+
 
 class StatementApplicability(models.Model):
     _name = 'statement.applicability'
     _description = 'Statement Applicability'
+    _order = 'name'
 
     name = fields.Many2one('iso.control', string='ISO Control', required=True)
     is_applicable = fields.Boolean(string='Control Applicable?', required=True)
@@ -178,7 +189,11 @@ class RiskClassification(models.Model):
 class RiskFactor(models.Model):
     _name = 'risk.factor'
     _description = 'Risk Factor'
+    _order = 'risk_id'
+    _rec_name = 'risk_id'
+
     name = fields.Text(string='Risk Factor', required=True)
+    risk_id = fields.Char(string='Risk ID', required=True, index=True, copy=False, default='New')
     risk_classification_id = fields.Many2many('risk.classification',string='Risk Classification', required=True)
     it_inventory_id = fields.Many2many('it.inventory',string='IT System')
     business_process_id = fields.Many2many('business.process',string='Policy / Process')
@@ -187,12 +202,18 @@ class RiskFactor(models.Model):
     consequence = fields.Text(string='Consequence', required=True)
     impact_level_id = fields.Many2one('impact.level', string='Impact Level', required=True)
     probability_level_id = fields.Many2one('probability.level', string='Probability Level', required=True)
-    responsible = fields.Many2one('res.users', string='IT Admin', required=True)
+    responsible = fields.Many2one('res.users', string='Risk Owner', required=True)
     quantification = fields.Float(string='Quantification')
     comment = fields.Text(string='Comment')
     risk_factor_file = fields.Binary(string='Upload File')
     risk_factor_file_name = fields.Char(string='File Name')
     control_design_id = fields.Many2many('control.design',string='Control Design')
+
+    @api.model
+    def create(self, vals):
+        vals['risk_id'] = self.env['ir.sequence'].next_by_code('risk.id.sequence')
+        return super(RiskFactor, self).create(vals)
+
 
 #--------------
 # Control
@@ -200,7 +221,11 @@ class RiskFactor(models.Model):
 class ControlDesing(models.Model):
     _name = 'control.design'
     _description = 'Control Design'
+    _order = 'control_id'
+    _rec_name = 'control_id'
+
     name = fields.Text(string='Control', required=True)
+    control_id = fields.Char(string='Control ID', required=True, index=True, copy=False, default='New')
     description = fields.Text(string='Description', required=True)
     responsible = fields.Many2one('res.users', string='Responsible', required=True)
     control_file = fields.Binary(string='Upload Evidence')
@@ -212,6 +237,10 @@ class ControlDesing(models.Model):
     security_domain_id = fields.Many2many('security.domain', string='Security Domain', required=True)
     comment = fields.Text(string='Comment')
 
+    @api.model
+    def create(self, vals):
+        vals['control_id'] = self.env['ir.sequence'].next_by_code('control.id.sequence')
+        return super(ControlDesing, self).create(vals)
 
 # class grcbit(models.Model):
 #     _name = 'grcbit.grcbit'
