@@ -29,7 +29,10 @@ class ItInventory(models.Model):
     users_qty = fields.Integer(string='User Quantity', required=True)
     os_version = fields.Char(string='OS Version')
     db_version = fields.Char(string='DB Version')
-    it_file = fields.Binary(string='Diagram')
+    attachment = fields.Many2many('ir.attachment', string="Attachment")
+    #it_file = fields.Binary(string='Diagram')
+    #it_file = fields.Many2many('ir.attachment', string="File")
+    #it_file_name = fields.Char(string="File Name")
     #ii_id = fields.Many2one('data.inventory')
     _sql_constraints = [('name_uniq', 'unique(name)', "The IT system name already exists.")]
 
@@ -45,7 +48,10 @@ class DataInventory(models.Model):
     it_inventory_id = fields.Many2many('it.inventory',string='IT System')
     third_party_id = fields.Many2many('third.party',string='Third Party')
     business_process_id = fields.Many2many('business.process',string='Policy / Process')
-    data_file = fields.Binary(string='Data Flow')
+    #data_file = fields.Binary(string='Data Flow')
+    #data_file = fields.Many2many('ir.attachment', string="File")
+    #data_file_name = fields.Char(string="File Name")
+    attachment = fields.Many2many('ir.attachment', string="Attachment")
     _sql_constraints = [('name_uniq', 'unique(name)', "The data inventory name already exists.")]
 
 class ThirdParty(models.Model):
@@ -53,16 +59,29 @@ class ThirdParty(models.Model):
     _decription = 'Third-Party'
     name = fields.Char(string='Third Party Vendor', required=True)
     description = fields.Text(string='Description', required=True)
-    third_party_file = fields.Binary(string='Contract')
+    #third_party_file = fields.Binary(string='Contract')
+    #third_party_file = fields.Many2many('ir.attachment', string="File")
+    #third_party_file_name = fields.Char(string="File Name")
+    attachment = fields.Many2many('ir.attachment', string="Attachment")
     _sql_constraints = [('name_uniq', 'unique(name)', "The third party name already exists.")]
 
 class BusinessProcess(models.Model):
     _name = 'business.process'
     _decription = 'Policy / Process'
+    _order = 'process_id'
+    _rec_name = 'process_id'
+
     name = fields.Char(string='Policy / Process', required=True)
+    process_id = fields.Char(string='Policy / Process ID', required=True, index=True, copy=False, default='New')
     description = fields.Text(string='Description', required=True)
-    process_file = fields.Binary(string='File')
+    attachment      = fields.Many2many('ir.attachment', string="Attachment")
+    #attachment_name = fields.Char(string='Attachment')
     _sql_constraints = [('name_uniq', 'unique(name)', "The business process name already exists.")]
+
+    @api.model
+    def create(self, vals):
+        vals['process_id'] = self.env['ir.sequence'].next_by_code('process.id.sequence')
+        return super(BusinessProcess, self).create(vals)
 
 #--------------------------------------
 # ISO 27001:2022 - Control Attributes
@@ -155,8 +174,10 @@ class StatementApplicability(models.Model):
     #risk reference
     business_process_id = fields.Many2many('business.process',string='Policy / Process')
     control_design_id = fields.Many2many('control.design',string='Control Design')
-    evidence_file = fields.Binary(string='Upload Evidence')
-    evidence_file_name = fields.Char(string='Evidence Name')
+    #evidence_file = fields.Binary(string='Upload Evidence')
+    #evidence_file = fields.Many2many('ir.attachment', string="File")
+    #evidence_file_name = fields.Char(string='Evidence Name')
+    attachment = fields.Many2many('ir.attachment', string="Attachment")
     _sql_constraints = [('name_uniq', 'unique(name)', "The control name already exists.")]
 
 #------------------------
@@ -205,8 +226,10 @@ class RiskFactor(models.Model):
     responsible = fields.Many2one('res.users', string='Risk Owner', required=True)
     quantification = fields.Float(string='Quantification')
     comment = fields.Text(string='Comment')
-    risk_factor_file = fields.Binary(string='Upload File')
-    risk_factor_file_name = fields.Char(string='File Name')
+    #risk_factor_file = fields.Many2many('ir.attachment', string="File")
+    #risk_factor_file = fields.Binary(string='Upload File')
+    #risk_factor_file_name = fields.Char(string='File Name')
+    attachment = fields.Many2many('ir.attachment', string="Attachment")
     control_design_id = fields.Many2many('control.design',string='Control Design')
 
     @api.model
@@ -227,15 +250,18 @@ class ControlDesing(models.Model):
     name = fields.Text(string='Control', required=True)
     control_id = fields.Char(string='Control ID', required=True, index=True, copy=False, default='New')
     description = fields.Text(string='Description', required=True)
+    evidence_guide = fields.Text(string='Evidence Guide', required=True)
     responsible = fields.Many2one('res.users', string='Responsible', required=True)
-    control_file = fields.Binary(string='Upload Evidence')
-    control_file_name = fields.Char(string='Evidence Name')
+    #control_file = fields.Binary(string='Upload Evidence')
+    #control_file = fields.Many2many('ir.attachment', string="File")
+    #control_file_name = fields.Char(string='Evidence Name')
     control_type_id = fields.Many2many('control.type', string='Control Type', required=True)
     security_property_id = fields.Many2many('security.property', string='Security Property', required=True)
     cybersecurity_concept_id = fields.Many2many('cybersecurity.concept', string='Cybersecurity Concept', required=True)
     operational_capability_id = fields.Many2many('operational.capability', string='Operational Capability', required=True)
     security_domain_id = fields.Many2many('security.domain', string='Security Domain', required=True)
     comment = fields.Text(string='Comment')
+    attachment = fields.Many2many('ir.attachment', string="Attachment")
 
     @api.model
     def create(self, vals):
