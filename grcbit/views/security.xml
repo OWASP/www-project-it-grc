@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+<record id="stock_guest_sec_1" model="ir.ui.view">
+    <field name="name">stock.guest.sec.1</field>
+    <field name="model">control.design</field>
+	 <field name="inherit_id" ref="grcbit.control_design_form" />  
+	 <!--
+	    <field name="groups_id" eval="[(6, 0, [ ref('grcbit.guest')])]"/> 
+	 -->
+    <field name="arch" type="xml">
+
+
+         <field name="name" position="attributes">
+		 <attribute name="readonly">1</attribute>
+           <attribute name="groups">grcbit.guest</attribute>
+         </field>
+         <field name="description" position="attributes">
+		 <attribute name="readonly">1</attribute>
+           <attribute name="groups">grcbit.guest</attribute>
+         </field>
+         <field name="evidence_guide" position="attributes">
+		 <attribute name="readonly">1</attribute>
+           <attribute name="groups">grcbit.guest</attribute>
+         </field>
+         <field name="control_type_id" position="attributes">
+		 <attribute name="readonly">1</attribute>
+           <attribute name="groups">grcbit.guest</attribute>
+         </field>
+         <field name="security_property_id" position="attributes">
+		 <attribute name="readonly">1</attribute>
+           <attribute name="groups">grcbit.guest</attribute>
+         </field>
+         <field name="cybersecurity_concept_id" position="attributes">
+		 <attribute name="readonly">1</attribute>
+           <attribute name="groups">grcbit.guest</attribute>
+         </field>
+         <field name="operational_capability_id" position="attributes">
+		 <attribute name="readonly">1</attribute>
+           <attribute name="groups">grcbit.guest</attribute>
+         </field>
+         <field name="security_domain_id" position="attributes">
+		 <attribute name="readonly">1</attribute>
+           <attribute name="groups">grcbit.guest</attribute>
+         </field>
+         <field name="comment" position="attributes">
+		 <attribute name="readonly">1</attribute>
+           <attribute name="groups">grcbit.guest</attribute>
+         </field>
+         <field name="responsible" position="attributes">
+		 <attribute name="readonly">1</attribute>
+           <attribute name="groups">grcbit.guest</attribute>
+         </field>
+    </field>
+</record>
+
+
+<record id="stock_admin_sec_1" model="ir.ui.view">
+    <field name="name">stock.admin.sec.1</field>
+    <field name="model">control.design</field>
+	 <field name="inherit_id" ref="grcbit.control_design_form" />  
+	 <!--
+	    <field name="groups_id" eval="[(6, 0, [ ref('grcbit.guest')])]"/> 
+	 -->
+    <field name="arch" type="xml">
+
+         <field name="name" position="attributes">
+		 <attribute name="readonly">0</attribute>
+           <attribute name="groups">grcbit.grcbit_admin</attribute>
+         </field>
+         <field name="description" position="attributes">
+		 <attribute name="readonly">0</attribute>
+           <attribute name="groups">grcbit.grcbit_admin</attribute>
+         </field>
+         <field name="evidence_guide" position="attributes">
+		 <attribute name="readonly">0</attribute>
+           <attribute name="groups">grcbit.grcbit_admin</attribute>
+         </field>
+         <field name="control_type_id" position="attributes">
+		 <attribute name="readonly">0</attribute>
+           <attribute name="groups">grcbit.grcbit_admin</attribute>
+         </field>
+         <field name="security_property_id" position="attributes">
+		 <attribute name="readonly">0</attribute>
+           <attribute name="groups">grcbit.grcbit_admin</attribute>
+         </field>
+         <field name="cybersecurity_concept_id" position="attributes">
+		 <attribute name="readonly">0</attribute>
+           <attribute name="groups">grcbit.grcbit_admin</attribute>
+         </field>
+         <field name="operational_capability_id" position="attributes">
+		 <attribute name="readonly">0</attribute>
+           <attribute name="groups">grcbit.grcbit_admin</attribute>
+         </field>
+         <field name="security_domain_id" position="attributes">
+		 <attribute name="readonly">0</attribute>
+           <attribute name="groups">grcbit.grcbit_admin</attribute>
+         </field>
+         <field name="comment" position="attributes">
+		 <attribute name="readonly">0</attribute>
+           <attribute name="groups">grcbit.grcbit_admin</attribute>
+         </field>
+         <field name="responsible" position="attributes">
+		 <attribute name="readonly">0</attribute>
+           <attribute name="groups">grcbit.grcbit_admin</attribute>
+         </field>
+
+    </field>
+</record>
+
+
+</odoo>

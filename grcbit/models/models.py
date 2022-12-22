@@ -48,6 +48,7 @@ class DataInventory(models.Model):
     it_inventory_id = fields.Many2many('it.inventory',string='IT System')
     third_party_id = fields.Many2many('third.party',string='Third Party')
     business_process_id = fields.Many2many('business.process',string='Policy / Process')
+    security_requirement = fields.Text(string='Security Requirement', required=True)
     #data_file = fields.Binary(string='Data Flow')
     #data_file = fields.Many2many('ir.attachment', string="File")
     #data_file_name = fields.Char(string="File Name")
@@ -129,11 +130,18 @@ class SecurityDomain(models.Model):
 class ControlCategory(models.Model):
     _name = 'control.category'
     _description = 'Control Category'
+    _rec_name = 'display_name'
     
+    display_name = fields.Char(string='Control Category', compute='_compute_display_name')
     id_control_category = fields.Char(string='ID Control Category', required=True)
     name = fields.Char(string='Control Category', required=True)
     description = fields.Text(string='Description' )
     _sql_constraints = [('name_uniq', 'unique(name)', "The control category name already exists."), ('id_control_category_uniq', 'unique(id_control_category)', "The control category ID already exists.")]
+
+    @api.depends('id_control_category','name')
+    def _compute_display_name(self):
+        for i in self:
+            i.display_name = i.id_control_category + ' ' + i.name
 
 class IsoControl(models.Model):
     _name = 'iso.control'
@@ -153,6 +161,8 @@ class IsoControl(models.Model):
     purpose = fields.Text(string='Purpose', required=True)
     guidance = fields.Text(string='Guidance', required=True)
     other_information = fields.Text(string='Other Information', required=True)
+    attachment = fields.Many2many('ir.attachment', string="Attachment")
+    consultant = fields.Many2one('res.users', string='Consultant')
 
     _sql_constraints = [('name_uniq', 'unique(name)', "The ISO control name already exists."), ('id_iso_control_uniq', 'unique(id_iso_control)', "The ISO control ID already exists.")]
 
@@ -261,6 +271,7 @@ class ControlDesing(models.Model):
     operational_capability_id = fields.Many2many('operational.capability', string='Operational Capability', required=True)
     security_domain_id = fields.Many2many('security.domain', string='Security Domain', required=True)
     comment = fields.Text(string='Comment')
+    evidence_pending = fields.Text(string='Evidence Pending')
     attachment = fields.Many2many('ir.attachment', string="Attachment")
 
     @api.model

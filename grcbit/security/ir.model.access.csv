@@ -32,7 +32,7 @@ access_impact_level_guest,grcbit.impact.level.guest,model_impact_level,grcbit.gu
 access_probability_level_guest,grcbit.probablity.level.guest,model_probability_level,grcbit.guest,1,0,0,0
 access_risk_classification_guest,grcbit.risk.classification.guest,model_risk_classification,grcbit.guest,1,0,0,0
 access_risk_factor_guest,grcbit.risk.factor.guest,model_risk_factor,grcbit.guest,1,0,0,0
-access_control_design_guest,grcbit.control.design.guest,model_control_design,grcbit.guest,1,0,0,0
+access_control_design_guest,grcbit.control.design.guest,model_control_design,grcbit.guest,1,1,0,0
 access_control_category_guest,grcbit.control.category.guest,model_control_category,grcbit.guest,1,0,0,0
 access_iso_control_guest,grcbit.iso.control.guest,model_iso_control,grcbit.guest,1,0,0,0
 access_statement_applicability_guest,grcbit.statement.applicability.guest,model_statement_applicability,grcbit.guest,1,0,0,0
