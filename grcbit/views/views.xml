@@ -650,7 +650,7 @@
 	<form>
 	<group>
           <field name="id_iso_control"/>
-          <field name="control_category_id" />
+          <field name="control_category_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
           <field name="name"/>
           <field name="control" />
           <field name="control_type_id"  widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
@@ -676,7 +676,7 @@
         <field name="arch" type="xml">
         <form>
 	<group>
-          <field name="name"/>
+          <field name="name" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
           <field name="is_applicable"/>
           <field name="is_implemented"/>
   	</group>
