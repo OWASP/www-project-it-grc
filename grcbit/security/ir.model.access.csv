@@ -8,6 +8,7 @@ access_cybersecurity_concept,grcbit.cybersecurity.concept,model_cybersecurity_co
 access_operational_capability,grcbit.operational.capability,model_operational_capability,grcbit.grcbit_admin,1,1,1,1
 access_security_domain,grcbit.security.domain,model_security_domain,grcbit.grcbit_admin,1,1,1,1
 access_business_process,grcbit.business.process,model_business_process,grcbit.grcbit_admin,1,1,1,1
+access_security_policy,grcbit.security.policy,model_security_policy,grcbit.grcbit_admin,1,1,1,1
 access_third_party,grcbit.third.party,model_third_party,grcbit.grcbit_admin,1,1,1,1
 access_impact_level,grcbit.impact.level,model_impact_level,grcbit.grcbit_admin,1,1,1,1
 access_probability_level,grcbit.probablity.level,model_probability_level,grcbit.grcbit_admin,1,1,1,1
@@ -27,6 +28,7 @@ access_cybersecurity_concept_guest,grcbit.cybersecurity.concept.guest,model_cybe
 access_operational_capability_guest,grcbit.operational.capability.guest,model_operational_capability,grcbit.guest,1,0,0,0
 access_security_domain_guest,grcbit.security.domain.guest,model_security_domain,grcbit.guest,1,0,0,0
 access_business_process_guest,grcbit.business.process.guest,model_business_process,grcbit.guest,1,0,0,0
+access_security_policy_guest,grcbit.security.policy.guest,model_security_policy,grcbit.guest,1,0,0,0
 access_third_party_guest,grcbit.third.party.guest,model_third_party,grcbit.guest,1,0,0,0
 access_impact_level_guest,grcbit.impact.level.guest,model_impact_level,grcbit.guest,1,0,0,0
 access_probability_level_guest,grcbit.probablity.level.guest,model_probability_level,grcbit.guest,1,0,0,0

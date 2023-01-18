@@ -34,6 +34,7 @@ class ItInventory(models.Model):
     #it_file = fields.Many2many('ir.attachment', string="File")
     #it_file_name = fields.Char(string="File Name")
     #ii_id = fields.Many2one('data.inventory')
+    #color = fields.Integer()
     _sql_constraints = [('name_uniq', 'unique(name)', "The IT system name already exists.")]
 
 class DataInventory(models.Model):
@@ -47,13 +48,23 @@ class DataInventory(models.Model):
     #ii_id   = fields.One2many('it.inventory','ii_id', string='IT System')
     it_inventory_id = fields.Many2many('it.inventory',string='IT System')
     third_party_id = fields.Many2many('third.party',string='Third Party')
-    business_process_id = fields.Many2many('business.process',string='Policy / Process')
+    business_process_id = fields.Many2many('business.process',string='Business Process')
     security_requirement = fields.Text(string='Security Requirement', required=True)
     #data_file = fields.Binary(string='Data Flow')
     #data_file = fields.Many2many('ir.attachment', string="File")
     #data_file_name = fields.Char(string="File Name")
     attachment = fields.Many2many('ir.attachment', string="Attachment")
     _sql_constraints = [('name_uniq', 'unique(name)', "The data inventory name already exists.")]
+
+'''
+class DataInventoryTags(models.Model):
+    _name = 'data.inventory.tags'
+    color = fields.Integer()
+
+class ItInventoryTags(models.Model):
+    _name = 'it.inventory.tags'
+    color = fields.Integer()
+'''
 
 class ThirdParty(models.Model):
     _name = 'third.party'
@@ -68,12 +79,14 @@ class ThirdParty(models.Model):
 
 class BusinessProcess(models.Model):
     _name = 'business.process'
-    _decription = 'Policy / Process'
+    _decription = 'Business Process'
     _order = 'process_id'
-    _rec_name = 'process_id'
+    #_rec_name = 'process_id'
+    _rec_name = 'display_name'
 
-    name = fields.Char(string='Policy / Process', required=True)
-    process_id = fields.Char(string='Policy / Process ID', required=True, index=True, copy=False, default='New')
+    display_name = fields.Char(string='Business Process', compute='_compute_display_name')
+    name = fields.Char(string='Business Process', required=True)
+    process_id = fields.Char(string='ID', required=True, index=True, copy=False, default='New')
     description = fields.Text(string='Description', required=True)
     attachment      = fields.Many2many('ir.attachment', string="Attachment")
     #attachment_name = fields.Char(string='Attachment')
@@ -83,6 +96,35 @@ class BusinessProcess(models.Model):
     def create(self, vals):
         vals['process_id'] = self.env['ir.sequence'].next_by_code('process.id.sequence')
         return super(BusinessProcess, self).create(vals)
+
+    @api.depends('process_id','name')
+    def _compute_display_name(self):
+        for i in self:
+            i.display_name = i.process_id + ' ' + i.name
+
+class SecurityPolicy(models.Model):
+    _name = 'security.policy'
+    _decription = 'Security Policy'
+    _order = 'security_policy_id'
+    _rec_name = 'display_name'
+
+    display_name = fields.Char(string='Security Policy', compute='_compute_display_name')
+    name = fields.Char(string='Security Policy', required=True)
+    security_policy_id = fields.Char(string='ID', required=True, index=True, copy=False, default='New')
+    description = fields.Text(string='Description', required=True)
+    attachment      = fields.Many2many('ir.attachment', string="Attachment")
+    #attachment_name = fields.Char(string='Attachment')
+    _sql_constraints = [('name_uniq', 'unique(name)', "The security policy name already exists.")]
+
+    @api.model
+    def create(self, vals):
+        vals['security_policy_id'] = self.env['ir.sequence'].next_by_code('security.policy.id.sequence')
+        return super(SecurityPolicy, self).create(vals)
+
+    @api.depends('security_policy_id','name')
+    def _compute_display_name(self):
+        for i in self:
+            i.display_name = i.security_policy_id + ' ' + i.name
 
 #--------------------------------------
 # ISO 27001:2022 - Control Attributes
@@ -131,7 +173,7 @@ class ControlCategory(models.Model):
     _name = 'control.category'
     _description = 'Control Category'
     _rec_name = 'display_name'
-    
+
     display_name = fields.Char(string='Control Category', compute='_compute_display_name')
     id_control_category = fields.Char(string='ID Control Category', required=True)
     name = fields.Char(string='Control Category', required=True)
@@ -182,8 +224,10 @@ class StatementApplicability(models.Model):
     is_implemented = fields.Boolean(string='Control Implemented?', required=True)
     reason_selection = fields.Text(string='Reason for Selection')
     #risk reference
-    business_process_id = fields.Many2many('business.process',string='Policy / Process')
+    #business_process_id = fields.Many2many('business.process',string='Policy / Process')
+    security_policy_id = fields.Many2many('security.policy',string='Security Policy')
     control_design_id = fields.Many2many('control.design',string='Control Design')
+    #risk_factor_id = fields.Many2many('risk.factor', string='Factor Riesgo') 
     #evidence_file = fields.Binary(string='Upload Evidence')
     #evidence_file = fields.Many2many('ir.attachment', string="File")
     #evidence_file_name = fields.Char(string='Evidence Name')
@@ -221,13 +265,15 @@ class RiskFactor(models.Model):
     _name = 'risk.factor'
     _description = 'Risk Factor'
     _order = 'risk_id'
-    _rec_name = 'risk_id'
+    _rec_name = 'display_name'
 
+    display_name = fields.Char(string='Control Category', compute='_compute_display_name')
     name = fields.Text(string='Risk Factor', required=True)
     risk_id = fields.Char(string='Risk ID', required=True, index=True, copy=False, default='New')
     risk_classification_id = fields.Many2many('risk.classification',string='Risk Classification', required=True)
-    it_inventory_id = fields.Many2many('it.inventory',string='IT System')
-    business_process_id = fields.Many2many('business.process',string='Policy / Process')
+    #it_inventory_id = fields.Many2many('it.inventory',string='IT System')
+    #business_process_id = fields.Many2many('business.process',string='Policy / Process')
+    data_inventory_id = fields.Many2many('data.inventory',string='Data Asset')
 
     cause = fields.Text(string='Cause', required=True)
     consequence = fields.Text(string='Consequence', required=True)
@@ -240,13 +286,17 @@ class RiskFactor(models.Model):
     #risk_factor_file = fields.Binary(string='Upload File')
     #risk_factor_file_name = fields.Char(string='File Name')
     attachment = fields.Many2many('ir.attachment', string="Attachment")
-    control_design_id = fields.Many2many('control.design',string='Control Design')
+    #control_design_id = fields.Many2many('control.design',string='Control Design')
 
     @api.model
     def create(self, vals):
         vals['risk_id'] = self.env['ir.sequence'].next_by_code('risk.id.sequence')
         return super(RiskFactor, self).create(vals)
 
+    @api.depends('risk_id','name')
+    def _compute_display_name(self):
+        for i in self:
+            i.display_name = i.risk_id + ' ' + i.name
 
 #--------------
 # Control
@@ -255,8 +305,11 @@ class ControlDesing(models.Model):
     _name = 'control.design'
     _description = 'Control Design'
     _order = 'control_id'
-    _rec_name = 'control_id'
+    #_rec_name = 'control_id'
+    _rec_name = 'display_name'
 
+    risk_factor_id = fields.Many2many('risk.factor',string='Risk Factor')
+    display_name = fields.Char(string='Control Category', compute='_compute_display_name')
     name = fields.Text(string='Control', required=True)
     control_id = fields.Char(string='Control ID', required=True, index=True, copy=False, default='New')
     description = fields.Text(string='Description', required=True)
@@ -278,6 +331,11 @@ class ControlDesing(models.Model):
     def create(self, vals):
         vals['control_id'] = self.env['ir.sequence'].next_by_code('control.id.sequence')
         return super(ControlDesing, self).create(vals)
+
+    @api.depends('control_id','name')
+    def _compute_display_name(self):
+        for i in self:
+            i.display_name = i.control_id + ' ' + i.name
 
 # class grcbit(models.Model):
 #     _name = 'grcbit.grcbit'

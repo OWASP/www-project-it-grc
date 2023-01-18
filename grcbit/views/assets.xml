@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend_id" inherit_id="web.assets_backend" name="assets backend">
+        <xpath expr="script[last()]" position="after">
+            <script type="text/javascript" src="/open_in_new_tab/static/src/js/many2one.js"/>
+            <script type="text/javascript" src="/open_in_new_tab/static/src/js/many2many.js"/>
+            <script type="text/javascript" src="/open_in_new_tab/static/src/js/tree_view.js"/>
+        </xpath>
+    </template>
+
+</odoo>

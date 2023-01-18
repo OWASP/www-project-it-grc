@@ -12,7 +12,7 @@
     'version': '1.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'web'],
 
     # always loaded
     'data': [
@@ -21,9 +21,31 @@
         'views/views.xml',
         'views/templates.xml',
         'views/security.xml',
+        #'static/src/xml/template.xml',
+        #'views/assets.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+    #"qweb": [
+    #    "static/src/xml/template.xml",
+    #],
+    #'assets': {
+    #'web.assets_backend': [
+        #"static/src/xml/template.xml",
+        #"/open_in_new_tab/static/src/js/many2one.js",
+        #'grcbit/static/src/js/many2one.js',
+        #'grcbit/static/src/js/many2many.js',
+        #'grcbit/static/src/js/tree_view.js',
+        #'grcbit/static/src/xml/template.xml',
+    #]
+    #},
+    'assets': {
+        'web.assets_backend': [
+            #'many2many_tags_click_cr/static/src/js/many2many_tags.js'
+            #'static/src/js/many2many_tags.js'
+            'grcbit/static/src/js/many2many_tags.js',
+        ],
+    },
 }
