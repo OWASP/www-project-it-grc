@@ -42,10 +42,16 @@
     #]
     #},
     'assets': {
-        'web.assets_backend': [
+        'web.assets_frontend': [
             #'many2many_tags_click_cr/static/src/js/many2many_tags.js'
             #'static/src/js/many2many_tags.js'
             'grcbit/static/src/js/many2many_tags.js',
+            'grcbit/static/src/js/many2many_open.js',
+            #'many2many_tags_click_cr/static/src/js/many2many_tags.js',
+            'static/src/js/many2many_tags.js',
+            'static/src/js/many2many_open.js',
+            #'static/src/xml/template.xml',
+            #'grcbit/static/src/xml/template.xml',
         ],
     },
 }

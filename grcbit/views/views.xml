@@ -392,11 +392,11 @@
           <field name="is_applicable"/>
           <field name="is_implemented"/>
           <field name="reason_selection"  />
-          <field name="security_policy_id" widget="many2many_tags_open"  />
+          <field name="security_policy_id" widget="many2many_tags"  />
 	  <!--
           <field name="risk_factor_id" widget="many2many_tags"  />
 	  -->
-          <field name="control_design_id" widget="many2many_tags_open"  />
+          <field name="control_design_id" widget="many2many_tags"  />
         </tree>
         </field>
    </record>
@@ -447,7 +447,7 @@
           <field name="owner"/>
         </group>
 	<group>
-          <field name="it_inventory_id"  widget="many2many_tags"  options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+          <field name="it_inventory_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
           <field name="third_party_id"   widget="many2many_tags"  options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
           <field name="business_process_id"  widget="many2many_tags" options="{'no_quick_create':True, 'no_create_edit':True, 'no_create':True}"  />
 	  <!--
@@ -730,8 +730,8 @@
   	</group>
 	<group>
           <field name="reason_selection"  />
-          <field name="security_policy_id" widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}"  />
-          <field name="control_design_id"  widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}"  />
+          <field name="security_policy_id" widget="many2many_tags" options="{'no_create_edit' : True, 'no_create':True}"  />
+          <field name="control_design_id"  widget="many2many_tags" options="{'no_create_edit' : True, 'no_create':True}"  />
   	</group>
         </form>
         </field>

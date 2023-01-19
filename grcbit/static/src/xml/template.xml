@@ -21,7 +21,7 @@
     <!--
 <t t-name="FieldMany2ManyTag">
     -->
-    <t t-name="FieldMany2ManyTagsLink">
+    <t t-name="FieldMany2ManyOpen">
     <t t-foreach="elements" t-as="el" t-key="el_index">
         <t t-set="color" t-value="el[colorField] || 0"/>
         <t t-set="colornames" t-value="['No color', 'Red', 'Orange', 'Yellow', 'Light blue', 'Dark purple', 'Salmon pink', 'Medium blue', 'Dark blue', 'Fushia', 'Green', 'Purple']"/>
