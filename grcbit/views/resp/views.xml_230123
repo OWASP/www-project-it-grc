@@ -347,6 +347,10 @@
           <field name="risk_id" />
           <field name="name" />
           <field name="risk_classification_id" widget="many2many_tags" />
+<!--
+          <field name="it_inventory_id" widget="many2many_tags" />
+          <field name="business_process_id" widget="many2many_tags" />
+-->
           <field name="data_inventory_id" widget="many2many_tags" />
           <field name="cause"/>
           <field name="consequence"/>
@@ -355,6 +359,13 @@
           <field name="responsible" optional="hide"/>
           <field name="quantification" optional="hide"/>
           <field name="comment" optional="hide"/>
+	  <!--
+          <field name="risk_factor_file" optional="hide" widget="may2many_binary" filename="risk_factor_file_name" />
+          <field name="risk_factor_file_name" invisible="1" />
+	  -->
+<!--
+          <field name="control_design_id" widget="many2many_tags" />
+-->
           <field name="attachment" widget="many2many_binary" optional="hide" />
         </tree>
       </field>
@@ -368,20 +379,6 @@
           <field name="cause"/>
           <field name="consequence"/>
 	</search>
-      </field>
-    </record>
-    <record model="ir.ui.view" id="grcbit.risk_factor_graph">
-      <field name="name">Risk Factor</field>
-      <field name="model">risk.factor</field>
-      <field name="arch" type="xml">
-        <graph>
-          <field name="risk_id" />
-          <field name="name" />
-          <field name="risk_classification_id" widget="many2many_tags" />
-          <field name="data_inventory_id" widget="many2many_tags" />
-          <field name="impact_level_id"/>
-          <field name="probability_level_id"/>
-        </graph>
       </field>
     </record>
 

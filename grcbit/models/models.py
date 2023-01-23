@@ -50,6 +50,24 @@ class DataInventory(models.Model):
     third_party_id = fields.Many2many('third.party',string='Third Party')
     business_process_id = fields.Many2many('business.process',string='Business Process')
     security_requirement = fields.Text(string='Security Requirement', required=True)
+    retention_period = fields.Selection([
+        ('1m','1 month'),
+        ('2m','2 months'),
+        ('3m','3 months'),
+        ('4m','4 months'),
+        ('5m','5 months'),
+        ('6m','6 months'),
+        ('7m','7 months'),
+        ('8m','8 months'),
+        ('9m','9 months'),
+        ('10m','10 months'),
+        ('11m','11 months'),
+        ('1y','1 year'),
+        ('2y','2 years'),
+        ('3y','3 years'),
+        ('4y','4 years'),
+        ('5y','5 years'),
+        ])
     #data_file = fields.Binary(string='Data Flow')
     #data_file = fields.Many2many('ir.attachment', string="File")
     #data_file_name = fields.Char(string="File Name")
