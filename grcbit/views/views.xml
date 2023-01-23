@@ -6,72 +6,72 @@
     <record id="grcbit.data_classification_action" model="ir.actions.act_window">
 	<field name="name">Data Classification</field>
 	<field name="res_model">data.classification</field>
-	<field name="view_mode">tree,form</field>
+	<field name="view_mode">tree,form,graph</field>
    </record>
    <record id="grcbit.it_inventory_action" model="ir.actions.act_window">
 	<field name="name">IT Inventory</field>
 	<field name="res_model">it.inventory</field>
-	<field name="view_mode">tree,form</field>
+	<field name="view_mode">tree,form,graph</field>
    </record>
    <record id="grcbit.data_inventory_action" model="ir.actions.act_window">
 	<field name="name">Data Inventory</field>
 	<field name="res_model">data.inventory</field>
-	<field name="view_mode">tree,form</field>
+	<field name="view_mode">tree,form,graph</field>
    </record>
    <record id="grcbit.control_type_action" model="ir.actions.act_window">
 	<field name="name">Control Type</field>
 	<field name="res_model">control.type</field>
-	<field name="view_mode">tree,form</field>
+	<field name="view_mode">tree,form,graph</field>
    </record>
    <record id="grcbit.security_property_action" model="ir.actions.act_window">
 	<field name="name">Security Property</field>
 	<field name="res_model">security.property</field>
-	<field name="view_mode">tree,form</field>
+	<field name="view_mode">tree,form,graph</field>
    </record>
    <record id="grcbit.cybersecurity_concept_action" model="ir.actions.act_window">
 	<field name="name">Cybersecurity Concept</field>
 	<field name="res_model">cybersecurity.concept</field>
-	<field name="view_mode">tree,form</field>
+	<field name="view_mode">tree,form,graph</field>
    </record>
    <record id="grcbit.operational_capability_action" model="ir.actions.act_window">
 	<field name="name">Operational Capability</field>
 	<field name="res_model">operational.capability</field>
-	<field name="view_mode">tree,form</field>
+	<field name="view_mode">tree,form,graph</field>
    </record>
    <record id="grcbit.security_domain_action" model="ir.actions.act_window">
 	<field name="name">Security Domain</field>
 	<field name="res_model">security.domain</field>
-	<field name="view_mode">tree,form</field>
+	<field name="view_mode">tree,form,graph</field>
    </record>
    <record id="grcbit.business_process_action" model="ir.actions.act_window">
 	<field name="name">Business Process</field>
 	<field name="res_model">business.process</field>
-	<field name="view_mode">tree,form</field>
+	<field name="view_mode">tree,form,graph</field>
    </record>
    <record id="grcbit.security_policy_action" model="ir.actions.act_window">
 	<field name="name">Security Policy</field>
 	<field name="res_model">security.policy</field>
-	<field name="view_mode">tree,form</field>
+	<field name="view_mode">tree,form,graph</field>
    </record>
    <record id="grcbit.third_party_action" model="ir.actions.act_window">
 	<field name="name">Third Party</field>
 	<field name="res_model">third.party</field>
-	<field name="view_mode">tree,form</field>
+	<field name="view_mode">tree,form,graph</field>
    </record>
    <record id="grcbit.impact_level_action" model="ir.actions.act_window">
 	<field name="name">Impact Level</field>
 	<field name="res_model">impact.level</field>
-	<field name="view_mode">tree,form</field>
+	<field name="view_mode">tree,form,graph</field>
    </record>
    <record id="grcbit.probability_level_action" model="ir.actions.act_window">
 	<field name="name">Probability Level</field>
 	<field name="res_model">probability.level</field>
-	<field name="view_mode">tree,form</field>
+	<field name="view_mode">tree,form,graph</field>
    </record>
    <record id="grcbit.risk_classification_action" model="ir.actions.act_window">
 	<field name="name">Risk Classification"</field>
 	<field name="res_model">risk.classification</field>
-	<field name="view_mode">tree,form</field>
+	<field name="view_mode">tree,form,graph</field>
    </record>
    <record id="grcbit.risk_factor_action" model="ir.actions.act_window">
 	<field name="name">Risk Factor</field>
@@ -81,22 +81,22 @@
    <record id="grcbit.control_design_action" model="ir.actions.act_window">
 	<field name="name">Control Design</field>
 	<field name="res_model">control.design</field>
-	<field name="view_mode">tree,form</field>
+	<field name="view_mode">tree,form,graph</field>
    </record>
    <record id="grcbit.iso_control_action" model="ir.actions.act_window">
 	<field name="name">ISO Control</field>
 	<field name="res_model">iso.control</field>
-	<field name="view_mode">tree,form</field>
+	<field name="view_mode">tree,form,graph</field>
    </record>
    <record id="grcbit.control_category_action" model="ir.actions.act_window">
 	<field name="name">Control Category</field>
 	<field name="res_model">control.category</field>
-	<field name="view_mode">tree,form</field>
+	<field name="view_mode">tree,form,graph</field>
    </record>
    <record id="grcbit.statement_applicability_action" model="ir.actions.act_window">
 	<field name="name">Statement Applicability</field>
 	<field name="res_model">statement.applicability</field>
-	<field name="view_mode">tree,form</field>
+	<field name="view_mode">tree,form,graph</field>
    </record>
 
 
@@ -104,15 +104,38 @@
    <!-- VIEWS -->
 
    <record model="ir.ui.view" id="grcbit.data_classification_view">
-   	<field name="name">Data Classification</field>
-        <field name="model">data.classification</field>
-        <field name="arch" type="xml">
+      <field name="name">Data Classification</field>
+      <field name="model">data.classification</field>
+      <field name="arch" type="xml">
         <tree>
           <field name="name"/>
           <field name="description"/>
         </tree>
-        </field>
+      </field>
    </record>
+   <record model="ir.ui.view" id="grcbit.data_classification_search">
+      <field name="name">Data Classification</field>
+      <field name="model">data.classification</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="description"/>
+        </search>
+      </field>
+   </record>
+   <record model="ir.ui.view" id="grcbit.data_classification_graph">
+      <field name="name">Data Classification</field>
+      <field name="model">data.classification</field>
+      <field name="arch" type="xml">
+        <graph>
+          <field name="name"/>
+          <field name="description"/>
+        </graph>
+      </field>
+   </record>
+
+
+
 
    <record model="ir.ui.view" id="grcbit.it_inventory_view">
         <field name="name">IT Inventory</field>
@@ -168,10 +191,6 @@
           <field name="third_party_id"  widget="many2many_tags" />
           <field name="business_process_id"  widget="many2many_tags" />
           <field name="attachment" widget="many2many_binary" optional="hide" />
-	  <!--
-          <field name="data_file" optional="hide" widget="may2many_binary" filename="data_file_name" />
-          <field name="data_file_name" invisible="1" />
-	  -->
         </tree>
       </field>
     </record>
@@ -182,10 +201,38 @@
 	<search>
           <field name="name"/>
           <field name="description"/>
+          <field name="data_classification_id"/>
           <field name="security_requirement"/>
+          <field name="location" optional="hide" />
+          <field name="owner" optional="hide" />
+          <field name="retention_period" optional="hide" />
+          <field name="it_inventory_id" widget="many2many_tags" />
+          <field name="third_party_id"  widget="many2many_tags" />
+          <field name="business_process_id"  widget="many2many_tags" />
 	</search>
       </field>
     </record>
+    <record model="ir.ui.view" id="grcbit.data_inventory_graph">
+      <field name="name">Data Inventory</field>
+      <field name="model">data.inventory</field>
+      <field name="arch" type="xml">
+	<graph>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="data_classification_id"/>
+          <field name="security_requirement"/>
+          <field name="location" optional="hide" />
+          <field name="owner" optional="hide" />
+          <field name="retention_period" optional="hide" />
+          <field name="it_inventory_id" widget="many2many_tags" />
+          <field name="third_party_id"  widget="many2many_tags" />
+          <field name="business_process_id"  widget="many2many_tags" />
+	</graph>
+      </field>
+    </record>
+
+
+
 
     <record model="ir.ui.view" id="grcbit.control_type_view">
       <field name="name">Control Type</field>
