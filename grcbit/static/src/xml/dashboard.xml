@@ -1,16 +1,15 @@
-<odoo>
-    <data>
-
-<template>
-	<!--
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
    <t t-name="CustomDashBoard">
        <div class="oh_dashboards" style="margin-top: 20px;">
            <div class="container-fluid o_pj_dashboard">
            </div>
        </div>
    </t>
-	-->
        <t t-name="DashboardProject">
+	<div>
+		GRCbit
+	</div>
        <div class="row main-section" style="margin-left: 170px;">
            <div class="col-md-4 col-sm-6 tot_projects oh-payslip" >
                <div class="oh-card" style="width: 410px;">
@@ -59,27 +58,4 @@
            </div>
        </div>
    </t>
-</template>
-
-<!--
-        <template id="listing">
-          <ul>
-            <li t-foreach="objects" t-as="object">
-              <a t-attf-href="#{ root }/objects/#{ object.id }">
-                <t t-esc="object.display_name"/>
-              </a>
-            </li>
-          </ul>
-        </template>
-        <template id="object">
-          <h1><t t-esc="object.display_name"/></h1>
-          <dl>
-            <t t-foreach="object._fields" t-as="field">
-              <dt><t t-esc="field"/></dt>
-              <dd><t t-esc="object[field]"/></dd>
-            </t>
-          </dl>
-        </template>
--->
-    </data>
-</odoo>
+</templates>

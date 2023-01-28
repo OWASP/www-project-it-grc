@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
     'name': "grcbit",
-    'summary': "Tool for ISO27001:2022 implementation",
-    'description': "Tool for ISO27001:2022 implementation",
+    'summary': "App for ISO27001:2022 implementation",
+    'description': "App for ISO27001:2022 implementation",
     'author':"rl@grcbit.com",
     'website': "www.grcbit.com",
     # Categories can be used to filter modules in modules listing
@@ -19,8 +19,9 @@
         'security/groups.xml',
         'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml',
+        #'views/templates.xml',
         'views/security.xml',
+        #'static/src/xml/dashboard.xml',
         #'static/src/xml/template.xml',
         #'views/assets.xml',
     ],
@@ -30,6 +31,7 @@
     ],
     #"qweb": [
     #    "static/src/xml/template.xml",
+    #     'grcbit/static/src/xml/dashboard.xml',
     #],
     #'assets': {
     #'web.assets_backend': [
@@ -43,7 +45,16 @@
     #},
     'assets': {
         'web.assets_backend': [
-            'grcbit/static/src/js/many2many_tags.js'
-        ]
+            'grcbit/static/src/js/many2many_tags.js',
+            'grcbit/static/src/js/many2many_open.js',
+            'grcbit/static/src/js/dashboard.js',
+            'grcbit/static/src/xml/dashboard.xml',
+        ],
+        #'web.assets_qweb': [
+        #    'grcbit/static/src/xml/dashboard.xml',
+        #],
+        #'web.assets_frontend': [
+        #    'grcbit/static/src/xml/dashboard.xml',
+        #],
     },
 }

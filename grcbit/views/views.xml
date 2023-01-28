@@ -147,7 +147,7 @@
       <field name="model">security.policy</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="security_policy_id"/>
+          <field name="security_policy_id" widget="badge"/>
           <field name="name"/>
           <field name="description"/>
           <field name="attachment" widget="many2many_binary"  />
@@ -212,7 +212,7 @@
       <field name="model">business.process</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="process_id"/>
+          <field name="process_id" widget="badge"/>
           <field name="name"/>
           <field name="description"/>
           <field name="attachment" widget="many2many_binary"  />
@@ -280,12 +280,12 @@
           <field name="name"/>
           <field name="description"/>
           <field name="ip"/>
-          <field name="url" optional="hide" />
-          <field name="responsible"/>
-          <field name="environment" optional="hide" />
-          <field name="is_cloud"/>
+          <field name="url" optional="hide" widget="url" />
+          <field name="responsible" widget="badge"/>
+          <field name="environment" optional="hide" widget="badge"/>
+          <field name="is_cloud" widget="boolean_toggle"/>
           <field name="cloud_provider" widget="many2many_tags"  optional="hide" />
-          <field name="is_internet_exposed"/>
+          <field name="is_internet_exposed" widget="boolean_toggle"/>
           <field name="users_qty" optional="hide" />
           <field name="os_version"/>
           <field name="db_version"/>
@@ -322,11 +322,11 @@
           <field name="description"/>
           <field name="ip"/>
           <field name="url" />
-          <field name="responsible"/>
-          <field name="environment"  />
-          <field name="is_cloud"/>
+          <field name="responsible" />
+          <field name="environment"/>
+          <field name="is_cloud" />
           <field name="cloud_provider"  />
-          <field name="is_internet_exposed"/>
+          <field name="is_internet_exposed" />
           <field name="users_qty" type="measure" />
           <field name="os_version"/>
           <field name="db_version"/>
@@ -341,15 +341,15 @@
 	        <group>
             <field name="name"/>
             <field name="description"/>
-            <field name="ip"/>
-            <field name="url"/>
-            <field name="responsible"/>
-            <field name="environment"/>
+            <field name="ip" />
+            <field name="url" widget="url"/>
+            <field name="responsible" />
+            <field name="environment" />
           </group>
 	        <group>
-            <field name="is_cloud"/>
-	          <field name="cloud_provider" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
-            <field name="is_internet_exposed"/>
+            <field name="is_cloud" widget="boolean_toggle"/>
+	          <field name="cloud_provider" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="is_internet_exposed" widget="boolean_toggle"/>
             <field name="users_qty"/>
             <field name="os_version"/>
             <field name="db_version"/>
@@ -371,11 +371,11 @@
         <tree>
           <field name="name"/>
           <field name="description"/>
-          <field name="data_classification_id"/>
+          <field name="data_classification_id" widget="badge" />
           <field name="security_requirement"/>
           <field name="location" optional="hide" />
-          <field name="owner" optional="hide" />
-          <field name="retention_period" optional="hide" />
+          <field name="owner" optional="hide" widget="badge" />
+          <field name="retention_period" optional="hide" widget="badge"/>
           <field name="it_inventory_id" widget="many2many_tags" />
           <field name="third_party_id"  widget="many2many_tags" />
           <field name="business_process_id"  widget="many2many_tags" />
@@ -410,12 +410,12 @@
           <field name="description"/>
           <field name="data_classification_id"/>
           <field name="security_requirement"/>
-          <field name="location" optional="hide" />
-          <field name="owner" optional="hide" />
-          <field name="retention_period" optional="hide" />
-          <field name="it_inventory_id" widget="many2many_tags" />
-          <field name="third_party_id"  widget="many2many_tags" />
-          <field name="business_process_id"  widget="many2many_tags" />
+          <field name="location"/>
+          <field name="owner"/>
+          <field name="retention_period" />
+          <field name="it_inventory_id" />
+          <field name="third_party_id"  />
+          <field name="business_process_id" />
 	      </graph>
       </field>
     </record>
@@ -427,15 +427,15 @@
 	        <group>
             <field name="name"/>
             <field name="description"/>
-            <field name="data_classification_id"/>
+            <field name="data_classification_id" />
             <field name="location"/>
-            <field name="owner"/>
-            <field name="retention_period"/>
+            <field name="owner" />
+            <field name="retention_period" />
           </group>
 	        <group>
-            <field name="it_inventory_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
-            <field name="third_party_id"   widget="many2many_tags_open"  options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
-            <field name="business_process_id"  widget="many2many_tags_open" options="{'no_quick_create':True, 'no_create_edit':True, 'no_create':True}"  />
+            <field name="it_inventory_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="third_party_id"   widget="many2many_tags"  options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="business_process_id"  widget="many2many_tags" options="{'no_quick_create':True, 'no_create_edit':True, 'no_create':True}"  />
             <field name="security_requirement"/>
             <field name="attachment" widget="many2many_binary" />
           </group>
@@ -630,7 +630,7 @@
       <field name="model">risk.factor</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="risk_id" />
+          <field name="risk_id" widget="badge" />
           <field name="name" />
           <field name="risk_classification_id" widget="many2many_tags" />
           <field name="data_inventory_id" widget="many2many_tags" />
@@ -676,7 +676,7 @@
       <field name="model">control.design</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="control_id" />
+          <field name="control_id" widget="badge" />
           <field name="risk_factor_id" widget="many2many_tags" />
           <field name="name" />
           <field name="description"  />
@@ -1014,13 +1014,18 @@
    </record>
 
 
-
+    <record id="custom_dashboard_action" model="ir.actions.client">
+      <field name="name">Dashboard</field>
+      <field name="tag">custom_dashboard_tags</field>
+    </record>
 
 
     <menuitem name="GRCbit" id="grcbit.menu_root"/>
 
+    <menuitem name="Dashboard" id="custom_dashboard" action="custom_dashboard_action" parent="grcbit.menu_root" sequence="1"/>
+
     <!-- ASSET MANAGEMET MENU -->
-    <menuitem name="Asset Management" id="grcbit.menu_asset_management" parent="grcbit.menu_root" />
+    <menuitem name="Asset Management" id="grcbit.menu_asset_management" parent="grcbit.menu_root"  sequence="2" />
     <menuitem name="Data Classification" id="grcbit.menu_data_classification" parent="grcbit.menu_asset_management" action="grcbit.data_classification_action" />
     <menuitem name="Business Process" id="grcbit.menu_business_process" parent="grcbit.menu_asset_management" action="grcbit.business_process_action"  sequence="3"/>
     <menuitem name="Security Policy" id="grcbit.menu_security_policy" parent="grcbit.menu_asset_management" action="grcbit.security_policy_action"  sequence="4"/>
