@@ -1,4 +1,4 @@
-odoo.define('grcbit.many2many', function (require) {
+odoo.define('many2many_tags_click_cr.many2many', function (require) {
     "use strict";
 
     var relational_fields = require('web.relational_fields');
@@ -9,15 +9,12 @@ odoo.define('grcbit.many2many', function (require) {
         _renderTags: function () {
             this._super(...arguments);
             if(this.mode == 'readonly'){
-                this.$el.on('click', 'div.o_tag_badge_text', this.onOpenRecordTag.bind(this));
-                //this.$el.on('click', 'div.badge-pill', this.onOpenRecordTag.bind(this));
-		//o_tag_color_0 badge rounded-pill o_tag d-inline-flex align-items-center
+                this.$el.on('click', 'div.badge-pill', this.onOpenRecordTag.bind(this));
             }
         },
         onOpenRecordTag:function(ev){
-    	    //alert('k');
-            var data = $(ev.target).parent();
-            var data_element = data[0].parentElement;
+            var data = $(ev.target).parent()
+            var data_element = data[0].parentElement
             if(data_element && data_element.getAttribute('data-id') != undefined && data_element.getAttribute('data-id')){
                 this.do_action({
                     res_id: parseInt(data_element.getAttribute('data-id')),
