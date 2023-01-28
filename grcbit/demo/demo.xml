@@ -1,30 +1,169 @@
 <odoo>
-    <data>
-<!--
-          <record id="object0" model="grcbit.grcbit">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
-          </record>
+  <data>
 
-          <record id="object1" model="grcbit.grcbit">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
-          </record>
+    <record id="data_classification_01" model="data.classification">
+      <field name="name">Confidencial</field>
+      <field name="description">Información que puede ser publicada en medios externos y/o puede ser compartida a clientes, proveedores de servicio de la compañía y a las entidades regulatorias. Ejemplo: Código de Conducta, política de pago a proveedores.  Únicamente los gerentes y directores de área pueden determinar cuáles de los datos que manejan son de caracter público. Si esta información se expone no causa un impacto a la privacidad y protección de datos.</field>
+    </record>
+    <record id="data_classification_02" model="data.classification">
+      <field name="name">Privada</field>
+      <field name="description">Información solo de uso interno de la compañía. Ejemplo, Guías Operativas, Políticas, Manuales. Estos datos solo pueden ser usados en los procesos de trabajo y no deben ser compartidos fuera de este ámbito. Si esta información se expone a personas no autorizadas, causa un impacto medio pero no expone datos personales, privados o sensibles.</field>
+    </record>
+    <record id="data_classification_03" model="data.classification">
+      <field name="name">Publica</field>
+      <field name="description">Información que puede ser publicada en medios externos y/o puede ser compartida a clientes, proveedores de servicio de la compañía y a las entidades regulatorias. Ejemplo: Código de Conducta, política de pago a proveedores.  Únicamente los gerentes y directores de área pueden determinar cuáles de los datos que manejan son de caracter público. Si esta información se expone no causa un impacto a la privacidad y protección de datos.</field>
+    </record>
 
-          <record id="object2" model="grcbit.grcbit">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
-          </record>
+    <record id="third_party_01" model="third.party">
+      <field name="name">AWS</field>
+      <field name="description">Amazon Web Services (AWS) es la plataforma en la nube más adoptada y completa en el mundo, que ofrece más de 200 servicios integrales de centros de datos a nivel global.</field>
+    </record>
+    <record id="third_party_02" model="third.party">
+      <field name="name">Azure</field>
+      <field name="description">Plataforma informática en la nube operada por Microsoft que brinda acceso, administración y desarrollo de aplicaciones y servicios a través de centros de datos distribuidos en todo el mundo.</field>
+    </record>
 
-          <record id="object3" model="grcbit.grcbit">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
-          </record>
+    <record id="security_policy_01" model="security.policy">
+      <field name="name">Política de seguridad de la información</field>
+      <field name="description">Lineamientos a alto nivel de seguridad de la información. Intenciones y dirección de una organización, expresadas formalmente por su alta dirección.</field>
+    </record>
 
-          <record id="object4" model="grcbit.grcbit">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
-          </record>
--->
-    </data>
+    <record id="business_process_01" model="business.process">
+      <field name="name">Proceso de operación</field>
+      <field name="description">Proceso operativo donde se usan y procesan datos sensibles.</field>
+    </record>
+
+    <record id="it_inventory_01" model="it.inventory">
+      <field name="name">Sistema WEB</field>
+      <field name="description">Sistema Web para venta y atención a clientes.</field>
+      <field name="ip">1.1.1.1</field>
+      <field name="url">www.sistemaweb.com</field>
+      <field name="responsible" ref="base.user_demo" />
+      <field name="environment">prod</field>
+      <field name="is_cloud" eval="True" />
+      <field name="cloud_provider" eval="[Command.link(ref('third_party_01')),]" />
+      <field name="is_internet_exposed" eval="True" />
+      <field name="users_qty">123</field>
+      <field name="os_version">Linux 3.1</field>
+      <field name="db_version">Oracle 3.1</field>
+    </record>
+    <record id="it_inventory_02" model="it.inventory">
+      <field name="name">Sistema Ventas</field>
+      <field name="description">Sistema de ventas.</field>
+      <field name="ip">1.1.1.1</field>
+      <field name="url">www.sistemadeventas.com</field>
+      <field name="responsible" ref="base.user_demo" />
+      <field name="environment">dev</field>
+      <field name="is_cloud" eval="False" />
+      <field name="cloud_provider" eval="[Command.link(ref('third_party_02')),]" />
+      <field name="is_internet_exposed" eval="False" />
+      <field name="users_qty">12</field>
+      <field name="os_version">Windows</field>
+      <field name="db_version">SQL server</field>
+    </record>
+    <record id="it_inventory_03" model="it.inventory">
+      <field name="name">ERP</field>
+      <field name="description">Sistema ERP.</field>
+      <field name="ip">1.1.1.1</field>
+      <field name="url">www.erp.com</field>
+      <field name="responsible" ref="base.user_demo" />
+      <field name="environment">stg</field>
+      <field name="is_cloud" eval="True" />
+      <field name="cloud_provider" eval="[Command.link(ref('third_party_01')),]" />
+      <field name="is_internet_exposed" eval="True" />
+      <field name="users_qty">50</field>
+      <field name="os_version">Linux 3.1</field>
+      <field name="db_version">Oracle 3.1</field>
+    </record>
+    <record id="it_inventory_04" model="it.inventory">
+      <field name="name">POS</field>
+      <field name="description">Sistema punto de venta.</field>
+      <field name="ip">1.1.1.1</field>
+      <field name="url">www.pos.com</field>
+      <field name="responsible" ref="base.user_demo" />
+      <field name="environment">prod</field>
+      <field name="is_cloud" eval="True" />
+      <field name="cloud_provider" eval="[Command.link(ref('third_party_01')),]" />
+      <field name="is_internet_exposed" eval="True" />
+      <field name="users_qty">549</field>
+      <field name="os_version">Linux 3.1</field>
+      <field name="db_version">Oracle 3.1</field>
+    </record>
+    <record id="it_inventory_05" model="it.inventory">
+      <field name="name">CRM</field>
+      <field name="description">Sistema CRM.</field>
+      <field name="ip">1.1.1.1</field>
+      <field name="url">www.crm.com</field>
+      <field name="responsible" ref="base.user_demo" />
+      <field name="environment">dev</field>
+      <field name="is_cloud" eval="False" />
+      <field name="cloud_provider" eval="[Command.link(ref('third_party_02')),]" />
+      <field name="is_internet_exposed" eval="False" />
+      <field name="users_qty">150</field>
+      <field name="os_version">Windows</field>
+      <field name="db_version">Oracle 3.1</field>
+    </record>
+
+    <record id="data_inventory_01" model="data.inventory">
+      <field name="name">Datos personales</field>
+      <field name="description">Datos de clientes que tienen telefono, dirección, nombre.</field>
+      <field name="data_classification_id" ref="data_classification_01" />
+      <field name="location">Data center</field>
+      <field name="owner" ref="base.user_demo" />  
+      <field name="it_inventory_id" eval="[Command.link(ref('it_inventory_01')),]" />
+      <field name="third_party_id" eval="[Command.link(ref('third_party_01')),]" />
+      <field name="business_process_id" eval="[Command.link(ref('business_process_01')),]" />
+      <field name="security_requirement">Protección de datos</field>
+      <field name="retention_period">1m</field>
+    </record>
+    <record id="data_inventory_02" model="data.inventory">
+      <field name="name">Datos financieros</field>
+      <field name="description">Estados financieros, estado de cuenta.</field>
+      <field name="data_classification_id" ref="data_classification_02" />
+      <field name="location">Data center</field>
+      <field name="owner" ref="base.user_demo" />  
+      <field name="it_inventory_id" eval="[Command.link(ref('it_inventory_02')),]" />
+      <field name="third_party_id" eval="[Command.link(ref('third_party_02')),]" />
+      <field name="business_process_id" eval="[Command.link(ref('business_process_01')),]" />
+      <field name="security_requirement">Protección de datos</field>
+      <field name="retention_period">1y</field>
+    </record>
+    <record id="data_inventory_03" model="data.inventory">
+      <field name="name">Contratos</field>
+      <field name="description">Contratos comerciales.</field>
+      <field name="data_classification_id" ref="data_classification_03" />
+      <field name="location">Data center</field>
+      <field name="owner" ref="base.user_demo" />  
+      <field name="it_inventory_id" eval="[Command.link(ref('it_inventory_03')),]" />
+      <field name="third_party_id"  eval="[Command.link(ref('third_party_01')),]" />
+      <field name="business_process_id" eval="[Command.link(ref('business_process_01')),]" />
+      <field name="security_requirement">Protección de datos</field>
+      <field name="retention_period">5m</field>
+    </record>
+    <record id="data_inventory_04" model="data.inventory">
+      <field name="name">Información pública</field>
+      <field name="description">Datos públicos.</field>
+      <field name="data_classification_id" ref="data_classification_01" />
+      <field name="location">Data center</field>
+      <field name="owner" ref="base.user_demo" />  
+      <field name="it_inventory_id" eval="[Command.link(ref('it_inventory_04')),]" />
+      <field name="third_party_id" eval="[Command.link(ref('third_party_02')),]" />
+      <field name="business_process_id" eval="[Command.link(ref('business_process_01')),]" />
+      <field name="security_requirement">Protección de datos</field>
+      <field name="retention_period">2y</field>
+    </record>
+    <record id="data_inventory_05" model="data.inventory">
+      <field name="name">Información técnica</field>
+      <field name="description">Información de plataformas y sistemas.</field>
+      <field name="data_classification_id" ref="data_classification_02" />
+      <field name="location">Data center</field>
+      <field name="owner" ref="base.user_demo" />  
+      <field name="it_inventory_id" eval="[Command.link(ref('it_inventory_05')),]" />
+      <field name="third_party_id" eval="[Command.link(ref('third_party_01')),]" />
+      <field name="business_process_id" eval="[Command.link(ref('business_process_01')),]" />
+      <field name="security_requirement">Protección de datos</field>
+      <field name="retention_period">11m</field>
+    </record>
+  
+  </data>
 </odoo>

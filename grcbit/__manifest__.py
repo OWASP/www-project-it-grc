@@ -3,7 +3,7 @@
     'name': "grcbit",
     'summary': "Tool for ISO27001:2022 implementation",
     'description': "Tool for ISO27001:2022 implementation",
-    'author':"rodolfo.lopez@grcbit.com",
+    'author':"rl@grcbit.com",
     'website': "www.grcbit.com",
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -16,8 +16,8 @@
 
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
         'security/groups.xml',
+        'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
         'views/security.xml',
