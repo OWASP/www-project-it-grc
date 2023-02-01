@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "grcbit",
+    'name': "GRCbit",
     'summary': "App for ISO27001:2022 implementation",
     'description': "App for ISO27001:2022 implementation",
     'author':"rl@grcbit.com",
@@ -12,7 +12,7 @@
     'version': '1.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'hr', 'web'],
+    'depends': ['base', 'hr', 'web', 'board'],
 
     # always loaded
     'data': [
@@ -47,8 +47,8 @@
         'web.assets_backend': [
             'grcbit/static/src/js/many2many_tags.js',
             'grcbit/static/src/js/many2many_open.js',
-            'grcbit/static/src/js/dashboard.js',
-            'grcbit/static/src/xml/dashboard.xml',
+            #'grcbit/static/src/js/dashboard.js',
+            #'grcbit/static/src/xml/dashboard.xml',
         ],
         #'web.assets_qweb': [
         #    'grcbit/static/src/xml/dashboard.xml',

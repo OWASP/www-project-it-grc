@@ -13,16 +13,14 @@ class DataClassification(models.Model):
     _description = 'Data Classification'
     name = fields.Char(string='Data Classification', required=True)
     description = fields.Text(string='Description')
-    data_inventory_count = fields.Integer(string="Data Asset Count" )
+    data_inventory_count = fields.Integer(string="Data Asset Count", store=True, compute="_data_inventory_count")
     _sql_constraints = [('name_uniq', 'unique(name)', "The data classification name already exists.")]
 
-    @api.model
-    def web_read_group(self, domain, fields, groupby, limit=None, offset=0, orderby=False,lazy=True, expand=False, expand_limit=None, expand_orderby=False):
-        res = super().web_read_group(domain, fields, groupby, limit, offset, orderby, lazy, expand, expand_limit, expand_orderby)
-        for i in self.env['data.classification'].search([]):
-            data_assets = self.env['data.inventory'].search([('data_classification_id', 'in', [i.id] )])
-            self.env['data.classification'].sudo().search([('id','=',i.id)]).sudo().write({'data_inventory_count':len(data_assets)})
-        return res
+    def _data_inventory_count(self):
+        for i in self:
+            data_assets = self.env['data.inventory'].search([('data_classification_id', '=', i.id)])
+            i.data_inventory_count = len(data_assets)
+        #return len(data_assets)
 
 class ItInventory(models.Model):
     _name = 'it.inventory'
@@ -46,17 +44,13 @@ class ItInventory(models.Model):
     #it_file_name = fields.Char(string="File Name")
     #ii_id = fields.Many2one('data.inventory')
     #color = fields.Integer()
-    data_inventory_count = fields.Integer(string="Data Asset Count")
+    data_inventory_count = fields.Integer(string="Data Asset Count", store=True, compute="_data_inventory_count")
     _sql_constraints = [('name_uniq', 'unique(name)', "The IT system name already exists.")]
 
-    @api.model
-    def web_read_group(self, domain, fields, groupby, limit=None, offset=0, orderby=False,lazy=True, expand=False, expand_limit=None, expand_orderby=False):
-        res = super().web_read_group(domain, fields, groupby, limit, offset, orderby, lazy, expand, expand_limit, expand_orderby)
-        for i in self.env['it.inventory'].search([]):
-            data_assets = self.env['data.inventory'].search([('it_inventory_id', 'in', [i.id] )])
-            self.env['it.inventory'].sudo().search([('id','=',i.id)]).sudo().write({'data_inventory_count':len(data_assets)})
-        return res
-
+    def _data_inventory_count(self):
+        for i in self:
+            data_assets = self.env['data.inventory'].search([('i.id', 'in', 'it_inventory_id')])
+            i.data_inventory_count = len(data_assets)
 
 class DataInventory(models.Model):
     _name = 'data.inventory'
@@ -105,19 +99,31 @@ class ThirdParty(models.Model):
     name = fields.Char(string='Third Party Vendor', required=True)
     description = fields.Text(string='Description', required=True)
     attachment = fields.Many2many('ir.attachment', string="Attachment")
-    data_inventory_count = fields.Integer(string="Data Asset Count")
+    data_count = fields.Integer(string="Data Asset Count")
     
     _sql_constraints = [('name_uniq', 'unique(name)', "The third party name already exists.")]
 
     @api.model
     def web_read_group(self, domain, fields, groupby, limit=None, offset=0, orderby=False,lazy=True, expand=False, expand_limit=None, expand_orderby=False):
+    #def _get_view(self, view_id=None, view_type='graph', **options):
+        #res = super()._get_view(view_id, view_type, **options)
         res = super().web_read_group(domain, fields, groupby, limit, offset, orderby, lazy, expand, expand_limit, expand_orderby)
+        #if view_type == 'graph':
         for i in self.env['third.party'].search([]):
             _logger.info('grcbitdebug:' + str(i))
             data_assets = self.env['data.inventory'].search([('third_party_id', 'in', [i.id] )])
-            self.env['third.party'].sudo().search([('id','=',i.id)]).sudo().write({'data_inventory_count':len(data_assets)})
+            self.env['third.party'].sudo().search([('id','=',i.id)]).sudo().write({'data_count':len(data_assets)})
         return res
 
+    #@api.multi
+    #def write(self, values):
+    #    return super(ThirdParty, self).write(values)
+
+    #@api.onchange('third_party_id')
+    #def on_change_third_party(self):
+    #    for i in self.env['third.party'].search([]):
+    #        data_assets = self.env['data.inventory'].search([('third_party_id', 'in', [i.id] )])
+    #        self.env['third.party'].search([('id','=',i.id)]).write({'data_count':len(data_assets)})
 
 class BusinessProcess(models.Model):
     _name = 'business.process'
@@ -132,17 +138,7 @@ class BusinessProcess(models.Model):
     description = fields.Text(string='Description', required=True)
     attachment      = fields.Many2many('ir.attachment', string="Attachment")
     #attachment_name = fields.Char(string='Attachment')
-    data_inventory_count = fields.Integer(string="Data Asset Count")
-
     _sql_constraints = [('name_uniq', 'unique(name)', "The business process name already exists.")]
-
-    @api.model
-    def web_read_group(self, domain, fields, groupby, limit=None, offset=0, orderby=False,lazy=True, expand=False, expand_limit=None, expand_orderby=False):
-        res = super().web_read_group(domain, fields, groupby, limit, offset, orderby, lazy, expand, expand_limit, expand_orderby)
-        for i in self.env['business.process'].search([]):
-            data_assets = self.env['data.inventory'].search([('business_process_id', 'in', [i.id] )])
-            self.env['business.process'].sudo().search([('id','=',i.id)]).sudo().write({'data_inventory_count':len(data_assets)})
-        return res
 
     @api.model
     def create(self, vals):
@@ -230,21 +226,12 @@ class ControlCategory(models.Model):
     id_control_category = fields.Char(string='ID Control Category', required=True)
     name = fields.Char(string='Control Category', required=True)
     description = fields.Text(string='Description' )
-    statement_applicability_count = fields.Integer(string='Statement Applicability Acount')
     _sql_constraints = [('name_uniq', 'unique(name)', "The control category name already exists."), ('id_control_category_uniq', 'unique(id_control_category)', "The control category ID already exists.")]
 
     @api.depends('id_control_category','name')
     def _compute_display_name(self):
         for i in self:
             i.display_name = i.id_control_category + ' ' + i.name
-
-    @api.model
-    def web_read_group(self, domain, fields, groupby, limit=None, offset=0, orderby=False,lazy=True, expand=False, expand_limit=None, expand_orderby=False):
-        res = super().web_read_group(domain, fields, groupby, limit, offset, orderby, lazy, expand, expand_limit, expand_orderby)
-        for i in self.env['control.category'].search([]):
-            data_assets = self.env['statement.applicability'].search([('name.control_category_id', '=', i.id )])
-            self.env['control.category'].sudo().search([('id','=',i.id)]).sudo().write({'statement_applicability_count':len(data_assets)})
-        return res
 
 class IsoControl(models.Model):
     _name = 'iso.control'
