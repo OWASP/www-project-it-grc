@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "GRCbit",
+    'name': "ISO27001:2022",
     'summary': "App for ISO27001:2022 implementation",
     'description': "App for ISO27001:2022 implementation",
     'author':"rl@grcbit.com",

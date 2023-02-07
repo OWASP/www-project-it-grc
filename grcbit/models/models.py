@@ -14,6 +14,7 @@ class DataClassification(models.Model):
     name = fields.Char(string='Data Classification', required=True)
     description = fields.Text(string='Description')
     data_inventory_count = fields.Integer(string="Data Asset Count" )
+    active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The data classification name already exists.")]
 
     @api.model
@@ -47,6 +48,7 @@ class ItInventory(models.Model):
     #ii_id = fields.Many2one('data.inventory')
     #color = fields.Integer()
     data_inventory_count = fields.Integer(string="Data Asset Count")
+    active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The IT system name already exists.")]
 
     @api.model
@@ -90,6 +92,7 @@ class DataInventory(models.Model):
         ('5y','5 years'),
         ])
     attachment = fields.Many2many('ir.attachment', string="Attachment")
+    active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The data inventory name already exists.")]
 
     #@api.onchange('third_party_id')
@@ -106,7 +109,7 @@ class ThirdParty(models.Model):
     description = fields.Text(string='Description', required=True)
     attachment = fields.Many2many('ir.attachment', string="Attachment")
     data_inventory_count = fields.Integer(string="Data Asset Count")
-    
+    active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The third party name already exists.")]
 
     @api.model
@@ -133,7 +136,7 @@ class BusinessProcess(models.Model):
     attachment      = fields.Many2many('ir.attachment', string="Attachment")
     #attachment_name = fields.Char(string='Attachment')
     data_inventory_count = fields.Integer(string="Data Asset Count")
-
+    active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The business process name already exists.")]
 
     @api.model
@@ -166,6 +169,7 @@ class SecurityPolicy(models.Model):
     description = fields.Text(string='Description', required=True)
     attachment      = fields.Many2many('ir.attachment', string="Attachment")
     #attachment_name = fields.Char(string='Attachment')
+    active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The security policy name already exists.")]
 
     @api.model
@@ -187,6 +191,7 @@ class ControlType(models.Model):
     _description = 'Data Inventory'
     name = fields.Char(string='Control Type', required=True)
     description = fields.Text(string='Description', required=True)
+    active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The control type name already exists.")]
 
 class SecurityProperty(models.Model):
@@ -194,6 +199,7 @@ class SecurityProperty(models.Model):
     _description = 'Data Inventory'
     name = fields.Char(string='Security Property', required=True)
     description = fields.Text(string='Description', required=True)
+    active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The security property name already exists.")]
 
 class CybersecurityConcept(models.Model):
@@ -201,6 +207,7 @@ class CybersecurityConcept(models.Model):
     _description = 'Data Inventory'
     name = fields.Char(string='Cybersecurity Concept', required=True)
     description = fields.Text(string='Description', required=True)
+    active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The cybersecurty concept name already exists.")]
 
 class OperationalCapability(models.Model):
@@ -208,6 +215,7 @@ class OperationalCapability(models.Model):
     _description = 'Data Inventory'
     name = fields.Char(string='Operational Capability', required=True)
     description = fields.Text(string='Description', required=True)
+    active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The operational capability name already exists.")]
 
 class SecurityDomain(models.Model):
@@ -215,6 +223,7 @@ class SecurityDomain(models.Model):
     _description = 'Data Inventory'
     name = fields.Char(string='Security Domain', required=True)
     description = fields.Text(string='Description', required=True)
+    active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The security domain name already exists.")]
 
 #--------------------------
@@ -231,6 +240,7 @@ class ControlCategory(models.Model):
     name = fields.Char(string='Control Category', required=True)
     description = fields.Text(string='Description' )
     statement_applicability_count = fields.Integer(string='Statement Applicability Acount')
+    active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The control category name already exists."), ('id_control_category_uniq', 'unique(id_control_category)', "The control category ID already exists.")]
 
     @api.depends('id_control_category','name')
@@ -266,7 +276,7 @@ class IsoControl(models.Model):
     other_information = fields.Text(string='Other Information', required=True)
     attachment = fields.Many2many('ir.attachment', string="Attachment")
     consultant = fields.Many2one('res.users', string='Consultant')
-
+    active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The ISO control name already exists."), ('id_iso_control_uniq', 'unique(id_iso_control)', "The ISO control ID already exists.")]
 
     @api.depends('id_iso_control','name')
@@ -293,6 +303,7 @@ class StatementApplicability(models.Model):
     #evidence_file = fields.Many2many('ir.attachment', string="File")
     #evidence_file_name = fields.Char(string='Evidence Name')
     attachment = fields.Many2many('ir.attachment', string="Attachment")
+    active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The control name already exists.")]
 
 #------------------------
@@ -305,6 +316,7 @@ class ImpactLevel(models.Model):
     name = fields.Char(string='Impact Level', required=True)
     description = fields.Text(string='Description', required=True)
     value = fields.Integer(string='Value', required=True)
+    active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The impact level name already exists."),('level_uniq', 'unique(value)', "The impact level value already exists.")]
 
 class ProbabilityLevel(models.Model):
@@ -313,6 +325,7 @@ class ProbabilityLevel(models.Model):
     name = fields.Char(string='Probability Level', required=True)
     description = fields.Text(string='Description', required=True)
     value = fields.Integer(string='Value', required=True)
+    active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The probability level name already exists."),('level_uniq', 'unique(value)', "The probability level value already exists.")]
 
 class RiskClassification(models.Model):
@@ -320,6 +333,7 @@ class RiskClassification(models.Model):
     _description = 'Risk Classification'
     name = fields.Char(string='Risk Classification', required=True)
     description = fields.Text(string='Description', required=True)
+    active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The risk classification name already exists.")]
 
 class RiskFactor(models.Model):
@@ -348,6 +362,7 @@ class RiskFactor(models.Model):
     #risk_factor_file_name = fields.Char(string='File Name')
     attachment = fields.Many2many('ir.attachment', string="Attachment")
     #control_design_id = fields.Many2many('control.design',string='Control Design')
+    active = fields.Boolean(default=True)
 
     @api.model
     def create(self, vals):
@@ -387,6 +402,7 @@ class ControlDesing(models.Model):
     comment = fields.Text(string='Comment')
     evidence_pending = fields.Text(string='Evidence Pending')
     attachment = fields.Many2many('ir.attachment', string="Attachment")
+    active = fields.Boolean(default=True)
 
     @api.model
     def create(self, vals):

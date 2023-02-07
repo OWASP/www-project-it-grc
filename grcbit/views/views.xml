@@ -786,6 +786,7 @@
         <field name="model">iso.control</field>
         <field name="arch" type="xml">
         <tree>
+          <field name="active" invisible="1"/>
           <field name="id_iso_control"/>
           <field name="control_category_id" />
           <field name="name"/>
@@ -809,6 +810,7 @@
       <field name="arch" type="xml">
 	      <form>
 	        <group>
+            <field name="active" invisible="1"/>
             <field name="id_iso_control"/>
             <field name="control_category_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
             <field name="name"/>
@@ -850,6 +852,7 @@
       <field name="model">statement.applicability</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="active" invisible="1"/>
           <field name="name"/>
           <field name="is_applicable" widget="boolean_toggle"/>
           <field name="is_implemented" widget="boolean_toggle"/>
@@ -865,6 +868,7 @@
       <field name="arch" type="xml">
         <form>
 	        <group>
+            <field name="active" invisible="1"/>
             <field name="name" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
             <field name="is_applicable" widget="boolean_toggle"/>
             <field name="is_implemented" widget="boolean_toggle"/>
@@ -900,6 +904,7 @@
       <field name="model">risk.classification</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="active" invisible="1"/>
           <field name="name"/>
           <field name="description"/>
         </tree>
@@ -911,6 +916,7 @@
       <field name="arch" type="xml">
         <form>
 	        <group>
+            <field name="active" invisible="1"/>
             <field name="name"/>
             <field name="description"/>
           </group>
@@ -952,6 +958,7 @@
       <field name="model">probability.level</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="active" invisible="1"/>
           <field name="name"/>
           <field name="description"/>
           <field name="value"/>
@@ -964,6 +971,7 @@
       <field name="arch" type="xml">
         <form>
 	        <group>
+            <field name="active" invisible="1"/>
             <field name="name"/>
             <field name="description"/>
             <field name="value"/>
@@ -1006,6 +1014,7 @@
       <field name="model">impact.level</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="active" invisible="1"/>
           <field name="name"/>
           <field name="description"/>
           <field name="value"/>
@@ -1018,6 +1027,7 @@
       <field name="arch" type="xml">
         <form>
 	        <group>
+            <field name="active" invisible="1"/>
             <field name="name"/>
             <field name="description"/>
             <field name="value"/>
@@ -1060,6 +1070,7 @@
       <field name="model">risk.factor</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="active" invisible="1"/>
           <field name="risk_id" widget="badge" />
           <field name="name" />
           <field name="risk_classification_id" widget="many2many_tags" />
@@ -1107,6 +1118,7 @@
       <field name="arch" type="xml">
         <form>
 	        <group>
+            <field name="active" invisible="1"/>
             <field name="name"/>
             <field name="risk_classification_id" widget="many2many_tags"  options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
             <field name="data_inventory_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
@@ -1135,6 +1147,7 @@
       <field name="model">control.design</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="active" invisible="1"/>
           <field name="control_id" widget="badge" />
           <field name="risk_factor_id" widget="many2many_tags" />
           <field name="name" />
@@ -1179,6 +1192,7 @@
       <field name="arch" type="xml">
         <form>
 		      <group>
+            <field name="active" invisible="1"/>
             <field name="risk_factor_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
             <field name="name" />
             <field name="description" />
