@@ -1151,8 +1151,10 @@
           <field name="control_id" widget="badge" />
           <field name="risk_factor_id" widget="many2many_tags" />
           <field name="name" />
+          <field name="control" />
           <field name="description"  />
-          <field name="evidence_guide" />
+	  <field name="state"  />
+          <field name="evidence_guide" optional="hide" />
           <field name="responsible" optional="hide"/>
           <field name="control_type_id" widget="many2many_tags" optional="hide" />
           <field name="security_property_id" widget="many2many_tags" optional="hide" />
@@ -1161,8 +1163,9 @@
           <field name="security_domain_id" widget="many2many_tags" optional="hide" />
           <field name="comment" optional="hide"/>
           <field name="evidence_pending" optional="hide"/>
-
+          <!--
           <field name="attachment" widget="many2many_binary" optional="hide" />
+	  -->
         </tree>
       </field>
     </record>
@@ -1173,6 +1176,7 @@
         <search>
           <field name="risk_factor_id" widget="many2many_tags" />
           <field name="name" />
+          <field name="control" />
           <field name="description"  />
           <field name="evidence_guide" />
           <field name="responsible" optional="hide"/>
@@ -1191,10 +1195,20 @@
       <field name="model">control.design</field>
       <field name="arch" type="xml">
         <form>
+	    <header>
+	        <field name="state" widget="statusbar" options="{'clickable':'1'}" />
+                <button name="action_draft" string="SET TO DRAFT" type="object"  class="btn-primary" groups="grcbit.grcbit_admin, grcbit.iso_consultant" />
+                <button name="action_design" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['draft'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" />
+                <button name="action_in_progress" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['designed'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" />
+                <button name="action_implemented" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['in_progress'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" />
+                <button name="action_approved" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" />
+           <button name="action_audited" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['approved'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant"/>
+		</header>
 		      <group>
             <field name="active" invisible="1"/>
             <field name="risk_factor_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
             <field name="name" />
+            <field name="control" />
             <field name="description" />
             <field name="evidence_guide" />
             <field name="responsible" optional="hide"/>
@@ -1207,8 +1221,41 @@
             <field name="security_domain_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
             <field name="comment" optional="hide"/>
             <field name="evidence_pending" optional="hide"/>
+	    <!--
 	          <field name="attachment" widget="many2many_binary" />
+	    -->
           </group>
+
+                          <notebook>
+                    <page string="Control Evidences" name="control_evidence_page">
+                        <field name="control_evidence_ids" widget="section_and_note_one2many" mode="tree" attrs="{'invisible': [('state', 'not in', ['in_progress', 'implemented', 'approved', 'audited'])], 'readonly': [('state', 'not in', ['in_progress'])] }" >
+                                              <form>
+<field name="active" invisible="1" />
+<field name="control_design_id" invisible="1" />
+
+                              <group>
+                            <field name="name" />
+                            <field name="comment" />
+        <field name="attachment" widget="many2many_binary" />
+                            </group>
+
+                            </form>
+
+
+                                              <tree>
+<field name="active" invisible="1" />
+<field name="control_design_id" invisible="1" />
+                            <field name="name" />
+                            <field name="comment" />
+        <field name="attachment" widget="many2many_binary" />
+                            </tree>
+
+
+                        </field>      
+                    </page>
+                      </notebook>
+
+
         </form>
       </field>
     </record>
@@ -1295,7 +1342,7 @@
     </record>
 
 
-    <menuitem name="GRCbit" id="grcbit.menu_root"/>
+    <menuitem name="GRCbit" id="grcbit.menu_root" sequence="1" />
 
     <menuitem name="Dashboard" id="grcbit_dashboard" action="grcbit.grcbit_dashboard_action" parent="grcbit.menu_root" sequence="1"/>
 
@@ -1329,7 +1376,7 @@
 
     <!-- CONTROL DESIGN -->
     <menuitem name="Control" id="grcbit.menu_control" parent="grcbit.menu_root" />
-    <menuitem name="Design" id="grcbit.menu_control_design" parent="grcbit.menu_control" action="grcbit.control_design_action" sequence="1" />
+    <menuitem name="Control" id="grcbit.menu_control_design" parent="grcbit.menu_control" action="grcbit.control_design_action" sequence="1" />
 
 
 

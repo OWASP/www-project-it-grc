@@ -18,6 +18,7 @@ access_control_design,grcbit.control.design,model_control_design,grcbit.grcbit_a
 access_control_category,grcbit.control.category,model_control_category,grcbit.grcbit_admin,1,1,1,1
 access_iso_control,grcbit.iso.control,model_iso_control,grcbit.grcbit_admin,1,1,1,1
 access_statement_applicability,grcbit.statement.applicability,model_statement_applicability,grcbit.grcbit_admin,1,1,1,1
+access_control_evidence,grcbit.control.evidence,model_control_evidence,grcbit.grcbit_admin,1,1,1,1
 
 access_data_classification_guest,grcbit.data.classification.guest,model_data_classification,grcbit.guest,1,0,0,0
 access_it_inventory_guest,grcbit.it.inventory.guest,model_it_inventory,grcbit.guest,1,0,0,0
@@ -38,3 +39,4 @@ access_control_design_guest,grcbit.control.design.guest,model_control_design,grc
 access_control_category_guest,grcbit.control.category.guest,model_control_category,grcbit.guest,1,0,0,0
 access_iso_control_guest,grcbit.iso.control.guest,model_iso_control,grcbit.guest,1,0,0,0
 access_statement_applicability_guest,grcbit.statement.applicability.guest,model_statement_applicability,grcbit.guest,1,0,0,0
+access_control_evidence_guest,grcbit.control.evidence.guest,model_control_evidence,grcbit.guest,1,1,1,1

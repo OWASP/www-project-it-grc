@@ -384,12 +384,25 @@ class ControlDesing(models.Model):
     #_rec_name = 'control_id'
     _rec_name = 'display_name'
 
+    state = fields.Selection([
+        ('draft','Draft'),
+        ('designed','Design in Progress'),
+        ('in_progress','Implementation in Progress'),
+        ('implemented','Implemented'),
+        ('approved','Approved'),
+        ('audited','Audited'),],
+        string='Status', default='draft', readonly=True, copy=False, tracking=True)
+
+    control_id = fields.Char(string='Control ID', required=True, index=True, copy=False, default='New')
     risk_factor_id = fields.Many2many('risk.factor',string='Risk Factor')
     display_name = fields.Char(string='Control Category', compute='_compute_display_name')
-    name = fields.Text(string='Control', required=True)
-    control_id = fields.Char(string='Control ID', required=True, index=True, copy=False, default='New')
-    description = fields.Text(string='Description', required=True)
+    name = fields.Text(string='Nombre', required=True)
+    #control_id = fields.Char(string='Control ID', required=True, index=True, copy=False, default='New')
+    control = fields.Text(string='Control', required=True)
+    description = fields.Text(string='Description/Objective', required=True)
     evidence_guide = fields.Text(string='Evidence Guide', required=True)
+    #control_id = fields.Char(string='Control ID', required=True, index=True, copy=False, default='New')
+    #evidence_guide = fields.Text(string='Evidence Guide', required=True)
     responsible = fields.Many2one('res.users', string='Responsible', required=True)
     #control_file = fields.Binary(string='Upload Evidence')
     #control_file = fields.Many2many('ir.attachment', string="File")
@@ -401,8 +414,9 @@ class ControlDesing(models.Model):
     security_domain_id = fields.Many2many('security.domain', string='Security Domain', required=True)
     comment = fields.Text(string='Comment')
     evidence_pending = fields.Text(string='Evidence Pending')
-    attachment = fields.Many2many('ir.attachment', string="Attachment")
+    #attachment = fields.Many2many('ir.attachment', string="Attachment")
     active = fields.Boolean(default=True)
+    control_evidence_ids = fields.One2many('control.evidence', 'control_design_id')
 
     @api.model
     def create(self, vals):
@@ -413,6 +427,33 @@ class ControlDesing(models.Model):
     def _compute_display_name(self):
         for i in self:
             i.display_name = i.control_id + ' ' + i.name
+
+    def action_draft(self):
+        self.state = 'draft'
+    def action_design(self):
+        self.state = 'designed'
+    def action_in_progress(self):
+        self.state = 'in_progress'
+    def action_implemented(self):
+        self.state = 'implemented'
+    def action_approved(self):
+        self.state = 'approved'
+    def action_audited(self):
+        self.state = 'audited'
+
+class ControlEvidence(models.Model):
+    _name = 'control.evidence'
+    _description = 'Control Evidence'
+    #_order = 'control_evidence_id'
+    #_rec_name = 'display_name'
+
+    #display_name = fields.Char(string='Control Category', compute='_compute_display_name')
+    name = fields.Char(string='Name', required=True)
+    attachment = fields.Many2many('ir.attachment', string="Attachment")
+    comment = fields.Text(string='Comment/Description')
+    control_design_id = fields.Many2one('control.design')
+    active = fields.Boolean(default=True)
+
 
 # class grcbit(models.Model):
 #     _name = 'grcbit.grcbit'

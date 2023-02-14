@@ -4,6 +4,14 @@
 		<field name="name">GRCbit Admin</field>
 		<field name="category_id" />
 	</record>
+	<record id="iso_consultant" model="res.groups">
+		<field name="name">ISO Consultant</field>
+		<field name="category_id" />
+	</record>
+	<record id="risk_owner" model="res.groups">
+		<field name="name">Risk Owner</field>
+		<field name="category_id" />
+	</record>
 	<record id="process_owner" model="res.groups">
 		<field name="name">Process Owner</field>
 		<field name="category_id" />
