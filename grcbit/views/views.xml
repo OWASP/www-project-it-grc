@@ -1197,12 +1197,12 @@
         <form>
 	    <header>
 	        <field name="state" widget="statusbar" options="{'clickable':'1'}" />
-                <button name="action_draft" string="SET TO DRAFT" type="object"  class="btn-primary" groups="grcbit.grcbit_admin, grcbit.iso_consultant" />
-                <button name="action_design" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['draft'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" />
-                <button name="action_in_progress" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['designed'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" />
-                <button name="action_implemented" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['in_progress'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" />
-                <button name="action_approved" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" />
-           <button name="action_audited" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['approved'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant"/>
+                <button name="action_draft" string="SET TO DRAFT" type="object"  class="btn-primary" groups="grcbit.grcbit_admin, grcbit.iso_consultant" confirm="¿Esta seguro que quiere pasar a la fase de BORRADOR de CONTROL?" />
+                <button name="action_design" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['draft'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" confirm="¿Esta seguro que quiere pasar a la fase de DISEÑO de CONTROL?" />
+                <button name="action_in_progress" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['designed'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" confirm="¿Esta seguro que quiere pasar a la fase de IMPLEMENTACION de CONTROL?" />
+                <button name="action_implemented" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['in_progress'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" confirm="¿Esta seguro que quiere TERMINAR la IMPLEMENTACION de CONTROL?" />
+                <button name="action_approved" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" confirm="¿Esta seguro que quiere APROBAR la IMPLEMENTACION de CONTROL?" />
+           <button name="action_audited" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['approved'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" confirm="¿Esta seguro que quiere pasar a la fase de AUDITORIA de CONTROL?"/>
 		</header>
 		      <group>
             <field name="active" invisible="1"/>
