@@ -26,9 +26,9 @@
         #'views/assets.xml',
     ],
     # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
+    #'demo': [
+    #    'demo/demo.xml',
+    #],
     #"qweb": [
     #    "static/src/xml/template.xml",
     #     'grcbit/static/src/xml/dashboard.xml',
