@@ -1,27 +1,38 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
-	<record id="grcbit_admin" model="res.groups">
-		<field name="name">GRCbit Admin</field>
-		<field name="category_id" />
-	</record>
-	<record id="iso_consultant" model="res.groups">
-		<field name="name">ISO Consultant</field>
-		<field name="category_id" />
-	</record>
-	<record id="risk_owner" model="res.groups">
-		<field name="name">Risk Owner</field>
-		<field name="category_id" />
-	</record>
-	<record id="process_owner" model="res.groups">
-		<field name="name">Process Owner</field>
-		<field name="category_id" />
-	</record>
-	<record id="data_owner" model="res.groups">
-		<field name="name">Data Owner</field>
-		<field name="category_id" />
-	</record>
-	<record id="guest" model="res.groups">
-		<field name="name">Guest</field>
-		<field name="category_id" />
-	</record>
+	<odoo>
+    	<record model="ir.module.category" id="module_grcbit_iso27001">
+        	<field name="name">GRCbit - ISO27001</field>
+        	<field name="description">ISO 27001</field>
+        	<field name="sequence">10</field>
+    	</record>
+		<record id="group_admin" model="res.groups">
+			<field name="name">Admin</field>
+			<field name="comment">Admin user.</field>
+			<field name="category_id" ref="module_grcbit_iso27001"/>
+		</record>
+		<record id="group_iso_consultant" model="res.groups">
+			<field name="name">ISO Consultant</field>
+			<field name="comment">Module user with create, delete, edit access.</field>
+			<field name="category_id" ref="module_grcbit_iso27001"/>
+		</record>
+		<record id="group_risk_owner" model="res.groups">
+			<field name="name">Risk Owner</field>
+			<field name="comment">Module user with control implementation module edit access.</field>
+			<field name="category_id" ref="module_grcbit_iso27001"/>
+		</record>
+		<record id="group_process_owner" model="res.groups">
+			<field name="name">Process Owner</field>
+			<field name="comment">Module user with process module edit access.</field>
+			<field name="category_id" ref="module_grcbit_iso27001"/>
+		</record>
+		<record id="group_data_owner" model="res.groups">
+			<field name="name">Data Owner</field>
+			<field name="comment">Module user with data asset module edit access.</field>
+			<field name="category_id" ref="module_grcbit_iso27001"/>
+		</record>
+		<record id="group_guest" model="res.groups">
+			<field name="name">Guest</field>
+			<field name="comment">Module user with general read only access.</field>
+			<field name="category_id" ref="module_grcbit_iso27001"/>
+		</record>
 </odoo>

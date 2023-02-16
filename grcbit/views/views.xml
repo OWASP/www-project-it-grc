@@ -1149,11 +1149,11 @@
         <tree>
           <field name="active" invisible="1"/>
           <field name="control_id" widget="badge" />
-          <field name="risk_factor_id" widget="many2many_tags" />
           <field name="name" />
           <field name="control" />
-          <field name="description"  />
-	  <field name="state"  />
+          <field name="risk_factor_id" widget="many2many_tags" />
+          <field name="state"  />  
+          <field name="description"  optional="hide" />
           <field name="evidence_guide" optional="hide" />
           <field name="responsible" optional="hide"/>
           <field name="control_type_id" widget="many2many_tags" optional="hide" />
@@ -1161,11 +1161,11 @@
           <field name="cybersecurity_concept_id" widget="many2many_tags" optional="hide" />
           <field name="operational_capability_id" widget="many2many_tags" optional="hide" />
           <field name="security_domain_id" widget="many2many_tags" optional="hide" />
+          <!--
           <field name="comment" optional="hide"/>
           <field name="evidence_pending" optional="hide"/>
-          <!--
           <field name="attachment" widget="many2many_binary" optional="hide" />
-	  -->
+	        -->
         </tree>
       </field>
     </record>
@@ -1179,14 +1179,12 @@
           <field name="control" />
           <field name="description"  />
           <field name="evidence_guide" />
-          <field name="responsible" optional="hide"/>
-          <field name="control_type_id" widget="many2many_tags" optional="hide" />
-          <field name="security_property_id" widget="many2many_tags" optional="hide" />
-          <field name="cybersecurity_concept_id" widget="many2many_tags" optional="hide" />
-          <field name="operational_capability_id" widget="many2many_tags" optional="hide" />
-          <field name="security_domain_id" widget="many2many_tags" optional="hide" />
-          <field name="comment" optional="hide"/>
-          <field name="evidence_pending" optional="hide"/>
+          <field name="responsible" />
+          <field name="control_type_id" />
+          <field name="security_property_id" />
+          <field name="cybersecurity_concept_id" />
+          <field name="operational_capability_id" />
+          <field name="security_domain_id" />
         </search>
       </field>
     </record>
@@ -1195,8 +1193,8 @@
       <field name="model">control.design</field>
       <field name="arch" type="xml">
         <form>
-	    <header>
-	        <field name="state" widget="statusbar" options="{'clickable':'1'}" />
+	        <header>
+	          <field name="state" widget="statusbar" options="{'clickable':'1'}" />
                 <button name="action_draft" string="SET TO DRAFT" type="object"  class="btn-primary" groups="grcbit.grcbit_admin, grcbit.iso_consultant" confirm="¿Esta seguro que quiere pasar a la fase de BORRADOR de CONTROL?" />
                 <button name="action_design" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['draft'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" confirm="¿Esta seguro que quiere pasar a la fase de DISEÑO de CONTROL?" />
                 <button name="action_in_progress" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['designed'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" confirm="¿Esta seguro que quiere pasar a la fase de IMPLEMENTACION de CONTROL?" />
@@ -1219,11 +1217,11 @@
             <field name="cybersecurity_concept_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
             <field name="operational_capability_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
             <field name="security_domain_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <!--
             <field name="comment" optional="hide"/>
             <field name="evidence_pending" optional="hide"/>
-	    <!--
 	          <field name="attachment" widget="many2many_binary" />
-	    -->
+	          -->
           </group>
 
                           <notebook>
@@ -1268,6 +1266,7 @@
           <field name="display_name" />
           <field name="name" />
           <field name="risk_factor_id" />
+          <field name="state" />
         </graph>
       </field>
     </record>
