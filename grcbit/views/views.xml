@@ -225,12 +225,12 @@
     </record>
 
     <record id="grcbit.business_process_action" model="ir.actions.act_window">
-	    <field name="name">Business Process</field>
+	    <field name="name">Process</field>
 	    <field name="res_model">business.process</field>
 	    <field name="view_mode">tree,form,kanban,graph</field>
     </record>
     <record model="ir.ui.view" id="grcbit.business_process_view">
-      <field name="name">Business Process</field>
+      <field name="name">Process</field>
       <field name="model">business.process</field>
       <field name="arch" type="xml">
         <tree>
@@ -242,7 +242,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.business_process_search">
-      <field name="name">Business Process</field>
+      <field name="name">Process</field>
       <field name="model">business.process</field>
       <field name="arch" type="xml">
         <search>
@@ -252,7 +252,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.business_process_kanban">
-      <field name="name">Business Process</field>
+      <field name="name">Process</field>
       <field name="model">business.process</field>
       <field name="arch" type="xml">
 	      <kanban class="o_res_partner_kanban">
@@ -276,7 +276,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.business_process_form">
-      <field name="name">Business Process</field>
+      <field name="name">Process</field>
       <field name="model">business.process</field>
       <field name="arch" type="xml">
         <form>
@@ -289,7 +289,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.business_process_graph">
-      <field name="name">Business Process</field>
+      <field name="name">Process</field>
       <field name="model">business.process</field>
       <field name="arch" type="xml">
         <graph type="pie" >
@@ -301,12 +301,12 @@
     </record>
 
     <record id="grcbit.it_inventory_action" model="ir.actions.act_window">
-	    <field name="name">IT Inventory</field>
+	    <field name="name">IT System</field>
 	    <field name="res_model">it.inventory</field>
 	    <field name="view_mode">tree,form,graph</field>
     </record>
     <record model="ir.ui.view" id="grcbit.it_inventory_view">
-      <field name="name">IT Inventory</field>
+      <field name="name">IT System</field>
       <field name="model">it.inventory</field>
       <field name="arch" type="xml">
         <tree>
@@ -314,7 +314,7 @@
           <field name="description"/>
           <field name="ip"/>
           <field name="url" optional="hide" widget="url" />
-          <field name="responsible" widget="badge"/>
+          <field name="responsible" widget="many2one_avatar_user"/>
           <field name="environment" optional="hide" widget="badge"/>
           <field name="is_cloud" widget="boolean_toggle"/>
           <field name="cloud_provider" widget="many2many_tags"  optional="hide" />
@@ -327,7 +327,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.it_inventory_search">
-      <field name="name">IT Inventory</field>
+      <field name="name">IT System</field>
       <field name="model">it.inventory</field>
       <field name="arch" type="xml">
         <search>
@@ -335,7 +335,7 @@
           <field name="description"/>
           <field name="ip"/>
           <field name="url" />
-          <field name="responsible"/>
+          <field name="responsible" />
           <field name="environment"  />
           <field name="is_cloud"/>
           <field name="cloud_provider"  />
@@ -347,7 +347,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.it_inventory_graph">
-      <field name="name">IT Inventory</field>
+      <field name="name">IT System</field>
       <field name="model">it.inventory</field>
       <field name="arch" type="xml">
         <graph type="bar" >
@@ -364,7 +364,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.it_inventory_form">
-      <field name="name">IT Inventory</field>
+      <field name="name">IT System</field>
       <field name="model">it.inventory</field>
       <field name="arch" type="xml">
         <form>
@@ -373,7 +373,7 @@
             <field name="description"/>
             <field name="ip" />
             <field name="url" widget="url"/>
-            <field name="responsible" />
+            <field name="responsible" widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
             <field name="environment" />
           </group>
 	        <group>
@@ -390,12 +390,12 @@
     </record>
 
     <record id="grcbit.data_inventory_action" model="ir.actions.act_window">
-	    <field name="name">Data Inventory</field>
+	    <field name="name">Data Asset</field>
 	    <field name="res_model">data.inventory</field>
 	    <field name="view_mode">tree,form,graph</field>
     </record>
     <record model="ir.ui.view" id="grcbit.data_inventory_view">
-      <field name="name">Data Inventory</field>
+      <field name="name">Data Asset</field>
       <field name="model">data.inventory</field>
       <field name="arch" type="xml">
         <tree>
@@ -404,7 +404,7 @@
           <field name="data_classification_id" widget="badge" />
           <field name="security_requirement"/>
           <field name="location" optional="hide" />
-          <field name="owner" optional="hide" widget="badge" />
+          <field name="owner" optional="hide" widget="many2one_avatar_user" />
           <field name="retention_period" optional="hide" widget="badge"/>
           <field name="it_inventory_id" widget="many2many_tags" />
           <field name="third_party_id"  widget="many2many_tags" />
@@ -414,7 +414,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.data_inventory_search">
-      <field name="name">Data Inventory</field>
+      <field name="name">Data Asset</field>
       <field name="model">data.inventory</field>
       <field name="arch" type="xml">
 	      <search>
@@ -432,7 +432,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.data_inventory_graph">
-      <field name="name">Data Inventory</field>
+      <field name="name">Data Asset</field>
       <field name="model">data.inventory</field>
       <field name="arch" type="xml">
 	      <graph type="pie" >
@@ -450,16 +450,16 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.data_inventory_form">
-      <field name="name">Data Inventory</field>
+      <field name="name">Data Asset</field>
       <field name="model">data.inventory</field>
       <field name="arch" type="xml">
         <form>
 	        <group>
             <field name="name"/>
             <field name="description"/>
-            <field name="data_classification_id" />
+            <field name="data_classification_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
             <field name="location"/>
-            <field name="owner" />
+            <field name="owner" widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
             <field name="retention_period" />
           </group>
 	        <group>
@@ -800,7 +800,9 @@
           <field name="guidance" optional="hide" />
           <field name="other_information" optional="hide" />
           <field name="attachment" widget="many2many_binary" optional="hide" />
+	  <!--
           <field name="consultant" optional="hide" />
+	  -->
         </tree>
       </field>
     </record>
@@ -826,7 +828,9 @@
             <field name="guidance"  />
             <field name="other_information"  />
             <field name="attachment" widget="many2many_binary" />
+	    <!--
             <field name="consultant" optional="hide" />
+	    -->
   	      </group>
         </form>
       </field>
@@ -855,10 +859,13 @@
           <field name="active" invisible="1"/>
           <field name="name"/>
           <field name="is_applicable" widget="boolean_toggle"/>
+	  <!--
           <field name="is_implemented" widget="boolean_toggle"/>
+	  -->
           <field name="reason_selection"  />
           <field name="security_policy_id" widget="many2many_tags"  />
           <field name="control_design_id" widget="many2many_tags"  />
+          <field name="control_status" widget="percentpie" />
         </tree>
       </field>
     </record>
@@ -871,12 +878,15 @@
             <field name="active" invisible="1"/>
             <field name="name" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
             <field name="is_applicable" widget="boolean_toggle"/>
+	    <!--
             <field name="is_implemented" widget="boolean_toggle"/>
+	    -->
   	      </group>
 	        <group>
             <field name="reason_selection"  />
             <field name="security_policy_id" widget="many2many_tags" options="{'no_create_edit' : True, 'no_create':True}"  />
             <field name="control_design_id"  widget="many2many_tags" options="{'no_create_edit' : True, 'no_create':True}"  />
+            <field name="control_status" widget="percentpie" />
   	      </group>
         </form>
       </field>
@@ -889,13 +899,16 @@
         <graph>
           <field name="name"/>
           <field name="is_applicable" />
+	  <!--
           <field name="is_implemented"/>
+	  -->
+          <field name="control_status"/>
         </graph>
       </field>
     </record>
 
     <record id="grcbit.risk_classification_action" model="ir.actions.act_window">
-	    <field name="name">Risk Classification"</field>
+	    <field name="name">Risk Classification</field>
 	    <field name="res_model">risk.classification</field>
 	    <field name="view_mode">tree,form,kanban</field>
     </record>
@@ -948,6 +961,70 @@
       </field>
     </record>
 
+    <record id="grcbit.risk_level_action" model="ir.actions.act_window">
+	    <field name="name">Risk Level</field>
+	    <field name="res_model">risk.level</field>
+	    <field name="view_mode">tree,form,kanban</field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.risk_level_view">
+      <field name="name">Risk Level</field>
+      <field name="model">risk.level</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="active" invisible="1"/>
+          <field name="name" widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
+          <field name="impact_level_id"/>
+          <field name="probability_level_id"/>
+          <field name="description"/>
+	        <!--
+          <field name="color" widget="color_picker" />
+	        -->
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.risk_level_form">
+      <field name="name">Risk Level</field>
+      <field name="model">risk.level</field>
+      <field name="arch" type="xml">
+        <form>
+	        <group>
+            <field name="active" invisible="1"/>
+            <field name="name" widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
+            <field name="impact_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+            <field name="probability_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+            <field name="description"/>
+	          <!--
+            <field name="color" widget="color_picker" />
+	          -->
+          </group>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.risk_level_kanban">
+      <field name="name">Risk Level</field>
+      <field name="model">risk.level</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_res_partner_kanban">
+          <field name="name"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <strong class="o_kanban_record_title">
+                    <field name="name"/>
+                  </strong>
+                  <div>
+                    <t t-esc="record.description.value"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
     <record id="grcbit.probability_level_action" model="ir.actions.act_window">
 	    <field name="name">Probability Level</field>
 	    <field name="res_model">probability.level</field>
@@ -959,9 +1036,9 @@
       <field name="arch" type="xml">
         <tree>
           <field name="active" invisible="1"/>
-          <field name="name"/>
+          <field name="name" widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
+          <field name="value" widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
           <field name="description"/>
-          <field name="value"/>
         </tree>
       </field>
     </record>
@@ -972,9 +1049,9 @@
         <form>
 	        <group>
             <field name="active" invisible="1"/>
-            <field name="name"/>
+            <field name="name"  widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
+            <field name="value" widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
             <field name="description"/>
-            <field name="value"/>
           </group>
         </form>
       </field>
@@ -1015,9 +1092,9 @@
       <field name="arch" type="xml">
         <tree>
           <field name="active" invisible="1"/>
-          <field name="name"/>
+          <field name="name" widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
+          <field name="value" widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
           <field name="description"/>
-          <field name="value"/>
         </tree>
       </field>
     </record>
@@ -1028,9 +1105,9 @@
         <form>
 	        <group>
             <field name="active" invisible="1"/>
-            <field name="name"/>
+            <field name="name"  widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
+            <field name="value" widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
             <field name="description"/>
-            <field name="value"/>
           </group>
         </form>
       </field>
@@ -1077,11 +1154,15 @@
           <field name="data_inventory_id" widget="many2many_tags" />
           <field name="cause"/>
           <field name="consequence"/>
-          <field name="impact_level_id"/>
-          <field name="probability_level_id"/>
-          <field name="responsible" optional="hide"/>
+          <field name="impact_level_id" optional="hide" />
+          <field name="probability_level_id" optional="hide"/>
+	        <field name="inherent_risk" readonly="1" force_save="1" widget="badge" decoration-danger="inherent_risk=='Alto'" decoration-warning="inherent_risk=='Medio'" decoration-success="inherent_risk=='Bajo'" />
+          <field name="residual_risk" readonly="1" force_save="1" widget="badge" decoration-danger="inherent_risk=='Alto'" decoration-warning="inherent_risk=='Medio'" decoration-success="inherent_risk=='Bajo'" />
+          <field name="responsible" optional="hide" widget="many2one_avatar_user"/>
           <field name="quantification" optional="hide"/>
+	        <!--
           <field name="comment" optional="hide"/>
+	        -->
           <field name="attachment" widget="many2many_binary" optional="hide" />
         </tree>
       </field>
@@ -1124,13 +1205,17 @@
             <field name="data_inventory_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
             <field name="cause"/>
             <field name="consequence"/>
-            <field name="responsible" />
+            <field name="responsible" widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
           </group>
 	        <group>
-            <field name="impact_level_id"/>
-            <field name="probability_level_id"/>
+            <field name="impact_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+            <field name="probability_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
             <field name="quantification" optional="hide"/>
+	          <field name="inherent_risk" readonly="1" force_save="1" widget="badge" decoration-danger="inherent_risk=='Alto'" decoration-warning="inherent_risk=='Medio'" decoration-success="inherent_risk=='Bajo'" />
+            <field name="residual_risk" readonly="1" force_save="1" widget="badge" decoration-danger="inherent_risk=='Alto'" decoration-warning="inherent_risk=='Medio'" decoration-success="inherent_risk=='Bajo'" />
+	          <!--
             <field name="comment" optional="hide"/>
+            -->
             <field name="attachment" widget="many2many_binary" />
           </group>
         </form>
@@ -1147,20 +1232,23 @@
       <field name="model">control.design</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="active" invisible="1"/>
+          <field name="active" invisible="1"  />
           <field name="control_id" widget="badge" />
           <field name="name" />
           <field name="control" />
           <field name="risk_factor_id" widget="many2many_tags" />
-          <field name="state"  />  
+          <field name="state" widget="badge" decoration-info="1" />  
           <field name="description"  optional="hide" />
           <field name="evidence_guide" optional="hide" />
-          <field name="responsible" optional="hide"/>
+          <field name="responsible" widget="many2one_avatar_user" optional="hide"/>
           <field name="control_type_id" widget="many2many_tags" optional="hide" />
           <field name="security_property_id" widget="many2many_tags" optional="hide" />
           <field name="cybersecurity_concept_id" widget="many2many_tags" optional="hide" />
           <field name="operational_capability_id" widget="many2many_tags" optional="hide" />
           <field name="security_domain_id" widget="many2many_tags" optional="hide" />
+          <field name="design_date" readonly="1" force_save="1" optional="hide" />
+          <field name="implementation_date" readonly="1" force_save="1" optional="hide" />
+          <field name="approve_date" readonly="1" force_save="1" optional="hide" />
           <!--
           <field name="comment" optional="hide"/>
           <field name="evidence_pending" optional="hide"/>
@@ -1194,39 +1282,49 @@
       <field name="arch" type="xml">
         <form>
 	        <header>
-	          <field name="state" widget="statusbar" options="{'clickable':'1'}" />
-                <button name="action_draft" string="SET TO DRAFT" type="object"  class="btn-primary" groups="grcbit.grcbit_admin, grcbit.iso_consultant" confirm="¿Esta seguro que quiere pasar a la fase de BORRADOR de CONTROL?" />
-                <button name="action_design" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['draft'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" confirm="¿Esta seguro que quiere pasar a la fase de DISEÑO de CONTROL?" />
-                <button name="action_in_progress" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['designed'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" confirm="¿Esta seguro que quiere pasar a la fase de IMPLEMENTACION de CONTROL?" />
-                <button name="action_implemented" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['in_progress'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" confirm="¿Esta seguro que quiere TERMINAR la IMPLEMENTACION de CONTROL?" />
-                <button name="action_approved" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" confirm="¿Esta seguro que quiere APROBAR la IMPLEMENTACION de CONTROL?" />
-           <button name="action_audited" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['approved'])]}" class="btn-success" groups="grcbit.grcbit_admin, grcbit.iso_consultant" confirm="¿Esta seguro que quiere pasar a la fase de AUDITORIA de CONTROL?"/>
-		</header>
+	    <field name="state" widget="statusbar" options="{'clickable':'1'}" />
+            <button name="action_draft" string="SET TO DRAFT" type="object"  class="btn-primary" groups="grcbit.group_admin, grcbit.group_iso_consultant" confirm="¿Esta seguro que quiere pasar a la fase de BORRADOR de CONTROL?" />
+            <button name="action_design" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['draft'])]}" class="btn-success" groups="grcbit.group_admin, grcbit.group_iso_consultant" confirm="¿Esta seguro que quiere aprobar el  DISEÑO de CONTROL?" />
+            <button name="action_implemented" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['designed'])]}" class="btn-success" groups="grcbit.group_admin, grcbit.group_iso_consultant, grcbit.group_risk_owner" confirm="¿Esta seguro que quiere concluir la IMPLEMENTACION de CONTROL?" />
+            <button name="action_approved" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit.group_admin, grcbit.group_iso_consultant" confirm="¿Esta seguro que quiere APROBAR la IMPLEMENTACION de CONTROL?" />
+
+            <!--
+            <button name="action_approved" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit.group_admin, grcbit.group_iso_consultant" confirm="¿Esta seguro que quiere APROBAR la IMPLEMENTACION de CONTROL?" />
+            <button name="action_implemented" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit.group_admin, grcbit.group_iso_consultant" confirm="¿Esta seguro que quiere TERMINAR la IMPLEMENTACION de CONTROL?" />
+            <button name="action_approved" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit.group_admin, grcbit.group_iso_consultant" confirm="¿Esta seguro que quiere APROBAR la IMPLEMENTACION de CONTROL?" />
+            <button name="action_audited" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['approved'])]}" class="btn-success" groups="grcbit.group_admin, grcbit.group_iso_consultant" confirm="¿Esta seguro que quiere pasar a la fase de AUDITORIA de CONTROL?"/>
+            -->
+		      </header>
 		      <group>
-            <field name="active" invisible="1"/>
-            <field name="risk_factor_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
-            <field name="name" />
-            <field name="control" />
-            <field name="description" />
-            <field name="evidence_guide" />
-            <field name="responsible" optional="hide"/>
-            <field name="control_type_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
-            <field name="security_property_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="active" invisible="1"  />
+            <field name="risk_factor_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+            <field name="name" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+            <field name="control" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+            <field name="description" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+            <field name="evidence_guide" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+            <field name="responsible" widget="many2one_avatar_user" optional="hide" attrs="{'readonly': [('state', 'not in', ['draft'])] }" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
+            <field name="control_type_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+            <field name="security_property_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
           </group>
 		      <group>
-            <field name="cybersecurity_concept_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
-            <field name="operational_capability_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
-            <field name="security_domain_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="cybersecurity_concept_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+            <field name="operational_capability_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+            <field name="security_domain_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
             <!--
             <field name="comment" optional="hide"/>
             <field name="evidence_pending" optional="hide"/>
 	          <field name="attachment" widget="many2many_binary" />
 	          -->
+          <field name="design_date" readonly="1" force_save="1" />
+          <field name="implementation_date" readonly="1" force_save="1" />
+          <field name="approve_date" readonly="1" force_save="1" />
           </group>
-
                           <notebook>
                     <page string="Control Evidences" name="control_evidence_page">
-                        <field name="control_evidence_ids" widget="section_and_note_one2many" mode="tree" attrs="{'invisible': [('state', 'not in', ['in_progress', 'implemented', 'approved', 'audited'])], 'readonly': [('state', 'not in', ['in_progress'])] }" >
+			    <!--
+                        <field name="control_evidence_ids" widget="section_and_note_one2many" mode="tree" attrs="{'invisible': [('state', 'not in', ('in_progress', 'implemented', 'approved', 'audited') )], 'readonly': [('state', 'not in', ('designed') )] }" >
+			    -->
+                        <field name="control_evidence_ids" widget="section_and_note_one2many" mode="tree" attrs="{ 'readonly': [('state', 'not in', ('designed') )] }" >
                                               <form>
 <field name="active" invisible="1" />
 <field name="control_design_id" invisible="1" />
@@ -1243,6 +1341,7 @@
                                               <tree>
 <field name="active" invisible="1" />
 <field name="control_design_id" invisible="1" />
+
                             <field name="name" />
                             <field name="comment" />
         <field name="attachment" widget="many2many_binary" />
@@ -1252,7 +1351,6 @@
                         </field>      
                     </page>
                       </notebook>
-
 
         </form>
       </field>
@@ -1278,7 +1376,7 @@
       <field name="view_id" ref="grcbit.data_classification_graph"/>
     </record>
     <record id="grcbit.business_process_dash" model="ir.actions.act_window">
-      <field name="name">Business Process</field>
+      <field name="name">Process</field>
       <field name="res_model">business.process</field>
       <field name="view_mode">graph</field>
       <field name="view_id" ref="grcbit.business_process_graph"/>
@@ -1317,7 +1415,7 @@
           <board style="1-1">
             <column>
               <action string="Control Category" name="%(grcbit.control_category_dash)d" />
-              <action string="Business Process" name="%(grcbit.business_process_dash)d" />
+              <action string="Process" name="%(grcbit.business_process_dash)d" />
               <action string="Data Classification" name="%(grcbit.data_classification_dash)d" />
             <column>
             </column>
@@ -1348,10 +1446,10 @@
     <!-- ASSET MANAGEMET MENU -->
     <menuitem name="Asset Management" id="grcbit.menu_asset_management" parent="grcbit.menu_root"  sequence="2" />
     <menuitem name="Data Classification" id="grcbit.menu_data_classification" parent="grcbit.menu_asset_management" action="grcbit.data_classification_action" />
-    <menuitem name="Business Process" id="grcbit.menu_business_process" parent="grcbit.menu_asset_management" action="grcbit.business_process_action"  sequence="3"/>
+    <menuitem name="Process" id="grcbit.menu_business_process" parent="grcbit.menu_asset_management" action="grcbit.business_process_action"  sequence="3"/>
     <menuitem name="Security Policy" id="grcbit.menu_security_policy" parent="grcbit.menu_asset_management" action="grcbit.security_policy_action"  sequence="4"/>
-    <menuitem name="IT Inventory" id="grcbit.menu_it_inventory" parent="grcbit.menu_asset_management" action="grcbit.it_inventory_action" sequence="2" />
-    <menuitem name="Data Inventory" id="grcbit.menu_data_inventory" parent="grcbit.menu_asset_management" action="grcbit.data_inventory_action" sequence="1" />
+    <menuitem name="IT System" id="grcbit.menu_it_inventory" parent="grcbit.menu_asset_management" action="grcbit.it_inventory_action" sequence="2" />
+    <menuitem name="Data Asset" id="grcbit.menu_data_inventory" parent="grcbit.menu_asset_management" action="grcbit.data_inventory_action" sequence="1" />
     <menuitem name="Third Party" id="grcbit.menu_third_party" parent="grcbit.menu_asset_management" action="grcbit.third_party_action" />
 
     <!-- ISO27001:2022 SECURITY ATTRIBUTES -->
@@ -1370,59 +1468,53 @@
     <menuitem name="Risk Factor" id="grcbit.menu_risk_factor" parent="grcbit.menu_risk_metric" action="grcbit.risk_factor_action" sequence="1" />
     <menuitem name="Impact Level" id="grcbit.menu_impact_level" parent="grcbit.menu_risk_metric" action="grcbit.impact_level_action" />
     <menuitem name="Probability Level" id="grcbit.menu_probability_level" parent="grcbit.menu_risk_metric" action="grcbit.probability_level_action" />
+    <menuitem name="Risk Level" id="grcbit.menu_risk_level" parent="grcbit.menu_risk_metric" action="grcbit.risk_level_action" />
     <menuitem name="Risk Classification" id="grcbit.menu_risk_classification" parent="grcbit.menu_risk_metric" action="grcbit.risk_classification_action" />
-
 
     <!-- CONTROL DESIGN -->
     <menuitem name="Control" id="grcbit.menu_control" parent="grcbit.menu_root" />
     <menuitem name="Control" id="grcbit.menu_control_design" parent="grcbit.menu_control" action="grcbit.control_design_action" sequence="1" />
 
-
-
     <!-- SEQUENCES -->
-
     <record id="risk_id_sequence" model="ir.sequence">
-            <field name="name">Risk ID sequence</field>
-            <field name="code">risk.id.sequence</field>
-            <field name="active">TRUE</field>
-            <field name="prefix">R-</field>
-            <field name="number_increment">1</field>
-            <field name="number_next">1</field>
-            <field name="padding">3</field>
-            <field name="implementation">standard</field>
+      <field name="name">Risk ID sequence</field>
+      <field name="code">risk.id.sequence</field>
+      <field name="active">TRUE</field>
+      <field name="prefix">RI-SGSI-</field>
+      <field name="number_increment">1</field>
+      <field name="number_next">1</field>
+      <field name="padding">3</field>
+      <field name="implementation">standard</field>
     </record>
-
     <record id="control_id_sequence" model="ir.sequence">
-            <field name="name">Control ID sequence</field>
-            <field name="code">control.id.sequence</field>
-            <field name="active">TRUE</field>
-            <field name="prefix">C-</field>
-            <field name="number_increment">1</field>
-            <field name="number_next">1</field>
-            <field name="padding">3</field>
-            <field name="implementation">standard</field>
+      <field name="name">Control ID sequence</field>
+      <field name="code">control.id.sequence</field>
+      <field name="active">TRUE</field>
+      <field name="prefix">CO-SGSI-</field>
+      <field name="number_increment">1</field>
+      <field name="number_next">1</field>
+      <field name="padding">3</field>
+      <field name="implementation">standard</field>
     </record>
-
     <record id="process_id_sequence" model="ir.sequence">
-            <field name="name">Process ID sequence</field>
-            <field name="code">process.id.sequence</field>
-            <field name="active">TRUE</field>
-            <field name="prefix">P-</field>
-            <field name="number_increment">1</field>
-            <field name="number_next">1</field>
-            <field name="padding">3</field>
-            <field name="implementation">standard</field>
+      <field name="name">Process ID sequence</field>
+      <field name="code">process.id.sequence</field>
+      <field name="active">TRUE</field>
+      <field name="prefix">PR-SGSI-</field>
+      <field name="number_increment">1</field>
+      <field name="number_next">1</field>
+      <field name="padding">3</field>
+      <field name="implementation">standard</field>
     </record>
-
     <record id="security_policy_id_sequence" model="ir.sequence">
-            <field name="name">Security Policy ID sequence</field>
-            <field name="code">security.policy.id.sequence</field>
-            <field name="active">TRUE</field>
-            <field name="prefix">POL-</field>
-            <field name="number_increment">1</field>
-            <field name="number_next">1</field>
-            <field name="padding">3</field>
-            <field name="implementation">standard</field>
+      <field name="name">Security Policy ID sequence</field>
+      <field name="code">security.policy.id.sequence</field>
+      <field name="active">TRUE</field>
+      <field name="prefix">PO-SGSI-</field>
+      <field name="number_increment">1</field>
+      <field name="number_next">1</field>
+      <field name="padding">3</field>
+      <field name="implementation">standard</field>
     </record>
 
 

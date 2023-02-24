@@ -2,6 +2,8 @@
 
 from odoo import models, fields, api
 import logging
+from datetime import date
+
 _logger = logging.getLogger(__name__)
 
 #-------------------------------------
@@ -260,8 +262,10 @@ class IsoControl(models.Model):
     _name = 'iso.control'
     _description = 'ISO Control'
     _order = 'id_iso_control'
+
     _rec_name = 'display_name'
-    id_iso_control = fields.Char(string='ID ISO Control', required=True)
+    id_iso_control      = fields.Char(string='ID ISO Control', required=True)
+    #id_iso_control_num = fields.Float(string='ID ISO Control', compute='_compute_id_iso_control_num')
     name = fields.Char(string='Control Title', required=True)
     display_name = fields.Char(string='Control Title', compute='_compute_display_name')
     control_category_id = fields.Many2one('control.category', string='Control Category', required=True)
@@ -275,15 +279,25 @@ class IsoControl(models.Model):
     guidance = fields.Text(string='Guidance', required=True)
     other_information = fields.Text(string='Other Information', required=True)
     attachment = fields.Many2many('ir.attachment', string="Attachment")
-    consultant = fields.Many2one('res.users', string='Consultant')
+    #consultant = fields.Many2one('res.users', string='Consultant')
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The ISO control name already exists."), ('id_iso_control_uniq', 'unique(id_iso_control)', "The ISO control ID already exists.")]
 
     @api.depends('id_iso_control','name')
     def _compute_display_name(self):
         for i in self:
-            i.display_name = i.id_iso_control + ' ' + i.name
-
+            i.display_name = str(i.id_iso_control) + ' ' + i.name
+   
+    '''
+    @api.depends('id_iso_control')
+    def _compute_id_iso_control_num(self):
+        _logger.info('grcbit_info ' + str(self))
+        for r in self:
+            #_logger.info('grcbit_info ' + str(r.id_iso_control))
+            r.id_iso_control_num = float(r.id_iso_control) #.write({'': r.id_iso_control})  #r.id_iso_control
+            #self.env['iso.control'].search([('id','=',r.id)]).write({'id_iso_control_num':1.11})
+            #self.write({'id_iso_control_num':1.11})
+    '''
 
 class StatementApplicability(models.Model):
     _name = 'statement.applicability'
@@ -291,13 +305,14 @@ class StatementApplicability(models.Model):
     _order = 'name'
 
     name = fields.Many2one('iso.control', string='ISO Control', required=True)
-    is_applicable = fields.Boolean(string='Control Applicable?', required=True)
-    is_implemented = fields.Boolean(string='Control Implemented?', required=True)
+    is_applicable = fields.Boolean(string='Is Applicable?', required=True)
+    #is_implemented = fields.Boolean(string='Control Implemented?', required=True)
     reason_selection = fields.Text(string='Reason for Selection')
     #risk reference
     #business_process_id = fields.Many2many('business.process',string='Policy / Process')
-    security_policy_id = fields.Many2many('security.policy',string='Security Policy')
-    control_design_id = fields.Many2many('control.design',string='Control Design')
+    security_policy_id = fields.Many2many('security.policy',string='Policy')
+    control_design_id  = fields.Many2many('control.design',string='Control')
+    control_status     = fields.Integer(string='Status', readonly=True) #(related='control_design_id.state', store=True)
     #risk_factor_id = fields.Many2many('risk.factor', string='Factor Riesgo') 
     #evidence_file = fields.Binary(string='Upload Evidence')
     #evidence_file = fields.Many2many('ir.attachment', string="File")
@@ -328,6 +343,18 @@ class ProbabilityLevel(models.Model):
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The probability level name already exists."),('level_uniq', 'unique(value)', "The probability level value already exists.")]
 
+class RiskLevel(models.Model):
+    _name = 'risk.level'
+    _description = 'Risk Level'
+    name = fields.Char(string='Risk Level', required=True)
+    description = fields.Text(string='Description', required=True)
+    impact_level_id      = fields.Many2one('impact.level', string='Impact Level')
+    probability_level_id = fields.Many2one('probability.level', string='Probability Level')
+    color = fields.Integer(string='Color')
+    #value = fields.Integer(string='Value', required=True)
+    active = fields.Boolean(default=True)
+    #_sql_constraints = [('name_uniq', 'unique(name)', "The probability level name already exists."),('level_uniq', 'unique(value)', "The probability level value already exists.")]
+
 class RiskClassification(models.Model):
     _name = 'risk.classification'
     _description = 'Risk Classification'
@@ -356,7 +383,9 @@ class RiskFactor(models.Model):
     probability_level_id = fields.Many2one('probability.level', string='Probability Level', required=True)
     responsible = fields.Many2one('res.users', string='Risk Owner', required=True)
     quantification = fields.Float(string='Quantification')
-    comment = fields.Text(string='Comment')
+    inherent_risk  = fields.Char(string='Inherent Risk')
+    residual_risk  = fields.Char(string='Residual Risk')
+    #comment = fields.Text(string='Comment')
     #risk_factor_file = fields.Many2many('ir.attachment', string="File")
     #risk_factor_file = fields.Binary(string='Upload File')
     #risk_factor_file_name = fields.Char(string='File Name')
@@ -374,6 +403,13 @@ class RiskFactor(models.Model):
         for i in self:
             i.display_name = i.risk_id + ' ' + i.name
 
+    @api.onchange('probability_level_id','impact_level_id')
+    def _compute_inherent_risk(self):
+        self.sudo().write({'inherent_risk': self.env['risk.level'].search([('probability_level_id','=',self.probability_level_id.id), ('impact_level_id','=',self.impact_level_id.id)]).name})
+        #for i in self:
+        #    ir = self.env['risk.level'].search([('probability_level_id','=',i.probability_level_id.id), ('impact_level_id','=',i.impact_level_id.id)]).name
+        #    i.sudo().write({'inherent_risk': str(ir)}) 
+
 #--------------
 # Control
 #--------------
@@ -385,18 +421,26 @@ class ControlDesing(models.Model):
     _rec_name = 'display_name'
 
     state = fields.Selection([
-        ('draft','Draft'),
-        ('designed','Design in Progress'),
-        ('in_progress','Implementation in Progress'),
-        ('implemented','Implemented'),
-        ('approved','Approved'),
-        ('audited','Audited'),],
+        ('draft','Draft'),                             #25 %
+        ('designed','Designed'),                       #50 %
+        ('implemented','Implemented'),                 #75 %
+        ('approved','Approved'),],                       #100%
         string='Status', default='draft', readonly=True, copy=False, tracking=True)
-
+        #('in_progress','Implementation in Progress'), 
+        #('audited','Audited'),],
+    
+    #evaluation_design = fields.Selection([
+    #    ('',''),
+    #    ('',''),
+    #    ('',''),
+    #    ('',''),
+    #    ],
+    #    string='Evaluation Design', )
+ 
     control_id = fields.Char(string='Control ID', required=True, index=True, copy=False, default='New')
     risk_factor_id = fields.Many2many('risk.factor',string='Risk Factor')
     display_name = fields.Char(string='Control Category', compute='_compute_display_name')
-    name = fields.Text(string='Nombre', required=True)
+    name = fields.Char(string='Nombre', required=True)
     #control_id = fields.Char(string='Control ID', required=True, index=True, copy=False, default='New')
     control = fields.Text(string='Control', required=True)
     description = fields.Text(string='Description/Objective', required=True)
@@ -417,6 +461,16 @@ class ControlDesing(models.Model):
     #attachment = fields.Many2many('ir.attachment', string="Attachment")
     active = fields.Boolean(default=True)
     control_evidence_ids = fields.One2many('control.evidence', 'control_design_id')
+    design_date = fields.Date(string='Design Date', readonly=True)
+    implementation_date = fields.Date(string='Implementation Date', readonly=True)
+    approve_date = fields.Date(string='Approve Date', readonly=True)
+
+    #@api.onchange('state')
+    #def _set_status_control_statement_applicability(self):
+    #    _logger.info('grcbit_debug: ' + str(self))
+    #    for i in self:
+    #        statement = self.env['statement.applicability'].search([('control_design_id','=',i.id)]) #.write({'control_status':i.state})
+    #        _logger.info('grcbit_debug: ' + str(statement))
 
     @api.model
     def create(self, vals):
@@ -430,16 +484,45 @@ class ControlDesing(models.Model):
 
     def action_draft(self):
         self.state = 'draft'
+        self.design_date = '' #date.today()
+        self.implementation_date = '' #date.today()
+        self.approve_date = '' #date.today()
+        self._status_control(self.id)
     def action_design(self):
         self.state = 'designed'
-    def action_in_progress(self):
-        self.state = 'in_progress'
+        self.design_date = date.today()
+        self._status_control(self.id)
+    #def action_in_progress(self):
+    #    self.state = 'in_progress'
+    #    self._status_control(self.id)
     def action_implemented(self):
-        self.state = 'implemented'
+        self.sudo().state = 'implemented'
+        self.sudo().implementation_date = date.today()
+        self.sudo()._status_control(self.id)
     def action_approved(self):
         self.state = 'approved'
-    def action_audited(self):
-        self.state = 'audited'
+        self.approve_date = date.today()
+        self._status_control(self.id)
+    #def action_audited(self):
+    #    self.state = 'audited'
+
+    def _status_control(self, statement):
+        statement_record = self.env['statement.applicability'].search([('control_design_id','=',statement)]) 
+        for s in statement_record:
+            status = 0
+            for i in s.control_design_id:
+                state = self.env['control.design'].search([('id','=',i.id)]).state
+                if state == 'draft':
+                    status += 25
+                if state == 'designed':
+                    status += 50
+                #if state == 'in_progress':
+                #    status += 50
+                if state == 'implemented':
+                    status += 75
+                if state == 'approved':
+                    status += 100
+            s.write({'control_status':status / len(s.control_design_id)})
 
 class ControlEvidence(models.Model):
     _name = 'control.evidence'
@@ -454,16 +537,17 @@ class ControlEvidence(models.Model):
     control_design_id = fields.Many2one('control.design')
     active = fields.Boolean(default=True)
 
-
+#class ControlDesignEvaluation(models.Model):
+#    _name = 'control.design.evaluation'
+#    _description = 'Control Design Evaluation'
+#    _
 # class grcbit(models.Model):
 #     _name = 'grcbit.grcbit'
 #     _description = 'grcbit.grcbit'
-
 #     name = fields.Char()
 #     value = fields.Integer()
 #     value2 = fields.Float(compute="_value_pc", store=True)
 #     description = fields.Text()
-#
 #     @api.depends('value')
 #     def _value_pc(self):
 #         for record in self:

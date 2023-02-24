@@ -20,7 +20,7 @@
         'security/ir.model.access.csv',
         'views/views.xml',
         #'views/templates.xml',
-        'views/security.xml',
+        #'views/security.xml',
         #'static/src/xml/dashboard.xml',
         #'static/src/xml/template.xml',
         #'views/assets.xml',
