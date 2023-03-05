@@ -21,6 +21,9 @@ access_control_category_group_admin,access.control.category.group.admin,model_co
 access_iso_control_group_admin,access.iso.control.group.admin,model_iso_control,grcbit.group_admin,1,1,1,1
 access_statement_applicability_group_admin,access.statement.applicability.group.admin,model_statement_applicability,grcbit.group_admin,1,1,1,1
 access_control_evidence_group_admin,access.control.evidence.group.admin,model_control_evidence,grcbit.group_admin,1,1,1,1
+access_control_evaluation_criteria_admin,access.control.evaluation.criteria.admin,model_control_evaluation_criteria,grcbit.group_admin,1,1,1,1
+access_residual_risk_level_admin,access.residual.risk.level.admin,model_residual_risk_level,grcbit.group_admin,1,1,1,1
+access_inherent_risk_level_admin,access.inherent.risk.level.admin,model_inherent_risk_level,grcbit.group_admin,1,1,1,1
 
 access_data_classification_group_iso_consultant,access.data.classification.group.iso.consultant,model_data_classification,grcbit.group_admin,1,1,1,0
 access_it_inventory_group_iso_consultant,access.it.inventory.group.iso.consultant,model_it_inventory,grcbit.group_admin,1,1,1,0

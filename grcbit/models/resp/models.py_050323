@@ -348,22 +348,12 @@ class RiskLevel(models.Model):
     _description = 'Risk Level'
     name = fields.Char(string='Risk Level', required=True)
     description = fields.Text(string='Description', required=True)
-    value = fields.Integer(string='Value', required=True)
-    active = fields.Boolean(default=True)
-    _sql_constraints = [('name_uniq', 'unique(name)', "The risk level name already exists."),('level_uniq', 'unique(value)', "The risk level value already exists.")]
-
-class InherentRiskLevel(models.Model):
-    _name = 'inherent.risk.level'
-    _description = 'Inherent Risk Level'
-    #name = fields.Char(string='Risk Level', required=True)
-    #description = fields.Text(string='Description', required=True)
     impact_level_id      = fields.Many2one('impact.level', string='Impact Level')
     probability_level_id = fields.Many2one('probability.level', string='Probability Level')
-    risk_level_id        = fields.Many2one('risk.level', string='Risk Level')
-    risk_level_name      = fields.Char(related='risk_level_id.name', string='Risk Level')
-    description = fields.Text(string='Description', required=True)
     color = fields.Integer(string='Color')
+    #value = fields.Integer(string='Value', required=True)
     active = fields.Boolean(default=True)
+    #_sql_constraints = [('name_uniq', 'unique(name)', "The probability level name already exists."),('level_uniq', 'unique(value)', "The probability level value already exists.")]
 
 class RiskClassification(models.Model):
     _name = 'risk.classification'
@@ -415,7 +405,7 @@ class RiskFactor(models.Model):
 
     @api.onchange('probability_level_id','impact_level_id')
     def _compute_inherent_risk(self):
-        self.sudo().write({'inherent_risk': self.env['inherent.risk.level'].search([('probability_level_id','=',self.probability_level_id.id), ('impact_level_id','=',self.impact_level_id.id)]).risk_level_name})
+        self.sudo().write({'inherent_risk': self.env['risk.level'].search([('probability_level_id','=',self.probability_level_id.id), ('impact_level_id','=',self.impact_level_id.id)]).name})
         #for i in self:
         #    ir = self.env['risk.level'].search([('probability_level_id','=',i.probability_level_id.id), ('impact_level_id','=',i.impact_level_id.id)]).name
         #    i.sudo().write({'inherent_risk': str(ir)}) 
@@ -471,7 +461,6 @@ class ControlDesing(models.Model):
     #attachment = fields.Many2many('ir.attachment', string="Attachment")
     active = fields.Boolean(default=True)
     control_evidence_ids = fields.One2many('control.evidence', 'control_design_id')
-    control_evaluation_criteria_id = fields.Many2one('control.evaluation.criteria', string='Control Evaluation')
     design_date = fields.Date(string='Design Date', readonly=True)
     implementation_date = fields.Date(string='Implementation Date', readonly=True)
     approve_date = fields.Date(string='Approve Date', readonly=True)
@@ -510,22 +499,12 @@ class ControlDesing(models.Model):
         self.sudo().state = 'implemented'
         self.sudo().implementation_date = date.today()
         self.sudo()._status_control(self.id)
-        #self.sudo()._residual_risk(self.id)
     def action_approved(self):
         self.state = 'approved'
         self.approve_date = date.today()
         self._status_control(self.id)
-        self.sudo()._residual_risk(self.id, self.control_evaluation_criteria_id)
     #def action_audited(self):
     #    self.state = 'audited'
-
-    def _residual_risk(self, control_id, control_eval):
-        risk_factor_ids = self.env['control.design'].search([('id','=',control_id)]).risk_factor_id
-        for i in risk_factor_ids:
-            for r in self.env['risk.factor'].search([('id','=',i.id)]):
-                ir = self.env['risk.level'].search([('name','=',r.inherent_risk)]).id
-                residual_risk = self.env['residual.risk.level'].search([('control_evaluation_criteria_id','=',control_eval.id), ('inherent_risk_level_id','=',ir)]).residual_risk_level_name
-                r.write({'residual_risk':residual_risk})
 
     def _status_control(self, statement):
         statement_record = self.env['statement.applicability'].search([('control_design_id','=',statement)]) 
@@ -572,7 +551,7 @@ class ResidualRiskLevel(models.Model):
 
     inherent_risk_level_id   = fields.Many2one('risk.level',   string='Inherent Risk')
     control_evaluation_criteria_id          = fields.Many2one('control.evaluation.criteria', string='Control Evaluation Criteria')
-    residual_risk_level_id   = fields.Many2one('risk.level',   string='Residual Risk')
+    residual_risk_level_id   = fields.Many2one('risk.level',   string='Residual Risk ID')
     residual_risk_level_name = fields.Char(related='residual_risk_level_id.name', string='Residual Risk')
     active = fields.Boolean(default=True)
 
