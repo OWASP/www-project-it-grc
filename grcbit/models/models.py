@@ -461,6 +461,7 @@ class ControlDesing(models.Model):
     #control_file = fields.Binary(string='Upload Evidence')
     #control_file = fields.Many2many('ir.attachment', string="File")
     #control_file_name = fields.Char(string='Evidence Name')
+    is_key_control = fields.Boolean(string='Key Control')
     control_type_id = fields.Many2many('control.type', string='Control Type', required=True)
     security_property_id = fields.Many2many('security.property', string='Security Property', required=True)
     cybersecurity_concept_id = fields.Many2many('cybersecurity.concept', string='Cybersecurity Concept', required=True)

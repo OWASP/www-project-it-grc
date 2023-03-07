@@ -1415,6 +1415,7 @@
           <field name="name" />
           <field name="control" />
           <field name="control_evaluation_criteria_id" />
+          <field name="is_key_control" widget="boolean_toggle" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
           <field name="risk_factor_id" widget="many2many_tags" />
           <field name="state" widget="badge" decoration-info="1" />  
           <field name="description"  optional="hide" />
@@ -1481,6 +1482,7 @@
             <field name="name" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
             <field name="control" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
             <field name="control_evaluation_criteria_id" groups="grcbit.group_admin, grcbit.group_iso_consultant" attrs="{'readonly': [('state', 'not in', ['implemented'])]}"  />
+          <field name="is_key_control" widget="boolean_toggle" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
             <field name="description" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
             <field name="evidence_guide" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
             <field name="responsible" widget="many2one_avatar_user" optional="hide" attrs="{'readonly': [('state', 'not in', ['draft'])] }" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
