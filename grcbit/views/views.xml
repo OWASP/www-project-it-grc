@@ -1413,12 +1413,14 @@
           <field name="active" invisible="1"  />
           <field name="control_id" widget="badge" />
           <field name="name" />
+          <field name="description"  optional="hide" />
+	  <!--
           <field name="control" />
+	  -->
           <field name="control_evaluation_criteria_id" />
           <field name="is_key_control" widget="boolean_toggle" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
           <field name="risk_factor_id" widget="many2many_tags" />
           <field name="state" widget="badge" decoration-info="1" />  
-          <field name="description"  optional="hide" />
           <field name="evidence_guide" optional="hide" />
           <field name="responsible" widget="many2one_avatar_user" optional="hide"/>
           <field name="control_type_id" widget="many2many_tags" optional="hide" />
@@ -1444,7 +1446,9 @@
         <search>
           <field name="risk_factor_id" widget="many2many_tags" />
           <field name="name" />
+	  <!--
           <field name="control" />
+	  -->
           <field name="control_evaluation_criteria_id"  />
           <field name="description"  />
           <field name="evidence_guide" />
@@ -1480,10 +1484,38 @@
             <field name="active" invisible="1"  />
             <field name="risk_factor_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
             <field name="name" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+            <field name="description" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+	    <!--
             <field name="control" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+	    -->
+
+            <field name="control_line_ids" widget="section_and_note_one2many" mode="tree" attrs="{ 'readonly': [('state', 'not in', ('draft') )] }" >
+                                              <form>
+<field name="active" invisible="1" />
+<field name="control_design_id" invisible="1" />
+                              <group>
+                            <field name="name" />
+                            <field name="description" />
+        <field name="attachment" widget="many2many_binary" />
+	<!--
+	<field name="is_implemented"  widget="boolean_toggle" />
+	-->
+                            </group>
+                            </form>
+                                              <tree>
+<field name="active" invisible="1" />
+<field name="control_design_id" invisible="1" />
+                            <field name="name" />
+                            <field name="description" />
+        <field name="attachment" widget="many2many_binary"  />
+	<!--
+                            <field name="is_implemented"  widget="boolean_toggle"   />
+	-->
+                            </tree>
+                        </field>      
+
             <field name="control_evaluation_criteria_id" groups="grcbit.group_admin, grcbit.group_iso_consultant" attrs="{'readonly': [('state', 'not in', ['implemented'])]}"  />
           <field name="is_key_control" widget="boolean_toggle" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
-            <field name="description" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
             <field name="evidence_guide" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
             <field name="responsible" widget="many2one_avatar_user" optional="hide" attrs="{'readonly': [('state', 'not in', ['draft'])] }" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
             <field name="control_type_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
@@ -1511,27 +1543,22 @@
                                               <form>
 <field name="active" invisible="1" />
 <field name="control_design_id" invisible="1" />
-
                               <group>
                             <field name="name" />
                             <field name="comment" />
         <field name="attachment" widget="many2many_binary" />
                             </group>
-
                             </form>
-
-
                                               <tree>
 <field name="active" invisible="1" />
 <field name="control_design_id" invisible="1" />
-
                             <field name="name" />
                             <field name="comment" />
         <field name="attachment" widget="many2many_binary" />
                             </tree>
-
-
                         </field>      
+
+
                     </page>
                       </notebook>
 

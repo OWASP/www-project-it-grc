@@ -385,16 +385,16 @@ class RiskFactor(models.Model):
     risk_classification_id = fields.Many2many('risk.classification',string='Risk Classification', required=True)
     #it_inventory_id = fields.Many2many('it.inventory',string='IT System')
     #business_process_id = fields.Many2many('business.process',string='Policy / Process')
-    data_inventory_id = fields.Many2many('data.inventory',string='Data Asset')
+    data_inventory_id = fields.Many2many('data.inventory',string='Data Asset', track_visibility='always')
 
     cause = fields.Text(string='Cause', required=True)
     consequence = fields.Text(string='Consequence', required=True)
-    impact_level_id = fields.Many2one('impact.level', string='Impact Level', required=True)
-    probability_level_id = fields.Many2one('probability.level', string='Probability Level', required=True)
-    responsible = fields.Many2one('res.users', string='Risk Owner', required=True)
-    quantification = fields.Float(string='Quantification')
-    inherent_risk  = fields.Char(string='Inherent Risk')
-    residual_risk  = fields.Char(string='Residual Risk')
+    impact_level_id = fields.Many2one('impact.level', string='Impact Level', required=True, track_visibility='always')
+    probability_level_id = fields.Many2one('probability.level', string='Probability Level', required=True, track_visibility='always')
+    responsible = fields.Many2one('res.users', string='Risk Owner', required=True, track_visibility='always')
+    quantification = fields.Float(string='Quantification', track_visibility='always')
+    inherent_risk  = fields.Char(string='Inherent Risk', track_visibility='always')
+    residual_risk  = fields.Char(string='Residual Risk', track_visibility='always')
     #comment = fields.Text(string='Comment')
     #risk_factor_file = fields.Many2many('ir.attachment', string="File")
     #risk_factor_file = fields.Binary(string='Upload File')
@@ -435,7 +435,7 @@ class ControlDesing(models.Model):
         ('designed','Designed'),                       #50 %
         ('implemented','Implemented'),                 #75 %
         ('approved','Approved'),],                       #100%
-        string='Status', default='draft', readonly=True, copy=False, tracking=True)
+        string='Status', default='draft', readonly=True, copy=False, tracking=True, track_visibility='always')
         #('in_progress','Implementation in Progress'), 
         #('audited','Audited'),],
     
@@ -448,20 +448,21 @@ class ControlDesing(models.Model):
     #    string='Evaluation Design', )
  
     control_id = fields.Char(string='Control ID', required=True, index=True, copy=False, default='New')
-    risk_factor_id = fields.Many2many('risk.factor',string='Risk Factor')
+    risk_factor_id = fields.Many2many('risk.factor',string='Risk Factor', track_visibility='always')
     display_name = fields.Char(string='Control Category', compute='_compute_display_name')
     name = fields.Char(string='Nombre', required=True)
     #control_id = fields.Char(string='Control ID', required=True, index=True, copy=False, default='New')
-    control = fields.Text(string='Control', required=True)
+    #control = fields.Text(string='Control', required=True)
+    control_line_ids = fields.One2many('control.line', 'control_design_id')
     description = fields.Text(string='Description/Objective', required=True)
     evidence_guide = fields.Text(string='Evidence Guide', required=True)
     #control_id = fields.Char(string='Control ID', required=True, index=True, copy=False, default='New')
     #evidence_guide = fields.Text(string='Evidence Guide', required=True)
-    responsible = fields.Many2one('res.users', string='Responsible', required=True)
+    responsible = fields.Many2one('res.users', string='Responsible', required=True, track_visibility='always')
     #control_file = fields.Binary(string='Upload Evidence')
     #control_file = fields.Many2many('ir.attachment', string="File")
     #control_file_name = fields.Char(string='Evidence Name')
-    is_key_control = fields.Boolean(string='Key Control')
+    is_key_control = fields.Boolean(string='Key Control', track_visibility='always')
     control_type_id = fields.Many2many('control.type', string='Control Type', required=True)
     security_property_id = fields.Many2many('security.property', string='Security Property', required=True)
     cybersecurity_concept_id = fields.Many2many('cybersecurity.concept', string='Cybersecurity Concept', required=True)
@@ -556,6 +557,17 @@ class ControlEvidence(models.Model):
     name = fields.Char(string='Name', required=True)
     attachment = fields.Many2many('ir.attachment', string="Attachment")
     comment = fields.Text(string='Comment/Description')
+    control_design_id = fields.Many2one('control.design')
+    active = fields.Boolean(default=True)
+
+class ControlLine(models.Model):
+    _name = 'control.line'
+    _description = 'Control Line'
+
+    name = fields.Char(string='Name', required=True)
+    description = fields.Text(string='Description')
+    attachment = fields.Many2many('ir.attachment', string="Attachment")
+    is_implemented = fields.Boolean(string="Is Implemented?")
     control_design_id = fields.Many2one('control.design')
     active = fields.Boolean(default=True)
 
