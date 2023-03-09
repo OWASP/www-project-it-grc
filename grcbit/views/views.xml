@@ -1324,6 +1324,7 @@
       <field name="model">risk.factor</field>
       <field name="arch" type="xml">
         <form>
+		<sheet>
 	        <group>
             <field name="active" invisible="1"/>
             <field name="name"/>
@@ -1344,6 +1345,15 @@
             -->
             <field name="attachment" widget="many2many_binary" />
           </group>
+
+  </sheet>
+
+	  <div class="oe_chatter">
+         <field name="message_follower_ids" widget="mail_followers"/>
+         <field name="message_ids" widget="mail_thread"/>
+</div>
+
+
         </form>
       </field>
     </record>
@@ -1413,11 +1423,12 @@
           <field name="active" invisible="1"  />
           <field name="control_id" widget="badge" />
           <field name="name" />
-          <field name="description"  optional="hide" />
+          <field name="description"  />
+          <field name="estimated_date"  widget="remaining_days" />
 	  <!--
           <field name="control" />
 	  -->
-          <field name="control_evaluation_criteria_id" />
+          <field name="control_evaluation_criteria_id" optional="True" />
           <field name="is_key_control" widget="boolean_toggle" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
           <field name="risk_factor_id" widget="many2many_tags" />
           <field name="state" widget="badge" decoration-info="1" />  
@@ -1466,11 +1477,17 @@
       <field name="model">control.design</field>
       <field name="arch" type="xml">
         <form>
+
+		<sheet>
+
 	        <header>
 	    <field name="state" widget="statusbar" options="{'clickable':'1'}" />
             <button name="action_draft" string="SET TO DRAFT" type="object"  class="btn-primary" groups="grcbit.group_admin, grcbit.group_iso_consultant" confirm="¿Esta seguro que quiere pasar a la fase de BORRADOR de CONTROL?" />
             <button name="action_design" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['draft'])]}" class="btn-success" groups="grcbit.group_admin, grcbit.group_iso_consultant" confirm="¿Esta seguro que quiere aprobar el  DISEÑO de CONTROL?" />
             <button name="action_implemented" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['designed'])]}" class="btn-success" groups="grcbit.group_admin, grcbit.group_iso_consultant, grcbit.group_risk_owner" confirm="¿Esta seguro que quiere concluir la IMPLEMENTACION de CONTROL?" />
+	    <!--
+            <button name="action_not_implemented" string="REJECT" type="object" attrs="{'invisible': [('state', 'not in', ['designed'])]}" class="btn-success" groups="grcbit.group_admin, grcbit.group_iso_consultant, grcbit.group_risk_owner" confirm="¿Esta seguro que quiere concluir la RECHAZAR de CONTROL?" />
+	    -->
             <button name="action_approved" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit.group_admin, grcbit.group_iso_consultant" confirm="¿Esta seguro que quiere APROBAR la IMPLEMENTACION de CONTROL?" />
 
             <!--
@@ -1485,11 +1502,14 @@
             <field name="risk_factor_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
             <field name="name" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
             <field name="description" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+	    <field name="estimated_date" />
 	    <!--
             <field name="control" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
 	    -->
-
-            <field name="control_line_ids" widget="section_and_note_one2many" mode="tree" attrs="{ 'readonly': [('state', 'not in', ('draft') )] }" >
+            <field name="control_line_ids" widget="section_and_note_one2many" mode="tree" attrs="{ 'readonly': [('state', 'not in', ('draft', 'implemented') )] }" >
+		    <!--
+            <field name="control_line_ids" widget="section_and_note_one2many" mode="tree"  >
+		    -->
                                               <form>
 <field name="active" invisible="1" />
 <field name="control_design_id" invisible="1" />
@@ -1497,9 +1517,7 @@
                             <field name="name" />
                             <field name="description" />
         <field name="attachment" widget="many2many_binary" />
-	<!--
-	<field name="is_implemented"  widget="boolean_toggle" />
-	-->
+	<field name="is_implemented"  widget="boolean_toggle"  />
                             </group>
                             </form>
                                               <tree>
@@ -1508,9 +1526,7 @@
                             <field name="name" />
                             <field name="description" />
         <field name="attachment" widget="many2many_binary"  />
-	<!--
-                            <field name="is_implemented"  widget="boolean_toggle"   />
-	-->
+                            <field name="is_implemented"  widget="boolean_toggle"  />
                             </tree>
                         </field>      
 
@@ -1561,6 +1577,13 @@
 
                     </page>
                       </notebook>
+	      </sheet>
+
+<div class="oe_chatter">
+         <field name="message_follower_ids" widget="mail_followers"/>
+         <field name="message_ids" widget="mail_thread"/>
+</div>
+
 
         </form>
       </field>

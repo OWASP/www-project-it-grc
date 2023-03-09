@@ -347,7 +347,7 @@ class RiskLevel(models.Model):
     _name = 'risk.level'
     _description = 'Risk Level'
     name = fields.Char(string='Risk Level', required=True)
-    description = fields.Text(string='Description', required=True)
+    description = fields.Text(string='Description')
     value = fields.Integer(string='Value', required=True)
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The risk level name already exists."),('level_uniq', 'unique(value)', "The risk level value already exists.")]
@@ -375,6 +375,7 @@ class RiskClassification(models.Model):
 
 class RiskFactor(models.Model):
     _name = 'risk.factor'
+    _inherit = 'mail.thread'
     _description = 'Risk Factor'
     _order = 'risk_id'
     _rec_name = 'display_name'
@@ -425,6 +426,8 @@ class RiskFactor(models.Model):
 #--------------
 class ControlDesing(models.Model):
     _name = 'control.design'
+    _inherit = 'mail.thread'
+
     _description = 'Control Design'
     _order = 'control_id'
     #_rec_name = 'control_id'
@@ -453,7 +456,8 @@ class ControlDesing(models.Model):
     name = fields.Char(string='Nombre', required=True)
     #control_id = fields.Char(string='Control ID', required=True, index=True, copy=False, default='New')
     #control = fields.Text(string='Control', required=True)
-    control_line_ids = fields.One2many('control.line', 'control_design_id')
+    control_line_ids = fields.One2many('control.line', 'control_design_id', string='Control Guide')
+    estimated_date = fields.Date(string='Estimated Date')
     description = fields.Text(string='Description/Objective', required=True)
     evidence_guide = fields.Text(string='Evidence Guide', required=True)
     #control_id = fields.Char(string='Control ID', required=True, index=True, copy=False, default='New')
@@ -513,6 +517,10 @@ class ControlDesing(models.Model):
         self.sudo().implementation_date = date.today()
         self.sudo()._status_control(self.id)
         #self.sudo()._residual_risk(self.id)
+    #def action_not_approved(self):
+        #self.sudo().state = 'implemented'
+        #self.sudo().implementation_date = date.today()
+        #self.sudo()._status_control(self.id)
     def action_approved(self):
         self.state = 'approved'
         self.approve_date = date.today()
