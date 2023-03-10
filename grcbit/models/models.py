@@ -578,6 +578,21 @@ class ControlLine(models.Model):
     is_implemented = fields.Boolean(string="Is Implemented?")
     control_design_id = fields.Many2one('control.design')
     active = fields.Boolean(default=True)
+    control_periodicity = fields.Selection([
+        ('1m','1 month'),
+        ('2m','2 months'),
+        ('3m','3 months'),
+        ('4m','4 months'),
+        ('5m','5 months'),
+        ('6m','6 months'),
+        ('7m','7 months'),
+        ('8m','8 months'),
+        ('9m','9 months'),
+        ('10m','10 months'),
+        ('11m','11 months'),
+        ('1y','1 year'),
+        ('pe','Per event'),
+        ], required=True)
 
 class ControlEvaluationCriteria(models.Model):
     _name = 'control.evaluation.criteria'
