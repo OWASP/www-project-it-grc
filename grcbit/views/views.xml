@@ -1517,7 +1517,7 @@
 <field name="control_design_id" invisible="1" />
                               <group>
                             <field name="name" />
-                            <field name="description" />
+                            <field name="description"  />
                             <field name="control_periodicity" />
         <field name="attachment" widget="many2many_binary" />
 	<field name="is_implemented"  widget="boolean_toggle"  />
@@ -1527,7 +1527,7 @@
 <field name="active" invisible="1" />
 <field name="control_design_id" invisible="1" />
                             <field name="name" />
-                            <field name="description" />
+                            <field name="description" optional="hide" />
                             <field name="control_periodicity" />
         <field name="attachment" widget="many2many_binary"  />
                             <field name="is_implemented"  widget="boolean_toggle"  />
