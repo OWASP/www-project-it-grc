@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<templates>
+    <t t-name="FieldFlowChart">
+
+          <div  class="rms_center" t-att-style="widget.attrs.style">
+              
+
+      
+            <t t-if="widget.mode !== 'readonly'">
+             
+         
+              <div id="palette" ></div>
+              <div id="diagram_edit" ></div>
+   
+              <div class="">
+                <input type="text"
+                       t-att-id="widget.attrs.id"
+                       t-att-tabindex="widget.attrs.tabindex"
+                       t-att-autofocus="widget.attrs.autofocus"
+                       t-att-placeholder="widget.attrs.placeholder"
+                       t-att-maxlength="2000"
+                       class="color {hash:true}"
+                        />
+               </div>     
+
+            </t>
+            <t t-if="widget.mode === 'readonly'">
+              
+              <div id="diagram_display" class="rms_hidden"></div>
+              <button class="btn btn-lnk btn-primary rms_button" id="print">Print</button>
+              <div id="img" ></div>
+              <span class="rms_hidden oe_form_char_content" ></span>
+              
+            </t>
+          </div>
+       </t>
+    
+</templates>

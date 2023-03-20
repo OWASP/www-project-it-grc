@@ -24,7 +24,11 @@ access_control_evidence_group_admin,access.control.evidence.group.admin,model_co
 access_control_evaluation_criteria_admin,access.control.evaluation.criteria.admin,model_control_evaluation_criteria,grcbit.group_admin,1,1,1,1
 access_residual_risk_level_admin,access.residual.risk.level.admin,model_residual_risk_level,grcbit.group_admin,1,1,1,1
 access_inherent_risk_level_admin,access.inherent.risk.level.admin,model_inherent_risk_level,grcbit.group_admin,1,1,1,1
-access_control_line_admin,access.inherent.control.line.admin,model_control_line,grcbit.group_admin,1,1,1,1
+access_control_line_admin,access.control.line.admin,model_control_line,grcbit.group_admin,1,1,1,1
+access_compliance_version_admin,access.compliance.version.admin,model_compliance_version,grcbit.group_admin,1,1,1,1
+access_compliance_control_objective_admin,access.compliance.control.objective.admin,model_compliance_control_objective,grcbit.group_admin,1,1,1,1
+access_compliance_control_admin,access.compliance.control.admin,model_compliance_control,grcbit.group_admin,1,1,1,1
+access_compliance_iso_control_admin,access.compliance.iso.control.admin,model_compliance_iso_control,grcbit.group_admin,1,1,1,1
 
 access_data_classification_group_iso_consultant,access.data.classification.group.iso.consultant,model_data_classification,grcbit.group_admin,1,1,1,0
 access_it_inventory_group_iso_consultant,access.it.inventory.group.iso.consultant,model_it_inventory,grcbit.group_admin,1,1,1,0

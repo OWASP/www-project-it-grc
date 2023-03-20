@@ -629,6 +629,234 @@
       </field>
     </record>
 
+
+
+    <record id="grcbit.compliance_version_action" model="ir.actions.act_window">
+      <field name="name">Compliance Version</field>
+      <field name="res_model">compliance.version</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.compliance_version_view">
+	    <field name="name">Compliance Version</field>
+	    <field name="model">compliance.version</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.compliance_version_form">
+      <field name="name">Compliance Version</field>
+      <field name="model">compliance.version</field>
+      <field name="arch" type="xml">
+        <form>
+		      <group>
+            <field name="name"/>
+            <field name="description"/>
+          </group>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.compliance_version_kanban">
+	    <field name="name">Compliance Version</field>
+      <field name="model">compliance.version</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_res_partner_kanban">
+          <field name="name"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <strong class="o_kanban_record_title">
+                    <field name="name"/>
+                  </strong>
+                  <div>
+                    <t t-esc="record.description.value"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+
+
+    <record id="grcbit.compliance_control_objective_action" model="ir.actions.act_window">
+      <field name="name">Compliance Control Objective</field>
+      <field name="res_model">compliance.control.objective</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.compliance_control_objective_view">
+	    <field name="name">Compliance Control Objective</field>
+	    <field name="model">compliance.control.objective</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="compliance_version_id"/>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.compliance_control_objective_form">
+      <field name="name">Compliance Control Objective</field>
+      <field name="model">compliance.control.objective</field>
+      <field name="arch" type="xml">
+        <form>
+		      <group>
+          <field name="compliance_version_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
+            <field name="name"/>
+            <field name="description"/>
+          </group>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.compliance_control_objective_kanban">
+	    <field name="name">Compliance Control Objective</field>
+      <field name="model">compliance.control.objective</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_res_partner_kanban">
+          <field name="name"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <strong class="o_kanban_record_title">
+                    <field name="name"/>
+                  </strong>
+                  <div>
+                    <t t-esc="record.description.value"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+
+
+
+
+    <record id="grcbit.compliance_control_action" model="ir.actions.act_window">
+      <field name="name">Compliance Control</field>
+      <field name="res_model">compliance.control</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.compliance_control_view">
+	    <field name="name">Compliance Control</field>
+	    <field name="model">compliance.control</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="compliance_control_objective_id"/>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.compliance_control_form">
+      <field name="name">Compliance Control</field>
+      <field name="model">compliance.control</field>
+      <field name="arch" type="xml">
+        <form>
+		      <group>
+          <field name="compliance_control_objective_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
+            <field name="name"/>
+            <field name="description"/>
+          </group>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.compliance_control_kanban">
+	    <field name="name">Compliance Control</field>
+      <field name="model">compliance.control</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_res_partner_kanban">
+          <field name="name"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <strong class="o_kanban_record_title">
+                    <field name="name"/>
+                  </strong>
+                  <div>
+                    <t t-esc="record.description.value"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+
+
+    <record id="grcbit.compliance_iso_control_action" model="ir.actions.act_window">
+      <field name="name">Compliance ISO Control</field>
+      <field name="res_model">compliance.iso.control</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.compliance_iso_control_view">
+	    <field name="name">Compliance ISO Control</field>
+	    <field name="model">compliance.iso.control</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="compliance_control_id" />
+          <field name="iso_control_id"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.compliance_iso_control_form">
+      <field name="name">Compliance ISO Control</field>
+      <field name="model">compliance.iso.control</field>
+      <field name="arch" type="xml">
+        <form>
+		      <group>
+          <field name="compliance_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+          <field name="iso_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
+          <field name="description"/>
+          </group>
+        </form>
+      </field>
+    </record>
+    <!--
+    <record model="ir.ui.view" id="grcbit.compliance_iso_control_kanban">
+	    <field name="name">Compliance ISO Control</field>
+      <field name="model">compliance.iso.control</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_res_partner_kanban">
+          <field name="name"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <strong class="o_kanban_record_title">
+                    <field name="name"/>
+                  </strong>
+                  <div>
+                    <t t-esc="record.description.value"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    -->
+
+
+
     <record id="grcbit.security_property_action" model="ir.actions.act_window">
 	    <field name="name">Security Property</field>
 	    <field name="res_model">security.property</field>
@@ -1701,6 +1929,13 @@
     <menuitem name="#Cybersecurity_Concept" id="grcbit.menu_cybersecurity_concept" parent="grcbit.menu_control_attribute" action="grcbit.cybersecurity_concept_action" sequence="6" />
     <menuitem name="#Operational_Capability" id="grcbit.menu_opertaional_capability" parent="grcbit.menu_control_attribute" action="grcbit.operational_capability_action" sequence="7" />
     <menuitem name="#Security_Domain" id="grcbit.menu_security_domain" parent="grcbit.menu_control_attribute" action="grcbit.security_domain_action"  sequence="8" />
+
+    <!-- COMPLIANCE -->
+    <menuitem name="Compliance" id="grcbit.menu_compliance" parent="grcbit.menu_root" />
+    <menuitem name="Compliance Version" id="grcbit.menu_compliance_version" parent="grcbit.menu_compliance" action="grcbit.compliance_version_action" sequence="1" />
+    <menuitem name="Compliance Control Objective" id="grcbit.menu_compliance_control_objective" parent="grcbit.menu_compliance" action="grcbit.compliance_control_objective_action" sequence="2" />
+    <menuitem name="Compliance Control" id="grcbit.menu_compliance_control" parent="grcbit.menu_compliance" action="grcbit.compliance_control_action" sequence="3" />
+    <menuitem name="Compliance - ISO" id="grcbit.menu_compliance_iso_control" parent="grcbit.menu_compliance" action="grcbit.compliance_iso_control_action" sequence="4" />
 
     <!-- RISK METRICS -->
     <menuitem name="Risk Management" id="grcbit.menu_risk_metric" parent="grcbit.menu_root" />

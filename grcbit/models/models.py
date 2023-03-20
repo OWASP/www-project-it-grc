@@ -606,12 +606,56 @@ class ResidualRiskLevel(models.Model):
     _name = 'residual.risk.level'
     _description = 'Residual Risk Level'
 
-    inherent_risk_level_id   = fields.Many2one('risk.level',   string='Inherent Risk')
-    control_evaluation_criteria_id          = fields.Many2one('control.evaluation.criteria', string='Control Evaluation Criteria')
-    residual_risk_level_id   = fields.Many2one('risk.level',   string='Residual Risk')
-    residual_risk_level_name = fields.Char(related='residual_risk_level_id.name', string='Residual Risk')
+    inherent_risk_level_id   = fields.Many2one('risk.level',   string='Inherent Risk', required=True)
+    control_evaluation_criteria_id          = fields.Many2one('control.evaluation.criteria', string='Control Evaluation Criteria', required=True)
+    residual_risk_level_id   = fields.Many2one('risk.level',   string='Residual Risk', required=True)
+    residual_risk_level_name = fields.Char(related='residual_risk_level_id.name', string='Residual Risk', required=True)
     active = fields.Boolean(default=True)
 
+#-------------
+# Compliance
+#-------------
+class ComplianceVersion(models.Model):
+    _name = 'compliance.version'
+    _description = 'Compliance Version'
+
+    name = fields.Char(string='Compliance Version', required=True)
+    description  = fields.Text(string='Description')
+    _sql_constraints = [('name_uniq', 'unique(name)', "The compliance version name already exists.")]
+
+class ComplianceControlObjective(models.Model):
+    _name = 'compliance.control.objective'
+    _description = 'Compliance Control Objective'
+
+    name = fields.Char(string='Control Objective', required=True)
+    compliance_version_id = fields.Many2one('compliance.version', string='Compliance Version', required=True)
+    description  = fields.Text(string='Description')
+    _sql_constraints = [('name_uniq', 'unique(name)', "The compliance control objective name already exists.")]
+
+class ComplianceControl(models.Model):
+    _name = 'compliance.control'
+    _description = 'Compliance Control'
+    _rec_name = 'display_name'
+
+    name = fields.Char(string='Control', required=True)
+    display_name = fields.Char(string='Control Objective', compute='_compute_display_name')
+    compliance_control_objective_id = fields.Many2one('compliance.control.objective', string='Compliance Control Objective', required=True)
+    description  = fields.Text(string='Description')
+    _sql_constraints = [('name_uniq', 'unique(name)', "The compliance control name already exists.")]
+
+    @api.depends('compliance_control_objective_id','name')
+    def _compute_display_name(self):
+        for i in self:
+            i.display_name = str(i.compliance_control_objective_id.name) + ' - ' + i.name
+
+class ComplianceIsoControl(models.Model):
+    _name = 'compliance.iso.control'
+    _description = 'Conompliance ISO Control'
+
+    compliance_control_id = fields.Many2one('compliance.control', string='Compliance Control', required=True)
+    iso_control_id = fields.Many2one('iso.control', string='ISO Control', required=True)
+    description  = fields.Text(string='Description')
+    
 
 #class ControlDesignEvaluation(models.Model):
 #    _name = 'control.design.evaluation'

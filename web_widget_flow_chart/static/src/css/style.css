@@ -1,0 +1,22 @@
+.o_form_editable .o_form_field_time input {
+    width: 6em;
+}
+.o_form_field_time{
+    display: -webkit-inline-box !important;
+}
+#palette {
+	float:left;width: 25%; margin-right: 2px; height:750px;background-color: #f8f8f8;
+}
+#diagram_edit {
+	float:left; height: 750px; background-color: #fff;width:70%;
+}
+.rms_hidden {
+	display:none;
+}
+.rms_button {
+	font-size:20px;
+	margin-bottom:20px;
+}
+.rms_center {
+	text-align:center;
+}

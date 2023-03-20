@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <template id="web_widget_flow_chart_assets_backend"
+              name="web_widget_flow_chart_assets"
+              inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript"
+                    src="/web_widget_flow_chart/static/src/lib/lib.js"/>
+                   
+            <script type="text/javascript"
+                    src="/web_widget_flow_chart/static/src/js/script.js"/>
+            <link rel="stylesheet"
+                  href="/web_widget_flow_chart/static/src/css/style.css"/>
+            
+        </xpath>
+    </template>
+</odoo>
