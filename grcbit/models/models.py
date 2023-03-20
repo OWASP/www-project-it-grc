@@ -626,11 +626,18 @@ class ComplianceVersion(models.Model):
 class ComplianceControlObjective(models.Model):
     _name = 'compliance.control.objective'
     _description = 'Compliance Control Objective'
+    _rec_name = 'display_name'
 
     name = fields.Char(string='Control Objective', required=True)
+    display_name = fields.Char(string='Control Objective', compute='_compute_display_name')
     compliance_version_id = fields.Many2one('compliance.version', string='Compliance Version', required=True)
     description  = fields.Text(string='Description')
     _sql_constraints = [('name_uniq', 'unique(name)', "The compliance control objective name already exists.")]
+
+    @api.depends('compliance_version_id','name')
+    def _compute_display_name(self):
+        for i in self:
+            i.display_name = str(i.compliance_version_id.name) + ' - ' + i.name
 
 class ComplianceControl(models.Model):
     _name = 'compliance.control'
@@ -646,7 +653,7 @@ class ComplianceControl(models.Model):
     @api.depends('compliance_control_objective_id','name')
     def _compute_display_name(self):
         for i in self:
-            i.display_name = str(i.compliance_control_objective_id.name) + ' - ' + i.name
+            i.display_name = str(i.compliance_control_objective_id.compliance_version_id.name) + ' - ' + str(i.compliance_control_objective_id.name) + ' - ' + i.name
 
 class ComplianceIsoControl(models.Model):
     _name = 'compliance.iso.control'
