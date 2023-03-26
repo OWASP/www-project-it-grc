@@ -310,7 +310,8 @@ class StatementApplicability(models.Model):
     reason_selection = fields.Text(string='Reason for Selection')
     #risk reference
     #business_process_id = fields.Many2many('business.process',string='Policy / Process')
-    security_policy_id = fields.Many2many('security.policy',string='Policy')
+    #security_policy_id = fields.Many2many('security.policy',string='Policy')
+    document_page_id   = fields.Many2many('document.page', string='Policy')
     control_design_id  = fields.Many2many('control.design',string='Control')
     control_status     = fields.Integer(string='Status', readonly=True) #(related='control_design_id.state', store=True)
     #risk_factor_id = fields.Many2many('risk.factor', string='Factor Riesgo') 
@@ -459,7 +460,7 @@ class ControlDesing(models.Model):
     control_line_ids = fields.One2many('control.line', 'control_design_id', string='Control Guide')
     estimated_date = fields.Date(string='Estimated Date')
     description = fields.Text(string='Description/Objective', required=True)
-    evidence_guide = fields.Text(string='Evidence Guide', required=True)
+    evidence_guide = fields.Text(string='Evidence Guide')
     #control_id = fields.Char(string='Control ID', required=True, index=True, copy=False, default='New')
     #evidence_guide = fields.Text(string='Evidence Guide', required=True)
     responsible = fields.Many2one('res.users', string='Responsible', required=True, track_visibility='always')
@@ -625,11 +626,11 @@ class ComplianceVersion(models.Model):
 
 class ComplianceControlObjective(models.Model):
     _name = 'compliance.control.objective'
-    _description = 'Compliance Control Objective'
+    _description = 'Compliance Requirement Objective'
     _rec_name = 'display_name'
 
-    name = fields.Char(string='Control Objective', required=True)
-    display_name = fields.Char(string='Control Objective', compute='_compute_display_name')
+    name = fields.Char(string='Requirement Objective', required=True)
+    display_name = fields.Char(string='Requirement Objective', compute='_compute_display_name')
     compliance_version_id = fields.Many2one('compliance.version', string='Compliance Version', required=True)
     description  = fields.Text(string='Description')
     _sql_constraints = [('name_uniq', 'unique(name)', "The compliance control objective name already exists.")]
@@ -641,11 +642,11 @@ class ComplianceControlObjective(models.Model):
 
 class ComplianceControl(models.Model):
     _name = 'compliance.control'
-    _description = 'Compliance Control'
+    _description = 'Compliance Requirement'
     _rec_name = 'display_name'
 
-    name = fields.Char(string='Control', required=True)
-    display_name = fields.Char(string='Control Objective', compute='_compute_display_name')
+    name = fields.Char(string='Requirement', required=True)
+    display_name = fields.Char(string='Requirement Objective', compute='_compute_display_name')
     compliance_control_objective_id = fields.Many2one('compliance.control.objective', string='Compliance Control Objective', required=True)
     description  = fields.Text(string='Description')
     _sql_constraints = [('name_uniq', 'unique(name)', "The compliance control name already exists.")]
@@ -654,12 +655,13 @@ class ComplianceControl(models.Model):
     def _compute_display_name(self):
         for i in self:
             i.display_name = str(i.compliance_control_objective_id.compliance_version_id.name) + ' - ' + str(i.compliance_control_objective_id.name) + ' - ' + i.name
+            #i.display_name = str(i.compliance_control_objective_id.name) + ' - ' + str(i.compliance_control_objective_id.compliance_version_id.name) + ' - ' + i.name
 
 class ComplianceIsoControl(models.Model):
     _name = 'compliance.iso.control'
     _description = 'Conompliance ISO Control'
 
-    compliance_control_id = fields.Many2one('compliance.control', string='Compliance Control', required=True)
+    compliance_control_id = fields.Many2one('compliance.control', string='Compliance Requirement', required=True)
     iso_control_id = fields.Many2one('iso.control', string='ISO Control', required=True)
     description  = fields.Text(string='Description')
     

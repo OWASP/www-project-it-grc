@@ -686,12 +686,12 @@
 
 
     <record id="grcbit.compliance_control_objective_action" model="ir.actions.act_window">
-      <field name="name">Compliance Control Objective</field>
+      <field name="name">Compliance Requirement Objective</field>
       <field name="res_model">compliance.control.objective</field>
       <field name="view_mode">tree,form,kanban</field>
     </record>
     <record model="ir.ui.view" id="grcbit.compliance_control_objective_view">
-	    <field name="name">Compliance Control Objective</field>
+	    <field name="name">Compliance Requirement Objective</field>
 	    <field name="model">compliance.control.objective</field>
       <field name="arch" type="xml">
         <tree>
@@ -702,7 +702,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.compliance_control_objective_form">
-      <field name="name">Compliance Control Objective</field>
+      <field name="name">Compliance Requirement Objective</field>
       <field name="model">compliance.control.objective</field>
       <field name="arch" type="xml">
         <form>
@@ -715,7 +715,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.compliance_control_objective_kanban">
-	    <field name="name">Compliance Control Objective</field>
+	    <field name="name">Compliance Requirement Objective</field>
       <field name="model">compliance.control.objective</field>
       <field name="arch" type="xml">
 	      <kanban class="o_res_partner_kanban">
@@ -744,12 +744,12 @@
 
 
     <record id="grcbit.compliance_control_action" model="ir.actions.act_window">
-      <field name="name">Compliance Control</field>
+      <field name="name">Compliance Requirement</field>
       <field name="res_model">compliance.control</field>
       <field name="view_mode">tree,form,kanban</field>
     </record>
     <record model="ir.ui.view" id="grcbit.compliance_control_view">
-	    <field name="name">Compliance Control</field>
+	    <field name="name">Compliance Requirement</field>
 	    <field name="model">compliance.control</field>
       <field name="arch" type="xml">
         <tree>
@@ -760,7 +760,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.compliance_control_form">
-      <field name="name">Compliance Control</field>
+      <field name="name">Compliance Requirement</field>
       <field name="model">compliance.control</field>
       <field name="arch" type="xml">
         <form>
@@ -773,7 +773,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.compliance_control_kanban">
-	    <field name="name">Compliance Control</field>
+	    <field name="name">Compliance Requirement</field>
       <field name="model">compliance.control</field>
       <field name="arch" type="xml">
 	      <kanban class="o_res_partner_kanban">
@@ -1091,7 +1091,10 @@
           <field name="is_implemented" widget="boolean_toggle"/>
 	  -->
           <field name="reason_selection"  />
+	  <!--
           <field name="security_policy_id" widget="many2many_tags"  />
+	  -->
+          <field name="document_page_id" widget="many2many_tags"  />
           <field name="control_design_id" widget="many2many_tags"  />
           <field name="control_status" widget="percentpie" />
         </tree>
@@ -1108,21 +1111,12 @@
           <field name="name"/>
           <field name="is_applicable" widget="boolean_toggle"/>
           <field name="reason_selection"  />
-          <field name="security_policy_id" widget="many2many_tags"  />
+          <field name="document_page_id" widget="many2many_tags"  />
           <field name="control_design_id" widget="many2many_tags"  />
           <field name="control_status" widget="percentpie" />
         </search>
       </field>
     </record>
-
-
-
-
-
-
-
-
-
     <record model="ir.ui.view" id="grcbit.statement_applicability_form">
       <field name="name">Statement Applicability</field>
       <field name="model">statement.applicability</field>
@@ -1138,7 +1132,7 @@
   	      </group>
 	        <group>
             <field name="reason_selection"  />
-            <field name="security_policy_id" widget="many2many_tags" options="{'no_create_edit' : True, 'no_create':True}"  />
+            <field name="document_page_id" widget="many2many_tags" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True)]" />
             <field name="control_design_id"  widget="many2many_tags" options="{'no_create_edit' : True, 'no_create':True}"  />
             <field name="control_status" widget="percentpie" />
   	      </group>
