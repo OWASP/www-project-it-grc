@@ -408,7 +408,10 @@
           <field name="retention_period" optional="hide" widget="badge"/>
           <field name="it_inventory_id" widget="many2many_tags" />
           <field name="third_party_id"  widget="many2many_tags" />
+	  <!--
           <field name="business_process_id"  widget="many2many_tags" />
+	  -->
+          <field name="document_page_id" widget="many2many_tags"  />
           <field name="attachment" widget="many2many_binary" optional="hide" />
         </tree>
       </field>
@@ -417,7 +420,7 @@
       <field name="name">Data Asset</field>
       <field name="model">data.inventory</field>
       <field name="arch" type="xml">
-	      <search>
+	<search>
           <field name="name"/>
           <field name="description"/>
           <field name="data_classification_id"/>
@@ -427,8 +430,11 @@
           <field name="retention_period" optional="hide" />
           <field name="it_inventory_id" widget="many2many_tags" />
           <field name="third_party_id"  widget="many2many_tags" />
+	  <!--
           <field name="business_process_id"  widget="many2many_tags" />
-	      </search>
+	  -->
+          <field name="document_page_id" widget="many2many_tags"  />
+	</search>
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.data_inventory_graph">
@@ -445,7 +451,10 @@
           <field name="retention_period" />
           <field name="it_inventory_id" />
           <field name="third_party_id"  />
+	  <!--
           <field name="business_process_id" />
+	  -->
+          <field name="document_page_id" />
 	      </graph>
       </field>
     </record>
@@ -465,7 +474,10 @@
 	        <group>
             <field name="it_inventory_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
             <field name="third_party_id"   widget="many2many_tags"  options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
-            <field name="business_process_id"  widget="many2many_tags" options="{'no_quick_create':True, 'no_create_edit':True, 'no_create':True}"  />
+	    <!--
+            <field name="document_page_id" widget="many2many_tags" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True)]" />
+	    -->
+            <field name="document_page_id" widget="many2many_tags" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True), ('name','ilike','proceso')]" />
             <field name="security_requirement"/>
             <field name="attachment" widget="many2many_binary" />
           </group>
@@ -686,12 +698,12 @@
 
 
     <record id="grcbit.compliance_control_objective_action" model="ir.actions.act_window">
-      <field name="name">Compliance Requirement Objective</field>
+      <field name="name">Compliance Objective</field>
       <field name="res_model">compliance.control.objective</field>
       <field name="view_mode">tree,form,kanban</field>
     </record>
     <record model="ir.ui.view" id="grcbit.compliance_control_objective_view">
-	    <field name="name">Compliance Requirement Objective</field>
+	    <field name="name">Compliance Objective</field>
 	    <field name="model">compliance.control.objective</field>
       <field name="arch" type="xml">
         <tree>
@@ -702,7 +714,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.compliance_control_objective_form">
-      <field name="name">Compliance Requirement Objective</field>
+      <field name="name">Compliance Objective</field>
       <field name="model">compliance.control.objective</field>
       <field name="arch" type="xml">
         <form>
@@ -715,7 +727,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.compliance_control_objective_kanban">
-	    <field name="name">Compliance Requirement Objective</field>
+	    <field name="name">Compliance Objective</field>
       <field name="model">compliance.control.objective</field>
       <field name="arch" type="xml">
 	      <kanban class="o_res_partner_kanban">
@@ -800,12 +812,12 @@
 
 
     <record id="grcbit.compliance_iso_control_action" model="ir.actions.act_window">
-      <field name="name">Compliance ISO Control</field>
+      <field name="name">Compliance - ISO 27001</field>
       <field name="res_model">compliance.iso.control</field>
       <field name="view_mode">tree,form,kanban</field>
     </record>
     <record model="ir.ui.view" id="grcbit.compliance_iso_control_view">
-	    <field name="name">Compliance ISO Control</field>
+	    <field name="name">Compliance - ISO 27001</field>
 	    <field name="model">compliance.iso.control</field>
       <field name="arch" type="xml">
         <tree>
@@ -816,7 +828,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.compliance_iso_control_form">
-      <field name="name">Compliance ISO Control</field>
+      <field name="name">Compliance - ISO 27001</field>
       <field name="model">compliance.iso.control</field>
       <field name="arch" type="xml">
         <form>
@@ -1132,7 +1144,10 @@
   	      </group>
 	        <group>
             <field name="reason_selection"  />
+	    <!--
             <field name="document_page_id" widget="many2many_tags" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True)]" />
+	    -->
+            <field name="document_page_id" widget="many2many_tags" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True), '|', ('name','ilike','politica'), ('name','ilike','pol') ]" />
             <field name="control_design_id"  widget="many2many_tags" options="{'no_create_edit' : True, 'no_create':True}"  />
             <field name="control_status" widget="percentpie" />
   	      </group>
@@ -1876,7 +1891,9 @@
           <board style="1-1">
             <column>
               <action string="Control Category" name="%(grcbit.control_category_dash)d" />
+	      <!--
               <action string="Process" name="%(grcbit.business_process_dash)d" />
+	      -->
               <action string="Data Classification" name="%(grcbit.data_classification_dash)d" />
             <column>
             </column>
@@ -1907,8 +1924,10 @@
     <!-- ASSET MANAGEMET MENU -->
     <menuitem name="Asset Management" id="grcbit.menu_asset_management" parent="grcbit.menu_root"  sequence="2" />
     <menuitem name="Data Classification" id="grcbit.menu_data_classification" parent="grcbit.menu_asset_management" action="grcbit.data_classification_action" />
+    <!--
     <menuitem name="Process" id="grcbit.menu_business_process" parent="grcbit.menu_asset_management" action="grcbit.business_process_action"  sequence="3"/>
     <menuitem name="Security Policy" id="grcbit.menu_security_policy" parent="grcbit.menu_asset_management" action="grcbit.security_policy_action"  sequence="4"/>
+    -->
     <menuitem name="IT System" id="grcbit.menu_it_inventory" parent="grcbit.menu_asset_management" action="grcbit.it_inventory_action" sequence="2" />
     <menuitem name="Data Asset" id="grcbit.menu_data_inventory" parent="grcbit.menu_asset_management" action="grcbit.data_inventory_action" sequence="1" />
     <menuitem name="Third Party" id="grcbit.menu_third_party" parent="grcbit.menu_asset_management" action="grcbit.third_party_action" />
@@ -1927,9 +1946,9 @@
     <!-- COMPLIANCE -->
     <menuitem name="Compliance" id="grcbit.menu_compliance" parent="grcbit.menu_root" />
     <menuitem name="Compliance Version" id="grcbit.menu_compliance_version" parent="grcbit.menu_compliance" action="grcbit.compliance_version_action" sequence="1" />
-    <menuitem name="Compliance Control Objective" id="grcbit.menu_compliance_control_objective" parent="grcbit.menu_compliance" action="grcbit.compliance_control_objective_action" sequence="2" />
-    <menuitem name="Compliance Control" id="grcbit.menu_compliance_control" parent="grcbit.menu_compliance" action="grcbit.compliance_control_action" sequence="3" />
-    <menuitem name="Compliance - ISO" id="grcbit.menu_compliance_iso_control" parent="grcbit.menu_compliance" action="grcbit.compliance_iso_control_action" sequence="4" />
+    <menuitem name="Compliance Objective" id="grcbit.menu_compliance_control_objective" parent="grcbit.menu_compliance" action="grcbit.compliance_control_objective_action" sequence="2" />
+    <menuitem name="Compliance Requirement" id="grcbit.menu_compliance_control" parent="grcbit.menu_compliance" action="grcbit.compliance_control_action" sequence="3" />
+    <menuitem name="Compliance - ISO 27001" id="grcbit.menu_compliance_iso_control" parent="grcbit.menu_compliance" action="grcbit.compliance_iso_control_action" sequence="4" />
 
     <!-- RISK METRICS -->
     <menuitem name="Risk Management" id="grcbit.menu_risk_metric" parent="grcbit.menu_root" />

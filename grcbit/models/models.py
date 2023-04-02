@@ -73,7 +73,8 @@ class DataInventory(models.Model):
     #ii_id   = fields.One2many('it.inventory','ii_id', string='IT System')
     it_inventory_id = fields.Many2many('it.inventory',string='IT System')
     third_party_id = fields.Many2many('third.party',string='Third Party')
-    business_process_id = fields.Many2many('business.process',string='Business Process')
+    #business_process_id = fields.Many2many('business.process',string='Business Process')
+    document_page_id   = fields.Many2many('document.page', string='Business Process')
     security_requirement = fields.Text(string='Security Requirement', required=True)
     retention_period = fields.Selection([
         ('1m','1 month'),
@@ -144,9 +145,10 @@ class BusinessProcess(models.Model):
     @api.model
     def web_read_group(self, domain, fields, groupby, limit=None, offset=0, orderby=False,lazy=True, expand=False, expand_limit=None, expand_orderby=False):
         res = super().web_read_group(domain, fields, groupby, limit, offset, orderby, lazy, expand, expand_limit, expand_orderby)
-        for i in self.env['business.process'].search([]):
-            data_assets = self.env['data.inventory'].search([('business_process_id', 'in', [i.id] )])
-            self.env['business.process'].sudo().search([('id','=',i.id)]).sudo().write({'data_inventory_count':len(data_assets)})
+        #for i in self.env['business.process'].search([]):
+        for i in self.env['document.page'].search([]):
+            data_assets = self.env['data.inventory'].search([('document_page_id', 'in', [i.id] )])
+            self.env['document_page'].sudo().search([('id','=',i.id)]).sudo().write({'data_inventory_count':len(data_assets)})
         return res
 
     @api.model
@@ -478,7 +480,7 @@ class ControlDesing(models.Model):
     #attachment = fields.Many2many('ir.attachment', string="Attachment")
     active = fields.Boolean(default=True)
     control_evidence_ids = fields.One2many('control.evidence', 'control_design_id')
-    control_evaluation_criteria_id = fields.Many2one('control.evaluation.criteria', string='Control Evaluation')
+    control_evaluation_criteria_id = fields.Many2one('control.evaluation.criteria', string='Implementation Evaluation')
     design_date = fields.Date(string='Design Date', readonly=True)
     implementation_date = fields.Date(string='Implementation Date', readonly=True)
     approve_date = fields.Date(string='Approve Date', readonly=True)
@@ -626,14 +628,14 @@ class ComplianceVersion(models.Model):
 
 class ComplianceControlObjective(models.Model):
     _name = 'compliance.control.objective'
-    _description = 'Compliance Requirement Objective'
+    _description = 'Compliance Objective'
     _rec_name = 'display_name'
 
-    name = fields.Char(string='Requirement Objective', required=True)
-    display_name = fields.Char(string='Requirement Objective', compute='_compute_display_name')
+    name = fields.Char(string='Compliance Objective', required=True)
+    display_name = fields.Char(string='Compliance Objective', compute='_compute_display_name')
     compliance_version_id = fields.Many2one('compliance.version', string='Compliance Version', required=True)
     description  = fields.Text(string='Description')
-    _sql_constraints = [('name_uniq', 'unique(name)', "The compliance control objective name already exists.")]
+    _sql_constraints = [('name_uniq', 'unique(name)', "The compliance objective name already exists.")]
 
     @api.depends('compliance_version_id','name')
     def _compute_display_name(self):
@@ -645,11 +647,11 @@ class ComplianceControl(models.Model):
     _description = 'Compliance Requirement'
     _rec_name = 'display_name'
 
-    name = fields.Char(string='Requirement', required=True)
-    display_name = fields.Char(string='Requirement Objective', compute='_compute_display_name')
-    compliance_control_objective_id = fields.Many2one('compliance.control.objective', string='Compliance Control Objective', required=True)
+    name = fields.Char(string='Compliance Requirement', required=True)
+    display_name = fields.Char(string='Compliance Requirement', compute='_compute_display_name')
+    compliance_control_objective_id = fields.Many2one('compliance.control.objective', string='Compliance Objective', required=True)
     description  = fields.Text(string='Description')
-    _sql_constraints = [('name_uniq', 'unique(name)', "The compliance control name already exists.")]
+    _sql_constraints = [('name_uniq', 'unique(name)', "The compliance requirement name already exists.")]
 
     @api.depends('compliance_control_objective_id','name')
     def _compute_display_name(self):
@@ -659,10 +661,10 @@ class ComplianceControl(models.Model):
 
 class ComplianceIsoControl(models.Model):
     _name = 'compliance.iso.control'
-    _description = 'Conompliance ISO Control'
+    _description = 'Conompliance - ISO 27001'
 
     compliance_control_id = fields.Many2one('compliance.control', string='Compliance Requirement', required=True)
-    iso_control_id = fields.Many2one('iso.control', string='ISO Control', required=True)
+    iso_control_id = fields.Many2one('iso.control', string='ISO 27001', required=True)
     description  = fields.Text(string='Description')
     
 
