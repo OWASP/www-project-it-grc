@@ -596,7 +596,7 @@ class ControlLine(models.Model):
     _description = 'Control Line'
 
     name = fields.Char(string='Name', required=True)
-    description = fields.Text(string='Description')
+    description = fields.Html(string='Description')
     attachment = fields.Many2many('ir.attachment', string="Attachment")
     is_implemented = fields.Boolean(string="Is Implemented?")
     control_design_id = fields.Many2one('control.design')
