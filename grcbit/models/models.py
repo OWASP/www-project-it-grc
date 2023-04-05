@@ -587,7 +587,7 @@ class ControlEvidence(models.Model):
     #display_name = fields.Char(string='Control Category', compute='_compute_display_name')
     name = fields.Char(string='Name', required=True)
     attachment = fields.Many2many('ir.attachment', string="Attachment")
-    comment = fields.Text(string='Comment/Description')
+    comment = fields.Html(string='Comment/Description')
     control_design_id = fields.Many2one('control.design')
     active = fields.Boolean(default=True)
 

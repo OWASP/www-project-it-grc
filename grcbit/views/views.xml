@@ -1807,7 +1807,7 @@
 	    <!--
             <field name="control" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
 	    -->
-            <field name="control_line_ids" widget="section_and_note_one2many" mode="tree" attrs="{ 'readonly': [('state', 'not in', ('draft', 'implemented') )] }" >
+            <field name="control_line_ids" widget="section_and_note_one2many" mode="tree" attrs="{ 'readonly': [('state', 'not in', ('draft', 'implemented') )] }"  >
 		    <!--
             <field name="control_line_ids" widget="section_and_note_one2many" mode="tree"  >
 		    -->
