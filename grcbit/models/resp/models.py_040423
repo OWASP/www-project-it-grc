@@ -538,27 +538,18 @@ class ControlDesing(models.Model):
     def _residual_risk(self, control_id, control_eval):
         risk_factor_ids    = self.env['control.design'].search([('id','=',control_id)]).risk_factor_id
 
-        for i in risk_factor_ids:
-            control_eval_ids = self.env['control.design'].search([('risk_factor_id','in',i.id), ('state','=','implemented') ]).control_evaluation_criteria_id
-            #control_eval_ids = self.env['control.design'].search([('risk_factor_id','in',risk_factor_ids.ids), ('state','=','implemented') ]).control_evaluation_criteria_id
-            if control_eval_ids:
-                _logger.info('grcbit_040423: ' + str(control_eval_ids))
-                m=[]
-                for c in control_eval_ids:
-                    m.append(c.id)
-                control_eval_mode=mode(m)
-                _logger.info('grcbit_040423_m: ' + str(m))
-                _logger.info('grcbit_040423_mode: ' + str(control_eval_mode))
+        control_eval_ids = self.env['control.design'].search([('risk_factor_id','in',risk_factor_ids.ids), ('state','=','implemented') ]).control_evaluation_criteria_id
+        m=[]
+        for i in control_eval_ids:
+            m.append(i.id)
+        control_eval_mode=mode(m)
 
-        #for i in risk_factor_ids:
-                for r in self.env['risk.factor'].search([('id','=',i.id)]):
-                    ir = self.env['risk.level'].search([('name','=',r.inherent_risk)]).id
+        for i in risk_factor_ids:
+            for r in self.env['risk.factor'].search([('id','=',i.id)]):
+                ir = self.env['risk.level'].search([('name','=',r.inherent_risk)]).id
                 #residual_risk = self.env['residual.risk.level'].search([('control_evaluation_criteria_id','=',control_eval.id), ('inherent_risk_level_id','=',ir)]).residual_risk_level_name
-                    residual_risk = self.env['residual.risk.level'].search([('control_evaluation_criteria_id','=',control_eval_mode), ('inherent_risk_level_id','=',ir)]).residual_risk_level_name
-                    r.write({'residual_risk':residual_risk})
-            else:
-                self.env['risk.factor'].search([('id','=',i.id)]).write({'residual_risk':''})
-                #r.write({'residual_risk':''})
+                residual_risk = self.env['residual.risk.level'].search([('control_evaluation_criteria_id','=',control_eval_mode), ('inherent_risk_level_id','=',ir)]).residual_risk_level_name
+                r.write({'residual_risk':residual_risk})
 
     def _status_control(self, statement):
         statement_record = self.env['statement.applicability'].search([('control_design_id','=',statement)]) 

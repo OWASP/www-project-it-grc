@@ -1725,8 +1725,8 @@
 	  <!--
           <field name="control" />
 	  -->
-          <field name="control_evaluation_criteria_id" optional="True" />
           <field name="control_design_criteria_id" optional="True" />
+          <field name="control_evaluation_criteria_id" optional="True" />
           <field name="is_key_control" widget="boolean_toggle" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
           <field name="risk_factor_id" widget="many2many_tags" />
           <field name="state" widget="badge" decoration-info="1" />  
@@ -1760,8 +1760,8 @@
 	  <!--
           <field name="control" />
 	  -->
-          <field name="control_evaluation_criteria_id"  />
           <field name="control_design_criteria_id"  />
+          <field name="control_evaluation_criteria_id"  />
           <field name="description"  />
           <field name="evidence_guide" />
           <field name="responsible" />
@@ -1833,8 +1833,8 @@
                             </tree>
                         </field>      
 
-            <field name="control_evaluation_criteria_id" groups="grcbit.group_admin, grcbit.group_iso_consultant" attrs="{'readonly': [('state', 'not in', ['implemented'])]}"  />
             <field name="control_design_criteria_id" groups="grcbit.group_admin, grcbit.group_iso_consultant" attrs="{'readonly': [('state', 'not in', ['designed'])]}"  />
+            <field name="control_evaluation_criteria_id" groups="grcbit.group_admin, grcbit.group_iso_consultant" attrs="{'readonly': [('state', 'not in', ['implemented'])]}"  />
           <field name="is_key_control" widget="boolean_toggle" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
 	  <!--
             <field name="evidence_guide" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
