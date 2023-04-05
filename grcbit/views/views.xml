@@ -1596,12 +1596,12 @@
     </record>
 
     <record id="grcbit.control_evaluation_criteria_action" model="ir.actions.act_window">
-	    <field name="name">Control Evaluaction Criteria</field>
+	    <field name="name">Implementation Criteria</field>
 	    <field name="res_model">control.evaluation.criteria</field>
 	    <field name="view_mode">tree,form,kanban</field>
     </record>
     <record model="ir.ui.view" id="grcbit.control_evaluation_criteria_view">
-      <field name="name">Control Evaluation Criteria</field>
+      <field name="name">Implementation Criteria</field>
       <field name="model">control.evaluation.criteria</field>
       <field name="arch" type="xml">
         <tree>
@@ -1611,7 +1611,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.control_evaluation_criteria_form">
-      <field name="name">Control Evaluation Criteria</field>
+      <field name="name">Implementation Criteria</field>
       <field name="model">control.evaluation.criteria</field>
       <field name="arch" type="xml">
         <form>
@@ -1623,7 +1623,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.control_evaluation_criteria_kanban">
-      <field name="name">Control Evaluation Criteria</field>
+      <field name="name">Implementation Criteria</field>
       <field name="model">control.evaluation.criteria</field>
       <field name="arch" type="xml">
 	      <kanban class="o_res_partner_kanban">
@@ -1647,6 +1647,66 @@
       </field>
     </record>
 
+
+
+
+    <record id="grcbit.control_design_criteria_action" model="ir.actions.act_window">
+	    <field name="name">Design Criteria</field>
+	    <field name="res_model">control.design.criteria</field>
+	    <field name="view_mode">tree,form,kanban</field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.control_design_criteria_view">
+      <field name="name">Design Criteria</field>
+      <field name="model">control.design.criteria</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="description" />
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.control_design_criteria_form">
+      <field name="name">Design Criteria</field>
+      <field name="model">control.design.criteria</field>
+      <field name="arch" type="xml">
+        <form>
+		<group>
+          <field name="name" />
+          <field name="description" />
+  </group>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit.control_design_criteria_kanban">
+      <field name="name">Design Criteria</field>
+      <field name="model">control.design.criteria</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_res_partner_kanban">
+          <field name="name"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <strong class="o_kanban_record_title">
+                    <field name="name"/>
+                  </strong>
+                  <div>
+                    <t t-esc="record.description.value"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+
+
+
+
+
     <record id="grcbit.control_design_action" model="ir.actions.act_window">
 	    <field name="name">Control Design</field>
 	    <field name="res_model">control.design</field>
@@ -1666,6 +1726,7 @@
           <field name="control" />
 	  -->
           <field name="control_evaluation_criteria_id" optional="True" />
+          <field name="control_design_criteria_id" optional="True" />
           <field name="is_key_control" widget="boolean_toggle" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
           <field name="risk_factor_id" widget="many2many_tags" />
           <field name="state" widget="badge" decoration-info="1" />  
@@ -1700,6 +1761,7 @@
           <field name="control" />
 	  -->
           <field name="control_evaluation_criteria_id"  />
+          <field name="control_design_criteria_id"  />
           <field name="description"  />
           <field name="evidence_guide" />
           <field name="responsible" />
@@ -1772,6 +1834,7 @@
                         </field>      
 
             <field name="control_evaluation_criteria_id" groups="grcbit.group_admin, grcbit.group_iso_consultant" attrs="{'readonly': [('state', 'not in', ['implemented'])]}"  />
+            <field name="control_design_criteria_id" groups="grcbit.group_admin, grcbit.group_iso_consultant" attrs="{'readonly': [('state', 'not in', ['designed'])]}"  />
           <field name="is_key_control" widget="boolean_toggle" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
 	  <!--
             <field name="evidence_guide" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
@@ -1963,7 +2026,8 @@
     <!-- CONTROL DESIGN -->
     <menuitem name="Control" id="grcbit.menu_control" parent="grcbit.menu_root" />
     <menuitem name="Control Design" id="grcbit.menu_control_design" parent="grcbit.menu_control" action="grcbit.control_design_action" sequence="1" />
-    <menuitem name="Control Evaluation Criteria" id="grcbit.menu_control_evaluation_criteria" parent="grcbit.menu_control" action="grcbit.control_evaluation_criteria_action" sequence="2" />
+    <menuitem name="Design Criteria" id="grcbit.menu_control_design_criteria" parent="grcbit.menu_control" action="grcbit.control_design_criteria_action" sequence="2" />
+    <menuitem name="Implementation Criteria" id="grcbit.menu_control_evaluation_criteria" parent="grcbit.menu_control" action="grcbit.control_evaluation_criteria_action" sequence="3" />
 
     <!-- SEQUENCES -->
     <record id="risk_id_sequence" model="ir.sequence">

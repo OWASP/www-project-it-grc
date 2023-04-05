@@ -480,7 +480,8 @@ class ControlDesing(models.Model):
     #attachment = fields.Many2many('ir.attachment', string="Attachment")
     active = fields.Boolean(default=True)
     control_evidence_ids = fields.One2many('control.evidence', 'control_design_id')
-    control_evaluation_criteria_id = fields.Many2one('control.evaluation.criteria', string='Implementation Evaluation')
+    control_evaluation_criteria_id = fields.Many2one('control.evaluation.criteria', string='Implementation Criteria')
+    control_design_criteria_id = fields.Many2one('control.design.criteria', string='Design Criteria')
     design_date = fields.Date(string='Design Date', readonly=True)
     implementation_date = fields.Date(string='Implementation Date', readonly=True)
     approve_date = fields.Date(string='Approve Date', readonly=True)
@@ -599,7 +600,15 @@ class ControlLine(models.Model):
 
 class ControlEvaluationCriteria(models.Model):
     _name = 'control.evaluation.criteria'
-    _description = 'Control Evaluation Criteria'
+    _description = 'Implementation Criteria'
+
+    name = fields.Char(string='Name', required=True)
+    description = fields.Text(string='Description')
+    active = fields.Boolean(default=True)
+
+class ControlDesignCriteria(models.Model):
+    _name = 'control.design.criteria'
+    _description = 'Design Criteria'
 
     name = fields.Char(string='Name', required=True)
     description = fields.Text(string='Description')
@@ -610,7 +619,7 @@ class ResidualRiskLevel(models.Model):
     _description = 'Residual Risk Level'
 
     inherent_risk_level_id   = fields.Many2one('risk.level',   string='Inherent Risk', required=True)
-    control_evaluation_criteria_id          = fields.Many2one('control.evaluation.criteria', string='Control Evaluation Criteria', required=True)
+    control_evaluation_criteria_id          = fields.Many2one('control.evaluation.criteria', string='Implementation Criteria', required=True)
     residual_risk_level_id   = fields.Many2one('risk.level',   string='Residual Risk', required=True)
     residual_risk_level_name = fields.Char(related='residual_risk_level_id.name', string='Residual Risk', required=True)
     active = fields.Boolean(default=True)
