@@ -692,8 +692,9 @@ class ComplianceIsoControl(models.Model):
     _description = 'Conompliance - ISO 27001'
 
     compliance_control_id = fields.Many2one('compliance.control', string='Compliance Requirement', required=True)
-    iso_control_id = fields.Many2one('iso.control', string='ISO 27001', required=True)
-    description  = fields.Text(string='Description')
+    #iso_control_id    = fields.Many2many('iso.control', string='ISO 27001', required=True)
+    control_design_id = fields.Many2many('control.design', string='Control', required=True)
+    description  = fields.Text(string='Compliance Description')
     
 
 #class ControlDesignEvaluation(models.Model):

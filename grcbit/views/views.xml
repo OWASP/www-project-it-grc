@@ -822,7 +822,10 @@
       <field name="arch" type="xml">
         <tree>
           <field name="compliance_control_id" />
-          <field name="iso_control_id"/>
+	  <!--
+          <field name="iso_control_id" widget="many2many_tags_open"/>
+	  -->
+          <field name="control_design_id" widget="many2many_tags_open"/>
           <field name="description"/>
         </tree>
       </field>
@@ -834,7 +837,10 @@
         <form>
 		      <group>
           <field name="compliance_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
-          <field name="iso_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
+	  <!--
+          <field name="iso_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" widget="many2many_tags_open" />
+	  -->
+          <field name="control_design_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" widget="many2many_tags_open" />
           <field name="description"/>
           </group>
         </form>
@@ -2014,7 +2020,7 @@
     <menuitem name="Compliance Version" id="grcbit.menu_compliance_version" parent="grcbit.menu_compliance" action="grcbit.compliance_version_action" sequence="1" />
     <menuitem name="Compliance Objective" id="grcbit.menu_compliance_control_objective" parent="grcbit.menu_compliance" action="grcbit.compliance_control_objective_action" sequence="2" />
     <menuitem name="Compliance Requirement" id="grcbit.menu_compliance_control" parent="grcbit.menu_compliance" action="grcbit.compliance_control_action" sequence="3" />
-    <menuitem name="Compliance - ISO 27001" id="grcbit.menu_compliance_iso_control" parent="grcbit.menu_compliance" action="grcbit.compliance_iso_control_action" sequence="4" />
+    <menuitem name="Compliance - ISMS" id="grcbit.menu_compliance_iso_control" parent="grcbit.menu_compliance" action="grcbit.compliance_iso_control_action" sequence="4" />
 
     <!-- RISK METRICS -->
     <menuitem name="Risk Management" id="grcbit.menu_risk_metric" parent="grcbit.menu_root" />
