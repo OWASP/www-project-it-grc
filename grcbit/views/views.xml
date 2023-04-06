@@ -317,7 +317,7 @@
           <field name="responsible" widget="many2one_avatar_user"/>
           <field name="environment" optional="hide" widget="badge"/>
           <field name="is_cloud" widget="boolean_toggle"/>
-          <field name="cloud_provider" widget="many2many_tags"  optional="hide" />
+          <field name="cloud_provider" widget="many2many_tags_open"  optional="hide" />
           <field name="is_internet_exposed" widget="boolean_toggle"/>
           <field name="users_qty" optional="hide" />
           <field name="os_version"/>
@@ -378,7 +378,7 @@
           </group>
 	        <group>
             <field name="is_cloud" widget="boolean_toggle"/>
-	          <field name="cloud_provider" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+	          <field name="cloud_provider" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
             <field name="is_internet_exposed" widget="boolean_toggle"/>
             <field name="users_qty"/>
             <field name="os_version"/>
@@ -406,12 +406,12 @@
           <field name="location" optional="hide" />
           <field name="owner" optional="hide" widget="many2one_avatar_user" />
           <field name="retention_period" optional="hide" widget="badge"/>
-          <field name="it_inventory_id" widget="many2many_tags" />
-          <field name="third_party_id"  widget="many2many_tags" />
+          <field name="it_inventory_id" widget="many2many_tags_open" />
+          <field name="third_party_id"  widget="many2many_tags_open" />
 	  <!--
           <field name="business_process_id"  widget="many2many_tags" />
 	  -->
-          <field name="document_page_id" widget="many2many_tags"  />
+          <field name="document_page_id" widget="many2many_tags_open"  />
           <field name="attachment" widget="many2many_binary" optional="hide" />
         </tree>
       </field>
@@ -428,12 +428,12 @@
           <field name="location" optional="hide" />
           <field name="owner" optional="hide" />
           <field name="retention_period" optional="hide" />
-          <field name="it_inventory_id" widget="many2many_tags" />
-          <field name="third_party_id"  widget="many2many_tags" />
+          <field name="it_inventory_id" widget="many2many_tags_open" />
+          <field name="third_party_id"  widget="many2many_tags_open" />
 	  <!--
           <field name="business_process_id"  widget="many2many_tags" />
 	  -->
-          <field name="document_page_id" widget="many2many_tags"  />
+          <field name="document_page_id" widget="many2many_tags_open"  />
 	</search>
       </field>
     </record>
@@ -472,12 +472,12 @@
             <field name="retention_period" />
           </group>
 	        <group>
-            <field name="it_inventory_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
-            <field name="third_party_id"   widget="many2many_tags"  options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="it_inventory_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="third_party_id"   widget="many2many_tags_open"  options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
 	    <!--
             <field name="document_page_id" widget="many2many_tags" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True)]" />
 	    -->
-            <field name="document_page_id" widget="many2many_tags" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True), ('name','ilike','proceso')]" />
+            <field name="document_page_id" widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True), ('name','ilike','proceso')]" />
             <field name="security_requirement"/>
             <field name="attachment" widget="many2many_binary" />
           </group>
@@ -1031,11 +1031,11 @@
           <field name="control_category_id" />
           <field name="name"/>
           <field name="control" />
-          <field name="control_type_id"  widget="many2many_tags" optional="hide" />
-          <field name="security_property_id"  widget="many2many_tags" optional="hide" />
-          <field name="cybersecurity_concept_id" widget="many2many_tags" optional="hide" />
-          <field name="operational_capability_id"  widget="many2many_tags" optional="hide" />
-          <field name="security_domain_id" widget="many2many_tags" optional="hide" />
+          <field name="control_type_id"  widget="many2many_tags_open" optional="hide" />
+          <field name="security_property_id"  widget="many2many_tags_open" optional="hide" />
+          <field name="cybersecurity_concept_id" widget="many2many_tags_open" optional="hide" />
+          <field name="operational_capability_id"  widget="many2many_tags_open" optional="hide" />
+          <field name="security_domain_id" widget="many2many_tags_open" optional="hide" />
           <field name="purpose" optional="hide" />
           <field name="guidance" optional="hide" />
           <field name="other_information" optional="hide" />
@@ -1057,13 +1057,13 @@
             <field name="control_category_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
             <field name="name"/>
             <field name="control" />
-            <field name="control_type_id"  widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
-            <field name="security_property_id"  widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="control_type_id"  widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="security_property_id"  widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
   	      </group>
 	        <group>
-            <field name="cybersecurity_concept_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
-            <field name="operational_capability_id"  widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
-            <field name="security_domain_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="cybersecurity_concept_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="operational_capability_id"  widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="security_domain_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
             <field name="purpose"  />
             <field name="guidance"  />
             <field name="other_information"  />
@@ -1106,8 +1106,8 @@
 	  <!--
           <field name="security_policy_id" widget="many2many_tags"  />
 	  -->
-          <field name="document_page_id" widget="many2many_tags"  />
-          <field name="control_design_id" widget="many2many_tags"  />
+          <field name="document_page_id" widget="many2many_tags_open"  />
+          <field name="control_design_id" widget="many2many_tags_open"  />
           <field name="control_status" widget="percentpie" />
         </tree>
       </field>
@@ -1123,8 +1123,8 @@
           <field name="name"/>
           <field name="is_applicable" widget="boolean_toggle"/>
           <field name="reason_selection"  />
-          <field name="document_page_id" widget="many2many_tags"  />
-          <field name="control_design_id" widget="many2many_tags"  />
+          <field name="document_page_id" widget="many2many_tags_open"  />
+          <field name="control_design_id" widget="many2many_tags_open"  />
           <field name="control_status" widget="percentpie" />
         </search>
       </field>
@@ -1147,8 +1147,8 @@
 	    <!--
             <field name="document_page_id" widget="many2many_tags" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True)]" />
 	    -->
-            <field name="document_page_id" widget="many2many_tags" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True), '|', ('name','ilike','politica'), ('name','ilike','pol') ]" />
-            <field name="control_design_id"  widget="many2many_tags" options="{'no_create_edit' : True, 'no_create':True}"  />
+            <field name="document_page_id" widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True), '|', ('name','ilike','politica'), ('name','ilike','pol') ]" />
+            <field name="control_design_id"  widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}"  />
             <field name="control_status" widget="percentpie" />
   	      </group>
         </form>
@@ -1513,8 +1513,8 @@
           <field name="active" invisible="1"/>
           <field name="risk_id" widget="badge" />
           <field name="name" />
-          <field name="risk_classification_id" widget="many2many_tags" />
-          <field name="data_inventory_id" widget="many2many_tags" />
+          <field name="risk_classification_id" widget="many2many_tags_open" />
+          <field name="data_inventory_id" widget="many2many_tags_open" />
           <field name="cause"/>
           <field name="consequence"/>
           <field name="impact_level_id" optional="hide" />
@@ -1565,8 +1565,8 @@
 	        <group>
             <field name="active" invisible="1"/>
             <field name="name"/>
-            <field name="risk_classification_id" widget="many2many_tags"  options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
-            <field name="data_inventory_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="risk_classification_id" widget="many2many_tags_open"  options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="data_inventory_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
             <field name="cause"/>
             <field name="consequence"/>
             <field name="responsible" widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
@@ -1728,17 +1728,17 @@
           <field name="control_design_criteria_id" optional="True" />
           <field name="control_evaluation_criteria_id" optional="True" />
           <field name="is_key_control" widget="boolean_toggle" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
-          <field name="risk_factor_id" widget="many2many_tags" />
+          <field name="risk_factor_id" widget="many2many_tags_open" />
           <field name="state" widget="badge" decoration-info="1" />  
 	  <!--
           <field name="evidence_guide" optional="hide" />
 	  -->
           <field name="responsible" widget="many2one_avatar_user" optional="hide"/>
-          <field name="control_type_id" widget="many2many_tags" optional="hide" />
-          <field name="security_property_id" widget="many2many_tags" optional="hide" />
-          <field name="cybersecurity_concept_id" widget="many2many_tags" optional="hide" />
-          <field name="operational_capability_id" widget="many2many_tags" optional="hide" />
-          <field name="security_domain_id" widget="many2many_tags" optional="hide" />
+          <field name="control_type_id" widget="many2many_tags_open" optional="hide" />
+          <field name="security_property_id" widget="many2many_tags_open" optional="hide" />
+          <field name="cybersecurity_concept_id" widget="many2many_tags_open" optional="hide" />
+          <field name="operational_capability_id" widget="many2many_tags_open" optional="hide" />
+          <field name="security_domain_id" widget="many2many_tags_open" optional="hide" />
           <field name="design_date" readonly="1" force_save="1" optional="hide" />
           <field name="implementation_date" readonly="1" force_save="1" optional="hide" />
           <field name="approve_date" readonly="1" force_save="1" optional="hide" />
@@ -1755,7 +1755,7 @@
       <field name="model">control.design</field>
       <field name="arch" type="xml">
         <search>
-          <field name="risk_factor_id" widget="many2many_tags" />
+          <field name="risk_factor_id" widget="many2many_tags_open" />
           <field name="name" />
 	  <!--
           <field name="control" />
@@ -1800,7 +1800,10 @@
 		      </header>
 		      <group>
             <field name="active" invisible="1"  />
-            <field name="risk_factor_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+
+            <field name="risk_factor_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+
+
             <field name="name" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
             <field name="description" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
 	    <field name="estimated_date" />
@@ -1840,13 +1843,13 @@
             <field name="evidence_guide" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
 	  -->
             <field name="responsible" widget="many2one_avatar_user" optional="hide" attrs="{'readonly': [('state', 'not in', ['draft'])] }" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
-            <field name="control_type_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
-            <field name="security_property_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+            <field name="control_type_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+            <field name="security_property_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
           </group>
 		      <group>
-            <field name="cybersecurity_concept_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
-            <field name="operational_capability_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
-            <field name="security_domain_id" widget="many2many_tags" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+            <field name="cybersecurity_concept_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+            <field name="operational_capability_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+            <field name="security_domain_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
             <!--
             <field name="comment" optional="hide"/>
             <field name="evidence_pending" optional="hide"/>
@@ -2050,6 +2053,7 @@
       <field name="padding">3</field>
       <field name="implementation">standard</field>
     </record>
+    <!--
     <record id="process_id_sequence" model="ir.sequence">
       <field name="name">Process ID sequence</field>
       <field name="code">process.id.sequence</field>
@@ -2070,7 +2074,7 @@
       <field name="padding">3</field>
       <field name="implementation">standard</field>
     </record>
-
+    -->
 
 
 
