@@ -812,12 +812,12 @@
 
 
     <record id="grcbit.compliance_iso_control_action" model="ir.actions.act_window">
-      <field name="name">Compliance - ISO 27001</field>
+      <field name="name">Compliance - ISMS</field>
       <field name="res_model">compliance.iso.control</field>
       <field name="view_mode">tree,form,kanban</field>
     </record>
     <record model="ir.ui.view" id="grcbit.compliance_iso_control_view">
-	    <field name="name">Compliance - ISO 27001</field>
+	    <field name="name">Compliance - ISMS</field>
 	    <field name="model">compliance.iso.control</field>
       <field name="arch" type="xml">
         <tree>
@@ -831,7 +831,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.compliance_iso_control_form">
-      <field name="name">Compliance - ISO 27001</field>
+      <field name="name">Compliance - ISMS</field>
       <field name="model">compliance.iso.control</field>
       <field name="arch" type="xml">
         <form>
