@@ -2,9 +2,9 @@
   <data>
 
     <record id="grcbit.third_party_action" model="ir.actions.act_window">
-	    <field name="name">Third Party</field>
-	    <field name="res_model">third.party</field>
-	    <field name="view_mode">tree,form,kanban,graph</field>
+      <field name="name">Third Party</field>
+      <field name="res_model">third.party</field>
+      <field name="view_mode">tree,form,kanban,graph</field>
     </record>
     <record model="ir.ui.view" id="grcbit.third_party_view">
       <field name="name">Third Party</field>
@@ -641,12 +641,10 @@
       </field>
     </record>
 
-
-
     <record id="grcbit.compliance_version_action" model="ir.actions.act_window">
       <field name="name">Compliance Version</field>
       <field name="res_model">compliance.version</field>
-      <field name="view_mode">tree,form,kanban</field>
+      <field name="view_mode">kanban,tree,form</field>
     </record>
     <record model="ir.ui.view" id="grcbit.compliance_version_view">
 	    <field name="name">Compliance Version</field>
@@ -663,18 +661,35 @@
       <field name="model">compliance.version</field>
       <field name="arch" type="xml">
         <form>
-		      <group>
+          <group>
             <field name="name"/>
             <field name="description"/>
           </group>
+	  <notebook>
+              <page string="Compliance Objective" name="compliance_objective">
+                  <field name="compliance_control_objective_ids" widget="section_and_note_one2many" mode="tree"  >
+                    <form>
+			    <group>
+                      <field name="name"/>
+                      <field name="description"/>
+	      </group>
+		    </form>
+                    <tree>
+                      <field name="name"/>
+                      <field name="description"/>
+		    </tree>
+		  </field>
+		  </page>
+	  </notebook>
+
         </form>
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.compliance_version_kanban">
-	    <field name="name">Compliance Version</field>
+      <field name="name">Compliance Version</field>
       <field name="model">compliance.version</field>
       <field name="arch" type="xml">
-	      <kanban class="o_res_partner_kanban">
+        <kanban class="o_res_partner_kanban">
           <field name="name"/>
           <field name="description"/>
           <templates>
@@ -700,7 +715,7 @@
     <record id="grcbit.compliance_control_objective_action" model="ir.actions.act_window">
       <field name="name">Compliance Objective</field>
       <field name="res_model">compliance.control.objective</field>
-      <field name="view_mode">tree,form,kanban</field>
+      <field name="view_mode">kanban,tree,form</field>
     </record>
     <record model="ir.ui.view" id="grcbit.compliance_control_objective_view">
 	    <field name="name">Compliance Objective</field>
@@ -723,14 +738,33 @@
             <field name="name"/>
             <field name="description"/>
           </group>
-        </form>
+	  <notebook>
+              <page string="Compliance Requirement" name="compliance_requirement">
+                  <field name="compliance_control_ids" widget="section_and_note_one2many" mode="tree"  >
+                    <form>
+			    <group>
+                      <field name="name"/>
+                      <field name="description"/>
+	      </group>
+		    </form>
+                    <tree>
+                      <field name="name"/>
+                      <field name="description"/>
+		    </tree>
+		  </field>
+		  </page>
+	  </notebook>
+  </form>
+
+
+
       </field>
     </record>
     <record model="ir.ui.view" id="grcbit.compliance_control_objective_kanban">
 	    <field name="name">Compliance Objective</field>
       <field name="model">compliance.control.objective</field>
       <field name="arch" type="xml">
-	      <kanban class="o_res_partner_kanban">
+        <kanban class="o_res_partner_kanban">
           <field name="name"/>
           <field name="description"/>
           <templates>
@@ -1748,6 +1782,7 @@
           <field name="design_date" readonly="1" force_save="1" optional="hide" />
           <field name="implementation_date" readonly="1" force_save="1" optional="hide" />
           <field name="approve_date" readonly="1" force_save="1" optional="hide" />
+          <field name="rejected_date" readonly="1" force_save="1" optional="hide" />
           <!--
           <field name="comment" optional="hide"/>
           <field name="evidence_pending" optional="hide"/>
@@ -1789,13 +1824,14 @@
 
 	        <header>
 	    <field name="state" widget="statusbar" options="{'clickable':'1'}" />
-            <button name="action_draft" string="SET TO DRAFT" type="object"  class="btn-primary" groups="grcbit.group_admin, grcbit.group_iso_consultant" confirm="¿Esta seguro que quiere pasar a la fase de BORRADOR de CONTROL?" />
+	    <button name="action_draft" string="SET TO DRAFT" type="object"  class="btn-primary" groups="grcbit.group_admin, grcbit.group_iso_consultant" confirm="¿Esta seguro que quiere pasar a la fase de BORRADOR de CONTROL?" attrs="{'invisible': [('state','in',['draft'])] }" />
             <button name="action_design" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['draft'])]}" class="btn-success" groups="grcbit.group_admin, grcbit.group_iso_consultant" confirm="¿Esta seguro que quiere aprobar el  DISEÑO de CONTROL?" />
             <button name="action_implemented" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['designed'])]}" class="btn-success" groups="grcbit.group_admin, grcbit.group_iso_consultant, grcbit.group_risk_owner" confirm="¿Esta seguro que quiere concluir la IMPLEMENTACION de CONTROL?" />
 	    <!--
             <button name="action_not_implemented" string="REJECT" type="object" attrs="{'invisible': [('state', 'not in', ['designed'])]}" class="btn-success" groups="grcbit.group_admin, grcbit.group_iso_consultant, grcbit.group_risk_owner" confirm="¿Esta seguro que quiere concluir la RECHAZAR de CONTROL?" />
 	    -->
             <button name="action_approved" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit.group_admin, grcbit.group_iso_consultant" confirm="¿Esta seguro que quiere APROBAR la IMPLEMENTACION de CONTROL?" />
+            <button name="action_rejected" string="REJECT" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit.group_admin, grcbit.group_iso_consultant" confirm="¿Esta seguro que quiere RECHAZAR la IMPLEMENTACION de CONTROL?" />
 
             <!--
             <button name="action_approved" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit.group_admin, grcbit.group_iso_consultant" confirm="¿Esta seguro que quiere APROBAR la IMPLEMENTACION de CONTROL?" />
@@ -1820,7 +1856,7 @@
 		    <!--
             <field name="control_line_ids" widget="section_and_note_one2many" mode="tree"  >
 		    -->
-                                              <form>
+            <form>
 <field name="active" invisible="1" />
 <field name="control_design_id" invisible="1" />
                               <group>
@@ -1864,6 +1900,7 @@
           <field name="design_date" readonly="1" force_save="1" />
           <field name="implementation_date" readonly="1" force_save="1" />
           <field name="approve_date" readonly="1" force_save="1" />
+          <field name="rejected_date" readonly="1" force_save="1" />
           </group>
                           <notebook>
                     <page string="Control Evidences" name="control_evidence_page">
@@ -2017,11 +2054,13 @@
 
     <!-- COMPLIANCE -->
     <menuitem name="Compliance" id="grcbit.menu_compliance" parent="grcbit.menu_root" />
-    <menuitem name="Compliance Version" id="grcbit.menu_compliance_version" parent="grcbit.menu_compliance" action="grcbit.compliance_version_action" sequence="1" />
-    <menuitem name="Compliance Objective" id="grcbit.menu_compliance_control_objective" parent="grcbit.menu_compliance" action="grcbit.compliance_control_objective_action" sequence="2" />
+    <menuitem name="Version" id="grcbit.menu_compliance_version" parent="grcbit.menu_compliance" action="grcbit.compliance_version_action" sequence="1" />
+    <menuitem name="Requirement" id="grcbit.menu_compliance_control_objective" parent="grcbit.menu_compliance" action="grcbit.compliance_control_objective_action" sequence="2" />
+    <!--
     <menuitem name="Compliance Requirement" id="grcbit.menu_compliance_control" parent="grcbit.menu_compliance" action="grcbit.compliance_control_action" sequence="3" />
+    -->
     <menuitem name="Compliance - ISMS" id="grcbit.menu_compliance_iso_control" parent="grcbit.menu_compliance" action="grcbit.compliance_iso_control_action" sequence="4" />
-    <menuitem id="menu_document" name="Documents" action="document_page.action_page" parent="grcbit.menu_compliance" sequence="5" />
+    <menuitem id="menu_document" name="Documentos" action="document_page.action_page" parent="grcbit.menu_compliance" sequence="5" />
 
     <!-- RISK METRICS -->
     <menuitem name="Risk Management" id="grcbit.menu_risk_metric" parent="grcbit.menu_root" />
@@ -2035,7 +2074,7 @@
 
     <!-- CONTROL DESIGN -->
     <menuitem name="Control" id="grcbit.menu_control" parent="grcbit.menu_root" />
-    <menuitem name="Control Design" id="grcbit.menu_control_design" parent="grcbit.menu_control" action="grcbit.control_design_action" sequence="1" />
+    <menuitem name="Control" id="grcbit.menu_control_design" parent="grcbit.menu_control" action="grcbit.control_design_action" sequence="1" />
     <menuitem name="Design Criteria" id="grcbit.menu_control_design_criteria" parent="grcbit.menu_control" action="grcbit.control_design_criteria_action" sequence="2" />
     <menuitem name="Implementation Criteria" id="grcbit.menu_control_evaluation_criteria" parent="grcbit.menu_control" action="grcbit.control_evaluation_criteria_action" sequence="3" />
 

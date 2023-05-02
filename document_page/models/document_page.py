@@ -22,6 +22,9 @@ class DocumentPage(models.Model):
         default="content",
     )
     active = fields.Boolean(default=True)
+
+    owner = fields.Many2one('res.users', string='Policy Responsible')
+
     parent_id = fields.Many2one(
         "document.page", "Category", domain=[("type", "=", "category")]
     )
@@ -41,7 +44,7 @@ class DocumentPage(models.Model):
     )
 
     draft_summary = fields.Char(
-        string="Summary",
+        string="Descripcion Cambio",
         help="Describe the changes made",
         related="history_head.summary",
         readonly=False,

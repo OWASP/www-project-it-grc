@@ -47,12 +47,12 @@
                     <field name="active" invisible="1" />
                     <field name="type" invisible="1" />
                     <h1>
-                        <field name="name" placeholder="Name" />
+                        <field name="name" placeholder="Nombre de la Politica" />
                     </h1>
                     <field
                         name="content"
                         widget="html"
-                        placeholder="e.g. Once upon a time..."
+                        placeholder="Documentar lineamientos..."
                         required="1"
                         options="{'safe': True, 'codeview': True, 'collaborative': True}"
                     />
@@ -60,6 +60,10 @@
                         <page name="info" string="Information">
                             <group>
                                 <group>
+                                    <field
+                                        name="owner"
+                                        required="True"
+                                    />
                                     <field
                                         name="parent_id"
                                         required="True"
@@ -78,18 +82,28 @@
                                         attrs="{'invisible': [('menu_id','=',False)]}"
                                     />
                                 </group>
-                                <group string="Revision">
+                                <group string="Control de Cambios">
+					<!--
                                     <field
                                         name="draft_name"
                                         placeholder="Rev 01"
                                         required="True"
                                     />
+					-->
                                     <field
                                         name="draft_summary"
-                                        placeholder="eg: Changed ... for ..."
+                                        placeholder="Descripcion del cambio..."
                                         required="True"
                                     />
                                 </group>
+				<!--
+				<group string="Responsable de la Politica">
+                                    <field
+                                        name="owner"
+                                        required="True"
+                                    />
+                                </group>
+				-->
                             </group>
                         </page>
                         <page name="history" string="History">

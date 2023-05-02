@@ -43,18 +43,18 @@
         #'grcbit/static/src/xml/template.xml',
     #]
     #},
-    'assets': {
-        'web.assets_backend': [
-            'grcbit/static/src/js/many2many_tags.js',
-            'grcbit/static/src/js/many2many_open.js',
+    #'assets': {
+    #    'web.assets_backend': [
+    #        'grcbit/static/src/js/many2many_tags.js',
+    #        'grcbit/static/src/js/many2many_open.js',
             #'grcbit/static/src/js/dashboard.js',
             #'grcbit/static/src/xml/dashboard.xml',
-        ],
+    #    ],
         #'web.assets_qweb': [
         #    'grcbit/static/src/xml/dashboard.xml',
         #],
         #'web.assets_frontend': [
         #    'grcbit/static/src/xml/dashboard.xml',
         #],
-    },
+    #},
 }
