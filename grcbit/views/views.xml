@@ -856,10 +856,8 @@
       <field name="arch" type="xml">
         <tree>
           <field name="compliance_control_id" />
-	  <!--
           <field name="iso_control_id" widget="many2many_tags_open"/>
-	  -->
-          <field name="control_design_id" widget="many2many_tags_open"/>
+	  <field name="document_page_id" />
           <field name="description"/>
         </tree>
       </field>
@@ -871,10 +869,8 @@
         <form>
 		      <group>
           <field name="compliance_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
-	  <!--
           <field name="iso_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" widget="many2many_tags_open" />
-	  -->
-          <field name="control_design_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" widget="many2many_tags_open" />
+          <field name="document_page_id" widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True)]" />
           <field name="description"/>
           </group>
         </form>

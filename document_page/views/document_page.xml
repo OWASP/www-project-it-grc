@@ -63,6 +63,7 @@
                                     <field
                                         name="owner"
                                         required="True"
+					widget="many2one_avatar_user"
                                     />
                                     <field
                                         name="parent_id"
