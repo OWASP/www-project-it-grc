@@ -857,7 +857,7 @@
         <tree>
           <field name="compliance_control_id" />
           <field name="iso_control_id" widget="many2many_tags_open"/>
-	  <field name="document_page_id" />
+	  <field name="document_page_id" widget="many2many_tags_open"/>
           <field name="description"/>
         </tree>
       </field>

@@ -3,33 +3,39 @@
 
     <template id="report_documentpage">
 
-        <t t-call="web.html_container">
 
 	<html> 
             <head>
                 <meta charset="utf-8"/>
-		<t t-call-assets="web.report_assets_common" t-js="false"/>
-		<t t-call-assets="web.assets_common" t-css="false"/>
-		<t t-call-assets="web.report_assets_common" t-css="false"/>
-
-                <title>Politica de Seguridad</title>
+                <meta name="viewport" content="initial-scale=1"/>
+                <title><t t-esc="title or 'Odoo Report'"/></title>
+                <t t-call-assets="web.report_assets_common" t-js="false"/>
                 <script type="text/javascript">
                     window.odoo = {};
                     window.odoo.__session_info__ = {is_report: true};
                 </script>
+                <t t-call-assets="web.assets_common" t-css="false"/>
+                <t t-call-assets="web.report_assets_common" t-css="false"/>
             </head>
-	    <body t-att-class="'container' if not full_width else 'container-fluid'">
-            <div id="wrapwrap">
+	    <body>
               <main>
                 <t t-if="not o" t-set="o" t-value="doc"/>
                 <t t-foreach="docs" t-as="doc">
-		  <div class="page">
-		    <h2 t-field="doc.name" />
-                    <div t-raw="doc.content" />
-                  </div>
+		  <h1 t-field="doc.name" />
+                  <div t-raw="doc.content" />
 	        </t>
+                <br />
+  	        <div class="row">
+   	        <div class="col-6">
+                 _____________________
+	        <p>Elabora</p>
+                </div>
+	        <div class="col-6">
+                ___ __________________
+	        <p>Revisa/Autoriza</p>
+                </div>
+                </div>
               </main>
-            </div>
             </body>
         </html>
 
@@ -56,7 +62,6 @@
            </div>
         </t>
 	-->
-        </t>
     </template>
 
 
