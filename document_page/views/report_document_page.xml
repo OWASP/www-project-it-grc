@@ -28,6 +28,7 @@
     	        <t t-set="company" t-value="company_id"/>
                 <t t-foreach="docs" t-as="doc">
 		  <div class="page">
+			  <!--
    	            <header>
                       <div class="row">
 	                <div class="col-4">
@@ -40,6 +41,7 @@
 			</div>
 	              </div>
 		    </header>
+			  -->
 
 		    <h2 t-field="doc.name" />
                     <div t-raw="doc.content" />
@@ -47,13 +49,13 @@
 
 		    <table border="1">
 			    <thead>
-			    <tr height="35">
+			    <tr height="30">
 				    <th width="400">Nombre y puesto de quien elabora</th>
 				    <th width="200">Fecha</th>
 			    </tr>
 		    </thead>
 		    <tbody>
-			    <tr height="130">
+			    <tr height="110">
 				    <td></td>
 				    <td></td>
 			    </tr>
@@ -65,13 +67,13 @@
 
 		    <table border="1">
 			    <thead>
-			    <tr height="35">
+			    <tr height="30">
 				    <th width="400">Nombre y puesto de quien autoriza</th>
 				    <th width="200">Fecha</th>
 			    </tr>
 		    </thead>
 		    <tbody>
-			    <tr height="130">
+			    <tr height="110">
 				    <td></td>
 				    <td></td>
 			    </tr>
@@ -105,7 +107,7 @@
     <field name="margin_right">7.0</field>
     <field name="header_line" eval="False" />
     <field name="header_spacing">35</field>
-    <field name="dpi">125</field>
+    <field name="dpi">90</field>
 </record>
 
     <record id="report_document_page" model="ir.actions.report">
