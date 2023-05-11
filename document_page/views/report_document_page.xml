@@ -19,13 +19,66 @@
                 </script>
             </head>
 	    <body t-att-class="'container' if not full_width else 'container-fluid'">
+
             <div id="wrapwrap">
+
               <main>
+
                 <t t-if="not o" t-set="o" t-value="doc"/>
+    	        <t t-set="company" t-value="company_id"/>
                 <t t-foreach="docs" t-as="doc">
 		  <div class="page">
+   	            <header>
+                      <div class="row">
+	                <div class="col-4">
+				ATMANCAPITAL
+			</div>
+			<div class="col-4">
+				SEGURIDAD DE LA INFORMACION
+			</div>
+	                <div class="col-4">
+			</div>
+	              </div>
+		    </header>
+
 		    <h2 t-field="doc.name" />
                     <div t-raw="doc.content" />
+		    <br />
+
+		    <table border="1">
+			    <thead>
+			    <tr height="35">
+				    <th width="400">Nombre y puesto de quien elabora</th>
+				    <th width="200">Fecha</th>
+			    </tr>
+		    </thead>
+		    <tbody>
+			    <tr height="130">
+				    <td></td>
+				    <td></td>
+			    </tr>
+
+		    </tbody>
+		    <br />
+		    <br />
+		    </table>
+
+		    <table border="1">
+			    <thead>
+			    <tr height="35">
+				    <th width="400">Nombre y puesto de quien autoriza</th>
+				    <th width="200">Fecha</th>
+			    </tr>
+		    </thead>
+		    <tbody>
+			    <tr height="130">
+				    <td></td>
+				    <td></td>
+			    </tr>
+
+		    </tbody>
+		    </table>
+
                   </div>
 	        </t>
               </main>
@@ -35,27 +88,6 @@
 
 
 
-	<!--
-        <t t-call="web.basic_layout">
-            <div class="page">
-		<h1 t-field="doc.name" />
-                <div t-raw="doc.content" />
-
-              <br />
-	      <div class="row">
-	      <div class="col-6">
-                 _____________________
-	        <p>Elabora</p>
-              </div>
-	      <div class="col-6">
-                ___ __________________
-	         <p>Revisa/Autoriza</p>
-              </div>
-              </div>
-
-           </div>
-        </t>
-	-->
         </t>
     </template>
 
