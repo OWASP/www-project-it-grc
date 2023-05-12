@@ -647,10 +647,13 @@
       <field name="view_mode">kanban,tree,form</field>
     </record>
     <record model="ir.ui.view" id="grcbit.compliance_version_view">
-	    <field name="name">Compliance Version</field>
-	    <field name="model">compliance.version</field>
-      <field name="arch" type="xml">
+        <field name="name">Compliance Version</field>
+	<field name="model">compliance.version</field>
+        <field name="arch" type="xml">
         <tree>
+	    <header>
+	        <button name="action_print_report_version" type="object" string="Imprimir Reporte" />
+            </header>
           <field name="name"/>
           <field name="description"/>
         </tree>
@@ -661,6 +664,9 @@
       <field name="model">compliance.version</field>
       <field name="arch" type="xml">
         <form>
+	  <header>
+	      <button name="action_print_report_version" type="object" string="Imprimir Reporte" />
+	  </header>
           <group>
             <field name="name"/>
             <field name="description"/>

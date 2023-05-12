@@ -97,6 +97,12 @@ class DocumentPage(models.Model):
         compute="_compute_backend_url",
     )
 
+    def action_print_policy(self):
+        #data = {}
+        docids = self.env['document.page'].search([]).ids
+        #return self.env.ref('module_name.action_student_id_card').report_action(docids, data=data)
+        return self.env.ref('document_page.print_policy').report_action(docids)
+
     @api.depends("menu_id", "parent_id.menu_id")
     def _compute_backend_url(self):
         tmpl = "/web#id={}&model=document.page&view_type=form"

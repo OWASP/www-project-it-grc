@@ -673,6 +673,10 @@ class ComplianceVersion(models.Model):
     compliance_control_objective_ids = fields.One2many('compliance.control.objective', 'compliance_version_id', string='Objective'  )
     _sql_constraints = [('name_uniq', 'unique(name)', "The compliance version name already exists.")]
 
+    def action_print_report_version(self):
+        data = {}
+        return data
+
 class ComplianceControlObjective(models.Model):
     _name = 'compliance.control.objective'
     _description = 'Compliance Objective'
