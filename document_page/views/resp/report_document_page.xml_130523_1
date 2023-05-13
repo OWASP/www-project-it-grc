@@ -2,60 +2,78 @@
 <odoo>
 
 <template id="policy_print_template">
-    <t t-call="web.html_container">
+
+	<!--
+    <t t-call="web.external_layout">
+	        <div class="header">
+	    <div class="row">
+	<div class="col-6">
+          <img src="/web/binary/company_logo"  style="text-align:left; height:40px; width:40px;"/>
+        </div>
+	<div class="col-6">
+	    <h5><span t-esc="p[0]"/></h5>
+		</div>
+		</div>
+		</div>
+	</t>
+	-->
+
+     <t t-call="web.html_container">
+
+
       <t t-foreach="policy" t-as="p" >
-        <t t-call="web.basic_layout">
-          <div class="page">
 
-            <div class="header">
-              <div class="row">
-        	  <div class="col-4">
-                     <img src="/web/binary/company_logo"  style="text-align:left; height:45px; width:45px;"/>
-                  </div>
-	          <div class="col-8">
-	            <h6><span t-esc="p[0]"/></h6>
-                  </div>
-              </div>
-            </div>
+    <t t-call="web.basic_layout">
 
+
+<div class="page">
+
+       <div class="header">
+         <div class="row">
+      	  <div class="col-6">
+           <img src="/web/binary/company_logo"  style="text-align:left; height:45px; width:45px;"/>
+          </div>
+	  <div class="col-6">
+	    <h6><span t-esc="p[0]"/></h6>
+          </div>
+         </div>
+       </div>
+
+	<!--
+	    <div class="row">
+	<div class="col-6">
+          <img src="/web/binary/company_logo"  style="text-align:left; height:40px; width:40px;"/>
+        </div>
+	<div class="col-6">
+	    <h5><span t-esc="p[0]"/></h5>
+        </div>
+        </div>
+	-->
 
 	    <br />
                 <div t-raw="p[1]" />
 	    <br />
+
 	            <p style="page-break-before:always;"> </p>
 
-	    <table class="table table-bordered" style="font-size:12px;">
-	      <thead>
-		    <tr>
-	  	    <th width="400">Nombre y puesto de quien elabora</th>
-	 	    <th width="200">Fecha</th>
-		    </tr>
-	      </thead>
-	      <tbody>
-		    <tr height="100">
-			    <td></td>
-			    <td></td>
-		    </tr>
-	       </tbody>
-             </table>
 
-	     <br />
-	     <br />
+	    		    <table class="table" style="font-size:12px;">
+			    <thead>
+			    <tr height="20">
+				    <th width="400">Nombre y puesto de quien elabora</th>
+				    <th width="200">Fecha</th>
+			    </tr>
+		    </thead>
+		    <tbody>
+			    <tr height="100">
+				    <td></td>
+				    <td></td>
+			    </tr>
 
-	    <table class="table table-bordered" style="font-size:12px;">
-	      <thead>
-		    <tr>
-	  	    <th width="400" >Nombre y puesto de quien autoriza</th>
-	 	    <th width="200" >Fecha</th>
-		    </tr>
-	      </thead>
-	      <tbody>
-		    <tr height="100">
-			    <td></td>
-			    <td></td>
-		    </tr>
-	       </tbody>
-             </table>
+		    </tbody>
+		    <br />
+		    <br />
+		    </table>
 
         <p style="page-break-before:always;"> </p>
 

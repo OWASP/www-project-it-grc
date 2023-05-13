@@ -98,10 +98,19 @@ class DocumentPage(models.Model):
     )
 
     def action_print_policy(self):
-        #data = {}
-        docids = self.env['document.page'].search([]).ids
+        data = {}
+        records = []
+        for i in self:
+            record = []
+            record.append(i.name)
+            record.append(i.content)
+            #data['name'] = i.name
+            #data['content'] = i.content
+            records.append(record)
+        data['policy'] = records
+        #docids = self.env['document.page'].search([]).ids
         #return self.env.ref('module_name.action_student_id_card').report_action(docids, data=data)
-        return self.env.ref('document_page.print_policy').report_action(docids)
+        return self.env.ref('document_page.print_policy').report_action(self, data=data)
 
     @api.depends("menu_id", "parent_id.menu_id")
     def _compute_backend_url(self):
