@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
-<template id="policy_print_template">
+<template id="compliance_print_template">
     <t t-call="web.html_container">
-      <t t-foreach="policy" t-as="p" >
+      <t t-foreach="compliance" t-as="c" >
         <t t-call="web.basic_layout">
           <div class="page">
 
@@ -13,57 +13,43 @@
                      <img src="/web/binary/company_logo"  style="text-align:left; height:45px; width:45px;"/>
                   </div>
 	          <div class="col-8">
-	            <h6><span t-esc="p[0]"/></h6>
+	            <h6>Reporte de Cumplimiento:<span t-esc="c[0]"/></h6>
                   </div>
               </div>
             </div>
 
+	    <h6><span t-esc="c[1]"/></h6>
+	    <h6><span t-esc="c[2][0]"/></h6>
+	    <h6><span t-esc="c[2][1]"/></h6>
 
-	    <br />
-                <div t-raw="p[1]" />
-	    <br />
-	            <p style="page-break-before:always;"> </p>
 
-	    <table class="table table-bordered" style="font-size:12px;">
-	      <thead>
+
+          <table  class="table table-bordered" style="font-size:12px;">
+	    <thead>
 		    <tr>
-	  	    <th width="400">Nombre y puesto de quien elabora</th>
-	 	    <th width="200">Fecha</th>
+			    <th>Requerimiento</th>
+			    <th>Cumplimiento</th>
+			    <th>ISO27001</th>
+			    <th>Politica/Proceso</th>
 		    </tr>
-	      </thead>
-	      <tbody>
-		    <tr height="100">
-			    <td></td>
-			    <td></td>
-		    </tr>
-	       </tbody>
-             </table>
+	    </thead>
+	    <tbody>
 
-	     <br />
-	     <br />
-
-	    <table class="table table-bordered" style="font-size:12px;">
-	      <thead>
+	    <t t-foreach="c[2][2]" t-as="r"> 
 		    <tr>
-	  	    <th width="400" >Nombre y puesto de quien autoriza</th>
-	 	    <th width="200" >Fecha</th>
-		    </tr>
-	      </thead>
-	      <tbody>
-		    <tr height="100">
-			    <td></td>
-			    <td></td>
-		    </tr>
-	       </tbody>
-             </table>
+	    <td><span t-esc="r[0]" />  </td>
+	    <td><span t-raw="r[1]" />  </td>
+	    <td><span t-esc="r[2]" />  </td>
+	    <td><span t-esc="r[3]" />  </td>
+    </tr>
+    </t>
+		    </tbody>
+		    </table>
 
-        <p style="page-break-before:always;"> </p>
-
-
+	    
 
 
     </div>
-
     </t>
     </t>
     </t>
@@ -90,17 +76,17 @@
 </record>
 
 
-    <record id="print_policy" model="ir.actions.report">
-        <field name="name">Imprimir Politica</field>
-        <field name="model">document.page</field>
+    <record id="print_compliance" model="ir.actions.report">
+        <field name="name">Reporte Compliance</field>
+        <field name="model">compliance.version</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">document_page.policy_print_template</field>
-        <field name="report_file">document_page.policy_print_template</field>
+        <field name="report_name">grcbit.compliance_print_template</field>
+        <field name="report_file">grcbit.compliance_print_template</field>
         <field name="binding_type">report</field>
 	<!--
         <field name="binding_model_id" ref="model_document_page" />
 	-->
-        <field name="paperformat_id" ref="document_page.paperformat_grcbit" />
+        <field name="paperformat_id" ref="grcbit.paperformat_grcbit" />
     </record>
 
 

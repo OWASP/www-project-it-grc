@@ -19,6 +19,7 @@
         'security/groups.xml',
         'security/ir.model.access.csv',
         'views/views.xml',
+        'views/report_compliance.xml',
         #'views/templates.xml',
         #'views/security.xml',
         #'static/src/xml/dashboard.xml',

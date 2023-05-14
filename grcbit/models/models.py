@@ -675,7 +675,43 @@ class ComplianceVersion(models.Model):
 
     def action_print_report_version(self):
         data = {}
-        return data
+        record = []
+        for i in self:
+            r = []
+            r.append(i.display_name)
+            r.append(i.description)
+            for ii in i.compliance_control_objective_ids:
+                rr=[]
+                rr.append(ii.display_name)
+                rr.append(ii.description) 
+                #r.append(rr)
+                for iii in ii.compliance_control_ids:
+                    d = []
+                    #_logger.info('reporte_fintech: ' + str(iii))
+                    compliance_detail = self.env['compliance.iso.control'].search([('compliance_control_id','=',iii.id)])
+                    #_logger.info('reporte_fintech_query: ' + str(compliance_detail))
+                    for iiii in compliance_detail:
+                        #_logger.info('reporte_fintech_registro: ' + str(iiii))
+                        rrr=[]
+                        s = ''
+                        rrr.append(iiii.compliance_control_id.name)
+                        rrr.append(iiii.description)
+                        for iiiii in iiii.iso_control_id:
+                            #rrrr = []
+                            #rrrr.append(iiiii.display_name)
+                            #s = ''
+                            s = s + ' - ' + str(iiiii.display_name)
+                           
+                        rrr.append(s)
+                        rrr.append(iiii.document_page_id.name)
+                        d.append(rrr)
+                rr.append(d)
+                r.append(rr)
+            record.append(r)
+        data['compliance'] = record
+        return self.env.ref('grcbit.print_compliance').report_action(self, data=data)
+
+
 
 class ComplianceControlObjective(models.Model):
     _name = 'compliance.control.objective'
