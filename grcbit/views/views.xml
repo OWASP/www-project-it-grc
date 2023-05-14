@@ -644,7 +644,7 @@
     <record id="grcbit.compliance_version_action" model="ir.actions.act_window">
       <field name="name">Compliance Version</field>
       <field name="res_model">compliance.version</field>
-      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_mode">tree,kanban,form</field>
     </record>
     <record model="ir.ui.view" id="grcbit.compliance_version_view">
         <field name="name">Compliance Version</field>

@@ -23,7 +23,6 @@
 	    <h6><span t-esc="c[2][1]"/></h6>
 
 
-
           <table  class="table table-bordered" style="font-size:12px;">
 	    <thead>
 		    <tr>
@@ -35,7 +34,7 @@
 	    </thead>
 	    <tbody>
 
-	    <t t-foreach="c[2][2]" t-as="r"> 
+	    <t t-foreach="c_records" t-as="r"> 
 		    <tr>
 	    <td><span t-esc="r[0]" />  </td>
 	    <td><span t-raw="r[1]" />  </td>
@@ -45,7 +44,6 @@
     </t>
 		    </tbody>
 		    </table>
-
 	    
 
 

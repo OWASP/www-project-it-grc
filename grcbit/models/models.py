@@ -676,6 +676,7 @@ class ComplianceVersion(models.Model):
     def action_print_report_version(self):
         data = {}
         record = []
+        c_records = []
         for i in self:
             r = []
             r.append(i.display_name)
@@ -704,11 +705,14 @@ class ComplianceVersion(models.Model):
                            
                         rrr.append(s)
                         rrr.append(iiii.document_page_id.name)
+                        c_records.append(rrr)
                         d.append(rrr)
-                rr.append(d)
+                    rr.append(d)
                 r.append(rr)
+                    #r.append(d)
             record.append(r)
         data['compliance'] = record
+        data['c_records'] = c_records
         return self.env.ref('grcbit.print_compliance').report_action(self, data=data)
 
 
