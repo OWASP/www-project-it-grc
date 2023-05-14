@@ -695,6 +695,7 @@ class ComplianceVersion(models.Model):
                         #_logger.info('reporte_fintech_registro: ' + str(iiii))
                         rrr=[]
                         s = ''
+                        p = ''
                         rrr.append(iiii.compliance_control_id.name)
                         rrr.append(iiii.description)
                         for iiiii in iiii.iso_control_id:
@@ -702,9 +703,13 @@ class ComplianceVersion(models.Model):
                             #rrrr.append(iiiii.display_name)
                             #s = ''
                             s = s + ' - ' + str(iiiii.display_name)
-                           
                         rrr.append(s)
-                        rrr.append(iiii.document_page_id.name)
+
+                        for iiiii in iiii.document_page_id:
+                            p = p + ' - ' + str(iiiii.display_name)
+                        rrr.append(p)
+
+                        #rrr.append(iiii.document_page_id.name)
                         c_records.append(rrr)
                         d.append(rrr)
                     rr.append(d)

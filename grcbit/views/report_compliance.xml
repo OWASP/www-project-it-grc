@@ -13,14 +13,22 @@
                      <img src="/web/binary/company_logo"  style="text-align:left; height:45px; width:45px;"/>
                   </div>
 	          <div class="col-8">
-	            <h6>Reporte de Cumplimiento:<span t-esc="c[0]"/></h6>
+	            <h6>Reporte de Cumplimiento: <span t-esc="c[0]"/></h6>
                   </div>
               </div>
             </div>
 
 	    <h6><span t-esc="c[1]"/></h6>
+
+              <div class="row">
+        	  <div class="col-6">
 	    <h6><span t-esc="c[2][0]"/></h6>
+              </div>
+        	  <div class="col-6">
 	    <h6><span t-esc="c[2][1]"/></h6>
+              </div>
+              </div>
+	      <br />
 
 
           <table  class="table table-bordered" style="font-size:12px;">
