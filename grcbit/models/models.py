@@ -766,7 +766,11 @@ class ComplianceIsoControl(models.Model):
     #control_design_id = fields.Many2many('control.design', string='Control', required=True)
     description  = fields.Html(string='Compliance Description')
     #descript  = fields.Text(string='Compliance Description')
-    
+
+
+
+
+
 #class ControlDesignEvaluation(models.Model):
 #    _name = 'control.design.evaluation'
 #    _description = 'Control Design Evaluation'
