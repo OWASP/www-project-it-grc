@@ -767,7 +767,6 @@ class ComplianceIsoControl(models.Model):
     description  = fields.Html(string='Compliance Description')
     #descript  = fields.Text(string='Compliance Description')
     
-
 #class ControlDesignEvaluation(models.Model):
 #    _name = 'control.design.evaluation'
 #    _description = 'Control Design Evaluation'
