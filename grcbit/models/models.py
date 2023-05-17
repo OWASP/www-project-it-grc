@@ -758,10 +758,10 @@ class ComplianceControl(models.Model):
 
 class ComplianceIsoControl(models.Model):
     _name = 'compliance.iso.control'
-    _description = 'Conompliance - ISO 27001'
+    _description = 'Compliance - ISMS'
 
     compliance_control_id = fields.Many2one('compliance.control', string='Compliance Requirement', required=True)
-    iso_control_id     = fields.Many2many('iso.control', string='ISO Control', required=True)
+    iso_control_id     = fields.Many2many('iso.control', string='ISMS Control')
     document_page_id   = fields.Many2many('document.page', string='Policy / Process')
     #control_design_id = fields.Many2many('control.design', string='Control', required=True)
     description  = fields.Html(string='Compliance Description')
