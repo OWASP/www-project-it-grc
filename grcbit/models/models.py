@@ -669,7 +669,7 @@ class ComplianceVersion(models.Model):
     _description = 'Compliance Version'
 
     name = fields.Char(string='Compliance Version', required=True)
-    description  = fields.Text(string='Description')
+    description  = fields.Html(string='Description')
     compliance_control_objective_ids = fields.One2many('compliance.control.objective', 'compliance_version_id', string='Objective'  )
     _sql_constraints = [('name_uniq', 'unique(name)', "The compliance version name already exists.")]
 
@@ -730,7 +730,7 @@ class ComplianceControlObjective(models.Model):
     name = fields.Char(string='Compliance Objective', required=True)
     display_name = fields.Char(string='Compliance Objective', compute='_compute_display_name')
     compliance_version_id = fields.Many2one('compliance.version', string='Compliance Version', required=True)
-    description  = fields.Text(string='Description')
+    description  = fields.Html(string='Description')
     compliance_control_ids = fields.One2many('compliance.control','compliance_control_objective_id', string='Requirement')
     _sql_constraints = [('name_uniq', 'unique(name)', "The compliance objective name already exists.")]
 
@@ -747,7 +747,7 @@ class ComplianceControl(models.Model):
     name = fields.Char(string='Compliance Requirement', required=True)
     display_name = fields.Char(string='Compliance Requirement', compute='_compute_display_name')
     compliance_control_objective_id = fields.Many2one('compliance.control.objective', string='Compliance Objective', required=True)
-    description  = fields.Text(string='Description')
+    description  = fields.Html(string='Description')
     _sql_constraints = [('name_uniq', 'unique(name)', "The compliance requirement name already exists.")]
 
     @api.depends('compliance_control_objective_id','name')
