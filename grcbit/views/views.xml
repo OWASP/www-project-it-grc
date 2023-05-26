@@ -646,19 +646,21 @@
       <field name="res_model">compliance.version</field>
       <field name="view_mode">tree,kanban,form</field>
     </record>
+
     <record model="ir.ui.view" id="grcbit.compliance_version_view">
         <field name="name">Compliance Version</field>
 	<field name="model">compliance.version</field>
         <field name="arch" type="xml">
-        <tree>
+		<tree multi_edit="1">
 	    <header>
 	        <button name="action_print_report_version" type="object" string="Imprimir Reporte" />
             </header>
           <field name="name"/>
           <field name="description"/>
-        </tree>
+  </tree>
       </field>
     </record>
+
     <record model="ir.ui.view" id="grcbit.compliance_version_form">
       <field name="name">Compliance Version</field>
       <field name="model">compliance.version</field>
@@ -727,7 +729,7 @@
 	    <field name="name">Compliance Objective</field>
 	    <field name="model">compliance.control.objective</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree multi_edit="1">
           <field name="compliance_version_id"/>
           <field name="name"/>
           <field name="description"/>
@@ -753,7 +755,7 @@
                       <field name="description"/>
 	      </group>
 		    </form>
-                    <tree>
+                    <tree multi_edit="1">
                       <field name="name"/>
                       <field name="description"/>
 		    </tree>
@@ -804,7 +806,7 @@
 	    <field name="name">Compliance Requirement</field>
 	    <field name="model">compliance.control</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree multi_edit="1">
           <field name="compliance_control_objective_id"/>
           <field name="name"/>
           <field name="description"/>
@@ -860,7 +862,7 @@
 	    <field name="name">Compliance - ISMS</field>
 	    <field name="model">compliance.iso.control</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree multi_edit="1">
           <field name="compliance_control_id" />
           <field name="iso_control_id" widget="many2many_tags_open"/>
 	  <field name="document_page_id" widget="many2many_tags_open"/>
@@ -920,7 +922,7 @@
       <field name="name">Security Property</field>
       <field name="model">security.property</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree multi_edit="1">
           <field name="name"/>
           <field name="description"/>
         </tree>
@@ -972,7 +974,7 @@
       <field name="name">Control Type</field>
       <field name="model">control.type</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree multi_edit="1">
           <field name="name"/>
           <field name="description"/>
         </tree>
@@ -1024,7 +1026,7 @@
    	  <field name="name">Control Category</field>
         <field name="model">control.category</field>
         <field name="arch" type="xml">
-        <tree>
+        <tree multi_edit="1">
           <field name="id_control_category"/>
           <field name="name"/>
           <field name="description"/>
@@ -1067,7 +1069,7 @@
    	  <field name="name">ISO Control</field>
         <field name="model">iso.control</field>
         <field name="arch" type="xml">
-        <tree>
+        <tree multi_edit="1">
           <field name="active" invisible="1"/>
           <field name="id_iso_control"/>
           <field name="control_category_id" />
@@ -1137,7 +1139,7 @@
       <field name="name">Statement Applicability</field>
       <field name="model">statement.applicability</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree multi_edit="1">
           <field name="active" invisible="1"/>
           <field name="name"/>
           <field name="is_applicable" widget="boolean_toggle"/>
@@ -1221,7 +1223,7 @@
       <field name="name">Risk Classification</field>
       <field name="model">risk.classification</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree multi_edit="1">
           <field name="active" invisible="1"/>
           <field name="name"/>
           <field name="description"/>
@@ -1276,7 +1278,7 @@
       <field name="name">Residual Risk Level</field>
       <field name="model">residual.risk.level</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree multi_edit="1">
         <!--
           <field name="name" widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
           -->
@@ -1320,7 +1322,7 @@
       <field name="name">Inherent Risk Level</field>
       <field name="model">inherent.risk.level</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree multi_edit="1">
           <field name="active" invisible="1"/>
           <!-- <field name="inherent_risk_level_id"/> -->
           <field name="risk_level_name" widget="badge" decoration-danger="risk_level_name=='Alto'" decoration-warning="risk_level_name=='Medio'" decoration-success="risk_level_name=='Bajo'"/>
@@ -1382,7 +1384,7 @@
       <field name="name">Probability Level</field>
       <field name="model">probability.level</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree multi_edit="1">
           <field name="active" invisible="1"/>
           <field name="name" widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
           <field name="value" widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
@@ -1438,7 +1440,7 @@
       <field name="name">Impact Level</field>
       <field name="model">impact.level</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree multi_edit="1">
           <field name="active" invisible="1"/>
           <field name="name" widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
           <field name="value" widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
@@ -1494,7 +1496,7 @@
       <field name="name">Risk Level</field>
       <field name="model">risk.level</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree multi_edit="1">
           <field name="active" invisible="1"/>
           <field name="name"  widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
           <field name="value" widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
@@ -1551,7 +1553,7 @@
       <field name="name">Risk Factor</field>
       <field name="model">risk.factor</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree multi_edit="1">
           <field name="active" invisible="1"/>
           <field name="risk_id" widget="badge" />
           <field name="name" />
@@ -1646,7 +1648,7 @@
       <field name="name">Implementation Criteria</field>
       <field name="model">control.evaluation.criteria</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree multi_edit="1">
           <field name="name" />
           <field name="description" />
         </tree>
@@ -1701,7 +1703,7 @@
       <field name="name">Design Criteria</field>
       <field name="model">control.design.criteria</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree multi_edit="1">
           <field name="name" />
           <field name="description" />
         </tree>
@@ -1758,7 +1760,7 @@
       <field name="name">Control Design</field>
       <field name="model">control.design</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree multi_edit="1">
           <field name="active" invisible="1"  />
           <field name="control_id" widget="badge" />
           <field name="name" />

@@ -25,7 +25,7 @@
 			  <h6><strong><span t-esc="c[2][0]"/></strong></h6>
               </div>
         	  <div class="col-6">
-	    <h6><span t-esc="c[2][1]"/></h6>
+	    <h6><span t-raw="c[2][1]"/></h6>
               </div>
               </div>
 	      <br />
