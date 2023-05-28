@@ -669,7 +669,7 @@ class ComplianceVersion(models.Model):
     _description = 'Compliance Version'
 
     name = fields.Char(string='Compliance Version', required=True)
-    description  = fields.Html(string='Description')
+    description  = fields.Text(string='Description')
     compliance_control_objective_ids = fields.One2many('compliance.control.objective', 'compliance_version_id', string='Objective'  )
     _sql_constraints = [('name_uniq', 'unique(name)', "The compliance version name already exists.")]
 
@@ -765,7 +765,7 @@ class ComplianceIsoControl(models.Model):
     iso_control_id     = fields.Many2many('iso.control', string='ISMS Control')
     document_page_id   = fields.Many2many('document.page', string='Policy / Process')
     #control_design_id = fields.Many2many('control.design', string='Control', required=True)
-    description  = fields.Html(string='Compliance Description')
+    description  = fields.Text(string='Compliance Description')
     #descript  = fields.Text(string='Compliance Description')
 
 
