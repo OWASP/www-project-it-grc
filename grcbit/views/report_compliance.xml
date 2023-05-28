@@ -44,10 +44,10 @@
 
 	    <t t-foreach="c_records" t-as="r"> 
 		    <tr>
-	    <td><span t-esc="r[0]" />  </td>
-	    <td><span t-raw="r[1]" />  </td>
-	    <td><span t-esc="r[2]" />  </td>
-	    <td><span t-esc="r[3]" />  </td>
+	    <td width="25%"><span t-esc="r[0]" />  </td>
+	    <td width="25%"><span t-raw="r[1]" />  </td>
+	    <td width="25%"><span t-esc="r[2]" />  </td>
+	    <td width="25%"><span t-esc="r[3]" />  </td>
     </tr>
     </t>
 		    </tbody>
