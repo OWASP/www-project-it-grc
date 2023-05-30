@@ -1150,7 +1150,7 @@
 	  <!--
           <field name="security_policy_id" widget="many2many_tags"  />
 	  -->
-          <field name="document_page_id" widget="many2many_tags_open"  />
+          <field name="document_page_id"  widget="many2many_tags_open"  />
           <field name="control_design_id" widget="many2many_tags_open"  />
           <field name="control_status" widget="percentpie" />
         </tree>
@@ -1165,11 +1165,11 @@
       <field name="arch" type="xml">
         <search>
           <field name="name"/>
-          <field name="is_applicable" widget="boolean_toggle"/>
-          <field name="reason_selection"  />
-          <field name="document_page_id" widget="many2many_tags_open"  />
-          <field name="control_design_id" widget="many2many_tags_open"  />
-          <field name="control_status" widget="percentpie" />
+          <field name="is_applicable" />
+          <field name="reason_selection" />
+          <field name="document_page_id"  />
+          <field name="control_design_id" />
+          <field name="control_status" />
         </search>
       </field>
     </record>

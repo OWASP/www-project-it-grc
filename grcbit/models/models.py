@@ -456,7 +456,7 @@ class ControlDesing(models.Model):
  
     control_id = fields.Char(string='Control ID', required=True, index=True, copy=False, default='New')
     risk_factor_id = fields.Many2many('risk.factor',string='Risk Factor', track_visibility='always')
-    display_name = fields.Char(string='Control Category', compute='_compute_display_name')
+    display_name = fields.Char(string='Control', compute='_compute_display_name')
     name = fields.Char(string='Nombre', required=True)
     #control_id = fields.Char(string='Control ID', required=True, index=True, copy=False, default='New')
     #control = fields.Text(string='Control', required=True)
@@ -503,7 +503,8 @@ class ControlDesing(models.Model):
     @api.depends('control_id','name')
     def _compute_display_name(self):
         for i in self:
-            i.display_name = i.control_id + ' ' + i.name
+            i.display_name = i.control_id 
+            #i.display_name = i.control_id + ' ' + i.name
 
     def action_draft(self):
         self.state = 'draft'
