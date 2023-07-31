@@ -2001,12 +2001,11 @@
       <field name="type">form</field>
       <field name="arch" type="xml">
         <form string="Information Security Management System">
+		<!--
           <board style="1-1">
             <column>
               <action string="Control Category" name="%(grcbit.control_category_dash)d" />
-	      <!--
               <action string="Process" name="%(grcbit.business_process_dash)d" />
-	      -->
               <action string="Data Classification" name="%(grcbit.data_classification_dash)d" />
             <column>
             </column>
@@ -2015,6 +2014,7 @@
               <action string="Third-Party" name="%(grcbit.third_party_dash)d" />
             </column>
       	  </board>
+		-->
         </form>
       </field>
     </record>
