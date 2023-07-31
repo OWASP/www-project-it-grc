@@ -2019,7 +2019,6 @@
       </field>
     </record>
 
-
     <record id="grcbit.grcbit_dashboard_action" model="ir.actions.act_window">
       <field name="name">GRCbit Dashboard</field>
       <!-- <field name="tag">custom_dashboard_tags</field> -->
