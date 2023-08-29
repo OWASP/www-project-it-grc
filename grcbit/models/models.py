@@ -149,7 +149,8 @@ class BusinessProcess(models.Model):
         #for i in self.env['business.process'].search([]):
         for i in self.env['document.page'].search([]):
             data_assets = self.env['data.inventory'].search([('document_page_id', 'in', [i.id] )])
-            self.env['document_page'].sudo().search([('id','=',i.id)]).sudo().write({'data_inventory_count':len(data_assets)})
+            #self.env['document.page'].sudo().search([('id','=',i.id)]).sudo().write({'data_inventory_count':len(data_assets)})
+            self.env['business.process'].sudo().search([('id','=',i.id)]).sudo().write({'data_inventory_count':len(data_assets)})
         return res
 
     @api.model
