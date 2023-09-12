@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="HrDashboardMain1">
+        <div class="oh_dashboards">
+            <div class="container-fluid o_hr_dashboard"></div>
+
+        </div>
+    </t>
+
+<!--    Power BI url-->
+    <t t-name="iframe12">
+        <div>
+           <iframe style="width:100%; height:90vh"
+                   src="https://app.powerbi.com/view?r=eyJrIjoiNDI2ZGZlYTgtYTk0Ny00OTE0LTk4NTYtMjQ2MGJlOTRlZTMwIiwidCI6IjhlMjI1ZTQ1LTgzOWMtNDMzNi1iNDA5LWFkYTgyY2UwMTM4ZCIsImMiOjl9"
+                   title="BI">
+           </iframe>
+        </div>
+    </t>
+</templates>

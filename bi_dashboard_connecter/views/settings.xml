@@ -1,0 +1,106 @@
+<odoo>
+
+    <data>
+        <record model="ir.ui.view" id="bi_dashboard_connecter_formview">
+            <field name="name">Dashboard Credentials</field>
+            <field name="model">bi.cred</field>
+            <field name="arch" type="xml">
+                <form group="base.group_system">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="True" attrs="{'readonly':[('created_flag','==', True)]}"/>
+                                <field name="username" required='True' attrs="{'readonly':[('created_flag','==',True)]}"/>
+<!--                                <field name="current_user" />-->
+<!--                                <field name="create_uid" />-->
+                                <field name="created_flag" string="Hide password/Client_id from other admin(s)" attrs="{'invisible':True}"/>
+                                <field name="password" required='True' password="True" attrs="{'readonly':[('created_flag','==', True)]}"/>
+                                <field name="client_id" required='True' password="True" attrs="{'readonly':[('created_flag','==', True)]}"/>
+                                <field name="po_number" />
+                                <field name="personal_email" required='True' />
+                                <button style="border : 1px solid black;"
+                                        type="object"
+                                        string="Fetch Dashboards"
+                                        name="fetch_dashboard"
+                                        class="oe_stat_button btn btn-success"
+                                        icon="fa-dashboard"
+                                        groups="base.group_system"/>
+
+                            </group>
+
+
+                        </group>
+                        <notebook groups="base.group_system" attrs="{'readonly':[('created_flag','==', True)]}">
+                            <page string="Dashboards">
+                                <field
+                                        name="dashboard_line"
+                                        attrs="{'readonly':[('created_flag','==', True)]}"
+                                        widget="one2many"
+                                        mode="tree"
+                                />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="bi_dahsboard_treeview">
+            <field name="name">BI Dashboard</field>
+            <field name="model">bi.cred</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="username" />
+
+
+                </tree>
+
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="bi_cred_action_window">
+            <field name="name">BI Dashboard</field>
+            <field name="res_model">bi.cred</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Configurations Found
+                </p>
+                <i class="icon-dashboard"/>
+                <p>
+                    Create a Power BI Connection....
+                </p>
+            </field>
+
+        </record>
+        <menuitem name="BI Dashboards"
+                  id="bi_dashboard_connecter_menu_root"
+                  action="bi_dashboard_action_window"
+                  groups="base.group_user"
+                  web_icon="bi_dashboard_connecter,static/src/img/icon.png"/>
+        />
+
+        <menuitem id="bi_dashboard_menu"
+                  name="BI Dashboard"
+                  parent="bi_dashboard_connecter_menu_root"
+                  action="bi_dashboard_action_window"
+                  groups="base.group_user"
+
+                  sequence="0"/>
+        <menuitem id="org_dashboard_menu"
+                  name="BI Organization Dashboard"
+                  parent="bi_dashboard_connecter_menu_root"
+                  action="org_dashboard_action_window"
+                  groups="base.group_user"
+                  sequence="1"/>
+        <menuitem id="bi_cred_menu"
+                  name="Settings"
+                  parent="bi_dashboard_connecter_menu_root"
+                  action="bi_cred_action_window"
+                  groups="base.group_system"
+                  sequence="2"/>
+
+    </data>
+</odoo>

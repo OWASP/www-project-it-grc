@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="hr_action_dashboard" model="ir.actions.client">
+        <field name="name">BI Dashboard</field>
+        <field name="tag">powerbi_dashboard</field>
+    </record>
+
+    <menuitem id="menu_atr_dashboard" name="BI Dashboard" action="hr_action_dashboard"
+              web_icon="powerbi_dashboard,static/description/icon.png" sequence="20"
+              groups="powerbi_dashboard.group_power_bi"/>
+
+<!--    <template id="assets_backend_dashboard" name="Hr Dashboard assets inherit" inherit_id="web.assets_backend">-->
+<!--        <xpath expr="." position="inside">-->
+<!--            <script type="text/javascript" src="/powerbi_dashboard/static/src/js/dashboard.js"/>-->
+<!--        </xpath>-->
+<!--    </template>-->
+</odoo>

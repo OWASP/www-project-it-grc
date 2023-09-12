@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="org_dashboard_formview">
+            <field name="name">BI Organization Dashboard</field>
+            <field name="model">org.dashboard</field>
+            <field name="arch" type="xml">
+                <form >
+                    <sheet>
+                        <group>
+                        <field name="dashboard_name" string="Dashboard name"/>
+                        <field name="created_flag" invisible="True"/>
+                        <field name="dashboard_url" attrs="{'invisible':[('created_flag','==', True)]}" string="Dashboard url"/>
+                        </group>
+                        <field name="dashboard_iframe" />
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="org_dashboard_treeview">
+            <field name="name">BI Organization Dashboard</field>
+            <field name="model">org.dashboard</field>
+            <field name="arch" type="xml">
+                <tree >
+
+                        <field name="dashboard_name"/>
+
+
+
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="org_dashboard_action_window">
+            <field name="name">BI Organization Dashboard</field>
+            <field name="res_model">org.dashboard</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Dashboard Found
+                </p>
+                <p>
+                    Create Organization Dashboard.....
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

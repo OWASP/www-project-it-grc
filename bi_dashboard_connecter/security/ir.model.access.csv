@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bi_dashboard_connecter,bi_dashboard_connecter.bi_dashboard,model_bi_dashboard,base.group_user,1,1,1,1
+access_bi_dashboard_connecter,bi_dashboard_connecter.bi_cred,model_bi_cred,base.group_user,1,0,0,0
+access_bi_cred,bi.cred,model_bi_cred,base.group_user,1,0,0,0
+access_bi_cred,bi.cred,model_bi_cred,base.group_system,1,1,1,1
+access_bi_dashboard,bi.dashboard,model_bi_dashboard,base.group_user,1,1,1,1
+access_org_dashboard,org.dashboard,model_org_dashboard,base.group_user,1,1,1,1
