@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <record model="cybersecurity.concept" id="identify_concept">
+      <field name="name">#Identify</field>
+      <field name="description">Cybersecurity concepts are an attribute for viewing controls from the perspective of associating controls to cybersecurity concepts defined in the cybersecurity framework described in ISO/IEC TS 27110. The attribute values ​consist of Identify, Protect, Detect, Reply and Recover.</field>
+    </record>
+    <record model="cybersecurity.concept" id="protect_concept">
+      <field name="name">#Protect</field>
+      <field name="description">Cybersecurity concepts are an attribute for viewing controls from the perspective of associating controls to cybersecurity concepts defined in the cybersecurity framework described in ISO/IEC TS 27110. The attribute values ​consist of Identify, Protect, Detect, Reply and Recover.</field>
+    </record>
+    <record model="cybersecurity.concept" id="detect_concept">
+      <field name="name">#Detect</field>
+      <field name="description">Cybersecurity concepts are an attribute for viewing controls from the perspective of associating controls to cybersecurity concepts defined in the cybersecurity framework described in ISO/IEC TS 27110. The attribute values ​consist of Identify, Protect, Detect, Reply and Recover.</field>
+    </record>
+    <record model="cybersecurity.concept" id="reply_concept">
+      <field name="name">#Reply</field>
+      <field name="description">Cybersecurity concepts are an attribute for viewing controls from the perspective of associating controls to cybersecurity concepts defined in the cybersecurity framework described in ISO/IEC TS 27110. The attribute values ​consist of Identify, Protect, Detect, Reply and Recover.</field>
+    </record>
+    <record model="cybersecurity.concept" id="recover_concept">
+      <field name="name">#Recover</field>
+      <field name="description">Cybersecurity concepts are an attribute for viewing controls from the perspective of associating controls to cybersecurity concepts defined in the cybersecurity framework described in ISO/IEC TS 27110. The attribute values ​consist of Identify, Protect, Detect, Reply and Recover.</field>
+    </record>
+  </data>
+</odoo>

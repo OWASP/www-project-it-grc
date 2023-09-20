@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <record model="control.type" id="preventive_control">
+      <field name="name">#Preventive</field>
+      <field name="description">The control that is intended to prevent the occurrence of an information security incident.</field>
+    </record>
+    <record model="control.type" id="detective_control">
+      <field name="name">Detective controls</field>
+      <field name="description">The control acts when an information security incident occurs.</field>
+    </record>
+    <record model="control.type" id="corrective_control">
+      <field name="name">Corrective controls</field>
+      <field name="description">The control acts after an information security incident occurs.</field>
+    </record>
+  </data>
+</odoo>
