@@ -97,7 +97,7 @@
         # 'demo/demo.xml',
     ],
     'assets': {
-        'bi_dashboard_connecter.bi_dashboard_asset': ['https://code.jquery.com/jquery-3.1.1.min.js','/bi_dashboard_connecter/static/scr/css/style.scss', '/bi_dashboard_connecter/static/scr/js/app.js','/bi_dashboard_connecter/static/scr/js/app2.js'],
+        'bi_dashboard_connecter.bi_dashboard_asset': ['https://code.jquery.com/jquery-3.1.1.min.js','/bi_dashboard_connecter/static/src/css/style.scss', '/bi_dashboard_connecter/static/src/js/app.js','/bi_dashboard_connecter/static/src/js/app2.js'],
          },
 
     "application": True,
