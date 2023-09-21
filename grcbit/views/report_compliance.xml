@@ -89,12 +89,21 @@
         <field name="report_name">grcbit.compliance_print_template</field>
         <field name="report_file">grcbit.compliance_print_template</field>
         <field name="binding_type">report</field>
-	<!--
-        <field name="binding_model_id" ref="model_document_page" />
-	-->
+        <field name="binding_model_id" ref="model_compliance_version" />
         <field name="paperformat_id" ref="grcbit.paperformat_grcbit" />
     </record>
 
-
+<!--
+    <record id="print_compliance" model="ir.actions.report">
+        <field name="name">Reporte Compliance</field>
+        <field name="model">compliance.version</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">grcbit.compliance_print_template</field>
+        <field name="report_file">grcbit.compliance_print_template</field>
+        <field name="binding_type">report</field>
+        <field name="binding_model_id" ref="model_document_page" />
+        <field name="paperformat_id" ref="grcbit.paperformat_grcbit" />
+    </record>
+-->
 
 </odoo>

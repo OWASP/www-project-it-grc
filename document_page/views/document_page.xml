@@ -20,9 +20,9 @@
         <field name="model">document.page</field>
         <field name="arch" type="xml">
             <tree>
-		    	     <header>
-		  <button name="action_print_policy" type="object" string="Imprimir Politica" />
-	  </header>
+		    	<!-- <header>
+		            <button name="action_print_policy" type="object" string="Imprimir Politica" />
+	            </header> -->
 
                 <field name="name" />
                 <field name="parent_id" />

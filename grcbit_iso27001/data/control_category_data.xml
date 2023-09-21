@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <record model="control.category" id="organizational_control">
+      <field name="name">Organizational controls</field>
+      <field name="description">Otherwise they are categorized as organizational.</field>
+      <field name="id_control_category">5</field>
+      
+    </record>
+    <record model="control.category" id="personal_control">
+      <field name="name">Personal controls</field>
+      <field name="description">Personal knowledge.</field>
+      <field name="id_control_category">6</field>
+    </record>
+    <record model="control.category" id="physical_control">
+      <field name="name">Physical controls</field>
+      <field name="description">They refer to physical objects.</field>
+      <field name="id_control_category">7</field>
+    </record>
+    <record model="control.category" id="technological_control">
+      <field name="name">Technological controls</field>
+      <field name="description">Concern about technology.</field>
+      <field name="id_control_category">8</field>
+    </record>
+  </data>
+</odoo>

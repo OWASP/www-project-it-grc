@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <record model="security.domain" id="government_ecosystem_domain">
+      <field name="name">#Government and ecosystem</field>
+      <field name="description">Security Domains are an attribute to view controls from the perspective of four information security domains: "Governance and Ecosystem" includes "Information System Security Governance and Risk Management" and "Ecosystem Cybersecurity Management" (including internal and external stakeholders); “Protection” includes “IT Security Architecture,” “IT Security Management,” “Identity and Access Management,” “IT Security Maintenance,” and “Physical and Environmental Security”; “Defense” includes “Detection” and “Computer Security Incident Management”; “Resilience” includes “Continuity of operations” and “Crisis management”. The attribute values ​​consist of Governance_and_Ecosystem, Protection, Defense, and Resilience.</field>
+    </record>
+    <record model="security.domain" id="protection_domain">
+      <field name="name">#Protection</field>
+      <field name="description">Security Domains are an attribute to view controls from the perspective of four information security domains: "Governance and Ecosystem" includes "Information System Security Governance and Risk Management" and "Ecosystem Cybersecurity Management" (including internal and external stakeholders); “Protection” includes “IT Security Architecture,” “IT Security Management,” “Identity and Access Management,” “IT Security Maintenance,” and “Physical and Environmental Security”; “Defense” includes “Detection” and “Computer Security Incident Management”; “Resilience” includes “Continuity of operations” and “Crisis management”. The attribute values ​​consist of Governance_and_Ecosystem, Protection, Defense, and Resilience.</field>
+    </record>
+    <record model="security.domain" id="defense_domain">
+      <field name="name">#Defense</field>
+      <field name="description">Security Domains are an attribute to view controls from the perspective of four information security domains: "Governance and Ecosystem" includes "Information System Security Governance and Risk Management" and "Ecosystem Cybersecurity Management" (including internal and external stakeholders); “Protection” includes “IT Security Architecture,” “IT Security Management,” “Identity and Access Management,” “IT Security Maintenance,” and “Physical and Environmental Security”; “Defense” includes “Detection” and “Computer Security Incident Management”; “Resilience” includes “Continuity of operations” and “Crisis management”. The attribute values ​​consist of Governance_and_Ecosystem, Protection, Defense, and Resilience.</field>
+    </record>
+    <record model="security.domain" id="resilience_domain">
+      <field name="name">#Resilience</field>
+      <field name="description">Security Domains are an attribute to view controls from the perspective of four information security domains: "Governance and Ecosystem" includes "Information System Security Governance and Risk Management" and "Ecosystem Cybersecurity Management" (including internal and external stakeholders); “Protection” includes “IT Security Architecture,” “IT Security Management,” “Identity and Access Management,” “IT Security Maintenance,” and “Physical and Environmental Security”; “Defense” includes “Detection” and “Computer Security Incident Management”; “Resilience” includes “Continuity of operations” and “Crisis management”. The attribute values ​​consist of Governance_and_Ecosystem, Protection, Defense, and Resilience.</field>
+    </record>
+  </data>
+</odoo>
