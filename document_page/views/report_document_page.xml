@@ -97,9 +97,7 @@
         <field name="report_name">document_page.policy_print_template</field>
         <field name="report_file">document_page.policy_print_template</field>
         <field name="binding_type">report</field>
-	<!--
         <field name="binding_model_id" ref="model_document_page" />
-	-->
         <field name="paperformat_id" ref="document_page.paperformat_grcbit" />
     </record>
 

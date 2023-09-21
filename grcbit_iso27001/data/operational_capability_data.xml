@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <record model="operational.capability" id="government_capability">
+      <field name="name">#Government</field>
+      <field name="description">Operational capabilities are an attribute for viewing controls from the perspective of the information security capabilities professional. Attribute values ​​consist of Governance, Asset_Management, Information_Protection, Human_Resource_Security, Physical_Security, System_and_Network_Security, Application_Security, Secure_Configuration, Identity_and_Access_Management, Threat_and_Vulnerability_Management, Continuity, Supplier_Relationship_Security, Legal_and_Compliance, Event_Management information_security and information_security_guarantee.</field>
+    </record>
+    <record model="operational.capability" id="asset_management_capability">
+      <field name="name">#Asset Management</field>
+      <field name="description">Operational capabilities are an attribute for viewing controls from the perspective of the information security capabilities professional. Attribute values ​​consist of Governance, Asset_Management, Information_Protection, Human_Resource_Security, Physical_Security, System_and_Network_Security, Application_Security, Secure_Configuration, Identity_and_Access_Management, Threat_and_Vulnerability_Management, Continuity, Supplier_Relationship_Security, Legal_and_Compliance, Event_Management information_security and information_security_guarantee.</field>
+    </record>
+    <record model="operational.capability" id="information_protection_capability">
+      <field name="name">#Information protection</field>
+      <field name="description">Operational capabilities are an attribute for viewing controls from the perspective of the information security capabilities professional. Attribute values ​​consist of Governance, Asset_Management, Information_Protection, Human_Resource_Security, Physical_Security, System_and_Network_Security, Application_Security, Secure_Configuration, Identity_and_Access_Management, Threat_and_Vulnerability_Management, Continuity, Supplier_Relationship_Security, Legal_and_Compliance, Event_Management information_security and information_security_guarantee.</field>
+    </record>
+    <record model="operational.capability" id="human_resources_security_capability">
+      <field name="name">#Human resources security</field>
+      <field name="description">Operational capabilities are an attribute for viewing controls from the perspective of the information security capabilities professional. Attribute values ​​consist of Governance, Asset_Management, Information_Protection, Human_Resource_Security, Physical_Security, System_and_Network_Security, Application_Security, Secure_Configuration, Identity_and_Access_Management, Threat_and_Vulnerability_Management, Continuity, Supplier_Relationship_Security, Legal_and_Compliance, Event_Management information_security and information_security_guarantee.</field>
+    </record>
+    <record model="operational.capability" id="physic_security_capability">
+      <field name="name">#Physic security</field>
+      <field name="description">Operational capabilities are an attribute for viewing controls from the perspective of the information security capabilities professional. Attribute values ​​consist of Governance, Asset_Management, Information_Protection, Human_Resource_Security, Physical_Security, System_and_Network_Security, Application_Security, Secure_Configuration, Identity_and_Access_Management, Threat_and_Vulnerability_Management, Continuity, Supplier_Relationship_Security, Legal_and_Compliance, Event_Management information_security and information_security_guarantee.</field>
+    </record>
+    <record model="operational.capability" id="systems_networks_security_capability">
+      <field name="name">#Systems and networks security</field>
+      <field name="description">Operational capabilities are an attribute for viewing controls from the perspective of the information security capabilities professional. Attribute values ​​consist of Governance, Asset_Management, Information_Protection, Human_Resource_Security, Physical_Security, System_and_Network_Security, Application_Security, Secure_Configuration, Identity_and_Access_Management, Threat_and_Vulnerability_Management, Continuity, Supplier_Relationship_Security, Legal_and_Compliance, Event_Management information_security and information_security_guarantee.</field>
+    </record>
+    <record model="operational.capability" id="apps_security_capability">
+      <field name="name">#Apps security</field>
+      <field name="description">Operational capabilities are an attribute for viewing controls from the perspective of the information security capabilities professional. Attribute values ​​consist of Governance, Asset_Management, Information_Protection, Human_Resource_Security, Physical_Security, System_and_Network_Security, Application_Security, Secure_Configuration, Identity_and_Access_Management, Threat_and_Vulnerability_Management, Continuity, Supplier_Relationship_Security, Legal_and_Compliance, Event_Management information_security and information_security_guarantee.</field>
+    </record>
+    <record model="operational.capability" id="secure_settings_capability">
+      <field name="name">#Secure settings</field>
+      <field name="description">Operational capabilities are an attribute for viewing controls from the perspective of the information security capabilities professional. Attribute values ​​consist of Governance, Asset_Management, Information_Protection, Human_Resource_Security, Physical_Security, System_and_Network_Security, Application_Security, Secure_Configuration, Identity_and_Access_Management, Threat_and_Vulnerability_Management, Continuity, Supplier_Relationship_Security, Legal_and_Compliance, Event_Management information_security and information_security_guarantee.</field>
+    </record>
+    <record model="operational.capability" id="identity_access_mngmt_capability">
+      <field name="name">#Identity and access management</field>
+      <field name="description">Operational capabilities are an attribute for viewing controls from the perspective of the information security capabilities professional. Attribute values ​​consist of Governance, Asset_Management, Information_Protection, Human_Resource_Security, Physical_Security, System_and_Network_Security, Application_Security, Secure_Configuration, Identity_and_Access_Management, Threat_and_Vulnerability_Management, Continuity, Supplier_Relationship_Security, Legal_and_Compliance, Event_Management information_security and information_security_guarantee.</field>
+    </record>
+    <record model="operational.capability" id="threat_vulnerability_mngmt_capability">
+      <field name="name">#Threat and vulnerability management</field>
+      <field name="description">Operational capabilities are an attribute for viewing controls from the perspective of the information security capabilities professional. Attribute values ​​consist of Governance, Asset_Management, Information_Protection, Human_Resource_Security, Physical_Security, System_and_Network_Security, Application_Security, Secure_Configuration, Identity_and_Access_Management, Threat_and_Vulnerability_Management, Continuity, Supplier_Relationship_Security, Legal_and_Compliance, Event_Management information_security and information_security_guarantee.</field>
+    </record>
+    <record model="operational.capability" id="continuity_capability">
+      <field name="name">#Continuity</field>
+      <field name="description">Operational capabilities are an attribute for viewing controls from the perspective of the information security capabilities professional. Attribute values ​​consist of Governance, Asset_Management, Information_Protection, Human_Resource_Security, Physical_Security, System_and_Network_Security, Application_Security, Secure_Configuration, Identity_and_Access_Management, Threat_and_Vulnerability_Management, Continuity, Supplier_Relationship_Security, Legal_and_Compliance, Event_Management information_security and information_security_guarantee.</field>
+    </record>
+    <record model="operational.capability" id="supplier_relationshio_security_capability">
+      <field name="name">#Supplier relationship security</field>
+      <field name="description">Operational capabilities are an attribute for viewing controls from the perspective of the information security capabilities professional. Attribute values ​​consist of Governance, Asset_Management, Information_Protection, Human_Resource_Security, Physical_Security, System_and_Network_Security, Application_Security, Secure_Configuration, Identity_and_Access_Management, Threat_and_Vulnerability_Management, Continuity, Supplier_Relationship_Security, Legal_and_Compliance, Event_Management information_security and information_security_guarantee.</field>
+    </record>
+    <record model="operational.capability" id="compliance_legal_capability">
+      <field name="name">#Compliance and legal</field>
+      <field name="description">Operational capabilities are an attribute for viewing controls from the perspective of the information security capabilities professional. Attribute values ​​consist of Governance, Asset_Management, Information_Protection, Human_Resource_Security, Physical_Security, System_and_Network_Security, Application_Security, Secure_Configuration, Identity_and_Access_Management, Threat_and_Vulnerability_Management, Continuity, Supplier_Relationship_Security, Legal_and_Compliance, Event_Management information_security and information_security_guarantee.</field>
+    </record>
+    <record model="operational.capability" id="security_information_mngmt_capability">
+      <field name="name">#Security and information event management</field>
+      <field name="description">Operational capabilities are an attribute for viewing controls from the perspective of the information security capabilities professional. Attribute values ​​consist of Governance, Asset_Management, Information_Protection, Human_Resource_Security, Physical_Security, System_and_Network_Security, Application_Security, Secure_Configuration, Identity_and_Access_Management, Threat_and_Vulnerability_Management, Continuity, Supplier_Relationship_Security, Legal_and_Compliance, Event_Management information_security and information_security_guarantee.</field>
+    </record>
+    <record model="operational.capability" id="security_information_assurance_capability">
+      <field name="name">#Security and information assurance</field>
+      <field name="description">Operational capabilities are an attribute for viewing controls from the perspective of the information security capabilities professional. Attribute values ​​consist of Governance, Asset_Management, Information_Protection, Human_Resource_Security, Physical_Security, System_and_Network_Security, Application_Security, Secure_Configuration, Identity_and_Access_Management, Threat_and_Vulnerability_Management, Continuity, Supplier_Relationship_Security, Legal_and_Compliance, Event_Management information_security and information_security_guarantee.</field>
+    </record>
+  </data>
+</odoo>
