@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="ir_exp_partner_test" model="ir.exports">
+        <field name="name">Test Partner Export</field>
+        <field name="resource">res.partner</field>
+    </record>
+    <record id="ir_exp_partner_line_test0" model="ir.exports.line">
+        <field name="export_id" ref="ir_exp_partner_test" />
+        <field name="name">id</field>
+    </record>
+    <record id="ir_exp_partner_line_test1" model="ir.exports.line">
+        <field name="export_id" ref="ir_exp_partner_test" />
+        <field name="name">name</field>
+    </record>
+    <record id="ir_exp_partner_line_test2" model="ir.exports.line">
+        <field name="export_id" ref="ir_exp_partner_test" />
+        <field name="name">active</field>
+    </record>
+    <record id="ir_exp_partner_line_test3" model="ir.exports.line">
+        <field name="export_id" ref="ir_exp_partner_test" />
+        <field name="name">lang</field>
+    </record>
+    <record id="ir_exp_partner_line_test4" model="ir.exports.line">
+        <field name="export_id" ref="ir_exp_partner_test" />
+        <field name="name">partner_latitude</field>
+    </record>
+    <record id="ir_exp_partner_line_test5" model="ir.exports.line">
+        <field name="export_id" ref="ir_exp_partner_test" />
+        <field name="name">color</field>
+    </record>
+    <record id="ir_exp_partner_line_test6" model="ir.exports.line">
+        <field name="export_id" ref="ir_exp_partner_test" />
+        <field name="name">category_id/name</field>
+    </record>
+    <record id="ir_exp_partner_line_test6" model="ir.exports.line">
+        <field name="export_id" ref="ir_exp_partner_test" />
+        <field name="name">country_id/name</field>
+    </record>
+    <record id="ir_exp_partner_line_test7" model="ir.exports.line">
+        <field name="export_id" ref="ir_exp_partner_test" />
+        <field name="name">country_id/code</field>
+    </record>
+    <record id="ir_exp_partner_line_test8" model="ir.exports.line">
+        <field name="export_id" ref="ir_exp_partner_test" />
+        <field name="name">child_ids/id</field>
+    </record>
+    <record id="ir_exp_partner_line_test9" model="ir.exports.line">
+        <field name="export_id" ref="ir_exp_partner_test" />
+        <field name="name">child_ids/name</field>
+    </record>
+    <record id="ir_exp_partner_line_test10" model="ir.exports.line">
+        <field name="export_id" ref="ir_exp_partner_test" />
+        <field name="name">child_ids/email</field>
+    </record>
+    <record id="ir_exp_partner_line_test11" model="ir.exports.line">
+        <field name="export_id" ref="ir_exp_partner_test" />
+        <field name="name">child_ids/country_id/name</field>
+    </record>
+    <record id="ir_exp_partner_line_test12" model="ir.exports.line">
+        <field name="export_id" ref="ir_exp_partner_test" />
+        <field name="name">child_ids/country_id/code</field>
+    </record>
+    <record id="ir_exp_partner_line_test13" model="ir.exports.line">
+        <field name="export_id" ref="ir_exp_partner_test" />
+        <field name="name">child_ids/child_ids/name</field>
+    </record>
+</odoo>

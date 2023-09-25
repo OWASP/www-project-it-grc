@@ -1,0 +1,687 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* connector_search_engine
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: connector_search_engine
+#. odoo-python
+#: code:addons/connector_search_engine/models/se_binding.py:0
+#: model:ir.model.constraint,message:connector_search_engine.constraint_se_binding_item_uniq_per_index
+#, python-format
+msgid "A record can only be bind one time per index !"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model,name:connector_search_engine.model_ir_actions_actions
+msgid "Actions"
+msgstr ""
+
+#. module: connector_search_engine
+#. odoo-python
+#: code:addons/connector_search_engine/models/se_backend.py:0
+#, python-format
+msgid "Adapter is missing for type %s"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__backend_id
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_binding_view_search
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_index_search_view
+msgid "Backend"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.ui.menu,name:connector_search_engine.se_backend_menu
+msgid "Backends"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__batch_exporting_size
+msgid "Batch Exporting Size"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__batch_recomputing_size
+msgid "Batch Recomputing Size"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,help:connector_search_engine.field_se_index__batch_exporting_size
+msgid "Batch size for exporting element"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,help:connector_search_engine.field_se_index__batch_recomputing_size
+msgid "Batch size for recomputing element"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.actions.act_window,name:connector_search_engine.se_binding_action
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__binding_ids
+#: model:ir.ui.menu,name:connector_search_engine.se_binding_menu
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_binding_view_form
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_binding_view_search
+msgid "Binding"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__body
+msgid "Body"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__body_str
+msgid "Body Str"
+msgstr ""
+
+#. module: connector_search_engine
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_index_kanban_view
+msgid "Clear index"
+msgstr ""
+
+#. module: connector_search_engine
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_index_kanban_view
+msgid "Clear the index in the search engine"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__color
+msgid "Color Index"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__config_id
+msgid "Config"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.ui.menu,name:connector_search_engine.se_root_config
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_backend_form_view
+msgid "Configuration"
+msgstr ""
+
+#. module: connector_search_engine
+#. odoo-python
+#: code:addons/connector_search_engine/models/se_backend.py:0
+#, python-format
+msgid "Connection Test Succeeded!"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__count_done
+msgid "Count Done"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__count_error
+msgid "Count Error"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__count_pending
+msgid "Count Pending"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_indexable_record__count_se_binding_done
+msgid "Count Se Binding Done"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_indexable_record__count_se_binding_error
+msgid "Count Se Binding Error"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_indexable_record__count_se_binding_pending
+msgid "Count Se Binding Pending"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_indexable_record__count_se_binding_total
+msgid "Count Se Binding Total"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_backend__create_uid
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_binding__create_uid
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__create_uid
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_backend__create_date
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_binding__create_date
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__create_date
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__custom_tech_name
+msgid "Custom Tech Name"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_binding__data
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_binding_view_form
+msgid "Data"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_binding__data_display
+msgid "Data Display"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_binding__date_recomputed
+msgid "Date Recomputed"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_binding__date_synchronized
+msgid "Date Synchronized"
+msgstr ""
+
+#. module: connector_search_engine
+#. odoo-python
+#: code:addons/connector_search_engine/models/se_index.py:0
+#, python-format
+msgid ""
+"Delete %(processing_count)d obsolete records of %(total_count)d for index "
+"'%(index_name)s'"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields.selection,name:connector_search_engine.selection__se_binding__state__deleting
+msgid "Deleting"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_backend__display_name
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_binding__display_name
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__display_name
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields.selection,name:connector_search_engine.selection__se_binding__state__done
+msgid "Done"
+msgstr ""
+
+#. module: connector_search_engine
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_index_kanban_view
+msgid "Dropdown menu"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model,name:connector_search_engine.model_se_index_config
+msgid "Elasticsearch index configuration"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_binding__error
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_binding_view_form
+msgid "Error"
+msgstr ""
+
+#. module: connector_search_engine
+#. odoo-python
+#: code:addons/connector_search_engine/models/se_backend.py:0
+#, python-format
+msgid "Everything seems properly set up!"
+msgstr ""
+
+#. module: connector_search_engine
+#. odoo-python
+#: code:addons/connector_search_engine/models/se_index.py:0
+#, python-format
+msgid ""
+"Export %(processing_count)d records of %(total_count)d for index "
+"'%(index_name)s'"
+msgstr ""
+
+#. module: connector_search_engine
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_index_kanban_view
+msgid "Export all binding"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields.selection,name:connector_search_engine.selection__se_binding__state__exporting
+msgid "Exporting"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields.selection,name:connector_search_engine.selection__se_binding__state__recompute_error
+msgid "Fail to Recompute"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: connector_search_engine
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_index_kanban_view
+msgid "Force the export of all binding"
+msgstr ""
+
+#. module: connector_search_engine
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_index_kanban_view
+msgid ""
+"Force to recompute all binding of the index and set them to the state 'To "
+"update'"
+msgstr ""
+
+#. module: connector_search_engine
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_binding_view_search
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_index_search_view
+msgid "Group By..."
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_backend__id
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_binding__id
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__id
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__id
+msgid "ID"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,help:connector_search_engine.field_se_binding__res_id
+msgid "ID of the target record in the database"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,help:connector_search_engine.field_se_index_config__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,help:connector_search_engine.field_se_index_config__message_has_error
+#: model:ir.model.fields,help:connector_search_engine.field_se_index_config__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,help:connector_search_engine.field_se_binding__data_display
+msgid "Include this in debug mode to be able to inspect index data."
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_backend__index_ids
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_binding__index_id
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_backend_form_view
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_binding_view_search
+msgid "Index"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_backend__index_prefix_name
+msgid "Index Prefix Name"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_backend__index_prefix_name_env_default
+msgid "Index Prefix Name Env Default"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_backend__index_prefix_name_env_is_editable
+msgid "Index Prefix Name Env Is Editable"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,help:connector_search_engine.field_se_index__config_id
+msgid "Index configuration record"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.ui.menu,name:connector_search_engine.se_index_config_menu
+msgid "Index configurations"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.ui.menu,name:connector_search_engine.se_index_menu
+msgid "Indexes"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields.selection,name:connector_search_engine.selection__se_binding__state__invalid_data
+msgid "Invalid Data"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__lang_id
+msgid "Lang"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.constraint,message:connector_search_engine.constraint_se_index_lang_model_uniq
+msgid "Lang and model of index must be uniq per backend."
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_backend____last_update
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_binding____last_update
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index____last_update
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_backend__write_uid
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_binding__write_uid
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__write_uid
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_backend__write_date
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_binding__write_date
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__write_date
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model,name:connector_search_engine.model_se_indexable_record
+msgid "Mixin that make record indexable in a search engine"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__model_id
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_binding_view_search
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_index_search_view
+msgid "Model"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_backend__name
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__name
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__name
+msgid "Name"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,help:connector_search_engine.field_se_index_config__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,help:connector_search_engine.field_se_index_config__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,help:connector_search_engine.field_se_backend__index_prefix_name
+#: model:ir.model.fields,help:connector_search_engine.field_se_backend__index_prefix_name_env_default
+msgid ""
+"Prefix for technical indexes tech name. You could use this to change index "
+"names based on current env."
+msgstr ""
+
+#. module: connector_search_engine
+#. odoo-python
+#: code:addons/connector_search_engine/models/se_index.py:0
+#, python-format
+msgid "Prepare a batch recompute of index '%s'"
+msgstr ""
+
+#. module: connector_search_engine
+#. odoo-python
+#: code:addons/connector_search_engine/models/se_index.py:0
+#, python-format
+msgid "Prepare a batch synchronization of index '%s'"
+msgstr ""
+
+#. module: connector_search_engine
+#. odoo-python
+#: code:addons/connector_search_engine/models/se_binding.py:0
+#, python-format
+msgid "Recompute %(name)s json and check if need update"
+msgstr ""
+
+#. module: connector_search_engine
+#. odoo-python
+#: code:addons/connector_search_engine/models/se_index.py:0
+#, python-format
+msgid ""
+"Recompute %(processing_count)d records of %(total_count)d for index "
+"'%(index_name)s'"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.actions.server,name:connector_search_engine.action_recompute_se_index
+msgid "Recompute Search Index"
+msgstr ""
+
+#. module: connector_search_engine
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_index_kanban_view
+msgid "Recompute all binding"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields.selection,name:connector_search_engine.selection__se_binding__state__recomputing
+msgid "Recomputing"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_binding__res_id
+msgid "Record ID"
+msgstr ""
+
+#. module: connector_search_engine
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_index_kanban_view
+msgid "Reindex"
+msgstr ""
+
+#. module: connector_search_engine
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_index_kanban_view
+msgid "Reindex records according to the current config"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_binding__res_model
+msgid "Res Model"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index_config__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model,name:connector_search_engine.model_se_backend
+msgid "Se Backend"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.actions.act_window,name:connector_search_engine.se_index_act_window
+#: model:ir.model,name:connector_search_engine.model_se_index
+msgid "Se Index"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.actions.act_window,name:connector_search_engine.se_index_config_act_window
+msgid "Se Index Config"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_indexable_record__se_binding_ids
+msgid "Seacrh Engine Bindings"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.actions.act_window,name:connector_search_engine.se_backend_act_window
+#: model:ir.ui.menu,name:connector_search_engine.se_root_menu
+msgid "Search Engine"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_binding__backend_id
+msgid "Search Engine Backend"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:res.groups,name:connector_search_engine.group_connector_search_engine_manager
+msgid "Search Engine Connector Manager"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:res.groups,name:connector_search_engine.group_connector_search_engine_user
+msgid "Search Engine Connector User"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model,name:connector_search_engine.model_se_binding
+msgid "Search Engine Record"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.actions.server,name:connector_search_engine.ir_cron_export_binding_ir_actions_server
+#: model:ir.cron,cron_name:connector_search_engine.ir_cron_export_binding
+msgid "Search engine: Generate job for exporting binding per index"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.actions.server,name:connector_search_engine.ir_cron_recompute_binding_ir_actions_server
+#: model:ir.cron,cron_name:connector_search_engine.ir_cron_recompute_binding
+msgid ""
+"Search engine: Generate job for recompute binding to recompute per index"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.actions.server,name:connector_search_engine.ir_cron_recompute_all_index_ir_actions_server
+#: model:ir.cron,cron_name:connector_search_engine.ir_cron_recompute_all_index
+msgid "Search engine: recompute all index"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_index__serializer_type
+msgid "Serializer Type"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_backend__server_env_defaults
+msgid "Server Env Defaults"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_binding__state
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_binding_view_search
+msgid "State"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,help:connector_search_engine.field_se_index__custom_tech_name
+msgid ""
+"Take control of index technical name. The final index name is still computed"
+" and contains in any case: backend index name prefix and language if given. "
+"If no custom name is provided, model's normalized name will be used."
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_backend__tech_name
+msgid "Tech Name"
+msgstr ""
+
+#. module: connector_search_engine
+#: model_terms:ir.ui.view,arch_db:connector_search_engine.se_backend_form_view
+msgid "Test Connection"
+msgstr ""
+
+#. module: connector_search_engine
+#. odoo-python
+#: code:addons/connector_search_engine/tools/validator.py:0
+#, python-format
+msgid "The key 'id' is missing in the data"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields.selection,name:connector_search_engine.selection__se_binding__state__to_delete
+msgid "To Delete"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields.selection,name:connector_search_engine.selection__se_binding__state__to_export
+msgid "To export"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields.selection,name:connector_search_engine.selection__se_binding__state__to_recompute
+msgid "To recompute"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,field_description:connector_search_engine.field_se_backend__backend_type
+msgid "Type"
+msgstr ""
+
+#. module: connector_search_engine
+#: model:ir.model.fields,help:connector_search_engine.field_se_backend__tech_name
+msgid "Unique name for technical purposes. Eg: server env keys."
+msgstr ""

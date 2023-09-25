@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        id="se_root_menu"
+        name="Search Engine"
+        web_icon="connector_search_engine,static/description/icon.png"
+        sequence="10"
+        groups="group_connector_search_engine_manager"
+    />
+    <menuitem
+        id="se_index_menu"
+        name="Indexes"
+        parent="se_root_menu"
+        action="se_index_act_window"
+        sequence="10"
+    />
+
+    <menuitem
+        id="se_binding_menu"
+        parent="se_root_menu"
+        sequence="20"
+        action="se_binding_action"
+    />
+
+    <menuitem
+        id="se_root_config"
+        name="Configuration"
+        parent="se_root_menu"
+        sequence="100"
+    />
+    <menuitem
+        id="se_backend_menu"
+        name="Backends"
+        parent="se_root_config"
+        action="se_backend_act_window"
+        sequence="10"
+    />
+    <menuitem
+        id="se_index_config_menu"
+        name="Index configurations"
+        parent="se_root_config"
+        action="se_index_config_act_window"
+        sequence="20"
+    />
+</odoo>

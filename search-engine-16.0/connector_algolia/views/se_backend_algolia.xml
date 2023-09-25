@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="se_backend_algolia_form_view">
+        <field
+            name="name"
+        >se.backend.spec.abstract.form (in connector_search_engine)</field>
+        <field name="model">se.backend.algolia</field>
+        <!--Mandatory to use the mode when inherited (cfr product.template and product.product)-->
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="connector_search_engine.se_backend_form_view" />
+        <field name="priority" eval="99" />
+        <field name="arch" type="xml">
+            <form position="attributes">
+                <attribute name="create">true</attribute>
+                <attribute name="edit">true</attribute>
+            </form>
+            <field name="specific_backend" position="replace" />
+            <group name="se-main" position="inside">
+                <field name="algolia_app_id" />
+                <field name="algolia_api_key" />
+            </group>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="se_backend_algolia_tree_view">
+        <field name="name">se.backend.algolia.tree (in connector_algolia)</field>
+        <field name="model">se.backend.algolia</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="se_backend_algolia_act_window">
+        <field name="name">Search Engine Backend</field>
+        <field name="res_model">se.backend.algolia</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+</odoo>

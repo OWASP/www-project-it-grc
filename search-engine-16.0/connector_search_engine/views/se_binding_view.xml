@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="se_binding_view_tree" model="ir.ui.view">
+        <field name="model">se.binding</field>
+        <field name="arch" type="xml">
+            <tree
+                decoration-danger="state in ('invalid_data', 'recompute_error')"
+                decoration-warning="state not in ('invalid_data', 'recompute_error', 'done')"
+            >
+                <field name="backend_id" />
+                <field name="index_id" />
+                <field name="state" />
+                <field name="date_recomputed" />
+                <field name="date_synchronized" />
+                <field name="res_model" invisible="context.get('hide_res_model')" />
+                <field name="res_id" invisible="context.get('hide_res_model')" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="se_binding_view_form" model="ir.ui.view">
+        <field name="model">se.binding</field>
+        <field name="arch" type="xml">
+            <form string="Binding">
+                <group>
+                    <field name="backend_id" />
+                    <field name="index_id" />
+                    <field name="state" />
+                    <field name="date_recomputed" />
+                    <field name="date_synchronized" />
+                    <field name="res_model" />
+                    <field name="res_id" />
+                </group>
+                <group string="Error" attrs="{'invisible': [('error', '=', False)]}">
+                    <field name="error" nolabel="1" />
+                </group>
+                <group string="Data">
+                    <field name="data_display" nolabel="1" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="se_binding_view_search" model="ir.ui.view">
+        <field name="model">se.binding</field>
+        <field name="arch" type="xml">
+            <search string="Binding">
+                <field name="backend_id" />
+                <field name="index_id" />
+                <field name="state" />
+                <field name="res_model" />
+                    <group expand="0" string="Group By...">
+                        <filter
+                        string="Backend"
+                        name="groupby_backend"
+                        domain="[]"
+                        context="{'group_by':'backend_id'}"
+                    />
+                        <filter
+                        string="Index"
+                        name="groupby_index"
+                        domain="[]"
+                        context="{'group_by':'index_id'}"
+                    />
+                        <filter
+                        string="State"
+                        name="groupby_state"
+                        domain="[]"
+                        context="{'group_by':'state'}"
+                    />
+                        <filter
+                        string="Model"
+                        name="groupby_model"
+                        domain="[]"
+                        context="{'group_by':'res_model'}"
+                    />
+
+                    </group>
+
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="se_binding_action">
+        <field name="name">Binding</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">se.binding</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="se_binding_view_search" />
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+</odoo>

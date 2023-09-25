@@ -1,0 +1,30 @@
+interactions:
+- request:
+    body: '{"delete":{"_id":"donotexist","_index":"demo_elasticsearch_backend_contact_en_us"}}
+
+      {"delete":{"_id":"donotexisteither","_index":"demo_elasticsearch_backend_contact_en_us"}}
+
+      '
+    headers:
+      Content-Length:
+      - '174'
+      content-type:
+      - application/json
+      user-agent:
+      - elasticsearch-py/7.13.4 (Python 3.10.6)
+      x-elastic-client-meta:
+      - es=7.13.4,py=3.10.6,t=7.13.4,rq=2.28.2,h=bp
+    method: POST
+    uri: http://elastic:9200/_bulk
+  response:
+    body:
+      string: '{"took":20,"errors":false,"items":[{"delete":{"_index":"demo_elasticsearch_backend_contact_en_us-1","_type":"_doc","_id":"donotexist","_version":1,"result":"not_found","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":5,"_primary_term":1,"status":404}},{"delete":{"_index":"demo_elasticsearch_backend_contact_en_us-1","_type":"_doc","_id":"donotexisteither","_version":1,"result":"not_found","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":6,"_primary_term":1,"status":404}}]}'
+    headers:
+      content-length:
+      - '494'
+      content-type:
+      - application/json; charset=UTF-8
+    status:
+      code: 200
+      message: OK
+version: 1

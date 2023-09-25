@@ -1,0 +1,46 @@
+<odoo noupdate="1">
+    <record
+        id="job_function_se_binding_jobify_recompute_json"
+        model="queue.job.function"
+    >
+        <field name="model_id" ref="model_se_binding" />
+        <field name="method">jobify_recompute_json</field>
+        <field name="channel_id" ref="channel_search_engine_recompute" />
+    </record>
+    <record id="job_function_se_binding_recompute_json" model="queue.job.function">
+        <field name="model_id" ref="model_se_binding" />
+        <field name="method">recompute_json</field>
+        <field name="channel_id" ref="channel_search_engine_recompute" />
+    </record>
+    <record id="job_function_se_binding_export_record" model="queue.job.function">
+        <field name="model_id" ref="model_se_binding" />
+        <field name="method">export_record</field>
+        <field name="channel_id" ref="channel_search_engine_synchronize" />
+    </record>
+    <record id="job_function_se_binding_delete_record" model="queue.job.function">
+        <field name="model_id" ref="model_se_binding" />
+        <field name="method">delete_record</field>
+        <field name="channel_id" ref="channel_search_engine_synchronize" />
+    </record>
+    <record id="job_function_se_index_batch_export" model="queue.job.function">
+        <field name="model_id" ref="model_se_index" />
+        <field name="method">batch_export</field>
+        <field name="channel_id" ref="channel_search_engine_synchronize" />
+    </record>
+    <record id="job_function_se_index_batch_recompute" model="queue.job.function">
+        <field name="model_id" ref="model_se_index" />
+        <field name="method">batch_recompute</field>
+        <field name="channel_id" ref="channel_search_engine_recompute" />
+    </record>
+    <record id="job_function_se_index_batch_sync" model="queue.job.function">
+        <field name="model_id" ref="model_se_index" />
+        <field name="method">batch_sync</field>
+        <field name="channel_id" ref="channel_search_engine_synchronize" />
+    </record>
+    <record id="job_function_se_index_delete_obsolete_item" model="queue.job.function">
+        <field name="model_id" ref="model_se_index" />
+        <field name="method">delete_obsolete_item</field>
+        <field name="channel_id" ref="channel_search_engine_synchronize" />
+    </record>
+
+</odoo>

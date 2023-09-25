@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        id="se_backend_algolia_menu"
+        name="Algolia Backends"
+        parent="connector_search_engine.se_root_menu"
+        action="se_backend_algolia_act_window"
+    />
+</odoo>

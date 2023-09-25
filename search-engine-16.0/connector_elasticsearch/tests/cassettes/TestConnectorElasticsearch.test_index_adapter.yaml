@@ -1,0 +1,30 @@
+interactions:
+- request:
+    body: '{"index":{"_id":"foo","_index":"demo_elasticsearch_backend_contact_en_us"}}
+
+      {"id":"foo"}
+
+      '
+    headers:
+      Content-Length:
+      - '89'
+      content-type:
+      - application/json
+      user-agent:
+      - elasticsearch-py/7.13.4 (Python 3.10.6)
+      x-elastic-client-meta:
+      - es=7.13.4,py=3.10.6,t=7.13.4,rq=2.28.2,h=bp
+    method: POST
+    uri: http://elastic:9200/_bulk
+  response:
+    body:
+      string: '{"took":12,"errors":false,"items":[{"index":{"_index":"demo_elasticsearch_backend_contact_en_us-2","_type":"_doc","_id":"foo","_version":3,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":5,"_primary_term":1,"status":201}}]}'
+    headers:
+      content-length:
+      - '252'
+      content-type:
+      - application/json; charset=UTF-8
+    status:
+      code: 200
+      message: OK
+version: 1

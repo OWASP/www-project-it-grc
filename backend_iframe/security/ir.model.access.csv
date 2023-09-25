@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_backend_dashboard_a,access_backend_dashboard,model_backend_dashboard,base.group_user,1,1,1,1
+access_dashboard_tag,dashboard.tag,model_dashboard_tag,base.group_user,1,1,1,1

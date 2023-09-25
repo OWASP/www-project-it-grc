@@ -1,0 +1,363 @@
+interactions:
+- request:
+    body: null
+    headers:
+      content-type:
+      - application/json
+      user-agent:
+      - elasticsearch-py/7.13.4 (Python 3.10.6)
+      x-elastic-client-meta:
+      - es=7.13.4,py=3.10.6,t=7.13.4,rq=2.28.2
+    method: GET
+    uri: http://elastic:9200/_alias/demo_elasticsearch_backend_contact_en_us
+  response:
+    body:
+      string: '{"demo_elasticsearch_backend_contact_en_us-1":{"aliases":{"demo_elasticsearch_backend_contact_en_us":{}}}}'
+    headers:
+      content-length:
+      - '106'
+      content-type:
+      - application/json; charset=UTF-8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Content-Length:
+      - '0'
+      content-type:
+      - application/json
+      user-agent:
+      - elasticsearch-py/7.13.4 (Python 3.10.6)
+      x-elastic-client-meta:
+      - es=7.13.4,py=3.10.6,t=7.13.4,rq=2.28.2
+    method: DELETE
+    uri: http://elastic:9200/demo_elasticsearch_backend_contact_en_us-1
+  response:
+    body:
+      string: '{"acknowledged":true}'
+    headers:
+      content-length:
+      - '21'
+      content-type:
+      - application/json; charset=UTF-8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      content-type:
+      - application/json
+      user-agent:
+      - elasticsearch-py/7.13.4 (Python 3.10.6)
+      x-elastic-client-meta:
+      - es=7.13.4,py=3.10.6,t=7.13.4,rq=2.28.2
+    method: HEAD
+    uri: http://elastic:9200/demo_elasticsearch_backend_contact_en_us
+  response:
+    body:
+      string: ''
+    headers:
+      content-length:
+      - '569'
+      content-type:
+      - application/json; charset=UTF-8
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: '{}'
+    headers:
+      Content-Length:
+      - '2'
+      content-type:
+      - application/json
+      user-agent:
+      - elasticsearch-py/7.13.4 (Python 3.10.6)
+      x-elastic-client-meta:
+      - es=7.13.4,py=3.10.6,t=7.13.4,rq=2.28.2
+    method: PUT
+    uri: http://elastic:9200/demo_elasticsearch_backend_contact_en_us-1
+  response:
+    body:
+      string: '{"acknowledged":true,"shards_acknowledged":true,"index":"demo_elasticsearch_backend_contact_en_us-1"}'
+    headers:
+      content-length:
+      - '101'
+      content-type:
+      - application/json; charset=UTF-8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Content-Length:
+      - '0'
+      content-type:
+      - application/json
+      user-agent:
+      - elasticsearch-py/7.13.4 (Python 3.10.6)
+      x-elastic-client-meta:
+      - es=7.13.4,py=3.10.6,t=7.13.4,rq=2.28.2
+    method: PUT
+    uri: http://elastic:9200/demo_elasticsearch_backend_contact_en_us-1/_alias/demo_elasticsearch_backend_contact_en_us
+  response:
+    body:
+      string: '{"acknowledged":true}'
+    headers:
+      content-length:
+      - '21'
+      content-type:
+      - application/json; charset=UTF-8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"index":{"_id":"foo","_index":"demo_elasticsearch_backend_contact_en_us"}}
+
+      {"id":"foo"}
+
+      {"index":{"_id":"foo2","_index":"demo_elasticsearch_backend_contact_en_us"}}
+
+      {"id":"foo2"}
+
+      {"index":{"_id":"foo3","_index":"demo_elasticsearch_backend_contact_en_us"}}
+
+      {"id":"foo3"}
+
+      '
+    headers:
+      Content-Length:
+      - '271'
+      content-type:
+      - application/json
+      user-agent:
+      - elasticsearch-py/7.13.4 (Python 3.10.6)
+      x-elastic-client-meta:
+      - es=7.13.4,py=3.10.6,t=7.13.4,rq=2.28.2,h=bp
+    method: POST
+    uri: http://elastic:9200/_bulk
+  response:
+    body:
+      string: '{"took":24,"errors":false,"items":[{"index":{"_index":"demo_elasticsearch_backend_contact_en_us-1","_type":"_doc","_id":"foo","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1,"status":201}},{"index":{"_index":"demo_elasticsearch_backend_contact_en_us-1","_type":"_doc","_id":"foo2","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":1,"_primary_term":1,"status":201}},{"index":{"_index":"demo_elasticsearch_backend_contact_en_us-1","_type":"_doc","_id":"foo3","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":2,"_primary_term":1,"status":201}}]}'
+    headers:
+      content-length:
+      - '686'
+      content-type:
+      - application/json; charset=UTF-8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      content-type:
+      - application/json
+      user-agent:
+      - elasticsearch-py/7.13.4 (Python 3.10.6)
+      x-elastic-client-meta:
+      - es=7.13.4,py=3.10.6,t=7.13.4,rq=2.28.2
+    method: GET
+    uri: http://elastic:9200/_alias/demo_elasticsearch_backend_contact_en_us
+  response:
+    body:
+      string: '{"demo_elasticsearch_backend_contact_en_us-1":{"aliases":{"demo_elasticsearch_backend_contact_en_us":{}}}}'
+    headers:
+      content-length:
+      - '106'
+      content-type:
+      - application/json; charset=UTF-8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      content-type:
+      - application/json
+      user-agent:
+      - elasticsearch-py/7.13.4 (Python 3.10.6)
+      x-elastic-client-meta:
+      - es=7.13.4,py=3.10.6,t=7.13.4,rq=2.28.2
+    method: GET
+    uri: http://elastic:9200/_alias/demo_elasticsearch_backend_contact_en_us
+  response:
+    body:
+      string: '{"demo_elasticsearch_backend_contact_en_us-1":{"aliases":{"demo_elasticsearch_backend_contact_en_us":{}}}}'
+    headers:
+      content-length:
+      - '106'
+      content-type:
+      - application/json; charset=UTF-8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Content-Length:
+      - '2'
+      content-type:
+      - application/json
+      user-agent:
+      - elasticsearch-py/7.13.4 (Python 3.10.6)
+      x-elastic-client-meta:
+      - es=7.13.4,py=3.10.6,t=7.13.4,rq=2.28.2
+    method: PUT
+    uri: http://elastic:9200/demo_elasticsearch_backend_contact_en_us-2
+  response:
+    body:
+      string: '{"acknowledged":true,"shards_acknowledged":true,"index":"demo_elasticsearch_backend_contact_en_us-2"}'
+    headers:
+      content-length:
+      - '101'
+      content-type:
+      - application/json; charset=UTF-8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"source":{"index":"demo_elasticsearch_backend_contact_en_us"},"dest":{"index":"demo_elasticsearch_backend_contact_en_us-2"}}'
+    headers:
+      Content-Length:
+      - '125'
+      content-type:
+      - application/json
+      user-agent:
+      - elasticsearch-py/7.13.4 (Python 3.10.6)
+      x-elastic-client-meta:
+      - es=7.13.4,py=3.10.6,t=7.13.4,rq=2.28.2
+    method: POST
+    uri: http://elastic:9200/_reindex?wait_for_completion=false
+  response:
+    body:
+      string: '{"task":"Ch4zlGppTF-9rtPxsPpYeQ:1982"}'
+    headers:
+      content-length:
+      - '38'
+      content-type:
+      - application/json; charset=UTF-8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      content-type:
+      - application/json
+      user-agent:
+      - elasticsearch-py/7.13.4 (Python 3.10.6)
+      x-elastic-client-meta:
+      - es=7.13.4,py=3.10.6,t=7.13.4,rq=2.28.2
+    method: GET
+    uri: http://elastic:9200/_tasks/Ch4zlGppTF-9rtPxsPpYeQ%3A1982?wait_for_completion=false
+  response:
+    body:
+      string: '{"completed":true,"task":{"node":"Ch4zlGppTF-9rtPxsPpYeQ","id":1982,"type":"transport","action":"indices:data/write/reindex","status":{"total":3,"updated":0,"created":3,"deleted":0,"batches":1,"version_conflicts":0,"noops":0,"retries":{"bulk":0,"search":0},"throttled_millis":0,"requests_per_second":-1.0,"throttled_until_millis":0},"description":"reindex
+        from [demo_elasticsearch_backend_contact_en_us] to [demo_elasticsearch_backend_contact_en_us-2][_doc]","start_time_in_millis":1680783039576,"running_time_in_nanos":27227295,"cancellable":true,"headers":{}},"response":{"took":27,"timed_out":false,"total":3,"updated":0,"created":3,"deleted":0,"batches":1,"version_conflicts":0,"noops":0,"retries":{"bulk":0,"search":0},"throttled":"0s","throttled_millis":0,"requests_per_second":-1.0,"throttled_until":"0s","throttled_until_millis":0,"failures":[]}}'
+    headers:
+      content-length:
+      - '854'
+      content-type:
+      - application/json; charset=UTF-8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"actions":[{"remove":{"index":"demo_elasticsearch_backend_contact_en_us-1","alias":"demo_elasticsearch_backend_contact_en_us"}},{"add":{"index":"demo_elasticsearch_backend_contact_en_us-2","alias":"demo_elasticsearch_backend_contact_en_us"}}]}'
+    headers:
+      Content-Length:
+      - '244'
+      content-type:
+      - application/json
+      user-agent:
+      - elasticsearch-py/7.13.4 (Python 3.10.6)
+      x-elastic-client-meta:
+      - es=7.13.4,py=3.10.6,t=7.13.4,rq=2.28.2
+    method: POST
+    uri: http://elastic:9200/_aliases
+  response:
+    body:
+      string: '{"acknowledged":true}'
+    headers:
+      content-length:
+      - '21'
+      content-type:
+      - application/json; charset=UTF-8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Content-Length:
+      - '0'
+      content-type:
+      - application/json
+      user-agent:
+      - elasticsearch-py/7.13.4 (Python 3.10.6)
+      x-elastic-client-meta:
+      - es=7.13.4,py=3.10.6,t=7.13.4,rq=2.28.2
+    method: DELETE
+    uri: http://elastic:9200/demo_elasticsearch_backend_contact_en_us-1
+  response:
+    body:
+      string: '{"acknowledged":true}'
+    headers:
+      content-length:
+      - '21'
+      content-type:
+      - application/json; charset=UTF-8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Content-Length:
+      - '0'
+      content-type:
+      - application/json
+      user-agent:
+      - elasticsearch-py/7.13.4 (Python 3.10.6)
+      x-elastic-client-meta:
+      - es=7.13.4,py=3.10.6,t=7.13.4,rq=2.28.2
+    method: POST
+    uri: http://elastic:9200/demo_elasticsearch_backend_contact_en_us/_search?filter_path=hits.hits._source
+  response:
+    body:
+      string: '{"hits":{"hits":[{"_source":{"id":"foo"}},{"_source":{"id":"foo2"}},{"_source":{"id":"foo3"}}]}}'
+    headers:
+      content-length:
+      - '96'
+      content-type:
+      - application/json; charset=UTF-8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      content-type:
+      - application/json
+      user-agent:
+      - elasticsearch-py/7.13.4 (Python 3.10.6)
+      x-elastic-client-meta:
+      - es=7.13.4,py=3.10.6,t=7.13.4,rq=2.28.2
+    method: GET
+    uri: http://elastic:9200/_alias/demo_elasticsearch_backend_contact_en_us
+  response:
+    body:
+      string: '{"demo_elasticsearch_backend_contact_en_us-2":{"aliases":{"demo_elasticsearch_backend_contact_en_us":{}}}}'
+    headers:
+      content-length:
+      - '106'
+      content-type:
+      - application/json; charset=UTF-8
+    status:
+      code: 200
+      message: OK
+version: 1

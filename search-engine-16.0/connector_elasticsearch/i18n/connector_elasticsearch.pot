@@ -1,0 +1,113 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* connector_elasticsearch
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: connector_elasticsearch
+#. odoo-python
+#: code:addons/connector_elasticsearch/models/se_index.py:0
+#, python-format
+msgid "An index definition is required for ElasticSearch"
+msgstr ""
+
+#. module: connector_elasticsearch
+#: model:ir.model.fields,field_description:connector_elasticsearch.field_se_backend__api_key
+msgid "Api Key"
+msgstr ""
+
+#. module: connector_elasticsearch
+#: model:ir.model.fields,field_description:connector_elasticsearch.field_se_backend__api_key_id
+msgid "Api Key ID"
+msgstr ""
+
+#. module: connector_elasticsearch
+#: model:ir.model.fields.selection,name:connector_elasticsearch.selection__se_backend__backend_type__elasticsearch
+msgid "ElasticSearch"
+msgstr ""
+
+#. module: connector_elasticsearch
+#: model:ir.model.fields,field_description:connector_elasticsearch.field_se_backend__es_server_host
+msgid "ElasticSearch host"
+msgstr ""
+
+#. module: connector_elasticsearch
+#: model:ir.model.fields,help:connector_elasticsearch.field_se_backend__api_key
+msgid "Elasticsearch Api Key"
+msgstr ""
+
+#. module: connector_elasticsearch
+#: model:ir.model.fields,help:connector_elasticsearch.field_se_backend__api_key_id
+msgid "Elasticsearch Api Key ID"
+msgstr ""
+
+#. module: connector_elasticsearch
+#: model_terms:ir.ui.view,arch_db:connector_elasticsearch.se_backend_form_view
+msgid "Host"
+msgstr ""
+
+#. module: connector_elasticsearch
+#: model:ir.model,name:connector_elasticsearch.model_se_backend
+msgid "Se Backend"
+msgstr ""
+
+#. module: connector_elasticsearch
+#: model:ir.model,name:connector_elasticsearch.model_se_index
+msgid "Se Index"
+msgstr ""
+
+#. module: connector_elasticsearch
+#: model:ir.model.fields,field_description:connector_elasticsearch.field_se_backend__backend_type
+msgid "Type"
+msgstr ""
+
+#. module: connector_elasticsearch
+#. odoo-python
+#: code:addons/connector_elasticsearch/tools/adapter.py:0
+#, python-format
+msgid "Unable to authenticate. Check credentials."
+msgstr ""
+
+#. module: connector_elasticsearch
+#. odoo-python
+#: code:addons/connector_elasticsearch/tools/adapter.py:0
+#, python-format
+msgid "Unable to clear index %(index_name)s: %(result)"
+msgstr ""
+
+#. module: connector_elasticsearch
+#. odoo-python
+#: code:addons/connector_elasticsearch/tools/adapter.py:0
+#, python-format
+msgid "Unable to connect :"
+msgstr ""
+
+#. module: connector_elasticsearch
+#. odoo-python
+#: code:addons/connector_elasticsearch/tools/adapter.py:0
+#, python-format
+msgid ""
+"Unable to index all records. (indexed: %(indexed)s, total: %(total)s)\n"
+"%(result)s"
+msgstr ""
+
+#. module: connector_elasticsearch
+#. odoo-python
+#: code:addons/connector_elasticsearch/tools/adapter.py:0
+#, python-format
+msgid "Unable to reach host."
+msgstr ""
+
+#. module: connector_elasticsearch
+#: model_terms:ir.ui.view,arch_db:connector_elasticsearch.se_backend_form_view
+msgid "http://elastic:9200"
+msgstr ""

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <record id="backend_1" model="se.backend">
+        <field name="name">Demo Elasticsearch Backend</field>
+        <field name="tech_name">demo_elasticsearch_backend</field>
+        <field name="es_server_host">http://elastic:9200</field>
+        <field name="backend_type">elasticsearch</field>
+    </record>
+</odoo>

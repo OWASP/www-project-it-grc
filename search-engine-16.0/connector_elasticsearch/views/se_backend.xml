@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="se_backend_form_view">
+        <field name="model">se.backend</field>
+        <field name="inherit_id" ref="connector_search_engine.se_backend_form_view" />
+        <field name="arch" type="xml">
+            <group name="se-main" position="after">
+                <group name="elasticsearch" position="after">
+                    <field
+                        name="es_server_host"
+                        string="Host"
+                        placeholder="http://elastic:9200"
+                        attrs="{'required': [('backend_type', '=', 'elasticsearch')]}"
+                    />
+                    <field name="api_key_id" />
+                    <field name="api_key" />
+                </group>
+            </group>
+        </field>
+    </record>
+</odoo>

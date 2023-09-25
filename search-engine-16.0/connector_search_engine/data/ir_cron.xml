@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="ir_cron_recompute_all_index" model="ir.cron">
+        <field name="name">Search engine: recompute all index</field>
+        <field name="active" eval="False" />
+        <field name="user_id" ref="base.user_root" />
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False" />
+        <field name="model_id" ref="model_se_index" />
+        <field name="state">code</field>
+        <field name="code">model.recompute_all_index()</field>
+    </record>
+    <record id="ir_cron_export_binding" model="ir.cron">
+        <field
+            name="name"
+        >Search engine: Generate job for exporting binding per index</field>
+        <field name="active" eval="True" />
+        <field name="user_id" ref="base.user_root" />
+        <field name="interval_number">5</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False" />
+        <field name="model_id" ref="model_se_index" />
+        <field name="state">code</field>
+        <field name="code">model.generate_batch_sync_per_index()</field>
+        <field name="priority" eval="6" />
+    </record>
+    <record id="ir_cron_recompute_binding" model="ir.cron">
+        <field
+            name="name"
+        >Search engine: Generate job for recompute binding to recompute per index</field>
+        <field name="active" eval="True" />
+        <field name="user_id" ref="base.user_root" />
+        <field name="interval_number">5</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False" />
+        <field name="model_id" ref="model_se_index" />
+        <field name="state">code</field>
+        <field name="code">model.generate_batch_recompute_per_index()</field>
+        <field name="priority" eval="6" />
+    </record>
+</odoo>

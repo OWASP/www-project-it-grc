@@ -1,0 +1,14 @@
+<odoo noupdate="1">
+    <record model="queue.job.channel" id="channel_search_engine">
+        <field name="name">search_engine</field>
+        <field name="parent_id" ref="queue_job.channel_root" />
+    </record>
+    <record model="queue.job.channel" id="channel_search_engine_recompute">
+        <field name="name">recompute</field>
+        <field name="parent_id" ref="channel_search_engine" />
+    </record>
+    <record model="queue.job.channel" id="channel_search_engine_synchronize">
+        <field name="name">synchronize</field>
+        <field name="parent_id" ref="channel_search_engine" />
+    </record>
+</odoo>

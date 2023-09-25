@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record model="ir.actions.server" id="action_recompute_se_index">
+        <field name="name">Recompute Search Index</field>
+        <field name="model_id" ref="connector_search_engine.model_se_binding" />
+        <field name="state">code</field>
+        <field name="code">model.recompute_from_owner()</field>
+    </record>
+
+</odoo>

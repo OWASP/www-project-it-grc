@@ -1,0 +1,94 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Algolia for Python (2.5.0); Python (3.7.3)
+      X-Algolia-API-Key:
+      - 4c043afe97c0c6681b20f9c06049fa65
+      X-Algolia-Application-Id:
+      - C04JR8U8Y1
+    method: POST
+    uri: https://c04jr8u8y1.algolia.net/1/indexes/demo_algolia_backend_res_partner_binding_fake_en_US/clear
+  response:
+    body:
+      string: '{"updatedAt":"2021-07-16T16:29:53.531Z","taskID":1104106837002}'
+    headers:
+      Accept-Encoding:
+      - deflate, gzip
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - no-store
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename=a.txt
+      Content-Length:
+      - '63'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 16 Jul 2021 16:29:53 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Timing-Allow-Origin:
+      - '*'
+      X-Content-Type-Options:
+      - nosniff
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"attributesForFaceting": ["name"]}'
+    headers:
+      Content-Length:
+      - '35'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Algolia for Python (2.5.0); Python (3.7.3)
+      X-Algolia-API-Key:
+      - 4c043afe97c0c6681b20f9c06049fa65
+      X-Algolia-Application-Id:
+      - C04JR8U8Y1
+    method: PUT
+    uri: https://c04jr8u8y1.algolia.net/1/indexes/demo_algolia_backend_res_partner_binding_fake_en_US/settings
+  response:
+    body:
+      string: '{"updatedAt":"2021-07-16T16:29:53.606Z","taskID":1104106838002}'
+    headers:
+      Accept-Encoding:
+      - deflate, gzip
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - no-store
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename=a.txt
+      Content-Length:
+      - '63'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 16 Jul 2021 16:29:53 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Timing-Allow-Origin:
+      - '*'
+      X-Content-Type-Options:
+      - nosniff
+    status:
+      code: 200
+      message: OK
+version: 1
