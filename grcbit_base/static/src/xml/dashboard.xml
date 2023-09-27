@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+   <t t-name="CustomDashBoard">
+       <div class="oh_dashboards" style="margin-top: 20px;">
+           <div class="container-fluid o_pj_dashboard">
+           </div>
+       </div>
+   </t>
+       <t t-name="DashboardProject">
+	<div>
+		GRCbit
+	</div>
+       <div class="row main-section" style="margin-left: 170px;">
+           <div class="col-md-4 col-sm-6 tot_projects oh-payslip" >
+               <div class="oh-card" style="width: 410px;">
+                   <div class="oh-card-body">
+                       <div class="stat-widget-one">
+                           <div class="stat-icon" style="background:#e08048;"><i class="fa fa-puzzle-piece"/></div>
+                           <div class="stat-content">
+                               <div class="stat-head">Total Project</div>
+			       <!--
+                               <div class="stat_count"><t t-esc="widget.total_projects"/></div>
+			       -->
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <div class="col-md-4 col-sm-6 tot_emp oh-payslip">
+               <div class="oh-card" style="width: 410px;">
+                   <div class="oh-card-body">
+                       <div class="stat-widget-one">
+                           <div class="stat-icon" style="background:#645bd0"><i class="fa fa-user"/></div>
+                           <div class="stat-content">
+                               <div class="stat-head">Total Employees</div>
+			       <!--
+                               <div class="stat_count"><t t-esc="widget.total_employees"/></div>
+			       -->
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <div class="col-md-4 col-sm-6 tot_tasks oh-payslip">
+               <div class="oh-card" style="width: 410px;">
+                   <div class="oh-card-body">
+                       <div class="stat-widget-one">
+                           <div class="stat-icon" style="background:#85d05b"><i class="fa fa-tasks"/></div>
+                               <div class="stat-content">
+                                   <div class="stat-head">Total tasks</div>
+				   <!--
+                                   <div class="stat_count"><t t-esc="widget.total_tasks"/></div>
+				   -->
+                               </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </t>
+</templates>

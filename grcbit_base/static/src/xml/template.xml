@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+	<t t-name="FieldMany2One">
+        <t t-if="widget.mode === 'readonly'">
+            <a t-if="!widget.noOpen" t-att-tabindex="widget.attrs.tabindex" class="o_form_uri" href="#"/>
+            <span t-if="widget.noOpen"/>
+        </t>
+        <div t-if="widget.mode === 'edit'" class="o_field_widget o_field_many2one" aria-atomic="true">
+            <div class="o_input_dropdown">
+                <input type="text" class="o_input"
+                    t-att-barcode_events="widget.nodeOptions.barcode_events"
+                    t-att-tabindex="widget.attrs.tabindex"
+                    t-att-autofocus="widget.attrs.autofocus"
+                    t-att-placeholder="widget.attrs.placeholder"
+                    t-att-id="widget.idForLabel"/>
+                <a role="button" class="o_dropdown_button" draggable="false"/>
+            </div>
+            <a href="#" role="button" t-if="!widget.noOpen" class="fa fa-external-link btn btn-secondary o_external_button" tabindex="-1" draggable="false" aria-label="External link" title="External link"/>
+        </div>
+    </t>
+    <!--
+<t t-name="FieldMany2ManyTag">
+    -->
+    <t t-name="FieldMany2ManyOpen">
+    <t t-foreach="elements" t-as="el" t-key="el_index">
+        <t t-set="color" t-value="el[colorField] || 0"/>
+        <t t-set="colornames" t-value="['No color', 'Red', 'Orange', 'Yellow', 'Light blue', 'Dark purple', 'Salmon pink', 'Medium blue', 'Dark blue', 'Fushia', 'Green', 'Purple']"/>
+        <div t-attf-class="badge rounded-pill #{hasDropdown ? 'dropdown' : ''} o_tag_color_#{color}" t-att-data-color="color" t-att-data-index="el_index" t-att-data-id="el.id" t-attf-title="Tag color: #{colornames[color]}">
+            <t t-set="_badge_text">
+               <a href="#" class="o_external_link" t-att-modelid="el.id">
+                <span class="o_badge_text" t-att-title="el.display_name"><span role="img" t-attf-aria-label="Tag color: #{colornames[color]}"/><span class="o_tag_badge_text" t-esc="el.display_name"/></span>
+	       </a>
+            </t>
+	    <!--
+            <t t-if="hasDropdown">
+                <a role="button" href="#" class="dropdown-toggle o-no-caret" aria-expanded="false">
+                    <t t-out="_badge_text"/>
+                </a>
+            </t>
+	    -->
+                <t t-if="colorField">
+                    <a href="#" class="dropdown-toggle o-no-caret" data-toggle="dropdown">
+                        <t t-raw="_badge_text"/>
+                    </a>
+                </t>
+            <t t-else="">
+                <t t-out="_badge_text"/>
+            </t>
+            <a t-if="!readonly" href="#" class="fa fa-times o_delete" title="Delete" aria-label="Delete"/>
+        </div>
+    </t>
+</t>
+
+<!--
+    <t t-name="FieldMany2ManyTag">
+        <t t-foreach="elements" t-as="el">
+            <t t-set="color" t-value="el[colorField] || 0"/>
+            <t t-set="colornames" t-value="['No color', 'Red', 'Orange', 'Yellow', 'Light blue', 'Dark purple', 'Salmon pink', 'Medium blue', 'Dark blue', 'Fushia', 'Green', 'Purple']"/>
+            <div t-attf-class="badge badge-pill #{hasDropdown ? 'dropdown' : ''} o_tag_color_#{color}" t-att-data-color="color" t-att-data-index="el_index" t-att-data-id="el.id" t-attf-title="Tag color: #{colornames[color]}">
+                <t t-set="_badge_text">
+                    <span class="o_badge_text" t-att-title="el.display_name"><span role="img" t-attf-aria-label="Tag color: #{colornames[color]}"/><t t-esc="el.display_name"/></span>
+                </t>
+                <t t-if="hasDropdown">
+                    <a role="button" t-att-href="'#id=' + el.id + '&amp;model=' + model + '&amp;menu_id=' + menuId" class="dropdown-toggle o-no-caret" data-toggle="dropdown" aria-expanded="false">
+                        <t t-raw="_badge_text"/>
+                    </a>
+                </t>
+                <t t-else="">
+                    <t t-raw="_badge_text"/>
+                </t>
+                <a t-if="!readonly" href="#" class="fa fa-times o_delete" title="Delete" aria-label="Delete"/>
+            </div>
+        </t>
+    </t>
+-->
+    <!--
+
+    <t t-name="FieldMany2ManyTagsLink">
+        <t t-foreach="elements" t-as="el">
+            <t t-set="color" t-value="el[colorField] || 0"/>
+            <t t-set="colornames" t-value="['No color', 'Red', 'Orange', 'Yellow', 'Light blue', 'Dark purple', 'Salmon pink', 'Medium blue', 'Dark blue', 'Fushia', 'Green', 'Purple']"/>
+            <div t-attf-class="badge badge-pill dropdown o_tag_color_#{color}" t-att-data-color="color" t-att-data-index="el_index" t-att-data-id="el.id" t-attf-title="Tag color: #{colornames[color]}">
+                <t t-set="_badge_text">
+                    <a href="#" class="o_external_link" t-att-modelid="el.id">
+                        <span class="o_badge_text" t-att-title="el.display_name" ><span role="img" t-attf-aria-label="Tag color: #{colornames[color]}"/><t t-esc="el.display_name"/></span>
+                    </a>
+                </t>
+                <t t-if="colorField">
+                    <a href="#" class="dropdown-toggle o-no-caret" data-toggle="dropdown">
+                        <t t-raw="_badge_text"/>
+                    </a>
+                </t>
+                <t t-else="">
+                    <t t-raw="_badge_text"/>
+                </t>
+                <a t-if="!readonly" href="#" class="fa fa-times o_delete" title="Delete" aria-label="Delete"/>
+            </div>
+        </t>
+    </t>
+    -->
+
+
+
+</templates>

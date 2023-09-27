@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <record model="impact.level" id="low_impact_level">
+      <field name="name">Low</field>
+      <field name="description">The impact on the confidentiality, availability and integrity of the information is low.</field>
+      <field name="value">1</field>
+      <field name="active">1</field>
+    </record>
+    <record model="impact.level" id="medium_impact_level">
+      <field name="name">Medium</field>
+      <field name="description">The impact on the confidentiality, availability and integrity of the information is medium.</field>
+      <field name="value">2</field>
+      <field name="active">1</field>
+    </record>
+    <record model="impact.level" id="high_impact_level">
+      <field name="name">High</field>
+      <field name="description">The impact on the confidentiality, availability and integrity of the information is high.</field>
+      <field name="value">3</field>
+      <field name="active">1</field>
+    </record>
+  </data>
+</odoo>

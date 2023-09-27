@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "GRCBIT ISO27001",
-    'summary': "App for grcbit base implementation",
+    'summary': "App for grcbit iso27001 implementation",
     'description': "ISO27001",
     'author':"HackDoo",
     'website': "https://hackdoo.com/",
@@ -9,6 +9,7 @@
     'version': '16.0',
     'depends': [
         'grcbit_base',
+        'grcbit_risk_management',
     ],
 
     # always loaded

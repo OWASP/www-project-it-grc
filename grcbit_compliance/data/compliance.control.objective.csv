@@ -1,0 +1,66 @@
+name,description,compliance_version_id
+AC-1 POLICY AND PROCEDURES,"The organization:                                                                                                                                                  a. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]:
+1. [Selection (one or more): Organization-level; Mission/business process-level; Systemlevel] access control policy that:
+(a) Addresses purpose, scope, roles, responsibilities, management commitment, 
+coordination among organizational entities, and compliance; and
+(b) Is consistent with applicable laws, executive orders, directives, regulations, policies, 
+standards, and guidelines; and
+2. Procedures to facilitate the implementation of the access control policy and the 
+associated access controls;
+b. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the access control policy and procedures; and c. Review and update the current access control:
+1. Policy [Assignment: organization-defined frequency] and following [Assignment: 
+organization-defined events]; and
+2. Procedures [Assignment: organization-defined frequency] and following [Assignment: 
+organization-defined events].",NIST 800-53
+AC-2 ACCOUNT MANAGEMENT,"The organization:                                                                                                                                                   a. Define and document the types of accounts allowed and specifically prohibited for use 
+within the system;
+b. Assign account managers;
+c. Require [Assignment: organization-defined prerequisites and criteria] for group and role 
+membership;
+d. Specify:
+1. Authorized users of the system;
+2. Group and role membership; and
+3. Access authorizations (i.e., privileges) and [Assignment: organization-defined attributes 
+(as required)] for each account;
+e. Require approvals by [Assignment: organization-defined personnel or roles] for requests to 
+create accounts;
+f. Create, enable, modify, disable, and remove accounts in accordance with [Assignment: 
+organization-defined policy, procedures, prerequisites, and criteria];
+g. Monitor the use of accounts;
+h. Notify account managers and [Assignment: organization-defined personnel or roles] within:
+1. [Assignment: organization-defined time period] when accounts are no longer required;
+2. [Assignment: organization-defined time period] when users are terminated or 
+transferred; and
+3. [Assignment: organization-defined time period] when system usage or need-to-know 
+changes for an individual;
+i. Authorize access to the system based on:
+1. A valid access authorization;
+2. Intended system usage; and
+3. [Assignment: organization-defined attributes (as required)];
+j. Review accounts for compliance with account management requirements [Assignment: 
+organization-defined frequency];
+k. Establish and implement a process for changing shared or group account authenticators (if 
+deployed) when individuals are removed from the group; and
+l. Align account management processes with personnel termination and transfer processes.",NIST 800-53
+AC-2(1) AUTOMATED SYSTEM ACCOUNT MANAGEMENT,The organization employs automated mechanisms to support the management of information system accounts.,NIST 800-53
+AC-2(2) AUTOMATED TEMPORARY AND EMERGENCY ACCOUNT MANAGEMENT,The information system automatically [Selection: removes; disables] temporary and emergency accounts after [Assignment: organization-defined time period for each type of account].,NIST 800-53
+AC-2(3) DISABLE ACCOUNTS,"The information system automatically disables inactive accounts after [Assignment: organization-defined time period].                                                                                                                                                     (a) Have expired;
+(b) Are no longer associated with a user or individual;
+(c) Are in violation of organizational policy; or
+(d) Have been inactive for [Assignment: organization-defined time period]",NIST 800-53
+AC-2(4) AUTOMATED AUDIT ACTIONS,"The information system automatically audits account creation, modification, enabling, disabling, and removal actions, and notifies [Assignment: organization-defined personnel or roles].",NIST 800-53
+AC-2(5) INACTIVITY LOGOUT,The organization requires that users log out when [Assignment: organization-defined time-period of expected inactivity or description of when to log out].,NIST 800-53
+AC-2(6) DYNAMIC PRIVILEGE MANAGEMENT,The information system implements the following dynamic privilege management capabilities: [Assignment: organization-defined list of dynamic privilege management capabilities].,NIST 800-53
+AC-2(7) PRIVILEGED USER ACCOUNTS,"The organization:                                                                                                                                                                                                                                  (a) Establish and administer privileged user accounts in accordance with [Selection: a rolebased access scheme; an attribute-based access scheme];
+(b) Monitor privileged role or attribute assignments;
+(c) Monitor changes to roles or attributes; and
+(d) Revoke access when privileged role or attribute assignments are no longer 
+appropriate.",NIST 800-53
+AC-2(8) DYNAMIC ACCOUNT MANAGEMENT,"The information system Create, activate, manage, and deactivate [Assignment: organization-defined system accounts] dynamically.",NIST 800-53
+AC-2(9) RESTRICTIONS ON USE OF SHARED AND GROUP ACCOUNTS,The organization Only permit the use of shared and group accounts that meet [Assignment: organization-defined conditions for establishing shared and group accounts].,NIST 800-53
+AC-2(10) SHARED AND GROUP ACCOUNT CREDENTIAL CHANGE,The information system terminates shared/group account credentials when members leave the group.,NIST 800-53
+AC-2(11) USAGE CONDITIONS,The information system Enforce [Assignment: organization-defined circumstances and/or usage conditions] for [Assignment: organization-defined system accounts].,NIST 800-53
+AC-2(12) ACCOUNT MONITORING FOR ATYPICAL USAGE,"The organization:                                                                                                                                                 (a) Monitor system accounts for [Assignment: organization-defined atypical usage]; and
+(b) Report atypical usage of system accounts to [Assignment: organization-defined 
+personnel or roles].",NIST 800-53
+AC-2(13) DISABLE ACCOUNTS FOR HIGH-RISK INDIVIDUALS,The organization Disable accounts of individuals within [Assignment: organization-defined time period] of discovery of [Assignment: organization-defined significant risks].,NIST 800-53

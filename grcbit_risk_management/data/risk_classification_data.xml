@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <record model="risk.classification" id="operational_risk_classification">
+      <field name="name">Operational</field>
+      <field name="description">Operational.</field>
+      <field name="active">1</field>
+    </record>
+    <record model="risk.classification" id="technology_risk_classification">
+      <field name="name">Technology</field>
+      <field name="description">Technology.</field>
+      <field name="active">1</field>
+    </record>
+    <record model="risk.classification" id="financial_risk_classification">
+      <field name="name">Financial</field>
+      <field name="description">Financial.</field>
+      <field name="active">1</field>
+    </record>
+  </data>
+</odoo>
