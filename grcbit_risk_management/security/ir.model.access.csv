@@ -34,6 +34,11 @@ access_control_evidence_group_iso_consultant,access.control.evidence.group.iso.c
 access_control_evidence_group_guest,access.control.evidence.group.guest,model_control_evidence,grcbit_base.group_guest,1,0,0,0
 access_control_evidence_group_risk_owner,access.control.evidence.group.risk.owner,model_control_evidence,grcbit_base.group_risk_owner,1,1,1,1
 
+access_control_type_group_admin,access.control.type.group.admin,model_control_type,grcbit_base.group_admin,1,1,1,1
+access_control_type_group_iso_consultant,access.control.type.group.iso.consultant,model_control_type,grcbit_base.group_iso_consultant,1,1,1,0
+access_control_type_group_guest,access.control.type.group.guest,model_control_type,grcbit_base.group_guest,1,0,0,0
+access_control_type_group_risk_owner,access.control.type.group.risk.owner,model_control_type,grcbit_base.group_risk_owner,1,0,0,0
+
 access_inherent_risk_level_admin,access.inherent.risk.level.admin,model_inherent_risk_level,grcbit_base.group_admin,1,1,1,1
 
 access_residual_risk_level_admin,access.residual.risk.level.admin,model_residual_risk_level,grcbit_base.group_admin,1,1,1,1

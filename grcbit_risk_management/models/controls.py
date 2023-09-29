@@ -99,7 +99,6 @@ class ControlDesing(models.Model):
 
     _description = 'Control Design'
     _order = 'control_id'
-    #_rec_name = 'control_id'
     _rec_name = 'display_name'
 
     state = fields.Selection([

@@ -21,8 +21,8 @@
           <field name="consequence"/>
           <field name="impact_level_id" optional="hide" />
           <field name="probability_level_id" optional="hide"/>
-	        <field name="inherent_risk" readonly="1" force_save="1" widget="badge" decoration-danger="inherent_risk=='Alto'" decoration-warning="inherent_risk=='Medio'" decoration-success="inherent_risk=='Bajo'" />
-          <field name="residual_risk" readonly="1" force_save="1" widget="badge" decoration-danger="residual_risk=='Alto'" decoration-warning="residual_risk=='Medio'" decoration-success="residual_risk=='Bajo'" />
+	        <field name="inherent_risk" readonly="1" force_save="1" widget="badge" decoration-danger="inherent_risk=='High'" decoration-warning="inherent_risk=='Medium'" decoration-success="inherent_risk=='Low'" />
+          <field name="residual_risk" readonly="1" force_save="1" widget="badge" decoration-danger="residual_risk=='High'" decoration-warning="residual_risk=='Medium'" decoration-success="residual_risk=='Low'" />
           <field name="responsible" optional="hide" widget="many2one_avatar_user"/>
           <field name="quantification" optional="hide"/>
           <field name="attachment" widget="many2many_binary" optional="hide" />
@@ -74,8 +74,8 @@
               <field name="impact_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
               <field name="probability_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
               <field name="quantification" optional="hide"/>
-              <field name="inherent_risk" readonly="1" force_save="1" widget="badge" decoration-danger="inherent_risk=='Alto'" decoration-warning="inherent_risk=='Medio'" decoration-success="inherent_risk=='Bajo'" />
-              <field name="residual_risk" readonly="1" force_save="1" widget="badge" decoration-danger="residual_risk=='Alto'" decoration-warning="residual_risk=='Medio'" decoration-success="residual_risk=='Bajo'" />
+              <field name="inherent_risk" readonly="1" force_save="1" widget="badge" decoration-danger="inherent_risk=='High'" decoration-warning="inherent_risk=='Medium'" decoration-success="inherent_risk=='Low'" />
+              <field name="residual_risk" readonly="1" force_save="1" widget="badge" decoration-danger="residual_risk=='High'" decoration-warning="residual_risk=='Medium'" decoration-success="residual_risk=='Low'" />
               <field name="attachment" widget="many2many_binary" />
             </group>
           </sheet>
@@ -100,8 +100,8 @@
       <field name="arch" type="xml">
         <tree multi_edit="1">
           <field name="active" invisible="1"/>
-          <field name="name" widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
-          <field name="value" widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
+          <field name="name" widget="badge" decoration-danger="name=='High'" decoration-warning="name=='Medium'" decoration-success="name=='Low'"/>
+          <field name="value" widget="badge" decoration-danger="name=='High'" decoration-warning="name=='Medium'" decoration-success="name=='Low'"/>
           <field name="description"/>
         </tree>
       </field>
@@ -157,8 +157,8 @@
       <field name="arch" type="xml">
         <tree multi_edit="1">
           <field name="active" invisible="1"/>
-          <field name="name" widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
-          <field name="value" widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
+          <field name="name" widget="badge" decoration-danger="name=='High'" decoration-warning="name=='Medium'" decoration-success="name=='Low'"/>
+          <field name="value" widget="badge" decoration-danger="name=='High'" decoration-warning="name=='Medium'" decoration-success="name=='Low'"/>
           <field name="description"/>
         </tree>
       </field>
@@ -214,8 +214,8 @@
       <field name="arch" type="xml">
         <tree multi_edit="1">
           <field name="active" invisible="1"/>
-          <field name="name"  widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
-          <field name="value" widget="badge" decoration-danger="name=='Alto'" decoration-warning="name=='Medio'" decoration-success="name=='Bajo'"/>
+          <field name="name"  widget="badge" decoration-danger="name=='High'" decoration-warning="name=='Medium'" decoration-success="name=='Low'"/>
+          <field name="value" widget="badge" decoration-danger="name=='High'" decoration-warning="name=='Medium'" decoration-success="name=='Low'"/>
           <field name="description"/>
         </tree>
       </field>
@@ -326,7 +326,7 @@
       <field name="arch" type="xml">
         <tree multi_edit="1">
           <field name="active" invisible="1"/>
-          <field name="risk_level_name" widget="badge" decoration-danger="risk_level_name=='Alto'" decoration-warning="risk_level_name=='Medio'" decoration-success="risk_level_name=='Bajo'"/>
+          <field name="risk_level_name" widget="badge" decoration-danger="risk_level_name=='High'" decoration-warning="risk_level_name=='Medium'" decoration-success="risk_level_name=='Low'"/>
           <field name="impact_level_id"/>
           <field name="probability_level_id"/>
           <field name="description"/>
@@ -364,7 +364,7 @@
           <field name="active" invisible="1"/>
           <field name="inherent_risk_level_id"/>
           <field name="control_evaluation_criteria_id"/>
-          <field name="residual_risk_level_name" widget="badge" decoration-danger="residual_risk_level_name=='Alto'" decoration-warning="residual_risk_level_name=='Medio'" decoration-success="residual_risk_level_name=='Bajo'"/>
+          <field name="residual_risk_level_name" widget="badge" decoration-danger="residual_risk_level_name=='High'" decoration-warning="residual_risk_level_name=='Medium'" decoration-success="residual_risk_level_name=='Low'"/>
         </tree>
       </field>
     </record>
