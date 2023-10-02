@@ -40,6 +40,7 @@ class RiskLevel(models.Model):
 class InherentRiskLevel(models.Model):
     _name = 'inherent.risk.level'
     _description = 'Inherent Risk Level'
+    _rec_name = 'risk_level_name'
 
     impact_level_id      = fields.Many2one('impact.level', string=_('Impact Level'))
     probability_level_id = fields.Many2one('probability.level', string=_('Probability Level'))
