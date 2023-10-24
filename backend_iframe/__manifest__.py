@@ -29,6 +29,7 @@
         'security/backend_iframe_access_rules.xml',
         'security/ir.model.access.csv',
         'views/backend_iframe.xml',
+        'views/menuitems.xml',
     ],
 'assets': {
         'web.assets_backend': [
