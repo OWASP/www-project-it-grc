@@ -54,6 +54,7 @@ class ComplianceVersion(models.Model):
         data['c_records'] = c_records
         return self.env.ref('grcbit.print_compliance').report_action(self, data=data)
     
+    
 class ComplianceControlObjective(models.Model):
     _name = 'compliance.control.objective'
     _description = 'Compliance Objective'
