@@ -35,6 +35,7 @@
 			            <group>
                     <field name="name"/>
                     <field name="description"/>
+                    <field name="compliance_control_ids"/>
 	                </group>
 		            </form>
                 <tree>
