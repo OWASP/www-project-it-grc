@@ -4,22 +4,24 @@ access_data_inventory_group_iso_consultant,access.data.inventory.group.iso.consu
 access_data_inventory_group_guest,access.data.inventory.group.guest,model_data_inventory,group_guest,1,0,0,0
 access_data_inventory_group_risk_owner,access.data.inventory.group.risk.owner,model_data_inventory,group_risk_owner,1,0,0,0
 access_data_inventory_group_data_owner,access.data.inventory.group.data.owner,model_data_inventory,group_data_owner,1,1,1,0
+access_data_inventory_group_it_admin,access.data.inventory.group.it.admin,model_data_inventory,group_it_admin,1,0,0,0
 
 access_it_inventory_group_admin,access.it.inventory.group.admin,model_it_inventory,group_admin,1,1,1,1
 access_it_inventory_group_iso_consultant,access.it.inventory.group.iso.consultant,model_it_inventory,group_iso_consultant,1,1,1,0
 access_it_inventory_group_guest,access.it.inventory.group.guest,model_it_inventory,group_guest,1,0,0,0
 access_it_inventory_group_risk_owner,access.it.inventory.group.risk.owner,model_it_inventory,group_risk_owner,1,0,0,0
-access_it_inventory_group_it_admin,access.it.inventory.group.it.admin,model_it_inventory,group_it_admin,1,1,1,0
+access_it_inventory_group_it_admin,access.it.inventory.group.it.admin,model_it_inventory,group_it_admin,1,0,0,0
 
 access_data_classification_group_admin,access.data.classification.group.admin,model_data_classification,group_admin,1,1,1,1
 access_data_classification_group_iso_consultant,access.data.classification.group.iso.consultant,model_data_classification,group_iso_consultant,1,1,1,0
 access_data_classification_group_guest,access.data.classification.group.guest,model_data_classification,group_guest,1,0,0,0
 access_data_classification_group_risk_owner,access.data.classification.group.risk.owner,model_data_classification,group_risk_owner,1,0,0,0
 access_data_classification_group_data_owner,access.data.classification.group.data.owner,model_data_classification,group_data_owner,1,1,1,1
+access_data_classification_group_it_admin,access.data.classification.group.it.admin,model_data_classification,group_it_admin,1,0,0,0
 
 access_third_party_group_admin,access.third.party.group.admin,model_third_party,group_admin,1,1,1,1
 access_third_party_group_iso_consultant,access.third.party.group.iso.consultant,model_third_party,group_iso_consultant,1,1,1,0
 access_third_party_group_guest,access.third.party.group.guest,model_third_party,group_guest,1,0,0,0
 access_third_party_risk_group_owner,access.third.party.risk.group.owner,model_third_party,group_risk_owner,1,0,0,0
-access_third_party_risk_group_it_admin,access.third.party.risk.group.it.admin,model_third_party,group_it_admin,1,1,1,0
+access_third_party_risk_group_it_admin,access.third.party.risk.group.it.admin,model_third_party,group_it_admin,1,0,0,0
 access_third_party_risk_group_data_owner,access.third.party.risk.group.data.owner,model_third_party,group_data_owner,1,1,1,0

@@ -15,44 +15,45 @@ class ComplianceVersion(models.Model):
     compliance_control_objective_ids = fields.One2many('compliance.control.objective', 'compliance_version_id', string='Objective'  )
     _sql_constraints = [('name_uniq', 'unique(name)', "The compliance version name already exists.")]
 
-    def action_print_report_version(self):
-        data = {}
-        record = []
-        c_records = []
-        for i in self:
-            r = []
-            r.append(i.display_name)
-            r.append(i.description)
-            for ii in i.compliance_control_objective_ids:
-                rr=[]
-                rr.append(ii.display_name)
-                rr.append(ii.description) 
-                #r.append(rr)
-                for iii in ii.compliance_control_ids:
-                    d = []
-                    compliance_detail = self.env['compliance.iso.control'].search([('compliance_control_id','=',iii.id)])
-                    for iiii in compliance_detail:
-                        rrr=[]
-                        s = ''
-                        p = ''
-                        rrr.append(iiii.compliance_control_id.name)
-                        rrr.append(iiii.compliance_control_id.description)
-                        for iiiii in iiii.iso_control_id:
-                            s = s + ' - ' + str(iiiii.display_name)
-                        rrr.append(s)
 
-                        for iiiii in iiii.document_page_id:
-                            p = p + ' - ' + str(iiiii.display_name)
-                        rrr.append(p)
+    # def action_print_report_version(self):
+    #     data = {}
+    #     record = []
+    #     c_records = []
+    #     for i in self:
+    #         r = []
+    #         r.append(i.display_name)
+    #         r.append(i.description)
+    #         for ii in i.compliance_control_objective_ids:
+    #             rr=[]
+    #             rr.append(ii.display_name)
+    #             rr.append(ii.description) 
+    #             #r.append(rr)
+    #             for iii in ii.compliance_control_ids:
+    #                 d = []
+    #                 compliance_detail = self.env['compliance.iso.control'].search([('compliance_control_id','=',iii.id)])
+    #                 for iiii in compliance_detail:
+    #                     rrr=[]
+    #                     s = ''
+    #                     p = ''
+    #                     rrr.append(iiii.compliance_control_id.name)
+    #                     rrr.append(iiii.compliance_control_id.description)
+    #                     for iiiii in iiii.iso_control_id:
+    #                         s = s + ' - ' + str(iiiii.display_name)
+    #                     rrr.append(s)
 
-                        c_records.append(rrr)
-                        d.append(rrr)
-                    rr.append(d)
-                r.append(rr)
-            record.append(r)
-        data['compliance'] = record
-        data['c_records'] = c_records
-        return self.env.ref('grcbit.print_compliance').report_action(self, data=data)
+    #                     for iiiii in iiii.document_page_id:
+    #                         p = p + ' - ' + str(iiiii.display_name)
+    #                     rrr.append(p)
+
+    #                     c_records.append(rrr)
+    #                     d.append(rrr)
+    #                 rr.append(d)
+    #             r.append(rr)
+    #         record.append(r)
+    #     data['compliance'] = record
+    #     data['c_records'] = c_records
+    #     return self.env.ref('grcbit.print_compliance').report_action(self, data=data)
     
     
 class ComplianceControlObjective(models.Model):
@@ -92,7 +93,7 @@ class ComplianceIsoControl(models.Model):
     _name = 'compliance.iso.control'
     _description = 'Compliance - ISMS'
 
-    compliance_control_id = fields.Many2one('compliance.control', string='Compliance Requirement', required=True)
-    iso_control_id     = fields.Many2many('iso.control', string='ISMS Control')
-    document_page_id   = fields.Many2many('document.page', string='Policy / Process')
-    description  = fields.Text(string='Compliance Description')
+    compliance_control_id = fields.Many2one('compliance.control', string='Compliance Requirement', required=True) #requerimiento NIST - AC-1 POLICY AND PROCEDURES
+    iso_control_id     = fields.Many2many('iso.control', string='ISMS Control') #ISO
+    document_page_id   = fields.Many2many('document.page', string='Policy / Process') #document
+    description  = fields.Text(string='Compliance Description') #Cumplimiento

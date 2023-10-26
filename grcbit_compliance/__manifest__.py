@@ -21,6 +21,9 @@
         'data/compliance.control.objective.csv',
         'data/compliance.control.csv',
 
+        #reports
+        'reports/report_compliance.xml',
+
         #views
         'views/compliance_views.xml',
     ],
