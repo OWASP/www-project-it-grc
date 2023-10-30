@@ -18,7 +18,7 @@
     </record>
 
     <record model="ir.ui.menu" id="spreadsheet_dashboard.spreadsheet_dashboard_menu_root">
-      <field name="name">Wazuh</field>
+      <field name="name">XDR</field>
     </record>
     	
   </data>  

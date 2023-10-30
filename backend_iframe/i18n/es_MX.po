@@ -133,7 +133,7 @@ msgstr "Si está marcado, algunos mensajes tienen error de entrega"
 #. module: backend_iframe
 #: model:ir.module.category,name:backend_iframe.module_backend_dashboard
 msgid "Iframe Dashboard"
-msgstr "Tablero Wazuh"
+msgstr "Tablero XDR"
 
 #. module: backend_iframe
 #: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__message_is_follower
@@ -271,25 +271,25 @@ msgstr "Vista de Tablero"
 #: model:ir.actions.act_window,name:backend_iframe.action_backend_dashboard_manager
 #: model:ir.actions.act_window,name:backend_iframe.action_backend_dashboard_user
 #: model:ir.ui.menu,name:backend_iframe.backend_dashboard_menu_iframe
-msgid "Wazuh Dashboard"
-msgstr "Tablero Wazuh"
+msgid "XDR Dashboard"
+msgstr "Tablero XDR"
 
 #. module: backend_iframe
 #: model:ir.ui.menu,name:backend_iframe.backend_dashboard_menu_iframe_item1_admin
-msgid "Wazuh Dashboard Admin"
-msgstr "Tablero Wazuh (Administrador)"
+msgid "XDR Dashboard Admin"
+msgstr "Tablero XDR (Administrador)"
 
 #. module: backend_iframe
 #: model:ir.ui.menu,name:backend_iframe.backend_dashboard_menu_iframe_item1_user
-msgid "Wazuh Dashboard User"
-msgstr "Tablero Wazuh (Usuario)"
+msgid "XDR Dashboard User"
+msgstr "Tablero XDR (Usuario)"
 
 #. module: backend_iframe
 #: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_form
 #: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_search
 #: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_tree
-msgid "Wazuh dashboard"
-msgstr "Tablero Wazuh"
+msgid "XDR dashboard"
+msgstr "Tablero XDR"
 
 #. module: backend_iframe
 #: model:ir.model.fields,help:backend_iframe.field_backend_dashboard__width
