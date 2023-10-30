@@ -8,6 +8,7 @@
     'category': 'Uncategorized',
     'version': '16.0',
     'depends': [
+        'web',
         'base',
         'board',
         'document_page'
@@ -20,6 +21,7 @@
         'views/asset_management_views.xml',
         'views/dashboard_view.xml',
         'views/menuitems.xml',
+        'views/config_views.xml',
 
     ],
     # 'assets':{
