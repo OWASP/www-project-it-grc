@@ -7,12 +7,10 @@
       <field name="type">form</field>
       <field name="arch" type="xml">
         <form string="Information Security Management System">
-          <board style="1-1">
-            <column name="process_data">
-              <action string="Data Classification" name="%(data_classification_dash)d" />
-              <action string="IT System" name="%(it_inventory_dash)d" />
-              <action string="Third-Party" name="%(third_party_dash)d" />
-            </column>
+          <board style="1-1-1">
+            <column><action string="Data Classification" name="%(data_classification_dash)d"/></column>
+            <column><action string="IT System" name="%(it_inventory_dash)d"/></column>
+            <column><action string="Third-Party" name="%(third_party_dash)d"/></column>
       	  </board>
         </form>
       </field>

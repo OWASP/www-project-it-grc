@@ -57,6 +57,7 @@ class ItInventory(models.Model):
             data_assets = self.env['data.inventory'].search([('it_inventory_id', 'in', [i.id] )])
             self.env['it.inventory'].sudo().search([('id','=',i.id)]).sudo().write({'data_inventory_count':len(data_assets)})
         return res
+    
 class DataInventory(models.Model):
     _name = 'data.inventory'
     _description = 'Data Inventory'

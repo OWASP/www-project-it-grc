@@ -70,7 +70,7 @@
       <field name="name">Third Party</field>
       <field name="model">third.party</field>
       <field name="arch" type="xml">
-        <graph type="bar" >
+        <graph type="pie" >
           <field name="name"/>
           <field name="description"/>          
           <field name="data_inventory_count" type="measure"/>
@@ -215,7 +215,7 @@
       <field name="name">IT System</field>
       <field name="model">it.inventory</field>
       <field name="arch" type="xml">
-        <graph type="bar" >
+        <graph type="pie" >
           <field name="name"/>
           <field name="ip"/>
           <field name="url" />

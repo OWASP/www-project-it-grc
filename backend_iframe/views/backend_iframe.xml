@@ -7,7 +7,7 @@
             <field name="name">backend.dashboard.form</field>
             <field name="model">backend.dashboard</field>
             <field name="arch" type="xml">
-                <form string="Wazuh dashboard">
+                <form string="XDR dashboard">
                     <sheet>
                         <div class="oe_button_box" name="button_box">
                             
@@ -44,7 +44,7 @@
             <field name="name">backend.dashboard.tree</field>
             <field name="model">backend.dashboard</field>
             <field name="arch" type="xml">
-                <tree string="Wazuh dashboard">
+                <tree string="XDR dashboard">
                     <field name="sequence" widget="handle"/>
                     <field name="name"/>
                     <field name="url"/>
@@ -181,7 +181,7 @@
             <field name="name">backend.dashboard.search</field>
             <field name="model">backend.dashboard</field>
             <field name="arch" type="xml">
-                <search string="Wazuh dashboard">
+                <search string="XDR dashboard">
                     <field name="name"/>
                     <field name="user_id"/>
                     <field name="tag_ids"/>
@@ -200,7 +200,7 @@
 
         <!--Action backend Dashboard-->
         <record id="action_backend_dashboard_manager" model="ir.actions.act_window">
-            <field name="name">Wazuh Dashboard</field>
+            <field name="name">XDR Dashboard</field>
             <field name="res_model">backend.dashboard</field>
             <field name="view_mode">kanban,tree,form</field>
             <field name="groups_id" eval="[(4, ref('backend_iframe.group_dashboard_manager'))]"/>
@@ -212,7 +212,7 @@
         </record>
 
         <record id="action_backend_dashboard_user" model="ir.actions.act_window">
-            <field name="name">Wazuh Dashboard</field>
+            <field name="name">XDR Dashboard</field>
             <field name="res_model">backend.dashboard</field>
             <field name="view_mode">kanban</field>
             <field name="groups_id" eval="[(4, ref('backend_iframe.group_dashboard_user'))]"/>
@@ -220,15 +220,15 @@
         </record>
 
         <!-- menu Iframe -->
-        <menuitem name="Wazuh Dashboard" id="backend_dashboard_menu_iframe" sequence="30"
+        <menuitem name="XDR Dashboard" id="backend_dashboard_menu_iframe" sequence="30"
                     parent="spreadsheet_dashboard.spreadsheet_dashboard_menu_root"  groups="backend_iframe.group_dashboard_user"/>
 
-        <menuitem name="Wazuh Dashboard Admin" id="backend_dashboard_menu_iframe_item1_admin" sequence="3"
+        <menuitem name="XDR Dashboard Admin" id="backend_dashboard_menu_iframe_item1_admin" sequence="3"
                   parent="backend_dashboard_menu_iframe"
                   groups="backend_iframe.group_dashboard_manager"
                   action="action_backend_dashboard_manager"/>
 
-        <menuitem name="Wazuh Dashboard User" id="backend_dashboard_menu_iframe_item1_user" sequence="3"
+        <menuitem name="XDR Dashboard User" id="backend_dashboard_menu_iframe_item1_user" sequence="3"
                   parent="backend_dashboard_menu_iframe"
                   groups="backend_iframe.group_dashboard_user"
                   action="action_backend_dashboard_user"/>
