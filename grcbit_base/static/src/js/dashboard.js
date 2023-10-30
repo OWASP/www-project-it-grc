@@ -11,4 +11,5 @@ odoo.define('custom_dashboard.dashboard_action', function (require){
     })
     core.action_registry.add('custom_dashboard_tags', CustomDashBoard);
     return CustomDashBoard;
+
     })

@@ -22,4 +22,10 @@
         'views/menuitems.xml',
 
     ],
+    # 'assets':{
+    #     'web.assets':[
+    #         'grcbit_base/static/src/js/*.js',
+    #         'grcbit_base/static/src/xml/*.xml',
+    #     ]
+    # }
 }
