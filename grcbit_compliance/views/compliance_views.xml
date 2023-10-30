@@ -213,6 +213,7 @@
       <field name="arch" type="xml">
         <tree multi_edit="1">
           <field name="compliance_control_id" />
+          <field name="description"/>
           <field name="iso_control_id" widget="many2many_tags_open"/>
 	        <field name="document_page_id" widget="many2many_tags_open"/>
         </tree>
@@ -225,6 +226,7 @@
         <form>
 		      <group>
             <field name="compliance_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+            <field name="description"/>
             <field name="iso_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" widget="many2many_tags_open" />
             <field name="document_page_id" widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True)]" />
           </group>
