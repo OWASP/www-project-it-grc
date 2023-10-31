@@ -45,13 +45,9 @@
       <field name="model">risk.factor</field>
       <field name="type">graph</field>
       <field name="arch" type="xml">
-        <graph type="bar" >
-          <field name="risk_id" />
-          <field name="name" />
-          <field name="risk_classification_id" />
-          <field name="data_inventory_id"  />
-          <field name="impact_level_id" group="True"  />
-          <field name="probability_level_id" group="True"/>
+        <graph type="pie">
+          <field name="inherent_factor_count" type="measure"/>
+          <field name="inherent_risk" group="True"/>
         </graph>
       </field>
     </record>
@@ -85,6 +81,22 @@
             <field name="message_ids" widget="mail_thread"/>
           </div>
         </form>
+      </field>
+    </record>
+    <record id="risk_factor_dash" model="ir.actions.act_window">
+      <field name="name">Risk Factor</field>
+      <field name="res_model">risk.factor</field>
+      <field name="view_mode">graph</field>
+      <field name="view_id" ref="risk_factor_graph"/>
+    </record>
+    <record model="ir.ui.view" id="risk_factor_dashboard">
+      <field name="name">risk_factor_dashboard_graph</field>
+      <field name="model">board.board</field>
+      <field name="inherit_id" ref="grcbit_base.main_dashboard"/>
+      <field name="arch" type="xml">
+        <xpath expr="//board/column[1]" position="inside">
+          <action string="Risk Factor" name="%(risk_factor_dash)d"/>
+        </xpath>
       </field>
     </record>
 

@@ -432,7 +432,7 @@ msgstr "Implementado"
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__inherent_risk_level_id
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__inherent_risk
 msgid "Inherent Risk"
-msgstr "Risego inherente"
+msgstr "Riesgo inherente"
 
 #. module: grcbit_risk_management
 #: model:ir.actions.act_window,name:grcbit_risk_management.inherent_risk_level_action

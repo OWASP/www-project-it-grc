@@ -9,6 +9,7 @@
     'version': '16.0',
     'depends': [
         'grcbit_base',
+        'grcbit_iso27001',
     ],
 
     # always loaded

@@ -3,6 +3,7 @@ access_risk_factor_group_admin,access.risk.factor.group.admin,model_risk_factor,
 access_risk_factor_group_iso_consultant,access.risk.factor.group.iso.consultant,model_risk_factor,grcbit_base.group_iso_consultant,1,1,1,0
 access_risk_factor_group_guest,access.risk.factor.group.guest,model_risk_factor,grcbit_base.group_guest,1,0,0,0
 access_risk_factor_group_risk_owner,access.risk.factor.group.risk.owner,model_risk_factor,grcbit_base.group_risk_owner,1,0,0,0
+access_risk_factor_group_it_admin,access.risk.factor.group.it.admin,model_risk_factor,grcbit_base.group_it_admin,1,0,0,0
 
 access_impact_level_group_admin,access.impact.level.group.admin,model_impact_level,grcbit_base.group_admin,1,1,1,1
 access_impact_level_group_iso_consultant,access.impact.level.group.iso.consultant,model_impact_level,grcbit_base.group_iso_consultant,1,1,1,0
