@@ -35,9 +35,11 @@
                   <group>
                     <group>
                       <field name="name"/>
-                      <field name="description"/>
-                      <field name="compliance_control_ids"/>
                     </group>
+                    <group>
+                      <field name="description"/>
+                    </group>
+                    <field name="compliance_control_ids"/>
                   </group>
 		            </form>
                 <tree>
