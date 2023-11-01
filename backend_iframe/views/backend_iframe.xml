@@ -246,7 +246,7 @@
             <field name="tag">view_dashboard</field>
             <field name="params" eval="{'main_dashboard': True}"/>
         </record>
-        <menuitem id="module_dashboard_mi" parent="backend_dashboard_menu_iframe" sequence="3"
+        <menuitem id="module_dashboard_mi" parent="backend_dashboard_menu_iframe" sequence="1"
                   action="modules_act_dashboard"/>
 
     </data>

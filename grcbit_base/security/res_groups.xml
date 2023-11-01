@@ -2,8 +2,8 @@
 <odoo>
   <data>
     <record model="ir.module.category" id="module_grcbit_base">
-      <field name="name">GRCbit Module</field>
-      <field name="description">GRCbit Module Base</field>
+      <field name="name">GRC Module</field>
+      <field name="description">GRC Module Base</field>
       <field name="sequence">10</field>
     </record>
     <record id="group_admin" model="res.groups">
