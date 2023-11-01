@@ -217,14 +217,14 @@
       <field name="arch" type="xml">
         <graph type="pie" >
           <field name="name"/>
-          <field name="ip"/>
+          <!-- <field name="ip"/>
           <field name="url" />
           <field name="responsible" />
           <field name="environment"/>
-          <field name="users_qty" />
+          <field name="users_qty" /> -->
           <field name="data_inventory_count" type="measure" />
-          <field name="os_version"/>
-          <field name="db_version"/>
+          <!-- <field name="os_version"/>
+          <field name="db_version"/> -->
         </graph>
       </field>
     </record>
