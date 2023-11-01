@@ -32,11 +32,13 @@
             <page string="Compliance Objective" name="compliance_objective">
               <field name="compliance_control_objective_ids" widget="section_and_note_one2many" mode="tree"  >
                 <form>
-			            <group>
-                    <field name="name"/>
-                    <field name="description"/>
-                    <field name="compliance_control_ids"/>
-	                </group>
+                  <group>
+                    <group>
+                      <field name="name"/>
+                      <field name="description"/>
+                      <field name="compliance_control_ids"/>
+                    </group>
+                  </group>
 		            </form>
                 <tree>
                   <field name="name"/>
