@@ -1,0 +1,303 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* backend_iframe
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-01 19:49+0000\n"
+"PO-Revision-Date: 2023-11-01 19:49+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: backend_iframe
+#: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_kanban_admin
+#: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_kanban_user
+msgid ""
+"<span class=\"o_kanban_record_subtitle\">\n"
+"                                                <span>\n"
+"                                                    <i class=\"fa fa-check\" role=\"img\" title=\"Main\"/>\n"
+"                                                    Main Dashboard\n"
+"                                                </span>\n"
+"                                            </span>"
+msgstr ""
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__message_needaction
+msgid "Action Needed"
+msgstr "Acción Necesaria"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__active
+#: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_search
+msgid "Active"
+msgstr "Activo"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__message_attachment_count
+msgid "Attachment Count"
+msgstr "Número de adjuntos"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__color
+#: model:ir.model.fields,field_description:backend_iframe.field_dashboard_tag__color
+msgid "Color Index"
+msgstr "Índice de color"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__create_uid
+#: model:ir.model.fields,field_description:backend_iframe.field_dashboard_tag__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__create_date
+#: model:ir.model.fields,field_description:backend_iframe.field_dashboard_tag__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: backend_iframe
+#: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_form
+msgid "Dashboard"
+msgstr "Tablero"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__display_name
+#: model:ir.model.fields,field_description:backend_iframe.field_dashboard_tag__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: backend_iframe
+#: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_kanban_admin
+#: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_kanban_user
+msgid "Dropdown menu"
+msgstr "Menú desplegable"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Socios)"
+
+#. module: backend_iframe
+#: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_search
+msgid "Group by..."
+msgstr "Agrupar por..."
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__has_message
+msgid "Has Message"
+msgstr "Tiene mensajes"
+
+#. module: backend_iframe
+#: model:ir.model.fields,help:backend_iframe.field_backend_dashboard__height
+msgid "Height in px"
+msgstr "Altura en px"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__height
+msgid "Height(px)"
+msgstr "Altura(px)"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__id
+#: model:ir.model.fields,field_description:backend_iframe.field_dashboard_tag__id
+msgid "ID"
+msgstr "ID"
+
+#. module: backend_iframe
+#: model:ir.model.fields,help:backend_iframe.field_backend_dashboard__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, nuevos mensajes requieren su atención"
+
+#. module: backend_iframe
+#: model:ir.model.fields,help:backend_iframe.field_backend_dashboard__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcado, algunos mensajes tienen error de entrega"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard____last_update
+#: model:ir.model.fields,field_description:backend_iframe.field_dashboard_tag____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__write_uid
+#: model:ir.model.fields,field_description:backend_iframe.field_dashboard_tag__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__write_date
+#: model:ir.model.fields,field_description:backend_iframe.field_dashboard_tag__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjunto principal"
+
+#. module: backend_iframe
+#: model:ir.actions.client,name:backend_iframe.modules_act_dashboard
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__main_dashboard
+#: model:ir.ui.menu,name:backend_iframe.module_dashboard_mi
+#: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_search
+msgid "Main Dashboard"
+msgstr "Tablero principal"
+
+#. module: backend_iframe
+#: model:res.groups,name:backend_iframe.group_dashboard_manager
+msgid "Manager"
+msgstr "Administrador"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de entrega de mensaje"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__comment
+msgid "Notes"
+msgstr "Notas"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: backend_iframe
+#: model:ir.model.fields,help:backend_iframe.field_backend_dashboard__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren acción"
+
+#. module: backend_iframe
+#: model:ir.model.fields,help:backend_iframe.field_backend_dashboard__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__user_id
+msgid "Owner"
+msgstr "Propietario"
+
+#. module: backend_iframe
+#: model:ir.model.fields,help:backend_iframe.field_backend_dashboard__user_id
+msgid "Owner dashboard"
+msgstr "Tablero del propietario"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_dashboard_tag__name
+msgid "Tag Name"
+msgstr "Nombre de etiqueta"
+
+#. module: backend_iframe
+#: model:ir.model.constraint,message:backend_iframe.constraint_dashboard_tag_name_uniq
+msgid "Tag name already exists !"
+msgstr "El nombre de la etiqueta ya existe !"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__tag_ids
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__url
+msgid "URL"
+msgstr "URL"
+
+#. module: backend_iframe
+#: model:res.groups,name:backend_iframe.group_dashboard_user
+#: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_search
+msgid "User"
+msgstr "Usuario"
+
+#. module: backend_iframe
+#: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_kanban_user
+msgid "View Dashboard"
+msgstr "Vista de tablero"
+
+#. module: backend_iframe
+#: model:ir.model.fields,help:backend_iframe.field_backend_dashboard__width
+msgid "Width in %"
+msgstr "Ancho en %"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__width
+msgid "Width(%)"
+msgstr "Ancho(%)"
+
+#. module: backend_iframe
+#: model:ir.module.category,name:backend_iframe.module_backend_dashboard_root
+#: model:ir.ui.menu,name:backend_iframe.xdr_menu_main_root
+msgid "XDR"
+msgstr "XDR"
+
+#. module: backend_iframe
+#: model:ir.actions.act_window,name:backend_iframe.action_backend_dashboard_manager
+#: model:ir.actions.act_window,name:backend_iframe.action_backend_dashboard_user
+#: model:ir.module.category,name:backend_iframe.module_backend_dashboard
+#: model:ir.ui.menu,name:backend_iframe.backend_dashboard_menu_iframe
+msgid "XDR Dashboard"
+msgstr "Tablero XDR"
+
+#. module: backend_iframe
+#: model:ir.ui.menu,name:backend_iframe.backend_dashboard_menu_iframe_item1_admin
+msgid "XDR Dashboard Admin"
+msgstr "Tablero XDR (Administrador)"
+
+#. module: backend_iframe
+#: model:ir.ui.menu,name:backend_iframe.backend_dashboard_menu_iframe_item1_user
+msgid "XDR Dashboard User"
+msgstr "Tablero XDR (Usuario)"
+
+#. module: backend_iframe
+#: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_form
+#: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_search
+#: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_tree
+msgid "XDR dashboard"
+msgstr "Tablero XDR"
+
+#. module: backend_iframe
+#: model:ir.model,name:backend_iframe.model_backend_dashboard
+msgid "backend.dashboard"
+msgstr ""
+
+#. module: backend_iframe
+#: model:ir.model,name:backend_iframe.model_dashboard_tag
+msgid "dashboard Tag"
+msgstr "Etiqueta del tablero"
