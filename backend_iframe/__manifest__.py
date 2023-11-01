@@ -20,10 +20,7 @@
     'support': 'mohammed.aminaloui@gmail.com',
     'depends': [
         'base',
-        'board',
-        'web',
         'mail',
-        'spreadsheet_dashboard',
     ],
     'data': [
         'security/backend_iframe_access_rules.xml',

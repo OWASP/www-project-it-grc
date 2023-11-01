@@ -1,3 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_backend_dashboard_a,access_backend_dashboard,model_backend_dashboard,base.group_user,1,1,1,1
-access_dashboard_tag,dashboard.tag,model_dashboard_tag,base.group_user,1,1,1,1
+access_backend_dashboard_admin,access_backend_dashboard_admin,model_backend_dashboard,backend_iframe.group_dashboard_manager,1,1,1,1
+access_backend_dashboard_user,access_backend_dashboard_user,model_backend_dashboard,backend_iframe.group_dashboard_user,1,0,0,0
+
+access_dashboard_tag_admin,dashboard.tag.admin,model_dashboard_tag,backend_iframe.group_dashboard_manager,1,1,1,1
+access_dashboard_tag_user,dashboard.tag.user,model_dashboard_tag,backend_iframe.group_dashboard_user,1,1,1,0

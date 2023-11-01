@@ -220,8 +220,14 @@
         </record>
 
         <!-- menu Iframe -->
+        <menuitem 
+            name="XDR" 
+            id="xdr_menu_main_root" 
+            sequence="2" 
+            groups="backend_iframe.group_dashboard_manager,backend_iframe.group_dashboard_user"/>
+
         <menuitem name="XDR Dashboard" id="backend_dashboard_menu_iframe" sequence="30"
-                    parent="spreadsheet_dashboard.spreadsheet_dashboard_menu_root"  groups="backend_iframe.group_dashboard_user"/>
+                    parent="xdr_menu_main_root"  groups="backend_iframe.group_dashboard_user,backend_iframe.group_dashboard_manager"/>
 
         <menuitem name="XDR Dashboard Admin" id="backend_dashboard_menu_iframe_item1_admin" sequence="3"
                   parent="backend_dashboard_menu_iframe"
