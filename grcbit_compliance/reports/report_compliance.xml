@@ -16,7 +16,7 @@
                 </div>
                 <div class="col-8" style="text-align:left;">
                   <h6>
-                    <strong>Reporte de Cumplimiento: <span><t t-esc="o.name"/></span></strong>
+                    <strong>Compliance Report: <span><t t-esc="o.name"/></span></strong>
                     <br/>
                     <t t-esc="o.description"/>
                   </h6>
@@ -26,10 +26,10 @@
               <table  class="table table-bordered" style="font-size:12px;">
                 <thead>
                   <tr>
-                    <th>Requerimiento</th>
-                    <th>Cumplimiento</th>
+                    <th>requirement</th>
+                    <th>Compliance</th>
                     <th>ISO27001</th>
-                    <th>Politica/Proceso</th>
+                    <th>Policy/process</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -66,7 +66,7 @@
     </record>
 
     <record id="print_compliance" model="ir.actions.report">
-      <field name="name">Reporte Compliance</field>
+      <field name="name">Compliance Report</field>
       <field name="model">compliance.version</field>
       <field name="report_type">qweb-html</field>
       <field name="report_name">grcbit_compliance.compliance_print_template</field>
