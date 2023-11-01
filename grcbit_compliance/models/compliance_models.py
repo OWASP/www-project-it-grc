@@ -37,14 +37,16 @@ class ComplianceVersion(models.Model):
                         s = ''
                         p = ''
                         rrr.append(iiii.compliance_control_id.name)
-                        rrr.append(iiii.compliance_control_id.name) #
-                        for iiiii in iiii.iso_control_id:
-                            s = s + ' - ' + str(iiiii.display_name)
-                        rrr.append(s)
+                        rrr.append(iiii.description)
+                        rrr.append(iiii.control_id.name) #
+                        
+                        # for iiiii in iiii.iso_control_id:
+                        #     s = s + ' - ' + str(iiiii.display_name)
+                        # rrr.append(s)
 
-                        for iiiii in iiii.document_page_id:
-                            p = p + ' - ' + str(iiiii.display_name)
-                        rrr.append(p)
+                        # for iiiii in iiii.document_page_id:
+                        #     p = p + ' - ' + str(iiiii.display_name)
+                        # rrr.append(p)
 
                         c_records.append(rrr)
                         d.append(rrr)
@@ -95,5 +97,6 @@ class ComplianceIsoControl(models.Model):
 
     compliance_control_id = fields.Many2one('compliance.control', string='Compliance Requirement', required=True) #requerimiento NIST - AC-1 POLICY AND PROCEDURES
     iso_control_id     = fields.Many2many('iso.control', string='ISMS Control') #ISO
+    control_id = fields.Many2one('control.design', string="Diseño de control")
     document_page_id   = fields.Many2many('document.page', string='Policy / Process') #document
     description  = fields.Text(string='Compliance Description') #Cumplimiento
