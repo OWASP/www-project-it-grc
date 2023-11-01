@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-24 20:17+0000\n"
-"PO-Revision-Date: 2023-10-24 20:17+0000\n"
+"POT-Creation-Date: 2023-11-01 19:49+0000\n"
+"PO-Revision-Date: 2023-11-01 19:49+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr "Número de adjuntos"
 #: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__color
 #: model:ir.model.fields,field_description:backend_iframe.field_dashboard_tag__color
 msgid "Color Index"
-msgstr ""
+msgstr "Índice de color"
 
 #. module: backend_iframe
 #: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__create_uid
@@ -76,7 +76,7 @@ msgstr "Nombre a mostrar"
 #: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_kanban_admin
 #: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_kanban_user
 msgid "Dropdown menu"
-msgstr "Menu"
+msgstr "Menú desplegable"
 
 #. module: backend_iframe
 #: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__message_follower_ids
@@ -86,7 +86,7 @@ msgstr "Seguidores"
 #. module: backend_iframe
 #: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__message_partner_ids
 msgid "Followers (Partners)"
-msgstr "Seguidores (socios)"
+msgstr "Seguidores (Socios)"
 
 #. module: backend_iframe
 #: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_search
@@ -96,7 +96,7 @@ msgstr "Agrupar por..."
 #. module: backend_iframe
 #: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__has_message
 msgid "Has Message"
-msgstr "Tiene mensaje"
+msgstr "Tiene mensajes"
 
 #. module: backend_iframe
 #: model:ir.model.fields,help:backend_iframe.field_backend_dashboard__height
@@ -109,11 +109,6 @@ msgid "Height(px)"
 msgstr "Altura(px)"
 
 #. module: backend_iframe
-#: model:ir.module.category,description:backend_iframe.module_backend_dashboard
-msgid "Helps you handle your quotations, sale orders and invoicing."
-msgstr "Le ayuda a manejar sus cotizaciones, órdenes de venta y facturación."
-
-#. module: backend_iframe
 #: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__id
 #: model:ir.model.fields,field_description:backend_iframe.field_dashboard_tag__id
 msgid "ID"
@@ -122,18 +117,12 @@ msgstr "ID"
 #. module: backend_iframe
 #: model:ir.model.fields,help:backend_iframe.field_backend_dashboard__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr "Si está marcado, mensajes nuevos requieren su atención"
+msgstr "Si está marcado, nuevos mensajes requieren su atención"
 
 #. module: backend_iframe
 #: model:ir.model.fields,help:backend_iframe.field_backend_dashboard__message_has_error
-#: model:ir.model.fields,help:backend_iframe.field_backend_dashboard__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si está marcado, algunos mensajes tienen error de entrega"
-
-#. module: backend_iframe
-#: model:ir.module.category,name:backend_iframe.module_backend_dashboard
-msgid "Iframe Dashboard"
-msgstr "Tablero XDR"
 
 #. module: backend_iframe
 #: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__message_is_follower
@@ -156,7 +145,7 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__write_date
 #: model:ir.model.fields,field_description:backend_iframe.field_dashboard_tag__write_date
 msgid "Last Updated on"
-msgstr "Última actualizacion el"
+msgstr "Última actualización el"
 
 #. module: backend_iframe
 #: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__message_main_attachment_id
@@ -209,7 +198,7 @@ msgstr "Número de errores"
 #. module: backend_iframe
 #: model:ir.model.fields,help:backend_iframe.field_backend_dashboard__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr "Número de mensajes que requieren acciones"
+msgstr "Número de mensajes que requieren acción"
 
 #. module: backend_iframe
 #: model:ir.model.fields,help:backend_iframe.field_backend_dashboard__message_has_error_counter
@@ -227,11 +216,6 @@ msgid "Owner dashboard"
 msgstr "Tablero del propietario"
 
 #. module: backend_iframe
-#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Error de entrega SMS"
-
-#. module: backend_iframe
 #: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__sequence
 msgid "Sequence"
 msgstr "Secuencia"
@@ -244,7 +228,7 @@ msgstr "Nombre de etiqueta"
 #. module: backend_iframe
 #: model:ir.model.constraint,message:backend_iframe.constraint_dashboard_tag_name_uniq
 msgid "Tag name already exists !"
-msgstr "La etiqueta ya existe!"
+msgstr "El nombre de la etiqueta ya existe !"
 
 #. module: backend_iframe
 #: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__tag_ids
@@ -265,11 +249,28 @@ msgstr "Usuario"
 #. module: backend_iframe
 #: model_terms:ir.ui.view,arch_db:backend_iframe.backend_dashboard_kanban_user
 msgid "View Dashboard"
-msgstr "Vista de Tablero"
+msgstr "Vista de tablero"
+
+#. module: backend_iframe
+#: model:ir.model.fields,help:backend_iframe.field_backend_dashboard__width
+msgid "Width in %"
+msgstr "Ancho en %"
+
+#. module: backend_iframe
+#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__width
+msgid "Width(%)"
+msgstr "Ancho(%)"
+
+#. module: backend_iframe
+#: model:ir.module.category,name:backend_iframe.module_backend_dashboard_root
+#: model:ir.ui.menu,name:backend_iframe.xdr_menu_main_root
+msgid "XDR"
+msgstr "XDR"
 
 #. module: backend_iframe
 #: model:ir.actions.act_window,name:backend_iframe.action_backend_dashboard_manager
 #: model:ir.actions.act_window,name:backend_iframe.action_backend_dashboard_user
+#: model:ir.module.category,name:backend_iframe.module_backend_dashboard
 #: model:ir.ui.menu,name:backend_iframe.backend_dashboard_menu_iframe
 msgid "XDR Dashboard"
 msgstr "Tablero XDR"
@@ -292,16 +293,6 @@ msgid "XDR dashboard"
 msgstr "Tablero XDR"
 
 #. module: backend_iframe
-#: model:ir.model.fields,help:backend_iframe.field_backend_dashboard__width
-msgid "Width in %"
-msgstr "Ancho en %"
-
-#. module: backend_iframe
-#: model:ir.model.fields,field_description:backend_iframe.field_backend_dashboard__width
-msgid "Width(%)"
-msgstr "Ancho (%)"
-
-#. module: backend_iframe
 #: model:ir.model,name:backend_iframe.model_backend_dashboard
 msgid "backend.dashboard"
 msgstr ""
@@ -309,14 +300,4 @@ msgstr ""
 #. module: backend_iframe
 #: model:ir.model,name:backend_iframe.model_dashboard_tag
 msgid "dashboard Tag"
-msgstr "Etiqueta de tablero"
-
-#. module: backend_iframe
-#: model:res.groups,comment:backend_iframe.group_dashboard_user
-msgid "the user will have access to his own dashboard."
-msgstr "El usuario tendrá acceso a su tablero personal"
-
-#. module: backend_iframe
-#: model:res.groups,comment:backend_iframe.group_dashboard_manager
-msgid "the user will have an access to all dashboards."
-msgstr "El usuario tendrá acceso a todos los tableros"
+msgstr "Etiqueta del tablero"
