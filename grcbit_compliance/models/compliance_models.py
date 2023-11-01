@@ -36,8 +36,8 @@ class ComplianceVersion(models.Model):
                         rrr=[]
                         s = ''
                         p = ''
-                        rrr.append(iiii.compliance_control_id.compliance_control_objective_id.display_name)
                         rrr.append(iiii.compliance_control_id.name)
+                        rrr.append(iiii.compliance_control_id.name) #
                         for iiiii in iiii.iso_control_id:
                             s = s + ' - ' + str(iiiii.display_name)
                         rrr.append(s)

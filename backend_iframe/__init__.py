@@ -3,3 +3,4 @@
 high level support for doing this .
 """
 from . import models
+from . import wizards

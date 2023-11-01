@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
   <data>
-    <menuitem name="GRCbit" id="menu_root" sequence="1" />
+    <menuitem name="GRC" id="menu_root" sequence="1" />
     <menuitem name="Dashboard" id="grcbit_dashboard" action="grcbit_dashboard_action" parent="menu_root" sequence="1"/>
     <!-- ASSET MANAGEMET MENU -->
     <menuitem name="Asset Management" id="menu_asset_management" parent="menu_root"  sequence="2" />
@@ -15,9 +15,9 @@
       <field name="groups_id" eval="[(6,0,[ref('base.group_system'), ref('base.group_erp_manager')])]"/>
     </record>	
 
-    <record model="ir.ui.menu" id="calendar.mail_menu_calendar">
+    <!-- <record model="ir.ui.menu" id="calendar.mail_menu_calendar">
       <field name="groups_id" eval="[(6,0,[ref('base.group_system'), ref('base.group_erp_manager')])]"/>
-    </record>	
+    </record>	 -->
 
     <record model="ir.ui.menu" id="base.menu_management">
       <field name="groups_id" eval="[(6,0,[ref('base.group_system'), ref('base.group_erp_manager')])]"/>

@@ -203,12 +203,12 @@
 
     <!--   COMPLIANCE ISO CONTROL   -->
     <record id="compliance_iso_control_action" model="ir.actions.act_window">
-      <field name="name">Compliance - ISMS</field>
+      <field name="name">Compliance</field>
       <field name="res_model">compliance.iso.control</field>
       <field name="view_mode">tree,form,kanban</field>
     </record>
     <record model="ir.ui.view" id="compliance_iso_control_view">
-	    <field name="name">Compliance - ISMS</field>
+	    <field name="name">Compliance</field>
 	    <field name="model">compliance.iso.control</field>
       <field name="arch" type="xml">
         <tree multi_edit="1">
@@ -220,7 +220,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="compliance_iso_control_form">
-      <field name="name">Compliance - ISMS</field>
+      <field name="name">Compliance</field>
       <field name="model">compliance.iso.control</field>
       <field name="arch" type="xml">
         <form>
@@ -239,6 +239,6 @@
     <menuitem name="Compliance" id="menu_compliance" parent="grcbit_base.menu_root" sequence="6"/>
     <menuitem name="Version" id="menu_compliance_version" parent="menu_compliance" action="compliance_version_action" sequence="1" />
     <menuitem name="Requirement" id="menu_compliance_control_objective" parent="menu_compliance" action="compliance_control_objective_action" sequence="2" />
-    <menuitem name="Compliance - ISMS" id="menu_compliance_iso_control" parent="menu_compliance" action="compliance_iso_control_action" sequence="4" />
+    <menuitem name="Compliance" id="menu_compliance_iso_control" parent="menu_compliance" action="compliance_iso_control_action" sequence="4" />
   </data>
 </odoo>

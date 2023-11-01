@@ -21,6 +21,7 @@
     'depends': [
         'base',
         'mail',
+        'vista_backend_theme',
     ],
     'data': [
         'security/backend_iframe_access_rules.xml',

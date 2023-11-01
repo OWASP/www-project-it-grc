@@ -30,9 +30,9 @@ odoo.define('backend_iframe.Dashboard', function (require) {
                     .then(function (is_manager) {
                         if (is_manager) {
                             domain = [["main_dashboard", "=", true]]
-                        } else {
+                        } /*else {
                             domain = [["main_dashboard", "=", true], "|", ["user_id", "=", session.uid], ["user_id", "=", false]]
-                        }
+                        }*/
                         self._rpc({
                             model: 'backend.dashboard',
                             method: 'search_read',
@@ -51,12 +51,12 @@ odoo.define('backend_iframe.Dashboard', function (require) {
                                     $ifr.appendTo(self.$('.o_content')).css(css);
                                     self.$ifr += $ifr
                                 })
-                            } else {
+                            } /*else {
                                 Dialog.alert(this, _t("You don't have any Main Dashboard, Please Select at least one main Dashboard !"), {
                                     title: _t('Warning'),
                                 });
                                 return;
-                            }
+                            }*/
                         })
                     })
             } else {
