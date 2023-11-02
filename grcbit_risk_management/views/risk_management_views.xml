@@ -338,10 +338,9 @@
       <field name="arch" type="xml">
         <tree multi_edit="1">
           <field name="active" invisible="1"/>
-          <field name="risk_level_name" widget="badge" decoration-danger="risk_level_name=='High'" decoration-warning="risk_level_name=='Medium'" decoration-success="risk_level_name=='Low'"/>
           <field name="impact_level_id"/>
           <field name="probability_level_id"/>
-          <field name="description"/>
+          <field name="risk_level_name" widget="badge" decoration-danger="risk_level_name=='High'" decoration-warning="risk_level_name=='Medium'" decoration-success="risk_level_name=='Low'"/>
         </tree>
       </field>
     </record>
