@@ -65,11 +65,11 @@ class DataInventory(models.Model):
     name = fields.Char(string=_('Asset Name'), required=True)
     description = fields.Text(string=_('Description'), required=True)
     data_classification_id = fields.Many2one('data.classification', string=_('Data Classification'), required=True)
-    location = fields.Char(string=_('Location'), required=True)
+    # location = fields.Char(string=_('Location'), required=True)
     owner = fields.Many2one('res.users', string=_('Asset Owner'), required=True)
     it_inventory_id = fields.Many2many('it.inventory',string=_('IT System'))
     third_party_id = fields.Many2many('third.party',string=_('Third Party'))
-    document_page_id   = fields.Many2many('document.page', string=_('Business Process'))
+    # document_page_id   = fields.Many2many('document.page', string=_('Business Process'))
     security_requirement = fields.Text(string=_('Security Requirement'), required=True)
     retention_period = fields.Selection([
         ('1m','1 month'),
