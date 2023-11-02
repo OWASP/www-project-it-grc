@@ -2,7 +2,7 @@
 <odoo>
   <data>
     <record model="ir.module.category" id="module_grcbit_base">
-      <field name="name">GRC Module</field>
+      <field name="name">GRC</field>
       <field name="description">GRC Module Base</field>
       <field name="sequence">10</field>
     </record>
