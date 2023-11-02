@@ -226,15 +226,15 @@
             sequence="2" 
             groups="backend_iframe.group_dashboard_manager,backend_iframe.group_dashboard_user"/>
 
-        <menuitem name="XDR Dashboard" id="backend_dashboard_menu_iframe" sequence="30"
+        <menuitem name="XDR" id="backend_dashboard_menu_iframe" sequence="30"
                     parent="xdr_menu_main_root"  groups="backend_iframe.group_dashboard_user,backend_iframe.group_dashboard_manager"/>
 
-        <menuitem name="XDR Dashboard Admin" id="backend_dashboard_menu_iframe_item1_admin" sequence="3"
+        <menuitem name="XDR" id="backend_dashboard_menu_iframe_item1_admin" sequence="3"
                   parent="backend_dashboard_menu_iframe"
                   groups="backend_iframe.group_dashboard_manager"
                   action="action_backend_dashboard_manager"/>
 
-        <menuitem name="XDR Dashboard User" id="backend_dashboard_menu_iframe_item1_user" sequence="3"
+        <menuitem name="XDR" id="backend_dashboard_menu_iframe_item1_user" sequence="3"
                   parent="backend_dashboard_menu_iframe"
                   groups="backend_iframe.group_dashboard_user"
                   action="action_backend_dashboard_user"/>
@@ -242,7 +242,7 @@
 
         <!-- menu Main Dashboard -->
         <record model="ir.actions.client" id="modules_act_dashboard">
-            <field name="name">Main Dashboard</field>
+            <field name="name">Dashboard</field>
             <field name="tag">view_dashboard</field>
             <field name="params" eval="{'main_dashboard': True}"/>
         </record>
