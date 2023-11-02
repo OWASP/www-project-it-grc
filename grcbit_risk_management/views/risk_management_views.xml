@@ -41,13 +41,26 @@
       </field>
     </record>
     <record model="ir.ui.view" id="risk_factor_graph">
-      <field name="name">Risk Factor</field>
+      <field name="name">Inherent Risk</field>
       <field name="model">risk.factor</field>
       <field name="type">graph</field>
       <field name="arch" type="xml">
         <graph type="pie">
-          <field name="inherent_factor_count" type="measure"/>
+          <field name="inherent_factor_low" type="measure"/>
+          <field name="inherent_factor_medium" type="measure"/>
+          <field name="inherent_factor_high" type="measure"/>
           <field name="inherent_risk" group="True"/>
+        </graph>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="risk_factor_graph_residual">
+      <field name="name">Residual Risk</field>
+      <field name="model">risk.factor</field>
+      <field name="type">graph</field>
+      <field name="arch" type="xml">
+        <graph type="pie">
+          <field name="residual_risk_count" type="measure"/>
+          <field name="residual_risk" group="True"/>
         </graph>
       </field>
     </record>
@@ -84,10 +97,16 @@
       </field>
     </record>
     <record id="risk_factor_dash" model="ir.actions.act_window">
-      <field name="name">Risk Factor</field>
+      <field name="name">Inherent Risk</field>
       <field name="res_model">risk.factor</field>
       <field name="view_mode">graph</field>
       <field name="view_id" ref="risk_factor_graph"/>
+    </record>
+    <record id="risk_factor_dash_residual" model="ir.actions.act_window">
+      <field name="name">Residual Risk</field>
+      <field name="res_model">risk.factor</field>
+      <field name="view_mode">graph</field>
+      <field name="view_id" ref="risk_factor_graph_residual"/>
     </record>
     <record model="ir.ui.view" id="risk_factor_dashboard">
       <field name="name">risk_factor_dashboard_graph</field>
@@ -95,7 +114,10 @@
       <field name="inherit_id" ref="grcbit_base.main_dashboard"/>
       <field name="arch" type="xml">
         <xpath expr="//board/column[1]" position="inside">
-          <action string="Risk Factor" name="%(risk_factor_dash)d"/>
+          <action string="Inherent Risk" name="%(risk_factor_dash)d"/>
+        </xpath>
+        <xpath expr="//board/column[2]" position="inside">
+          <action string="Residual Risk" name="%(risk_factor_dash_residual)d"/>
         </xpath>
       </field>
     </record>
