@@ -218,8 +218,9 @@
         <tree multi_edit="1">
           <field name="compliance_control_id" />
           <field name="description"/>
-          <field name="iso_control_id" widget="many2many_tags_open"/>
-	        <field name="document_page_id" widget="many2many_tags_open"/>
+          <field name="control_id"/>
+          <!-- <field name="iso_control_id" widget="many2many_tags_open"/>
+	        <field name="document_page_id" widget="many2many_tags_open"/> -->
         </tree>
       </field>
     </record>
