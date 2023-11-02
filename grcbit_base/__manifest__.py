@@ -24,10 +24,10 @@
         'views/config_views.xml',
 
     ],
-    # 'assets':{
-    #     'web.assets':[
-    #         'grcbit_base/static/src/js/*.js',
-    #         'grcbit_base/static/src/xml/*.xml',
-    #     ]
-    # }
+    'assets':{
+        'web.assets':[
+            'grcbit_base/static/src/js/**.js',
+            'grcbit_base/static/src/xml/**.xml',
+        ]
+    }
 }
