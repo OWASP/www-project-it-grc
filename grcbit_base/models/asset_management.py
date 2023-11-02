@@ -40,7 +40,7 @@ class ItInventory(models.Model):
         ('stg','Staging')
         ], string=_('Enviroment'), required=True)
     is_cloud = fields.Boolean(string=_('Cloud Hosted?'), required=True)
-    cloud_provider = fields.Many2many('third.party',string=_('Third Party'))
+    # cloud_provider = fields.Many2many('third.party',string=_('Third Party'))
     is_internet_exposed = fields.Boolean(string=_('Internet Exposed?'), required=True)
     users_qty = fields.Integer(string=_('User Quantity'), required=True)
     os_version = fields.Char(string=_('OS Version'))

@@ -182,7 +182,7 @@
           <field name="responsible" widget="many2one_avatar_user"/>
           <field name="environment" optional="hide" widget="badge"/>
           <field name="is_cloud" widget="boolean_toggle"/>
-          <field name="cloud_provider" widget="many2many_tags_open"  optional="hide" />
+          <!-- <field name="cloud_provider" widget="many2many_tags_open"  optional="hide" /> -->
           <field name="is_internet_exposed" widget="boolean_toggle"/>
           <field name="users_qty" optional="hide" />
           <field name="os_version"/>
@@ -203,7 +203,7 @@
           <field name="responsible" />
           <field name="environment"  />
           <field name="is_cloud"/>
-          <field name="cloud_provider"  />
+          <!-- <field name="cloud_provider"  /> -->
           <field name="is_internet_exposed"/>
           <field name="users_qty"  />
           <field name="os_version"/>
@@ -243,7 +243,7 @@
           </group>
 	        <group>
             <field name="is_cloud" widget="boolean_toggle"/>
-	          <field name="cloud_provider" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+	          <!-- <field name="cloud_provider" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  /> -->
             <field name="is_internet_exposed" widget="boolean_toggle"/>
             <field name="users_qty"/>
             <field name="os_version"/>
