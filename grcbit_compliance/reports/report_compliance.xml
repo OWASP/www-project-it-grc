@@ -28,8 +28,7 @@
                   <tr>
                     <th>requirement</th>
                     <th>Compliance</th>
-                    <th>ISO27001</th>
-                    <th>Policy/process</th>
+                    <th>Control design</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -38,7 +37,6 @@
                       <td width="25%"><span t-esc="r[0]"/></td>
                       <td width="25%"><span t-esc="r[1]"/></td>
                       <td width="25%"><span t-esc="r[2]"/></td>
-                      <td width="25%"><span t-esc="r[3]"/></td>
                     </tr>
                   </t>
                 </tbody>

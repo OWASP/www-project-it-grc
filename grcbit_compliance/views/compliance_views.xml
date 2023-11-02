@@ -32,11 +32,15 @@
             <page string="Compliance Objective" name="compliance_objective">
               <field name="compliance_control_objective_ids" widget="section_and_note_one2many" mode="tree"  >
                 <form>
-			            <group>
-                    <field name="name"/>
-                    <field name="description"/>
+                  <group>
+                    <group>
+                      <field name="name"/>
+                    </group>
+                    <group>
+                      <field name="description"/>
+                    </group>
                     <field name="compliance_control_ids"/>
-	                </group>
+                  </group>
 		            </form>
                 <tree>
                   <field name="name"/>
@@ -227,8 +231,9 @@
 		      <group>
             <field name="compliance_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
             <field name="description"/>
-            <field name="iso_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" widget="many2many_tags_open" />
-            <field name="document_page_id" widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True)]" />
+            <field name="control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+            <!-- <field name="iso_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" widget="many2many_tags_open" />
+            <field name="document_page_id" widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True)]" /> -->
           </group>
         </form>
       </field>
