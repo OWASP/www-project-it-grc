@@ -1,253 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
+  <data>
+    <!-- View Form Dashboard -->
+    <record model="ir.ui.view" id="backend_dashboard_form">
+      <field name="name">backend.dashboard.form</field>
+      <field name="model">backend.dashboard</field>
+      <field name="arch" type="xml">
+        <form string="XDR dashboard">
+          <sheet>
+            <div class="oe_button_box" name="button_box">            
+              <widget name="web_ribbon" text="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+              <button name="get_dashboard" type="object" string="Dashboard" class="oe_stat_button" icon="fa-play"/>
+            </div>
+            <group>
+              <group name="group_1">
+                <field name="name" required="1"/>
+                <field name="active" invisible="1"></field>
+                <field name="user_id" options="{'no_create': True, 'no_open': True}"/>
+                <field name="url"/>
+                <field name="height"/>
+                <field name="width"/>
+                <field name="main_dashboard"/>
+                <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+              </group>
+            </group>
+            <group name="comment">
+              <field name="comment"/>
+            </group>
+          </sheet>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers"/>
+            <field name="message_ids" widget="mail_thread"/>
+          </div>
+        </form>
+      </field>
+    </record>
 
-        <!-- View Form Dashboard -->
-        <record model="ir.ui.view" id="backend_dashboard_form">
-            <field name="name">backend.dashboard.form</field>
-            <field name="model">backend.dashboard</field>
-            <field name="arch" type="xml">
-                <form string="XDR dashboard">
-                    <sheet>
-                        <div class="oe_button_box" name="button_box">
-                            
-                            <widget name="web_ribbon" text="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
-                            <button name="get_dashboard" type="object"
-                                    string="Dashboard" class="oe_stat_button" icon="fa-play"/>
-                        </div>
-                        <group>
-                            <group name="group_1">
-                                <field name="name" required="1"/>
-                                <field name="active" invisible="1"></field>
-                                <field name="user_id" options="{'no_create': True, 'no_open': True}"/>
-                                <field name="url"/>
-                                <field name="height"/>
-                                <field name="width"/>
-                                <field name="main_dashboard"/>
-                                <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
-                            </group>
-                        </group>
-                        <group name="comment">
-                            <field name="comment"/>
-                        </group>
-                    </sheet>
-                    <div class="oe_chatter">
-                        <field name="message_follower_ids" widget="mail_followers"/>
-                        <field name="message_ids" widget="mail_thread"/>
+    <!-- View Tree Dashboard -->
+    <record model="ir.ui.view" id="backend_dashboard_tree">
+      <field name="name">backend.dashboard.tree</field>
+      <field name="model">backend.dashboard</field>
+      <field name="arch" type="xml">
+        <tree string="XDR dashboard">
+          <field name="sequence" widget="handle"/>
+          <field name="name"/>
+          <field name="url"/>
+          <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+          <field name="main_dashboard"/>
+          <field name="active"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- View Kanban Dashboard -->
+    <record id="backend_dashboard_kanban_admin" model="ir.ui.view">
+      <field name="name">backend.dashboard.kanban.admin</field>
+      <field name="model">backend.dashboard</field>
+      <field name="priority" eval="1"/>
+      <field name="arch" type="xml">
+        <kanban quick_create_view="False" archivable="false">
+          <field name="color"/>
+          <field name="tag_ids"/>
+          <field name="main_dashboard"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                <div class="o_dropdown_kanban dropdown">
+                  <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                    <span class="fa fa-ellipsis-v"/>
+                  </a>
+                  <div class="dropdown-menu" role="menu">
+                      <ul class="oe_kanban_colorpicker" data-field="color"/>
+                  </div>
+                </div>
+                <div class="oe_kanban_content">
+                  <div class="o_kanban_record_top mb16">
+                    <div class="o_kanban_record_headings mt4">
+                      <strong class="o_kanban_record_title">
+                        <span>
+                          <field name="name"/>
+                        </span>
+                        <br></br>
+                      </strong>
+                      <span class="o_kanban_record_subtitle">
+                        <span>
+                          <field name="comment"/>
+                        </span>
+                      </span>
                     </div>
-                </form>
-            </field>
-        </record>
+                  </div>
+                  <t t-if="record.main_dashboard.raw_value">
+                    <div>
+                      <span class="o_kanban_record_subtitle">
+                        <span>
+                          <i class="fa fa-check" role="img" title="Main"/>
+                          Main Dashboard
+                        </span>
+                      </span>
+                    </div>
+                  </t>
+                  <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                </div>
+                <div class="oe_clear"></div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
 
-        <!-- View Tree Dashboard -->
-        <record model="ir.ui.view" id="backend_dashboard_tree">
-            <field name="name">backend.dashboard.tree</field>
-            <field name="model">backend.dashboard</field>
-            <field name="arch" type="xml">
-                <tree string="XDR dashboard">
-                    <field name="sequence" widget="handle"/>
-                    <field name="name"/>
-                    <field name="url"/>
-                    <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
-                    <field name="main_dashboard"/>
-                    <field name="active"/>
-                </tree>
-            </field>
-        </record>
+    <record id="backend_dashboard_kanban_user" model="ir.ui.view">
+      <field name="name">backend.dashboard.kanban.user</field>
+      <field name="model">backend.dashboard</field>
+      <field name="priority" eval="1"/>
+      <field name="arch" type="xml">
+        <kanban quick_create_view="False" archivable="false">
+          <field name="color"/>
+          <field name="tag_ids"/>
+          <field name="main_dashboard"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                <div class="o_dropdown_kanban dropdown">
+                  <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                    <span class="fa fa-ellipsis-v"/>
+                  </a>
+                  <div class="dropdown-menu" role="menu">
+                    <ul class="oe_kanban_colorpicker" data-field="color"/>
+                  </div>
+                </div>
+                <div class="oe_kanban_content">
+                  <div class="o_kanban_record_top mb16">
+                    <div class="o_kanban_record_headings mt4">
+                      <strong class="o_kanban_record_title">
+                        <span>
+                          <field name="name"/>
+                        </span>
+                        <br></br>
+                      </strong>
+                      <span class="o_kanban_record_subtitle">
+                        <span>
+                          <field name="comment"/><br/>
+                          <button name="get_dashboard" type="object" string="View Dashboard" class="btn btn-primary"/>
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                  <t t-if="record.main_dashboard.raw_value">
+                    <div>
+                      <span class="o_kanban_record_subtitle">
+                        <span>
+                          <i class="fa fa-check" role="img" title="Main"/>
+                          Main Dashboard
+                        </span>
+                      </span>
+                    </div>
+                  </t>
+                  <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                </div>
+                <div class="oe_clear"></div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
 
-        <!-- View Kanban Dashboard -->
+    <!-- View Search Dashboard -->
+    <record id="backend_dashboard_search" model="ir.ui.view">
+      <field name="name">backend.dashboard.search</field>
+      <field name="model">backend.dashboard</field>
+      <field name="arch" type="xml">
+        <search string="XDR dashboard">
+          <field name="name"/>
+          <field name="user_id"/>
+          <field name="tag_ids"/>
+          <separator/>
+          <filter string="Active" domain="[('active', '=', True)]" name="active"/>
+          <filter string="Main Dashboard" name="main_dashboard"
+                  domain="[('main_dashboard', '=', True)]"/>
+          <separator/>
+          <group expand='0' string='Group by...'>
+            <filter string='User' name='partner' domain="[]" context="{'group_by': 'user_id'}"/>
+            <filter string='Active' name='active' domain="[]" context="{'group_by': 'active'}"/>
+          </group>
+        </search>
+      </field>
+    </record>
 
-        <record id="backend_dashboard_kanban_admin" model="ir.ui.view">
-            <field name="name">backend.dashboard.kanban.admin</field>
-            <field name="model">backend.dashboard</field>
-            <field name="priority" eval="1"/>
-            <field name="arch" type="xml">
-                <kanban quick_create_view="False" archivable="false">
-                    <field name="color"/>
-                    <field name="tag_ids"/>
-                    <field name="main_dashboard"/>
-                    <templates>
-                        <t t-name="kanban-box">
-                            <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
-                                <div class="o_dropdown_kanban dropdown">
-                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown"
-                                       href="#"
-                                       aria-label="Dropdown menu" title="Dropdown menu">
-                                        <span class="fa fa-ellipsis-v"/>
-                                    </a>
+    <!--Action backend Dashboard-->
+    <record id="action_backend_dashboard_manager" model="ir.actions.act_window">
+      <field name="name">XDR Dashboard</field>
+      <field name="res_model">backend.dashboard</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="groups_id" eval="[(4, ref('backend_iframe.group_dashboard_manager'))]"/>
+      <field name="view_ids"
+        eval="[(5, 0, 0),
+              (0, 0, {'view_mode': 'kanban', 'view_id': ref('backend_dashboard_kanban_admin')}),
+              (0, 0, {'view_mode': 'tree', 'view_id': ref('backend_dashboard_tree')}),
+              (0, 0, {'view_mode': 'form', 'view_id': ref('backend_dashboard_form')})]"/>
+    </record>
 
-                                    <div class="dropdown-menu" role="menu">
-                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
-                                    </div>
-                                </div>
-                                <div class="oe_kanban_content">
-                                    <div class="o_kanban_record_top mb16">
-                                        <div class="o_kanban_record_headings mt4">
-                                            <strong class="o_kanban_record_title">
-                                                <span>
-                                                    <field name="name"/>
-                                                </span>
-                                                <br></br>
-                                            </strong>
-                                            <span class="o_kanban_record_subtitle">
-                                                <span>
-                                                    <field name="comment"/>
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <t t-if="record.main_dashboard.raw_value">
-                                        <div>
-                                            <span class="o_kanban_record_subtitle">
-                                                <span>
-                                                    <i class="fa fa-check" role="img" title="Main"/>
-                                                    Main Dashboard
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </t>
-                                    <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
-                                </div>
-                                <div class="oe_clear"></div>
-                            </div>
-                        </t>
-                    </templates>
-                </kanban>
-            </field>
-        </record>
+    <record id="action_backend_dashboard_user" model="ir.actions.act_window">
+      <field name="name">XDR Dashboard</field>
+      <field name="res_model">backend.dashboard</field>
+      <field name="view_mode">kanban,form</field>
+      <field name="groups_id" eval="[(4, ref('backend_iframe.group_dashboard_user'))]"/>
+      <field name="view_id" ref="backend_dashboard_kanban_user"/>
+    </record>
 
-        <record id="backend_dashboard_kanban_user" model="ir.ui.view">
-            <field name="name">backend.dashboard.kanban.user</field>
-            <field name="model">backend.dashboard</field>
-            <field name="priority" eval="1"/>
-            <field name="arch" type="xml">
-                <kanban quick_create_view="False" archivable="false">
-                    <field name="color"/>
-                    <field name="tag_ids"/>
-                    <field name="main_dashboard"/>
-                    <templates>
-                        <t t-name="kanban-box">
-                            <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
-                                <div class="o_dropdown_kanban dropdown">
-                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown"
-                                       href="#"
-                                       aria-label="Dropdown menu" title="Dropdown menu">
-                                        <span class="fa fa-ellipsis-v"/>
-                                    </a>
+    <!-- menu Iframe -->
+    <menuitem 
+      name="XDR" 
+      id="xdr_menu_main_root" 
+      sequence="2" 
+      groups="backend_iframe.group_dashboard_manager,backend_iframe.group_dashboard_user"/>
 
-                                    <div class="dropdown-menu" role="menu">
-                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
-                                    </div>
-                                </div>
-                                <div class="oe_kanban_content">
-                                    <div class="o_kanban_record_top mb16">
-                                        <div class="o_kanban_record_headings mt4">
-                                            <strong class="o_kanban_record_title">
-                                                <span>
-                                                    <field name="name"/>
-                                                </span>
-                                                <br></br>
-                                            </strong>
-                                            <span class="o_kanban_record_subtitle">
-                                                <span>
-                                                    <field name="comment"/><br/>
-                                                    <button name="get_dashboard" type="object" string="View Dashboard" class="btn btn-primary"/>
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <t t-if="record.main_dashboard.raw_value">
-                                        <div>
-                                            <span class="o_kanban_record_subtitle">
-                                                <span>
-                                                    <i class="fa fa-check" role="img" title="Main"/>
-                                                    Main Dashboard
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </t>
-                                    <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
-                                </div>
-                                <div class="oe_clear"></div>
-                            </div>
-                        </t>
-                    </templates>
-                </kanban>
-            </field>
-        </record>
+    <menuitem name="XDR" id="backend_dashboard_menu_iframe" sequence="30"
+      parent="xdr_menu_main_root"  groups="backend_iframe.group_dashboard_user,backend_iframe.group_dashboard_manager"/>
 
-        <!-- View Search Dashboard -->
-        <record id="backend_dashboard_search" model="ir.ui.view">
-            <field name="name">backend.dashboard.search</field>
-            <field name="model">backend.dashboard</field>
-            <field name="arch" type="xml">
-                <search string="XDR dashboard">
-                    <field name="name"/>
-                    <field name="user_id"/>
-                    <field name="tag_ids"/>
-                    <separator/>
-                    <filter string="Active" domain="[('active', '=', True)]" name="active"/>
-                    <filter string="Main Dashboard" name="main_dashboard"
-                            domain="[('main_dashboard', '=', True)]"/>
-                    <separator/>
-                    <group expand='0' string='Group by...'>
-                        <filter string='User' name='partner' domain="[]" context="{'group_by': 'user_id'}"/>
-                        <filter string='Active' name='active' domain="[]" context="{'group_by': 'active'}"/>
-                    </group>
-                </search>
-            </field>
-        </record>
+    <menuitem name="XDR" id="backend_dashboard_menu_iframe_item1_admin" sequence="3"
+      parent="backend_dashboard_menu_iframe"
+      groups="backend_iframe.group_dashboard_manager"
+      action="action_backend_dashboard_manager"/>
 
-        <!--Action backend Dashboard-->
-        <record id="action_backend_dashboard_manager" model="ir.actions.act_window">
-            <field name="name">XDR Dashboard</field>
-            <field name="res_model">backend.dashboard</field>
-            <field name="view_mode">kanban,tree,form</field>
-            <field name="groups_id" eval="[(4, ref('backend_iframe.group_dashboard_manager'))]"/>
-            <field name="view_ids"
-                   eval="[(5, 0, 0),
-                          (0, 0, {'view_mode': 'kanban', 'view_id': ref('backend_dashboard_kanban_admin')}),
-                          (0, 0, {'view_mode': 'tree', 'view_id': ref('backend_dashboard_tree')}),
-                          (0, 0, {'view_mode': 'form', 'view_id': ref('backend_dashboard_form')})]"/>
-        </record>
-
-        <record id="action_backend_dashboard_user" model="ir.actions.act_window">
-            <field name="name">XDR Dashboard</field>
-            <field name="res_model">backend.dashboard</field>
-            <field name="view_mode">kanban</field>
-            <field name="groups_id" eval="[(4, ref('backend_iframe.group_dashboard_user'))]"/>
-            <field name="view_id" ref="backend_dashboard_kanban_user"/>
-        </record>
-
-        <!-- menu Iframe -->
-        <menuitem 
-            name="XDR" 
-            id="xdr_menu_main_root" 
-            sequence="2" 
-            groups="backend_iframe.group_dashboard_manager,backend_iframe.group_dashboard_user"/>
-
-        <menuitem name="XDR" id="backend_dashboard_menu_iframe" sequence="30"
-                    parent="xdr_menu_main_root"  groups="backend_iframe.group_dashboard_user,backend_iframe.group_dashboard_manager"/>
-
-        <menuitem name="XDR" id="backend_dashboard_menu_iframe_item1_admin" sequence="3"
-                  parent="backend_dashboard_menu_iframe"
-                  groups="backend_iframe.group_dashboard_manager"
-                  action="action_backend_dashboard_manager"/>
-
-        <menuitem name="XDR" id="backend_dashboard_menu_iframe_item1_user" sequence="3"
-                  parent="backend_dashboard_menu_iframe"
-                  groups="backend_iframe.group_dashboard_user"
-                  action="action_backend_dashboard_user"/>
+    <menuitem name="XDR" id="backend_dashboard_menu_iframe_item1_user" sequence="3"
+      parent="backend_dashboard_menu_iframe"
+      groups="backend_iframe.group_dashboard_user"
+      action="action_backend_dashboard_user"/>
 
 
-        <!-- menu Main Dashboard -->
-        <record model="ir.actions.client" id="modules_act_dashboard">
-            <field name="name">Dashboard</field>
-            <field name="tag">view_dashboard</field>
-            <field name="params" eval="{'main_dashboard': True}"/>
-        </record>
-        <menuitem id="module_dashboard_mi" parent="backend_dashboard_menu_iframe" sequence="1"
-                  action="modules_act_dashboard"/>
+    <!-- menu Main Dashboard -->
+    <record model="ir.actions.client" id="modules_act_dashboard">
+      <field name="name">Dashboard</field>
+      <field name="tag">view_dashboard</field>
+      <field name="params" eval="{'main_dashboard': True}"/>
+    </record>
+    <menuitem id="module_dashboard_mi" parent="backend_dashboard_menu_iframe" sequence="1"
+      action="modules_act_dashboard"/>
 
     </data>
 </odoo>
