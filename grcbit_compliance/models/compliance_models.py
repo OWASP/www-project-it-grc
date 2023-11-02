@@ -34,9 +34,8 @@ class ComplianceVersion(models.Model):
                     compliance_detail = self.env['compliance.iso.control'].search([('compliance_control_id','=',iii.id)])
                     for iiii in compliance_detail:
                         rrr=[]
-                        s = ''
-                        p = ''
-                        rrr.append(iiii.compliance_control_id.name)
+                        
+                        rrr.append(iiii.compliance_control_id.display_name)
                         rrr.append(iiii.description)
                         rrr.append(iiii.control_id.name) #
                         
