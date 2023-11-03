@@ -81,7 +81,10 @@ class RiskFactor(models.Model):
     residual_risk  = fields.Char(string=_('Residual Risk'), track_visibility='always')
     attachment = fields.Many2many('ir.attachment', string=_("Attachment"))
     active = fields.Boolean(default=True)
-    inherent_factor_count = fields.Integer(string=_("Inherent Count"))
+    inherent_factor_low = fields.Integer(string=_("Inherent Count"))
+    inherent_factor_medium = fields.Integer(string=_("Inherent Count"))
+    inherent_factor_high = fields.Integer(string=_("Inherent Count"))
+    residual_risk_count = fields.Integer(string=_("Residual count"))
 
     @api.model
     def create(self, vals):
@@ -100,13 +103,34 @@ class RiskFactor(models.Model):
     @api.model
     def web_read_group(self, domain, fields, groupby, limit=None, offset=0, orderby=False,lazy=True, expand=False, expand_limit=None, expand_orderby=False):
         res = super().web_read_group(domain, fields, groupby, limit, offset, orderby, lazy, expand, expand_limit, expand_orderby)
-        val = []
+        
+        low_inh = 0
+        medium_inh = 0
+        high_inh = 0
+        valdos = []
         for i in self.env['risk.factor'].search([]):
-            val.append(i.inherent_risk)
-            _logger.info('grcbitdebug111:' + str(val))
+            _logger.error("Entro aqui"+str(i.inherent_risk))
+            if i.inherent_risk:
+                if i.inherent_risk == 'Low':
+                    low_inh += 1
+                if i.inherent_risk == 'Medium':
+                    medium_inh += 1
+                if i.inherent_risk == 'High':
+                    high_inh += 1
+
+                # val.append(i.inherent_risk)
+            if i.residual_risk:
+                valdos.append(i.residual_risk)
             # data_assets = self.env['inherent.risk.level'].search([('risk_level_name', '=', i.inherent_risk)])
-            # _logger.info('grcbitdebug222:' + str(data_assets))
-            self.env['risk.factor'].sudo().search([('id','=',i.id)]).sudo().write({'inherent_factor_count':(len(val))})
+            _logger.info('grcbitdebug222:' + str(medium_inh))
+
+            self.env['risk.factor'].sudo().search([('id','=',i.id)]).sudo().write({
+                'inherent_factor_low': low_inh,
+                'inherent_factor_medium': medium_inh,
+                'inherent_factor_high': high_inh,
+                # 'inherent_factor_count':(len(dict_c)),
+                'residual_risk_count':(len(valdos))
+            })
         return res
 
 class ResidualRiskLevel(models.Model):
