@@ -84,7 +84,7 @@
                       </strong>
                       <span class="o_kanban_record_subtitle">
                         <span>
-                          <field name="comment"/>
+                          <field name="comment"/><br/>
                           <button name="get_dashboard" type="object" string="View Dashboard" class="btn btn-primary"/>
                         </span>
                       </span>
