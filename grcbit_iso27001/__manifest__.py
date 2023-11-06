@@ -8,6 +8,7 @@
     'category': 'Uncategorized',
     'version': '16.0',
     'depends': [
+        'web',
         'grcbit_base',
         'grcbit_risk_management',
     ],
@@ -29,5 +30,11 @@
         #views
         'views/iso_views.xml',
     ],
-    
+    'assets': {
+        'web.assets_common': [
+            'grcbit_iso27001/static/src/css/iso_style.css',
+            
+        ],
+    }
+ 
 }
