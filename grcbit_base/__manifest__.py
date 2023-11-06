@@ -25,9 +25,12 @@
 
     ],
     'assets':{
-        'web.assets':[
-            'grcbit_base/static/src/js/**.js',
-            'grcbit_base/static/src/xml/**.xml',
+        # 'web.assets':[
+        #     'grcbit_base/static/src/js/**.js',
+        #     'grcbit_base/static/src/xml/**.xml',
+        # ],
+        'web.assets_backend':[
+            'grcbit_base/static/src/js/user_menu_items.js',
         ]
     }
 }

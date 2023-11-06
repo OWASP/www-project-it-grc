@@ -24,6 +24,11 @@
             <field name="category_id" ref="backend_iframe.module_backend_dashboard"/>
         </record>
 
+        <record id="group_dashboard_guest" model="res.groups">
+            <field name="name">Guest</field>
+            <field name="category_id" ref="backend_iframe.module_backend_dashboard"/>
+        </record>
+
         <!-- #########  Rules #######  -->
 
         <!-- <record id="dashboard_personal_rule" model="ir.rule">
