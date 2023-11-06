@@ -30,23 +30,25 @@
           </group>
 	        <notebook>
             <page string="Compliance Objective" name="compliance_objective">
-              <field name="compliance_control_objective_ids" widget="section_and_note_one2many" mode="tree"  >
-                <form>
-                  <group>
+              <group>
+                <field name="compliance_control_objective_ids" widget="section_and_note_one2many" mode="tree">
+                  <form>
                     <group>
-                      <field name="name"/>
+                      <group>
+                        <field name="name"/>
+                      </group>
+                      <group>
+                        <field name="description"/>
+                      </group>
+                      <field name="compliance_control_ids"/>
                     </group>
-                    <group>
-                      <field name="description"/>
-                    </group>
-                    <field name="compliance_control_ids"/>
-                  </group>
-		            </form>
-                <tree>
-                  <field name="name"/>
-                  <field name="description"/>
-                </tree>
-		          </field>
+                  </form>
+                  <tree>
+                    <field name="name"/>
+                    <field name="description"/>
+                  </tree>
+                </field>
+              </group>
             </page>
 	        </notebook>
         </form>
