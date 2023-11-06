@@ -1,5 +1,5 @@
 th.o_column_sortable[data-name="name"]{ 
-    width:30% !important; 
+    width:20% !important; 
     /* max-width:150px !important; */
 } 
 th.o_column_sortable[data-name="is_applicable"]{ 
@@ -11,11 +11,11 @@ th.o_column_sortable[data-name="reason_selection"]{
     /* max-width:150px !important; */
 } 
 th.o_column_sortable[data-name="document_page_id"]{ 
-    width:10% !important; 
+    width:15% !important; 
     /* max-width:150px !important; */
 } 
 th.o_column_sortable[data-name="control_design_id"]{ 
-    width:10% !important; 
+    width:15% !important; 
     /* max-width:150px !important; */
 } 
 th.o_column_sortable[data-name="control_status"]{ 
