@@ -54,3 +54,17 @@ access_control_evaluation_criteria_guest,access.control.evaluation.criteria.gues
 
 access_control_line_admin,access.control.line.admin,model_control_line,grcbit_base.group_admin,1,1,1,1
 access_control_line_guest,access.control.line.guest,model_control_line,grcbit_base.group_guest,1,0,0,0
+
+access_security_property_admin,access.security.property.admin,model_security_property,grcbit_base.group_admin,1,1,1,1
+access_security_property_guest,access.security.property.guest,model_security_property,grcbit_base.group_guest,1,0,0,0
+
+access_cybersecurity_concept_admin,access.cybersecurity.concept.admin,model_cybersecurity_concept,grcbit_base.group_admin,1,1,1,1
+access_cybersecurity_concept_guest,access.cybersecurity.concept.guest,model_cybersecurity_concept,grcbit_base.group_guest,1,0,0,0
+
+access_security_domain_admin,access.security.domain.admin,model_security_domain,grcbit_base.group_admin,1,1,1,1
+access_security_domain_guest,access.security.domain.guest,model_security_domain,grcbit_base.group_guest,1,0,0,0
+
+access_operational_capability_group_admin,access.operational.capability.group.admin,model_operational_capability,grcbit_base.group_admin,1,1,1,1
+access_operational_capability_group_iso_consultant,access.operational.capability.group.iso.consultant,model_operational_capability,grcbit_base.group_iso_consultant,1,1,1,0
+access_operational_capability_group_guest,access.operational.capability.group.guest,model_operational_capability,grcbit_base.group_guest,1,0,0,0
+access_operational_capability_group_risk_owner,access.operational.capability.group.risk.owner,model_operational_capability,grcbit_base.group_risk_owner,1,0,0,0
