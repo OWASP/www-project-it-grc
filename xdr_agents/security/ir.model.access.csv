@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_list_agent_manager,access.list.agent.manager,model_xdr_list_agents,backend_iframe.group_dashboard_manager,1,1,1,1
+access_list_agent_user,access.list.agent.user,model_xdr_list_agents,backend_iframe.group_dashboard_user,1,0,0,0
+access_list_agent_guest,access.list.agent.guest,model_xdr_list_agents,backend_iframe.group_dashboard_guest,1,0,0,0
+
+access_active_configuration_manager,access.active.configuration.manager,model_xdr_active_configuration,backend_iframe.group_dashboard_manager,1,1,1,1
+access_active_configuration_user,access.active.configuration.user,model_xdr_active_configuration,backend_iframe.group_dashboard_user,1,0,0,0
+access_active_configuration_guest,access.active.configuration.guest,model_xdr_active_configuration,backend_iframe.group_dashboard_guest,1,0,0,0
+
+access_stats_manager,access.stats.manager,model_xdr_stats,backend_iframe.group_dashboard_manager,1,1,1,1
+access_stats_user,access.stats.user,model_xdr_stats,backend_iframe.group_dashboard_user,1,0,0,0
+access_stats_guest,access.stats.guest,model_xdr_stats,backend_iframe.group_dashboard_guest,1,0,0,0
+
+access_ciscat_manager,access.ciscat.manager,model_xdr_ciscat,backend_iframe.group_dashboard_manager,1,1,1,1
+access_ciscat_user,access.ciscat.user,model_xdr_ciscat,backend_iframe.group_dashboard_user,1,0,0,0
+access_ciscat_guest,access.ciscat.guest,model_xdr_ciscat,backend_iframe.group_dashboard_guest,1,0,0,0

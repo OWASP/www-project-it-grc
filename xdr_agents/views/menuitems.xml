@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="list_agents_action" model="ir.actions.act_window">
+      <field name="name">List agents</field>
+      <field name="res_model">xdr.list_agents</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="active_configuration_action" model="ir.actions.act_window">
+      <field name="name">Get Active Configuration</field>
+      <field name="res_model">xdr.active_configuration</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="stats_action" model="ir.actions.act_window">
+      <field name="name">Get stats</field>
+      <field name="res_model">xdr.stats</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="ciscat_action" model="ir.actions.act_window">
+      <field name="name">Ciscat Results</field>
+      <field name="res_model">xdr.ciscat</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Agents" id="menu_agents_main" parent="backend_iframe.xdr_menu_main_root"  sequence="5" />
+    <menuitem name="List agents" id="menu_list_agents" parent="menu_agents_main" action="list_agents_action" sequence="1"/>
+    <menuitem name="Get Active Configuration" id="active_configuration_agents" parent="menu_agents_main" action="active_configuration_action" sequence="1"/>
+    <menuitem name="Get stats" id="stats_agents" parent="menu_agents_main" action="stats_action" sequence="1"/>
+    <menuitem name="CISCAT results" id="ciscat_agents" parent="menu_agents_main" action="ciscat_action" sequence="1"/>
+  </data>
+</odoo>
