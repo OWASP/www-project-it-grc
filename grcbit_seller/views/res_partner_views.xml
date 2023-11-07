@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+    <record id="grcbit_seller_res_partner_inherit_form" model="ir.ui.view">
+      <field name="name">grcbit_seller.res_partner.inherit.form</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//notebook" position="inside">
+          <page string="GRC Seller" name="grc_seller">
+            <group>
+              <field name="client_system"/>
+              <field name="state" readonly="1"/>
+              <field name="activate_date"/>
+            </group>
+            <group>
+              <group string="Database">
+                <field name="db_postgres_port"/>
+                <field name="db_ssh_port"/>
+                <field name="postgres_pwd" password="1"/>
+                <field name="psql_container_id"/>
+              </group>
+              <group string="GRC">
+                <field name="grc_web_port"/>
+                <field name="grc_ssh_port"/>
+                <field name="grc_container_id"/>
+              </group>
+            </group>
+            <group>
+              <group string="XDR">
+                <field name="xdr_indexer_port"/>
+                <field name="xdr_dashboard_port"/>
+                <field name="xdr_manager_port"/>
+              </group>
+              <group string="Output">
+                <field name="xdr_index_container" readonly="1"/>
+                <field name="xdr_server_container" readonly="1"/>
+                <field name="xdr_dash_container" readonly="1"/>
+              </group>
+            </group>
+          </page>
+        </xpath>
+     
+      </field>
+    </record>
+  </data>
+</odoo>
