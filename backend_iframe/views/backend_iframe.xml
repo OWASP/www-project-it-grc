@@ -77,14 +77,14 @@
                   <div class="o_kanban_record_top mb16">
                     <div class="o_kanban_record_headings mt4">
                       <strong class="o_kanban_record_title">
-                        <span>
+                        <span style="font-weight:bold;">
                           <field name="name"/>
                         </span>
                         <br></br>
                       </strong>
                       <span class="o_kanban_record_subtitle">
                         <span>
-                          <field name="comment"/><br/>
+                          <field name="comment"/><br/><br/>
                           <button name="get_dashboard" type="object" string="View Dashboard" class="btn btn-primary"/>
                         </span>
                       </span>
@@ -134,14 +134,14 @@
                   <div class="o_kanban_record_top mb16">
                     <div class="o_kanban_record_headings mt4">
                       <strong class="o_kanban_record_title">
-                        <span>
+                        <span style="font-weight:bold;">
                           <field name="name"/>
                         </span>
                         <br></br>
                       </strong>
                       <span class="o_kanban_record_subtitle">
                         <span>
-                          <field name="comment"/><br/>
+                          <field name="comment"/><br/><br/>
                           <button name="get_dashboard" type="object" string="View Dashboard" class="btn btn-primary"/>
                         </span>
                       </span>
