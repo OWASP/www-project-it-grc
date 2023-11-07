@@ -19,6 +19,7 @@
         'security/res_groups.xml',
         'security/ir.model.access.csv',
         'views/asset_management_views.xml',
+        'views/res_users_view.xml',
         'views/dashboard_view.xml',
         'views/menuitems.xml',
         'views/config_views.xml',

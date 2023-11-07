@@ -41,11 +41,30 @@ access_control_type_group_guest,access.control.type.group.guest,model_control_ty
 access_control_type_group_risk_owner,access.control.type.group.risk.owner,model_control_type,grcbit_base.group_risk_owner,1,0,0,0
 
 access_inherent_risk_level_admin,access.inherent.risk.level.admin,model_inherent_risk_level,grcbit_base.group_admin,1,1,1,1
+access_inherent_risk_level_guest,access.inherent.risk.level.guest,model_inherent_risk_level,grcbit_base.group_guest,1,0,0,0
 
 access_residual_risk_level_admin,access.residual.risk.level.admin,model_residual_risk_level,grcbit_base.group_admin,1,1,1,1
+access_residual_risk_level_guest,access.residual.risk.level.guest,model_residual_risk_level,grcbit_base.group_guest,1,0,0,0
 
 access_control_design_criteria_admin,access.control.design.criteria.admin,model_control_design_criteria,grcbit_base.group_admin,1,1,1,1
+access_control_design_criteria_guest,access.control.design.criteria.guest,model_control_design_criteria,grcbit_base.group_guest,1,0,0,0
 
 access_control_evaluation_criteria_admin,access.control.evaluation.criteria.admin,model_control_evaluation_criteria,grcbit_base.group_admin,1,1,1,1
+access_control_evaluation_criteria_guest,access.control.evaluation.criteria.guest,model_control_evaluation_criteria,grcbit_base.group_guest,1,0,0,0
 
 access_control_line_admin,access.control.line.admin,model_control_line,grcbit_base.group_admin,1,1,1,1
+access_control_line_guest,access.control.line.guest,model_control_line,grcbit_base.group_guest,1,0,0,0
+
+access_security_property_admin,access.security.property.admin,model_security_property,grcbit_base.group_admin,1,1,1,1
+access_security_property_guest,access.security.property.guest,model_security_property,grcbit_base.group_guest,1,0,0,0
+
+access_cybersecurity_concept_admin,access.cybersecurity.concept.admin,model_cybersecurity_concept,grcbit_base.group_admin,1,1,1,1
+access_cybersecurity_concept_guest,access.cybersecurity.concept.guest,model_cybersecurity_concept,grcbit_base.group_guest,1,0,0,0
+
+access_security_domain_admin,access.security.domain.admin,model_security_domain,grcbit_base.group_admin,1,1,1,1
+access_security_domain_guest,access.security.domain.guest,model_security_domain,grcbit_base.group_guest,1,0,0,0
+
+access_operational_capability_group_admin,access.operational.capability.group.admin,model_operational_capability,grcbit_base.group_admin,1,1,1,1
+access_operational_capability_group_iso_consultant,access.operational.capability.group.iso.consultant,model_operational_capability,grcbit_base.group_iso_consultant,1,1,1,0
+access_operational_capability_group_guest,access.operational.capability.group.guest,model_operational_capability,grcbit_base.group_guest,1,0,0,0
+access_operational_capability_group_risk_owner,access.operational.capability.group.risk.owner,model_operational_capability,grcbit_base.group_risk_owner,1,0,0,0

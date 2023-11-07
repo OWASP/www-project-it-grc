@@ -26,6 +26,7 @@ class SecurityProperty(models.Model):
 class CybersecurityConcept(models.Model):
     _name = 'cybersecurity.concept'
     _description = 'Data Inventory'
+
     name = fields.Char(string='Cybersecurity Concept', required=True)
     description = fields.Text(string='Description', required=True)
     active = fields.Boolean(default=True)
@@ -92,6 +93,15 @@ class SecurityDomain(models.Model):
     description = fields.Text(string='Description', required=True)
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The security domain name already exists.")]
+
+class OperationalCapability(models.Model):
+    _name = 'operational.capability'
+    _description = 'Data Inventory'
+
+    name = fields.Char(string=_('Operational Capability'), required=True)
+    description = fields.Text(string=_('Description'), required=True)
+    active = fields.Boolean(default=True)
+    _sql_constraints = [('name_uniq', 'unique(name)', _("The operational capability name already exists."))]
 
 class ControlDesing(models.Model):
     _name = 'control.design'
