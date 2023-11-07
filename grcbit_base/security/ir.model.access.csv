@@ -25,3 +25,9 @@ access_third_party_group_guest,access.third.party.group.guest,model_third_party,
 access_third_party_risk_group_owner,access.third.party.risk.group.owner,model_third_party,group_risk_owner,1,0,0,0
 access_third_party_risk_group_it_admin,access.third.party.risk.group.it.admin,model_third_party,group_it_admin,1,1,1,0
 access_third_party_risk_group_data_owner,access.third.party.risk.group.data.owner,model_third_party,group_data_owner,1,1,1,0
+
+access_res_users_group_admin,access.res.users.group.admin,base.model_res_users,group_admin,1,1,1,1
+access_res_partner_group_admin,access.res.partner.group.admin,base.model_res_partner,group_admin,1,1,1,1
+access_res_groups_group_admin,access.res.groups.group.admin,base.model_res_groups,group_admin,1,1,1,1
+access_change_password_wizard_group_admin,access.change.password.wizard.group.admin,base.model_change_password_wizard,group_admin,1,1,1,1
+access_change_password_user_group_admin,access.change.password.user.group.admin,base.model_change_password_user,group_admin,1,1,1,1

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="manage_users_action" model="ir.actions.act_window">
+      <field name="name">Manage Users</field>
+      <field name="res_model">res.users</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_ids"
+        eval="[(5, 0, 0),
+              (0, 0, {'view_mode': 'tree', 'view_id': ref('base.view_users_tree')}),
+              (0, 0, {'view_mode': 'form', 'view_id': ref('base.view_users_form')})]"/>
+    </record>
+  </data>
+</odoo>
