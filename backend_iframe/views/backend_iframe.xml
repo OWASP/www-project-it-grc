@@ -217,7 +217,7 @@
       sequence="2" 
       groups="backend_iframe.group_dashboard_manager,backend_iframe.group_dashboard_user,backend_iframe.group_dashboard_guest"/>
 
-    <menuitem name="XDR" id="backend_dashboard_menu_iframe" sequence="30"
+    <menuitem name="XDR" id="backend_dashboard_menu_iframe" sequence="1"
       parent="xdr_menu_main_root"  groups="backend_iframe.group_dashboard_guest,backend_iframe.group_dashboard_user,backend_iframe.group_dashboard_manager"/>
 
     <menuitem name="XDR" id="backend_dashboard_menu_iframe_item1_admin" sequence="3"

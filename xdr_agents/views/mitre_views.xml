@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!--  MITRE GROUPS -->
+    <record model="ir.ui.view" id="mitre_groups_treeview">
+      <field name="name">Groups</field>
+      <field name="model">mitre.groups</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="mitre_groups_formview">
+      <field name="name">Groups</field>
+      <field name="model">mitre.groups</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="description"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!--  MITRE METADATA -->
+    <record model="ir.ui.view" id="mitre_metadata_treeview">
+      <field name="name">Metadata</field>
+      <field name="model">mitre.metadata</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="mitre_metadata_formview">
+      <field name="name">Metadata</field>
+      <field name="model">mitre.metadata</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="description"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!--  MITRE MITIGATIONS -->
+    <record model="ir.ui.view" id="mitre_mitigations_treeview">
+      <field name="name">Mitigations</field>
+      <field name="model">mitre.mitigations</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="mitre_mitigations_formview">
+      <field name="name">Mitigations</field>
+      <field name="model">mitre.mitigations</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="description"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!--  MITRE REFERENCE -->
+    <record model="ir.ui.view" id="mitre_references_treeview">
+      <field name="name">References</field>
+      <field name="model">mitre.references</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="mitre_references_formview">
+      <field name="name">References</field>
+      <field name="model">mitre.references</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="description"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!--  MITRE SOFTWARE -->
+    <record model="ir.ui.view" id="mitre_software_treeview">
+      <field name="name">Software</field>
+      <field name="model">mitre.software</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="mitre_software_formview">
+      <field name="name">Software</field>
+      <field name="model">mitre.software</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="description"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!--  MITRE TACTICS -->
+    <record model="ir.ui.view" id="mitre_tactic_treeview">
+      <field name="name">Tactics</field>
+      <field name="model">mitre.tactic</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="mitre_tactic_formview">
+      <field name="name">Tactics</field>
+      <field name="model">mitre.tactic</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="description"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!--  MITRE TECHNIQUES -->
+    <record model="ir.ui.view" id="mitre_techniques_treeview">
+      <field name="name">Techniques</field>
+      <field name="model">mitre.techniques</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="mitre_techniques_formview">
+      <field name="name">Techniques</field>
+      <field name="model">mitre.techniques</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="description"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>
