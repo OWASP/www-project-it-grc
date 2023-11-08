@@ -15,7 +15,7 @@
         </record>
 
         <record id="group_dashboard_manager" model="res.groups">
-            <field name="name">Manager</field>
+            <field name="name">Admin</field>
             <field name="category_id" ref="backend_iframe.module_backend_dashboard"/>
         </record>
 
