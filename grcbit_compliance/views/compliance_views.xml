@@ -43,7 +43,7 @@
                       <field name="compliance_control_ids"/>
                     </group>
                   </form>
-                  <tree>
+                  <tree class="my_class">
                     <field name="name"/>
                     <field name="description"/>
                   </tree>

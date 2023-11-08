@@ -19,12 +19,12 @@
         'security/ir.model.access.csv',
 
         #data
-        'data/control_type_data.xml',
-        'data/control_category_data.xml',
-        'data/cybersecurity_concept_data.xml',
-        'data/operational_capability_data.xml',
-        'data/security_domain_data.xml',
-        'data/security_property_data.xml',
+        # 'data/control_type_data.xml',
+        # 'data/control_category_data.xml',
+        # 'data/cybersecurity_concept_data.xml',
+        # 'data/operational_capability_data.xml',
+        # 'data/security_domain_data.xml',
+        # 'data/security_property_data.xml',
         # 'data/iso.control.csv',
         
         #views

@@ -28,5 +28,11 @@
         #views
         'views/compliance_views.xml',
     ],
+    'assets': {
+        'web.assets_common': [
+            'grcbit_compliance/static/src/css/compliance_style.css',
+            
+        ],
+    }
     
 }
