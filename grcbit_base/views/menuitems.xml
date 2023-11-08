@@ -19,9 +19,13 @@
       <field name="groups_id" eval="[(6,0,[ref('base.group_system'), ref('base.group_erp_manager')])]"/>
     </record>	
 
-    <!-- <record model="ir.ui.menu" id="calendar.mail_menu_calendar">
+    <record model="ir.ui.menu" id="base.menu_board_root">
       <field name="groups_id" eval="[(6,0,[ref('base.group_system'), ref('base.group_erp_manager')])]"/>
-    </record>	 -->
+    </record>	
+
+    <record model="ir.ui.menu" id="spreadsheet_dashboard.spreadsheet_dashboard_menu_root">
+      <field name="groups_id" eval="[(6,0,[ref('base.group_system'), ref('base.group_erp_manager')])]"/>
+    </record>
 
     <record model="ir.ui.menu" id="base.menu_management">
       <field name="groups_id" eval="[(6,0,[ref('base.group_system'), ref('base.group_erp_manager')])]"/>
