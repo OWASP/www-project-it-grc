@@ -11,6 +11,11 @@
 			<field name="comment">Admin user with delete, create, edit access.</field>
 			<field name="category_id" ref="module_grcbit_base"/>
 		</record>
+		<record id="group_admin_dashboard" model="res.groups">
+			<field name="name">Admin Dashboard</field>
+			<field name="comment">Admin user with delete, create, edit access.</field>
+			<field name="category_id" ref="module_grcbit_base"/>
+		</record>
 		<record id="group_iso_consultant" model="res.groups">
 			<field name="name">GRC Consultant</field>
 			<field name="comment">Module user with create, edit access.</field>

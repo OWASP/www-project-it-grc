@@ -93,6 +93,21 @@ class DataInventory(models.Model):
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The data inventory name already exists."))]
 
+    @api.model
+    def get_data(self):
+        """Returns data to the tiles of dashboard"""
+        it_system = self.env['it.inventory'].search([])
+        third_party = self.env['third.party'].search([])
+        _logger.info("THIRDPATY"+str(len(third_party)))
+    #    storable = self.env['product.template'].search([('detailed_type', '=', 'product')])
+    #    consumable = self.env['product.template'].search([('detailed_type', '=', 'consu')])
+        return {
+            'it_system': len(it_system),
+            'third_party': len(third_party),
+            # 'storable': len(storable),
+            # 'consumable': len(consumable),
+        }
+
 class ThirdParty(models.Model):
     _name = 'third.party'
     _decription = 'Third-Party'

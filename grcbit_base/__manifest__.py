@@ -11,6 +11,7 @@
         'web',
         'base',
         'board',
+        # 'odoo_dynamic_dashboard',
         'document_page'
     ],
 
@@ -23,6 +24,8 @@
         'views/dashboard_view.xml',
         'views/menuitems.xml',
         'views/config_views.xml',
+        
+        
 
     ],
     'assets':{
@@ -32,6 +35,7 @@
         # ],
         'web.assets_backend':[
             'grcbit_base/static/src/js/user_menu_items.js',
+            
         ]
     }
 }

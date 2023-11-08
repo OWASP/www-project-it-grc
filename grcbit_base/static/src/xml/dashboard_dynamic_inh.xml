@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="dashboard_grcbit_base_inh" inherit_id="odoo_dynamic_dashboard.dynamic_dashboard" active="False" customize_show="True">
+      <xpath expr="//div[@class='container']" position="replace">
+        <div class="container">
+          <button class="btn btn-primary add_block" groups="grcbit_base.group_admin_dashboard" data-type="tile" type="button">Add Block</button>
+          <button class="btn btn-primary add_block" groups="grcbit_base.group_admin_dashboard" data-type="graph" type="button">Add Graph</button>
+          <div class=" o_dynamic_dashboard row">
+          </div>
+          <div style="padding-top: 100px" class="o_dynamic_chart row">
+          </div>
+        </div>
+      </xpath>
+    </template>
+  </data>
+
+</odoo>

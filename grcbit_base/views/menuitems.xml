@@ -30,5 +30,11 @@
     <record model="ir.ui.menu" id="base.menu_management">
       <field name="groups_id" eval="[(6,0,[ref('base.group_system'), ref('base.group_erp_manager')])]"/>
     </record>	
+
+    <!-- <record id="action_dashboard_grc" model="ir.actions.client">
+      <field name="name">GRC</field>
+      <field name="tag">custom_dashboard_tags</field>
+    </record>
+    <menuitem id="menu_grc_dashboard" name="Dashboard" action="action_dashboard_grc" parent="menu_root" sequence="-1"/> -->
   </data>
 </odoo>
