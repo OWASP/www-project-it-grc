@@ -69,6 +69,9 @@
       <field name="model">risk.factor</field>
       <field name="arch" type="xml">
         <form>
+          <header name="risk_factor_header">
+          
+          </header>
 		      <sheet>
             <group>
               <field name="active" invisible="1"/>

@@ -1,20 +1,20 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "GRCBIT Seller",
-    'summary': "App for grcbit seller implementation",
-    'description': "Res Partner, Sellers",
+    'name': "GRCBIT CVSS",
+    'summary': "App for grcbit cvss calculator",
+    'description': "Calculator CVSS",
     'author':"HackDoo",
     'website': "https://hackdoo.com/",
     'category': 'Uncategorized',
     'version': '16.0',
     'depends': [
-        'base',
+        'grcbit_risk_management',
     ],
 
     # always loaded
     'data': [
-        'security/res_groups.xml',
         'security/ir.model.access.csv',
-        'views/res_partner_views.xml',
+        'wizard/cvss_calculator_view.xml',
+        'views/risk_factor_views.xml',
     ],
 }
