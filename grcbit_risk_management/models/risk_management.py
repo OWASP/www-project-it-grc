@@ -32,7 +32,7 @@ class RiskLevel(models.Model):
     _description = 'Risk Level'
 
     name = fields.Char(string=_('Risk Level'), required=True)
-    description = fields.Text(string=_('Description'))
+    description = fields.Text(string=_('Description'), required=True)
     value = fields.Integer(string=_('Value'), required=True)
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The risk level name already exists.")),('level_uniq', 'unique(value)', _("The risk level value already exists."))]
@@ -42,12 +42,12 @@ class InherentRiskLevel(models.Model):
     _description = 'Inherent Risk Level'
     _rec_name = 'risk_level_name'
 
-    impact_level_id      = fields.Many2one('impact.level', string=_('Impact Level'))
-    probability_level_id = fields.Many2one('probability.level', string=_('Probability Level'))
-    risk_level_id        = fields.Many2one('risk.level', string=_('Risk Level'))
-    risk_level_name      = fields.Char(related='risk_level_id.name', string=_('Risk Level'))
+    impact_level_id      = fields.Many2one('impact.level', string=_('Impact Level'), required=True)
+    probability_level_id = fields.Many2one('probability.level', string=_('Probability Level'), required=True)
+    risk_level_id        = fields.Many2one('risk.level', string=_('Risk Level'), required=True)
+    risk_level_name      = fields.Char(related='risk_level_id.name', string=_('Risk Level'), required=True)
     description = fields.Text(string=_('Description'), required=True)
-    color = fields.Integer(string=_('Color'))
+    color = fields.Integer(string=_('Color'), required=True)
     active = fields.Boolean(default=True)
 
 class RiskClassification(models.Model):
@@ -66,7 +66,7 @@ class RiskFactor(models.Model):
     _order = 'risk_id'
     _rec_name = 'display_name'
 
-    display_name = fields.Char(string=_('Control Category'), compute='_compute_display_name')
+    display_name = fields.Char(string=_('Control Category'), compute='_compute_display_name', required=True)
     name = fields.Text(string=_('Risk Factor'), required=True)
     risk_id = fields.Char(string=_('Risk ID'), required=True, index=True, copy=False, default='New')
     risk_classification_id = fields.Many2many('risk.classification',string=_('Risk Classification'), required=True)
@@ -76,7 +76,7 @@ class RiskFactor(models.Model):
     impact_level_id = fields.Many2one('impact.level', string=_('Impact Level'), required=True, track_visibility='always')
     probability_level_id = fields.Many2one('probability.level', string=_('Probability Level'), required=True, track_visibility='always')
     responsible = fields.Many2one('res.users', string=_('Risk Owner'), required=True, track_visibility='always')
-    quantification = fields.Float(string=_('Quantification'), track_visibility='always')
+    quantification = fields.Float(string=_('Quantification'), track_visibility='always', required=True)
     inherent_risk  = fields.Char(string=_('Inherent Risk'), track_visibility='always')
     residual_risk  = fields.Char(string=_('Residual Risk'), track_visibility='always')
     attachment = fields.Many2many('ir.attachment', string=_("Attachment"))
