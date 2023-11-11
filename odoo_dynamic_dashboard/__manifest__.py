@@ -27,7 +27,7 @@
     'author': 'Cybrosys Techno Solutions',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
-    'depends': ['base', 'web','grcbit_base'],
+    'depends': ['base', 'web'],
     'data': [
         'views/dashboard_view.xml',
         'views/dynamic_block_view.xml',

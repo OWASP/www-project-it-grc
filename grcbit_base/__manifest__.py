@@ -11,7 +11,7 @@
         'web',
         'base',
         'board',
-        # 'odoo_dynamic_dashboard',
+        'odoo_dynamic_dashboard',
         'document_page'
     ],
 

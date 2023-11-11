@@ -39,7 +39,7 @@ class ControlDesignCriteria(models.Model):
     _description = 'Design Criteria'
 
     name = fields.Char(string='Name', required=True)
-    description = fields.Text(string='Description')
+    description = fields.Text(string='Description', required=True)
     active = fields.Boolean(default=True)
 
 class ControlEvaluationCriteria(models.Model):
@@ -47,7 +47,7 @@ class ControlEvaluationCriteria(models.Model):
     _description = 'Implementation Criteria'
 
     name = fields.Char(string='Name', required=True)
-    description = fields.Text(string='Description')
+    description = fields.Text(string='Description', required=True)
     active = fields.Boolean(default=True)
 
 class ControlLine(models.Model):

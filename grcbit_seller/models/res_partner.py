@@ -48,13 +48,14 @@ class ResPartnerGRC(models.Model):
 
     def just_range(self, field, min_value, max_value):
         for rec in self:
-            if re.search("\d+", field):
-                if int(field) >= min_value and int(field) <= max_value:
-                    return True
+            if field:
+                if re.search("\d+", field):
+                    if int(field) >= min_value and int(field) <= max_value:
+                        return True
+                    else:
+                        raise ValidationError("Valor '%s' invalido, debe estar en un rango de %s a %s" % (field, min_value, max_value))
                 else:
-                    raise ValidationError("Valor '%s' invalido, debe estar en un rango de %s a %s" % (field, min_value, max_value))
-            else:
-                raise ValidationError("Los puertos deben ser solo digitos. Valor '%s' incorrecto" % field)
+                    raise ValidationError("Los puertos deben ser solo digitos. Valor '%s' incorrecto" % field)
             
     def write(self,vals):
         res = super(ResPartnerGRC, self).write(vals)

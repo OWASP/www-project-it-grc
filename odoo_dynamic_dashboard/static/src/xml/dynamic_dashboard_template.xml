@@ -8,7 +8,7 @@
             </button>
             <div class=" o_dynamic_dashboard row">
             </div>
-            <div style="padding-top: 100px" class="o_dynamic_chart row">
+            <div style="padding-top: 20px" class="o_dynamic_chart row">
             </div>
         </div>
     </t>

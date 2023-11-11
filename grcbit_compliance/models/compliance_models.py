@@ -11,8 +11,8 @@ class ComplianceVersion(models.Model):
     _description = 'Compliance Version'
 
     name = fields.Char(string='Compliance Version', required=True)
-    description  = fields.Text(string='Description')
-    compliance_control_objective_ids = fields.One2many('compliance.control.objective', 'compliance_version_id', string=' '  )
+    description  = fields.Text(string='Description', required=True)
+    compliance_control_objective_ids = fields.One2many('compliance.control.objective', 'compliance_version_id', string=' ', required=True  )
     _sql_constraints = [('name_uniq', 'unique(name)', "The compliance version name already exists.")]
 
 
@@ -66,7 +66,7 @@ class ComplianceControlObjective(models.Model):
     display_name = fields.Char(string='Compliance Objective', compute='_compute_display_name')
     compliance_version_id = fields.Many2one('compliance.version', string='Compliance Version', required=True)
     description  = fields.Text(string='Description')
-    compliance_control_ids = fields.One2many('compliance.control','compliance_control_objective_id', string='Requirement')
+    compliance_control_ids = fields.One2many('compliance.control','compliance_control_objective_id', string=' ')
     _sql_constraints = [('name_uniq', 'unique(name)', "The compliance objective name already exists.")]
 
     @api.depends('compliance_version_id','name')
@@ -95,7 +95,7 @@ class ComplianceIsoControl(models.Model):
     _description = 'Compliance - ISMS'
 
     compliance_control_id = fields.Many2one('compliance.control', string='Compliance Requirement', required=True) #requerimiento NIST - AC-1 POLICY AND PROCEDURES
-    iso_control_id     = fields.Many2many('iso.control', string='ISMS Control') #ISO
-    control_id = fields.Many2one('control.design', string="Diseño de control")
-    document_page_id   = fields.Many2many('document.page', string='Policy / Process') #document
-    description  = fields.Text(string='Compliance Description') #Cumplimiento
+    iso_control_id     = fields.Many2many('iso.control', string='ISMS Control', required=True) #ISO
+    control_id = fields.Many2one('control.design', string="Diseño de control", required=True)
+    document_page_id   = fields.Many2many('document.page', string='Policy / Process', required=True) #document
+    description  = fields.Text(string='Compliance Description', required=True) #Cumplimiento

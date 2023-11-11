@@ -12,7 +12,7 @@ class DataClassification(models.Model):
     _description = 'Data Classification'
 
     name = fields.Char(string=_('Data Classification'), required=True)
-    description = fields.Text(string=_('Description'))
+    description = fields.Text(string=_('Description'), required=True)
     data_inventory_count = fields.Integer(string=_("Data Asset Count"))
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The data classification name already exists."))]
@@ -31,7 +31,7 @@ class ItInventory(models.Model):
 
     name = fields.Char(string=_('System Name'), required=True)
     description = fields.Text(string=_('Description'), required=True)
-    ip = fields.Char(string=_('IP'))
+    ip = fields.Char(string=_('IP'), required=True)
     url = fields.Char(string=_('URL'))
     responsible = fields.Many2one('res.users', string=_('IT Admin'), required=True)
     environment = fields.Selection([
@@ -67,8 +67,8 @@ class DataInventory(models.Model):
     data_classification_id = fields.Many2one('data.classification', string=_('Data Classification'), required=True)
     # location = fields.Char(string=_('Location'), required=True)
     owner = fields.Many2one('res.users', string=_('Asset Owner'), required=True)
-    it_inventory_id = fields.Many2many('it.inventory',string=_('IT System'))
-    third_party_id = fields.Many2many('third.party',string=_('Third Party'))
+    it_inventory_id = fields.Many2many('it.inventory',string=_('IT System'), required=True)
+    third_party_id = fields.Many2many('third.party',string=_('Third Party'), required=True)
     # document_page_id   = fields.Many2many('document.page', string=_('Business Process'))
     security_requirement = fields.Text(string=_('Security Requirement'), required=True)
     retention_period = fields.Selection([
@@ -88,8 +88,8 @@ class DataInventory(models.Model):
         ('3y','3 years'),
         ('4y','4 years'),
         ('5y','5 years'),
-        ])
-    attachment = fields.Many2many('ir.attachment', string=_("Attachment"))
+        ], required=True)
+    attachment = fields.Many2many('ir.attachment', string=_("Attachment"), required=True)
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The data inventory name already exists."))]
 
