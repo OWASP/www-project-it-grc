@@ -454,7 +454,7 @@
     </record>
     
     <!--MENUITEM-->
-    <menuitem name="ISO 27001" id="menu_control_attribute" parent="grcbit_base.menu_root" sequence="3" />
+    <menuitem name="ISMS" id="menu_control_attribute" parent="grcbit_base.menu_root" sequence="3" />
     <menuitem name="Statement Applicability" id="menu_statement_applicability" parent="menu_control_attribute" action="statement_applicability_action" sequence="1"  />
     <menuitem name="ISO Control" id="menu_iso_control" parent="menu_control_attribute" action="iso_control_action" sequence="2"  />
     <menuitem name="Control Category" id="menu_control_category" parent="menu_control_attribute" action="control_category_action" sequence="3" />
