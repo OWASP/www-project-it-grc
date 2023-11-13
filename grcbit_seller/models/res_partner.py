@@ -37,12 +37,36 @@ class ResPartnerGRC(models.Model):
     xdr_manager_port3 = fields.Char(string="XDR Manager Port (514/udp)", default="25000") #de 25000 a 29000
     xdr_manager_port4 = fields.Char(string="XDR Manager Port (55000)", default="29000") #de 29000 a 33000
 
-    is_admin = fields.Boolean(string="is admin", default="_get_group", store=False)
+    is_admin = fields.Boolean(string="is admin", compute="_get_group", store=False)
+    _sql_constraints = [
+        ('unique_db_postgres_port', 'unique(db_postgres_port)', 'DB postgres Port already exist.!'),
+        ('unique_grc_web_port', 'unique(grc_web_port)', 'GRC Web Port already exist.!'),
+        ('unique_xdr_indexer_port', 'unique(xdr_indexer_port)', 'XDR Indexer Port already exist.!'),
+        ('unique_xdr_dashboard_port', 'unique(xdr_dashboard_port)', 'XDR Dashboard Port (5601) already exist.!'),
+        ('unique_xdr_dashboard_port2', 'unique(xdr_dashboard_port2)', 'XDR Dashboard Port (5602) already exist.!'),
+        ('unique_xdr_manager_port1', 'unique(xdr_manager_port1)', 'XDR Manager Port (1514) already exist.!'),
+        ('unique_xdr_manager_port2', 'unique(xdr_manager_port2)', 'XDR Manager Port (1515) already exist.!'),
+        ('unique_xdr_manager_port3', 'unique(xdr_manager_port3)', 'XDR Manager Port (514/udp) already exist.!'),
+        ('unique_xdr_manager_port4', 'unique(xdr_manager_port4)', 'XDR Manager Port (55000) already exist.!'),
+    ]
+
+
+
+
+    # @api.model
+    # def create(self,vals):
+    #     res = super(ResPartnerGRC,self).create(vals)
+    #     self.is_new = False
+    #     return res
+    @api.onchange('db_postgres_port')
+    def _onchange_is_admin_new(self):
+        for rec in self:
+            flag = self.env.user.has_group('grcbit_seller.group_admin_seller')
+            rec.is_admin = flag
 
     def _get_group(self):
         for rec in self:
             flag = self.env.user.has_group('grcbit_seller.group_admin_seller')
-            
             rec.is_admin = flag
 
     def just_range(self, field, min_value, max_value):
