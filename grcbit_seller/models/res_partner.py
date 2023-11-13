@@ -95,20 +95,9 @@ class ResPartnerGRC(models.Model):
             if rec.xdr_manager_port4:
                 ports.append(rec.xdr_manager_port4)
             
-
         value = self.has_duplicates(ports)
         if value == True:
             raise ValidationError("No se puede repetir puertos, verifique su configuracion")
-    # @api.model
-    # def fields_get(self, allfields=None, attributes=None):
-    #     fields = super().fields_get(allfields=allfields, attributes=attributes)
-
-    #     public_fields = {field_name: description for field_name, description in fields.items()}
-    #     _logger.info("#####################"+str(fields.items()))
-
-    #     return public_fields
-
-
 
 class XDRManagerPort(models.Model):
     _name = 'xdr.manager.port'
