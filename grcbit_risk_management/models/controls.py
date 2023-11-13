@@ -187,11 +187,24 @@ class ControlDesing(models.Model):
         self.state = 'approved'
         self.approve_date = date.today()
         self._status_control(self.id)
-        self.sudo()._residual_risk(self.id, self.control_evaluation_criteria_id)
+        # self.sudo()._residual_risk(self.id, self.control_evaluation_criteria_id)
+        self.sudo().set_residual_risk()
 
     def action_rejected(self):
         self.state = 'implemented'
         self.rejected_date = date.today()
+
+    def set_residual_risk(self):
+        for rec in self:
+            for risk in rec.risk_factor_id:
+                residual_level = self.env['residual.risk.level'].search([
+                    ('control_evaluation_criteria_id','=', rec.control_evaluation_criteria_id.id),
+                    ('inherent_risk_level_id','=',risk.inherent_risk)
+                ])
+                if residual_level:
+                    risk.residual_risk = residual_level.residual_risk_level_name
+
+
 
     def _residual_risk(self, control_id, control_eval):
         risk_factor_ids    = self.env['control.design'].search([('id','=',control_id)]).risk_factor_id
