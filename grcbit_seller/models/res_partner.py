@@ -13,8 +13,8 @@ class ResPartnerGRC(models.Model):
     client_system = fields.Char(string="Client system name")
     state = fields.Selection([
         ('new','New'),
-        ('activate','Activate'),
-        ('inactivate','Inactivate'),
+        ('active','Active'),
+        ('inactive','Inactive'),
     ], string="Status", default='new')
     activate_date = fields.Date(string="Activate date")
     db_postgres_port = fields.Char(string="DB Postgres Port (5432)") # de 1000 a 5000
