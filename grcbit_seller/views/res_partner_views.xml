@@ -9,41 +9,47 @@
         <xpath expr="//notebook" position="inside">
           <page string="GRC Seller" name="grc_seller">
             <group>
-              <field name="is_admin" invisible="1"/>
+              <field name="is_admin" invisible="0"/>
               <field name="client_system"/>
               <field name="state" readonly="1"/>
               <field name="activate_date"/>
             </group>
             <group>
               <group string="Database">
-                <field name="db_postgres_port"/>
+                <field name="db_postgres_port" attrs="{'readonly': [('is_admin','=', False),('id','>',0)]}"/>
                 <!-- <field name="db_ssh_port"/> -->
                 <field name="postgres_pwd" password="1"/>
-                <field name="psql_container_id" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="psql_container_id" attrs="{'readonly': [('is_admin','=', False),('id','>',0)]}"/>
               </group>
               <group string="GRC">
-                <field name="grc_web_port"/>
+                <field name="grc_web_port" attrs="{'readonly': [('is_admin','=', False),('id','>',0)]}"/>
                 <!-- <field name="grc_ssh_port"/> -->
-                <field name="grc_container_id" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="grc_container_id" attrs="{'readonly': [('is_admin','=', False),('id','>',0)]}"/>
               </group>
             </group>
             <group string="XDR">
               <group>
-                <field name="xdr_indexer_port"/>
-                <field name="xdr_dashboard_port"/>
-                <field name="xdr_dashboard_port2"/>
+                <field name="xdr_indexer_port" attrs="{'readonly': [('is_admin','=', False),('id','>',0)]}"/>
+                <field name="xdr_dashboard_port" attrs="{'readonly': [('is_admin','=', False),('id','>',0)]}"/>
+                <field name="xdr_dashboard_port2" attrs="{'readonly': [('is_admin','=', False),('id','>',0)]}"/>
               </group>
               <group>
-                <field name="xdr_manager_port1"/>
-                <field name="xdr_manager_port2"/>
-                <field name="xdr_manager_port3"/>
-                <field name="xdr_manager_port4"/>
+                <field name="xdr_manager_port1" attrs="{'readonly': [('is_admin','=', False),('id','>',0)]}"/>
+                <field name="xdr_manager_port2" attrs="{'readonly': [('is_admin','=', False),('id','>',0)]}"/>
+                <field name="xdr_manager_port3" attrs="{'readonly': [('is_admin','=', False),('id','>',0)]}"/>
+                <field name="xdr_manager_port4" attrs="{'readonly': [('is_admin','=', False),('id','>',0)]}"/>
               </group>
             </group>
             <group string="Output">
-              <field name="xdr_index_container" readonly="1"/>
-              <field name="xdr_server_container" readonly="1"/>
-              <field name="xdr_dash_container" readonly="1"/>
+              <group>
+                <field name="xdr_index_container" readonly="1"/>
+                <field name="xdr_server_container" readonly="1"/>
+                <field name="xdr_dash_container" readonly="1"/>
+              </group>
+              <group>
+                <field name="psql_container_id" attrs="{'readonly': [('is_admin','=', False),('id','>',0)]}"/>
+                <field name="grc_container_id" attrs="{'readonly': [('is_admin','=', False),('id','>',0)]}"/>
+              </group>
             </group>
           </page>
         </xpath>

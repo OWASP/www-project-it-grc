@@ -29,6 +29,9 @@
         
         #views
         'views/iso_views.xml',
+
+        #reports
+        'reports/report_statement_applicability.xml',
     ],
     'assets': {
         'web.assets_common': [
