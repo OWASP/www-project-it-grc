@@ -96,6 +96,6 @@ class ComplianceIsoControl(models.Model):
 
     compliance_control_id = fields.Many2one('compliance.control', string='Compliance Requirement', required=True) #requerimiento NIST - AC-1 POLICY AND PROCEDURES
     iso_control_id     = fields.Many2many('iso.control', string='ISMS Control', required=True) #ISO
-    control_id = fields.Many2one('control.design', string="Diseño de control", required=True)
+    control_id = fields.Many2one('control.design', string="Control", required=True)
     document_page_id   = fields.Many2many('document.page', string='Policy / Process', required=True) #document
     description  = fields.Text(string='Compliance Description', required=True) #Cumplimiento
