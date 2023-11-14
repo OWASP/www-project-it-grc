@@ -197,10 +197,12 @@ class ControlDesing(models.Model):
     def set_residual_risk(self):
         for rec in self:
             for risk in rec.risk_factor_id:
+                risk_level_id = self.env['risk.level'].search([('name','=', risk.inherent_risk)])
                 residual_level = self.env['residual.risk.level'].search([
                     ('control_evaluation_criteria_id','=', rec.control_evaluation_criteria_id.id),
-                    ('inherent_risk_level_id','=',risk.inherent_risk)
+                    ('inherent_risk_level_id','=',risk_level_id.id)
                 ])
+                _logger.error("################"+str(risk_level_id))
                 if residual_level:
                     risk.residual_risk = residual_level.residual_risk_level_name
 
