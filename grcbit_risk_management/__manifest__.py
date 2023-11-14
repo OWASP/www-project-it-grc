@@ -29,6 +29,9 @@
         'views/risk_management_views.xml',
         'views/controls_views.xml',
         'views/menuitems.xml',
+
+        #reports
+        'reports/report_risk_factor.xml'
     ],
     
 }
