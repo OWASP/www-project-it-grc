@@ -128,23 +128,23 @@
         </form>
       </field>
     </record>
-
     <record model="ir.ui.view" id="compliance_control_objective_kanban">
 	    <field name="name">Compliance Objective</field>
       <field name="model">compliance.control.objective</field>
       <field name="arch" type="xml">
         <kanban class="o_res_partner_kanban">
           <field name="name"/>
+          <field name="compliance_version_id"/>
           <field name="description"/>
           <templates>
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
                 <div class="oe_kanban_details">
                   <strong class="o_kanban_record_title">
-                    <field name="name"/>
-                  </strong>
+                    <field name="compliance_version_id"/>
+                  </strong><br/>
                   <div>
-                    <t t-esc="record.description.value"/>
+                    <field name="name"/>
 		              </div>
                 </div>
               </div>

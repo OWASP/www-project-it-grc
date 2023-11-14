@@ -16,7 +16,13 @@
                 </div>
                 <div class="col-8" style="text-align:left;">
                   <h6>
-                    <strong>Statement Applicability Report<span><br/> ISO Control: <t t-esc="o.name.display_name"/></span></strong>
+                    <strong>Statement Applicability Report<span><br/> ISMS Control: <t t-esc="o.name.display_name"/> </span> </strong>
+                    <t t-if="o.is_applicable == True">
+                      <span>Applicable</span>
+                    </t>
+                    <t t-if="o.is_applicable == False">
+                      <span>Not Applicable</span>
+                    </t>
                     <br/>
                     <span>Reason for Selection: </span>
                     <t t-esc="o.reason_selection"/><br/>
@@ -64,8 +70,8 @@
                       <tr>
                         <td width="20%"><span t-esc="r.control_id"/></td>
                         <td width="20%"><span t-esc="r.name"/></td>
-                        <td width="20%"><span t-esc="r.estimated_date"/></td>
                         <td width="20%"><span t-esc="r.description"/></td>
+                        <td width="20%"><span t-esc="r.estimated_date"/></td>
                         <td width="20%"><span t-esc="r.state"/></td>
                       </tr>
                     </t>
