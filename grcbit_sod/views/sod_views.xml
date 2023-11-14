@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!--        SoD Role      -->
+    <record id="sod_role_action" model="ir.actions.act_window">
+	    <field name="name">SoD Role</field>
+	    <field name="res_model">sod.role</field>
+	    <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.ui.view" id="sod_role_treeview">
+      <field name="name">SoD Role</field>
+      <field name="model">sod.role</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="it_inventory_id"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="sod_role_formview">
+      <field name="name">SoD Role</field>
+      <field name="model">sod.role</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name" required="1"/>
+              <field name="description" required="1"/>
+              <field name="it_inventory_id" required="1"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!--        SoD Privilege      -->
+    <record id="sod_privilege_action" model="ir.actions.act_window">
+	    <field name="name">SoD Privilege</field>
+	    <field name="res_model">sod.privilege</field>
+	    <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.ui.view" id="sod_privilege_treeview">
+      <field name="name">SoD Privilege</field>
+      <field name="model">sod.privilege</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="sod_role_ids" widget="many2many_tags"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="sod_privilege_formview">
+      <field name="name">SoD Privilege</field>
+      <field name="model">sod.privilege</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+            <button name="action_approve" type="object" string="APPROVE" states="draft" groups="grcbit_sod.group_sod" class="btn btn-success"/>
+            <field name="state" widget="statusbar" readonly="1"/>
+          </header>
+          <sheet>
+            <group>
+              <field name="name" required="1" attrs="{'readonly': [('state','=','approve')]}"/>
+              <field name="description" required="1" attrs="{'readonly': [('state','=','approve')]}"/>
+            </group>
+            <notebook>
+              <page string="SoD Role">
+                <group>
+                  <field name="sod_role_ids" string=" " attrs="{'readonly': [('state','=','approve')]}">
+                    <tree>
+                      <field name="name"/>
+                      <field name="description"/>
+                      <field name="it_inventory_id"/>
+                    </tree>
+                    <form>
+                      <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="it_inventory_id"/>
+                      </group>
+                    </form>
+                  </field>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>
