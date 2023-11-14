@@ -137,7 +137,7 @@ class ResidualRiskLevel(models.Model):
     _name = 'residual.risk.level'
     _description = 'Residual Risk Level'
 
-    inherent_risk_level_id = fields.Many2one('inherent.risk.level', string=_('Inherent Risk'), required=True)
+    inherent_risk_level_id = fields.Many2one('risk.level', string=_('Inherent Risk'), required=True)
     control_evaluation_criteria_id = fields.Many2one('control.evaluation.criteria', string=_('Control Implementation Criteria'), required=True)
     residual_risk_level_id = fields.Many2one('risk.level', string=_('Residual Risk'), required=True)
     residual_risk_level_name = fields.Char(related='residual_risk_level_id.name', string=_('Residual Risk'), required=True)

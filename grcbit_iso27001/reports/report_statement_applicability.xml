@@ -16,8 +16,9 @@
                 </div>
                 <div class="col-8" style="text-align:left;">
                   <h6>
-                    <strong>Statement Applicability Report: <span><t t-esc="o.name.name"/></span></strong>
+                    <strong>Statement Applicability Report<span><br/> ISO Control: <t t-esc="o.name.display_name"/></span></strong>
                     <br/>
+                    <span>Reason for Selection: </span>
                     <t t-esc="o.reason_selection"/><br/>
                     Status: 
                     <t t-esc="o.control_status" t-option="{'widget': 'percentpie'}"/> %
