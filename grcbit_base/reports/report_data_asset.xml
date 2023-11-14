@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <template id="data_asset_print_template">
+      <t t-call="web.basic_layout">
+        <t t-foreach="docs" t-as="o" >
+          <t t-call="web.report_layout">
+            <div class="page">
+              <div class="row">
+                <div class="col-4">
+                  <span>
+                    <img t-att-src="image_data_uri(o.env.user.company_id.logo)" style="text-align:left; width:100px;" alt="Logo"/>
+                  </span>
+                </div>
+                <div class="col-8" style="text-align:left;">
+                  <h6>
+                    <strong>Data Asset Report<span><br/> Data Asset: <t t-esc="o.display_name"/></span></strong>
+                  </h6>
+                  <br/>
+                </div>
+              </div>
+              <div style="float:center">
+                <div class="row">
+                  <div style="border-bottom: 1px solid" class="col-4">Description</div>
+                  <div style="border-bottom: 1px solid;text-align:center;" class="col-8"><t t-esc="o.description"/></div>
+                </div>
+                <div class="row">
+                  <div style="border-bottom: 1px solid" class="col-4">Data Classification</div>
+                  <div style="border-bottom: 1px solid;text-align:center;" class="col-8"><span t-esc="o.data_classification_id.display_name"/></div>
+                </div>
+                <div class="row">
+                  <div style="border-bottom: 1px solid" class="col-4">Asset Owner</div>
+                  <div style="border-bottom: 1px solid;text-align:center;" class="col-8"><t t-esc="o.owner.display_name"/></div>
+                </div>
+                <div class="row">
+                  <div style="border-bottom: 1px solid" class="col-4">Retention Period</div>
+                  <div style="border-bottom: 1px solid;text-align:center;" class="col-8"><t t-esc="o.retention_period"/></div>
+                </div>
+                <div class="row">
+                  <div style="border-bottom: 1px solid" class="col-4">Security Requirement</div>
+                  <div style="border-bottom: 1px solid;text-align:center;" class="col-8"><span t-esc="o.security_requirement"/></div>
+                </div>
+              </div>
+              <br/>
+              <br/>
+              <t i-if="len(o.it_inventory_id) &#62; 0">
+                <table  class="table table-bordered" style="font-size:12px;">
+                  <thead>
+                    <tr><th colspan="8">IT System</th></tr>
+                    <tr>
+                      <th>Name</th>
+                      <th>Description</th>
+                      <th>IP</th>
+                      <th>IT Admin</th>
+                      <th>Cloud Hosted?</th>
+                      <th>Internet Exposed?</th>
+                      <th>OS Version</th>
+                      <th>DB Version</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <t t-foreach="o.it_inventory_id" t-as="r"> 
+                      <tr>
+                        <td width="12%"><span t-esc="r.name"/></td>
+                        <td width="12%"><span t-esc="r.description"/></td>
+                        <td width="12%"><span t-esc="r.ip"/></td>
+                        <td width="12%"><span t-esc="r.responsible.display_name"/></td>
+                        <td width="12%"><span t-esc="r.is_cloud"/></td>
+                        <td width="12%"><span t-esc="r.is_internet_exposed"/></td>
+                        <td width="12%"><span t-esc="r.os_version"/></td>
+                        <td width="12%"><span t-esc="r.db_version"/></td>
+                      </tr>
+                    </t>
+                  </tbody>
+                </table>
+              </t>
+              <t i-if="len(o.third_party_id) &#62; 0">
+                <table  class="table table-bordered" style="font-size:12px;">
+                  <thead>
+                    <tr><th colspan="6">Data Asset</th></tr>
+                    <tr>
+                      <th>Name</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <t t-foreach="o.third_party_id" t-as="r"> 
+                      <tr>
+                        <td width="16%"><span t-esc="r.name"/></td>
+                        <td width="16%"><span t-esc="r.description"/></td>
+                      </tr>
+                    </t>
+                  </tbody>
+                </table>
+              </t>
+            
+            </div>
+          </t>
+        </t>
+      </t>
+    </template>
+
+    <record id="paperformat_grcbit_data_asset" model="report.paperformat">
+      <field name="name">Custom Paper Data Asset</field>
+      <field name="default" eval="True" />
+      <field name="format">A4</field>
+      <field name="page_height">0</field>
+      <field name="page_width">0</field>
+      <field name="orientation">Portrait</field>
+      <field name="margin_top">20</field>
+      <field name="margin_bottom">5</field>
+      <field name="margin_left">7</field>
+      <field name="margin_right">7</field>
+      <field name="header_line" eval="False" />
+      <field name="header_spacing">10</field>
+      <field name="dpi">90</field>
+    </record>
+
+    <record id="print_data_asset" model="ir.actions.report">
+      <field name="name">Data Asset Report</field>
+      <field name="model">data.inventory</field>
+      <field name="report_type">qweb-html</field>
+      <field name="report_name">grcbit_base.data_asset_print_template</field>
+      <field name="report_file">grcbit_base.data_asset_print_template</field>
+      <field name="binding_type">report</field>
+      <field name="binding_model_id" ref="model_data_inventory" />
+      <field name="paperformat_id" ref="grcbit_base.paperformat_grcbit_data_asset" />
+    </record>
+
+  </data>
+</odoo>
