@@ -21,34 +21,33 @@
                 </div>
               </div>
               <br />
-              
-                <div style="width:75%">
-                  <div class="row">
-                    <div class="col-3" style="color:white; background-color:black;"><strong>Cause:</strong></div>
-                    <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.cause"/></div>
-                    <div class="col-3" style="color:white; background-color:black;"><strong>Consequence:</strong></div>
-                    <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.consequence"/></div>
-                  </div>
-                  <div class="row">
-                    <div class="col-3" style="color:white; background-color:black;"><strong>Risk Owner:</strong></div>
-                    <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.responsible.display_name"/></div>
-                    <div class="col-3" style="color:white; background-color:black;"><strong>Impact Level:</strong></div>
-                    <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.impact_level_id.display_name"/></div>
-                  </div>
-                  <div class="row">
-                    <div class="col-3" style="color:white; background-color:black;"><strong>Probability Level:</strong></div>
-                    <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.probability_level_id.display_name"/></div>
-                    <div class="col-3" style="color:white; background-color:black;"><strong>Quantification:</strong></div>
-                    <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.quantification"/></div>
-                  </div>
-                  <div class="row">
-                    <div class="col-3" style="color:white; background-color:black;"><strong>Inherent Risk:</strong></div>
-                    <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.inherent_risk"/></div>
-                    <div class="col-3" style="color:white; background-color:black;"><strong>Residual Risk:</strong></div>
-                    <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.residual_risk"/></div>
-                  </div>
+              <div name="main_table" style="width:75%">
+                <div class="row">
+                  <div class="col-3" style="color:white; background-color:black;"><strong>Cause:</strong></div>
+                  <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.cause"/></div>
+                  <div class="col-3" style="color:white; background-color:black;"><strong>Consequence:</strong></div>
+                  <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.consequence"/></div>
                 </div>
-                <br/>
+                <div class="row">
+                  <div class="col-3" style="color:white; background-color:black;"><strong>Risk Owner:</strong></div>
+                  <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.responsible.display_name"/></div>
+                  <div class="col-3" style="color:white; background-color:black;"><strong>Impact Level:</strong></div>
+                  <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.impact_level_id.display_name"/></div>
+                </div>
+                <div class="row">
+                  <div class="col-3" style="color:white; background-color:black;"><strong>Probability Level:</strong></div>
+                  <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.probability_level_id.display_name"/></div>
+                  <div class="col-3" style="color:white; background-color:black;"><strong>Quantification:</strong></div>
+                  <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.quantification"/></div>
+                </div>
+                <div class="row">
+                  <div class="col-3" style="color:white; background-color:black;"><strong>Inherent Risk:</strong></div>
+                  <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.inherent_risk"/></div>
+                  <div class="col-3" style="color:white; background-color:black;"><strong>Residual Risk:</strong></div>
+                  <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.residual_risk"/></div>
+                </div>
+              </div>
+              <br/>
                 <t i-if="len(o.risk_classification_id) &#62; 0">
                   <table  class="table table-bordered" style="font-size:12px;">
                     <thead>
