@@ -202,9 +202,8 @@ class ControlDesing(models.Model):
                     ('control_evaluation_criteria_id','=', rec.control_evaluation_criteria_id.id),
                     ('inherent_risk_level_id','=',risk_level_id.id)
                 ])
-                _logger.error("################"+str(risk_level_id))
                 if residual_level:
-                    risk.residual_risk = residual_level.residual_risk_level_name
+                    risk.residual_risk = residual_level[0].residual_risk_level_name
 
 
 
