@@ -5,7 +5,7 @@
     <record id="compliance_version_action" model="ir.actions.act_window">
       <field name="name">Compliance Version</field>
       <field name="res_model">compliance.version</field>
-      <field name="view_mode">tree,kanban,form</field>
+      <field name="view_mode">kanban,tree,form</field>
     </record>
 
     <record model="ir.ui.view" id="compliance_version_view">
@@ -144,7 +144,8 @@
                     <field name="compliance_version_id"/>
                   </strong><br/>
                   <div>
-                    <field name="name"/>
+                    <field name="name"/><br/>
+                    <field name="description"/>
 		              </div>
                 </div>
               </div>
