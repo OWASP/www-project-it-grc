@@ -11,7 +11,7 @@
             <group>
               <field name="is_admin" invisible="0"/>
               <field name="client_system"/>
-              <field name="state" readonly="1"/>
+              <field name="state" attrs="{'readonly': [('is_admin','=', False)]}"/>
               <field name="activate_date"/>
             </group>
             <group>
