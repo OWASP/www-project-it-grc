@@ -52,7 +52,6 @@ class ResPartnerGRC(models.Model):
 
     def _set_little_princess_field(self):
         partners = self.env['res.partner'].search([('xdr_indexer_port','>=',9000)], order="xdr_indexer_port DESC")
-        _logger.info("((((((((((((((((((%s))))))))))))))))))"%partners)
         if not partners:
             return 9000
         else:
