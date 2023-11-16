@@ -17,10 +17,10 @@ class ResPartnerGRC(models.Model):
         ('inactive','Inactive'),
     ], string="Status", default='new')
     activate_date = fields.Date(string="Activate date")
-    db_postgres_port = fields.Char(string="DB Postgres Port (5432)", default="5432") # de 1000 a 5500
+    db_postgres_port = fields.Char(string="DB Postgres Port (5432)", default= lambda x: x._set_default_port('db_postgres_port', 1000, 5000)) # de 1000 a 5000
     # db_ssh_port = fields.Char(string="DB SSH Port")
     postgres_pwd = fields.Char(string="Postgres Password")
-    grc_web_port = fields.Char(string="GRC Web Port (8069)", default="8069") #de 5000 a 9000
+    grc_web_port = fields.Char(string="GRC Web Port (8069)", default= lambda x: x._set_default_port('grc_web_port', 5000, 9000)) #de 5000 a 9000
     # grc_ssh_port = fields.Char(string="GRC SSH Port")
     grc_container_id = fields.Char(string="GRC Container ID")
     psql_container_id = fields.Char(string="PSQL Container ID")
@@ -28,14 +28,14 @@ class ResPartnerGRC(models.Model):
     xdr_server_container = fields.Char(string="XDR Server Container ID")
     xdr_dash_container = fields.Char(string="XDR Dashboard Container ID")
 
-    xdr_indexer_port = fields.Char(string="XDR Indexer Port (9200)", default="9200") #de 9000 a 13000
-    xdr_dashboard_port = fields.Char(string="XDR Dashboard Port (5601)", default="13000") # de 13000 a 17000
-    xdr_dashboard_port2 = fields.Char(string="XDR Dashboard Port (5602)", default="9000") # de 9000 a 11000
+    xdr_indexer_port = fields.Char(string="XDR Indexer Port (9200)", store=True, default= lambda x: x._set_default_port('xdr_indexer_port', 9000, 13000)) #de 9000 a 13000
+    xdr_dashboard_port = fields.Char(string="XDR Dashboard Port (5601)", default= lambda x: x._set_default_port('xdr_dashboard_port', 13000, 17000)) # de 13000 a 17000
+    xdr_dashboard_port2 = fields.Char(string="XDR Dashboard Port (5602)") # de 9000 a 11000
 
-    xdr_manager_port1 = fields.Char(string="XDR Manager Port (1514)") #de 17000 a 21000
-    xdr_manager_port2 = fields.Char(string="XDR Manager Port (1515)", default="21000") #de 21000 a 25000
-    xdr_manager_port3 = fields.Char(string="XDR Manager Port (514/udp)", default="25000") #de 25000 a 29000
-    xdr_manager_port4 = fields.Char(string="XDR Manager Port (55000)", default="29000") #de 29000 a 33000
+    xdr_manager_port1 = fields.Char(string="XDR Manager Port (1514)", default= lambda x: x._set_default_port('xdr_manager_port1', 17000, 21000)) #de 17000 a 21000
+    xdr_manager_port2 = fields.Char(string="XDR Manager Port (1515)", default= lambda x: x._set_default_port('xdr_manager_port2', 21000, 25000)) #de 21000 a 25000
+    xdr_manager_port3 = fields.Char(string="XDR Manager Port (514/udp)", default= lambda x: x._set_default_port('xdr_manager_port3', 25000, 29000)) #de 25000 a 29000
+    xdr_manager_port4 = fields.Char(string="XDR Manager Port (55000)", default= lambda x: x._set_default_port('xdr_manager_port4', 29000, 33000)) #de 29000 a 33000
 
     is_admin = fields.Boolean(string="is admin", compute="_get_group", store=False)
     _sql_constraints = [
@@ -50,14 +50,30 @@ class ResPartnerGRC(models.Model):
         ('unique_xdr_manager_port4', 'unique(xdr_manager_port4)', 'XDR Manager Port (55000) already exist.!'),
     ]
 
+    def _set_default_port(self, field, min_value, max_value):
+        val = 0
+        partners = self.env['res.partner'].sudo().search([(field, '>=', min_value), (field,'<=',max_value)], order="%s DESC" % field)
+        if not partners:
+            return min_value
+        else:      
+            if field == 'db_postgres_port':
+                val = int(partners[0].db_postgres_port) + 1
+            if field == 'grc_web_port':
+                val = int(partners[0].grc_web_port) + 1
+            if field == 'xdr_indexer_port':
+                val = int(partners[0].xdr_indexer_port) + 1
+            if field == 'xdr_dashboard_port':
+                val = int(partners[0].xdr_dashboard_port) + 1
+            if field == 'xdr_manager_port1':
+                val = int(partners[0].xdr_manager_port1) + 1
+            if field == 'xdr_manager_port2':
+                val = int(partners[0].xdr_manager_port2) + 1
+            if field == 'xdr_manager_port3':
+                val = int(partners[0].xdr_manager_port3) + 1
+            if field == 'xdr_manager_port4':
+                val = int(partners[0].xdr_manager_port4) + 1
+            return val
 
-
-
-    # @api.model
-    # def create(self,vals):
-    #     res = super(ResPartnerGRC,self).create(vals)
-    #     self.is_new = False
-    #     return res
     @api.onchange('db_postgres_port')
     def _onchange_is_admin_new(self):
         for rec in self:
@@ -82,7 +98,7 @@ class ResPartnerGRC(models.Model):
             
     def write(self,vals):
         res = super(ResPartnerGRC, self).write(vals)
-        self.just_range(self.db_postgres_port, 1000, 5500)
+        self.just_range(self.db_postgres_port, 1000, 5000)
         self.just_range(self.grc_web_port, 5000, 9000)
         self.just_range(self.xdr_indexer_port, 9000, 13000)
         self.just_range(self.xdr_dashboard_port, 13000, 17000)
