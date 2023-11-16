@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import os
 import logging
 import requests
 from requests.auth import HTTPBasicAuth
@@ -6,10 +7,10 @@ from odoo import api, fields, models, _
 
 _logger = logging.getLogger(__name__)
 
-host_ip = '192.168.112.3' #ENV_HOST_IP
-port = ':55000'
+host_ip = os.environ['XDR_API_HOST'] #ENV_HOST_IP
+port = os.environ['XDR_API_PORT'] #':55000'
 user = 'wazuh-wui'
-password = 'T3sTW@zu$'
+password = os.environ['XDR_API_PASS'] #'T3sTW@zu$'
 http_protocol = 'https://'
 
 class ListAgents(models.Model):
