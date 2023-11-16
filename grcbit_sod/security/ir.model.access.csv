@@ -1,3 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_sod_role_group_sod,access.sod.role.group.sod,model_sod_role,group_sod,1,1,1,1
 access_sod_privelege_group_sod,access.sod.privelege.group.sod,model_sod_privilege,group_sod,1,1,1,1
+
+access_sod_role_group_admin,access.sod.role.group.admin,model_sod_role,grcbit_base.group_admin,1,1,1,1
+access_sod_privelege_group_admin,access.sod.privelege.group.admin,model_sod_privilege,grcbit_base.group_admin,1,1,1,1
