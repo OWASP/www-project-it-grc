@@ -129,7 +129,7 @@ class ResPartnerGRC(models.Model):
     def has_duplicates(self, seq):
         return len(seq) != len(set(seq))
 
-    @api.constrains('db_postgres_port','grc_web_port','xdr_indexer_port','xdr_dashboard_port','xdr_manager_port1','xdr_manager_port2','xdr_manager_port3','xdr_manager_port4')
+    @api.constrains('db_postgres_port','grc_web_port','xdr_indexer_port','xdr_dashboard_port','xdr_dashboard_port2','xdr_manager_port1','xdr_manager_port2','xdr_manager_port3','xdr_manager_port4')
     def no_repeat_ports(self):
         ports = []
         for rec in self:
