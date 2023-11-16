@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+    Copyright (c) 2017-today MuK IT GmbH.
+
+    This file is part of MuK Backend Theme
+    (see https://mukit.at).
+
+    License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
+    
+-->
+
+<templates xml:space="preserve">
+
+	<t t-name="muk_web_theme.AppsBar" owl="1">
+		<div class="mk_apps_sidebar_panel">
+			<div class="mk_apps_sidebar">
+				<ul class="mk_apps_sidebar_menu">
+				    <t t-foreach="props.apps" t-as="app" t-key="app.id">
+			            <li t-attf-class="nav-item {{ app.active ? 'active' : '' }}">
+			            	<a 
+			            		t-att-href="app.href"
+		            			t-att-data-menu-id="app.id" 
+		            			t-att-data-menu-xmlid="app.xmlid" 
+		            			t-att-data-action-id="app.actionID"
+								t-on-click.prevent="() => app.action()"
+		            			class="nav-link" 
+		            			role="menuitem"
+		            		>
+			                	<img 
+			                		t-if="app.webIconData" 
+			                		class="mk_apps_sidebar_icon" 
+			                		t-att-src="app.webIconData"
+			                	/>
+			                	<img  
+			                		t-else="" 
+			                		class="mk_apps_sidebar_icon" 
+			                		src="/muk_web_theme/static/img/default_icon.png"
+			                	/>
+						        <span class="mk_apps_sidebar_name">
+						            <t t-out="app.name"/>
+						        </span>
+			            	 </a>
+			            </li>
+			    	</t>
+				</ul>
+			</div>
+		</div>
+	</t>
+	
+</templates>

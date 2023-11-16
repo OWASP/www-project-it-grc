@@ -18,9 +18,9 @@
         'security/ir.model.access.csv',
 
         #data
-        'data/compliance.version.csv',
-        'data/compliance.control.objective.csv',
-        'data/compliance.control.csv',
+        # 'data/compliance.version.csv',
+        # 'data/compliance.control.objective.csv',
+        # 'data/compliance.control.csv',
 
         #reports
         'reports/report_compliance.xml',
