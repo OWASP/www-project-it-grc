@@ -10,17 +10,17 @@ _logger = logging.getLogger(__name__)
 class ResPartnerGRC(models.Model):
     _inherit = 'res.partner'
 
-    client_system = fields.Char(string="Client system name")
+    client_system = fields.Char(string="Client system name", compute="_compute_default_client_system")
     state = fields.Selection([
         ('new','New'),
         ('active','Active'),
         ('inactive','Inactive'),
     ], string="Status", default='new')
     activate_date = fields.Date(string="Activate date")
-    db_postgres_port = fields.Char(string="DB Postgres Port (5432)", default= lambda x: x._set_default_port('db_postgres_port', 1000, 5000)) # de 1000 a 5000
+    db_postgres_port = fields.Char(string="DB Postgres Port (5432)", default= lambda x: x._set_default_port('db_postgres_port', int(1000), int(5000))) # de 1000 a 5000
     # db_ssh_port = fields.Char(string="DB SSH Port")
     postgres_pwd = fields.Char(string="Postgres Password")
-    grc_web_port = fields.Char(string="GRC Web Port (8069)", default= lambda x: x._set_default_port('grc_web_port', 5000, 9000)) #de 5000 a 9000
+    grc_web_port = fields.Char(string="GRC Web Port (8069)", default= lambda x: x._set_default_port('grc_web_port', int(5000), int(9000))) #de 5000 a 9000
     # grc_ssh_port = fields.Char(string="GRC SSH Port")
     grc_container_id = fields.Char(string="GRC Container ID")
     psql_container_id = fields.Char(string="PSQL Container ID")
@@ -28,14 +28,14 @@ class ResPartnerGRC(models.Model):
     xdr_server_container = fields.Char(string="XDR Server Container ID")
     xdr_dash_container = fields.Char(string="XDR Dashboard Container ID")
 
-    xdr_indexer_port = fields.Char(string="XDR Indexer Port (9200)", store=True, default= lambda x: x._set_default_port('xdr_indexer_port', 9000, 13000)) #de 9000 a 13000
-    xdr_dashboard_port = fields.Char(string="XDR Dashboard Port (5601)", default= lambda x: x._set_default_port('xdr_dashboard_port', 13000, 17000)) # de 13000 a 17000
+    xdr_indexer_port = fields.Char(string="XDR Indexer Port (9200)",default=lambda c: c._set_little_princess_field())# default= lambda x: x._set_default_port('xdr_indexer_port', int(9000), int(13000))) #de 9000 a 13000
+    xdr_dashboard_port = fields.Char(string="XDR Dashboard Port (5601)", default= lambda x: x._set_default_port('xdr_dashboard_port', int(13000), int(17000))) # de 13000 a 17000
     xdr_dashboard_port2 = fields.Char(string="XDR Dashboard Port (5602)") # de 9000 a 11000
 
-    xdr_manager_port1 = fields.Char(string="XDR Manager Port (1514)", default= lambda x: x._set_default_port('xdr_manager_port1', 17000, 21000)) #de 17000 a 21000
-    xdr_manager_port2 = fields.Char(string="XDR Manager Port (1515)", default= lambda x: x._set_default_port('xdr_manager_port2', 21000, 25000)) #de 21000 a 25000
-    xdr_manager_port3 = fields.Char(string="XDR Manager Port (514/udp)", default= lambda x: x._set_default_port('xdr_manager_port3', 25000, 29000)) #de 25000 a 29000
-    xdr_manager_port4 = fields.Char(string="XDR Manager Port (55000)", default= lambda x: x._set_default_port('xdr_manager_port4', 29000, 33000)) #de 29000 a 33000
+    xdr_manager_port1 = fields.Char(string="XDR Manager Port (1514)", default= lambda x: x._set_default_port('xdr_manager_port1', int(17000), int(21000))) #de 17000 a 21000
+    xdr_manager_port2 = fields.Char(string="XDR Manager Port (1515)", default= lambda x: x._set_default_port('xdr_manager_port2', int(21000), int(25000))) #de 21000 a 25000
+    xdr_manager_port3 = fields.Char(string="XDR Manager Port (514/udp)", default= lambda x: x._set_default_port('xdr_manager_port3', int(25000), int(29000))) #de 25000 a 29000
+    xdr_manager_port4 = fields.Char(string="XDR Manager Port (55000)", default= lambda x: x._set_default_port('xdr_manager_port4', int(29000), int(33000))) #de 29000 a 33000
 
     is_admin = fields.Boolean(string="is admin", compute="_get_group", store=False)
     _sql_constraints = [
@@ -50,9 +50,17 @@ class ResPartnerGRC(models.Model):
         ('unique_xdr_manager_port4', 'unique(xdr_manager_port4)', 'XDR Manager Port (55000) already exist.!'),
     ]
 
+    def _set_little_princess_field(self):
+        partners = self.env['res.partner'].search([('xdr_indexer_port','>=',9000)], order="xdr_indexer_port DESC")
+        if not partners:
+            return 9000
+        else:
+            val = int(partners[0].xdr_indexer_port) + 1
+            return val
+
     def _set_default_port(self, field, min_value, max_value):
         val = 0
-        partners = self.env['res.partner'].sudo().search([(field, '>=', min_value), (field,'<=',max_value)], order="%s DESC" % field)
+        partners = self.env['res.partner'].sudo().search([(field,'>=', min_value),(field, '<=', max_value)], order="%s DESC" % field)
         if not partners:
             return min_value
         else:      
@@ -95,9 +103,18 @@ class ResPartnerGRC(models.Model):
                         raise ValidationError("Valor '%s' invalido, debe estar en un rango de %s a %s" % (field, min_value, max_value))
                 else:
                     raise ValidationError("Los puertos deben ser solo digitos. Valor '%s' incorrecto" % field)
-            
+
+    @api.depends('name')
+    def _compute_default_client_system(self):
+        for rec in self:
+            if rec.name:
+                rec.client_system = rec.name.replace(' ','_').lower()
+            else:
+                rec.client_system = ''
+        
     def write(self,vals):
         res = super(ResPartnerGRC, self).write(vals)
+        
         self.just_range(self.db_postgres_port, 1000, 5000)
         self.just_range(self.grc_web_port, 5000, 9000)
         self.just_range(self.xdr_indexer_port, 9000, 13000)
