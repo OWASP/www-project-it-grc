@@ -82,12 +82,12 @@
 
     <!--   COMPLIANCE CONTROL OBJECTIVE   -->
     <record id="compliance_control_objective_action" model="ir.actions.act_window">
-      <field name="name">Compliance Objective</field>
+      <field name="name">Compliance Requirement</field>
       <field name="res_model">compliance.control.objective</field>
       <field name="view_mode">kanban,tree,form</field>
     </record>
     <record model="ir.ui.view" id="compliance_control_objective_view">
-	    <field name="name">Compliance Objective</field>
+	    <field name="name">Compliance Requirement</field>
 	    <field name="model">compliance.control.objective</field>
       <field name="arch" type="xml">
         <tree multi_edit="1">
@@ -98,7 +98,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="compliance_control_objective_form">
-      <field name="name">Compliance Objective</field>
+      <field name="name">Compliance Requirement</field>
       <field name="model">compliance.control.objective</field>
       <field name="arch" type="xml">
         <form>
@@ -129,7 +129,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="compliance_control_objective_kanban">
-	    <field name="name">Compliance Objective</field>
+	    <field name="name">Compliance Requirement</field>
       <field name="model">compliance.control.objective</field>
       <field name="arch" type="xml">
         <kanban class="o_res_partner_kanban">

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import logging
 import re
+import string
+import secrets
 
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError, ValidationError, AccessError
@@ -19,7 +21,7 @@ class ResPartnerGRC(models.Model):
     activate_date = fields.Date(string="Activate date")
     db_postgres_port = fields.Char(string="DB Postgres Port (5432)", default= lambda x: x._set_default_port('db_postgres_port', int(1000), int(5000))) # de 1000 a 5000
     # db_ssh_port = fields.Char(string="DB SSH Port")
-    postgres_pwd = fields.Char(string="Postgres Password")
+    postgres_pwd = fields.Char(string="Postgres Password", default=lambda x:x._default_password())
     grc_web_port = fields.Char(string="GRC Web Port (8069)", default= lambda x: x._set_default_port('grc_web_port', int(5000), int(9000))) #de 5000 a 9000
     # grc_ssh_port = fields.Char(string="GRC SSH Port")
     grc_container_id = fields.Char(string="GRC Container ID")
@@ -30,7 +32,7 @@ class ResPartnerGRC(models.Model):
 
     xdr_indexer_port = fields.Char(string="XDR Indexer Port (9200)",default=lambda c: c._set_little_princess_field())# default= lambda x: x._set_default_port('xdr_indexer_port', int(9000), int(13000))) #de 9000 a 13000
     xdr_dashboard_port = fields.Char(string="XDR Dashboard Port (5601)", default= lambda x: x._set_default_port('xdr_dashboard_port', int(13000), int(17000))) # de 13000 a 17000
-    xdr_dashboard_port2 = fields.Char(string="XDR Dashboard Port (5602)") # de 9000 a 11000
+    xdr_dashboard_port2 = fields.Char(string="XDR Dashboard Port (5602)", default= lambda x: x._set_default_port('xdr_dashboard_port2', int(33000), int(37000))) # de 33000 a 37000
 
     xdr_manager_port1 = fields.Char(string="XDR Manager Port (1514)", default= lambda x: x._set_default_port('xdr_manager_port1', int(17000), int(21000))) #de 17000 a 21000
     xdr_manager_port2 = fields.Char(string="XDR Manager Port (1515)", default= lambda x: x._set_default_port('xdr_manager_port2', int(21000), int(25000))) #de 21000 a 25000
@@ -72,6 +74,8 @@ class ResPartnerGRC(models.Model):
                 val = int(partners[0].xdr_indexer_port) + 1
             if field == 'xdr_dashboard_port':
                 val = int(partners[0].xdr_dashboard_port) + 1
+            if field == 'xdr_dashboard_port2':
+                val = int(partners[0].xdr_dashboard_port2) + 1
             if field == 'xdr_manager_port1':
                 val = int(partners[0].xdr_manager_port1) + 1
             if field == 'xdr_manager_port2':
@@ -119,7 +123,7 @@ class ResPartnerGRC(models.Model):
         self.just_range(self.grc_web_port, 5000, 9000)
         self.just_range(self.xdr_indexer_port, 9000, 13000)
         self.just_range(self.xdr_dashboard_port, 13000, 17000)
-        self.just_range(self.xdr_dashboard_port2, 9000, 11000)
+        self.just_range(self.xdr_dashboard_port2, 33000, 37000)
         self.just_range(self.xdr_manager_port1, 17000, 21000)
         self.just_range(self.xdr_manager_port2, 21000, 25000)
         self.just_range(self.xdr_manager_port3, 25000, 29000)
@@ -155,6 +159,11 @@ class ResPartnerGRC(models.Model):
         value = self.has_duplicates(ports)
         if value == True:
             raise ValidationError("No se puede repetir puertos, verifique su configuracion")
+        
+    def _default_password(self):
+        alphabet = string.ascii_letters + string.digits
+        password = ''.join(secrets.choice(alphabet) for i in range(8))
+        return password
 
 class XDRManagerPort(models.Model):
     _name = 'xdr.manager.port'
