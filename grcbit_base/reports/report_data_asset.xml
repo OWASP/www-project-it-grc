@@ -19,19 +19,19 @@
                   <br/>
                 </div>
               </div>
-              <div class="row">
+              <div class="row" style="font-size:12px;">
                   <div class="col-3" style="color:white; background-color:black;"><strong>Data Asset Name:</strong></div>
                   <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.display_name"/></div>
                   <div class="col-3" style="color:white; background-color:black;"><strong>Description:</strong></div>
                   <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.description"/></div>
                 </div>
-                <div class="row">
+                <div class="row" style="font-size:12px;">
                   <div class="col-3" style="color:white; background-color:black;"><strong>Data Classification:</strong></div>
                   <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.data_classification_id.display_name"/></div>
                   <div class="col-3" style="color:white; background-color:black;"><strong>Asset Owner:</strong></div>
                   <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.owner.display_name"/></div>
                 </div>
-                <div class="row">
+                <div class="row" style="font-size:12px;">
                   <div class="col-3" style="color:white; background-color:black;"><strong>Retention Period:</strong></div>
                   <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.retention_period"/></div>
                   <div class="col-3" style="color:white; background-color:black;"><strong>Security Requirement:</strong></div>
