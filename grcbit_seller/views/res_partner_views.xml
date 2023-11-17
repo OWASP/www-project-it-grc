@@ -17,7 +17,7 @@
             <group>
               <group string="Database">
                 <field name="db_postgres_port" attrs="{'readonly': [('is_admin','=', False)]}"/>
-                <field name="postgres_pwd" password="1"/>
+                <field name="postgres_pwd"/>
               </group>
               <group string="GRC">
                 <field name="grc_web_port" attrs="{'readonly': [('is_admin','=', False)]}"/>
@@ -43,8 +43,8 @@
                 <field name="xdr_dash_container" readonly="1"/>
               </group>
               <group>
-                <field name="psql_container_id" attrs="{'readonly': [('is_admin','=', False)]}"/>
-                <field name="grc_container_id" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="psql_container_id" readonly="1"/>
+                <field name="grc_container_id" readonly="1"/>
               </group>
             </group>
           </page>
