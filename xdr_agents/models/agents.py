@@ -3,14 +3,19 @@ import os
 import logging
 import requests
 from requests.auth import HTTPBasicAuth
-from odoo import api, fields, models, _
+from odoo import api, fields, models, _, exceptions
 
 _logger = logging.getLogger(__name__)
+try:
+    host_ip = os.environ['XDR_API_HOST']
+    port = os.environ['XDR_API_PORT']
+    password = os.environ['XDR_API_PASS']
+except exceptions.ValidationError:
+    host_ip = '192.168.112.3' #
+    port = ':55000' #
+    password = 'T3sTW@zu$'
 
-host_ip = '192.168.112.3' #os.environ['XDR_API_HOST']
-port = ':55000' #os.environ['XDR_API_PORT']
 user = 'wazuh-wui'
-password = 'T3sTW@zu$' #os.environ['XDR_API_PASS']
 http_protocol = 'https://'
 
 class ListAgents(models.Model):
