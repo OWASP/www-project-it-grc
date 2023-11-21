@@ -11,6 +11,7 @@ class ComplianceVersion(models.Model):
     _description = 'Compliance Version'
 
     name = fields.Char(string='Compliance Version', required=True)
+    active = fields.Boolean(default=True)
     description  = fields.Text(string='Description', required=True)
     compliance_control_objective_ids = fields.One2many('compliance.control.objective', 'compliance_version_id', string=' ', required=True  )
     _sql_constraints = [('name_uniq', 'unique(name)', "The compliance version name already exists.")]
@@ -63,6 +64,7 @@ class ComplianceControlObjective(models.Model):
     _rec_name = 'display_name'
 
     name = fields.Char(string='Compliance Objective', required=True)
+    active = fields.Boolean(default=True)
     display_name = fields.Char(string='Compliance Objective', compute='_compute_display_name')
     compliance_version_id = fields.Many2one('compliance.version', string='Compliance Version', required=True)
     description  = fields.Text(string='Description')
@@ -80,6 +82,7 @@ class ComplianceControl(models.Model):
     _rec_name = 'display_name'
 
     name = fields.Char(string='Compliance Requirement', required=True)
+    active = fields.Boolean(default=True)
     display_name = fields.Char(string='Compliance Requirement', compute='_compute_display_name')
     compliance_control_objective_id = fields.Many2one('compliance.control.objective', string='Compliance Objective', required=True)
     description  = fields.Text(string='Description')
@@ -96,6 +99,7 @@ class ComplianceIsoControl(models.Model):
 
     compliance_control_id = fields.Many2one('compliance.control', string='Compliance Requirement', required=True) #requerimiento NIST - AC-1 POLICY AND PROCEDURES
     iso_control_id     = fields.Many2many('iso.control', string='ISMS Control', required=True) #ISO
+    active = fields.Boolean(default=True)
     control_id = fields.Many2one('control.design', string="Control", required=True)
     document_page_id   = fields.Many2many('document.page', string='Policy / Process', required=True) #document
     description  = fields.Text(string='Compliance Description', required=True) #Cumplimiento
