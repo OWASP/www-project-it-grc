@@ -23,7 +23,6 @@
         'views/res_users_view.xml',
         'views/dashboard_view.xml',
         'views/menuitems.xml',
-        'views/config_views.xml',
         'reports/report_data_asset.xml',
     ],
     'assets':{
