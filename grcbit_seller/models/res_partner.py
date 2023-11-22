@@ -161,8 +161,8 @@ class ResPartnerGRC(models.Model):
             raise ValidationError("No se puede repetir puertos, verifique su configuracion")
         
     def _default_password(self):
-        alphabet = string.ascii_letters + string.digits
-        password = ''.join(secrets.choice(alphabet) for i in range(8))
+        alphabet = string.ascii_letters + string.digits + string.punctuation
+        password = ''.join(secrets.choice(alphabet) for i in range(12))
         return password
 
 class XDRManagerPort(models.Model):
