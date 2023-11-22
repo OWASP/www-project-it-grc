@@ -9,14 +9,14 @@ from datetime import date
 
 _logger = logging.getLogger(__name__)
     
-# try:
-#     host_ip = os.environ.get('XDR_API_HOST')
-#     port = os.environ.get('XDR_API_PORT')
-#     password = os.environ.get('XDR_API_PASS')
-# except exceptions.ValidationError:
-host_ip = '54.205.168.151'
-port = ':55000'
-password = 'T3sTW@zu$'
+try:
+    host_ip = os.environ.get('XDR_API_HOST')
+    port = os.environ.get('XDR_API_PORT')
+    password = os.environ.get('XDR_API_PASS')
+except exceptions.ValidationError:
+    host_ip = '54.205.168.151'
+    port = ':55000'
+    password = 'T3sTW@zu$'
 
 user = 'wazuh-wui'
 http_protocol = 'https://'
