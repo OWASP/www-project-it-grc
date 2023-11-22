@@ -10,7 +10,7 @@
           <page string="GRC Seller" name="grc_seller">
             <group>
               <field name="is_admin" invisible="0"/>
-              <field name="client_system"/>
+              <field name="client_system" force_save="1" attrs="{'readonly': [('is_admin','=', False)]}"/>
               <field name="state" attrs="{'readonly': [('is_admin','=', False)]}"/>
               <field name="activate_date"/>
             </group>

@@ -12,7 +12,7 @@ _logger = logging.getLogger(__name__)
 class ResPartnerGRC(models.Model):
     _inherit = 'res.partner'
 
-    client_system = fields.Char(string="Client system name", compute="_compute_default_client_system")
+    client_system = fields.Char(string="Client system name")
     state = fields.Selection([
         ('new','New'),
         ('active','Active'),
@@ -108,8 +108,8 @@ class ResPartnerGRC(models.Model):
                 else:
                     raise ValidationError("Los puertos deben ser solo digitos. Valor '%s' incorrecto" % field)
 
-    @api.depends('name')
-    def _compute_default_client_system(self):
+    @api.onchange('name')
+    def _onchange_default_client_system(self):
         for rec in self:
             if rec.name:
                 rec.client_system = rec.name.replace(' ','_').lower()
@@ -161,8 +161,8 @@ class ResPartnerGRC(models.Model):
             raise ValidationError("No se puede repetir puertos, verifique su configuracion")
         
     def _default_password(self):
-        alphabet = string.ascii_letters + string.digits
-        password = ''.join(secrets.choice(alphabet) for i in range(8))
+        alphabet = string.ascii_letters + string.digits + string.punctuation
+        password = ''.join(secrets.choice(alphabet) for i in range(12))
         return password
 
 class XDRManagerPort(models.Model):

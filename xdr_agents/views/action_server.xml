@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record model="ir.actions.server" id="action_get_list_agents">
+      <field name="name">XDR List Agents</field>
+      <field name="model_id" ref="model_xdr_list_agents"/>
+      <field name="state">code</field>
+      <field name="binding_model_id" ref="model_xdr_list_agents"></field>
+      <field name="code">
+record.list_agents_action_server()
+      </field>
+    </record>
+
+    <record model="ir.actions.server" id="action_get_active_configuration">
+      <field name="name">XDR Active Configuration</field>
+      <field name="model_id" ref="model_xdr_active_configuration"/>
+      <field name="state">code</field>
+      <field name="binding_model_id" ref="model_xdr_active_configuration"></field>
+      <field name="code">
+record.get_active_configuration_action_server()
+      </field>
+    </record>
+
+    <record model="ir.actions.server" id="action_get_stats">
+      <field name="name">XDR Get Stats</field>
+      <field name="model_id" ref="model_xdr_stats"/>
+      <field name="state">code</field>
+      <field name="binding_model_id" ref="model_xdr_stats"></field>
+      <field name="code">
+record.get_stats_action_server()
+      </field>
+    </record>
+
+    <record model="ir.actions.server" id="action_get_ciscat">
+      <field name="name">XDR Get CISCAT</field>
+      <field name="model_id" ref="model_xdr_ciscat"/>
+      <field name="state">code</field>
+      <field name="binding_model_id" ref="model_xdr_ciscat"></field>
+      <field name="code">
+record.ciscat_results_action_server()
+      </field>
+    </record>
+  
+  </data>
+</odoo>

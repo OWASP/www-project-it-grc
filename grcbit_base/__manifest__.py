@@ -11,7 +11,6 @@
         'web',
         'base',
         'board',
-        'odoo_dynamic_dashboard',
         'document_page'
     ],
 
@@ -32,6 +31,9 @@
         # ],
         'web.assets_backend':[
             'grcbit_base/static/src/js/user_menu_items.js',
+            'grcbit_base/static/src/js/dashboard.js',
+            'grcbit_base/static/src/xml/dashboard.xml',
+            'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js',
             
         ]
     }

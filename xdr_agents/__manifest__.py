@@ -18,6 +18,7 @@
         'views/agents_views.xml',
         'views/mitre_views.xml',
         'views/menuitems.xml',
+        'views/action_server.xml',
     ],
     # 'assets':{
     #     'web.assets_backend':[
