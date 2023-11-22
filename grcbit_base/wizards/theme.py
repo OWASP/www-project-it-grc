@@ -18,11 +18,5 @@ class ThemeInh(models.TransientModel):
                     'icon.png')
                 menu.write({'web_icon_data': base64.b64encode(
                     open(img_path, "rb").read())})
-            if menu.name == 'Dashboard':
-                img_path = get_module_resource(
-                    'grcbit_base', 'static', 'src', 'img',
-                    'dashicon.png')
-                menu.write({'web_icon_data': base64.b64encode(
-                    open(img_path, "rb").read())})
         return res
 

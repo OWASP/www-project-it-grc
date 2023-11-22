@@ -7,151 +7,18 @@
   </t>
 
   <t t-name="DashboardProject">
-    <section class="dashboard_main" id="main_section">
-      <div class="col-sm-12 mb-4">
-        <div class="row">
-          <div class="col-12 col-sm-12 col-md-8">
-            <h2 class="section-header">Dashboard</h2>
-          </div>
-          <!--      Tiles    -->
-          <board>
-          <div class="col-sm-12 mb-3">
-            <div class="row">
-              <div class="col-md-3 col-sm-5 all_products oh-data">
-                <div class="oh-card" style="width: 288px;">
-                  <div class="oh-card-body">
-                    <div class="stat-widget-one">
-                      <div class="stat-icon" style="background:#ff4d94">
-                        <i class="fa fa-star"/>
-                      </div>
-                      <div class="stat-content">
-                        <div class="stat-head">IT System</div>
-                          <div class="stat_count">
-                            <span id="templates">
-                              <div id="it_system"/>
-                              <action string="IT System" name="%(it_inventory_dash)d"/>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-5 product_variants oh-data">
-                  <div class="oh-card" style="width: 288px;">
-                    <div class="oh-card-body">
-                      <div class="stat-widget-one">
-                        <div class="stat-icon" style="background:#99e6ff">
-                          <i class="fa fa-star"/>
-                        </div>
-                        <div class="stat-content">
-                          <div class="stat-head">Third Party</div>
-                            <div class="stat_count">
-                              <span id="count">
-                                <div id="third_party"/>
-                                <widget name="pie_chart" title="Property Types" attrs="{'groupby': 'third_party'}"/>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                       <!--<div class="col-md-3 col-sm-5 storable_products oh-data">
-                           <div class="oh-card" style="width: 288px;">
-                               <div class="oh-card-body">
-                                   <div class="stat-widget-one">
-                                       <div class="stat-icon" style="background:#aaff80">
-                                           <i class="fa fa-star"/>
-                                       </div>
-                                       <div class="stat-content">
-                                           <div class="stat-head">Storable Products</div>
-                                           <div class="stat_count">
-                                               <span id="storable">
-                                                   <div id="products_storable"/>
-                                               </span>
-                                           </div>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                       <div class="col-md-3 col-sm-5 consu_products oh-data">
-                           <div class="oh-card" style="width: 288px;">
-                               <div class="oh-card-body">
-                                   <div class="stat-widget-one">
-                                       <div class="stat-icon" style="background:#bf80ff">
-                                           <i class="fa fa-star"/>
-                                       </div>
-                                       <div class="stat-content">
-                                           <div class="stat-head">Consumable Products</div>
-                                           <div class="stat_count">
-                                               <span id="consumable">
-                                                   <div id="product_consumable"/>
-                                               </span>
-                                           </div>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                       </div> -->
+    <div style="padding-bottom:30px" t-att-class="widget.cols +' col-4 block'" t-att-data-id="widget.id">
+      <div class="card">
+        <div class="card-body mt-3" id="in_ex_body_hide">
+          <div class="row">
+            <div class="col-md-12 chart_canvas">
+              <div id="chart_canvas">
+                <canvas class="new_custom_chart" width="300" height="200"> </canvas>
               </div>
             </div>
           </div>
-          </board>
         </div>
       </div>
-    </section>
-	  <!--<div>
-		  GRC
-	  </div>
-       <div class="row main-section" style="margin-left: 170px;">
-           <div class="col-md-4 col-sm-6 tot_projects oh-payslip" >
-               <div class="oh-card" style="width: 410px;">
-                   <div class="oh-card-body">
-                       <div class="stat-widget-one">
-                           <div class="stat-icon" style="background:#e08048;"><i class="fa fa-puzzle-piece"/></div>
-                           <div class="stat-content">
-                               <div class="stat-head">IT System</div>
-			       
-                               <div class="stat_count"><t t-esc="widget.it_system"/></div>
-			      
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-            <div class="col-md-4 col-sm-6 tot_emp oh-payslip">
-               <div class="oh-card" style="width: 410px;">
-                   <div class="oh-card-body">
-                       <div class="stat-widget-one">
-                           <div class="stat-icon" style="background:#645bd0"><i class="fa fa-user"/></div>
-                           <div class="stat-content">
-                               <div class="stat-head">Total Employees</div>
-			       
-                               <div class="stat_count"><t t-esc="widget.total_employees"/></div>
-			    
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-           <div class="col-md-4 col-sm-6 tot_tasks oh-payslip">
-               <div class="oh-card" style="width: 410px;">
-                   <div class="oh-card-body">
-                       <div class="stat-widget-one">
-                           <div class="stat-icon" style="background:#85d05b"><i class="fa fa-tasks"/></div>
-                               <div class="stat-content">
-                                   <div class="stat-head">Total tasks</div>
-				   
-                                   <div class="stat_count"><t t-esc="widget.total_tasks"/></div>
-				   
-                               </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </div>-->
-   </t>
+    </div>
+  </t>
 </templates>

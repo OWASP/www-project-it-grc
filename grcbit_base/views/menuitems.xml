@@ -31,10 +31,6 @@
       <field name="groups_id" eval="[(6,0,[ref('base.group_system'), ref('base.group_erp_manager')])]"/>
     </record>	
 
-    <record model="ir.ui.menu" id="odoo_dynamic_dashboard.menu_dashboard">
-      <field name="groups_id" eval="[(6,0,[ref('grcbit_base.group_admin_dashboard')])]"/>
-    </record>	
-
     <!-- <record id="action_dashboard_grc" model="ir.actions.client">
       <field name="name">GRC</field>
       <field name="tag">custom_dashboard_tags</field>
