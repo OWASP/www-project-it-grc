@@ -18,12 +18,12 @@
       <field name="arch" type="xml">
         <form>
           <header>
-            <button type="object" name="list_agents" string="Get list" class="btn btn-primary"/>
+            <button type="object" name="list_agents_action_server" string="Get list" class="btn btn-primary"/>
           </header>
           <sheet>
             <group>
-              <field name="name"/>
-              <field name="description"/>
+              <field name="name" readonly="1"/>
+              <field name="description" readonly="1"/>
             </group>
           </sheet>
         </form>
@@ -47,12 +47,12 @@
       <field name="arch" type="xml">
         <form>
           <header>
-            <button type="object" name="get_active_configuration" string="Get Active configuration" class="btn btn-primary"/>
+            <button type="object" name="get_active_configuration_action_server" string="Get Active configuration" class="btn btn-primary"/>
           </header>
           <sheet>
             <group>
-              <field name="name"/>
-              <field name="description"/>
+              <field name="name" readonly="1"/>
+              <field name="description" readonly="1"/>
             </group>
           </sheet>
         </form>
@@ -76,12 +76,12 @@
       <field name="arch" type="xml">
         <form>
           <header>
-            <button type="object" name="get_stats" string="Get stats" class="btn btn-primary"/>
+            <button type="object" name="get_stats_action_server" string="Get stats" class="btn btn-primary"/>
           </header>
           <sheet>
             <group>
-              <field name="name"/>
-              <field name="description"/>
+              <field name="name" readonly="1"/>
+              <field name="description" readonly="1"/>
             </group>
           </sheet>
         </form>
@@ -105,12 +105,12 @@
       <field name="arch" type="xml">
         <form>
           <header>
-            <button type="object" name="ciscat_results" string="Get ciscat" class="btn btn-primary"/>
+            <button type="object" name="ciscat_results_action_server" string="Get ciscat" class="btn btn-primary"/>
           </header>
           <sheet>
             <group>
-              <field name="name"/>
-              <field name="description"/>
+              <field name="name" readonly="1"/>
+              <field name="description" readonly="1"/>
             </group>
           </sheet>
         </form>
