@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import logging
 import re
+import random
 import string
-import secrets
 
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError, ValidationError, AccessError
@@ -161,9 +161,12 @@ class ResPartnerGRC(models.Model):
             raise ValidationError("No se puede repetir puertos, verifique su configuracion")
         
     def _default_password(self):
-        alphabet = string.ascii_letters + string.digits + string.punctuation
-        password = ''.join(secrets.choice(alphabet) for i in range(12))
-        return password
+        random_pass = "".join(
+            random.choices(
+                string.ascii_uppercase + string.ascii_lowercase + string.digits + "@$%*?-_", k=16,
+            )
+        )
+        return random_pass
 
 class XDRManagerPort(models.Model):
     _name = 'xdr.manager.port'
