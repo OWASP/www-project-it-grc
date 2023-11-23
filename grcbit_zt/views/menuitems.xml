@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <data>
+    <record model="ir.ui.menu" id="mail.menu_root_discuss">
+      <field name="groups_id" eval="[(6,0,[ref('base.group_system')])]"/>
+    </record>
+    	
+    <record model="ir.ui.menu" id="base.menu_management">
+      <field name="groups_id" eval="[(6,0,[ref('base.group_system')])]"/>
+    </record>
+
+    <!-- <record model="ir.ui.menu" id="spreadsheet_dashboard.spreadsheet_dashboard_menu_configuration">
+      <field name="groups_id" eval="[(6,0,[ref('backend_iframe.group_dashboard_manager')])]"/>
+    </record> -->
+
+    <!-- <record model="ir.ui.menu" id="backend_iframe.backend_dashboard_menu_iframe_item1_user">
+      <field name="groups_id" eval="[(6,0,[ref('backend_iframe.group_dashboard_user')])]"/>
+    </record> -->
+
+    <!-- <record model="ir.ui.menu" id="spreadsheet_dashboard.spreadsheet_dashboard_menu_root">
+      <field name="name">XDR</field>
+    </record> -->
+    	
+  </data>  
+</odoo>
