@@ -11,7 +11,7 @@ class GRCSodRole(models.Model):
     active = fields.Boolean(default=True)
     description = fields.Text(string="Description")
     it_inventory_id = fields.Many2one('it.inventory' , string="IT System")
-    sod_privilege_ids = fields.Many2many('sod.privilege', string="SoD Privilege")
+    sod_privilege_ids = fields.One2many('sod.privilege', 'sod_role_id', string="SoD Privilege")
     state = fields.Selection([
         ('draft','Draft'),
         ('approve','Approve'),
@@ -32,3 +32,4 @@ class GRCSodPrivilege(models.Model):
     name = fields.Char(string="Name")
     active = fields.Boolean(default=True)
     description = fields.Text(string="Description")
+    sod_role_id = fields.Many2one('sod.role', string="SoD Role")
