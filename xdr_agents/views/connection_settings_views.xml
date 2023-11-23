@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!--  CONNECTION SETTINGS -->
+    <record model="ir.ui.view" id="connection_settings_treeview">
+      <field name="name">Connection Settings</field>
+      <field name="model">xdr.connection_settings</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="xdr_api_host_ip"/>
+          <field name="xdr_api_port"/>
+          <field name="xdr_api_password"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="connection_settings_formview">
+      <field name="name">Connection Settings</field>
+      <field name="model">xdr.connection_settings</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="xdr_api_host_ip" required="1"/>
+              <field name="xdr_api_port" required="1"/>
+              <field name="xdr_api_password" required="1"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>

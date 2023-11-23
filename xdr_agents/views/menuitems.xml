@@ -83,5 +83,16 @@
     <menuitem name="Software"    id="menu_mitre_software"    parent="menu_mitre_main" action="mitre_software_action"    sequence="5"/>
     <menuitem name="Tactic"      id="menu_mitre_tactic"      parent="menu_mitre_main" action="mitre_tactic_action"      sequence="6"/>
     <menuitem name="Techniques"  id="menu_mitre_techniques"  parent="menu_mitre_main" action="mitre_techniques_action"  sequence="7"/>
+
+    <!--  CONNECTION SETTINGS  -->
+    <record id="connection_settings_action" model="ir.actions.act_window">
+      <field name="name">Connection Settings</field>
+      <field name="res_model">xdr.connection_settings</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Settings"    id="menu_settings_main"       parent="backend_iframe.xdr_menu_main_root"                      sequence="20" />
+    <menuitem name="Connections" id="menu_connection_settings" parent="menu_settings_main" action="connection_settings_action" sequence="1"/>
+
   </data>
 </odoo>
