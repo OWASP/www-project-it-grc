@@ -234,7 +234,7 @@
     <!-- menu Main Dashboard -->
     <record model="ir.actions.client" id="modules_act_dashboard_zt">
       <field name="name">Dashboard</field>
-      <field name="tag">view_dashboard</field>
+      <field name="tag">view_dashboard_zt</field>
       <field name="params" eval="{'main_dashboard': True}"/>
     </record>
     <menuitem id="module_dashboard_mi_zt" parent="backend_dashboard_menu_iframe_zt" sequence="1"

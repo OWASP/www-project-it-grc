@@ -52,7 +52,7 @@ class BackendDashboardZT(models.Model):
         if self.url:
             action = {
                 'type': 'ir.actions.client',
-                'tag': 'view_dashboard',
+                'tag': 'view_dashboard_zt',
                 'params': {
                     'url': self.url,
                     'height': self.height,
