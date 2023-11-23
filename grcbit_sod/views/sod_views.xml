@@ -83,6 +83,7 @@
             <group>
               <field name="name" required="1"/>
               <field name="description" required="1"/>
+              <field name="sod_role_id" readonly="1"/>
             </group>
           </sheet>
         </form>
