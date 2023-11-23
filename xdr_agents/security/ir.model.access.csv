@@ -42,3 +42,5 @@ access_mitre_tactic_guest,access.mitre.tactic.guest,model_mitre_tactic,backend_i
 access_mitre_techniques_manager,access.mitre.techniques.manager,model_mitre_techniques,backend_iframe.group_dashboard_manager,1,1,1,1
 access_mitre_techniques_user,access.mitre.techniques.user,model_mitre_techniques,backend_iframe.group_dashboard_user,1,0,0,0
 access_mitre_techniques_guest,access.mitre.techniques.guest,model_mitre_techniques,backend_iframe.group_dashboard_guest,1,0,0,0
+
+access_connection_settings_manager,access.connection.settings.manager,model_xdr_connection_settings,backend_iframe.group_dashboard_manager,1,1,1,1

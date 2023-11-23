@@ -20,6 +20,10 @@ class GRCSodRole(models.Model):
     def action_approve(self):
         for rec in self:
             rec.state = 'approve'
+    
+    def action_draft(self):
+        for rec in self:
+            rec.state = 'draft'
 
 
 class GRCSodPrivilege(models.Model):
