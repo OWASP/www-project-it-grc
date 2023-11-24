@@ -33,3 +33,15 @@ class GRCSodPrivilege(models.Model):
     active = fields.Boolean(default=True)
     description = fields.Text(string="Description")
     sod_role_id = fields.Many2one('sod.role', string="SoD Role")
+    is_grc_admin = fields.Boolean(string="is admin", compute="_get_group")
+
+    @api.onchange('name')
+    def _onchange_is_admin_new(self):
+        for rec in self:
+            flag = self.env.user.has_group('grcbit_base.group_admin')
+            rec.is_grc_admin = flag
+
+    def _get_group(self):
+        for rec in self:
+            flag = self.env.user.has_group('grcbit_base.group_admin')
+            rec.is_grc_admin = flag
