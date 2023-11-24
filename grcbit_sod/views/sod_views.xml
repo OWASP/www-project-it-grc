@@ -81,7 +81,7 @@
         <form>
           <sheet>
             <group>
-              <field name="is_grc_admin" invisible="0"/>
+              <field name="is_grc_admin" invisible="1"/>
               <field name="sod_role_id" attrs="{'readonly': [('is_grc_admin','=', False)]}"/>
               <field name="name" required="1"/>
               <field name="description" required="1"/>
