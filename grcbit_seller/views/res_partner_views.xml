@@ -18,6 +18,7 @@
               <group string="Database">
                 <field name="db_postgres_port" attrs="{'readonly': [('is_admin','=', False)]}"/>
                 <field name="postgres_pwd"/>
+                <field name="xdr_pwd"/>
               </group>
               <group string="GRC">
                 <field name="grc_web_port" attrs="{'readonly': [('is_admin','=', False)]}"/>
