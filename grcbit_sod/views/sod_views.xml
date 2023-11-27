@@ -69,6 +69,7 @@
       <field name="model">sod.privilege</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="sod_role_id"/>
           <field name="name"/>
           <field name="description"/>
         </tree>
