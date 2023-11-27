@@ -163,7 +163,7 @@ class ResPartnerGRC(models.Model):
     def _default_password(self):
         random_pass = "".join(
             random.choices(
-                string.ascii_uppercase + string.ascii_lowercase + string.digits + "@$%*?-_", k=16,
+                string.ascii_uppercase + string.ascii_lowercase + string.digits + "%*?-_", k=16,
             )
         )
         return random_pass
