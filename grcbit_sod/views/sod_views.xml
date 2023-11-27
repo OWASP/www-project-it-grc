@@ -15,6 +15,7 @@
           <field name="name"/>
           <field name="description"/>
           <field name="it_inventory_id"/>
+          <field name="user_id" widget="many2one_avatar_user"/>
           <field name="sod_privilege_ids"/>
         </tree>
       </field>
@@ -34,6 +35,7 @@
               <field name="name" required="1" attrs="{'readonly': [('state','=','approve')]}"/>
               <field name="description" required="1" attrs="{'readonly': [('state','=','approve')]}"/>
               <field name="it_inventory_id" required="1" attrs="{'readonly': [('state','=','approve')]}"/>
+              <field name="user_id" required="1" attrs="{'readonly': [('state','=','approve')]}" widget="many2one_avatar_user"/>
             </group>
           <notebook>
               <page string="SoD Privilege">
@@ -69,6 +71,7 @@
       <field name="model">sod.privilege</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="sod_role_id"/>
           <field name="name"/>
           <field name="description"/>
         </tree>

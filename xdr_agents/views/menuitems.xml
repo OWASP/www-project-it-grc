@@ -89,6 +89,9 @@
       <field name="name">Connection Settings</field>
       <field name="res_model">xdr.connection_settings</field>
       <field name="view_mode">tree,form</field>
+      <field name="view_ids" eval="[(5, 0, 0),
+              (0, 0, {'view_mode': 'tree', 'view_id': ref('connection_settings_treeview')}),
+              (0, 0, {'view_mode': 'form', 'view_id': ref('connection_settings_formview')})]"/>
     </record>
 
     <menuitem name="Settings"    id="menu_settings_main"       parent="backend_iframe.xdr_menu_main_root"                      sequence="20" />

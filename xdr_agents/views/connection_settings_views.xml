@@ -9,7 +9,7 @@
         <tree>
           <field name="xdr_api_host_ip"/>
           <field name="xdr_api_port"/>
-          <field name="xdr_api_password"/>
+          <!-- <field name="xdr_api_password"/> -->
         </tree>
       </field>
     </record>
@@ -22,7 +22,7 @@
             <group>
               <field name="xdr_api_host_ip" required="1"/>
               <field name="xdr_api_port" required="1"/>
-              <field name="xdr_api_password" required="1"/>
+              <!-- <field name="xdr_api_password" required="0"/> -->
             </group>
           </sheet>
         </form>

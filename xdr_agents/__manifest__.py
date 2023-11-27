@@ -17,6 +17,7 @@
         'security/ir.model.access.csv',
         'views/agents_views.xml',
         'views/mitre_views.xml',
+        'views/connection_settings_views.xml',
         'views/menuitems.xml',
         'views/action_server.xml',
     ],
