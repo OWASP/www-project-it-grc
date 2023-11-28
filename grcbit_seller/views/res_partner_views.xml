@@ -37,6 +37,17 @@
                 <field name="xdr_manager_port4" attrs="{'readonly': [('is_admin','=', False)]}"/>
               </group>
             </group>
+            <group string="OPENZITI">
+              <group>
+                <field name="ziti_controller_port1" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="xiti_controller_port2" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="ziti_edge_router1" attrs="{'readonly': [('is_admin','=', False)]}"/>
+              </group>
+              <group>
+                <field name="ziti_edge_router2" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="ziti_console" attrs="{'readonly': [('is_admin','=', False)]}"/>
+              </group>
+            </group>
             <group string="Output">
               <group>
                 <field name="xdr_index_container" readonly="1"/>

@@ -40,6 +40,13 @@ class ResPartnerGRC(models.Model):
     xdr_manager_port3 = fields.Char(string="XDR Manager Port (514/udp)", default= lambda x: x._set_default_port('xdr_manager_port3', int(25000), int(29000))) #de 25000 a 29000
     xdr_manager_port4 = fields.Char(string="XDR Manager Port (55000)", default= lambda x: x._set_default_port('xdr_manager_port4', int(29000), int(33000))) #de 29000 a 33000
 
+    #ZITI PORTS
+    ziti_controller_port1 = fields.Char(string="Ziti Controller Port (1280)", default= lambda x: x._set_default_port('ziti_controller_port1', int(37000), int(41000))) # de 37000 a 41000 
+    xiti_controller_port2 = fields.Char(string="Ziti Controller Port (6262)", default= lambda x: x._set_default_port('xiti_controller_port2', int(41000), int(45000))) # de 41000 a 45000 
+    ziti_edge_router1 = fields.Char(string="Ziti Edge Router (3022)", default= lambda x: x._set_default_port('ziti_edge_router1', int(45000), int(49000))) # de 45000 a 49000 
+    ziti_edge_router2 = fields.Char(string="Ziti Edge Router (10080)", default= lambda x: x._set_default_port('ziti_edge_router2', int(49000), int(53000))) # de 49000 a 53000 
+    ziti_console = fields.Char(string="Ziti Console (8443)", default= lambda x: x._set_default_port('ziti_console', int(53000), int(57000))) # de 53000 a 57000 
+
     is_admin = fields.Boolean(string="is admin", compute="_get_group", store=False)
     _sql_constraints = [
         ('unique_db_postgres_port', 'unique(db_postgres_port)', 'DB postgres Port already exist.!'),
@@ -51,6 +58,11 @@ class ResPartnerGRC(models.Model):
         ('unique_xdr_manager_port2', 'unique(xdr_manager_port2)', 'XDR Manager Port (1515) already exist.!'),
         ('unique_xdr_manager_port3', 'unique(xdr_manager_port3)', 'XDR Manager Port (514/udp) already exist.!'),
         ('unique_xdr_manager_port4', 'unique(xdr_manager_port4)', 'XDR Manager Port (55000) already exist.!'),
+        ('unique_ziti_controller_port1', 'unique(ziti_controller_port1)', 'Ziti Controller Port (1280) already exist.!'),
+        ('unique_xiti_controller_port2', 'unique(xiti_controller_port2)', 'Ziti Controller Port (6262) already exist.!'),
+        ('unique_ziti_edge_router1', 'unique(ziti_edge_router1)', 'Ziti Edge Router (3022) already exist.!'),
+        ('unique_ziti_edge_router2', 'unique(ziti_edge_router2)', 'Ziti Edge Router (10080) already exist.!'),
+        ('unique_ziti_console', 'unique(ziti_console)', 'Ziti Console (8443) already exist.!'),
     ]
 
     def _set_little_princess_field(self):
@@ -85,6 +97,17 @@ class ResPartnerGRC(models.Model):
                 val = int(partners[0].xdr_manager_port3) + 1
             if field == 'xdr_manager_port4':
                 val = int(partners[0].xdr_manager_port4) + 1
+            if field == 'ziti_controller_port1':
+                val = int(partners[0].ziti_controller_port1) + 1
+            if field == 'xiti_controller_port2':
+                val = int(partners[0].xiti_controller_port2) + 1
+            if field == 'ziti_edge_router1':
+                val = int(partners[0].ziti_edge_router1) + 1
+            if field == 'ziti_edge_router2':
+                val = int(partners[0].ziti_edge_router2) + 1
+            if field == 'ziti_console':
+                val = int(partners[0].ziti_console) + 1
+
             return val
 
     @api.onchange('db_postgres_port')
@@ -105,9 +128,9 @@ class ResPartnerGRC(models.Model):
                     if int(field) >= min_value and int(field) <= max_value:
                         return True
                     else:
-                        raise ValidationError("Valor '%s' invalido, debe estar en un rango de %s a %s" % (field, min_value, max_value))
+                        raise ValidationError("Invalid value '%s', must be in the range %s to %s" % (field, min_value, max_value))
                 else:
-                    raise ValidationError("Los puertos deben ser solo digitos. Valor '%s' incorrecto" % field)
+                    raise ValidationError("Ports must be digits only. Incorrect value '%s'" % field)
 
     @api.onchange('name')
     def _onchange_default_client_system(self):
@@ -129,21 +152,26 @@ class ResPartnerGRC(models.Model):
         self.just_range(self.xdr_manager_port2, 21000, 25000)
         self.just_range(self.xdr_manager_port3, 25000, 29000)
         self.just_range(self.xdr_manager_port4, 29000, 33000)
+        self.just_range(self.ziti_controller_port1, 37000, 41000)
+        self.just_range(self.xiti_controller_port2, 41000, 45000)
+        self.just_range(self.ziti_edge_router1, 45000, 49000)
+        self.just_range(self.ziti_edge_router2, 49000, 53000)
+        self.just_range(self.ziti_console, 53000, 57000)
         return res
 
     def has_duplicates(self, seq):
         return len(seq) != len(set(seq))
 
-    @api.constrains('db_postgres_port','grc_web_port','xdr_indexer_port','xdr_dashboard_port','xdr_dashboard_port2','xdr_manager_port1','xdr_manager_port2','xdr_manager_port3','xdr_manager_port4')
+    @api.constrains('db_postgres_port','grc_web_port','xdr_indexer_port','xdr_dashboard_port','xdr_dashboard_port2','xdr_manager_port1','xdr_manager_port2','xdr_manager_port3','xdr_manager_port4','ziti_controller_port1','xiti_controller_port2','ziti_edge_router1','ziti_edge_router2','ziti_console')
     def no_repeat_ports(self):
         ports = []
         for rec in self:
             if rec.db_postgres_port:
                 ports.append(rec.db_postgres_port)
             if rec.grc_web_port:
-                ports.append(rec.grc_web_port )
+                ports.append(rec.grc_web_port)
             if rec.xdr_indexer_port:
-                ports.append(rec.xdr_indexer_port )
+                ports.append(rec.xdr_indexer_port)
             if rec.xdr_dashboard_port:
                 ports.append(rec.xdr_dashboard_port)
             if rec.xdr_dashboard_port2:
@@ -157,9 +185,20 @@ class ResPartnerGRC(models.Model):
             if rec.xdr_manager_port4:
                 ports.append(rec.xdr_manager_port4)
             
+            if rec.ziti_controller_port1:
+                ports.append(rec.ziti_controller_port1)
+            if rec.xiti_controller_port2:
+                ports.append(rec.xiti_controller_port2)
+            if rec.ziti_edge_router1:
+                ports.append(rec.ziti_edge_router1)
+            if rec.ziti_edge_router2:
+                ports.append(rec.ziti_edge_router2)
+            if rec.ziti_console:
+                ports.append(rec.ziti_console)
+            
         value = self.has_duplicates(ports)
         if value == True:
-            raise ValidationError("No se puede repetir puertos, verifique su configuracion")
+            raise ValidationError("You cannot repeat ports, check your configuration.")
         
     def _default_password(self, field):
         if field == 'postgres':

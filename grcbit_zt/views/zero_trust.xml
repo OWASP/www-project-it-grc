@@ -58,7 +58,7 @@
       <field name="model">backend.dashboard.zt</field>
       <field name="priority" eval="1"/>
       <field name="arch" type="xml">
-        <kanban quick_create_view="False" archivable="false">
+        <kanban class="o_kanban_mobile" quick_create_view="False" archivable="false">
           <field name="color"/>
           <field name="tag_ids"/>
           <field name="main_dashboard"/>
@@ -115,7 +115,7 @@
       <field name="model">backend.dashboard.zt</field>
       <field name="priority" eval="1"/>
       <field name="arch" type="xml">
-        <kanban quick_create_view="False" archivable="false">
+        <kanban class="o_kanban_mobile" quick_create_view="False" archivable="false">
           <field name="color"/>
           <field name="tag_ids"/>
           <field name="main_dashboard"/>
