@@ -5,7 +5,7 @@
     <record id="risk_factor_action" model="ir.actions.act_window">
 	    <field name="name">Risk Factor</field>
 	    <field name="res_model">risk.factor</field>
-	    <field name="view_mode">tree,form,graph</field>
+	    <field name="view_mode">tree,form,graph,kanban</field>
     </record>
     <record model="ir.ui.view" id="risk_factor_view">
       <field name="name">Risk Factor</field>
@@ -99,6 +99,30 @@
         </form>
       </field>
     </record>
+    <record model="ir.ui.view" id="risk_factor_kanban">
+      <field name="name">Risk Factor</field>
+      <field name="model">risk.factor</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_kanban_mobile">
+          <field name="name"/>
+          <field name="cause"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <strong class="o_kanban_record_title">
+                    <field name="name"/>
+                  </strong>
+                  <div>
+                    <t t-esc="record.cause.value"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
     <record id="risk_factor_dash" model="ir.actions.act_window">
       <field name="name">Inherent Risk</field>
       <field name="res_model">risk.factor</field>
@@ -161,7 +185,7 @@
       <field name="name">Probability Level</field>
       <field name="model">probability.level</field>
       <field name="arch" type="xml">
-	      <kanban class="o_res_partner_kanban">
+	      <kanban class="o_kanban_mobile">
           <field name="name"/>
           <field name="description"/>
           <templates>
@@ -218,7 +242,7 @@
       <field name="name">Impact Level</field>
       <field name="model">impact.level</field>
       <field name="arch" type="xml">
-	      <kanban class="o_res_partner_kanban">
+	      <kanban class="o_kanban_mobile">
           <field name="name"/>
           <field name="description"/>
           <templates>
@@ -275,7 +299,7 @@
       <field name="name">Risk Level</field>
       <field name="model">risk.level</field>
       <field name="arch" type="xml">
-	      <kanban class="o_res_partner_kanban">
+	      <kanban class="o_kanban_mobile">
           <field name="name"/>
           <field name="description"/>
           <templates>
@@ -330,7 +354,7 @@
       <field name="name">Risk Classification</field>
       <field name="model">risk.classification</field>
       <field name="arch" type="xml">
-	      <kanban class="o_res_partner_kanban">
+	      <kanban class="o_kanban_mobile">
           <field name="name"/>
           <field name="description"/>
           <templates>
@@ -385,6 +409,30 @@
         </form>
       </field>
     </record>
+    <record model="ir.ui.view" id="inherent_risk_level_kanban">
+      <field name="name">Inherent Risk Level</field>
+      <field name="model">inherent.risk.level</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_kanban_mobile">
+          <field name="risk_level_id"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <strong class="o_kanban_record_title">
+                    <field name="risk_level_id"/>
+                  </strong>
+                  <div>
+                    <t t-esc="record.description.value"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
 
     <!--  RESIDUAL RISK LEVEL  -->
     <record id="residual_risk_level_action" model="ir.actions.act_window">
@@ -416,6 +464,30 @@
             <field name="residual_risk_level_id"/>
           </group>
         </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="residual_risk_level_kanban">
+      <field name="name">Residual Risk Level</field>
+      <field name="model">residual.risk.level</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_kanban_mobile">
+          <field name="inherent_risk_level_id"/>
+          <field name="residual_risk_level_id"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <strong class="o_kanban_record_title">
+                    <field name="inherent_risk_level_id"/>
+                  </strong>
+                  <div>
+                    <t t-esc="record.residual_risk_level_id.value"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
       </field>
     </record>
   </data>

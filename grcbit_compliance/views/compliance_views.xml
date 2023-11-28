@@ -59,7 +59,7 @@
       <field name="name">Compliance Version</field>
       <field name="model">compliance.version</field>
       <field name="arch" type="xml">
-        <kanban class="o_res_partner_kanban">
+        <kanban class="o_kanban_mobile">
           <field name="name"/>
           <field name="description"/>
           <templates>
@@ -132,7 +132,7 @@
 	    <field name="name">Compliance Requirement</field>
       <field name="model">compliance.control.objective</field>
       <field name="arch" type="xml">
-        <kanban class="o_res_partner_kanban">
+        <kanban class="o_kanban_mobile">
           <field name="name"/>
           <field name="compliance_version_id"/>
           <field name="description"/>
@@ -189,7 +189,7 @@
 	    <field name="name">Compliance Requirement</field>
       <field name="model">compliance.control</field>
       <field name="arch" type="xml">
-	      <kanban class="o_res_partner_kanban">
+	      <kanban class="o_kanban_mobile">
           <field name="name"/>
           <field name="description"/>
           <templates>
@@ -242,6 +242,30 @@
             <field name="document_page_id" widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True)]" /> -->
           </group>
         </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="compliance_iso_control_kanban">
+	    <field name="name">Compliance</field>
+      <field name="model">compliance.iso.control</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_kanban_mobile">
+          <field name="compliance_control_id"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <strong class="o_kanban_record_title">
+                    <field name="compliance_control_id"/>
+                  </strong>
+                  <div>
+                    <t t-esc="record.description.value"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
       </field>
     </record>
 
