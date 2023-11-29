@@ -26,8 +26,8 @@
       <field name="arch" type="xml">
         <form>
         <header>
-            <button name="action_approve" type="object" string="APPROVE" states="draft" groups="grcbit_sod.group_sod,grcbit_base.group_admin" class="btn btn-success"/>
-            <button name="action_draft" type="object" string="Send to DRAFT" states="approve" groups="grcbit_sod.group_sod,grcbit_base.group_admin" class="btn btn-success"/>
+            <button name="action_approve" type="object" string="APPROVE" states="draft" groups="grcbit_sod.group_sod,grcbit_base.group_grc_admin" class="btn btn-success"/>
+            <button name="action_draft" type="object" string="Send to DRAFT" states="approve" groups="grcbit_sod.group_sod,grcbit_base.group_grc_admin" class="btn btn-success"/>
             <field name="state" widget="statusbar" readonly="1"/>
           </header>
           <sheet>

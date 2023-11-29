@@ -32,8 +32,6 @@ class CybersecurityConcept(models.Model):
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The cybersecurty concept name already exists.")]
 
-
-
 class ControlDesignCriteria(models.Model):
     _name = 'control.design.criteria'
     _description = 'Design Criteria'
