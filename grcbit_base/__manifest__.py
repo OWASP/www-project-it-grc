@@ -11,7 +11,6 @@
         'web',
         'base',
         'board',
-        'document_page'
     ],
 
     # always loaded

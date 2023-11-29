@@ -39,14 +39,6 @@ class ComplianceVersion(models.Model):
                         rrr.append(iiii.compliance_control_id.display_name)
                         rrr.append(iiii.description)
                         rrr.append(iiii.control_id.name) #
-                        
-                        # for iiiii in iiii.iso_control_id:
-                        #     s = s + ' - ' + str(iiiii.display_name)
-                        # rrr.append(s)
-
-                        # for iiiii in iiii.document_page_id:
-                        #     p = p + ' - ' + str(iiiii.display_name)
-                        # rrr.append(p)
 
                         c_records.append(rrr)
                         d.append(rrr)
@@ -101,5 +93,4 @@ class ComplianceIsoControl(models.Model):
     iso_control_id     = fields.Many2many('iso.control', string='ISMS Control', required=True) #ISO
     active = fields.Boolean(default=True)
     control_id = fields.Many2one('control.design', string="Control", required=True)
-    document_page_id   = fields.Many2many('document.page', string='Policy / Process', required=True) #document
     description  = fields.Text(string='Compliance Description', required=True) #Cumplimiento
