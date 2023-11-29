@@ -16,7 +16,7 @@
           <field name="name"/>
           <field name="is_applicable" widget="boolean_toggle" />
           <field name="reason_selection" />
-          <field name="document_page_id"  widget="many2many_tags"  />
+          <!-- <field name="document_page_id"  widget="many2many_tags"  /> -->
           <field name="control_design_id" widget="many2many_tags"  />
           <field name="control_status" widget="percentpie" />
         </tree>
@@ -30,7 +30,7 @@
           <field name="name"/>
           <field name="is_applicable" />
           <field name="reason_selection" />
-          <field name="document_page_id"  />
+          <!-- <field name="document_page_id"  /> -->
           <field name="control_design_id" />
           <field name="control_status" />
         </search>
@@ -48,7 +48,7 @@
   	      </group>
 	        <group>
             <field name="reason_selection"/>
-            <field name="document_page_id" widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True), '|', ('name','ilike','politica'), ('name','ilike','pol') ]" />
+            <!-- <field name="document_page_id" widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True), '|', ('name','ilike','politica'), ('name','ilike','pol') ]" /> -->
             <field name="control_design_id"  widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}"  />
             <field name="control_status" widget="percentpie" />
   	      </group>

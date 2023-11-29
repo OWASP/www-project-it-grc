@@ -210,7 +210,7 @@ class ResPartnerGRC(models.Model):
         elif field == 'xdr':
             random_pass = "".join(
                 random.choices(
-                    string.ascii_uppercase + string.ascii_lowercase + string.digits + "$@%*?-_", k=16,
+                    string.ascii_uppercase + string.ascii_lowercase + string.digits + "@%*?-_", k=16,
                 )
             )
         return random_pass

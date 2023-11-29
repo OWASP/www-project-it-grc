@@ -69,7 +69,6 @@ class DataInventory(models.Model):
     owner = fields.Many2one('res.users', string=_('Asset Owner'), required=True)
     it_inventory_id = fields.Many2many('it.inventory',string=_('IT System'), required=True)
     third_party_id = fields.Many2many('third.party',string=_('Third Party'))
-    # document_page_id   = fields.Many2many('document.page', string=_('Business Process'))
     security_requirement = fields.Text(string=_('Security Requirement'), required=True)
     retention_period = fields.Selection([
         ('1m','1 month'),
