@@ -7,7 +7,6 @@
       <field name="res_model">compliance.version</field>
       <field name="view_mode">kanban,tree,form</field>
     </record>
-
     <record model="ir.ui.view" id="compliance_version_view">
       <field name="name">Compliance Version</field>
 	    <field name="model">compliance.version</field>
@@ -18,7 +17,6 @@
         </tree>
       </field>
     </record>
-
     <record model="ir.ui.view" id="compliance_version_form">
       <field name="name">Compliance Version</field>
       <field name="model">compliance.version</field>
@@ -54,7 +52,6 @@
         </form>
       </field>
     </record>
-
     <record model="ir.ui.view" id="compliance_version_kanban">
       <field name="name">Compliance Version</field>
       <field name="model">compliance.version</field>
@@ -77,6 +74,16 @@
             </t>
           </templates>
         </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="compliance_version_search">
+      <field name="name">Compliance Version</field>
+      <field name="model">compliance.version</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" />
+          <field name="description"/>
+        </search>
       </field>
     </record>
 
@@ -154,6 +161,17 @@
         </kanban>
       </field>
     </record>
+    <record model="ir.ui.view" id="compliance_control_objective_search">
+      <field name="name">Compliance Control Objective</field>
+      <field name="model">compliance.control.objective</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="compliance_version_id"/>
+          <field name="name"/>
+          <field name="description"/>
+        </search>
+      </field>
+    </record>
 
     <!--   COMPLIANCE CONTROL   -->
     <record id="compliance_control_action" model="ir.actions.act_window">
@@ -207,6 +225,17 @@
             </t>
           </templates>
         </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="compliance_control_search">
+      <field name="name">Compliance Control</field>
+      <field name="model">compliance.control</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="compliance_control_objective_id"/>
+          <field name="name"/>
+          <field name="description"/>
+        </search>
       </field>
     </record>
 
@@ -266,6 +295,17 @@
             </t>
           </templates>
         </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="compliance_iso_control_search">
+      <field name="name">Compliance ISO Control</field>
+      <field name="model">compliance.iso.control</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="compliance_control_id" />
+          <field name="description"/>
+          <field name="control_id"/>
+        </search>
       </field>
     </record>
 
