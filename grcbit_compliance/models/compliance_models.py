@@ -49,7 +49,6 @@ class ComplianceVersion(models.Model):
         data['c_records'] = c_records
         return data['c_records']
     
-    
 class ComplianceControlObjective(models.Model):
     _name = 'compliance.control.objective'
     _description = 'Compliance Objective'
