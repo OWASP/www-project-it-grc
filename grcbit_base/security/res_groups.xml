@@ -4,12 +4,9 @@
   <record model="ir.module.category" id="module_grcbit_base">
       <field name="name">GRC</field>
       <field name="description">GRC Module Base</field>
-      <field name="sequence">10</field>
+      <field name="sequence">30</field>
     </record>
-    <record id="group_grc_admin" model="res.groups">
-      <field name="name">GRC Admin</field>
-			<field name="category_id" ref="module_grcbit_base"/>
-		</record>
+    
 		<record id="group_grc_consultant" model="res.groups">
 			<field name="name">GRC Consultant</field>
 			<field name="category_id" ref="module_grcbit_base"/>
@@ -34,50 +31,15 @@
 			<field name="name">Compliance</field>
 			<field name="category_id" ref="module_grcbit_base"/>
 		</record>
-    <!-- <record model="ir.module.category" id="module_grcbit_base">
-      <field name="name">GRC</field>
-      <field name="description">GRC Module Base</field>
-      <field name="sequence">10</field>
+    <record id="group_grc_admin" model="res.groups">
+      <field name="name">GRC Admin</field>
+			<field name="category_id" ref="module_grcbit_base"/>
+		</record>
+    <record id="base.user_admin" model="res.users">
+        <field
+            name="groups_id"
+            eval="[(4,ref('grcbit_base.group_grc_admin'))]"
+        />
     </record>
-    <record id="group_admin" model="res.groups">
-			<field name="name">Admin</field>
-			<field name="comment">Admin user with delete, create, edit access.</field>
-			<field name="category_id" ref="module_grcbit_base"/>
-		</record>
-		<record id="group_admin_dashboard" model="res.groups">
-			<field name="name">Admin Dashboard</field>
-			<field name="comment">Admin user with delete, create, edit access.</field>
-			<field name="category_id" ref="module_grcbit_base"/>
-		</record>
-		<record id="group_iso_consultant" model="res.groups">
-			<field name="name">GRC Consultant</field>
-			<field name="comment">Module user with create, edit access.</field>
-			<field name="category_id" ref="module_grcbit_base"/>
-		</record>
-		<record id="group_risk_owner" model="res.groups">
-			<field name="name">Risk Owner</field>
-			<field name="comment">Module user with control implementation module edit access.</field>
-			<field name="category_id" ref="module_grcbit_base"/>
-		</record>
-		<record id="group_process_owner" model="res.groups">
-			<field name="name">Process Owner</field>
-			<field name="comment">Module user with process module edit access.</field>
-			<field name="category_id" ref="module_grcbit_base"/>
-		</record>
-		<record id="group_data_owner" model="res.groups">
-			<field name="name">Data Owner</field>
-			<field name="comment">Module user with data asset module edit access.</field>
-			<field name="category_id" ref="module_grcbit_base"/>
-		</record>
-		<record id="group_it_admin" model="res.groups">
-			<field name="name">IT Admin</field>
-			<field name="comment">Module user with IT asset module edit access.</field>
-			<field name="category_id" ref="module_grcbit_base"/>
-		</record>
-		<record id="group_guest" model="res.groups">
-			<field name="name">Guest</field>
-			<field name="comment">Module user with general read only access.</field>
-			<field name="category_id" ref="module_grcbit_base"/>
-		</record> -->
   </data>
 </odoo>
