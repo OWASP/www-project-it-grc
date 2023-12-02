@@ -22,6 +22,7 @@
         'views/dashboard_view.xml',
         'views/menuitems.xml',
         'reports/report_data_asset.xml',
+        'wizards/set_groups_views.xml'
     ],
     'assets':{
         # 'web.assets':[
