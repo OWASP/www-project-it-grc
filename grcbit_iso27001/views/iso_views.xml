@@ -179,6 +179,27 @@
         </kanban>
       </field>
     </record>
+    <record model="ir.ui.view" id="iso_control_search">
+      <field name="name">ISO Control</field>
+      <field name="model">iso.control</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="id_iso_control"/>
+          <field name="control_category_id" />
+          <field name="name"/>
+          <field name="control"/>
+          <field name="control_type_id" />
+          <field name="security_property_id"/>
+          <field name="cybersecurity_concept_id"/>
+          <field name="operational_capability_id"/>
+          <field name="security_domain_id"/>
+          <field name="purpose"/>
+          <field name="guidance"/>
+          <field name="other_information"/>
+          <field name="attachment"/>
+        </search>
+      </field>
+    </record>
     <record id="iso_control_dash" model="ir.actions.act_window">
       <field name="name">ISO Control</field>
       <field name="res_model">iso.control</field>
@@ -253,6 +274,17 @@
         </kanban>
       </field>
     </record>
+    <record model="ir.ui.view" id="control_category_search">
+      <field name="name">Control Category</field>
+      <field name="model">control.category</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="id_control_category"/>
+          <field name="name"/>
+          <field name="description"/>
+        </search>
+      </field>
+    </record>
     <record id="control_category_dash" model="ir.actions.act_window">
       <field name="name">Control Category</field>
       <field name="res_model">control.category</field>
@@ -312,6 +344,16 @@
         </kanban>
       </field>
     </record>
+    <record model="ir.ui.view" id="control_type_search">
+      <field name="name">Control Type</field>
+      <field name="model">control.type</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="description"/>
+        </search>
+      </field>
+    </record>
 
     <!--     SECURITY PROPERTY     -->
     <record id="security_property_action" model="ir.actions.act_window">
@@ -363,6 +405,16 @@
             </t>
           </templates>
         </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="security_property_search">
+      <field name="name">security Property</field>
+      <field name="model">security.property</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="description"/>
+        </search>
       </field>
     </record>
 
@@ -418,6 +470,16 @@
         </kanban>
       </field>
     </record>
+    <record model="ir.ui.view" id="cybersecurity_concept_search">
+      <field name="name">Cybersecurity Concept</field>
+      <field name="model">cybersecurity.concept</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="description"/>
+        </search>
+      </field>
+    </record>
 
     <!--     OPERATIONAL CAPABILITY     -->
     <record id="operational_capability_action" model="ir.actions.act_window">
@@ -471,6 +533,16 @@
         </kanban>
       </field>
     </record>
+    <record model="ir.ui.view" id="operational_capability_search">
+      <field name="name">Operational Capabilityy</field>
+      <field name="model">operational.capability</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="description"/>
+        </search>
+      </field>
+    </record>
 
     <!--     SECURITY DOMAIN     -->
     <record id="security_domain_action" model="ir.actions.act_window">
@@ -522,6 +594,16 @@
             </t>
           </templates>
         </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="security_domain_search">
+      <field name="name">Security Domain</field>
+      <field name="model">security.domain</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="description"/>
+        </search>
       </field>
     </record>
     

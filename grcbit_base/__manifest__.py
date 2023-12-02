@@ -22,6 +22,7 @@
         'views/dashboard_view.xml',
         'views/menuitems.xml',
         'reports/report_data_asset.xml',
+        'wizards/set_groups_views.xml'
     ],
     'assets':{
         # 'web.assets':[
@@ -35,5 +36,7 @@
             'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js',
             
         ]
-    }
+    },
+    'installable': True,
+    'application': True,
 }

@@ -233,6 +233,16 @@
         </kanban>
       </field>
     </record>
+    <record model="ir.ui.view" id="control_design_criteria_search">
+      <field name="name">Control Design Criteria</field>
+      <field name="model">control.design.criteria</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" />
+          <field name="description"/>
+        </search>
+      </field>
+    </record>
 
     <!--       CRONTROL EVALUATION CRITERIA       -->
     <record id="control_evaluation_criteria_action" model="ir.actions.act_window">
@@ -284,6 +294,16 @@
             </t>
           </templates>
         </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="control_evaluation_criteria_search">
+      <field name="name">Control Evaluation Criteria</field>
+      <field name="model">control.evaluation.criteria</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" />
+          <field name="description"/>
+        </search>
       </field>
     </record>
 

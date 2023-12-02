@@ -205,6 +205,17 @@
         </kanban>
       </field>
     </record>
+    <record model="ir.ui.view" id="probability_level_search">
+      <field name="name">Probability Level</field>
+      <field name="model">probability.level</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" />
+          <field name="value"/>
+          <field name="description"/>
+	      </search>
+      </field>
+    </record>
 
     <!--  IMPACT LEVEL  -->
     <record id="impact_level_action" model="ir.actions.act_window">
@@ -260,6 +271,17 @@
             </t>
           </templates>
         </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="impact_level_search">
+      <field name="name">Impact Level</field>
+      <field name="model">impact.level</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" />
+          <field name="value"/>
+          <field name="description"/>
+	      </search>
       </field>
     </record>
 
@@ -319,6 +341,17 @@
         </kanban>
       </field>
     </record>
+    <record model="ir.ui.view" id="risk_level_search">
+      <field name="name">Risk Level</field>
+      <field name="model">risk.level</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" />
+          <field name="value"/>
+          <field name="description"/>
+	      </search>
+      </field>
+    </record>
 
     <!--  RISK CLASSIFICATION  -->
     <record id="risk_classification_action" model="ir.actions.act_window">
@@ -374,6 +407,17 @@
         </kanban>
       </field>
     </record>
+    <record model="ir.ui.view" id="risk_classification_search">
+      <field name="name">Risk Classification</field>
+      <field name="model">risk.classification</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="active"/>
+          <field name="name" />
+          <field name="description"/>
+	      </search>
+      </field>
+    </record>
 
     <!--  INHERENT RISK LEVEL  -->
     <record id="inherent_risk_level_action" model="ir.actions.act_window">
@@ -405,6 +449,7 @@
             <field name="impact_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
             <field name="probability_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
             <field name="description"/>
+            <field name="color"/>
           </group>
         </form>
       </field>
@@ -431,6 +476,17 @@
             </t>
           </templates>
         </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="inherent_risk_level_search">
+      <field name="name">Inherent Risk Level</field>
+      <field name="model">inherent.risk.level</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="impact_level_id" />
+          <field name="probability_level_id"/>
+          <field name="risk_level_name"/>
+	      </search>
       </field>
     </record>
 
@@ -488,6 +544,17 @@
             </t>
           </templates>
         </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="residual_risk_level_search">
+      <field name="name">Residual Risk Level</field>
+      <field name="model">residual.risk.level</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="inherent_risk_level_id" />
+          <field name="control_evaluation_criteria_id"/>
+          <field name="residual_risk_level_name"/>
+	      </search>
       </field>
     </record>
   </data>
