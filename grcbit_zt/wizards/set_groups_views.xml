@@ -6,7 +6,7 @@
       <field name="model">set.groups.user</field>
       <field name="inherit_id" ref="grcbit_setgroups.set_groups_formview"/>
       <field name="arch" type="xml">
-        <xpath expr="//page[@name='grc_groups']" position="after">
+        <xpath expr="//notebook[@name='container_access']" position="inside">
           <page name="zt_groups" string="ZT">
             <group>
               <group>

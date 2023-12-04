@@ -20,7 +20,7 @@
           <button name="open_set_groups" string="Set Groups" class="btn btn-primary" type="object"/>
         </xpath>
         <xpath expr="//page[@name='access_rights']" position="attributes">
-          <attribute name="invisible">0</attribute>
+          <attribute name="invisible">1</attribute>
         </xpath>
       </field>
     </record>
