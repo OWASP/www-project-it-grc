@@ -47,6 +47,8 @@ class ResPartnerGRC(models.Model):
     ziti_edge_router2 = fields.Char(string="Ziti Edge Router (10080)", default= lambda x: x._set_default_port('ziti_edge_router2', int(49000), int(53000))) # de 49000 a 53000 
     ziti_console = fields.Char(string="Ziti Console (8443)", default= lambda x: x._set_default_port('ziti_console', int(53000), int(57000))) # de 53000 a 57000 
 
+    dns_domain = fields.Char(string="DNS Domain", default=lambda x:x.get_dns_domain())
+
     is_admin = fields.Boolean(string="is admin", compute="_get_group", store=False)
     _sql_constraints = [
         ('unique_db_postgres_port', 'unique(db_postgres_port)', 'DB postgres Port already exist.!'),
@@ -64,6 +66,18 @@ class ResPartnerGRC(models.Model):
         ('unique_ziti_edge_router2', 'unique(ziti_edge_router2)', 'Ziti Edge Router (10080) already exist.!'),
         ('unique_ziti_console', 'unique(ziti_console)', 'Ziti Console (8443) already exist.!'),
     ]
+
+    def get_dns_domain(self):
+        text_base = 'tf'
+        partner = self.env['res.partner'].search([('dns_domain','!=','')], limit=1, order="create_date DESC")
+        if not partner:
+            value = text_base + '1'
+        else:
+            letters = partner.dns_domain.rstrip('0123456789')
+            numbers = partner.dns_domain[len(letters):]
+            value = text_base + str(int(numbers) + 1)
+
+        return value
 
     def _set_little_princess_field(self):
         partners = self.env['res.partner'].search([('xdr_indexer_port','>=',9000)], order="xdr_indexer_port DESC")
