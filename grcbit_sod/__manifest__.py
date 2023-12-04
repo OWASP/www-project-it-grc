@@ -22,6 +22,8 @@
         #views
         'views/sod_views.xml',
         'views/menuitems.xml',
+        #wizards
+        'wizards/set_groups_views.xml',
     ],
     
 }

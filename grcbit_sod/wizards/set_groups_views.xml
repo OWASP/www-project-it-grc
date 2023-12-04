@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="set_groups_formview">
+      <field name="name">Set Groups</field>
+      <field name="model">set.groups.user</field>
+      <field name="inherit_id" ref="grcbit_base.set_groups_formview"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='risk_management_check']" position="after">
+          <field name="sod_check"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>
