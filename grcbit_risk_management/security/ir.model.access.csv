@@ -6,6 +6,7 @@ access_risk_factor_group_risk_management,access.risk.factor.group.risk.managemen
 access_risk_factor_group_isms,access.risk.factor.group.isms,model_risk_factor,grcbit_base.group_isms,1,0,0,0
 access_risk_factor_group_control,access.risk.factor.group.control,model_risk_factor,grcbit_base.group_control,1,0,0,0
 access_risk_factor_group_compliance,access.risk.factor.group.compliance,model_risk_factor,grcbit_base.group_compliance,1,0,0,0
+access_risk_factor_group_guest,access.risk.factor.group.guest,model_risk_factor,grcbit_base.group_guest,1,0,0,0
 
 access_impact_level_group_grc_admin,access.impact.level.group.grc.admin,model_impact_level,grcbit_base.group_grc_admin,1,1,1,1
 access_impact_level_group_grc_consultant,access.impact.level.group.grc.consultant,model_impact_level,grcbit_base.group_grc_consultant,1,1,1,1
@@ -14,6 +15,7 @@ access_impact_level_group_risk_management,access.impact.level.group.risk.managem
 access_impact_level_group_isms,access.impact.level.group.isms,model_impact_level,grcbit_base.group_isms,1,0,0,0
 access_impact_level_group_control,access.impact.level.group.control,model_impact_level,grcbit_base.group_control,1,0,0,0
 access_impact_level_group_compliance,access.impact.level.group.compliance,model_impact_level,grcbit_base.group_compliance,1,0,0,0
+access_impact_level_group_guest,access.impact.level.group.guest,model_impact_level,grcbit_base.group_guest,1,0,0,0
 
 access_probability_level_group_grc_admin,access.probability.level.group.grc.admin,model_probability_level,grcbit_base.group_grc_admin,1,1,1,1
 access_probability_level_group_grc_consultant,access.probability.level.group.grc.consultant,model_probability_level,grcbit_base.group_grc_consultant,1,1,1,1
@@ -22,6 +24,7 @@ access_probability_level_group_risk_management,access.probability.level.group.ri
 access_probability_level_group_isms,access.probability.level.group.isms,model_probability_level,grcbit_base.group_isms,1,0,0,0
 access_probability_level_group_control,access.probability.level.group.control,model_probability_level,grcbit_base.group_control,1,0,0,0
 access_probability_level_group_compliance,access.probability.level.group.compliance,model_probability_level,grcbit_base.group_compliance,1,0,0,0
+access_probability_level_group_guest,access.probability.level.group.guest,model_probability_level,grcbit_base.group_guest,1,0,0,0
 
 access_risk_level_group_grc_admin,access.risk.level.group.grc.admin,model_risk_level,grcbit_base.group_grc_admin,1,1,1,1
 access_risk_level_group_grc_consultant,access.risk.level.group.grc.consultant,model_risk_level,grcbit_base.group_grc_consultant,1,1,1,1
@@ -30,6 +33,7 @@ access_risk_level_group_risk_management,access.risk.level.group.risk.management,
 access_risk_level_group_isms,access.risk.level.group.isms,model_risk_level,grcbit_base.group_isms,1,0,0,0
 access_risk_level_group_control,access.risk.level.group.control,model_risk_level,grcbit_base.group_control,1,0,0,0
 access_risk_level_group_compliance,access.risk.level.group.compliance,model_risk_level,grcbit_base.group_compliance,1,0,0,0
+access_risk_level_group_guest,access.risk.level.group.guest,model_risk_level,grcbit_base.group_guest,1,0,0,0
 
 access_risk_classification_group_grc_admin,access.risk.classification.group.grc.admin,model_risk_classification,grcbit_base.group_grc_admin,1,1,1,1
 access_risk_classification_group_grc_consultant,access.risk.classification.group.grc.consultant,model_risk_classification,grcbit_base.group_grc_consultant,1,1,1,1
@@ -38,6 +42,7 @@ access_risk_classification_group_risk_management,access.risk.classification.grou
 access_risk_classification_group_isms,access.risk.classification.group.isms,model_risk_classification,grcbit_base.group_isms,1,0,0,0
 access_risk_classification_group_control,access.risk.classification.group.control,model_risk_classification,grcbit_base.group_control,1,0,0,0
 access_risk_classification_group_compliance,access.risk.classification.group.compliance,model_risk_classification,grcbit_base.group_compliance,1,0,0,0
+access_risk_classification_group_guest,access.risk.classification.group.guest,model_risk_classification,grcbit_base.group_guest,1,0,0,0
 
 access_inherent_risk_level_group_grc_admin,access.inherent.risk.level.group.grc.admin,model_inherent_risk_level,grcbit_base.group_grc_admin,1,1,1,1
 access_inherent_risk_level_group_grc_consultant,access.inherent.risk.level.group.grc.consultant,model_inherent_risk_level,grcbit_base.group_grc_consultant,1,1,1,1
@@ -46,6 +51,7 @@ access_inherent_risk_level_group_risk_management,access.inherent.risk.level.grou
 access_inherent_risk_level_group_isms,access.inherent.risk.level.group.isms,model_inherent_risk_level,grcbit_base.group_isms,1,0,0,0
 access_inherent_risk_level_group_control,access.inherent.risk.level.group.control,model_inherent_risk_level,grcbit_base.group_control,1,0,0,0
 access_inherent_risk_level_group_compliance,access.inherent.risk.level.group.compliance,model_inherent_risk_level,grcbit_base.group_compliance,1,0,0,0
+access_inherent_risk_level_group_guest,access.inherent.risk.level.group.guest,model_inherent_risk_level,grcbit_base.group_guest,1,0,0,0
 
 access_residual_risk_level_group_grc_admin,access.residual.risk.level.group.grc.admin,model_residual_risk_level,grcbit_base.group_grc_admin,1,1,1,1
 access_residual_risk_level_group_grc_consultant,access.residual.risk.level.group.grc.consultant,model_residual_risk_level,grcbit_base.group_grc_consultant,1,1,1,1
@@ -54,14 +60,7 @@ access_residual_risk_level_group_risk_management,access.residual.risk.level.grou
 access_residual_risk_level_group_isms,access.residual.risk.level.group.isms,model_residual_risk_level,grcbit_base.group_isms,1,0,0,0
 access_residual_risk_level_group_control,access.residual.risk.level.group.control,model_residual_risk_level,grcbit_base.group_control,1,0,0,0
 access_residual_risk_level_group_compliance,access.residual.risk.level.group.compliance,model_residual_risk_level,grcbit_base.group_compliance,1,0,0,0
-
-access_control_type_group_grc_admin,access.control.type.group.grc.admin,model_control_type,grcbit_base.group_grc_admin,1,1,1,1
-access_control_type_group_grc_consultant,access.control.type.group.grc.consultant,model_control_type,grcbit_base.group_grc_consultant,1,1,1,1
-access_control_type_group_asset_management,access.control.type.group.asset.management,model_control_type,grcbit_base.group_asset_management,1,0,0,0
-access_control_type_group_risk_management,access.control.type.group.risk.management,model_control_type,grcbit_base.group_risk_management,1,0,0,0
-access_control_type_group_isms,access.control.type.group.isms,model_control_type,grcbit_base.group_isms,1,0,0,0
-access_control_type_group_control,access.control.type.group.control,model_control_type,grcbit_base.group_control,1,1,1,1
-access_control_type_group_compliance,access.control.type.group.compliance,model_control_type,grcbit_base.group_compliance,1,0,0,0
+access_residual_risk_level_group_guest,access.residual.risk.level.group.guest,model_residual_risk_level,grcbit_base.group_guest,1,0,0,0
 
 access_control_design_criteria_group_grc_admin,access.control.design.criteria.group.grc.admin,model_control_design_criteria,grcbit_base.group_grc_admin,1,1,1,1
 access_control_design_criteria_group_grc_consultant,access.control.design.criteria.group.grc.consultant,model_control_design_criteria,grcbit_base.group_grc_consultant,1,1,1,1
@@ -70,6 +69,7 @@ access_control_design_criteria_group_risk_management,access.control.design.crite
 access_control_design_criteria_group_isms,access.control.design.criteria.group.isms,model_control_design_criteria,grcbit_base.group_isms,1,0,0,0
 access_control_design_criteria_group_control,access.control.design.criteria.group.control,model_control_design_criteria,grcbit_base.group_control,1,1,1,1
 access_control_design_criteria_group_compliance,access.control.design.criteria.group.compliance,model_control_design_criteria,grcbit_base.group_compliance,1,0,0,0
+access_control_design_criteria_group_guest,access.control.design.criteria.group.guest,model_control_design_criteria,grcbit_base.group_guest,1,0,0,0
 
 access_control_evaluation_criteria_group_grc_admin,access.control.evaluation.criteria.group.grc.admin,model_control_evaluation_criteria,grcbit_base.group_grc_admin,1,1,1,1
 access_control_evaluation_criteria_group_grc_consultant,access.control.evaluation.criteria.group.grc.consultant,model_control_evaluation_criteria,grcbit_base.group_grc_consultant,1,1,1,1
@@ -78,6 +78,7 @@ access_control_evaluation_criteria_group_risk_management,access.control.evaluati
 access_control_evaluation_criteria_group_isms,access.control.evaluation.criteria.group.isms,model_control_evaluation_criteria,grcbit_base.group_isms,1,0,0,0
 access_control_evaluation_criteria_group_control,access.control.evaluation.criteria.group.control,model_control_evaluation_criteria,grcbit_base.group_control,1,1,1,1
 access_control_evaluation_criteria_group_compliance,access.control.evaluation.criteria.group.compliance,model_control_evaluation_criteria,grcbit_base.group_compliance,1,0,0,0
+access_control_evaluation_criteria_group_guest,access.control.evaluation.criteria.group.guest,model_control_evaluation_criteria,grcbit_base.group_guest,1,0,0,0
 
 access_control_line_group_grc_admin,access.control.line.group.grc.admin,model_control_line,grcbit_base.group_grc_admin,1,1,1,1
 access_control_line_group_grc_consultant,access.control.line.group.grc.consultant,model_control_line,grcbit_base.group_grc_consultant,1,1,1,1
@@ -86,6 +87,7 @@ access_control_line_group_risk_management,access.control.line.group.risk.managem
 access_control_line_group_isms,access.control.line.group.isms,model_control_line,grcbit_base.group_isms,1,0,0,0
 access_control_line_group_control,access.control.line.group.control,model_control_line,grcbit_base.group_control,1,1,1,1
 access_control_line_group_compliance,access.control.line.group.compliance,model_control_line,grcbit_base.group_compliance,1,0,0,0
+access_control_line_group_guest,access.control.line.group.guest,model_control_line,grcbit_base.group_guest,1,0,0,0
 
 access_control_evidence_group_grc_admin,access.control.evidence.group.grc.admin,model_control_evidence,grcbit_base.group_grc_admin,1,1,1,1
 access_control_evidence_group_grc_consultant,access.control.evidence.group.grc.consultant,model_control_evidence,grcbit_base.group_grc_consultant,1,1,1,1
@@ -94,6 +96,7 @@ access_control_evidence_group_risk_management,access.control.evidence.group.risk
 access_control_evidence_group_isms,access.control.evidence.group.isms,model_control_evidence,grcbit_base.group_isms,1,0,0,0
 access_control_evidence_group_control,access.control.evidence.group.control,model_control_evidence,grcbit_base.group_control,1,1,1,1
 access_control_evidence_group_compliance,access.control.evidence.group.compliance,model_control_evidence,grcbit_base.group_compliance,1,0,0,0
+access_control_evidence_group_guest,access.control.evidence.group.guest,model_control_evidence,grcbit_base.group_guest,1,0,0,0
 
 access_control_design_group_grc_admin,access.control.design.group.grc.admin,model_control_design,grcbit_base.group_grc_admin,1,1,1,1
 access_control_design_group_grc_consultant,access.control.design.group.grc.consultant,model_control_design,grcbit_base.group_grc_consultant,1,1,1,1
@@ -102,3 +105,4 @@ access_control_design_group_risk_management,access.control.design.group.risk.man
 access_control_design_group_isms,access.control.design.group.isms,model_control_design,grcbit_base.group_isms,1,0,0,0
 access_control_design_group_control,access.control.design.group.control,model_control_design,grcbit_base.group_control,1,1,1,1
 access_control_design_group_compliance,access.control.design.group.compliance,model_control_design,grcbit_base.group_compliance,1,0,0,0
+access_control_design_group_guest,access.control.design.group.guest,model_control_design,grcbit_base.group_guest,1,0,0,0
