@@ -9,6 +9,7 @@
     'version': '16.0',
     'depends': [
         'base',
+        'grcbit_setgroups',
     ],
 
     # always loaded
@@ -16,5 +17,6 @@
         'security/res_groups.xml',
         'security/ir.model.access.csv',
         'views/res_partner_views.xml',
+        'wizards/set_groups_views.xml',
     ],
 }

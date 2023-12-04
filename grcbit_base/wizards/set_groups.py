@@ -2,10 +2,9 @@
 import logging
 from odoo import api, fields, models, _
 _logger = logging.getLogger(__name__)
-class SetGroupsUser(models.TransientModel):
-    _name = 'set.groups.user'
+class SetGroupsUserGrcbit(models.TransientModel):
+    _inherit = 'set.groups.user'
 
-    user_id = fields.Many2one('res.users', string="User")
     grc_admin_check = fields.Boolean(string="GRC Admin", default= lambda x: x.get_current_groups('GRC Admin'))
     grc_consultant_check = fields.Boolean(string="GRC Consultant", default= lambda x: x.get_current_groups('GRC Consultant'))
     asset_management_check = fields.Boolean(string="Asset Management", default= lambda x: x.get_current_groups('Asset Management'))
@@ -33,6 +32,7 @@ class SetGroupsUser(models.TransientModel):
         return groups
 
     def assign_groups(self):
+        res = super(SetGroupsUserGrcbit, self).assign_groups()
         data={
             'grc_admin_check':None,
             'grc_consultant_check':None,
@@ -133,3 +133,4 @@ class SetGroupsUser(models.TransientModel):
                 group_custom = self.base_values('Guest')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
+        return res
