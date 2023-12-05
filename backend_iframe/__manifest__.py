@@ -22,12 +22,14 @@
         'base',
         'mail',
         'vista_backend_theme',
+        'grcbit_setgroups',
     ],
     'data': [
         'security/backend_iframe_access_rules.xml',
         'security/ir.model.access.csv',
         'views/backend_iframe.xml',
         'views/menuitems.xml',
+        'wizards/set_groups_views.xml',
     ],
 'assets': {
         'web.assets_backend': [

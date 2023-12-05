@@ -32,6 +32,10 @@
 			<field name="name">Compliance</field>
 			<field name="category_id" ref="module_grcbit_base"/>
 		</record>
+		<record id="group_guest" model="res.groups">
+			<field name="name">Guest</field>
+			<field name="category_id" ref="module_grcbit_base"/>
+		</record>
     <record id="group_grc_admin" model="res.groups">
       <field name="name">GRC Admin</field>
 			<field name="category_id" ref="module_grcbit_base"/>

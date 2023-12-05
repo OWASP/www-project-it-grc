@@ -12,7 +12,7 @@
 
     <!-- RES USERS -->
     <menuitem name="Settings" id="menu_settings" parent="menu_root"  sequence="99" groups="grcbit_base.group_grc_admin"/>
-    <menuitem name="Users" id="menu_users" parent="menu_settings" action="manage_users_action" groups="grcbit_base.group_grc_admin"/>
+    <menuitem name="Users" id="menu_users" parent="menu_settings" action="grcbit_setgroups.manage_users_action" groups="grcbit_base.group_grc_admin"/>
 
     <!--MENUITEMS HIDDEN-->
     <record model="ir.ui.menu" id="mail.menu_root_discuss">

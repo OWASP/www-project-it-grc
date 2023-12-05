@@ -6,6 +6,7 @@ access_data_inventory_group_risk_management,access.data.inventory.group.risk.man
 access_data_inventory_group_isms,access.data.inventory.group.isms,model_data_inventory,group_isms,1,0,0,0
 access_data_inventory_group_control,access.data.inventory.group.control,model_data_inventory,group_control,1,0,0,0
 access_data_inventory_group_compliance,access.data.inventory.group.compliance,model_data_inventory,group_compliance,1,0,0,0
+access_data_inventory_group_guest,access.data.inventory.group.guest,model_data_inventory,group_guest,1,0,0,0
 
 access_it_inventory_group_grc_admin,access.it.inventory.group.grc.admin,model_it_inventory,group_grc_admin,1,1,1,1
 access_it_inventory_group_grc_consultant,access.it.inventory.group.grc.consultant,model_it_inventory,group_grc_consultant,1,1,1,1
@@ -14,6 +15,7 @@ access_it_inventory_group_risk_management,access.it.inventory.group.risk.managem
 access_it_inventory_group_isms,access.it.inventory.group.isms,model_it_inventory,group_isms,1,0,0,0
 access_it_inventory_group_control,access.it.inventory.group.control,model_it_inventory,group_control,1,0,0,0
 access_it_inventory_group_compliance,access.it.inventory.group.compliance,model_it_inventory,group_compliance,1,0,0,0
+access_it_inventory_group_guest,access.it.inventory.group.guest,model_it_inventory,group_guest,1,0,0,0
 
 access_data_classification_group_grc_admin,access.data.classification.group.grc.admin,model_data_classification,group_grc_admin,1,1,1,1
 access_data_classification_group_grc_consultant,access.data.classification.group.grc.consultant,model_data_classification,group_grc_consultant,1,1,1,1
@@ -22,6 +24,7 @@ access_data_classification_group_risk_management,access.data.classification.grou
 access_data_classification_group_isms,access.data.classification.group.isms,model_data_classification,group_isms,1,0,0,0
 access_data_classification_group_control,access.data.classification.group.control,model_data_classification,group_control,1,0,0,0
 access_data_classification_group_compliance,access.data.classification.group.compliance,model_data_classification,group_compliance,1,0,0,0
+access_data_classification_group_guest,access.data.classification.group.guest,model_data_classification,group_guest,1,0,0,0
 
 access_third_party_group_grc_admin,access.third.party.group.grc.admin,model_third_party,group_grc_admin,1,1,1,1
 access_third_party_group_grc_consultant,access.third.party.group.grc.consultant,model_third_party,group_grc_consultant,1,1,1,1
@@ -30,6 +33,7 @@ access_third_party_group_risk_management,access.third.party.group.risk.managemen
 access_third_party_group_isms,access.third.party.group.isms,model_third_party,group_isms,1,0,0,0
 access_third_party_group_control,access.third.party.group.control,model_third_party,group_control,1,0,0,0
 access_third_party_group_compliance,access.third.party.group.compliance,model_third_party,group_compliance,1,0,0,0
+access_third_party_group_guest,access.third.party.group.guest,model_third_party,group_guest,1,0,0,0
 
 access_res_users_group_admin,access.res.users.group.admin,base.model_res_users,group_grc_admin,1,1,1,1
 access_res_partner_group_admin,access.res.partner.group.admin,base.model_res_partner,group_grc_admin,1,1,1,1

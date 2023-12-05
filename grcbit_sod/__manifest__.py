@@ -9,6 +9,9 @@
     'version': '16.0',
     'depends': [
         'grcbit_base',
+        'grcbit_iso27001',
+        'grcbit_risk_management',
+        'grcbit_compliance',
     ],
 
     # always loaded
@@ -19,6 +22,8 @@
         #views
         'views/sod_views.xml',
         'views/menuitems.xml',
+        #wizards
+        'wizards/set_groups_views.xml',
     ],
     
 }

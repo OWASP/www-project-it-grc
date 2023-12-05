@@ -13,12 +13,14 @@
         'base',
         'mail',
         'vista_backend_theme',
+        'grcbit_setgroups',
     ],
     'data': [
         'security/zero_trust_access_rules.xml',
         'security/ir.model.access.csv',
         'views/zero_trust.xml',
         'views/menuitems.xml',
+        'wizards/set_groups_views.xml',
     ],
 'assets': {
         'web.assets_backend': [
