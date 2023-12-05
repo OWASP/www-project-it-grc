@@ -62,12 +62,12 @@
         <form>
 		      <sheet>
 	          <header>
-              <field name="state" widget="statusbar" options="{'clickable':'1'}" />
-              <button name="action_draft" string="SET TO DRAFT" type="object"  class="btn-primary" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant" confirm="¿Esta seguro que quiere pasar a la fase de BORRADOR de CONTROL?" attrs="{'invisible': [('state','in',['draft'])] }" />
-              <button name="action_design" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['draft'])]}" class="btn-success" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant" confirm="¿Esta seguro que quiere aprobar el  DISEÑO de CONTROL?" />
-              <button name="action_implemented" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['designed'])]}" class="btn-success" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant, grcbit_base.group_risk_owner" confirm="¿Esta seguro que quiere concluir la IMPLEMENTACION de CONTROL?" />
-              <button name="action_approved" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant" confirm="¿Esta seguro que quiere APROBAR la IMPLEMENTACION de CONTROL?" />
-              <button name="action_rejected" string="REJECT" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant" confirm="¿Esta seguro que quiere RECHAZAR la IMPLEMENTACION de CONTROL?" />
+              <field name="state" widget="statusbar"/>
+              <button name="action_draft" string="SET TO DRAFT" type="object"  class="btn-primary" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,group_control_draft" confirm="Are you sure you want to move on to the DRAFT CONTROL phase?" attrs="{'invisible': [('state','in',['draft'])] }" />
+              <button name="action_design" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['draft'])]}" class="btn-success" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,group_control_design" confirm="Are you sure you want to approve the CONTROL DESIGN?" />
+              <button name="action_implemented" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['designed'])]}" class="btn-success" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant, grcbit_base.group_risk_owner,group_control_implementation" confirm="Are you sure you want to complete the CONTROL IMPLEMENTATION?" />
+              <button name="action_approved" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,group_control_approval" confirm="Are you sure you want to APPROVE the CONTROL IMPLEMENTATION?" />
+              <button name="action_rejected" string="REJECT" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,group_control_reject" confirm="Are you sure you want to REJECT CONTROL IMPLEMENTATION?" />
   		      </header>
 	  	      <group>
               <field name="active" invisible="1"  />
@@ -97,8 +97,8 @@
                   <field name="is_implemented"  widget="boolean_toggle"  />
                 </tree>
               </field>      
-              <field name="control_design_criteria_id" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant" attrs="{'readonly': [('state', 'not in', ['designed'])]}"  />
-              <field name="control_evaluation_criteria_id" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant" attrs="{'readonly': [('state', 'not in', ['implemented'])]}"  />
+              <field name="control_design_criteria_id" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,group_control_design_evaluation" attrs="{'readonly': [('state', 'not in', ['designed'])]}"  />
+              <field name="control_evaluation_criteria_id" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,group_control_effectiveness_evaluation" attrs="{'readonly': [('state', 'not in', ['implemented'])]}"  />
               <field name="is_key_control" widget="boolean_toggle" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
               <field name="responsible" widget="many2one_avatar_user" optional="hide" attrs="{'readonly': [('state', 'not in', ['draft'])] }" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
               <field name="control_type_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />

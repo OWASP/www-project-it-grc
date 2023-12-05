@@ -48,6 +48,11 @@
                 </field>
               </group>
             </page>
+            <page string="Attachment">
+              <group>
+                <field name="attachment_file" widget="pdf_viewer"/>
+              </group>
+            </page>
 	        </notebook>
         </form>
       </field>
