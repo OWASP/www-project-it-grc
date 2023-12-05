@@ -19,8 +19,12 @@
         <xpath expr="//header" position="inside">
           <button name="open_set_groups" string="Set Groups" class="btn btn-primary" type="object"/>
         </xpath>
+        <xpath expr="//field[@name='partner_id']" position="after">
+          <field name="is_admin"/>
+        </xpath>
         <xpath expr="//page[@name='access_rights']" position="attributes">
-          <attribute name="invisible">1</attribute>
+
+          <attribute name="attrs">{'invisible':[('is_admin','=', False)]}</attribute>
         </xpath>
       </field>
     </record>
