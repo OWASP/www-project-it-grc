@@ -18,7 +18,7 @@
           <field name="reason_selection" />
           <!-- <field name="document_page_id"  widget="many2many_tags"  /> -->
           <field name="control_design_id" widget="many2many_tags"  />
-          <field name="control_status" widget="percentpie" />
+          <field name="control_status" widget="percentpie" force_save="1"/>
         </tree>
       </field>
     </record>
@@ -50,7 +50,7 @@
             <field name="reason_selection"/>
             <!-- <field name="document_page_id" widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True), '|', ('name','ilike','politica'), ('name','ilike','pol') ]" /> -->
             <field name="control_design_id"  widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}"  />
-            <field name="control_status" widget="percentpie" />
+            <field name="control_status" widget="percentpie" force_save="1"/>
   	      </group>
         </form>
       </field>
