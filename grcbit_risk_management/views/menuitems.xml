@@ -16,27 +16,5 @@
     <menuitem name="Control" id="menu_control_design" parent="menu_control" action="control_design_action" sequence="1" />
     <menuitem name="Design Criteria" id="menu_control_design_criteria" parent="menu_control" action="control_design_criteria_action" sequence="2" />
     <menuitem name="Implementation Criteria" id="menu_control_evaluation_criteria" parent="menu_control" action="control_evaluation_criteria_action" sequence="3" />
-
-    <!-- SEQUENCES -->
-    <record id="risk_id_sequence" model="ir.sequence">
-      <field name="name">Risk ID sequence</field>
-      <field name="code">risk.id.sequence</field>
-      <field name="active">TRUE</field>
-      <field name="prefix">RI-SGSI-</field>
-      <field name="number_increment">1</field>
-      <field name="number_next">1</field>
-      <field name="padding">3</field>
-      <field name="implementation">standard</field>
-    </record>
-    <record id="control_id_sequence" model="ir.sequence">
-      <field name="name">Control ID sequence</field>
-      <field name="code">control.id.sequence</field>
-      <field name="active">TRUE</field>
-      <field name="prefix">CO-SGSI-</field>
-      <field name="number_increment">1</field>
-      <field name="number_next">1</field>
-      <field name="padding">3</field>
-      <field name="implementation">standard</field>
-    </record>
   </data>
 </odoo>
