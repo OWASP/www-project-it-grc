@@ -30,6 +30,7 @@
         'views/risk_management_views.xml',
         'views/controls_views.xml',
         'views/menuitems.xml',
+        'views/ir_sequence.xml',
 
         #wizards
         'wizards/set_groups_views.xml',
