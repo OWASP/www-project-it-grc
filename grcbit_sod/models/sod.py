@@ -39,10 +39,10 @@ class GRCSodPrivilege(models.Model):
     @api.onchange('name')
     def _onchange_is_admin_new(self):
         for rec in self:
-            flag = self.env.user.has_group('grcbit_base.group_admin')
+            flag = self.env.user.has_group('grcbit_base.group_grc_admin')
             rec.is_grc_admin = flag
 
     def _get_group(self):
         for rec in self:
-            flag = self.env.user.has_group('grcbit_base.group_admin')
+            flag = self.env.user.has_group('grcbit_base.group_grc_admin')
             rec.is_grc_admin = flag
