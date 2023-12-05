@@ -130,3 +130,17 @@ class StatementApplicability(models.Model):
     attachment = fields.Many2many('ir.attachment', string=_("Attachment"))
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The control name already exists."))]
+
+    @api.onchange('control_design_id','control_design_id.state')
+    def _status_control(self):
+        status = 0
+        for i in self.control_design_id:
+            if i.state == 'draft':
+                status += 25
+            if i.state == 'designed':
+                status += 50
+            if i.state == 'implemented':
+                status += 75
+            if i.state == 'approved':
+                status += 100
+        self.control_status = status / len(self.control_design_id)
