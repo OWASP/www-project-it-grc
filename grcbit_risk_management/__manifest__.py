@@ -14,6 +14,7 @@
     # always loaded
     'data': [
         #security
+        'security/res_groups.xml',
         'security/ir.model.access.csv',
 
         #data
@@ -30,8 +31,11 @@
         'views/controls_views.xml',
         'views/menuitems.xml',
 
+        #wizards
+        'wizards/set_groups_views.xml',
+
         #reports
-        'reports/report_risk_factor.xml'
+        'reports/report_risk_factor.xml',
     ],
     
 }
