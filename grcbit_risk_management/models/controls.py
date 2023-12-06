@@ -251,4 +251,4 @@ class ControlDesing(models.Model):
                     status += 75
                 if state == 'approved':
                     status += 100
-            s.write({'control_status':status / len(s.control_design_id)})
+            s.sudo().write({'control_status':status / len(s.control_design_id)})
