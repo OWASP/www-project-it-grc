@@ -144,6 +144,6 @@ class StatementApplicability(models.Model):
             if i.state == 'approved':
                 status += 100
         if len(self.control_design_id) > 0:
-            self.control_status = status / len(self.control_design_id)
+            self.sudo().control_status = status / len(self.control_design_id)
         else:
-            self.control_status = 0
+            self.sudo().control_status = 0
