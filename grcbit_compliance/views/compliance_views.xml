@@ -155,9 +155,9 @@
                   <strong class="o_kanban_record_title">
                     <field name="compliance_version_id"/>
                   </strong><br/>
-                  <div>
+                  <div style="overflow: hidden; max-height:200px;">
                     <field name="name"/><br/>
-                    <field name="description"/>
+                    <t t-esc="record.description.value"/>
 		              </div>
                 </div>
               </div>
