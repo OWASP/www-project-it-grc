@@ -47,14 +47,15 @@
         'base',
         'anita_form_callback',
         'mana_dashboard_base',
+        'grcbit_base',
     ],
     "external_dependencies": {
         "python": ['json5', 'pendulum', 'python-box', 'xw_utils>=1.0.15']
     },
     "images": ['static/description/banner.png'],
     "data": [
-        'security/ir.model.access.csv',
         'security/security.xml',
+        'security/ir.model.access.csv',
 
         # data
         'data/mana_series_type.xml',
@@ -111,6 +112,9 @@
         'views/mana_dashboard_series_type.xml',
         'views/mana_dashboard_template.xml',
         'views/mana_dashboard_block_settings.xml',
+
+        #wizard
+        'wizard/set_groups_views.xml',
     ],
 
     'assets': {

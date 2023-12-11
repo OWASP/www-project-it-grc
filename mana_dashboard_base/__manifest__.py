@@ -27,7 +27,7 @@
     },
 
     'data': [
-        'security/ir.model.access.csv',
+        # 'security/ir.model.access.csv',
         
         'views/mana_template.xml',
         'views/mana_dashboard_template.xml',
