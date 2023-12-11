@@ -1,0 +1,68 @@
+
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="mana_dashboard.parameter_list">
+            <field name="name">Mana Dashboard Parameter list </field>
+            <field name="model">mana_dashboard.parameter</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="name"/>
+                    <field name="data_source_mixin_id" string="data_source_mixin_id"/>
+                    <field name="type" string="type"/>
+                    <field name="default_value" string="default_value"/>
+                    <field name="description" string="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="mana_dashboard.parameter_form">
+            <field name="name">Mana Dashboard Parameter form </field>
+            <field name="model">mana_dashboard.parameter</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-2 col-form-label">name</label>
+                            <div class="col-sm-10">
+                                <field name="name" string="name"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="data_source_mixin_id" class="col-sm-2 col-form-label">data_source_mixin_id</label>
+                            <div class="col-sm-10">
+                                <field name="data_source_mixin_id" string="data_source_mixin_id"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="type" class="col-sm-2 col-form-label">type</label>
+                            <div class="col-sm-10">
+                                <field name="type" string="type"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="default_value" class="col-sm-2 col-form-label">default_value</label>
+                            <div class="col-sm-10">
+                                <field name="default_value" string="default_value"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="description" class="col-sm-2 col-form-label">description</label>
+                            <div class="col-sm-10">
+                                <field name="description" string="description"/>
+                            </div>
+                        </div>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="mana_dashboard.parameter_act_window">
+            <field name="name">Mana Dashboard Parameter</field>
+            <field name="res_model">mana_dashboard.parameter</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+    </data>
+</odoo>

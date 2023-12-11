@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="mana_dashboard.accordion" owl="1">
+        <div class="mana_accordion" t-att-class="{'collapsed': state.collapse}">
+            <div class="card-title">
+                <button class="accordion_button" type="button" t-on-click.prevent="toggleDisplay">
+                    <t t-esc="props.title"/>
+                </button>
+            </div>
+            <div class="accordion-body" >
+                <t t-slot="default"/>
+            </div>
+        </div>
+    </t>
+    
+</templates>
+
+
+

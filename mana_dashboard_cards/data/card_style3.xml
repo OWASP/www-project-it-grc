@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+  <record id="mana_dashboard_cards.simple_flicker_card" model="mana_dashboard.template">
+            <field name="name">Simple Flicker Card</field>
+            <field name="category">statistics</field>
+            <field name="type">statistics card</field>
+            <field name="component_type">statistics_card</field>
+            <field name="need_column_aggregation">True</field>
+            <field name="template">
+<![CDATA[	
+<div class="card-body d-flex align-items-center">
+	<div class="card-box-icon">
+		<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M22.8333 6.66667V7.16667H23.3333H28.3333C28.6428 7.16667 28.9395 7.28958 29.1583 7.50838C29.3771 7.72717 29.5 8.02391 29.5 8.33333V28.3333C29.5 28.6428 29.3771 28.9395 29.1583 29.1583C28.9395 29.3771 28.6428 29.5 28.3333 29.5H13.3333C13.0239 29.5 12.7272 29.3771 12.5084 29.1583C12.2896 28.9395 12.1667 28.6428 12.1667 28.3333C12.1667 28.0239 12.2896 27.7272 12.5084 27.5084C12.7272 27.2896 13.0239 27.1667 13.3333 27.1667H26.6667H27.1667V26.6667V18.3333V17.8333H26.6667H20H19.5V18.3333V20C19.5 20.3094 19.3771 20.6062 19.1583 20.825C18.9395 21.0438 18.6428 21.1667 18.3333 21.1667H11.6667C11.3572 21.1667 11.0605 21.0438 10.8417 20.825C10.6229 20.6062 10.5 20.3094 10.5 20V18.3333V17.8333H10H3.33333H2.83333V18.3333V26.6667V27.1667H3.33333H6.66667C6.97609 27.1667 7.27283 27.2896 7.49162 27.5084C7.71042 27.7272 7.83333 28.0239 7.83333 28.3333C7.83333 28.6428 7.71042 28.9395 7.49162 29.1583C7.27283 29.3771 6.97609 29.5 6.66667 29.5H1.66667C1.35725 29.5 1.0605 29.3771 0.841709 29.1583C0.622917 28.9395 0.5 28.6428 0.5 28.3333V8.33333C0.5 8.02391 0.622916 7.72717 0.841709 7.50838C1.0605 7.28958 1.35725 7.16667 1.66667 7.16667H6.66667H7.16667V6.66667V1.66667C7.16667 1.35725 7.28958 1.0605 7.50838 0.841709C7.72717 0.622916 8.02391 0.5 8.33333 0.5H21.6667C21.9761 0.5 22.2728 0.622916 22.4916 0.841709C22.7104 1.0605 22.8333 1.35725 22.8333 1.66667V6.66667ZM10 2.83333H9.5V3.33333V6.66667V7.16667H10H20H20.5V6.66667V3.33333V2.83333H20H10ZM16.6667 18.8333H17.1667V18.3333V15V14.5H16.6667H13.3333H12.8333V15V18.3333V18.8333H13.3333H16.6667ZM19.5 15V15.5H20H26.6667H27.1667V15V10V9.5H26.6667H3.33333H2.83333V10V15V15.5H3.33333H10H10.5V15V13.3333C10.5 13.0239 10.6229 12.7272 10.8417 12.5084C11.0605 12.2896 11.3572 12.1667 11.6667 12.1667H18.3333C18.6428 12.1667 18.9395 12.2896 19.1583 12.5084C19.3771 12.7272 19.5 13.0239 19.5 13.3333V15Z" fill="var(--primary)" stroke="var(--primary)"></path>
+		</svg>
+	</div>
+	<div class="chart-num">
+		<h2 class="font-w600 mb-0 statistics">932</h2>
+		<p>
+			Project
+		</p>
+	</div>
+</div>
+]]>
+            </field>
+
+            <!-- demo template -->
+            <field name="demo_template">
+<![CDATA[
+<div class="card-body d-flex align-items-center">
+	<div class="card-box-icon">
+		<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M22.8333 6.66667V7.16667H23.3333H28.3333C28.6428 7.16667 28.9395 7.28958 29.1583 7.50838C29.3771 7.72717 29.5 8.02391 29.5 8.33333V28.3333C29.5 28.6428 29.3771 28.9395 29.1583 29.1583C28.9395 29.3771 28.6428 29.5 28.3333 29.5H13.3333C13.0239 29.5 12.7272 29.3771 12.5084 29.1583C12.2896 28.9395 12.1667 28.6428 12.1667 28.3333C12.1667 28.0239 12.2896 27.7272 12.5084 27.5084C12.7272 27.2896 13.0239 27.1667 13.3333 27.1667H26.6667H27.1667V26.6667V18.3333V17.8333H26.6667H20H19.5V18.3333V20C19.5 20.3094 19.3771 20.6062 19.1583 20.825C18.9395 21.0438 18.6428 21.1667 18.3333 21.1667H11.6667C11.3572 21.1667 11.0605 21.0438 10.8417 20.825C10.6229 20.6062 10.5 20.3094 10.5 20V18.3333V17.8333H10H3.33333H2.83333V18.3333V26.6667V27.1667H3.33333H6.66667C6.97609 27.1667 7.27283 27.2896 7.49162 27.5084C7.71042 27.7272 7.83333 28.0239 7.83333 28.3333C7.83333 28.6428 7.71042 28.9395 7.49162 29.1583C7.27283 29.3771 6.97609 29.5 6.66667 29.5H1.66667C1.35725 29.5 1.0605 29.3771 0.841709 29.1583C0.622917 28.9395 0.5 28.6428 0.5 28.3333V8.33333C0.5 8.02391 0.622916 7.72717 0.841709 7.50838C1.0605 7.28958 1.35725 7.16667 1.66667 7.16667H6.66667H7.16667V6.66667V1.66667C7.16667 1.35725 7.28958 1.0605 7.50838 0.841709C7.72717 0.622916 8.02391 0.5 8.33333 0.5H21.6667C21.9761 0.5 22.2728 0.622916 22.4916 0.841709C22.7104 1.0605 22.8333 1.35725 22.8333 1.66667V6.66667ZM10 2.83333H9.5V3.33333V6.66667V7.16667H10H20H20.5V6.66667V3.33333V2.83333H20H10ZM16.6667 18.8333H17.1667V18.3333V15V14.5H16.6667H13.3333H12.8333V15V18.3333V18.8333H13.3333H16.6667ZM19.5 15V15.5H20H26.6667H27.1667V15V10V9.5H26.6667H3.33333H2.83333V10V15V15.5H3.33333H10H10.5V15V13.3333C10.5 13.0239 10.6229 12.7272 10.8417 12.5084C11.0605 12.2896 11.3572 12.1667 11.6667 12.1667H18.3333C18.6428 12.1667 18.9395 12.2896 19.1583 12.5084C19.3771 12.7272 19.5 13.0239 19.5 13.3333V15Z" fill="var(--primary)" stroke="var(--primary)"></path>
+		</svg>
+	</div>
+	<div class="chart-num">
+		<h2 class="font-w600 mb-0 statistics">932</h2>
+		<p>
+			Project
+		</p>
+	</div>
+</div>
+]]>
+            </field>
+
+            <!-- scripts -->
+            <field name="scripts">
+<![CDATA[
+ // Your script here
+let data_source = this.get_data_source();
+if (!data_source || !data_source.is_valid()) return;
+let value = data_source.get_first_aggregate_column_value();
+this.$el.find('.statistics').text(value);
+]]>
+            </field>
+
+            <!-- default scripts -->
+            <field name="default_scripts">
+ // Your script here
+let data_source = this.get_data_source();
+if (!data_source || !data_source.is_valid()) return;
+let value = data_source.get_first_aggregate_column_value();
+this.$el.find('.statistics').text(value);
+            </field>
+
+            <!-- styles -->
+            <field name="styles">
+<![CDATA[
+
+.dash-widget {
+    background: #fff;
+    margin-bottom: 25px;
+    border-radius: 6px;
+    padding: 20px;
+    border: 1px solid #E8EBED;
+}
+
+.card-box-icon {
+    width: 4.5rem;
+    height: 4.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #EEEEEE;
+    border-radius: 0.625rem;
+}
+
+.dash-widget .dash-widgetimg span {
+    width: 48px;
+    height: 48px;
+    background: rgba(249, 110, 111, 0.12);
+    border-radius: 50px;
+}
+
+.chart-num h2, .card .chart-num .h2 {
+    font-size: 2.25rem;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.font-w600 {
+    font-weight: 600;
+}
+
+.chart-num {
+    margin-top: 0.375rem;
+}
+
+.dash-widget .dash-widgetimg span img {
+    max-width: 100%;
+    height: auto;
+}
+
+.dash-widget .dash-widgetcontent h5 {
+    color: #212B36;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.dash-widget .dash-widgetcontent h6 {
+    font-weight: 400;
+    font-size: 14px;
+    color: #212B36;
+}
+
+.chart-num p {
+    font-size: 1.063rem;
+    margin-bottom: 0;
+}
+
+p {
+    line-height: 1.8;
+    font-weight: 400;
+    color: #666666;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.card-body .card-box-icon {
+    margin-right: 1.25rem;
+}
+
+]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

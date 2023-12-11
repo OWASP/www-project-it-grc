@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="mana_dashboard.empty_card_style_one" model="mana_dashboard.template">
+            <field name="name">Card Template One</field>
+			<field name="category">empty_card</field>
+            <field name="type">empty_card</field>
+            <field name="component_type">empty_card</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/empty_card/style1.png"/>
+            <!-- preview -->
+            <field name="template">
+<![CDATA[
+]]>
+            </field>
+			
+            <!-- styles -->
+            <field name="styles">
+<![CDATA[
+
+    &.card {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0px;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: .25rem;
+    }
+
+    &.card {
+        border: none;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        letter-spacing: 0.5px;
+        border-radius: 15px;
+        -webkit-box-shadow: 0px 4px 30px rgba(95, 94, 231, 0.07);
+        box-shadow: 0px 4px 30px rgba(95, 94, 231, 0.07);
+    }
+
+    .card-header {
+        padding: .5rem 1rem;
+        margin-bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.03);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    }
+
+    &.card .card-header.card-no-border {
+        border-bottom: none !important;
+    }
+
+    .card-body {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1rem 1rem;
+    }
+
+    &.card .card-body {
+        background-color: rgba(0, 0, 0, 0);
+    }
+]]>
+            </field>
+            <!-- scripts -->
+            <field name="scripts">
+            </field>
+            <!-- multi_data_source -->
+            <field name="help">
+<![CDATA[
+]]>
+            </field>
+        </record>
+        
+    </data>
+</odoo>

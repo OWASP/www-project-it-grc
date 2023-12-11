@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <!-- template for color picker  -->
+    <t t-name="mana_dashboard.color_picker" owl="1">
+        <div class="color_item input-group color_picker_group mb-1 mr-3">
+            <input type="text" class="form-control color_item" t-model="state.color_value" t-ref="color_value_input" />
+            <span class="input-group-append">
+                <span class="input-group-text colorpicker-input-addon">
+                    <input t-ref="color_picker_input" />
+                </span>
+            </span>
+        </div>
+    </t>
+
+</templates>

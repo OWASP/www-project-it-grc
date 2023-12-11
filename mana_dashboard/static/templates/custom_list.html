@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+	<title></title>
+	<style>
+		body {
+			--fc-event-border-color: var(--bs-primary);
+			--fc-event-bg-color: var(--bs-primary);
+			--fc-event-text-color: var(--bs-primary-inverse);
+		}
+
+		*,
+		*::before,
+		*::after {
+			box-sizing: border-box;
+		}
+
+		/* @media all and (min-width:992px) */
+		main,
+		span,
+		ol,
+		ul,
+		pre,
+		div {
+			scrollbar-width: thin;
+			scrollbar-color: var(--bs-scrollbar-color) transparent;
+		}
+
+		.table-responsive {
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+		}
+
+		.card-body {
+			flex: 1 1 auto;
+			padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+			color: var(--bs-card-color);
+		}
+
+		.pt-6 {
+			padding-top: 1.5rem !important;
+		}
+
+		.card .card-body {
+			padding: 2rem 2.25rem;
+			color: var(--bs-card-color);
+		}
+
+		.card {
+			--bs-card-spacer-y: 1rem;
+			--bs-card-spacer-x: 1rem;
+			--bs-card-title-spacer-y: 0.5rem;
+			--bs-card-title-color: ;
+			--bs-card-subtitle-color: ;
+			--bs-card-border-width: var(--bs-border-width);
+			--bs-card-border-color: var(--bs-border-color);
+			--bs-card-border-radius: 0.625rem;
+			--bs-card-box-shadow: 0px 0px 20px 0px rgba(76, 87, 125, 0.02);
+			--bs-card-inner-border-radius: calc(0.625rem - (var(--bs-border-width)));
+			--bs-card-cap-padding-y: 0.5rem;
+			--bs-card-cap-padding-x: 1rem;
+			--bs-card-cap-bg: transparent;
+			--bs-card-cap-color: ;
+			--bs-card-height: ;
+			--bs-card-color: ;
+			--bs-card-bg: var(--bs-body-bg);
+			--bs-card-img-overlay-padding: 1rem;
+			--bs-card-group-margin: 0.75rem;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			min-width: 0px;
+			height: var(--bs-card-height);
+			word-wrap: break-word;
+			background-color: var(--bs-card-bg);
+			background-clip: border-box;
+			border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+			border-radius: var(--bs-card-border-radius);
+			box-shadow: var(--bs-card-box-shadow);
+		}
+
+		/* @media all and (min-width:768px) */
+		.h-md-100 {
+			height: 100% !important;
+		}
+
+		.card {
+			border: 0;
+		}
+
+		.row>* {
+			flex-shrink: 0;
+			width: 100%;
+			max-width: 100%;
+			padding-right: calc(var(--bs-gutter-x) * 0.5);
+			padding-left: calc(var(--bs-gutter-x) * 0.5);
+			margin-top: var(--bs-gutter-y);
+		}
+
+		/* @media all and (min-width:1200px) */
+		.col-xl-8 {
+			flex: 0 0 auto;
+			width: 66.66%;
+		}
+
+		.row {
+			--bs-gutter-x: 1.5rem;
+			--bs-gutter-y: 0;
+			display: flex;
+			flex-wrap: wrap;
+			margin-top: calc(-1 * var(--bs-gutter-y));
+			margin-right: calc(-0.5 * var(--bs-gutter-x));
+			margin-left: calc(-0.5 * var(--bs-gutter-x));
+		}
+
+		.g-5,
+		.gx-5 {
+			--bs-gutter-x: 1.25rem;
+		}
+
+		.g-5,
+		.gy-5 {
+			--bs-gutter-y: 1.25rem;
+		}
+
+		/* @media all and (min-width:1200px) */
+		.g-xl-10,
+		.gx-xl-10 {
+			--bs-gutter-x: 2.5rem;
+		}
+
+		/* @media all and (min-width:1200px) */
+		.g-xl-10,
+		.gy-xl-10 {
+			--bs-gutter-y: 2.5rem;
+		}
+
+		.mb-5 {
+			margin-bottom: 1.25rem !important;
+		}
+
+		/* @media all and (min-width:1200px) */
+		.mb-xl-10 {
+			margin-bottom: 2.5rem !important;
+		}
+
+		.container,
+		.container-fluid,
+		.container-xxl,
+		.container-xl,
+		.container-lg,
+		.container-md,
+		.container-sm {
+			--bs-gutter-x: 1.5rem;
+			--bs-gutter-y: 0;
+			width: 100%;
+			padding-right: calc(var(--bs-gutter-x) * 0.5);
+			padding-left: calc(var(--bs-gutter-x) * 0.5);
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		/* @media all and (min-width:992px) */
+		.app-container {
+			padding-left: 30px !important;
+			padding-right: 30px !important;
+		}
+
+		.d-flex {
+			display: flex !important;
+		}
+
+		.flex-column {
+			flex-direction: column !important;
+		}
+
+		.flex-column-fluid {
+			flex: 1 0 auto;
+		}
+
+		/* @media all and (min-width:992px) */
+		.app-content {
+			padding-top: 30px;
+			padding-bottom: 30px;
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+
+		/* @media all and (min-width:992px) */
+		[data-kt-app-toolbar-enabled=true]:not([data-kt-app-toolbar-fixed=true]) .app-content {
+			padding-top: 0px;
+		}
+
+		.flex-row-fluid {
+			flex: 1 auto;
+			min-width: 0px;
+		}
+
+		.app-main {
+			display: flex;
+		}
+
+		/* @media all and (min-width:992px) */
+		.app-main {
+			transition: margin 0.3s ease;
+		}
+
+		.app-wrapper {
+			display: flex;
+		}
+
+		/* @media all and (min-width:992px) */
+		.app-wrapper {
+			transition: margin-left 0.3s ease, margin-right 0.3s ease;
+		}
+
+		/* @media all and (min-width:992px) */
+		[data-kt-app-header-fixed=true] .app-wrapper {
+			margin-top: var(--bs-app-header-height);
+		}
+
+		/* @media all and (min-width:992px) */
+		[data-kt-app-sidebar-fixed=true] .app-wrapper {
+			margin-left: calc(var(--bs-app-sidebar-width) + var(--bs-app-sidebar-gap-start, 0px) + var(--bs-app-sidebar-gap-end, 0px));
+		}
+
+		.app-page {
+			display: flex;
+		}
+
+		.flex-root {
+			flex: 1;
+		}
+
+		body {
+			margin: 0;
+			font-family: var(--bs-body-font-family);
+			font-size: var(--bs-body-font-size);
+			font-weight: var(--bs-body-font-weight);
+			line-height: var(--bs-body-line-height);
+			color: var(--bs-body-color);
+			text-align: var(--bs-body-text-align);
+			background-color: var(--bs-body-bg);
+			-webkit-text-size-adjust: 100%;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		}
+
+		html {
+			font-family: sans-serif;
+			text-size-adjust: 100%;
+		}
+
+		html,
+		body {
+			height: 100%;
+			margin: 0px;
+			padding: 0px;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			font-size: 13px !important;
+			font-weight: 400;
+			font-family: Inter, Helvetica, "sans-serif";
+		}
+
+		body {
+			display: flex;
+			flex-direction: column;
+		}
+
+		body,
+		.app-default {
+			background-color: var(--bs-app-bg-color);
+		}
+
+		:root {
+			--fc-daygrid-event-dot-width: 8px;
+		}
+
+		:root {
+			--fc-list-event-dot-width: 10px;
+			--fc-list-event-hover-bg-color: #f5f5f5;
+		}
+
+		:root {
+			--tagify-dd-color-primary: rgb(53, 149, 246);
+			--tagify-dd-bg-color: white;
+			--tagify-dd-item-pad: .3em .5em;
+		}
+
+		:root,
+		[data-bs-theme=light] {
+			--bs-prismjs-bg: #1e1e3f;
+			--bs-prismjs-border: rgba(255, 255, 255, 0.1);
+			--bs-prismjs-btn-bg: #2d2d5e;
+			--bs-prismjs-btn-bg-hover: #2d2d5e;
+			--bs-prismjs-btn-color: rgba(255, 255, 255, 0.75);
+			--bs-prismjs-btn-color-hover: #009ef7;
+			--bs-prismjs-scrollbar-color: #323268;
+			--bs-prismjs-scrollbar-color-hover: #373773;
+		}
+
+		:root,
+		[data-bs-theme=light] {
+			--bs-blue: #0d6efd;
+			--bs-indigo: #6610f2;
+			--bs-purple: #6f42c1;
+			--bs-pink: #d63384;
+			--bs-red: #dc3545;
+			--bs-orange: #fd7e14;
+			--bs-yellow: #ffc107;
+			--bs-green: #198754;
+			--bs-teal: #20c997;
+			--bs-cyan: #0dcaf0;
+			--bs-black: #000000;
+			--bs-white: #ffffff;
+			--bs-gray: #7E8299;
+			--bs-gray-dark: #3F4254;
+			--bs-gray-100: #F9F9F9;
+			--bs-gray-200: #F4F4F4;
+			--bs-gray-300: #E1E3EA;
+			--bs-gray-400: #B5B5C3;
+			--bs-gray-500: #A1A5B7;
+			--bs-gray-600: #7E8299;
+			--bs-gray-700: #5E6278;
+			--bs-gray-800: #3F4254;
+			--bs-gray-900: #181C32;
+			--bs-white: #ffffff;
+			--bs-light: #F9F9F9;
+			--bs-primary: #009ef7;
+			--bs-secondary: #E1E3EA;
+			--bs-success: #50cd89;
+			--bs-info: #7239ea;
+			--bs-warning: #ffc700;
+			--bs-danger: #f1416c;
+			--bs-dark: #181C32;
+			--bs-white-rgb: 255, 255, 255;
+			--bs-light-rgb: 249, 249, 249;
+			--bs-primary-rgb: 0, 158, 247;
+			--bs-secondary-rgb: 225, 227, 234;
+			--bs-success-rgb: 80, 205, 137;
+			--bs-info-rgb: 114, 57, 234;
+			--bs-warning-rgb: 255, 199, 0;
+			--bs-danger-rgb: 241, 65, 108;
+			--bs-dark-rgb: 24, 28, 50;
+			--bs-primary-text: #0a58ca;
+			--bs-secondary-text: #7E8299;
+			--bs-success-text: #146c43;
+			--bs-info-text: #087990;
+			--bs-warning-text: #997404;
+			--bs-danger-text: #b02a37;
+			--bs-light-text: #7E8299;
+			--bs-dark-text: #5E6278;
+			--bs-primary-bg-subtle: #cfe2ff;
+			--bs-secondary-bg-subtle: #F9F9F9;
+			--bs-success-bg-subtle: #d1e7dd;
+			--bs-info-bg-subtle: #cff4fc;
+			--bs-warning-bg-subtle: #fff3cd;
+			--bs-danger-bg-subtle: #f8d7da;
+			--bs-light-bg-subtle: #fcfcfc;
+			--bs-dark-bg-subtle: #B5B5C3;
+			--bs-primary-border-subtle: #9ec5fe;
+			--bs-secondary-border-subtle: #F4F4F4;
+			--bs-success-border-subtle: #a3cfbb;
+			--bs-info-border-subtle: #9eeaf9;
+			--bs-warning-border-subtle: #ffe69c;
+			--bs-danger-border-subtle: #f1aeb5;
+			--bs-light-border-subtle: #F4F4F4;
+			--bs-dark-border-subtle: #A1A5B7;
+			--bs-white-rgb: 255, 255, 255;
+			--bs-black-rgb: 0, 0, 0;
+			--bs-body-color-rgb: 24, 28, 50;
+			--bs-body-bg-rgb: 255, 255, 255;
+			--bs-font-sans-serif: Inter, Helvetica, "sans-serif";
+			--bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+			--bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+			--bs-body-font-family: var(--bs-font-sans-serif);
+			--bs-body-font-size: 1rem;
+			--bs-body-font-weight: 400;
+			--bs-body-line-height: 1.5;
+			--bs-body-color: #181C32;
+			--bs-emphasis-color: #000000;
+			--bs-emphasis-color-rgb: 0, 0, 0;
+			--bs-secondary-color: rgba(24, 28, 50, 0.75);
+			--bs-secondary-color-rgb: 24, 28, 50;
+			--bs-secondary-bg: #F4F4F4;
+			--bs-secondary-bg-rgb: 244, 244, 244;
+			--bs-tertiary-color: rgba(24, 28, 50, 0.5);
+			--bs-tertiary-color-rgb: 24, 28, 50;
+			--bs-tertiary-bg: #F9F9F9;
+			--bs-tertiary-bg-rgb: 249, 249, 249;
+			--bs-body-bg: #ffffff;
+			--bs-body-bg-rgb: 255, 255, 255;
+			--bs-heading-color: #181C32;
+			--bs-link-color: #009ef7;
+			--bs-link-color-rgb: 0, 158, 247;
+			--bs-link-decoration: none;
+			--bs-link-hover-color: #0095e8;
+			--bs-link-hover-color-rgb: 0, 149, 232;
+			--bs-link-hover-decoration: none;
+			--bs-code-color: #b93993;
+			--bs-highlight-bg: #fff3cd;
+			--bs-border-width: 1px;
+			--bs-border-style: solid;
+			--bs-border-color: #F4F4F4;
+			--bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+			--bs-border-radius: 0.475rem;
+			--bs-border-radius-sm: 0.425rem;
+			--bs-border-radius-lg: 0.625rem;
+			--bs-border-radius-xl: 1rem;
+			--bs-border-radius-2xl: 2rem;
+			--bs-border-radius-pill: 50rem;
+			--bs-box-shadow: 0 0.5rem 1.5rem 0.5rem rgba(0, 0, 0, 0.075);
+			--bs-box-shadow-sm: 0 0.1rem 1rem 0.25rem rgba(0, 0, 0, 0.05);
+			--bs-box-shadow-lg: 0 1rem 2rem 1rem rgba(0, 0, 0, 0.1);
+			--bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+			--bs-emphasis-color: #000000;
+			--bs-form-control-bg: var(--bs-body-bg);
+			--bs-form-control-disabled-bg: var(--bs-secondary-bg);
+			--bs-highlight-bg: #fff3cd;
+			--bs-breakpoint-xs: 0;
+			--bs-breakpoint-sm: 576px;
+			--bs-breakpoint-md: 768px;
+			--bs-breakpoint-lg: 992px;
+			--bs-breakpoint-xl: 1200px;
+			--bs-breakpoint-xxl: 1400px;
+		}
+
+		:root {
+			--bs-xs: 0;
+			--bs-sm: 576px;
+			--bs-md: 768px;
+			--bs-lg: 992px;
+			--bs-xl: 1200px;
+			--bs-xxl: 1400px;
+			--bs-scrollbar-size: 5px;
+			--bs-scrollbar-overlay-size: 19px;
+			--bs-scrollbar-overlay-space: 7px;
+		}
+
+		[data-bs-theme=light] {
+			--bs-text-muted: #A1A5B7;
+			--bs-gray-100: #F9F9F9;
+			--bs-gray-100-rgb: 249, 249, 249;
+			--bs-gray-200: #F4F4F4;
+			--bs-gray-200-rgb: 244, 244, 244;
+			--bs-gray-300: #E1E3EA;
+			--bs-gray-300-rgb: 225, 227, 234;
+			--bs-gray-400: #B5B5C3;
+			--bs-gray-400-rgb: 181, 181, 195;
+			--bs-gray-500: #A1A5B7;
+			--bs-gray-500-rgb: 161, 165, 183;
+			--bs-gray-600: #7E8299;
+			--bs-gray-600-rgb: 126, 130, 153;
+			--bs-gray-700: #5E6278;
+			--bs-gray-700-rgb: 94, 98, 120;
+			--bs-gray-800: #3F4254;
+			--bs-gray-800-rgb: 63, 66, 84;
+			--bs-gray-900: #181C32;
+			--bs-gray-900-rgb: 24, 28, 50;
+			--bs-white: #ffffff;
+			--bs-light: #F9F9F9;
+			--bs-primary: #009ef7;
+			--bs-secondary: #E1E3EA;
+			--bs-success: #50cd89;
+			--bs-info: #7239ea;
+			--bs-warning: #ffc700;
+			--bs-danger: #f1416c;
+			--bs-dark: #181C32;
+			--bs-primary-active: #0095e8;
+			--bs-secondary-active: #B5B5C3;
+			--bs-light-active: #F4F4F4;
+			--bs-success-active: #47be7d;
+			--bs-info-active: #5014d0;
+			--bs-warning-active: #f1bc00;
+			--bs-danger-active: #d9214e;
+			--bs-dark-active: #131628;
+			--bs-primary-light: #f1faff;
+			--bs-secondary-light: #F9F9F9;
+			--bs-success-light: #e8fff3;
+			--bs-info-light: #f8f5ff;
+			--bs-warning-light: #fff8dd;
+			--bs-danger-light: #fff5f8;
+			--bs-dark-light: #F4F4F4;
+			--bs-primary-inverse: #ffffff;
+			--bs-secondary-inverse: #3F4254;
+			--bs-light-inverse: #7E8299;
+			--bs-success-inverse: #ffffff;
+			--bs-info-inverse: #ffffff;
+			--bs-warning-inverse: #ffffff;
+			--bs-danger-inverse: #ffffff;
+			--bs-dark-inverse: #ffffff;
+			--bs-white-rgb: 255, 255, 255;
+			--bs-light-rgb: 249, 249, 249;
+			--bs-primary-rgb: 0, 158, 247;
+			--bs-secondary-rgb: 225, 227, 234;
+			--bs-success-rgb: 80, 205, 137;
+			--bs-info-rgb: 114, 57, 234;
+			--bs-warning-rgb: 255, 199, 0;
+			--bs-danger-rgb: 241, 65, 108;
+			--bs-dark-rgb: 24, 28, 50;
+			--bs-text-white: #ffffff;
+			--bs-text-primary: #009ef7;
+			--bs-text-secondary: #E1E3EA;
+			--bs-text-light: #F9F9F9;
+			--bs-text-success: #50cd89;
+			--bs-text-info: #7239ea;
+			--bs-text-warning: #ffc700;
+			--bs-text-danger: #f1416c;
+			--bs-text-dark: #181C32;
+			--bs-text-muted: #A1A5B7;
+			--bs-text-gray-100: #F9F9F9;
+			--bs-text-gray-200: #F4F4F4;
+			--bs-text-gray-300: #E1E3EA;
+			--bs-text-gray-400: #B5B5C3;
+			--bs-text-gray-500: #A1A5B7;
+			--bs-text-gray-600: #7E8299;
+			--bs-text-gray-700: #5E6278;
+			--bs-text-gray-800: #3F4254;
+			--bs-text-gray-900: #181C32;
+			--bs-border-color: #F4F4F4;
+			--bs-border-dashed-color: #E1E3EA;
+			--bs-component-active-color: #ffffff;
+			--bs-component-active-bg: #009ef7;
+			--bs-component-hover-color: #009ef7;
+			--bs-component-hover-bg: #F4F6FA;
+			--bs-component-checked-color: #ffffff;
+			--bs-component-checked-bg: #009ef7;
+			--bs-box-shadow-xs: 0 0.1rem 0.75rem 0.25rem rgba(0, 0, 0, 0.05);
+			--bs-box-shadow-sm: 0 0.1rem 1rem 0.25rem rgba(0, 0, 0, 0.05);
+			--bs-box-shadow: 0 0.5rem 1.5rem 0.5rem rgba(0, 0, 0, 0.075);
+			--bs-box-shadow-lg: 0 1rem 2rem 1rem rgba(0, 0, 0, 0.1);
+			--bs-tooltip-box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+			--bs-card-box-shadow: 0px 0px 20px 0px rgba(76, 87, 125, 0.02);
+			--bs-table-striped-bg: rgba(var(--bs-gray-100-rgb), 0.75);
+			--bs-dropdown-bg: var(--bs-body-bg);
+			--bs-dropdown-box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.15);
+			--bs-code-bg: #F1F3F8;
+			--bs-code-box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.08);
+			--bs-code-color: #b93993;
+			--bs-symbol-label-color: var(--bs-gray-800);
+			--bs-symbol-label-bg: var(--bs-gray-100);
+			--bs-symbol-border-color: rgba(var(--bs-body-bg), 0.5);
+			--bs-bullet-bg-color: var(--bs-gray-400);
+			--bs-scrolltop-opacity: 0;
+			--bs-scrolltop-opacity-on: 0.3;
+			--bs-scrolltop-opacity-hover: 1;
+			--bs-scrolltop-box-shadow: var(--bs-box-shadow);
+			--bs-scrolltop-bg-color: var(--bs-primary);
+			--bs-scrolltop-bg-color-hover: var(--bs-primary);
+			--bs-scrolltop-icon-color: var(--bs-primary-inverse);
+			--bs-scrolltop-icon-color-hover: var(--bs-primary-inverse);
+			--bs-drawer-box-shadow: 0px 1px 9px -3px rgba(0, 0, 0, 0.05);
+			--bs-drawer-bg-color: #ffffff;
+			--bs-drawer-overlay-bg-color: rgba(0, 0, 0, 0.2);
+			--bs-menu-dropdown-box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.15);
+			--bs-menu-dropdown-bg-color: var(--bs-body-bg);
+			--bs-menu-heading-color: #A1A5B7;
+			--bs-menu-link-color-hover: #009ef7;
+			--bs-menu-link-color-show: #009ef7;
+			--bs-menu-link-color-here: #009ef7;
+			--bs-menu-link-color-active: #009ef7;
+			--bs-menu-link-bg-color-hover: #F4F6FA;
+			--bs-menu-link-bg-color-show: #F4F6FA;
+			--bs-menu-link-bg-color-here: #F4F6FA;
+			--bs-menu-link-bg-color-active: #F4F6FA;
+			--bs-scrollbar-color: #F4F4F4;
+			--bs-scrollbar-hover-color: #efefef;
+			--bs-scrollbar-size: 5px;
+			--bs-scrollbar-overlay-size: 19px;
+			--bs-scrollbar-overlay-space: 7px;
+			--bs-overlay-bg: rgba(0, 0, 0, 0.05);
+			--bs-blockui-overlay-bg: rgba(0, 0, 0, 0.05);
+			--bs-rating-color-default: #B5B5C3;
+			--bs-rating-color-active: #FFAD0F;
+			--bs-ribbon-label-box-shadow: 0px -1px 5px 0px rgba(24, 28, 50, 0.1);
+			--bs-ribbon-label-bg: #009ef7;
+			--bs-ribbon-label-border-color: #005d91;
+			--bs-ribbon-clip-bg: #181C32;
+			--bs-engage-btn-bg: #ffffff;
+			--bs-engage-btn-box-shadow: 0px 0px 22px #E0E0E0;
+			--bs-engage-btn-border-color: #E8E8E8;
+			--bs-engage-btn-color: #3F4254;
+			--bs-engage-btn-icon-color: #7E8299;
+			--bs-engage-btn-color-active: #3F4254;
+		}
+
+		[data-bs-theme=light] {
+			--bs-app-bg-color: #f5f8fa;
+			--bs-app-blank-bg-color: #ffffff;
+			--bs-app-header-base-bg-color: #ffffff;
+			--bs-app-header-base-box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+			--bs-app-toolbar-base-bg-color: #ffffff;
+			--bs-app-toolbar-base-box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+			--bs-app-toolbar-base-border-top: 1px solid #F4F4F4;
+			--bs-app-footer-bg-color: #ffffff;
+			--bs-app-footer-box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+		}
+
+		/* @media all and (min-width:992px) */
+		:root {
+			--bs-app-header-height: 70px;
+			--bs-app-header-height-actual: 70px;
+		}
+
+		/* @media all and (min-width:992px) */
+		:root {
+			--bs-app-toolbar-height: 55px;
+			--bs-app-toolbar-height-actual: 55px;
+		}
+
+		/* @media all and (min-width:992px) */
+		:root {
+			--bs-app-sidebar-width: 265px;
+			--bs-app-sidebar-width-actual: 265px;
+			--bs-app-sidebar-gap-start: 0px;
+			--bs-app-sidebar-gap-end: 0px;
+			--bs-app-sidebar-gap-top: 0px;
+			--bs-app-sidebar-gap-bottom: 0px;
+		}
+
+		/* @media all and (min-width:992px) */
+		:root {
+			--bs-app-sidebar-primary-width-actual: 100px;
+		}
+
+		/* @media all and (min-width:992px) */
+		:root {
+			--bs-app-sidebar-panel-width: 300px;
+			--bs-app-sidebar-panel-width-actual: 300px;
+			--bs-app-sidebar-panel-gap-start: 0px;
+			--bs-app-sidebar-panel-gap-end: 0px;
+			--bs-app-sidebar-panel-gap-top: 0px;
+			--bs-app-sidebar-panel-gap-bottom: 0px;
+		}
+
+		/* @media all and (min-width:992px) */
+		:root {
+			--bs-app-aside-width: 300px;
+			--bs-app-aside-width-actual: 300px;
+			--bs-app-aside-gap-start: 0px;
+			--bs-app-aside-gap-end: 0px;
+			--bs-app-aside-gap-top: 0px;
+			--bs-app-aside-gap-bottom: 0px;
+		}
+
+		/* @media all and (min-width:992px) */
+		:root {
+			--bs-app-footer-height: 60px;
+		}
+
+		[data-bs-theme=light] {
+			--bs-app-header-base-menu-link-bg-color-active: #F4F6FA;
+			--bs-app-header-light-separator-color: #E4E6EF;
+			--bs-app-sidebar-base-toggle-btn-box-shadow: 0px 0px 10px rgba(113, 121, 136, 0.1);
+			--bs-app-sidebar-base-toggle-btn-bg-color: #ffffff;
+			--bs-app-sidebar-light-bg-color: #ffffff;
+			--bs-app-sidebar-light-box-shadow: 0 0 28px 0 rgba(82, 63, 105, 0.05);
+			--bs-app-sidebar-light-separator-color: #E4E6EF;
+			--bs-app-sidebar-light-scrollbar-color: #F4F4F4;
+			--bs-app-sidebar-light-scrollbar-color-hover: #F4F4F4;
+			--bs-app-sidebar-light-menu-heading-color: #B5B5C3;
+			--bs-app-sidebar-light-menu-link-bg-color-active: #F4F6FA;
+			--bs-app-sidebar-light-header-menu-link-bg-color-active: #EAEEF2;
+		}
+
+		table {
+			caption-side: bottom;
+			border-collapse: collapse;
+		}
+
+		.g-3,
+		.gy-3 {
+			--bs-gutter-y: 0.75rem;
+		}
+
+		.table {
+			--bs-table-color: var(--bs-body-color);
+			--bs-table-bg: transparent;
+			--bs-table-border-color: var(--bs-border-color);
+			--bs-table-accent-bg: transparent;
+			--bs-table-striped-color: var(--bs-body-color);
+			--bs-table-striped-bg: rgba(var(--bs-gray-100-rgb), 0.75);
+			--bs-table-active-color: var(--bs-body-color);
+			--bs-table-active-bg: var(--bs-gray-100);
+			--bs-table-hover-color: var(--bs-body-color);
+			--bs-table-hover-bg: var(--bs-gray-100);
+			width: 100%;
+			margin-bottom: 1rem;
+			color: var(--bs-table-color);
+			vertical-align: top;
+			border-color: var(--bs-table-border-color);
+		}
+
+		.align-middle {
+			vertical-align: middle !important;
+		}
+
+		.my-0 {
+			margin-top: 0px !important;
+			margin-bottom: 0px !important;
+		}
+
+		th {
+			text-align: inherit;
+			text-align: -webkit-match-parent;
+		}
+
+		thead,
+		tbody,
+		tfoot,
+		tr,
+		td,
+		th {
+			border-color: inherit;
+			border-style: solid;
+			border-width: 0;
+		}
+
+		.table>thead {
+			vertical-align: bottom;
+		}
+
+		.table>tbody {
+			vertical-align: inherit;
+		}
+
+		:not(.table-bordered).table> :not(:first-child) {
+			border-color: transparent;
+			border-width: 0;
+			border-style: none;
+		}
+
+		.pe-0 {
+			padding-right: 0px !important;
+		}
+
+		.w-125px {
+			width: 125px !important;
+		}
+
+		.w-50px {
+			width: 50px !important;
+		}
+
+		.p-0 {
+			padding: 0 !important;
+		}
+
+		.pe-12 {
+			padding-right: 3rem !important;
+		}
+
+		.pe-7 {
+			padding-right: 1.75rem !important;
+		}
+
+		.pb-3 {
+			padding-bottom: 0.75rem !important;
+		}
+
+		.text-end {
+			text-align: right !important;
+		}
+
+		.min-w-175px {
+			min-width: 175px !important;
+		}
+
+		.min-w-100px {
+			min-width: 100px !important;
+		}
+
+		.table> :not(caption)>*>* {
+			padding: 0.75rem 0.75rem;
+			background-color: var(--bs-table-bg);
+			border-bottom-width: 1px;
+			box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+		}
+
+		.text-gray-400 {
+			color: var(--bs-text-gray-400) !important;
+		}
+
+		:not(.table-bordered).table tr,
+		:not(.table-bordered).table th,
+		:not(.table-bordered).table td {
+			border-color: inherit;
+			border-width: inherit;
+			border-style: inherit;
+			text-transform: inherit;
+			font-weight: inherit;
+			font-size: inherit;
+			color: inherit;
+			height: inherit;
+			min-height: inherit;
+		}
+
+		.table.gy-3 th,
+		.table.gy-3 td {
+			padding-top: 0.75rem;
+			padding-bottom: 0.75rem;
+		}
+
+		:not(.table-bordered).table tr:first-child,
+		:not(.table-bordered).table th:first-child,
+		:not(.table-bordered).table td:first-child {
+			padding-left: 0px;
+		}
+
+		:not(.table-bordered).table tr:last-child,
+		:not(.table-bordered).table th:last-child,
+		:not(.table-bordered).table td:last-child {
+			padding-right: 0px;
+		}
+
+		:not(.table-bordered).table.table-row-dashed tr {
+			border-bottom-width: 1px;
+			border-bottom-style: dashed;
+			border-bottom-color: var(--bs-border-color);
+		}
+
+		:not(.table-bordered).table tfoot tr:last-child,
+		:not(.table-bordered).table tbody tr:last-child {
+			border-bottom: 0 !important;
+		}
+
+		.table.gs-0 th:first-child,
+		.table.gs-0 td:first-child {
+			padding-left: 0rem;
+		}
+
+		.table.gs-0 th:last-child,
+		.table.gs-0 td:last-child {
+			padding-right: 0rem;
+		}
+
+		:not(.table-bordered).table tfoot tr:last-child th,
+		:not(.table-bordered).table tfoot tr:last-child td,
+		:not(.table-bordered).table tbody tr:last-child th,
+		:not(.table-bordered).table tbody tr:last-child td {
+			border-bottom: 0 !important;
+		}
+
+		a {
+			color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+			text-decoration: none;
+		}
+
+		a {
+			transition: color 0.2s ease;
+		}
+
+		.btn {
+			--bs-btn-padding-x: 1.5rem;
+			--bs-btn-padding-y: 0.775rem;
+			--bs-btn-font-family: ;
+			--bs-btn-font-size: 1.1rem;
+			--bs-btn-font-weight: 500;
+			--bs-btn-line-height: 1.5;
+			--bs-btn-color: #181C32;
+			--bs-btn-bg: transparent;
+			--bs-btn-border-width: 1px;
+			--bs-btn-border-color: transparent;
+			--bs-btn-border-radius: 0.475rem;
+			--bs-btn-hover-border-color: transparent;
+			--bs-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+			--bs-btn-disabled-opacity: 0.65;
+			--bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .5);
+			display: inline-block;
+			padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+			font-family: var(--bs-btn-font-family);
+			font-size: var(--bs-btn-font-size);
+			font-weight: var(--bs-btn-font-weight);
+			line-height: var(--bs-btn-line-height);
+			color: var(--bs-btn-color);
+			text-align: center;
+			vertical-align: middle;
+			cursor: pointer;
+			user-select: none;
+			border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+			border-radius: var(--bs-btn-border-radius);
+			background-color: var(--bs-btn-bg);
+			box-shadow: var(--bs-btn-box-shadow);
+			transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+		}
+
+		.btn-sm,
+		.btn-group-sm>.btn {
+			--bs-btn-padding-y: 0.55rem;
+			--bs-btn-padding-x: 1.25rem;
+			--bs-btn-font-size: 0.95rem;
+			--bs-btn-border-radius: 0.425rem;
+		}
+
+		.w-30px {
+			width: 30px !important;
+		}
+
+		.h-30px {
+			height: 30px !important;
+		}
+
+		.btn {
+			--bs-btn-color: var(--bs-body-color);
+			outline: none !important;
+		}
+
+		.btn.btn-icon {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0;
+			height: calc(1.5em + 2px + 1.55rem);
+			width: calc(1.5em + 2px + 1.55rem);
+		}
+
+		.btn.btn-bg-light {
+			border-color: var(--bs-light);
+			background-color: var(--bs-light);
+		}
+
+		.btn.btn-icon.btn-sm,
+		.btn-group-sm>.btn.btn-icon {
+			height: calc(1.5em + 2px + 1.1rem);
+			width: calc(1.5em + 2px + 1.1rem);
+		}
+
+		:not(.btn-shadow):not(.shadow-xs):not(.shadow-lg):not(.shadow-sm):not(.shadow).btn {
+			box-shadow: none;
+		}
+
+		:not(.btn-outline):not(.btn-flush):not(.border-active):not(.border-hover):not(.btn-dashed).btn.btn-icon {
+			border: 0;
+		}
+
+		.ms-n1 {
+			margin-left: -0.25rem !important;
+		}
+
+		.svg-icon {
+			line-height: 1;
+			color: var(--bs-text-muted);
+		}
+
+		.btn .svg-icon {
+			flex-shrink: 0;
+			line-height: 0;
+			margin-right: 0.5rem;
+		}
+
+		.svg-icon.svg-icon-gray-700 {
+			color: var(--bs-text-gray-700);
+		}
+
+		.btn.btn-icon i,
+		.btn.btn-icon .svg-icon {
+			padding: 0;
+			margin: 0;
+			line-height: 1;
+		}
+
+		img,
+		svg {
+			vertical-align: middle;
+		}
+
+		.svg-icon svg {
+			height: 1.15rem;
+			width: 1.15rem;
+		}
+
+		.svg-icon.svg-icon-5 svg {
+			height: 1.15rem !important;
+			width: 1.15rem !important;
+		}
+
+		.h-50px {
+			height: 50px !important;
+		}
+
+		.mt-n8 {
+			margin-top: -2rem !important;
+		}
+
+		.badge {
+			--bs-badge-padding-x: 0.5rem;
+			--bs-badge-padding-y: 0.325rem;
+			--bs-badge-font-size: 0.85rem;
+			--bs-badge-font-weight: 600;
+			--bs-badge-color: var(--bs-body-bg);
+			--bs-badge-border-radius: 0.425rem;
+			display: inline-block;
+			padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+			font-size: var(--bs-badge-font-size);
+			font-weight: var(--bs-badge-font-weight);
+			line-height: 1;
+			color: var(--bs-badge-color);
+			text-align: center;
+			white-space: nowrap;
+			vertical-align: baseline;
+			border-radius: var(--bs-badge-border-radius);
+		}
+
+		.px-4 {
+			padding-right: 1rem !important;
+			padding-left: 1rem !important;
+		}
+
+		.py-3 {
+			padding-top: 0.75rem !important;
+			padding-bottom: 0.75rem !important;
+		}
+
+		.d-block {
+			display: block !important;
+		}
+
+		.border-bottom-0 {
+			border-bottom: 0 !important;
+		}
+
+		.fs-7 {
+			font-size: 0.95rem !important;
+		}
+
+		.fs-base {
+			font-size: 1rem !important;
+		}
+
+		.badge {
+			--bs-badge-color: var(--bs-badge-color);
+			display: inline-flex;
+			align-items: center;
+		}
+
+		.badge-light-primary {
+			color: var(--bs-primary);
+			background-color: var(--bs-primary-light);
+		}
+
+		.badge-light-danger {
+			color: var(--bs-danger);
+			background-color: var(--bs-danger-light);
+		}
+
+		.svg-icon.svg-icon-danger {
+			color: var(--bs-text-danger);
+		}
+
+		.mb-1 {
+			margin-bottom: 0.25rem !important;
+		}
+
+		.fs-6 {
+			font-size: 1.07rem !important;
+		}
+
+		.fw-bold {
+			font-weight: 600 !important;
+		}
+
+		.text-gray-600 {
+			color: var(--bs-text-gray-600) !important;
+		}
+
+		.align-items-center {
+			align-items: center !important;
+		}
+
+		.me-3 {
+			margin-right: 0.75rem !important;
+		}
+
+		.symbol {
+			display: inline-block;
+			flex-shrink: 0;
+			position: relative;
+			border-radius: 0.475rem;
+		}
+
+		.justify-content-start {
+			justify-content: flex-start !important;
+		}
+
+		.text-hover-primary {
+			transition: color 0.2s ease;
+		}
+
+		.text-gray-800 {
+			color: var(--bs-text-gray-800) !important;
+		}
+
+		.fw-semibold {
+			font-weight: 500 !important;
+		}
+
+		.border-bottom-0 {
+			border-bottom-width: 0px !important;
+		}
+
+		.symbol>img {
+			width: 100%;
+			flex-shrink: 0;
+			display: inline-block;
+			border-radius: 0.475rem;
+		}
+
+		.symbol>img {
+			width: 50px;
+			height: 50px;
+		}
+
+		.symbol.symbol-50px>img {
+			width: 50px;
+			height: 50px;
+		}
+
+		.badge-light-success {
+			color: var(--bs-success);
+			background-color: var(--bs-success-light);
+		}
+
+		.svg-icon.svg-icon-success {
+			color: var(--bs-text-success);
+		}
+
+		.badge-light-warning {
+			color: var(--bs-warning);
+			background-color: var(--bs-warning-light);
+		}
+
+		.text-start {
+			text-align: left !important;
+		}
+
+		:not(.table-bordered).table> :not(:last-child)> :last-child>* {
+			border-bottom-color: inherit;
+		}
+	</style>
+</head>
+
+<body class="app-default" id="kt_app_body" data-kt-app-header-fixed="true" data-kt-app-sidebar-push-header="true"
+	data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-hoverable="true"
+	data-kt-app-sidebar-push-footer="true" data-kt-app-layout="dark-sidebar" data-kt-app-toolbar-enabled="true"
+	data-kt-app-sidebar-enabled="true">
+	<div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+		<div class="app-page  flex-column flex-column-fluid " id="kt_app_page">
+			<div class="app-wrapper  flex-column flex-row-fluid " id="kt_app_wrapper">
+				<div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+					<div class="d-flex flex-column flex-column-fluid">
+						<div class="app-content  flex-column-fluid " id="kt_app_content">
+							<div class="app-container  container-fluid " id="kt_app_content_container">
+								<div class="row g-5 g-xl-10 mb-5 mb-xl-10">
+									<div class="col-xl-8">
+										<div class="card card-flush h-md-100">
+											<div class="card-body pt-6">
+												<div class="table-responsive">
+													<!--begin::Table-->
+													<table class="table table-row-dashed align-middle gs-0 gy-3 my-0">
+														<!--begin::Table head-->
+														<thead>
+															<tr class="fs-7 fw-bold text-gray-400 border-bottom-0">
+																<th class="p-0 pb-3 min-w-175px text-start">ITEM</th>
+																<th class="p-0 pb-3 min-w-100px text-end">BUDGET</th>
+																<th class="p-0 pb-3 min-w-100px text-end">PROGRESS</th>
+																<th class="p-0 pb-3 min-w-175px text-end pe-12">STATUS
+																</th>
+																<th class="p-0 pb-3 w-125px text-end pe-7">CHART</th>
+																<th class="p-0 pb-3 w-50px text-end">VIEW</th>
+															</tr>
+														</thead>
+														<!--end::Table head-->
+
+														<!--begin::Table body-->
+														<tbody>
+
+															<tr>
+																<td>
+																	<div class="d-flex align-items-center">
+																		<div class="symbol symbol-50px me-3">
+																			<img alt=""
+																				src="/metronic8/demo1/assets/media/stock/600x600/img-49.jpg">
+																		</div>
+
+																		<div
+																			class="d-flex justify-content-start flex-column">
+																			<a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6"
+																				href="#">Mivy App</a>
+																			<span
+																				class="text-gray-400 fw-semibold d-block fs-7">Jane
+																				Cooper</span>
+																		</div>
+																	</div>
+																</td>
+
+																<td class="text-end pe-0">
+																	<span
+																		class="text-gray-600 fw-bold fs-6">$32,400</span>
+																</td>
+
+																<td class="text-end pe-0">
+																	<!--begin::Label-->
+																	<span class="badge badge-light-success fs-base">
+																		<!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
+																		<span
+																			class="svg-icon svg-icon-5 svg-icon-success ms-n1"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				fill="none" viewBox="0 0 24 24"
+																				width="24" height="24">
+																				<rect opacity="0.5" fill="currentColor"
+																					transform="rotate(90 13 6)" x="13"
+																					y="6" width="13" height="2"
+																					rx="1" />
+																				<path fill="currentColor"
+																					d="M 12.5657 8.56569 L 16.75 12.75 C 17.1642 13.1642 17.8358 13.1642 18.25 12.75 C 18.6642 12.3358 18.6642 11.6642 18.25 11.25 L 12.7071 5.70711 C 12.3166 5.31658 11.6834 5.31658 11.2929 5.70711 L 5.75 11.25 C 5.33579 11.6642 5.33579 12.3358 5.75 12.75 C 6.16421 13.1642 6.83579 13.1642 7.25 12.75 L 11.4343 8.56569 C 11.7467 8.25327 12.2533 8.25327 12.5657 8.56569 Z" />
+																			</svg>
+																		</span>
+																		<!--end::Svg Icon-->
+																		9.2%
+																	</span>
+																	<!--end::Label-->
+
+																</td>
+
+																<td class="text-end pe-12">
+																	<span
+																		class="badge py-3 px-4 fs-7 badge-light-primary">In
+																		Process</span>
+																</td>
+
+																<td class="text-end pe-0">
+																	<div class="h-50px mt-n8 pe-7"
+																		id="kt_table_widget_14_chart_1"
+																		data-kt-chart-color="success"></div>
+																</td>
+
+																<td class="text-end">
+																	<a class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px"
+																		href="#">
+																		<!--begin::Svg Icon | path: icons/duotune/arrows/arr001.svg-->
+																		<span
+																			class="svg-icon svg-icon-5 svg-icon-gray-700"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				fill="none" viewBox="0 0 24 24"
+																				width="24" height="24">
+																				<path fill="currentColor"
+																					d="M 14.4 11 H 3 C 2.4 11 2 11.4 2 12 C 2 12.6 2.4 13 3 13 H 14.4 V 11 Z" />
+																				<path opacity="0.3" fill="currentColor"
+																					d="M 14.4 20 V 4 L 21.7 11.3 C 22.1 11.7 22.1 12.3 21.7 12.7 L 14.4 20 Z" />
+																			</svg>
+																		</span>
+																		<!--end::Svg Icon--> </a>
+																</td>
+															</tr>
+
+															<tr>
+																<td>
+																	<div class="d-flex align-items-center">
+																		<div class="symbol symbol-50px me-3">
+																			<img alt=""
+																				src="/metronic8/demo1/assets/media/stock/600x600/img-40.jpg">
+																		</div>
+
+																		<div
+																			class="d-flex justify-content-start flex-column">
+																			<a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6"
+																				href="#">Avionica</a>
+																			<span
+																				class="text-gray-400 fw-semibold d-block fs-7">Esther
+																				Howard</span>
+																		</div>
+																	</div>
+																</td>
+
+																<td class="text-end pe-0">
+																	<span
+																		class="text-gray-600 fw-bold fs-6">$256,910</span>
+																</td>
+
+																<td class="text-end pe-0">
+																	<!--begin::Label-->
+																	<span class="badge badge-light-danger fs-base">
+																		<!--begin::Svg Icon | path: icons/duotune/arrows/arr065.svg-->
+																		<span
+																			class="svg-icon svg-icon-5 svg-icon-danger ms-n1"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				fill="none" viewBox="0 0 24 24"
+																				width="24" height="24">
+																				<rect opacity="0.5" fill="currentColor"
+																					transform="rotate(-90 11 18)" x="11"
+																					y="18" width="13" height="2"
+																					rx="1" />
+																				<path fill="currentColor"
+																					d="M 11.4343 15.4343 L 7.25 11.25 C 6.83579 10.8358 6.16421 10.8358 5.75 11.25 C 5.33579 11.6642 5.33579 12.3358 5.75 12.75 L 11.2929 18.2929 C 11.6834 18.6834 12.3166 18.6834 12.7071 18.2929 L 18.25 12.75 C 18.6642 12.3358 18.6642 11.6642 18.25 11.25 C 17.8358 10.8358 17.1642 10.8358 16.75 11.25 L 12.5657 15.4343 C 12.2533 15.7467 11.7467 15.7467 11.4343 15.4343 Z" />
+																			</svg>
+																		</span>
+																		<!--end::Svg Icon-->
+																		0.4%
+																	</span>
+																	<!--end::Label-->
+
+																</td>
+
+																<td class="text-end pe-12">
+																	<span
+																		class="badge py-3 px-4 fs-7 badge-light-warning">On
+																		Hold</span>
+																</td>
+
+																<td class="text-end pe-0">
+																	<div class="h-50px mt-n8 pe-7"
+																		id="kt_table_widget_14_chart_2"
+																		data-kt-chart-color="danger"></div>
+																</td>
+
+																<td class="text-end">
+																	<a class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px"
+																		href="#">
+																		<!--begin::Svg Icon | path: icons/duotune/arrows/arr001.svg-->
+																		<span
+																			class="svg-icon svg-icon-5 svg-icon-gray-700"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				fill="none" viewBox="0 0 24 24"
+																				width="24" height="24">
+																				<path fill="currentColor"
+																					d="M 14.4 11 H 3 C 2.4 11 2 11.4 2 12 C 2 12.6 2.4 13 3 13 H 14.4 V 11 Z" />
+																				<path opacity="0.3" fill="currentColor"
+																					d="M 14.4 20 V 4 L 21.7 11.3 C 22.1 11.7 22.1 12.3 21.7 12.7 L 14.4 20 Z" />
+																			</svg>
+																		</span>
+																		<!--end::Svg Icon--> </a>
+																</td>
+															</tr>
+
+															<tr>
+																<td>
+																	<div class="d-flex align-items-center">
+																		<div class="symbol symbol-50px me-3">
+																			<img alt=""
+																				src="/metronic8/demo1/assets/media/stock/600x600/img-39.jpg">
+																		</div>
+
+																		<div
+																			class="d-flex justify-content-start flex-column">
+																			<a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6"
+																				href="#">Charto CRM</a>
+																			<span
+																				class="text-gray-400 fw-semibold d-block fs-7">Jenny
+																				Wilson</span>
+																		</div>
+																	</div>
+																</td>
+
+																<td class="text-end pe-0">
+																	<span
+																		class="text-gray-600 fw-bold fs-6">$8,220</span>
+																</td>
+
+																<td class="text-end pe-0">
+																	<!--begin::Label-->
+																	<span class="badge badge-light-success fs-base">
+																		<!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
+																		<span
+																			class="svg-icon svg-icon-5 svg-icon-success ms-n1"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				fill="none" viewBox="0 0 24 24"
+																				width="24" height="24">
+																				<rect opacity="0.5" fill="currentColor"
+																					transform="rotate(90 13 6)" x="13"
+																					y="6" width="13" height="2"
+																					rx="1" />
+																				<path fill="currentColor"
+																					d="M 12.5657 8.56569 L 16.75 12.75 C 17.1642 13.1642 17.8358 13.1642 18.25 12.75 C 18.6642 12.3358 18.6642 11.6642 18.25 11.25 L 12.7071 5.70711 C 12.3166 5.31658 11.6834 5.31658 11.2929 5.70711 L 5.75 11.25 C 5.33579 11.6642 5.33579 12.3358 5.75 12.75 C 6.16421 13.1642 6.83579 13.1642 7.25 12.75 L 11.4343 8.56569 C 11.7467 8.25327 12.2533 8.25327 12.5657 8.56569 Z" />
+																			</svg>
+																		</span>
+																		<!--end::Svg Icon-->
+																		9.2%
+																	</span>
+																	<!--end::Label-->
+
+																</td>
+
+																<td class="text-end pe-12">
+																	<span
+																		class="badge py-3 px-4 fs-7 badge-light-primary">In
+																		Process</span>
+																</td>
+
+																<td class="text-end pe-0">
+																	<div class="h-50px mt-n8 pe-7"
+																		id="kt_table_widget_14_chart_3"
+																		data-kt-chart-color="success"></div>
+																</td>
+
+																<td class="text-end">
+																	<a class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px"
+																		href="#">
+																		<!--begin::Svg Icon | path: icons/duotune/arrows/arr001.svg-->
+																		<span
+																			class="svg-icon svg-icon-5 svg-icon-gray-700"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				fill="none" viewBox="0 0 24 24"
+																				width="24" height="24">
+																				<path fill="currentColor"
+																					d="M 14.4 11 H 3 C 2.4 11 2 11.4 2 12 C 2 12.6 2.4 13 3 13 H 14.4 V 11 Z" />
+																				<path opacity="0.3" fill="currentColor"
+																					d="M 14.4 20 V 4 L 21.7 11.3 C 22.1 11.7 22.1 12.3 21.7 12.7 L 14.4 20 Z" />
+																			</svg>
+																		</span>
+																		<!--end::Svg Icon--> </a>
+																</td>
+															</tr>
+
+															<tr>
+																<td>
+																	<div class="d-flex align-items-center">
+																		<div class="symbol symbol-50px me-3">
+																			<img alt=""
+																				src="/metronic8/demo1/assets/media/stock/600x600/img-47.jpg">
+																		</div>
+
+																		<div
+																			class="d-flex justify-content-start flex-column">
+																			<a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6"
+																				href="#">Tower Hill</a>
+																			<span
+																				class="text-gray-400 fw-semibold d-block fs-7">Cody
+																				Fisher</span>
+																		</div>
+																	</div>
+																</td>
+
+																<td class="text-end pe-0">
+																	<span
+																		class="text-gray-600 fw-bold fs-6">$74,000</span>
+																</td>
+
+																<td class="text-end pe-0">
+																	<!--begin::Label-->
+																	<span class="badge badge-light-success fs-base">
+																		<!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
+																		<span
+																			class="svg-icon svg-icon-5 svg-icon-success ms-n1"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				fill="none" viewBox="0 0 24 24"
+																				width="24" height="24">
+																				<rect opacity="0.5" fill="currentColor"
+																					transform="rotate(90 13 6)" x="13"
+																					y="6" width="13" height="2"
+																					rx="1" />
+																				<path fill="currentColor"
+																					d="M 12.5657 8.56569 L 16.75 12.75 C 17.1642 13.1642 17.8358 13.1642 18.25 12.75 C 18.6642 12.3358 18.6642 11.6642 18.25 11.25 L 12.7071 5.70711 C 12.3166 5.31658 11.6834 5.31658 11.2929 5.70711 L 5.75 11.25 C 5.33579 11.6642 5.33579 12.3358 5.75 12.75 C 6.16421 13.1642 6.83579 13.1642 7.25 12.75 L 11.4343 8.56569 C 11.7467 8.25327 12.2533 8.25327 12.5657 8.56569 Z" />
+																			</svg>
+																		</span>
+																		<!--end::Svg Icon-->
+																		9.2%
+																	</span>
+																	<!--end::Label-->
+
+																</td>
+
+																<td class="text-end pe-12">
+																	<span
+																		class="badge py-3 px-4 fs-7 badge-light-success">Complated</span>
+																</td>
+
+																<td class="text-end pe-0">
+																	<div class="h-50px mt-n8 pe-7"
+																		id="kt_table_widget_14_chart_4"
+																		data-kt-chart-color="success"></div>
+																</td>
+
+																<td class="text-end">
+																	<a class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px"
+																		href="#">
+																		<!--begin::Svg Icon | path: icons/duotune/arrows/arr001.svg-->
+																		<span
+																			class="svg-icon svg-icon-5 svg-icon-gray-700"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				fill="none" viewBox="0 0 24 24"
+																				width="24" height="24">
+																				<path fill="currentColor"
+																					d="M 14.4 11 H 3 C 2.4 11 2 11.4 2 12 C 2 12.6 2.4 13 3 13 H 14.4 V 11 Z" />
+																				<path opacity="0.3" fill="currentColor"
+																					d="M 14.4 20 V 4 L 21.7 11.3 C 22.1 11.7 22.1 12.3 21.7 12.7 L 14.4 20 Z" />
+																			</svg>
+																		</span>
+																		<!--end::Svg Icon--> </a>
+																</td>
+															</tr>
+
+															<tr>
+																<td>
+																	<div class="d-flex align-items-center">
+																		<div class="symbol symbol-50px me-3">
+																			<img alt=""
+																				src="/metronic8/demo1/assets/media/stock/600x600/img-48.jpg">
+																		</div>
+
+																		<div
+																			class="d-flex justify-content-start flex-column">
+																			<a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6"
+																				href="#">9 Degree</a>
+																			<span
+																				class="text-gray-400 fw-semibold d-block fs-7">Savannah
+																				Nguyen</span>
+																		</div>
+																	</div>
+																</td>
+
+																<td class="text-end pe-0">
+																	<span
+																		class="text-gray-600 fw-bold fs-6">$183,300</span>
+																</td>
+
+																<td class="text-end pe-0">
+																	<!--begin::Label-->
+																	<span class="badge badge-light-danger fs-base">
+																		<!--begin::Svg Icon | path: icons/duotune/arrows/arr065.svg-->
+																		<span
+																			class="svg-icon svg-icon-5 svg-icon-danger ms-n1"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				fill="none" viewBox="0 0 24 24"
+																				width="24" height="24">
+																				<rect opacity="0.5" fill="currentColor"
+																					transform="rotate(-90 11 18)" x="11"
+																					y="18" width="13" height="2"
+																					rx="1" />
+																				<path fill="currentColor"
+																					d="M 11.4343 15.4343 L 7.25 11.25 C 6.83579 10.8358 6.16421 10.8358 5.75 11.25 C 5.33579 11.6642 5.33579 12.3358 5.75 12.75 L 11.2929 18.2929 C 11.6834 18.6834 12.3166 18.6834 12.7071 18.2929 L 18.25 12.75 C 18.6642 12.3358 18.6642 11.6642 18.25 11.25 C 17.8358 10.8358 17.1642 10.8358 16.75 11.25 L 12.5657 15.4343 C 12.2533 15.7467 11.7467 15.7467 11.4343 15.4343 Z" />
+																			</svg>
+																		</span>
+																		<!--end::Svg Icon-->
+																		0.4%
+																	</span>
+																	<!--end::Label-->
+
+																</td>
+
+																<td class="text-end pe-12">
+																	<span
+																		class="badge py-3 px-4 fs-7 badge-light-primary">In
+																		Process</span>
+																</td>
+
+																<td class="text-end pe-0">
+																	<div class="h-50px mt-n8 pe-7"
+																		id="kt_table_widget_14_chart_5"
+																		data-kt-chart-color="danger"></div>
+																</td>
+
+																<td class="text-end">
+																	<a class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px"
+																		href="#">
+																		<!--begin::Svg Icon | path: icons/duotune/arrows/arr001.svg-->
+																		<span
+																			class="svg-icon svg-icon-5 svg-icon-gray-700"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				fill="none" viewBox="0 0 24 24"
+																				width="24" height="24">
+																				<path fill="currentColor"
+																					d="M 14.4 11 H 3 C 2.4 11 2 11.4 2 12 C 2 12.6 2.4 13 3 13 H 14.4 V 11 Z" />
+																				<path opacity="0.3" fill="currentColor"
+																					d="M 14.4 20 V 4 L 21.7 11.3 C 22.1 11.7 22.1 12.3 21.7 12.7 L 14.4 20 Z" />
+																			</svg>
+																		</span>
+																		<!--end::Svg Icon--> </a>
+																</td>
+															</tr>
+														</tbody>
+														<!--end::Table body-->
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

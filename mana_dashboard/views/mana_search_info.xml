@@ -1,0 +1,57 @@
+
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="mana_dashboard.search_info_list">
+            <field name="name">Mana Dashboard Search Info list </field>
+            <field name="model">mana_dashboard.search_info</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="uid" string="uid"/>
+                    <field name="search_infos" string="search_infos"/>
+                    <field name="dashboard_id" string="dashboard_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="mana_dashboard.search_info_form">
+            <field name="name">Mana Dashboard Search Info form </field>
+            <field name="model">mana_dashboard.search_info</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+
+                        <div class="form-group row">
+                            <label for="uid" class="col-sm-2 col-form-label">uid</label>
+                            <div class="col-sm-10">
+                                <field name="uid" string="uid"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="search_infos" class="col-sm-2 col-form-label">search_infos</label>
+                            <div class="col-sm-10">
+                                <field name="search_infos" string="search_infos"/>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label for="dashboard_id" class="col-sm-2 col-form-label">dashboard_id</label>
+                            <div class="col-sm-10">
+                                <field name="dashboard_id" string="dashboard_id"/>
+                            </div>
+                        </div>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="mana_dashboard.search_info_act_window">
+            <field name="name">Mana Dashboard Search Info</field>
+            <field name="res_model">mana_dashboard.search_info</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+    </data>
+</odoo>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record model="ir.sequence" id="mana_dashboard.config_sequence">
+            <field name="name">Config Sequence</field>
+            <field name="code">dashboard.config.sequence</field>
+            <field name="implementation">standard</field>
+            <field name="prefix">CFG</field>
+            <field name="padding">6</field>
+            <field name="number_increment">1</field>
+            <field name="number_next_actual">1</field>
+        </record>
+
+    </data>
+</odoo>

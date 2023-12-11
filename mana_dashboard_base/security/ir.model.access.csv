@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mana_dashboard_template,mana_dashboard.template,model_mana_dashboard_template,base.group_user,1,1,1,1
+access_mana_dashboard_dashboard_template,mana_dashboard.dashboard_template,model_mana_dashboard_dashboard_template,base.group_user,1,1,1,1
+access_mana_dashboard_data_source_type,mana_dashboard.data_source_type,model_mana_dashboard_data_source_type,base.group_user,1,1,1,1
+access_mana_dashboard_result_type,mana_dashboard.result_type,model_mana_dashboard_result_type,base.group_user,1,1,1,1
+access_mana_dashboard_series_type,mana_dashboard.series_type,model_mana_dashboard_series_type,,1,1,1,1

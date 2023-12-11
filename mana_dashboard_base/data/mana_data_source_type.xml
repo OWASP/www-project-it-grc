@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- model -->
+        <record id="mana_dashboard_base.data_source_model" model="mana_dashboard.data_source_type">
+            <field name="name">model</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <!-- method -->
+        <record id="mana_dashboard_base.data_source_method" model="mana_dashboard.data_source_type">
+            <field name="name">method</field>
+            <field name="sequence">2</field>
+        </record>
+
+        <!-- sql -->
+        <record id="mana_dashboard_base.data_source_sql" model="mana_dashboard.data_source_type">
+            <field name="name">sql</field>
+            <field name="sequence">3</field>
+        </record>
+
+        <!-- json -->
+        <record id="mana_dashboard_base.data_source_json" model="mana_dashboard.data_source_type">
+            <field name="name">json</field>
+            <field name="sequence">4</field>
+        </record>
+
+        <!-- code -->
+        <record id="mana_dashboard_base.data_source_code" model="mana_dashboard.data_source_type">
+            <field name="name">code</field>
+            <field name="sequence">5</field>
+        </record>
+
+        <!-- none -->
+        <record id="mana_dashboard_base.data_source_none" model="mana_dashboard.data_source_type">
+            <field name="name">none</field>
+            <field name="sequence">6</field>
+        </record>
+        
+    </data>
+</odoo>

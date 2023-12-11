@@ -1,0 +1,45 @@
+
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="mana_dashboard.order_by_info_form">
+            <field name="name">Mana Dashboard Order By Info form </field>
+            <field name="model">mana_dashboard.order_by_info</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                
+                        <div class="form-group row">
+                            <label for="field" class="col-sm-2 col-form-label">field</label>
+                            <div class="col-sm-10">
+                                <field name="field" string="field"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="sequence" class="col-sm-2 col-form-label">sequence</label>
+                            <div class="col-sm-10">
+                                <field name="sequence" string="sequence"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="order_type" class="col-sm-2 col-form-label">order_type</label>
+                            <div class="col-sm-10">
+                                <field name="order_type" string="order type"/>
+                            </div>
+                        </div>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="mana_dashboard.order_by_info_act_window">
+            <field name="name">Mana Dashboard Order By Info</field>
+            <field name="res_model">mana_dashboard.order_by_info</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

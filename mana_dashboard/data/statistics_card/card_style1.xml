@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+  <record id="mana_dashboard.chart_counter_card" model="mana_dashboard.template">
+            <field name="name">Chart &amp; Counter Card</field>
+            <field name="category">statistics</field>
+            <field name="type">statistics card</field>
+            <field name="component_type">statistics_card</field>
+            <field name="need_column_aggregation">True</field>
+            <field name="template">
+<![CDATA[	
+<div class="p-3">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <div>
+                <p class="mb-0">Total Orders</p>
+                <h2 class="mb-0">867</h2>
+            </div>
+            <div class="ms-auto">
+<svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2823" width="48" height="48"><path d="M354.778212 821.104987c-34.091446 0-61.703317 27.611871-61.703317 61.703317 0 34.091446 27.611871 61.703317 61.703317 61.703317s61.703317-27.611871 61.703317-61.703317C416.48153 848.716858 388.868635 821.104987 354.778212 821.104987L354.778212 821.104987zM786.701432 821.104987c-34.091446 0-61.703317 27.611871-61.703317 61.703317 0 34.091446 27.611871 61.703317 61.703317 61.703317s61.703317-27.611871 61.703317-61.703317C848.40475 848.716858 820.792878 821.104987 786.701432 821.104987L786.701432 821.104987zM847.911516 790.253328l-501.123278 0c-44.457538 0-83.546811-35.171034-88.976474-80.060407l-52.324716-368.368742-29.772071-172.151825c-1.851161-15.025205-15.549138-27.303856-28.939099-27.303856l-39.305191 0c-17.029862 0-30.851659-13.821797-30.851659-30.851659s13.821797-30.851659 30.851659-30.851659l39.305191 0c45.01217 0 84.533278 35.171034 89.994664 80.060407l29.709649 171.504072 52.540633 369.942587c1.727341 14.31503 14.685467 26.377764 27.76639 26.377764l501.123278 0c17.060561 0 30.851659 13.791098 30.851659 30.851659C878.763175 776.462231 864.972077 790.253328 847.911516 790.253328zM385.351532 666.846694c-16.011672 0-29.556153-12.341073-30.727839-28.599362-1.264806-16.999163 11.508102-31.776727 28.476565-33.010835l418.533258-30.851659c15.363919-0.092098 28.322046-12.155854 30.018687-25.88453l48.591695-278.035364c1.234107-10.366092-1.635243-21.719674-7.836479-28.753881-3.979638-4.504594-8.977465-6.78759-14.809287-6.78759l-534.165836 0c-17.029862 0-30.851659-13.821797-30.851659-30.851659s13.821797-30.851659 30.851659-30.851659l534.165836 0c23.570835 0 45.228087 9.779737 60.994166 27.581172 18.017352 20.331048 26.285666 48.992831 22.676465 78.70248l-48.622394 278.066063c-5.244444 43.25413-44.303019 78.425164-88.760556 78.425164l-416.250262 30.759561C386.863978 666.815995 386.092405 666.846694 385.351532 666.846694z" fill="#707070"></path></svg>
+            </div>
+        </div>
+    </div>
+    <div class="chart_container" style="min-height: 35px;">
+    </div>
+</div>
+]]>
+            </field>
+
+            <!-- demo template -->
+            <field name="demo_template">
+<![CDATA[
+<div class="p-3">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <div>
+                <p class="mb-0">Total Orders</p>
+                <h2 class="mb-0 statistics">867</h2>
+            </div>
+            <div class="ms-auto">
+<svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2823" width="48" height="48"><path d="M354.778212 821.104987c-34.091446 0-61.703317 27.611871-61.703317 61.703317 0 34.091446 27.611871 61.703317 61.703317 61.703317s61.703317-27.611871 61.703317-61.703317C416.48153 848.716858 388.868635 821.104987 354.778212 821.104987L354.778212 821.104987zM786.701432 821.104987c-34.091446 0-61.703317 27.611871-61.703317 61.703317 0 34.091446 27.611871 61.703317 61.703317 61.703317s61.703317-27.611871 61.703317-61.703317C848.40475 848.716858 820.792878 821.104987 786.701432 821.104987L786.701432 821.104987zM847.911516 790.253328l-501.123278 0c-44.457538 0-83.546811-35.171034-88.976474-80.060407l-52.324716-368.368742-29.772071-172.151825c-1.851161-15.025205-15.549138-27.303856-28.939099-27.303856l-39.305191 0c-17.029862 0-30.851659-13.821797-30.851659-30.851659s13.821797-30.851659 30.851659-30.851659l39.305191 0c45.01217 0 84.533278 35.171034 89.994664 80.060407l29.709649 171.504072 52.540633 369.942587c1.727341 14.31503 14.685467 26.377764 27.76639 26.377764l501.123278 0c17.060561 0 30.851659 13.791098 30.851659 30.851659C878.763175 776.462231 864.972077 790.253328 847.911516 790.253328zM385.351532 666.846694c-16.011672 0-29.556153-12.341073-30.727839-28.599362-1.264806-16.999163 11.508102-31.776727 28.476565-33.010835l418.533258-30.851659c15.363919-0.092098 28.322046-12.155854 30.018687-25.88453l48.591695-278.035364c1.234107-10.366092-1.635243-21.719674-7.836479-28.753881-3.979638-4.504594-8.977465-6.78759-14.809287-6.78759l-534.165836 0c-17.029862 0-30.851659-13.821797-30.851659-30.851659s13.821797-30.851659 30.851659-30.851659l534.165836 0c23.570835 0 45.228087 9.779737 60.994166 27.581172 18.017352 20.331048 26.285666 48.992831 22.676465 78.70248l-48.622394 278.066063c-5.244444 43.25413-44.303019 78.425164-88.760556 78.425164l-416.250262 30.759561C386.863978 666.815995 386.092405 666.846694 385.351532 666.846694z" fill="#707070"></path></svg>
+            </div>
+        </div>
+    </div>
+    <div class="chart_container" style="min-height: 35px;">
+    </div>
+</div>
+]]>
+            </field>
+
+            <!-- scripts -->
+            <field name="scripts">
+<![CDATA[
+ // Your script here
+let data_source = this.get_data_source();
+if (!data_source || !data_source.is_valid()) return;
+let value = data_source.get_first_aggregate_column_value();
+this.$el.find('.statistics').text(value);
+
+let measures = data_source.get_measures() || []
+if (measures.length == 0) {
+    return
+}
+
+let categories = data_source.get_categories()
+if (categories.length == 0) {
+    return;
+}
+
+// data for the sparklines that appear below header area
+var sparklineData = data_source.get_column_values(measures[0])
+
+// the default colorPalette for this dashboard
+var colorPalette = ['#00D8B6','#008FFB',  '#FEB019', '#FF4560', '#775DD0']
+
+var spark1 = {
+  chart: {
+    id: this.get_config_id(),
+    group: 'sparklines',
+    type: 'area',
+    height: 80,
+    sparkline: {
+      enabled: true
+    },
+  },
+  stroke: {
+    curve: 'straight'
+  },
+  fill: {
+    opacity: 1,
+  },
+  series: [{
+    name: 'Sales',
+    data: sparklineData
+  }],
+  labels: data_source.get_column_values(categories[0]),
+  yaxis: {
+    min: 0
+  },
+  xaxis: {
+    type: 'value'
+  },
+  colors: ['#DCE6EC'],
+}
+
+// remove the old chart and add the new one
+new ApexCharts(this.el.querySelector(".chart_container"), spark1).render();
+
+if (this.get_editor_mode() == 'edit') {
+    return;
+}
+
+let data_source_type = data_source.get_data_source_type();
+if (data_source_type == 'model') {
+    this.$el.on('click', () => {
+        this.do_action({
+            type: 'ir.actions.act_window',
+            res_model: data_source.get_model(),
+            views: [[false, 'list'], [false, 'form']],
+            target: 'current',
+            domain: data_source.get_domain(),
+            context: data_source.get_context(),
+        })
+    })
+} else {
+    // add your custom code here
+}
+
+]]>
+            </field>
+
+            <!-- default scripts -->
+            <field name="default_scripts">
+this.$el.find('.statisticss').text(1000);
+
+// data for the sparklines that appear below header area
+var sparklineData = [
+47, 45, 54, 38, 56, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93, 53, 61, 27, 54, 43, 19, 46];
+
+// the default colorPalette for this dashboard
+var colorPalette = ['#00D8B6','#008FFB',  '#FEB019', '#FF4560', '#775DD0']
+
+var spark1 = {
+  chart: {
+    id: this.get_config_id(),
+    group: 'sparklines',
+    type: 'area',
+    height: 80,
+    sparkline: {
+      enabled: true
+    },
+  },
+  stroke: {
+    curve: 'straight'
+  },
+  fill: {
+    opacity: 1,
+  },
+  series: [{
+    name: 'Sales',
+    data: sparklineData
+  }],
+  labels: [...Array(24).keys()].map(n => `2018-09-0${n+1}`),
+  yaxis: {
+    min: 0
+  },
+  xaxis: {
+    type: 'datetime',
+  },
+  colors: ['#DCE6EC'],
+}
+
+new ApexCharts(this.el.querySelector(".chart_container"), spark1).render();
+            </field>
+
+            <!-- styles -->
+            <field name="styles">
+<![CDATA[
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+.ms-auto {
+    margin-left: auto!important;
+}
+]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,372 @@
+.card_target_and_real {
+
+    .bg-danger {
+        background-color: #f2dede;
+    }
+
+    .media {
+        margin-top: 15px;
+    }
+
+    .media,
+    .media-body {
+        overflow: hidden;
+        zoom: 1;
+    }
+
+    .bg-danger {
+        background-color: #e74a25 !important;
+        color: #fff;
+    }
+
+    .media {
+        border: 1px solid rgba(255, 255, 255, .2);
+        margin-bottom: 10px;
+        padding: 15px;
+    }
+
+    :first-child.media {
+        margin-top: 0px;
+    }
+
+    .colorbox-group-widget .info-color-box .media {
+        padding: 20px 30px;
+        border: none;
+        margin: 0;
+        border-radius: 4px;
+    }
+
+    .media-body {
+        width: 10000px;
+    }
+
+    .media-body,
+    .media-left,
+    .media-right {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    .colorbox-group-widget .info-color-box .media .info-count {
+        font-size: 30px;
+        margin-bottom: 5px;
+        color: #fff;
+    }
+
+    p {
+        margin: 0 0 10px;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+
+    .font-12 {
+        font-size: 12px !important;
+    }
+
+    .colorbox-group-widget .info-color-box .media .info-text {
+        text-transform: uppercase;
+    }
+
+    .font-15 {
+        font-size: 15px !important;
+    }
+
+    .colorbox-group-widget .info-color-box .media .info-ot {
+        margin: 4px 0 0;
+        float: right;
+    }
+
+    .label {
+        display: inline;
+        padding: .2em .6em .3em;
+        font-size: 75%;
+        font-weight: 700;
+        line-height: 1;
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: .25em;
+    }
+
+    .label {
+        letter-spacing: 0.05em;
+        border-radius: 60px;
+        padding: 4px 16px 3px;
+        font-weight: 500;
+    }
+
+    .label-rounded {
+        border-radius: 60px;
+        padding: 4px 16px 3px;
+        font-weight: 500;
+    }
+
+    .colorbox-group-widget .info-color-box .media .info-ot .label {
+        margin-left: 5px;
+        font-size: 14px;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        padding: 0 4px;
+        min-width: 35px;
+        height: 20px;
+        font-weight: 600;
+    }
+
+    .pull-right {
+        float: right !important;
+    }
+
+    .pull-right {
+        float: right;
+    }
+}
+
+.card_progress {
+
+    .progress {
+        height: 20px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+        box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .progress {
+        -webkit-box-shadow: none !important;
+        background-color: #e5ebec;
+        box-shadow: none !important;
+        height: 4px;
+        border-radius: 4px;
+        margin-bottom: 18px;
+        overflow: hidden;
+    }
+
+    .small-box-widget .detail-box .progress {
+        margin-top: 20px;
+        height: 8px;
+    }
+
+    .progress-bar {
+        float: left;
+        width: 0px;
+        height: 100%;
+        font-size: 12px;
+        line-height: 20px;
+        color: #fff;
+        text-align: center;
+        background-color: #337ab7;
+        -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+        box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.15);
+        -webkit-transition: width .6s ease;
+        -o-transition: width .6s ease;
+        transition: width .6s ease;
+    }
+
+    .progress-bar-warning {
+        background-color: #f0ad4e;
+    }
+
+    .progress-bar {
+        box-shadow: none;
+        border-radius: 4px;
+        font-size: 8px;
+        font-weight: 600;
+        line-height: 12px;
+    }
+
+    .progress-bar-warning {
+        background-color: #ffb136;
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0px, 0px, 0px, 0px);
+        border: 0;
+    }
+
+    .text-warning {
+        color: #8a6d3b;
+    }
+
+    .pull-right {
+        float: right !important;
+    }
+
+    .font-22 {
+        font-size: 22px !important;
+    }
+
+    .font-normal {
+        font-weight: 400;
+    }
+
+    .text-warning {
+        color: #ffb136 !important;
+    }
+
+    .fa-pull-right,
+    .list-style-none li a span,
+    .pull-right {
+        float: right;
+    }
+}
+
+.card_count {
+
+    &.white-box {
+        background: #fff;
+        padding: 25px;
+    }
+
+    .bg-primary {
+        color: #fff;
+        background-color: #337ab7;
+    }
+
+    .text-white {
+        color: #fff !important;
+    }
+
+    .bg-primary {
+        background-color: #0283cc !important;
+        color: #fff;
+    }
+
+    .text-blue {
+        color: #0078bc !important;
+    }
+
+    &.ecom-stat-widget span {
+        font-size: 30px;
+    }
+
+    .font-light {
+        font-weight: 300;
+    }
+
+    p {
+        margin: 0 0 10px;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+
+    .font-12 {
+        font-size: 12px !important;
+    }
+
+    &.ecom-stat-widget p {
+        text-transform: uppercase;
+    }
+
+    .text-success {
+        color: #3c763d;
+    }
+
+    .text-success {
+        color: #2ecc71 !important;
+    }
+}
+
+.car_animation {
+
+    .card {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0px;
+        word-wrap: break-word;
+        background-clip: border-box;
+    }
+
+    .card-body {
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    }
+
+    img,
+    svg {
+        vertical-align: middle;
+    }
+
+    .card {
+        border: 0;
+    }
+
+    .overflow-hidden {
+        overflow: hidden !important;
+    }
+
+    .opacity-75 {
+        opacity: 0.75 !important;
+    }
+
+}
+
+.je-object__container {
+
+    background: transparent !important;
+    color: #fff;
+
+    .card-title {
+        color: #fff;
+        border-bottom: 1px solid rgba(0,0,0,.2);
+    }
+
+    .card-body {
+        background: transparent !important;
+        color: #fff;
+        border: none !important;
+        box-shadow: none !important;
+        margin: 0px;
+
+        .form-control {
+            background-color: #363636;
+            &:focus {
+                color: #fff;
+            }
+        }
+    }
+
+    .je-object__controls {
+        display: none !important;
+    }
+
+    .je-object__title {
+        display: block !important;
+        button {
+            background: transparent;
+            color: white;
+            border: none;
+        }
+    }
+
+    .level-1 {
+        display: none !important;
+    }
+
+    .form-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        label {
+            margin-right: 5px;
+            width: 120px;
+            text-align: right;
+        }
+    }
+    
+}

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- mana field_statistics template -->
+        <record id="mana_dashboard.field_datetime_range_today" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">today</field>
+        </record>
+
+        <record id="mana_dashboard.field_datetime_range_yesterday" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">yesterday</field>
+        </record>
+
+        <!-- last_week -->
+        <record id="mana_dashboard.field_datetime_range_last_week" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">last week</field>
+        </record>
+
+        <!-- last_month -->
+        <record id="mana_dashboard.field_datetime_range_last_month" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">last month</field>
+        </record>
+
+        <!-- last_quarter -->
+        <record id="mana_dashboard.field_datetime_range_last_quarter" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">last quarter</field>
+        </record>
+
+        <!-- last_year -->
+        <record id="mana_dashboard.field_datetime_range_last_year" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">last year</field>
+        </record>
+
+        <!-- this_week -->
+        <record id="mana_dashboard.field_datetime_range_this_week" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">this week</field>
+        </record>
+
+        <!-- this_month -->
+        <record id="mana_dashboard.field_datetime_range_this_month" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">this month</field>
+        </record>
+
+        <!-- this_quarter -->
+        <record id="mana_dashboard.field_datetime_range_this_quarter" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">this quarter</field>
+        </record>
+
+        <!-- this_year -->
+        <record id="mana_dashboard.field_datetime_range_this_year" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">this year</field>
+        </record>
+
+        <!-- last_7_days -->
+        <record id="mana_dashboard.field_datetime_range_last_7_days" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">last 7 days</field>
+        </record>
+
+        <!-- last_30_days -->
+        <record id="mana_dashboard.field_datetime_range_last_30_days" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">last 30 days</field>
+        </record>
+
+        <!-- last_90_days -->
+        <record id="mana_dashboard.field_datetime_range_last_90_days" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">last 90 days</field>
+        </record>
+
+        <!-- last_365_days -->
+        <record id="mana_dashboard.field_datetime_range_last_365_days" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">last 365 days</field>
+        </record>
+
+        <!-- this_7_days -->
+        <record id="mana_dashboard.field_datetime_range_this_7_days" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">this 7 days</field>
+        </record>
+
+        <!-- this_30_days -->
+        <record id="mana_dashboard.field_datetime_range_this_30_days" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">this 30 days</field>
+        </record>
+
+        <!-- this_90_days -->
+        <record id="mana_dashboard.field_datetime_range_this_90_days" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">this 90 days</field>
+        </record>
+
+        <!-- this_365_days -->
+        <record id="mana_dashboard.field_datetime_range_this_365_days" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">this 365 days</field>
+        </record>
+
+        <!-- next week -->
+        <record id="mana_dashboard.field_datetime_range_next_week" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">next week</field>
+        </record>
+
+        <!-- next month -->
+        <record id="mana_dashboard.field_datetime_range_next_month" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">next month</field>
+        </record>
+
+        <!-- next quarter -->
+        <record id="mana_dashboard.field_datetime_range_next_quarter" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">next quarter</field>
+        </record>
+
+        <!-- next year -->
+        <record id="mana_dashboard.field_datetime_range_next_year" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">next year</field>
+        </record>
+
+        <!-- next 7 days -->
+        <record id="mana_dashboard.field_datetime_range_next_7_days" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">next 7 days</field>
+        </record>
+
+        <!-- next 30 days -->
+        <record id="mana_dashboard.field_datetime_range_next_30_days" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">next 30 days</field>
+        </record>
+
+        <!-- next 90 days -->
+        <record id="mana_dashboard.field_datetime_range_next_90_days" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">next 90 days</field>
+        </record>
+
+        <!-- next 365 days -->
+        <record id="mana_dashboard.field_datetime_range_next_365_days" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">next 365 days</field>
+        </record>
+
+        <!-- custom -->
+        <record id="mana_dashboard.field_datetime_range_custom" model="mana_dashboard.field_datetime_range">
+            <field name="range_type">custom</field>
+        </record>
+
+    </data>
+</odoo>

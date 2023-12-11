@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- url action to export dashboard -->
+        <record id="mana_dashboard.export_dashboard_act_url" model="ir.actions.act_url">
+            <field name="name">Export Dashboard</field>
+            <field name="target">new</field>
+            <field name="url">/mana_dashboard/export_dashboard</field>
+        </record>
+
+        <record id="mana_dashboard.mana_dashboard_list" model="ir.ui.view">
+            <field name="name">Dashboard</field>
+            <field name="model">mana_dashboard.dashboard</field>
+            <field name="arch" type="xml">
+                <tree js_class="dashboard_list">
+
+                    <field name="name"/>
+                    <field name="description"/>
+
+                    <button type="object" 
+                        name="edit_dashboard"
+                        string="Edit Board"
+                        class="btn btn-primary"/>
+
+                    <button type="object"
+                        name="view_dashboard"
+                        string="View Board"
+                        class="btn btn-info"/>
+
+                    <!-- full screen -->
+                    <button type="object"
+                        name="view_dashboard_full_screen"
+                        string="Full Screen"
+                        class="btn btn-info"/>
+
+                    <button type="object"
+                        name="bind_menu_wizard"
+                        string="Bind Menu"
+                        class="btn btn-success"/>
+
+                    <!-- export url action -->
+                    <button type="object"
+                        name="jump_to_export_url"
+                        string="Export"
+                        class="btn btn-warning"/>
+                        
+                </tree>
+            </field>
+        </record>
+
+        <record id="mana_dashboard.mana_dashboard_form" model="ir.ui.view">
+            <field name="name">dashboard config</field>
+            <field name="model">mana_dashboard.dashboard</field>
+            <field name="arch" type="xml">
+                <form string="Board Config">
+                    <sheet>
+                    
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="name">name</label>
+                            <div class="col-sm-10">
+                                <field name="name"/>
+                            </div>
+                        </div>
+
+                        <!-- use_template -->
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="use_template">use_template</label>
+                            <div class="col-sm-10">
+                                <field name="use_template" widget="boolean_toggle" attrs="{'readonly': [('inited', '=', True)]}"/>
+                            </div>
+                        </div>
+
+                        <!-- inited -->
+                        <field name="inited" invisible="1"/>
+
+                        <!-- template id -->
+                        <div class="form-group row" attrs="{'invisible': ['|', ('inited', '=', True), ('use_template', '=', False)]}">
+                            <label class="col-sm-2 col-form-label" for="template_id">template_id</label>
+                            <div class="col-sm-10">
+                                <field name="template_id" options="{'no_open': True, 'no_create_edit': True, 'no_quick_create': True}" attrs="{'required': [('use_template', '=', True)]}"/>
+                            </div>
+                        </div>
+
+                        <!-- binded_menu_count -->
+                        <field name="binded_menu_count" invisible="1"/>
+                        <div class="form-group row" attrs="{'invisible': [('binded_menu_count', '=', 0)]}">
+                            <label class="col-sm-2 col-form-label" for="binded_menu_ids">binded_menu_ids</label>
+                            <div class="col-sm-10">
+                                <field name="binded_menu_ids" widget="many2many_tags" readonly="1"/>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="description">description</label>
+                            <div class="col-sm-10">
+                                <field name="description"/>
+                            </div>
+                        </div>
+
+                        <!-- notebook -->
+                        <notebook>
+                        
+                            <!-- dashboard html  -->
+                            <page string="dashboard_html">
+                                <field name="dashboard_html" nolabel="1" widget="ace"/>
+                            </page>
+
+                            <!-- dashboard css -->
+                            <page string="custom_css">
+                                <field name="custom_css" nolabel="1" widget="ace"/>
+                            </page>
+
+                            <!-- system_variables -->
+                            <page string="system_variables">
+                                <field name="system_variables" />
+                            </page>
+
+                            <!-- dashboard js -->
+                            <page string="dashboard_js">
+                                <field name="dashboard_js" nolabel="1" widget="ace"/>
+                            </page>
+
+                            <page string="js_files" attrs="{'invisible': [('use_template', '=', False)]}">
+                                <field name="js_files" nolabel="1" widget="many2many_binary"/>
+                            </page>
+
+                            <!-- style fiels -->
+                            <page string="style_files" attrs="{'invisible': [('use_template', '=', False)]}">
+                                <field name="style_files" nolabel="1" widget="many2many_binary"/>
+                            </page>
+
+                            <!-- image files -->
+                            <page string="image_files" attrs="{'invisible': [('use_template', '=', False)]}">
+                                <field name="image_files" nolabel="1" widget="many2many_binary"/>
+                            </page>
+                            
+                        </notebook>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="dashboard_manage_act_window" model="ir.actions.act_window">
+            <field name="name">Dashboard</field>
+            <field name="res_model">mana_dashboard.dashboard</field>
+            <field name="domain">['|', ('active', '=', True), ('active', '=', False)]</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- jump dashboard server action -->
+        <record id="mana_dashboard.jump_dashboard_server_action" model="ir.actions.server">
+            <field name="name">Dashboard</field>
+            <field name="model_id" ref="model_mana_dashboard_dashboard"/>
+            <field name="state">code</field>
+            <field name="code">
+dashboard = env['mana_dashboard.dashboard'].search([('name', '=', env.context.get('dashboard_name'))])
+action = {
+    'type': 'ir.actions.client',
+    'tag': 'mana_dashboard',
+    'name': 'Dashboard',
+    'params': {
+        'dashboard_id': dashboard.id,
+        'mode': env.context.get('mode') or 'view',
+        'active_id': env.context.get('active_id'),
+        'active_ids': env.context.get('active_ids'),
+        'active_model': env.context.get('active_model'),
+    }
+}
+            </field>
+        </record>
+
+        <!-- Menu items -->
+        <menuitem name="Dashboard"
+                  id="mana_dashboard.root_menu"
+                  sequence="0"
+                  web_icon="mana_dashboard,static/description/icon.png"/>
+
+        <menuitem name="Dashboard Manage"
+                  id="mana_dashboard.dashboard_menu"
+                  parent="mana_dashboard.root_menu"
+                  sequence="0"
+                  action="mana_dashboard.dashboard_manage_act_window"/>
+
+        <menuitem name="Dashboard Resource"
+                  id="mana_dashboard.dashboard_resource_menu"
+                  parent="mana_dashboard.root_menu"
+                  sequence="1"/>
+                  
+    </data>
+</odoo>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <!-- date filter -->
+    <t t-name="mana_dashboard.date_filter">
+        <div class="date_filter">
+            <select class="date_filter">
+                <option t-foreach="filters" t-as="filter" t-att-value="filter">
+                    <t t-esc="filter" />
+                </option>
+            </select>
+        </div>
+    </t>
+
+    <!-- add to dashboard  -->
+    <t t-name="mana_dashboard.send_to_dashboard" owl="1">
+        <li class="o_menu_item o_send_to_board d-flex align-items-center justify-content-center" role="menuitem">
+            <button type="button" class="btn btn-primary" t-on-click="_sendToBoard" style="margin: 5px">
+                <t t-esc="env._t('Send To dashboard')" />
+            </button>
+        </li>
+    </t>
+
+    <!-- template preview -->
+    <t t-name="mana_dashboard.template_preview">
+        <img width="200" class="template_preview" t-attf-src="/web/image/mana_dashboard.template/{{record.data.id}}/preview" />
+    </t>
+
+    <t t-name="mana_dashboard.simple_template_preview">
+        <img width="180" class="form_trait_preview" t-attf-src="/web/image/mana_dashboard.template/{{record.data.id}}/preview" />
+    </t>
+
+    <!-- operations -->
+    <t t-name="mana_dashboard.dashboard_operations">
+        <div class="operations">
+            <button type="object" name="edit_dashboard" class="btn btn-primary">Edit Board</button>
+            <button type="object" name="view_dashboard" class="btn btn-info">View Board</button>
+            <button type="object" name="bind_menu_wizard" class="btn btn-success">Bind Menu</button>
+            <button type="action" name="%(mana_dashboard.export_dashboard_act_url)d" class="btn btn-warning">Export</button>
+        </div>
+    </t>
+
+    <!-- search item -->
+    <t t-name="mana_dashboard.search_item">
+        <div class="d-flex align-items-center p-1">
+            <div class="search_label" t-if="show_label == true">
+                <label class="search_label" t-att-for="name"><t t-esc="label" /></label>
+            </div>
+            <div class="search_operator ml-1" t-if="show_operator == true">
+                <select class="search_operator">
+                    <t t-foreach="operators" t-as="operator">
+                        <option t-if="operator.value == cur_operator" selected="selected" t-att-value="operator.value"><t t-esc="operator.name" /></option>
+                        <option t-else="" t-att-value="operator.value"><t t-esc="operator.name" /></option>
+                    </t>
+                </select>
+            </div>
+            <div class="search_widget ml-1">
+            </div>
+        </div>
+    </t>
+
+    <!-- search input -->
+    <t t-name="mana_dashboard.search_input">
+        <div class="d-flex align-items-center p-1">
+            <div class="search_label" t-if="show_label == true">
+                <label class="search_label" t-att-for="name"><t t-esc="label" /></label>
+            </div>
+            <div class="search_operator ml-1" t-if="show_operator == true">
+                <select class="search_operator">
+                    <t t-foreach="operators" t-as="operator">
+                        <option t-if="operator.value == cur_operator" selected="selected" t-att-value="operator.value"><t t-esc="operator.name" /></option>
+                        <option t-else="" t-att-value="operator.value"><t t-esc="operator.name" /></option>
+                    </t>
+                </select>
+            </div>
+            <div class="search_input ml-1">
+                <input type="text" t-attr-value="default_value" class="o_input" t-attf-name="{{name}}" />
+            </div>
+        </div>
+    </t>
+
+     <t t-name="mana_dashboard.search_tab">
+        <div class="d-flex align-items-center p-1">
+            <div class="search_label ml-1" t-if="show_label == true">
+                <label class="search_label" t-att-for="name"><t t-esc="label" /></label>
+            </div>
+            <!-- operator -->
+            <div class="search_operator ml-1" t-if="show_operator == true">
+                <select class="search_operator">
+                    <t t-foreach="operators" t-as="operator">
+                        <option t-if="operator.value == cur_operator" selected="selected" t-att-value="operator.value"><t t-esc="operator.name" /></option>
+                        <option t-else="" t-att-value="operator.value"><t t-esc="operator.name" /></option>
+                    </t>
+                </select>
+            </div>
+            <ul class="nav nav-tabs ml-1">
+                <li t-foreach="options" t-as="option" class="nav-item">
+                    <a t-if="option_index == 0" class="nav-link active" t-att-value="option.value" href="#"><t t-esc="option.key" /></a>
+                    <a t-else="" class="nav-link" t-att-value="option.value" href="#"><t t-esc="option.key" /></a>
+                </li>
+            </ul>
+        </div>
+     </t>
+
+     <!-- single check box -->
+     <t t-name="mana_dashboard.search_option">
+        <div class="d-flex align-items-center p-1">
+            <div class="search_label" t-if="show_label == true">
+                <label class="search_label" t-att-for="name"><t t-esc="label" /></label>
+            </div>
+            <!-- operator -->
+            <div class="search_operator ml-1" t-if="show_operator == true">
+                <select class="search_operator">
+                    <t t-foreach="operators" t-as="operator">
+                        <option t-if="operator.value == cur_operator" selected="selected" t-att-value="operator.value"><t t-esc="operator.name" /></option>
+                        <option t-else="" t-att-value="operator.value"><t t-esc="operator.name" /></option>
+                    </t>
+                </select>
+            </div>
+            <div t-if="!multi_select" class="d-flex ml-1">
+                <t t-foreach="options" t-as="option">
+                    <div class="d-flex ml-2">
+                        <input t-if="option_index == 0" type="radio" t-attr-name="name" t-attr-value="value" checked="1" />
+                        <input t-else="" type="radio" t-attr-name="name" t-attr-value="value" />
+                        <label t-attr-for="name" class="ml-1"><t t-esc="option.key" /></label>
+                    </div>
+                </t>
+            </div>
+            <div t-else="" class="d-flex ml-1">
+                <t t-foreach="options" t-as="option">
+                    <div class="d-flex ml-2">
+                        <input t-if="option_index == 0" type="checkbox" t-attr-name="name" t-attr-value="value" checked="1" />
+                        <input t-else="" type="checkbox" t-attr-name="name" t-attr-value="value" />
+                        <label t-attr-for="name"><t t-esc="option.key" /></label>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="mana_dashboard.search_select">
+        <div class="d-flex align-items-center p-1">
+            <div class="search_label" t-if="show_label == true">
+                <label t-att-for="name"><t t-esc="label" /></label>
+            </div>
+            <!-- operator -->
+            <div class="search_operator ml-1" t-if="show_operator == true">
+                <select class="search_operator">
+                    <t t-foreach="operators" t-as="operator">
+                        <option t-if="operator.value == cur_operator" selected="selected" t-att-value="operator.value"><t t-esc="operator.name" /></option>
+                        <option t-else="" t-att-value="operator.value"><t t-esc="operator.name" /></option>
+                    </t>
+                </select>
+            </div>
+            <select t-att-name="name" class="ml-1">
+                <option t-foreach="options || []" t-as="option" t-att-value="option.value">
+                    <t t-esc="option.key" />
+                </option>
+            </select>
+        </div>
+     </t>
+
+    <t t-name="mana_dashboard.search_x2x">
+        <div class="d-flex align-items-center p-1">
+            <div class="search_label ml-1" t-if="show_label == true">
+                <label class="search_label" t-attf-for="name"><t t-esc="label" /></label>
+            </div>
+            <div class="search_operator ml-1" t-if="show_operator == true">
+                <select class="search_operator">
+                    <t t-foreach="operators" t-as="operator">
+                        <option t-if="operator.value == cur_operator" selected="selected" t-att-value="operator.value"><t t-esc="operator.name" /></option>
+                        <option t-else="" t-att-value="operator.value"><t t-esc="operator.name" /></option>
+                    </t>
+                </select>
+            </div> 
+            <div class="x2x_widget ml-1">
+            </div>
+        </div>
+     </t>
+
+    <t t-name="mana_dashboard.data_range">
+        <div class="d-flex align-items-center p-1">
+            <div class="search_label ml-1" t-if="show_label == true">
+                <label class="search_label" t-attf-for="name"><t t-esc="label" /></label>
+            </div>
+            <div class="x2x_widget datetime_range_input ml-1 d-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-2 left-0"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <input type="text" class="form-control" />
+            </div>
+        </div>
+     </t>
+
+</templates>
