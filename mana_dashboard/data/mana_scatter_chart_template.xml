@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- scatter -->
+        <record id="mana_dashboard.template_simple_scatter" model="mana_dashboard.template">
+            <field name="name">Simple Scatter</field>
+            <field name="category">chart</field>
+            <field name="type">scatter chart</field>
+            <field name="component_type">scatter_chart</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/scatter/simple_scatter.png" />
+            <field name="has_styles">False</field>
+            <field name="has_template">False</field>
+            <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+            <field name="scripts">
+<![CDATA[
+
+let data_source = this.get_data_source(0)
+let measures = data_source.get_measures()
+if (measures.length == 0) {
+  return
+}
+// generate the series, you can change option here
+//  https://echarts.apache.org/en/option.html#series-scatter
+let series = []
+if (measures.length == 1) {
+  series.push({
+      data: data_source.get_col_values(measures[0]),
+      type: 'scatter',
+      name: measures[0],
+  })
+} else if (measures.length == 2) {
+  series.push({
+      data: data_source.get_cols_values([measures[0], measures[1]]),
+      type: 'scatter',
+      name: measures[0] + ' vs ' + measures[1],
+  })
+} else {
+  // cartesian product
+  let data = []
+  for (let i = 0; i < measures.length; i++) {
+    for (let j = i + 1; j < measures.length; j++) {
+      data.push(data_source.get_cols_values([measures[i], measures[j]]))
+      series.push({
+          data: data_source.get_cols_values([measures[i], measures[j]]),
+          type: 'scatter',
+          name: measures[i] + ' vs ' + measures[j],
+      })
+    }
+  }
+}
+
+// you can change the option details here
+let option = {
+  xAxis: {},
+  yAxis: {},
+  series: []
+};
+option.series = series;
+
+// set the option, the chart will be rendered
+this.setOption(option);
+
+]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

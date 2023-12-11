@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- gauge chart template -->
+        <record id="mana_dashboard.template_simple_gauge_chart" model="mana_dashboard.template">
+            <field name="name">Simple Gauge Chart</field>
+            <field name="category">chart</field>
+            <field name="type">guage chart</field>
+            <field name="component_type">gauge_chart</field>
+            <field name="multi_data_source">1</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/gauge/gauge_simple.png" />
+            <field name="has_styles">False</field>
+            <field name="has_template">False</field>
+            <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+            <field name="need_column_aggregation">True</field>
+            <field name="scripts">
+<![CDATA[
+let data_sources = this.get_data_sources()
+if (!data_sources) {
+  return
+}
+
+if (data_sources.length <= 1) {
+  return
+}
+
+let data_source1 = data_sources[0]
+let data_source2 = data_sources[1]
+
+// get aggregate values
+let aggregate_value1 = data_source1.get_first_aggregate_column_value()
+let aggregate_value2 = data_source2.get_first_aggregate_column_value()
+
+// calculate percent
+let percent_value = aggregate_value1 / aggregate_value2 * 100
+
+// set option
+let option =  {
+  series: [
+    {
+      type: 'gauge',
+      progress: {
+        show: true,
+        width: 18
+      },
+      axisLine: {
+        lineStyle: {
+          width: 18
+        }
+      },
+      axisTick: {
+        show: false
+      },
+      splitLine: {
+        length: 15,
+        lineStyle: {
+          width: 2,
+          color: '#999'
+        }
+      },
+      axisLabel: {
+        distance: 25,
+        color: '#999',
+        fontSize: 20
+      },
+      anchor: {
+        show: true,
+        showAbove: true,
+        size: 25,
+        itemStyle: {
+          borderWidth: 10
+        }
+      },
+      title: {
+        show: false
+      },
+      detail: {
+        valueAnimation: true,
+        fontSize: 40,
+        offsetCenter: [0, '70%']
+      },
+      data: [
+        {
+          value: percent_value.toFixed(2)
+        }
+      ]
+    }
+  ]
+}
+this.setOption(option)
+]]>
+            </field>
+            <!-- default scripts -->
+            <field name="default_scripts">
+<![CDATA[
+let option = {
+  tooltip: {
+    formatter: '{a} <br/>{b} : {c}%'
+  },
+  series: [
+    {
+      name: 'Pressure',
+      type: 'gauge',
+      detail: {
+        formatter: '{value}'
+      },
+      data: [
+        {
+          value: 50,
+          name: 'SCORE'
+        }
+      ]
+    }
+  ]
+};
+this.set_option(option);
+]]>
+            </field>
+            <!-- help -->
+            <field name="help">
+<![CDATA[
+<h3>Simple Gauge Chart</h3>
+<p>Simple Gauge Chart is a simple gauge chart.</p>
+<p>It is a simple chart that can be used to display a single value.</p>
+<p>To use this chart, you need to select two data sources. one as the current value, and the other as the total value.</p>
+<p>Then, the chart will calculate the percentage of the current value to the total value.</p>
+<p>For example, if you want to display the percentage of the number of orders to the total number of customers, you can select the number of orders as the current value, and the total number of customers as the total value.</p>
+<p>Then, the chart will calculate the percentage of the number of orders to the total number of customers.</p>
+<div class="card my-3">
+  <div class="card-header">
+    <h5>Configuration</h5>
+  </div>
+  <img src="/mana_dashboard/static/config_demo/gauge/gauge_simple/gauge_simple.png" style="max-width:100%" />
+</div>
+<div class="card my-3">
+  <div class="card-header">
+    <h5>Data Source 1</h5>
+  </div>
+  <img src="/mana_dashboard/static/config_demo/gauge/gauge_simple/data_source1.png" style="max-width:100%" />
+  <img src="/mana_dashboard/static/config_demo/gauge/gauge_simple/data_source1_2.png" style="max-width:100%" />
+</div>
+<div class="card my-3">
+  <div class="card-header">
+    <h5>Data Source 2</h5>
+  </div>
+  <img src="/mana_dashboard/static/config_demo/gauge/gauge_simple/data_source2.png" style="max-width:100%" />
+</div>
+]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

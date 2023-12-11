@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- simple line -->
+        <record id="mana_dashboard.template_simple_line_chart" model="mana_dashboard.template">
+            <field name="name">Simple Line</field>
+            <field name="category">chart</field>
+            <field name="type">line chart</field>
+            <field name="component_type">line_chart</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/line_chart/line_chart_simple.png" />
+            <field name="has_styles">False</field>
+            <field name="has_template">False</field>
+            <field name="supported_series_types" eval="[(6, 0, [ref('mana_dashboard.series_type_bar'), ref('mana_dashboard.series_type_line')])]"/>
+            <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+            <field name="scripts">
+<![CDATA[
+
+let config = this.get_config()
+
+// get data source and check exist
+let data_source = this.get_data_source()
+if (!data_source) {
+  return
+}
+
+// get categories and check exist
+let categories = data_source.get_categories()
+if (categories.length <= 0) {
+  return
+}
+
+// get measures and check exist
+let measures = data_source.get_measures()
+if (measures.length <= 0) {
+  return
+}
+
+let series = []
+for (let i = 0; i < measures.length; i++) {
+  let measure = measures[i]
+  let raw_field = data_source.get_raw_field(measure)
+  series.push({
+    name: measures[i],
+    type: raw_field && raw_field.series_type && raw_field.series_type? raw_field.series_type: 'line',
+    data: data_source.get_col_values(measures[i])
+  })
+}
+
+let option = {
+  title: {
+    text: config.get_title()
+  },
+
+  xAxis: {
+    type: 'category',
+    data: data_source.get_col_values(categories[0])
+  },
+  
+  yAxis: {
+    type: 'value'
+  },
+  
+  series: series
+};
+
+this.setOption(option)
+]]>
+            </field>
+            <!-- default script -->
+            <field name="default_scripts">
+<![CDATA[
+let option = {
+  xAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: [150, 230, 224, 218, 135, 147, 260],
+      type: 'line'
+    }
+  ]
+};
+this.set_option(option)
+]]>
+            </field>
+            <!-- help -->
+            <field name="help">
+                <![CDATA[
+                <h3>Simple Line Chart</h3>
+                <p>This is a simple line chart, to use it, you need to select a category and a measure. for details, please refer to the <a href="https://www.openerpnext.com/@/mana-dashboard-line-chat" target="_blank">documentation</a>.</p>
+                ]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

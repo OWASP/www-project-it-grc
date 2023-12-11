@@ -1,0 +1,39 @@
+
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="mana_dashboard.any_config_list">
+            <field name="name">Dashboard config info list </field>
+            <field name="model">mana_dashboard.any_config</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ref_config" string="config"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="mana_dashboard.any_config_form">
+            <field name="name">Dashboard config info form </field>
+            <field name="model">mana_dashboard.any_config</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="form-group row">
+                            <label for="ref_config" class="col-sm-2 col-form-label">ref_config</label>
+                            <div class="col-sm-10">
+                                <field name="ref_config" string="config"/>
+                            </div>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="mana_dashboard.any_config_act_window">
+            <field name="name">Dashboard config info</field>
+            <field name="res_model">mana_dashboard.any_config</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

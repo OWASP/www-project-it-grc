@@ -1,0 +1,254 @@
+.device-mobile-portrait, .device-mobile-landscape {
+
+    .col-sm {
+        flex: 1 0 0%;
+    }
+
+    .row-cols-sm-auto>* {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: auto;
+    }
+
+    .row-cols-sm-1>* {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .row-cols-sm-2>* {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 50%;
+    }
+
+    .row-cols-sm-3>* {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+
+    .row-cols-sm-4>* {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 25%;
+    }
+
+    .row-cols-sm-5>* {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 20%;
+    }
+
+    .row-cols-sm-6>* {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 16.66666667%;
+    }
+
+    .col-sm-auto {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: auto;
+    }
+
+    .col-sm-1 {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 8.33333333%;
+    }
+
+    .col-sm-2 {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 16.66666667%;
+    }
+
+    .col-sm-3 {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 25%;
+    }
+
+    .col-sm-4 {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+
+    .col-sm-5 {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 41.66666667%;
+    }
+
+    .col-sm-6 {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 50%;
+    }
+
+    .col-sm-7 {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 58.33333333%;
+    }
+
+    .col-sm-8 {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 66.66666667%;
+    }
+
+    .col-sm-9 {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 75%;
+    }
+
+    .col-sm-10 {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 83.33333333%;
+    }
+
+    .col-sm-11 {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 91.66666667%;
+    }
+
+    .col-sm-12 {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .offset-sm-0 {
+        margin-left: 0;
+    }
+
+    .offset-sm-1 {
+        margin-left: 8.33333333%;
+    }
+
+    .offset-sm-2 {
+        margin-left: 16.66666667%;
+    }
+
+    .offset-sm-3 {
+        margin-left: 25%;
+    }
+
+    .offset-sm-4 {
+        margin-left: 33.33333333%;
+    }
+
+    .offset-sm-5 {
+        margin-left: 41.66666667%;
+    }
+
+    .offset-sm-6 {
+        margin-left: 50%;
+    }
+
+    .offset-sm-7 {
+        margin-left: 58.33333333%;
+    }
+
+    .offset-sm-8 {
+        margin-left: 66.66666667%;
+    }
+
+    .offset-sm-9 {
+        margin-left: 75%;
+    }
+
+    .offset-sm-10 {
+        margin-left: 83.33333333%;
+    }
+
+    .offset-sm-11 {
+        margin-left: 91.66666667%;
+    }
+
+    .g-sm-0,
+    .gx-sm-0 {
+        --gutter-x: 0;
+    }
+
+    .g-sm-0,
+    .gy-sm-0 {
+        --gutter-y: 0;
+    }
+
+    .g-sm-1,
+    .gx-sm-1 {
+        --gutter-x: 0.25rem;
+    }
+
+    .g-sm-1,
+    .gy-sm-1 {
+        --gutter-y: 0.25rem;
+    }
+
+    .g-sm-2,
+    .gx-sm-2 {
+        --gutter-x: 0.5rem;
+    }
+
+    .g-sm-2,
+    .gy-sm-2 {
+        --gutter-y: 0.5rem;
+    }
+
+    .g-sm-3,
+    .gx-sm-3 {
+        --gutter-x: 1rem;
+    }
+
+    .g-sm-3,
+    .gy-sm-3 {
+        --gutter-y: 1rem;
+    }
+
+    .g-sm-4,
+    .gx-sm-4 {
+        --gutter-x: 1.5rem;
+    }
+
+    .g-sm-4,
+    .gy-sm-4 {
+        --gutter-y: 1.5rem;
+    }
+
+    .g-sm-5,
+    .gx-sm-5 {
+        --gutter-x: 3rem;
+    }
+
+    .g-sm-5,
+    .gy-sm-5 {
+        --gutter-y: 3rem;
+    }
+}

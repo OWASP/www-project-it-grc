@@ -1,0 +1,57 @@
+
+<odoo>
+    <data>
+        
+        <record model="ir.ui.view" id="mana_dashboard.history_data_list">
+            <field name="name">History Data list </field>
+            <field name="model">mana_dashboard.history_data</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="title" string="title"/>
+                    <field name="data" string="data"/>
+                    <field name="remark" string="remark"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="mana_dashboard.history_data_form">
+            <field name="name">History Data form </field>
+            <field name="model">mana_dashboard.history_data</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                    
+                        <div class="form-group row">
+                            <label for="title" class="col-sm-2 col-form-label">title</label>
+                            <div class="col-sm-10">
+                                <field name="title" string="title"/>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label for="data" class="col-sm-2 col-form-label">data</label>
+                            <div class="col-sm-10">
+                                <field name="data" string="data"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="remark" class="col-sm-2 col-form-label">remark</label>
+                            <div class="col-sm-10">
+                                <field name="remark" string="remark"/>
+                            </div>
+                        </div>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="mana_dashboard.history_data_act_window">
+            <field name="name">History Data</field>
+            <field name="res_model">mana_dashboard.history_data</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+              
+    </data>
+</odoo>

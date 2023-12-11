@@ -1,0 +1,80 @@
+
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="mana_dashboard.search_group_traits_list">
+            <field name="name">Search Container Trait list </field>
+            <field name="model">mana_dashboard.search_group_traits</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="targets" string="targets"/>
+                    <field name="type" string="type"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="mana_dashboard.search_group_traits_form">
+            <field name="name">Search Container Trait form </field>
+            <field name="model">mana_dashboard.search_group_traits</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+
+                        <field name="any_config_id" string="any_config_id" invisible="1"/>
+                        <field name="dashboard_id" string="dashboard_id" invisible="1"/>
+
+                        <!-- name -->
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-3 col-form-label">name</label>
+                            <div class="col-sm-9">
+                                <field name="name" string="Name" />
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="type" class="col-sm-3 col-form-label">type</label>
+                            <div class="col-sm-9">
+                                <field name="type" string="Type"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row" attrs="{'invisible': [('type', '!=', 'specified')]}">
+                            <label for="targets" class="col-sm-3 col-form-label">targets</label>
+                            <div class="col-sm-9">
+                                <field name="targets" string="targets" widget="many2many_tags" domain="[('dashboard_id', '=', dashboard_id)]"/>
+                            </div>
+                        </div>
+
+                        <!-- search_immidiate -->
+                        <div class="form-group row">
+                            <label for="search_immidiate" class="col-sm-3 col-form-label">search_immidiate</label>
+                            <div class="col-sm-9">
+                                <field name="search_immidiate" string="Immidiate" widget="boolean_toggle"/>
+                            </div>
+                        </div>
+
+                        <!-- load last search -->
+                        <div class="form-group row">
+                            <label for="load_last_search" class="col-sm-3 col-form-label">load_last_search</label>
+                            <div class="col-sm-9">
+                                <field name="load_last_search" string="Load Last Search" widget="boolean_toggle"/>
+                            </div>
+                        </div>
+
+                        <!-- help -->
+                        <div class="form-group row">
+                            <field name="help" string="help" readonly="1"/>
+                        </div>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="mana_dashboard.search_group_traits_act_window">
+            <field name="name">Search Container Trait</field>
+            <field name="res_model">mana_dashboard.search_group_traits</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+    </data>
+</odoo>

@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <!-- theme builder -->
+    <t t-name="mana_dashboard.theme_builder" owl="1">
+        <div id="theme-builder" t-ref="root">
+            <div class="container-fluid" id="content">
+                <div class="row scroll-parent">
+                    <div class="theme-config">
+
+                        <div id="acc-port" class="panel-group">
+                            <div class="panel panel-default">
+                                <ManaAccordion title="'功能'">
+                                    <div class="panel-body">
+                                        <form class="form form-horizontal">
+                                            <div class="row form-group">
+                                                <label class="col-sm-3 control-label">主题名称</label>
+                                                <div class="col-sm-9">
+                                                    <input class="form-control" t-model="state.themeName" />
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <form class="form-horizontal">
+                                            <hr />
+                                            <h5>默认方案</h5>
+                                            <div class="col-xs-6" t-foreach="state.preDefinedThemes" t-as="group" t-key="group.name">
+                                                <a class="theme-plan-group" t-on-click="() => this.selectPreDefinedTheme(group.id)" t-attf-style=" background: {{group.background}}" t-attf-title="{{ group.name }}" t-att-class="{'active': state.themeName == group.name}" >
+                                                    <div class="theme-plan-color" t-foreach="group.theme" t-as="color" t-key="color" t-attf-style="background: {{color}}">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </ManaAccordion>
+                            </div>
+                        </div>                        <!-- end of acc-port -->
+
+                        <div id="acc-theme" class="panel-group">
+                            <div class="panel panel-default">
+                                <ManaAccordion title="'基本配置'">
+                                    <div class="panel-body">
+                                        <form class="form-horizontal">
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">背景</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker title="'背景'" color="state.theme.backgroundColor" onChange="(color) => state.theme.backgroundColor = color"></ManaColorPicker>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">标题</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker title="'标题'" color="state.theme.titleColor" onChange="(color) => state.theme.titleColor = color"></ManaColorPicker>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">副标题</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker title="'副标题'" color="state.theme.subtitleColor" onChange="(color) => state.theme.subtitleColor = color"></ManaColorPicker>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">主题</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPickerList title="'主题'" colors="state.theme.color" onChange="(colors) => state.theme.color = colors"></ManaColorPickerList>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">标签文字</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker title="'标签文字'" color="state.theme.markTextColor" onChange="(color) => state.theme.markTextColor = color"></ManaColorPicker>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <ManaConfigNumber title="'描边粗细'" value="state.theme.borderWidth" onChange="(val) => state.theme.borderWidth = val"></ManaConfigNumber>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">描边</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker title="'描边'" color="state.theme.borderColor" onChange="(color) => state.theme.borderColor = color"></ManaColorPicker>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </ManaAccordion>
+                            </div>
+                        </div>                        <!-- end of acc-theme -->
+
+                        <div id="acc-visualmap" class="panel-group">
+                            <div class="panel panel-default">
+                                <ManaAccordion title="'视觉映射'">
+                                    <div class="panel-body">
+                                        <form class="form-horizontal">
+                                            <ManaColorPickerList title="'视觉映射'" colors="state.theme.visualMapColor" onChange="(colors) => state.theme.visualMapColor=colors"></ManaColorPickerList>
+                                        </form>
+                                    </div>
+                                </ManaAccordion>
+                            </div>
+                        </div>                        <!-- end of acc-visualmap -->
+
+                        <div id="acc-axis" class="panel-group">
+                            <div class="panel panel-default">
+                                <ManaAccordion title="'坐标轴'">
+                                    <div class="panel-body">
+                                        <form class="form-horizontal">
+                                            
+                                            <div class="row form-group">
+                                                <div class="col-sm-12">
+                                                    <input t-model="state.theme.axisSeperateSetting" t-on-change="axisSeperateSettingChanges" type="checkbox" id="axisSeperateSetting" />
+                                                    <label for="axisSeperateSetting" class="control-label">为不同类型坐标轴分别设置</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="axis-group" t-foreach="state.theme.axis" t-as="axis" t-key="axis.name" t-if="axis_index > 0 || !state.theme.axisSeperateSetting">
+
+                                                <h5 v-if="axis.type !== 'all'" style="color:#ddd">
+                                                    <t t-esc="axis.name" />
+                                                </h5>
+
+                                                 <div class="form-group row">
+                                                    <ManaConfigColor title="'轴线'" canDisable="true" enabled="axis.axisLineShow" onChange="(color) => axis.axisLineColor = color" onChangeEnabled="(enable)=>axis.axisLineShow = enable"></ManaConfigColor>
+                                                 </div>
+
+                                                 <div class="form-group row">
+                                                    <ManaConfigColor title="'刻度'" canDisable="true" enabled="axis.axisTickShow" onChange="(color) => axis.axisTickColor = color" onChangeEnabled="(enable)=>axis.axisTickShow = enable"></ManaConfigColor>
+                                                 </div>
+                                                 
+                                                 <div class="form-group row">
+                                                    <ManaConfigColorList title="'网格'" canDisable="true" enabled="axis.splitLineShow" colors="axis.splitLineColor" onChange="(colors) =>axis.splitLineColor = colors" onChangeEnabled="(enable)=>axis.splitLineShow = enable"></ManaConfigColorList>
+                                                 </div>
+
+                                                 <div class="form-group row">
+                                                    <ManaConfigColorList title="'填充'" canDisable="true" enabled="axis.splitAreaShow" colors="axis.splitAreaColor" onChange="(colors) =>axis.splitAreaShows = color" onChangeEnabled="(enable)=>axis.splitAreaShow = enable"></ManaConfigColorList>
+                                                 </div>
+
+                                                 <div class="form-group row">
+                                                    <ManaConfigColor title="'文字'" canDisable="true" enabled="axis.axisLabelShow" color="axis.axisLabelColor" onChange="(color) => axis.axisLabelColor = color" onChangeEnabled="(enable)=>axis.axisLabelShow = enable"></ManaConfigColor>
+                                                 </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </ManaAccordion>
+                            </div>
+                        </div>                        <!-- end of acc-axis -->
+
+                        <div id="acc-legend" class="panel-group">
+                            <div class="panel panel-default">
+
+                                <ManaAccordion title="'图例'">
+                                    <div class="panel-body">
+                                        <form class="form-horizontal">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">文字</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker color="state.theme.legendTextColor" onChange="(color) => state.theme.legendTextColor" title="'文字'"></ManaColorPicker>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </ManaAccordion>
+                            </div>
+                        </div>                        <!-- end of acc-legend -->
+
+                        <div id="acc-toolbox" class="panel-group">
+                            <div class="panel panel-default">
+                                <ManaAccordion title="'工具箱'">
+                                    <div class="panel-body">
+                                        <form class="form-horizontal">
+                                        <form class="form-horizontal">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">图标</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker color="state.theme.toolboxColor" onChange="(color) => state.theme.toolboxColor" title="'图标'"></ManaColorPicker>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">悬停</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker color="state.theme.toolboxEmphasisColor" onChange="(color) => state.theme.toolboxEmphasisColor" title="'悬停'"></ManaColorPicker>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </ManaAccordion>
+                            </div>
+                        </div>                        <!-- end of acc-toolbox -->
+
+                        <div id="acc-tooltip" class="panel-group">
+                            <ManaAccordion title="'提示框'">
+                                <div class="panel-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">指示线</label>
+                                            <div class="col-sm-8">
+                                                <ManaColorPicker color="state.theme.tooltipAxisColor" onChange="(color) => state.theme.tooltipAxisColor = color" title="'指示线'"></ManaColorPicker>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <ManaConfigNumber value="state.theme.tooltipAxisWidth" onChange="(value) => state.theme.tooltipAxisWidth = value" title="'宽度'"></ManaConfigNumber>
+                                        </div>
+                                    </form>
+                                </div>
+                            </ManaAccordion>
+                        </div>                        <!-- end of acc-tooltip -->
+
+                        <div id="acc-timeline" class="panel-group">
+                            <div class="panel panel-default">
+                                <ManaAccordion title="'时间轴'">
+                                    <div class="panel-body">
+                                        <form class="form-horizontal">
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">标记</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker title="'标记'" color="state.theme.timelineItemColor" onChange="(color) => state.theme.timelineItemColor = color"></ManaColorPicker>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">标记悬停</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker title="'标记悬停'" color="state.theme.timelineItemColorE" onChange="(color) => state.theme.timelineItemColorE = color"></ManaColorPicker>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">标记选中</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker title="'标记选中'" color="state.theme.timelineCheckColor" onChange="(color) => state.theme.timelineCheckColor = color"></ManaColorPicker>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">标记选中描边</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker title="'标记选中描边'" color="state.theme.timelineCheckBorderColor" onChange="(color) => state.theme.timelineCheckBorderColor = color"></ManaColorPicker>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <ManaConfigNumber value="state.theme.timelineItemBorderWidth" title="'标记描边'" onChange="(value) => state.theme.timelineItemBorderWidth = value"></ManaConfigNumber>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">主轴</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker title="'主轴'" color="state.theme.timelineLineColor" onChange="(color) => state.theme.timelineLineColor = color"></ManaColorPicker>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <ManaConfigNumber value="state.theme.timelineLineWidth"  title="'主轴宽度'" onChange="(value) => state.theme.timelineLineWidth = value"></ManaConfigNumber>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">控件填充</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker title="'控件填充'" color="state.theme.timelineControlColor" onChange="(color) => state.theme.timelineControlColor = color"></ManaColorPicker>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">控件描边</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker title="'控件描边'" color="state.theme.timelineControlBorderColor" onChange="(color) => state.theme.timelineControlBorderColor = color"></ManaColorPicker>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <ManaConfigNumber title="'控件描边宽度'" value="state.theme.timelineControlBorderWidth" onChange="(value) => state.theme.timelineControlBorderWidth = value"></ManaConfigNumber>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">文字</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker title="'文字'" color="state.theme.timelineLabelColor" onChange="(color) => state.theme.timelineLabelColor = color"></ManaColorPicker>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </ManaAccordion>
+                            </div>
+                        </div>                        <!-- end of acc-timeline -->
+
+                        <!-- end of acc-datazoom -->
+                        <div id="acc-line" class="panel-group">
+                            <div class="panel panel-default">
+                                <ManaAccordion title="'折线图'">
+                                    <div class="panel-body">
+                                        <form class="form-horizontal">
+
+                                            <div class="row form-group">
+                                                <div class="col-sm-12">
+                                                    <input type="checkbox" t-model="state.theme.lineSmooth" id="lineSmooth" />
+                                                    <label for="lineSmooth" class="control-label" title="smooth">平滑曲线</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <ManaConfigNumber title="'线条宽度'" value="state.theme.lineWidth" onChange="(value) => state.theme.lineWidth = value"></ManaConfigNumber>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <ManaConfigNumber title="'图形描边'" value="state.theme.symbolBorderWidth" onChange="(value) => state.theme.symbolBorderWidth = value"></ManaConfigNumber>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <ManaConfigNumber title="'图形大小'" value="state.theme.symbolSize" onChange="(value) => state.theme.symbolSize = value"></ManaConfigNumber>
+                                            </div>
+
+                                            <div class="row form-group">
+                                                <div class="col-sm-3">
+                                                    <label class="control-label">图形形状</label>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <div class="row space-row">
+                                                        <div class="col-sm-12 my-1">
+                                                            <input type="radio" name="symbol" id="symbolCircle" value="circle" t-on-change="()=>this.updateSymbol('circle')" />
+                                                            <label class="p-1" for="symbolCircle">圆形</label>
+                                                        </div>
+                                                        <div class="col-sm-12 my-1">
+                                                            <input type="radio" name="symbol" id="symbolCircleE" value="circle" checked ="1" t-on-change="() => this.updateSymbol('emptyCircle')" />
+                                                            <label class="p-1" for="symbolCircleE">空心圆形</label>
+                                                        </div>
+                                                        <div class="col-sm-12 my-1">
+                                                            <input type="radio" name="symbol" id="symbolRect" value="rect" t-on-change="() => this.updateSymbol('rect')" />
+                                                            <label class="p-1" for="symbolRect">方形</label>
+                                                        </div>
+                                                        <div class="col-sm-12 my-1">
+                                                            <input type="radio" name="symbol" id="symbolRectE" value="rect" t-on-change="() => this.updateSymbol('emptyRect')" />
+                                                            <label for="symbolRectE">空心方形</label>
+                                                        </div>
+                                                        <div class="col-sm-12 my-1">
+                                                            <input type="radio" name="symbol" id="symbolRoundRect" value="roundRect" t-on-change="()=>this.updateSymbol('roundRect')" />
+                                                            <label class="p-1" for="symbolRoundRect">圆角矩形</label>
+                                                        </div>
+                                                        <div class="col-sm-12 my-1">
+                                                            <input type="radio" name="symbol" id="symbolRoundRectE" value="roundRect" t-on-change="()=>this.updateSymbol('emptyRoundRect')" />
+                                                            <label class="p-1" for="symbolRoundRectE">空心圆角</label>
+                                                        </div>
+                                                        <div class="col-sm-12 my-1">
+                                                            <input type="radio" name="symbol" id="symbolTri" value="triangle" t-on-change="()=>this.updateSymbol('triangle')" />
+                                                            <label class="p-1" for="symbolTri">三角形</label>
+                                                        </div>
+                                                        <div class="col-sm-12 my-1">
+                                                            <input type="radio" name="symbol" id="symbolTriE" value="triangle" t-on-change="()=>this.updateSymbol('emptyTriangle')" />
+                                                            <label class="p-1" for="symbolTriE">空心三角</label>
+                                                        </div>
+                                                        <div class="col-sm-12 my-1">
+                                                            <input type="radio" name="symbol" id="symbolDiamond" value="diamond" t-on-change="()=>this.updateSymbol('diamond')" />
+                                                            <label class="p-1" for="symbolDiamond">菱形</label>
+                                                        </div>
+                                                        <div class="col-sm-12 my-1">
+                                                            <input type="radio" name="symbol" id="symbolDiamondE" value="diamond" t-on-change="()=>this.updateSymbol('emptyDiamond')" />
+                                                            <label class="p-1" for="symbolDiamondE">空心菱形</label>
+                                                        </div>
+                                                        <div class="col-sm-12 my-1">
+                                                            <input type="radio" name="symbol" id="symbolPin" value="pin" t-on-change="()=>this.updateSymbol('pin')" />
+                                                            <label class="p-1" for="symbolPin">水滴</label>
+                                                        </div>
+                                                        <div class="col-sm-12 my-1">
+                                                            <input type="radio" name="symbol" id="symbolPinE" value="pin" t-on-change="()=>this.updateSymbol('emptyPin')" />
+                                                            <label class="p-1" for="symbolPinE">空心水滴</label>
+                                                        </div>
+                                                        <div class="col-sm-12 my-1">
+                                                            <input type="radio" name="symbol" id="symbolArrow" value="arrow" t-on-change="()=>this.updateSymbol('arrow')" />
+                                                            <label class="p-1" for="symbolArrow">箭头</label>
+                                                        </div>
+                                                        <div class="col-sm-12 my-1">
+                                                            <input type="radio" name="symbol" id="symbolArrowE" value="arrow" t-on-change="()=>this.updateSymbol('emptyArrow')" />
+                                                            <label class="p-1" for="symbolArrowE">空心箭头</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </ManaAccordion>
+                            </div>
+                        </div>                        <!-- end of acc-line -->
+
+                        <div id="acc-k" class="panel-group">
+                            <div class="panel panel-default">
+                                <ManaAccordion title="'K 线图'">
+                                    <div class="panel-body">
+                                        <form class="form-horizontal">
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">阳线填充</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker title="'阳线填充'" color="state.theme.kColor" onChange="(color) => state.theme.kColor = color"></ManaColorPicker>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">阴线填充</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker title="'阴线填充'" color="state.theme.kColor0" onChange="(color) => state.theme.kColor0 = color"></ManaColorPicker>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">阳线描边</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker title="'阳线描边'" color="state.theme.kBorderColor" onChange="(color) => state.theme.kBorderColor = color"></ManaColorPicker>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">阴线描边</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker title="'阴线描边'" color="state.theme.kBorderColor0" onChange="(color) => state.theme.kBorderColor0 = color"></ManaColorPicker>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <ManaConfigNumber value="state.theme.kBorderWidth" title="'描边宽度'" onChange="(value) => state.theme.kBorderWidth = value"></ManaConfigNumber>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </ManaAccordion>
+                            </div>
+                        </div>                        <!-- end of acc-k -->
+
+                        <div id="acc-graph" class="panel-group">
+                            <div class="panel panel-default">
+                                <ManaAccordion title="'力导图'">
+                                    <div class="panel-body">
+                                        <form class="form-horizontal">
+                                        
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">连线</label>
+                                                <div class="col-sm-8">
+                                                    <ManaColorPicker color="state.theme.graphLineColor" title="'连线'" onChange="(color) => state.theme.graphLineColor = color"></ManaColorPicker>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <ManaConfigNumber value="state.theme.graphLineWidth" title="'连线宽度'" onChange="(value) => state.theme.graphLineWidth = value"></ManaConfigNumber>
+                                            </div>
+                                            
+                                        </form>
+                                    </div>
+                                </ManaAccordion>
+                            </div>
+                        </div>                        <!-- end of acc-graph -->
+
+                    </div>                    <!-- end of left -->
+
+                </div>
+
+            </div>
+        </div>
+    </t>
+
+</templates>

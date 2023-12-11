@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <!-- simple bar chart -->
+    <record id="mana_dashboard.template_simple_bar_chart" model="mana_dashboard.template">
+      <field name="name">Simple Bar Chart</field>
+      <field name="category">chart</field>
+      <field name="type">bar chart</field>
+      <field name="component_type">bar_chart</field>
+      <field name="preview" type="base64" file="mana_dashboard/static/previews/bar_chart/bar_chart_simple.png" />
+      <field name="has_styles">False</field>
+      <field name="has_template">False</field>
+      <field name="multi_data_source">0</field>
+      <field name="supported_series_types" eval="[(6, 0, [ref('mana_dashboard.series_type_bar'), ref('mana_dashboard.series_type_line')])]"/>
+      <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+      <field name="scripts">
+<![CDATA[
+// get the datasource
+let data_source = this.get_data_source()
+if (!data_source) {
+  return;
+}
+
+// get the catorgories
+let categories = data_source.get_categories()
+if (categories.length == 0) {
+  return;
+}
+
+// get the measures
+let measures = data_source.get_measures()
+if (data_source.fields_as_category()) {
+  let series = []
+  let records = data_source.get_records()
+  for (var i=0; i < records.length; i++) {
+    let record = records[i]
+    let series_data = []
+    for (let j = 0; j < measures.length; j++) {
+      series_data.push(record[measures[j]])
+    }
+    series.push({
+      data: series_data,
+      type: 'bar',
+      showBackground: true,
+      backgroundStyle: {
+        color: 'rgba(180, 180, 180, 0.2)'
+      }
+    })
+  }
+  // generate the option, you can change the title, legend, tooltip, etc.
+  let option = {
+    xAxis: {
+      type: 'category',
+      data: categories
+    },
+    yAxis: {
+      type: 'value'
+    },
+    series: series
+  };
+
+  this.setOption(option)
+} else {
+  let series = []
+  for (let i = 0; i < measures.length; i++) {
+    let measure = measures[i]
+    let raw_field = data_source.get_raw_field(measures[i])
+    series.push({
+        data: data_source.get_col_values(measure),
+        type: raw_field && raw_field.series_type ? raw_field.series_type : 'bar',
+        showBackground: true,
+        name: measure,
+        backgroundStyle: {
+          color: 'rgba(180, 180, 180, 0.2)'
+        }
+    })
+  }
+  // generate the option, you can change the title, legend, tooltip, etc.
+  let option = {
+    xAxis: {
+      type: 'category',
+      data: data_source.get_col_values(categories[0], (val) => {
+        
+          // check field type
+          if (val instanceof Array) {
+              if (val.length == 2) {
+                  return {
+                    value: val[1],
+                    origin_value: val
+                  }
+              }
+          } 
+          
+          // check field is selction
+          if (data_source.is_selection(categories[0])) {
+            return {
+              value: data_source.get_selection_val(categories[0], val),
+              origin_value: val,
+            }
+          }
+          
+          return val
+      })
+    },
+    yAxis: {
+      type: 'value'
+    },
+    series: series
+  };
+
+  this.setOption(option)
+}
+]]>
+      </field>
+      <!-- default script -->
+      <field name="default_scripts">
+        <![CDATA[
+let option = {
+  xAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: [120, 200, 150, 80, 70, 110, 130],
+      type: 'bar',
+      showBackground: true,
+      backgroundStyle: {
+        color: 'rgba(180, 180, 180, 0.2)'
+      }
+    }
+  ]
+};
+this.setOption(option)
+]]>
+      </field>  
+      <!-- default code -->
+      <field name="default_code">
+<![CDATA[
+# use the result var to get the data
+# write your code here, and assign your data to result
+result = [
+    ['product', '2015', '2016', '2017'],
+    ['Matcha Latte', 43.3, 85.8, 93.7],
+    ['Milk Tea', 83.1, 73.4, 55.1],
+    ['Cheese Cocoa', 86.4, 65.2, 82.5],
+    ['Walnut Brownie', 72.4, 53.9, 39.1]
+  ]
+]]>
+        </field>
+        <!-- help -->
+        <field name="help">
+<![CDATA[
+<h3>Bar Chart</h3>
+<p>To create a bar chart, you need to select a data source, and then select the category and measures.</p>
+<p>For example, if you select the data source as <b>Product Sales</b>, and select the category as <b>Product</b>, and select the measure as <b>Sales</b>, you will get a bar chart like this:</p>
+<img src="/mana_dashboard/static/config_demo/bar_chart/bar_chart_simple/1.png" />
+<p>For more information, please refer to the <a href="https://echarts.apache.org/en/option.html#series-bar" target="_blank">Echarts Bar Chart</a>.</p>
+]]>
+        </field>
+    </record>
+    
+  </data>
+</odoo>

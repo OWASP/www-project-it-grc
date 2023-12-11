@@ -1,0 +1,49 @@
+
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="mana_dashboard.theme_color_list">
+            <field name="name">theme color list </field>
+            <field name="model">mana_dashboard.theme_color</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="color" string="color"/>
+                    <field name="theme_id" string="theme_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="mana_dashboard.theme_color_form">
+            <field name="name">theme color form </field>
+            <field name="model">mana_dashboard.theme_color</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                    
+                        <div class="form-group row">
+                            <label for="color" class="col-sm-2 col-form-label">color</label>
+                            <div class="col-sm-10">
+                                <field name="color" string="color"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="theme_id" class="col-sm-2 col-form-label">theme_id</label>
+                            <div class="col-sm-10">
+                                <field name="theme_id" string="theme_id"/>
+                            </div>
+                        </div>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="mana_dashboard.theme_color_act_window">
+            <field name="name">theme color</field>
+            <field name="res_model">mana_dashboard.theme_color</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

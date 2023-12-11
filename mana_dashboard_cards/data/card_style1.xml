@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+  <record id="mana_dashboard_cards.color_card" model="mana_dashboard.template">
+            <field name="name">Color Card</field>
+            <field name="category">statistics</field>
+            <field name="type">statistics card</field>
+            <field name="component_type">statistics_card</field>
+            <field name="need_column_aggregation">True</field>
+            <field name="template">
+<![CDATA[	
+<div class="dash-count">
+	<div class="dash-counts">
+		<h4 class="statistics">
+			100
+		</h4>
+		<h5>
+			Customers
+		</h5>
+	</div>
+	<div class="dash-imgs">
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+		fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+		stroke-linejoin="round" class="feather feather-user">
+			<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2">
+			</path>
+			<circle cx="12" cy="7" r="4">
+			</circle>
+		</svg>
+	</div>
+</div>
+]]>
+            </field>
+
+            <!-- demo template -->
+            <field name="demo_template">
+<![CDATA[
+<div class="dash-count">
+	<div class="dash-counts">
+		<h4 class="statistics">
+			100
+		</h4>
+		<h5>
+			Customers
+		</h5>
+	</div>
+	<div class="dash-imgs">
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+		fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+		stroke-linejoin="round" class="feather feather-user">
+			<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2">
+			</path>
+			<circle cx="12" cy="7" r="4">
+			</circle>
+		</svg>
+	</div>
+</div>
+]]>
+            </field>
+
+            <!-- scripts -->
+            <field name="scripts">
+<![CDATA[
+ // Your script here
+let data_source = this.get_data_source();
+if (!data_source || !data_source.is_valid()) return;
+let value = data_source.get_first_aggregate_column_value();
+this.$el.find('.statistics').text(value);
+]]>
+            </field>
+
+            <!-- default scripts -->
+            <field name="default_scripts">
+ // Your script here
+let data_source = this.get_data_source();
+if (!data_source || !data_source.is_valid()) return;
+let value = data_source.get_first_aggregate_column_value();
+this.$el.find('.statistics').text(value);
+            </field>
+
+            <!-- styles -->
+            <field name="styles">
+<![CDATA[
+
+.dash-count {
+    background: #FF9F43;
+    color: #fff;
+    min-height: 98px;
+    width: 100%;
+    border-radius: 6px;
+    margin: 0 0 25px;
+    padding: 20px;
+    
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: space-between;
+    
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+
+.dash-count h4 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0;
+    color:#fff;
+    padding:5px 0px;
+}
+
+.dash-count h5 {
+    font-size: 14px;
+    color:#fff
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+
+.dash-count .dash-imgs {
+    -webkit-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.dash-count .dash-imgs svg {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+}
+
+]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

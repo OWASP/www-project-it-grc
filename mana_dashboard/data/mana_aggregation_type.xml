@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- sum -->
+        <record id="mana_dashboard.aggregation_sum" model="mana_dashboard.aggregation_type">
+            <field name="name">sum</field>
+        </record>
+
+        <!-- avg -->
+        <record id="mana_dashboard.aggregation_avg" model="mana_dashboard.aggregation_type">
+            <field name="name">avg</field>
+        </record>
+
+        <!-- bit_and -->
+        <record id="mana_dashboard.aggregation_bit_and" model="mana_dashboard.aggregation_type">
+            <field name="name">bit_and</field>
+        </record>
+
+        <!-- bit_xor -->
+        <record id="mana_dashboard.aggregation_bit_xor" model="mana_dashboard.aggregation_type">
+            <field name="name">bit_xor</field>
+        </record>
+
+        <!-- bool_and -->
+        <record id="mana_dashboard.aggregation_bool_and" model="mana_dashboard.aggregation_type">
+            <field name="name">bool_and</field>
+        </record>
+
+        <!-- bool_or -->
+        <record id="mana_dashboard.aggregation_bool_or" model="mana_dashboard.aggregation_type">
+            <field name="name">bool_or</field>
+        </record>
+
+        <!-- count -->
+        <record id="mana_dashboard.aggregation_count" model="mana_dashboard.aggregation_type">
+            <field name="name">count</field>
+        </record>
+
+        <!-- every -->
+        <record id="mana_dashboard.aggregation_every" model="mana_dashboard.aggregation_type">
+            <field name="name">every</field>
+        </record>
+
+        <!-- max -->
+        <record id="mana_dashboard.aggregation_max" model="mana_dashboard.aggregation_type">
+            <field name="name">max</field>
+        </record>
+
+        <!-- median -->
+        <record id="mana_dashboard.aggregation_median" model="mana_dashboard.aggregation_type">
+            <field name="name">median</field>
+        </record>
+
+        <!-- min -->
+        <record id="mana_dashboard.aggregation_min" model="mana_dashboard.aggregation_type">
+            <field name="name">min</field>
+        </record>
+
+        <!-- sum -->
+        <record id="mana_dashboard.aggregation_sum" model="mana_dashboard.aggregation_type">
+            <field name="name">sum</field>
+        </record>
+        
+    </data>
+</odoo>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="menuitem_users_treeview">
+      <field name="name">Menuitem Users</field>
+      <field name="model">res.users</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="login"/>
+          <field name="lang"/>
+          <!-- <field name="state"/> -->
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="menuitem_users_formview">
+      <field name="name">Menuitem Users</field>
+      <field name="model">res.users</field>
+      <field name="arch" type="xml">
+        <form>
+          <!-- <header>
+            <field name="state" widget="statusbar"/>
+          </header> -->
+          <sheet>
+            <group>
+              <group>
+                <field name="name"/>
+                <field name="login"/>
+              </group>
+              <group>
+                <field name="lang"/>
+                <field name="tz"/>
+              </group>
+            </group>
+            <notebook>
+              <page name="menuitems" string="Menuitems">
+                <field name="user_menuitems_ids">
+                  <kanban class="o_res_partner_kanban">
+                    <field name="name"/>
+                    <field name="web_icon_data"/>
+                    <templates>
+                      <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                          <div class="oe_kanban_details row">
+                            <div class="col-3">
+                              <t t-set="background_image" t-value="kanban_image('res.users', 'avatar_128', record.id.raw_value)"/>
+                              <div class="o_kanban_image_fill_left d-none d-md-block" t-attf-style="background-image:url('#{background_image}')">
+                                <img class="o_kanban_image_inner_pic" t-att-src="kanban_image('res.users', 'avatar_128', record.web_icon_data.raw_value)"/>
+                              </div><!-- <field name="web_icon_data"/> -->
+                            </div>
+                            <div class="col-9">
+                            <strong class="o_kanban_record_title">
+                              <field name="name"/>
+                            </strong>
+                            </div>
+                          </div>
+                        </div>
+                      </t>
+                    </templates>
+                  </kanban>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="user_menuitems_action" model="ir.actions.act_window">
+	    <field name="name">Menuitem Users</field>
+	    <field name="res_model">res.users</field>
+	    <field name="view_ids" eval="[(5, 0, 0),
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('menuitem_users_treeview')}),
+        (0, 0, {'view_mode': 'form', 'view_id': ref('menuitem_users_formview')})]"/>
+    </record>
+
+    <menuitem name="Menuitem Users" id="menu_menuitems_user" parent="base.menu_users" action="user_menuitems_action" />
+  </data>
+</odoo>

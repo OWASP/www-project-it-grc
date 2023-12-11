@@ -1,0 +1,118 @@
+
+<odoo>
+    <data>
+        
+        <record model="ir.ui.view" id="mana_dashboard.action_blocks_list">
+            <field name="name">Action Blocks</field>
+            <field name="model">mana_dashboard.action_blocks</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="uid" string="User"/>
+                    <field name="share" string="Share" widget="boolean_toggle"/>
+                    <field name="action_id" string="action id"/>
+                    <field name="name" string="name"/>
+                    <field name="view_mode" string="view mode"/>
+                    <field name="context" string="context"/>
+                    <field name="domain" string="domain"/>
+                    <field name="category" string="category"/>
+                    <field name="description" string="description"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="mana_dashboard.action_blocks_form">
+            <field name="name">Mana Dashboard Action Blocks form </field>
+            <field name="model">mana_dashboard.action_blocks</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+
+                        <div class="form-group row">
+                            <label for="share" class="col-sm-2 col-form-label">share</label>
+                            <div class="col-sm-10">
+                                <field name="share" string="Share" widget="boolean_toggle"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="uid" class="col-sm-2 col-form-label">uid</label>
+                            <div class="col-sm-10">
+                                <field name="uid" string="User"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="action_id" class="col-sm-2 col-form-label">action_id</label>
+                            <div class="col-sm-10">
+                                <field name="action_id" string="action id"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-2 col-form-label">name</label>
+                            <div class="col-sm-10">
+                                <field name="name" string="name"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="view_mode" class="col-sm-2 col-form-label">view_mode</label>
+                            <div class="col-sm-10">
+                                <field name="view_mode" string="view mode"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="context" class="col-sm-2 col-form-label">context</label>
+                            <div class="col-sm-10">
+                                <field name="context" string="context"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="domain" class="col-sm-2 col-form-label">domain</label>
+                            <div class="col-sm-10">
+                                <field name="domain" string="domain"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="category" class="col-sm-2 col-form-label">category</label>
+                            <div class="col-sm-10">
+                                <field name="category" string="category"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="svg_icon" class="col-sm-2 col-form-label">svg_icon</label>
+                            <div class="col-sm-10">
+                                <field name="svg_icon" string="svg_icon"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="description" class="col-sm-2 col-form-label">description</label>
+                            <div class="col-sm-10">
+                                <field name="description" string="description"/>
+                            </div>
+                        </div>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="mana_dashboard.action_blocks_act_window">
+            <field name="name">Mana Dashboard Action Blocks</field>
+            <field name="res_model">mana_dashboard.action_blocks</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">['|', ('uid','=',uid),('share','=',True)]</field>
+        </record>
+
+        <menuitem name="Action Blocks" 
+            id="mana_dashboard.action_blocks_menu" 
+            parent="mana_dashboard.dashboard_resource_menu" 
+            action="mana_dashboard.action_blocks_act_window"/>
+              
+    </data>
+</odoo>

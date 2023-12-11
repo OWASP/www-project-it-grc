@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- list style1 -->
+        <record id="mana_dashboard.list_style1" model="mana_dashboard.template">
+            <field name="name">list style1</field>
+			<field name="category">qweb</field>
+            <field name="type">qweb_list</field>
+			<field name="component_type">qweb_list</field>
+			<field name="disable_children">True</field>
+            <field name="template">
+                <![CDATA[
+<table class="table table-bordernone">
+	<thead> 
+		<tr> 
+			<th t-foreach="fields" t-as="field"> <span><t t-esc="field.name" /> </span></th>
+		</tr>
+	</thead>
+	<tbody> 
+	<tr t-foreach="rows" t-as="row">
+		<td>
+			<div class="media">
+				<div class="square-box me-2"><img class="img-fluid b-r-5" alt="" src="../assets/images/avtar/boy.png"></div>
+				<div class="media-body ps-2">
+				<div class="avatar-details">
+					<a href="product-page.html">
+					<h6><t t-esc="row.name" /></h6>
+					</a><span><t t-esc="row.team" /></span></div>
+				</div>
+			</div>
+		</td>
+		<td class="img-content-box">
+			<h6><t t-esc="row.date" /></h6><span>In <t t-esc="row.expired" /> Days</span>
+		</td>
+		<td>
+			<h6>Product Design</h6><span>$<t t-esc="row.price" /></span>
+		</td>
+		<td>
+			<div class="badge badge-light-primary"><t t-esc="row.state" /></div>
+		</td>
+	</tr>
+	</tbody>
+</table>
+]]>
+            </field>
+			
+            <!-- styles -->
+            <field name="styles">
+                <![CDATA[
+table {
+	caption-side: bottom;
+	border-collapse: collapse;
+}
+.table {
+	--bs-table-bg:  rgba(0,0,0,0);
+	--bs-table-striped-color:  #212529;
+	--bs-table-striped-bg:  rgba(0,0,0,0.05);
+	--bs-table-active-color:  #212529;
+	--bs-table-active-bg:  rgba(0,0,0,0.1);
+	--bs-table-hover-color:  #212529;
+	--bs-table-hover-bg:  rgba(0,0,0,0.075);
+	width: 100%;
+	margin-bottom: 1rem;
+	color: #212529;
+	vertical-align: top;
+	border-color: #dee2e6;
+}
+.table {
+	margin-bottom: 0px;
+}
+th {
+	text-align: inherit;
+	text-align: -webkit-match-parent;
+}
+thead, tbody, tfoot, tr, td, th {
+	border-color: inherit;
+	border-style: solid;
+	border-width: 0;
+}
+thead, tbody, tfoot, tr, td, th {
+	border-color: #ecf3fa;
+}
+.table > thead {
+	vertical-align: bottom;
+}
+.table-bordernone thead {
+	border-top: 1px solid #f2f4ff;
+}
+.ongoing-project table thead {
+	background-color: #f4f6fd;
+	border-radius: 5px;
+}
+.table > tbody {
+	vertical-align: inherit;
+}
+.table-bordernone tbody {
+	border: 0;
+}
+.table > :not(caption) > * > * {
+	padding: .5rem .5rem;
+	background-color: var(--bs-table-bg);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(var(--bs-table-accent-bg)), to(var(--bs-table-accent-bg)));
+	background-image: linear-gradient(var(--bs-table-accent-bg), var(--bs-table-accent-bg));
+	border-bottom-width: 1px;
+}
+.table th, .table td {
+	padding: .75rem;
+}
+.table td {
+	color: #2b2b2b;
+}
+.table-bordernone td {
+	border: 0;
+}
+.ongoing-project table tbody tr td {
+	vertical-align: middle;
+}
+.table th {
+	color: #2b2b2b;
+}
+.table-bordernone thead th {
+	border-bottom: 0;
+}
+.table thead th {
+	border-bottom: 2px solid #ecf3fa;
+}
+.ongoing-project table thead tr th {
+	color: #1e2f65;
+}
+.ongoing-project table tr th:first-child, .ongoing-project table tr td:first-child {
+	min-width: 160px;
+}
+.ongoing-project table tbody tr td:first-child {
+	padding-left: 0px;
+	padding-top: 19px;
+}
+.ongoing-project table tr th:nth-child(2), .ongoing-project table tr td:nth-child(2) {
+	min-width: 110px;
+}
+.ongoing-project table tr th:nth-child(3), .ongoing-project table tr td:nth-child(3) {
+	min-width: 125px;
+}
+.ongoing-project table tbody tr td:last-child {
+	padding-right: 0px;
+	text-align: right;
+}
+.ongoing-project table tbody tr:last-child td {
+	padding-bottom: 0px;
+}
+.badge {
+	display: inline-block;
+	padding: .35em .65em;
+	font-size: 0.75em;
+	font-weight: 700;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: .25rem;
+}
+.badge {
+	padding: 0.44em 0.7em;
+	font-family: "Roboto",sans-serif,sans-serif;
+	font-weight: 500;
+}
+.badge-light-info {
+	background-color: #dff0ff;
+	color: #1d97ff;
+}
+.badge-light-danger {
+	background-color: #fad4d4;
+	color: #e52727;
+}
+.badge-light-secondary {
+	background-color: #fff1c2;
+	color: #ffc500;
+}
+.badge-light-primary {
+	background-color: rgba(99, 98, 231, 0.1);
+}
+.default-dash .badge, .ecommerce-dash .badge, .crypto-dash .badge {
+	padding: 8px 10px;
+	font-size: 10px;
+}
+.ongoing-project table tbody tr td .badge {
+	text-transform: capitalize;
+}
+.ongoing-project table tbody tr td h6 {
+	font-weight: 500;
+	color: rgba(30, 47, 101, 0.8);
+	margin-bottom: 5px;
+	font-size: 13px;
+}
+.ongoing-project table tbody tr td span {
+	font-size: 12px;
+	color: #8f97b2;
+	margin-bottom: 0px;
+	display: inline-block;
+}
+.media {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+}
+.me-2 {
+	margin-right: 0.5rem !important;
+}
+.square-box {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 35px;
+	height: 35px;
+	border-radius: 5px;
+	background-color: #f4f6fd;
+}
+.ongoing-project table tbody tr td .media .square-box {
+	width: 40px;
+	height: 40px;
+}
+.ps-2 {
+	padding-left: 0.5rem !important;
+}
+.media .media-body {
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+a {
+	color: #0d6efd;
+	text-decoration: underline;
+}
+* a {
+	color: var(--theme-deafult);
+	text-decoration: none;
+	letter-spacing: 1px;
+}
+img, svg {
+	vertical-align: middle;
+}
+.img-fluid {
+	max-width: 100%;
+	height: auto;
+}
+.b-r-5 {
+	border-radius: 5px !important;
+}
+.square-box img {
+	max-width: 100%;
+}
+.badge-light-primary {
+	background-color: #fff;
+	color: #6362e7;
+}
+.ongoing-project table thead tr th:last-child {
+	text-align: right;
+}
+.table > :not(:last-child) > :last-child > * {
+	border-bottom-color: currentColor;
+}
+.table > :not(:last-child) > :last-child > * {
+	border-color: #ecf3fa;
+}
+]]>
+            </field>
+            <!-- scripts -->
+            <field name="scripts">
+                <![CDATA[
+
+]]>
+            </field>
+        </record>
+
+        <!-- list style2 -->
+        <record id="mana_dashboard.list_style2" model="mana_dashboard.template">
+            <field name="name">list style1</field>
+			<field name="category">list</field>
+            <field name="type">qweb_list</field>
+			<field name="component_type">qweb_list</field>
+			<field name="need_column_aggregation">True</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/qweb_list/list_style2.png"/>
+            <field name="template">
+                <![CDATA[
+<table class="table table-bordernone">
+	<thead> 
+		<tr> 
+			<th t-foreach="fields" t-as="field"> <span><t t-esc="field.name" /> </span></th>
+		</tr>
+	</thead>
+	<tbody> 
+	<tr t-foreach="rows" t-as="row">
+		<td>
+			<div class="media">
+				<div class="square-box me-2"><img class="img-fluid b-r-5" alt="" src="../assets/images/avtar/boy.png"></div>
+				<div class="media-body ps-2">
+				<div class="avatar-details">
+					<a href="product-page.html">
+					<h6><t t-esc="row.name" /></h6>
+					</a><span><t t-esc="row.team" /></span></div>
+				</div>
+			</div>
+		</td>
+		<td class="img-content-box">
+			<h6><t t-esc="row.date" /></h6><span>In <t t-esc="row.expired" /> Days</span>
+		</td>
+		<td>
+			<h6>Product Design</h6><span>$<t t-esc="row.price" /></span>
+		</td>
+		<td>
+			<div class="badge badge-light-primary"><t t-esc="row.state" /></div>
+		</td>
+	</tr>
+	</tbody>
+</table>
+]]>
+            </field>
+			
+            <!-- styles -->
+            <field name="styles">
+                <![CDATA[
+table {
+	caption-side: bottom;
+	border-collapse: collapse;
+}
+.table {
+	--bs-table-bg:  rgba(0,0,0,0);
+	--bs-table-striped-color:  #212529;
+	--bs-table-striped-bg:  rgba(0,0,0,0.05);
+	--bs-table-active-color:  #212529;
+	--bs-table-active-bg:  rgba(0,0,0,0.1);
+	--bs-table-hover-color:  #212529;
+	--bs-table-hover-bg:  rgba(0,0,0,0.075);
+	width: 100%;
+	margin-bottom: 1rem;
+	color: #212529;
+	vertical-align: top;
+	border-color: #dee2e6;
+}
+.table {
+	margin-bottom: 0px;
+}
+th {
+	text-align: inherit;
+	text-align: -webkit-match-parent;
+}
+thead, tbody, tfoot, tr, td, th {
+	border-color: inherit;
+	border-style: solid;
+	border-width: 0;
+}
+thead, tbody, tfoot, tr, td, th {
+	border-color: #ecf3fa;
+}
+.table > thead {
+	vertical-align: bottom;
+}
+.table-bordernone thead {
+	border-top: 1px solid #f2f4ff;
+}
+.ongoing-project table thead {
+	background-color: #f4f6fd;
+	border-radius: 5px;
+}
+.table > tbody {
+	vertical-align: inherit;
+}
+.table-bordernone tbody {
+	border: 0;
+}
+.table > :not(caption) > * > * {
+	padding: .5rem .5rem;
+	background-color: var(--bs-table-bg);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(var(--bs-table-accent-bg)), to(var(--bs-table-accent-bg)));
+	background-image: linear-gradient(var(--bs-table-accent-bg), var(--bs-table-accent-bg));
+	border-bottom-width: 1px;
+}
+.table th, .table td {
+	padding: .75rem;
+}
+.table td {
+	color: #2b2b2b;
+}
+.table-bordernone td {
+	border: 0;
+}
+.ongoing-project table tbody tr td {
+	vertical-align: middle;
+}
+.table th {
+	color: #2b2b2b;
+}
+.table-bordernone thead th {
+	border-bottom: 0;
+}
+.table thead th {
+	border-bottom: 2px solid #ecf3fa;
+}
+.ongoing-project table thead tr th {
+	color: #1e2f65;
+}
+.ongoing-project table tr th:first-child, .ongoing-project table tr td:first-child {
+	min-width: 160px;
+}
+.ongoing-project table tbody tr td:first-child {
+	padding-left: 0px;
+	padding-top: 19px;
+}
+.ongoing-project table tr th:nth-child(2), .ongoing-project table tr td:nth-child(2) {
+	min-width: 110px;
+}
+.ongoing-project table tr th:nth-child(3), .ongoing-project table tr td:nth-child(3) {
+	min-width: 125px;
+}
+.ongoing-project table tbody tr td:last-child {
+	padding-right: 0px;
+	text-align: right;
+}
+.ongoing-project table tbody tr:last-child td {
+	padding-bottom: 0px;
+}
+.badge {
+	display: inline-block;
+	padding: .35em .65em;
+	font-size: 0.75em;
+	font-weight: 700;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: .25rem;
+}
+.badge {
+	padding: 0.44em 0.7em;
+	font-family: "Roboto",sans-serif,sans-serif;
+	font-weight: 500;
+}
+.badge-light-info {
+	background-color: #dff0ff;
+	color: #1d97ff;
+}
+.badge-light-danger {
+	background-color: #fad4d4;
+	color: #e52727;
+}
+.badge-light-secondary {
+	background-color: #fff1c2;
+	color: #ffc500;
+}
+.badge-light-primary {
+	background-color: rgba(99, 98, 231, 0.1);
+}
+.default-dash .badge, .ecommerce-dash .badge, .crypto-dash .badge {
+	padding: 8px 10px;
+	font-size: 10px;
+}
+.ongoing-project table tbody tr td .badge {
+	text-transform: capitalize;
+}
+.ongoing-project table tbody tr td h6 {
+	font-weight: 500;
+	color: rgba(30, 47, 101, 0.8);
+	margin-bottom: 5px;
+	font-size: 13px;
+}
+.ongoing-project table tbody tr td span {
+	font-size: 12px;
+	color: #8f97b2;
+	margin-bottom: 0px;
+	display: inline-block;
+}
+.media {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+}
+.me-2 {
+	margin-right: 0.5rem !important;
+}
+.square-box {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 35px;
+	height: 35px;
+	border-radius: 5px;
+	background-color: #f4f6fd;
+}
+.ongoing-project table tbody tr td .media .square-box {
+	width: 40px;
+	height: 40px;
+}
+.ps-2 {
+	padding-left: 0.5rem !important;
+}
+.media .media-body {
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+a {
+	color: #0d6efd;
+	text-decoration: underline;
+}
+* a {
+	color: var(--theme-deafult);
+	text-decoration: none;
+	letter-spacing: 1px;
+}
+img, svg {
+	vertical-align: middle;
+}
+.img-fluid {
+	max-width: 100%;
+	height: auto;
+}
+.b-r-5 {
+	border-radius: 5px !important;
+}
+.square-box img {
+	max-width: 100%;
+}
+.badge-light-primary {
+	background-color: #fff;
+	color: #6362e7;
+}
+.ongoing-project table thead tr th:last-child {
+	text-align: right;
+}
+.table > :not(:last-child) > :last-child > * {
+	border-bottom-color: currentColor;
+}
+.table > :not(:last-child) > :last-child > * {
+	border-color: #ecf3fa;
+}
+]]>
+            </field>
+            <!-- scripts -->
+            <field name="scripts">
+                <![CDATA[
+let config = this.get_config();
+if (!config) {
+	return;
+}
+let data_source = this.get_data_source();
+if (!data_source || !data_source.is_valid()) {
+	return;
+}
+let categories = data_source.get_categories();
+if (categories.length == 0) {
+	return;
+}
+let measures = data_source.get_measures();
+let measure = measures[0];
+let categroy = categories[0];
+let category_vals = data_source.get_column_values(measure);
+let categroy_names = data_source.get_category_values(categroy);
+
+// calc the total value
+let sum = 0;
+for (let i = 0; i < category_vals.length; i++) {
+	sum += category_vals[i];
+}
+
+// get data
+let datas = [];
+for (let i = 0; i < category_vals.length; i++) {
+	let val = category_vals[i];
+	let percent = parseFloat((val / sum * 100).toFixed(2));
+	let data = {
+		'percent': percent,
+		'val': val,
+		'label': categroy_names[i],
+	}
+	if (percent > 60) {
+		data['bg_class'] = 'bg-success';
+	} else if (percent > 30) {
+		data['bg_class'] = 'bg-warning';
+	} else {
+		data['bg_class'] = 'bg-danger';
+	}
+	datas.push(data);
+}
+
+// render template
+this.render_template(datas);
+]]>
+			</field>
+			<!-- help -->
+			<field name="help">
+				<![CDATA[
+				<h3>How to use</h3>
+				<p>1. Select a measure and a category</p>
+]]>
+			</field>
+		</record>
+
+		<!-- list style3 -->
+        <record id="mana_dashboard.list_style3" model="mana_dashboard.template">
+            <field name="name">list style3</field>
+			<field name="category">qweb_template</field>
+            <field name="type">qweb_list</field>
+			<field name="component_type">qweb_list</field>
+			<field name="disable_children">True</field>
+			<field name="preview" type="base64" file="mana_dashboard/static/previews/qweb_list/list_style3.png" />
+            <field name="template">
+                <![CDATA[
+<div t-if="datas" class="chats-wrap media-list">
+	<div t-foreach="datas" t-as="data" class="chat-details mb-1 p-3">
+		<h4 class="mb-0"> 
+			<span class="h5 font-weight-normal"><t t-esc="name" /></span> 
+			<span class="float-right p-1 btn btn-sm text-default"> <b><t t-esc="percent" /></b>%</span>
+		</h4>
+		<div class="progress progress-sm mt-3">
+			<div t-attf-class="progress-bar {{bg_class}} w-{{val}}"></div>
+		</div>
+	</div>
+</div>
+]]>
+            </field>
+			<field name="demo_template">
+				<![CDATA[
+<div class="chats-wrap media-list">
+	<div class="chat-details mb-1 p-3">
+		<h4 class="mb-0"> <span class="h5 font-weight-normal">Html</span> <span
+				class="float-right p-1  btn btn-sm text-default"> <b>85</b>%</span>
+		</h4>
+		<div class="progress progress-sm mt-3">
+			<div class="progress-bar  bg-primary w-80"></div>
+		</div>
+	</div>
+	<div class="chat-details mb-1 p-3">
+		<h4 class="mb-0"> <span class="h5 font-weight-normal"> Wordpress</span>
+			<span class="float-right p-1  btn btn-sm text-default">
+				<b>46</b>%</span> </h4>
+		<div class="progress progress-sm mt-3">
+			<div class="progress-bar bg-info w-45"></div>
+		</div>
+	</div>
+	<div class="chat-details mb-1 p-3">
+		<h4 class="mb-0"> <span class="h5 font-weight-normal"> jQuery</span> <span
+				class="float-right p-1  btn btn-sm text-default"> <b>56</b>%</span>
+		</h4>
+		<div class="progress progress-sm mt-3">
+			<div class="progress-bar bg-secondary w-65"></div>
+		</div>
+	</div>
+	<div class="chat-details mb-1 p-3">
+		<h4 class="mb-0"> <span class="h5 font-weight-normal"> Photoshop</span>
+			<span class="float-right p-1  btn btn-sm text-default">
+				<b>90</b>%</span> </h4>
+		<div class="progress progress-sm mt-3">
+			<div class="progress-bar bg-info w-75"></div>
+		</div>
+	</div>
+	<div class="chat-details mb-0 p-3">
+		<h4 class="mb-0"> <span class="h5 font-weight-normal">Angular js</span>
+			<span class="float-right p-1  btn btn-sm text-default">
+				<b>30</b>%</span> </h4>
+		<div class="progress progress-sm mt-3">
+			<div class="progress-bar bg-danger w-30"></div>
+		</div>
+	</div>
+</div>
+]]>
+			</field>
+            <!-- styles -->
+            <field name="styles">
+                <![CDATA[
+.progress {
+	display: -ms-flexbox;
+	display: flex;
+	height: 1rem;
+	overflow: hidden;
+	font-size: 0.7rem;
+	background-color: #e2e1ea;
+	border-radius: 3px;
+}
+
+.progress {
+	position: relative;
+}
+
+.progress-sm {
+	height: 0.5rem;
+}
+
+.bg-danger {
+	background: #f5334f !important;
+}
+
+.w-30 {
+	width: 30% !important;
+}
+
+.w-75 {
+	width: 75% !important;
+}
+
+.w-65 {
+	width: 65% !important;
+}
+
+.w-45 {
+	width: 45% !important;
+}
+
+.w-80 {
+	width: 80% !important;
+}
+
+.progress-bar {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-ms-flex-pack: center;
+	justify-content: center;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	transition: width 0.6s ease;
+}
+
+.bg-secondary {
+	background: #04cad0 !important;
+}
+
+.bg-primary {
+	background: #564ec1 !important;
+}
+
+.progress-sm .progress-bar {
+	height: 0.5rem;
+}
+
+h5,
+.h5 {
+	font-size: 1rem;
+}
+
+.font-weight-normal {
+	font-weight: 400 !important;
+}
+
+.float-right {
+	float: right !important;
+}
+
+.p-1 {
+	padding: 0.25rem !important;
+}
+
+.text-default {
+	color: #707070 !important;
+}
+
+.btn {
+	display: inline-block;
+	font-weight: 400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	padding: 0.375rem 0.75rem;
+	font-size: 0.93rem;
+	line-height: 1.8461;
+	border-radius: 3px;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-sm,
+.btn-group-sm>.btn {
+	padding: 0.25rem 0.5rem;
+	font-size: 0.87rem;
+	line-height: 1.3333;
+	border-radius: 3px;
+}
+
+.btn {
+	cursor: pointer;
+	font-weight: 400;
+	letter-spacing: 0.03em;
+	font-size: 0.81rem;
+	min-width: 2.37rem;
+}
+
+.btn-sm,
+.btn-group-sm>.btn {
+	font-size: 0.75rem;
+	min-width: 1.62rem;
+}
+
+:not(:disabled):not(.disabled).btn {
+	cursor: pointer;
+}
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+strong,
+b {
+	font-weight: 600;
+}
+
+.bg-info {
+	background: #26c2f7 !important;
+}
+
+.bg-secondary {
+	background: #04cad0 !important;
+}
+
+.w-45 {
+	width: 45% !important;
+}
+
+.bg-primary {
+	background: #564ec1 !important;
+}
+
+.card-title {
+	margin-bottom: 1.5rem;
+}
+
+.card-title {
+	font-size: 1rem;
+	line-height: 1.2;
+	font-weight: 600;
+}
+
+.card-header .card-title {
+	margin-bottom: 0px;
+}
+
+:only-child.card-title {
+	margin-bottom: 0px;
+}
+]]>
+            </field>
+            <!-- scripts -->
+            <field name="scripts">
+                <![CDATA[
+let config = this.get_config();
+if (!config) {
+	return;
+}
+let data_source = this.get_data_source();
+if (!data_source || !data_source.is_valid()) {
+	return;
+}
+let categories = data_source.get_categories();
+if (categories.length == 0) {
+	return;
+}
+
+let datas = [];
+let measures = data_source.get_measures();
+if (measures.length > 0) {
+	let measure = measures[0];
+	let categroy = categories[0];
+	let category_vals = data_source.get_column_values(measure);
+	let categroy_names = data_source.get_category_values(categroy);
+
+	// calc the total value
+	let sum = 0;
+	for (let i = 0; i < category_vals.length; i++) {
+		sum += category_vals[i];
+	}
+
+	for (let i = 0; i < category_vals.length; i++) {
+		let val = category_vals[i];
+		let percent = parseFloat((val / sum * 100).toFixed(2));
+		let data = {
+			'percent': percent,
+			'val': val,
+			'label': categroy_names[i],
+		}
+		if (percent > 60) {
+			data['bg_class'] = 'bg-success';
+		} else if (percent > 30) {
+			data['bg_class'] = 'bg-warning';
+		} else {
+			data['bg_class'] = 'bg-danger';
+		}
+		datas.push(data);
+	}
+}
+// render template
+this.render_template(datas);
+]]>
+            </field>
+			<!-- help -->
+			<field name="help">	
+				<![CDATA[
+
+				]]>
+			</field>
+        </record>
+
+    </data>
+</odoo>

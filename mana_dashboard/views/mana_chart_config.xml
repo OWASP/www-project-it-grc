@@ -1,0 +1,273 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="mana_dashboard.chart_config_form">
+            <field name="name">custom code form </field>
+            <field name="model">mana_dashboard.chart_config</field>
+            <field name="arch" type="xml">
+                <form js_class="chart_config_form">
+                    <sheet>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="data_source_type">data_source_type</label>
+                            <div class="col-sm-10">
+                                <field name="data_source_type" options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                            </div>
+                        </div>
+
+                        <field name="data_source_type_name" invisible="1"/>
+
+                        <!-- model  -->
+                        <div class="form-group row" attrs="{'invisible': [('data_source_type_name', '!=', 'model'), ('data_source_type_name', '!=', 'method')]}">
+                            <label class="col-sm-2 col-form-label" for="model">model</label>
+                            <div class="col-sm-10">
+                                <field name="model" attrs="{'required': ['|', ('data_source_type_name', '=', 'model'), ('data_source_type_name', '=', 'method')]}" options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                            </div>
+                        </div>
+
+                        <!-- notebook -->
+                        <notebook>
+                            <page string="Fields" attrs="{'invisible': [('data_source_type_name', '!=', 'model')]}">
+                                
+                                <!-- fields -->
+                                <div class="form-group row" attrs="{'invisible': [('data_source_type_name', '!=', 'model')]}">
+                                    <div class="col-sm-12">
+                                        <field name="model_fields" attrs="{'required': [('data_source_type_name', '=', 'model')]}">
+                                            <tree editable="bottom">
+                                                <field name="sequence" widget="handle"/>
+                                                <field name="field" options="{'no_create': True, 'no_create_edit': True, 'no_open': True, 'equal_parent': 'model', 'domain_field_name': 'model_id'}" widget="mana_many2one" />
+                                                <field name="field_name" />
+                                                <field name="aggregation"/>
+                                                <field name="aggregation_domain_ids" invisible="1"/>
+                                                <field name="full_name" invisible="1"/>
+                                                <field name="show_time" invisible="1"/>
+                                                <field name="start_time" attrs="{'invisible': [('show_time', '=', False)]}"/>
+                                                <field name="end_time" attrs="{'invisible': [('show_time', '=', False)]}"/>
+                                                <field name="affect_by_global" widget="boolean_toggle" />
+                                            </tree>
+                                        </field>
+                                    </div>
+                                </div>
+                            </page>
+
+                            <!-- Basic -->
+                            <page string="Basic" attrs="{'invisible': [('data_source_type_name', '=', 'model')]}">
+                            
+                                <!-- method  -->
+                                <div class="form-group row" attrs="{'invisible': [('data_source_type_name', '!=', 'method')]}">
+                                    <label class="col-sm-2 col-form-label" for="method">method</label>
+                                    <div class="col-sm-10">
+                                        <field name="method" attrs="{'required': [('data_source_type_name', '=', 'method')]}"/>
+                                    </div>
+                                </div>
+
+                                <!-- sql  -->
+                                <div class="form-group row" attrs="{'invisible': [('data_source_type_name', '!=', 'sql')]}">
+                                    <label class="col-sm-12 col-form-label" for="sql">sql</label>
+                                    <div class="col-sm-12">
+                                        <field name="sql" attrs="{'required': [('data_source_type_name', '=', 'sql')]}" widget="ace"/>
+                                    </div>
+                                </div>
+
+                                <!-- res_id  -->
+                                <div class="form-group row" attrs="{'invisible': [('data_source_type_name', '!=', 'record')]}">
+                                    <label class="col-sm-2 col-form-label" for="res_id">res_id</label>
+                                    <div class="col-sm-10">
+                                        <field name="res_id" attrs="{'required': [('data_source_type_name', '=', 'record')]}"/>
+                                    </div>
+                                </div>
+
+                                <!-- json_data_format -->
+                                <div class="form-group row" attrs="{'invisible': [('data_source_type_name', '!=', 'json')]}">
+                                    <label class="col-sm-2 col-form-label" for="json_data_format">json_data_format</label>
+                                    <div class="col-sm-10">
+                                        <field name="json_data_format" attrs="{'required': [('data_source_type_name', '=', 'json')]}" />
+                                    </div>
+                                </div>
+
+                                <!-- json -->
+                                <div class="form-group row" attrs="{'invisible': [('data_source_type_name', '!=', 'json')]}">
+                                    <label class="col-sm-2 col-form-label" for="json_data">json_data</label>
+                                    <div class="col-sm-10">
+                                        <field name="json_data" attrs="{'required': [('data_source_type_name', '=', 'json')]}" widget="ace"/>
+                                    </div>
+                                </div>
+
+                                <!-- code -->
+                                <div class="form-group row" attrs="{'invisible': [('data_source_type_name', '!=', 'code')]}">
+                                    <label class="col-sm-2 col-form-label" for="code">code</label>
+                                    <div class="col-sm-10">
+                                        <field name="code" attrs="{'required': [('data_source_type_name', '=', 'code')]}" widget="ace"/>
+                                    </div>
+                                </div>
+                            </page>
+
+                            <!-- page group by -->
+                            <page string="Group By" attrs="{'invisible': [('data_source_type_name', '!=', 'model')]}">
+                                <!-- group by infos -->
+                                <div class="form-group row" attrs="{'invisible': ['|', ('data_source_type_name', '!=', 'model'), ('model', '=', False)]}">
+                                    <div class="col-sm-12">
+                                        <field name="group_by_infos" attrs="{'required': [('data_source_type_name', '=', 'model')]}">
+                                            <tree editable="bottom">
+                                                <field name="sequence" widget="handle"/>
+                                                <field name="field_type" invisible="1"/>
+                                                <field name="field_description" invisible="1"/>
+                                                <field name="field" options="{'no_create': True, 'no_create_edit': True, 'no_open': True, 'equal_parent': 'model', 'domain_field_name': 'model_id'}" widget="mana_many2one" />
+                                                <field name="field_name" />
+                                                <field name="show_granularity" invisible="1"/>
+                                                <field name="granularity" attrs="{'invisible': [('show_granularity', '=', False)]}"/>
+                                                <field name="full_name" invisible="1"/>
+                                            </tree>
+                                        </field>
+                                    </div>
+                                </div>
+                            </page>
+
+                            <!-- ordery by -->
+                            <page string="Order By" attrs="{'invisible': [('data_source_type_name', '!=', 'model')]}">
+                                <!-- order by info -->
+                                <div class="form-group row" attrs="{'invisible': ['|', ('data_source_type_name', '!=', 'model'), ('model', '=', False)]}">
+                                    <div class="col-sm-12">
+                                        <field name="order_by_infos" attrs="{'required': [('data_source_type_name', '=', 'model')]}">
+                                            <tree editable="bottom">
+                                                <field name="sequence" widget="handle"/>
+                                                <field name="field" options="{'no_create': True, 'no_create_edit': True, 'no_open': True, 'equal_parent': 'model', 'domain_field_name': 'model_id'}" widget="mana_many2one" />
+                                                <field name="field_name" />
+                                                <field name="order_type"/>
+                                                <field name="full_name" invisible="1"/>
+                                            </tree>
+                                        </field>
+                                    </div>
+                                </div>
+                            </page>
+
+                            <!-- Other -->
+                            <page string="Domain&amp;Context" attrs="{'invisible': [('data_source_type_name', '!=', 'model')]}">
+                        
+                                <!-- domain  -->
+                                <div class="form-group row" attrs="{'invisible': [('data_source_type_name', '!=', 'model')]}">
+                                    <label class="col-sm-2 col-form-label" for="domain">domain</label>
+                                    <div class="col-sm-10">
+                                        <field name="domain"/>
+                                    </div>
+                                </div>
+
+                                <!-- context -->
+                                <div class="form-group row" attrs="{'invisible': [('data_source_type_name', '!=', 'model')]}">
+                                    <label class="col-sm-2 col-form-label" for="context">context</label>
+                                    <div class="col-sm-10">
+                                        <field name="context"/>
+                                    </div>
+                                </div>
+
+                                <!-- limit -->
+                                <div class="form-group row" attrs="{'invisible': [('data_source_type_name', '!=', 'model')]}">
+                                    <label class="col-sm-2 col-form-label" for="limit">limit</label>
+                                    <div class="col-sm-10">
+                                        <field name="limit"/>
+                                    </div>
+                                </div>
+
+                            </page>
+
+                            <page string="Scripts">
+                                <div class="alert alert-info" role="alert">
+                                    <p>1. <strong>This</strong> this is bind the view object, you can call setOption to set the chart option.</p>
+                                    <p>2. <strong>Data Source</strong> DataSource is the datasource object with some helper function.</p>
+                                </div>
+                                <!-- code template -->
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <!-- two col -->
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="container">
+
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label" for="template_id">template_id</label>
+                                                        <div class="col-sm-10">
+                                                            <field name="template_id" string="Template" options="{'no_create': True, 'no_create_edit': True, 'no_open': True}" domain="[('category', '=', 'chart')]" />
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- row -->
+                                                    <div class="row">
+                                                        <field name="scripts" string="scripts" widget="ace" />
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </page>
+
+                            <!-- template -->
+                            <page string="Template">
+                                <field name="template" widget="ace" />
+                            </page>
+
+                            <!-- styles -->
+                            <page string="Styles">
+                                <field name="styles" widget="ace" />
+                            </page>
+                            
+                            <!-- help -->
+                            <page string="Help">
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <field name="help" widget="html" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </page>
+
+                        </notebook>
+
+                        <!-- query button -->
+                        <div class="d-flex" style="margin-top:-20px; margin-bottom: 10px">
+                            <Button name="mana_dashboard.do_query" special="just_notify" string="Query" type="object" class="btn btn-primary" />
+                        </div>
+                        
+                        <!-- fake_field -->
+                        <field name="fake_field" class="d-none" />
+
+                        <!-- raw_fields -->
+                        <field name="raw_fields">
+                            <tree create="0" delete="0" editable="bottom" limit="10">
+                                <field name="name" readonly="1" force_save="1" />
+                                <field name="measure" widget="boolean_toggle" />
+                                <field name="show_measure" invisible="1" />
+                                <field name="category" widget="mutex_toggle" />
+                                <field name="show_category" invisible="1" />
+                                <field name="column_arggregation" />
+                                <field name="hidden" widget="boolean_toggle" />
+                            </tree>
+                        </field>
+
+                        <!-- result preview -->
+                        <widget name="grid_widget" />
+
+                        <footer>
+                            <button class="btn btn-primary" special="save_and_return" string="save" />
+                            <button class="btn btn-secondary" special="cancel" string="cancel" />
+                        </footer>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="mana_dashboard.chart_config_act_window">
+            <field name="name">custom code</field>
+            <field name="res_model">mana_dashboard.chart_config</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>  

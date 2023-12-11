@@ -1,0 +1,39 @@
+
+<odoo>
+    <data>
+    
+        <record model="ir.ui.view" id="mana_dashboard.file_content_list">
+            <field name="name">Mana Dashboard File Content list </field>
+            <field name="model">mana_dashboard.file_content</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="content" string="content"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="mana_dashboard.file_content_form">
+            <field name="name">Mana Dashboard File Content form </field>
+            <field name="model">mana_dashboard.file_content</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="form-group row">
+                            <label for="content" class="col-sm-2 col-form-label">content</label>
+                            <div class="col-sm-10">
+                                <field name="content" string="content"/>
+                            </div>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="mana_dashboard.file_content_act_window">
+            <field name="name">Mana Dashboard File Content</field>
+            <field name="res_model">mana_dashboard.file_content</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+    </data>
+</odoo>

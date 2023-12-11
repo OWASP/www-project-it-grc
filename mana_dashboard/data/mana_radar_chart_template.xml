@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- radar chart -->
+        <record id="mana_dashboard.template_simple_radar_chart" model="mana_dashboard.template">
+            <field name="name">Simple Radar Chart</field>
+            <field name="category">chart</field>
+            <field name="type">radar chart</field>
+            <field name="component_type">radar_chart</field>
+            <field name="preview" type="base64" file="mana_dashboard/static/previews/radar_chart/radar_simple.png" />
+            <field name="has_styles">False</field>
+            <field name="has_template">False</field>
+            <field name="supported_result_types" eval="[(6, 0, [ref('mana_dashboard_base.result_type_standard')])]"/>
+            <field name="scripts">
+<![CDATA[
+let config = this.get_config()
+let data_source = this.get_data_source(0)
+
+// get measures
+let measures = data_source.get_measures()
+if (measures.length <= 0) {
+    return;
+}
+
+// get categories
+let categories = data_source.get_categories()
+if (categories.length <= 0) {
+    return;
+}
+
+let category = categories[0]
+let category_values = data_source.get_col_values(category)
+
+let indicators = []
+let records = data_source.get_records()
+for (let i = 0; i < records.length; i++) {
+    let record = records[i]
+    let category_value = record.get_value(category)
+    indicators.push({
+        name: category_value,
+    })
+    let max_value = 0;
+    for (let j = 0; j < measures.length; j++) {
+        let measure = measures[j]
+        let measure_value = record.get_value(measure)
+        if (measure_value > max_value) {
+            max_value = measure_value
+        }
+    }
+    max_value = max_value + max_value * 0.1
+    indicators[i].max = max_value
+}
+
+// make series
+let series = []
+for (let i = 0; i < measures.length; i++) {
+    let measure = measures[i]
+    let measure_values = data_source.get_col_values(measure)
+    series.push({
+        name: measure,
+        type: 'radar',
+        data: [{
+            value: measure_values,
+            name: measure
+        }]
+    })
+}
+
+let option = {
+  title: {
+    text: config.get_title()
+  },
+  legend: {
+    data: measures
+  },
+  radar: {
+    shape: 'circle',
+    indicator: indicators
+  },
+  series: series
+};
+
+this.setOption(option)
+]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>
