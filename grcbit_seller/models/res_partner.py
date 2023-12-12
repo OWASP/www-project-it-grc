@@ -48,6 +48,7 @@ class ResPartnerGRC(models.Model):
     ziti_console = fields.Char(string="Ziti Console (8443)", default= lambda x: x._set_default_port('ziti_console', int(53000), int(57000))) # de 53000 a 57000 
 
     dns_domain = fields.Char(string="DNS Domain", default=lambda x:x.get_dns_domain())
+    is_openziti = fields.Boolean(string="OpenZiti", default=True)
 
     is_admin = fields.Boolean(string="is admin", compute="_get_group", store=False)
     _sql_constraints = [
