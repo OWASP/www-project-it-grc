@@ -176,6 +176,7 @@ action = {
         <menuitem name="Dashboard"
                   id="mana_dashboard.root_menu"
                   sequence="0"
+                  groups="mana_dashboard.manager"
                   web_icon="mana_dashboard,static/description/icon.png"/>
 
         <menuitem name="Dashboard Manage"
