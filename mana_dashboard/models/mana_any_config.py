@@ -61,7 +61,7 @@ class ManaDashboardAnyConfig(models.Model):
         :param config_model:
         :return:
         """
-        ref_config = self.env[config_model].create_config(dashboard_id, options)
+        ref_config = self.sudo().env[config_model].create_config(dashboard_id, options)
         any_config = self.create({
             'dashboard_id': dashboard_id,
             'ref_config': '{config_model},{ref_id}'.format(
