@@ -68,9 +68,11 @@
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
                 <div class="oe_kanban_details">
-                  <strong class="o_kanban_record_title">
-                    <field name="name"/>
-                  </strong>
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <span style="font-weight:bold;"><field name="name"/></span>
+                    </strong>
+                  </div>
                   <div>
                     <t t-esc="record.description.value"/>
 		              </div>
