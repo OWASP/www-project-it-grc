@@ -1,0 +1,381 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* grcbit_seller
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 18:32+0000\n"
+"PO-Revision-Date: 2023-12-15 18:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__activate_date
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__activate_date
+msgid "Activate date"
+msgstr "Activar fecha"
+
+#. module: grcbit_seller
+#: model:ir.model.fields.selection,name:grcbit_seller.selection__res_partner__state__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_set_groups_user__seller_admin_check
+#: model:res.groups,name:grcbit_seller.group_admin_seller
+msgid "Admin"
+msgstr "Administrador"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__client_system
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__client_system
+msgid "Client system name"
+msgstr "Nombre del sistema del cliente"
+
+#. module: grcbit_seller
+#: model:ir.model,name:grcbit_seller.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: grcbit_seller
+#: model:ir.model,name:grcbit_seller.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_xdr_manager_port__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_xdr_manager_port__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__db_postgres_port
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__db_postgres_port
+msgid "DB Postgres Port (5432)"
+msgstr "Puerto de base de datos Postgres (5432)"
+
+#. module: grcbit_seller
+#: model:ir.model.constraint,message:grcbit_seller.constraint_res_partner_unique_db_postgres_port
+msgid "DB postgres Port already exist.!"
+msgstr "El puerto de la base de datos Postgres ya existe."
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_company__dns_domain
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__dns_domain
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__dns_domain
+msgid "DNS Domain"
+msgstr "Dominio DNS"
+
+#. module: grcbit_seller
+#: model_terms:ir.ui.view,arch_db:grcbit_seller.grcbit_seller_res_partner_inherit_form
+msgid "Database"
+msgstr "Base de Datos"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_xdr_manager_port__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: grcbit_seller
+#: model_terms:ir.ui.view,arch_db:grcbit_seller.grcbit_seller_res_partner_inherit_form
+msgid "GRC"
+msgstr "GRC"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__grc_container_id
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__grc_container_id
+msgid "GRC Container ID"
+msgstr "ID contenedor GRC"
+
+#. module: grcbit_seller
+#: model:ir.module.category,description:grcbit_seller.module_grcbit_seller
+msgid "GRC Module Base"
+msgstr "Módulo base GRC"
+
+#. module: grcbit_seller
+#: model:ir.module.category,name:grcbit_seller.module_grcbit_seller
+#: model_terms:ir.ui.view,arch_db:grcbit_seller.grcbit_seller_res_partner_inherit_form
+msgid "GRC Seller"
+msgstr "Vendedor GRC"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__grc_web_port
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__grc_web_port
+msgid "GRC Web Port (8069)"
+msgstr "Puerto Web GRC (8069)"
+
+#. module: grcbit_seller
+#: model:ir.model.constraint,message:grcbit_seller.constraint_res_partner_unique_grc_web_port
+msgid "GRC Web Port already exist.!"
+msgstr "El puerto web GRC ya existe.!"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_xdr_manager_port__id
+msgid "ID"
+msgstr "ID"
+
+#. module: grcbit_seller
+#: model:ir.model.fields.selection,name:grcbit_seller.selection__res_partner__state__inactive
+msgid "Inactive"
+msgstr "Inactivo"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_xdr_manager_port____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_xdr_manager_port__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_xdr_manager_port__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: grcbit_seller
+#: model:ir.model.fields.selection,name:grcbit_seller.selection__res_partner__state__new
+msgid "New"
+msgstr "Nuevo"
+
+#. module: grcbit_seller
+#: model_terms:ir.ui.view,arch_db:grcbit_seller.grcbit_seller_res_partner_inherit_form
+msgid "OPENZITI"
+msgstr "OPENZITI"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__is_openziti
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__is_openziti
+msgid "OpenZiti"
+msgstr "OpenZiti"
+
+#. module: grcbit_seller
+#: model_terms:ir.ui.view,arch_db:grcbit_seller.grcbit_seller_res_partner_inherit_form
+msgid "Output"
+msgstr "Salida"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__psql_container_id
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__psql_container_id
+msgid "PSQL Container ID"
+msgstr "ID contenedor PSQL"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_xdr_manager_port__partner_id
+msgid "Partner"
+msgstr "Cliente"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_xdr_manager_port__name
+msgid "Port"
+msgstr "Puerto"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__postgres_pwd
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__postgres_pwd
+msgid "Postgres Password"
+msgstr "Contraseña de Postgres"
+
+#. module: grcbit_seller
+#: model_terms:ir.ui.view,arch_db:grcbit_seller.seller_set_groups_formview_inh
+msgid "Seller"
+msgstr "Vendedor"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__state
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__state
+msgid "Status"
+msgstr "Estatus"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_set_groups_user__seller_user_check
+#: model:res.groups,name:grcbit_seller.group_user_seller
+msgid "User"
+msgstr "Usuario"
+
+#. module: grcbit_seller
+#: model_terms:ir.ui.view,arch_db:grcbit_seller.grcbit_seller_res_partner_inherit_form
+msgid "XDR"
+msgstr "XDR"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__xdr_dash_container
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__xdr_dash_container
+msgid "XDR Dashboard Container ID"
+msgstr "ID contenedor de tablero XDR"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__xdr_dashboard_port
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__xdr_dashboard_port
+msgid "XDR Dashboard Port (5601)"
+msgstr "Puerto de tablero XDR (5601)"
+
+#. module: grcbit_seller
+#: model:ir.model.constraint,message:grcbit_seller.constraint_res_partner_unique_xdr_dashboard_port
+msgid "XDR Dashboard Port (5601) already exist.!"
+msgstr "El puerto de tablero XDR (5601) ya existe.!"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__xdr_dashboard_port2
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__xdr_dashboard_port2
+msgid "XDR Dashboard Port (5602)"
+msgstr "Puerto de tablero XDR (5602)"
+
+#. module: grcbit_seller
+#: model:ir.model.constraint,message:grcbit_seller.constraint_res_partner_unique_xdr_dashboard_port2
+msgid "XDR Dashboard Port (5602) already exist.!"
+msgstr "El puerto de tablero XDR (5602) ya existe.!"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__xdr_index_container
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__xdr_index_container
+msgid "XDR Indexer Container ID"
+msgstr "ID contenedor indexador XDR"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__xdr_indexer_port
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__xdr_indexer_port
+msgid "XDR Indexer Port (9200)"
+msgstr "Puerto indexador XDR (9200)"
+
+#. module: grcbit_seller
+#: model:ir.model.constraint,message:grcbit_seller.constraint_res_partner_unique_xdr_indexer_port
+msgid "XDR Indexer Port already exist.!"
+msgstr "El puerto indexador XDR ya existe.!"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__xdr_manager_port1
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__xdr_manager_port1
+msgid "XDR Manager Port (1514)"
+msgstr "Puerto gestor XDR (1514)"
+
+#. module: grcbit_seller
+#: model:ir.model.constraint,message:grcbit_seller.constraint_res_partner_unique_xdr_manager_port1
+msgid "XDR Manager Port (1514) already exist.!"
+msgstr "El puerto gestor XDR (1514) ya existe.!"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__xdr_manager_port2
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__xdr_manager_port2
+msgid "XDR Manager Port (1515)"
+msgstr "Puerto gestor XDR (1515)"
+
+#. module: grcbit_seller
+#: model:ir.model.constraint,message:grcbit_seller.constraint_res_partner_unique_xdr_manager_port2
+msgid "XDR Manager Port (1515) already exist.!"
+msgstr "El puerto gestor XDR (1515) ya existe.!"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__xdr_manager_port3
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__xdr_manager_port3
+msgid "XDR Manager Port (514/udp)"
+msgstr "Puerto gestor XDR (514/udp)"
+
+#. module: grcbit_seller
+#: model:ir.model.constraint,message:grcbit_seller.constraint_res_partner_unique_xdr_manager_port3
+msgid "XDR Manager Port (514/udp) already exist.!"
+msgstr "El puerto gestor XDR (514/udp) ya existe.!"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__xdr_manager_port4
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__xdr_manager_port4
+msgid "XDR Manager Port (55000)"
+msgstr "Puerto gestor XDR (55000)"
+
+#. module: grcbit_seller
+#: model:ir.model.constraint,message:grcbit_seller.constraint_res_partner_unique_xdr_manager_port4
+msgid "XDR Manager Port (55000) already exist.!"
+msgstr "El puerto gestor XDR (55000) ya existe.!"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__xdr_pwd
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__xdr_pwd
+msgid "XDR Password"
+msgstr "Contraseña XDR"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__xdr_server_container
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__xdr_server_container
+msgid "XDR Server Container ID"
+msgstr "ID contenedor de servidor XDR"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__ziti_console
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__ziti_console
+msgid "Ziti Console (8443)"
+msgstr "Consola Ziti (8443)"
+
+#. module: grcbit_seller
+#: model:ir.model.constraint,message:grcbit_seller.constraint_res_partner_unique_ziti_console
+msgid "Ziti Console (8443) already exist.!"
+msgstr "Consola Ziti (8443) ya existe.!"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__ziti_controller_port1
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__ziti_controller_port1
+msgid "Ziti Controller Port (1280)"
+msgstr "Puerto controlador Ziti (1280)"
+
+#. module: grcbit_seller
+#: model:ir.model.constraint,message:grcbit_seller.constraint_res_partner_unique_ziti_controller_port1
+msgid "Ziti Controller Port (1280) already exist.!"
+msgstr "El puerto controlador Ziti (1280) ya existe.!"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__xiti_controller_port2
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__xiti_controller_port2
+msgid "Ziti Controller Port (6262)"
+msgstr "Puerto controlador Ziti (6262)"
+
+#. module: grcbit_seller
+#: model:ir.model.constraint,message:grcbit_seller.constraint_res_partner_unique_xiti_controller_port2
+msgid "Ziti Controller Port (6262) already exist.!"
+msgstr "El puerto controlador Ziti (6262) ya existe.!"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__ziti_edge_router2
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__ziti_edge_router2
+msgid "Ziti Edge Router (10080)"
+msgstr "Enrutador Ziti (10080)"
+
+#. module: grcbit_seller
+#: model:ir.model.constraint,message:grcbit_seller.constraint_res_partner_unique_ziti_edge_router2
+msgid "Ziti Edge Router (10080) already exist.!"
+msgstr "El Enrutador Ziti (10080) ya existe.!"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__ziti_edge_router1
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_users__ziti_edge_router1
+msgid "Ziti Edge Router (3022)"
+msgstr "Enrutador Ziti (3022)"
+
+#. module: grcbit_seller
+#: model:ir.model.constraint,message:grcbit_seller.constraint_res_partner_unique_ziti_edge_router1
+msgid "Ziti Edge Router (3022) already exist.!"
+msgstr "El Enrutador Ziti (3022) ya existe.!"
+
+#. module: grcbit_seller
+#: model:ir.model.fields,field_description:grcbit_seller.field_res_partner__is_admin
+msgid "is admin"
+msgstr "Es administrador"
+
+#. module: grcbit_seller
+#: model:ir.model,name:grcbit_seller.model_set_groups_user
+msgid "set.groups.user"
+msgstr ""
+
+#. module: grcbit_seller
+#: model:ir.model,name:grcbit_seller.model_xdr_manager_port
+msgid "xdr.manager.port"
+msgstr ""
