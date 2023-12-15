@@ -114,7 +114,7 @@
         'views/mana_dashboard_block_settings.xml',
 
         #wizard
-        'wizard/set_groups_views.xml',
+        # 'wizard/set_groups_views.xml',
     ],
 
     'assets': {
