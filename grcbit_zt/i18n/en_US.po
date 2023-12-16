@@ -1,0 +1,315 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* grcbit_zt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 18:35+0000\n"
+"PO-Revision-Date: 2023-12-15 18:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: grcbit_zt
+#: model_terms:ir.ui.view,arch_db:grcbit_zt.backend_dashboard_zt_kanban_admin
+#: model_terms:ir.ui.view,arch_db:grcbit_zt.backend_dashboard_zt_kanban_user
+msgid ""
+"<span class=\"o_kanban_record_subtitle\">\n"
+"                        <span>\n"
+"                          <i class=\"fa fa-check\" role=\"img\" title=\"Main\"/>\n"
+"                          Main Dashboard\n"
+"                        </span>\n"
+"                      </span>"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__active
+#: model_terms:ir.ui.view,arch_db:grcbit_zt.backend_dashboard_zt_search
+msgid "Active"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_set_groups_user__zt_admin_check
+#: model:res.groups,name:grcbit_zt.group_dashboard_manager_zt
+msgid "Admin"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__color
+#: model:ir.model.fields,field_description:grcbit_zt.field_dashboard_tag_zt__color
+msgid "Color Index"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__create_uid
+#: model:ir.model.fields,field_description:grcbit_zt.field_dashboard_tag_zt__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__create_date
+#: model:ir.model.fields,field_description:grcbit_zt.field_dashboard_tag_zt__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.actions.client,name:grcbit_zt.modules_act_dashboard_zt
+#: model:ir.ui.menu,name:grcbit_zt.module_dashboard_mi_zt
+#: model_terms:ir.ui.view,arch_db:grcbit_zt.backend_dashboard_zt_form
+msgid "Dashboard"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__display_name
+#: model:ir.model.fields,field_description:grcbit_zt.field_dashboard_tag_zt__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: grcbit_zt
+#: model_terms:ir.ui.view,arch_db:grcbit_zt.backend_dashboard_zt_kanban_admin
+#: model_terms:ir.ui.view,arch_db:grcbit_zt.backend_dashboard_zt_kanban_user
+msgid "Dropdown menu"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: grcbit_zt
+#: model_terms:ir.ui.view,arch_db:grcbit_zt.backend_dashboard_zt_search
+msgid "Group by..."
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_set_groups_user__zt_guest_check
+#: model:res.groups,name:grcbit_zt.group_dashboard_guest_zt
+msgid "Guest"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,help:grcbit_zt.field_backend_dashboard_zt__height
+msgid "Height in px"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__height
+msgid "Height(px)"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__id
+#: model:ir.model.fields,field_description:grcbit_zt.field_dashboard_tag_zt__id
+msgid "ID"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,help:grcbit_zt.field_backend_dashboard_zt__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,help:grcbit_zt.field_backend_dashboard_zt__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt____last_update
+#: model:ir.model.fields,field_description:grcbit_zt.field_dashboard_tag_zt____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__write_uid
+#: model:ir.model.fields,field_description:grcbit_zt.field_dashboard_tag_zt__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__write_date
+#: model:ir.model.fields,field_description:grcbit_zt.field_dashboard_tag_zt__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__main_dashboard
+#: model_terms:ir.ui.view,arch_db:grcbit_zt.backend_dashboard_zt_search
+msgid "Main Dashboard"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__name
+msgid "Name"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__comment
+msgid "Notes"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,help:grcbit_zt.field_backend_dashboard_zt__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,help:grcbit_zt.field_backend_dashboard_zt__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__user_id
+msgid "Owner"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,help:grcbit_zt.field_backend_dashboard_zt__user_id
+msgid "Owner dashboard"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_dashboard_tag_zt__name
+msgid "Tag Name"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.constraint,message:grcbit_zt.constraint_dashboard_tag_zt_name_uniq
+msgid "Tag name already exists !"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__tag_ids
+msgid "Tags"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__url
+msgid "URL"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_set_groups_user__zt_user_check
+#: model:res.groups,name:grcbit_zt.group_dashboard_user_zt
+#: model_terms:ir.ui.view,arch_db:grcbit_zt.backend_dashboard_zt_search
+msgid "User"
+msgstr ""
+
+#. module: grcbit_zt
+#: model_terms:ir.ui.view,arch_db:grcbit_zt.backend_dashboard_zt_kanban_admin
+#: model_terms:ir.ui.view,arch_db:grcbit_zt.backend_dashboard_zt_kanban_user
+msgid "View Dashboard"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,help:grcbit_zt.field_backend_dashboard_zt__width
+msgid "Width in %"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model.fields,field_description:grcbit_zt.field_backend_dashboard_zt__width
+msgid "Width(%)"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.module.category,name:grcbit_zt.module_backend_dashboard_root_zt
+#: model:ir.module.category,name:grcbit_zt.module_backend_dashboard_zt
+#: model:ir.ui.menu,name:grcbit_zt.backend_dashboard_menu_iframe_item1_admin_zt
+#: model:ir.ui.menu,name:grcbit_zt.backend_dashboard_menu_iframe_item1_user_zt
+#: model:ir.ui.menu,name:grcbit_zt.backend_dashboard_menu_iframe_zt
+#: model:ir.ui.menu,name:grcbit_zt.zt_menu_main_root
+#: model_terms:ir.ui.view,arch_db:grcbit_zt.zt_set_groups_formview_inh
+msgid "ZT"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.actions.act_window,name:grcbit_zt.action_backend_dashboard_zt_manager
+#: model:ir.actions.act_window,name:grcbit_zt.action_backend_dashboard_zt_user
+msgid "ZT Dashboard"
+msgstr ""
+
+#. module: grcbit_zt
+#: model_terms:ir.ui.view,arch_db:grcbit_zt.backend_dashboard_zt_form
+#: model_terms:ir.ui.view,arch_db:grcbit_zt.backend_dashboard_zt_search
+#: model_terms:ir.ui.view,arch_db:grcbit_zt.backend_dashboard_zt_tree
+msgid "ZT dashboard"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model,name:grcbit_zt.model_backend_dashboard_zt
+msgid "backend.dashboard.zt"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model,name:grcbit_zt.model_dashboard_tag_zt
+msgid "dashboard Tag ZT"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model,name:grcbit_zt.model_set_groups_user
+msgid "set.groups.user"
+msgstr ""
+
+#. module: grcbit_zt
+#: model:ir.model,name:grcbit_zt.model_theme_data
+msgid "theme.data"
+msgstr ""
