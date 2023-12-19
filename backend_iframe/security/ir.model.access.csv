@@ -6,3 +6,5 @@ access_backend_dashboard_guest,access_backend_dashboard_guest,model_backend_dash
 access_dashboard_tag_admin,dashboard.tag.admin,model_dashboard_tag,backend_iframe.group_dashboard_manager,1,1,1,1
 access_dashboard_tag_user,dashboard.tag.user,model_dashboard_tag,backend_iframe.group_dashboard_user,1,1,1,0
 access_dashboard_tag_guest,dashboard.tag.guest,model_dashboard_tag,backend_iframe.group_dashboard_guest,1,0,0,0
+
+access_zerotrust_settings_admin,zerotrust.settings.admin,model_zerotrust_settings,backend_iframe.group_dashboard_manager,1,1,1,1
