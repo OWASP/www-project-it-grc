@@ -46,9 +46,16 @@ class ResPartnerGRC(models.Model):
     ziti_edge_router1 = fields.Char(string="Ziti Edge Router (3022)", default= lambda x: x._set_default_port('ziti_edge_router1', int(45000), int(49000))) # de 45000 a 49000 
     ziti_edge_router2 = fields.Char(string="Ziti Edge Router (10080)", default= lambda x: x._set_default_port('ziti_edge_router2', int(49000), int(53000))) # de 49000 a 53000 
     ziti_console = fields.Char(string="Ziti Console (8443)", default= lambda x: x._set_default_port('ziti_console', int(53000), int(57000))) # de 53000 a 57000 
-
+    xdr_zt = fields.Char(string="XDR ZT", default= lambda x: x._set_default_port('xdr_zt', int(57000), int(60000))) #57000 a 60000
     dns_domain = fields.Char(string="DNS Domain", default=lambda x:x.get_dns_domain())
     is_openziti = fields.Boolean(string="OpenZiti", default=True)
+
+    endpoints = fields.Selection([
+        ('up100','Up to 100'),
+        ('up200','Up to 200'),
+    ], string="End Points")
+    network = fields.Char(string="Network")
+    
 
     is_admin = fields.Boolean(string="is admin", compute="_get_group", store=False)
     _sql_constraints = [
@@ -66,6 +73,7 @@ class ResPartnerGRC(models.Model):
         ('unique_ziti_edge_router1', 'unique(ziti_edge_router1)', 'Ziti Edge Router (3022) already exist.!'),
         ('unique_ziti_edge_router2', 'unique(ziti_edge_router2)', 'Ziti Edge Router (10080) already exist.!'),
         ('unique_ziti_console', 'unique(ziti_console)', 'Ziti Console (8443) already exist.!'),
+        ('unique_xdr_zt', 'unique(xdr_zt)', 'XDR ZT already exist.!'),
     ]
 
     def get_dns_domain(self):
@@ -122,6 +130,8 @@ class ResPartnerGRC(models.Model):
                 val = int(partners[0].ziti_edge_router2) + 1
             if field == 'ziti_console':
                 val = int(partners[0].ziti_console) + 1
+            if field == 'xdr_zt':
+                val = int(partners[0].xdr_zt) + 1
 
             return val
 
@@ -172,12 +182,13 @@ class ResPartnerGRC(models.Model):
         self.just_range(self.ziti_edge_router1, 45000, 49000)
         self.just_range(self.ziti_edge_router2, 49000, 53000)
         self.just_range(self.ziti_console, 53000, 57000)
+        self.just_range(self.xdr_zt, 57000, 60000)
         return res
 
     def has_duplicates(self, seq):
         return len(seq) != len(set(seq))
 
-    @api.constrains('db_postgres_port','grc_web_port','xdr_indexer_port','xdr_dashboard_port','xdr_dashboard_port2','xdr_manager_port1','xdr_manager_port2','xdr_manager_port3','xdr_manager_port4','ziti_controller_port1','xiti_controller_port2','ziti_edge_router1','ziti_edge_router2','ziti_console')
+    @api.constrains('db_postgres_port','grc_web_port','xdr_indexer_port','xdr_dashboard_port','xdr_dashboard_port2','xdr_manager_port1','xdr_manager_port2','xdr_manager_port3','xdr_manager_port4','ziti_controller_port1','xiti_controller_port2','ziti_edge_router1','ziti_edge_router2','ziti_console','xdr_zt')
     def no_repeat_ports(self):
         ports = []
         for rec in self:
@@ -210,6 +221,8 @@ class ResPartnerGRC(models.Model):
                 ports.append(rec.ziti_edge_router2)
             if rec.ziti_console:
                 ports.append(rec.ziti_console)
+            if rec.xdr_zt:
+                ports.append(rec.xdr_zt)
             
         value = self.has_duplicates(ports)
         if value == True:
