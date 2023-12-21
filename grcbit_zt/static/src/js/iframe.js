@@ -45,7 +45,8 @@ odoo.define('grcbit_zt.DashboardZT', function (require) {
                                     var css = {
                                         width: info.width.toString() + '%',
                                         height: info.height.toString() + 'px',
-                                        allow: 'fullscreen'
+                                        allow: 'fullscreen',
+                                        scrolling: 'no'
                                     };
                                     var $ifr = $('<iframe>').attr('src', info.url);
                                     $ifr.appendTo(self.$('.o_content')).css(css);
@@ -63,7 +64,7 @@ odoo.define('grcbit_zt.DashboardZT', function (require) {
                 var url = this.params.url
                 var width = this.params.width.toString() + '%'
                 var height = this.params.height.toString() + 'px'
-                var css = {width: width, height: height};
+                var css = {width: width, height: height,scrolling:'no'};
                 self.$ifr = $('<iframe>').attr('src', url);
                 self.$ifr.appendTo(self.$('.o_content')).css(css);
                 self.$ifr.appendTo();

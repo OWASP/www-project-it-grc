@@ -6,6 +6,9 @@
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.view_partner_form"/>
       <field name="arch" type="xml">
+        <xpath expr="//field[@name='vat']" position="after">
+          <field name="endpoints"/>
+        </xpath>
         <xpath expr="//notebook" position="inside">
           <page string="GRC Seller" name="grc_seller">
             <group>
@@ -48,6 +51,7 @@
               <group>
                 <field name="ziti_edge_router2" attrs="{'readonly': [('is_admin','=', False)]}"/>
                 <field name="ziti_console" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="xdr_zt" attrs="{'readonly': [('is_admin','=', False)]}"/>
               </group>
             </group>
             <group string="Output">
@@ -59,6 +63,7 @@
               <group>
                 <field name="psql_container_id" readonly="1"/>
                 <field name="grc_container_id" readonly="1"/>
+                <field name="network" readonly="1"/>
               </group>
             </group>
           </page>

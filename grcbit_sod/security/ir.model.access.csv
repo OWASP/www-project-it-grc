@@ -6,6 +6,7 @@ access_sod_role_group_risk_management,access.sod.role.group.risk.management,mode
 access_sod_role_group_isms,access.sod.role.group.isms,model_sod_role,grcbit_base.group_isms,1,0,0,0
 access_sod_role_group_control,access.sod.role.group.control,model_sod_role,grcbit_base.group_control,1,0,0,0
 access_sod_role_group_compliance,access.sod.role.group.compliance,model_sod_role,grcbit_base.group_compliance,1,0,0,0
+access_sod_role_group_guest,access.sod.role.group.guest,model_sod_role,grcbit_base.group_guest,1,0,0,0
 access_sod_role_group_sod,access.sod.role.group.sod,model_sod_role,grcbit_sod.group_sod,1,1,1,1
 
 access_sod_privilege_group_grc_admin,access.sod.privilege.group.grc.admin,model_sod_privilege,grcbit_base.group_grc_admin,1,1,1,1
@@ -15,6 +16,7 @@ access_sod_privilege_group_risk_management,access.sod.privilege.group.risk.manag
 access_sod_privilege_group_isms,access.sod.privilege.group.isms,model_sod_privilege,grcbit_base.group_isms,1,0,0,0
 access_sod_privilege_group_control,access.sod.privilege.group.control,model_sod_privilege,grcbit_base.group_control,1,0,0,0
 access_sod_privilege_group_compliance,access.sod.privilege.group.compliance,model_sod_privilege,grcbit_base.group_compliance,1,0,0,0
+access_sod_privilege_group_guest,access.sod.privilege.group.guest,model_sod_privilege,grcbit_base.group_guest,1,0,0,0
 access_sod_privilege_group_sod,access.sod.privilege.group.sod,model_sod_privilege,grcbit_sod.group_sod,1,1,1,1
 
 access_data_inventory_group_sod,access.data.inventory.group.sod,grcbit_base.model_data_inventory,group_sod,1,0,0,0
