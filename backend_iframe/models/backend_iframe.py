@@ -9,8 +9,11 @@ class ZeroTrustSettings(models.Model):
 
     def _default_get_last(self):
         last_one = self.env['zerotrust.settings'].search([], order="create_date DESC", limit=1)
-        for rec in last_one:
-            return rec.is_zerotrust
+        if last_one:
+            for rec in last_one:
+                return rec.is_zerotrust
+        else:
+            return True
 
     def zt_enable(self):
         for rec in self:
@@ -75,19 +78,38 @@ class BackendDashboard(models.Model):
     @api.depends('name')
     def _compute_check_iszt(self):
         last_one = self.env['zerotrust.settings'].search([], order="create_date DESC", limit=1)
-        for rec in last_one:
-            self.zerotrust_enable = rec.is_zerotrust
+        if last_one:
+            for rec in last_one:
+                self.zerotrust_enable = rec.is_zerotrust
+        else:
+            self.zerotrust_enable = True
 
     def get_dashboard(self):
         """ to visit your dashboard """
-        if self.url:
+        
+        if self.zerotrust_enable == True:
+            action = {
+                'type': 'ir.actions.client',
+                'tag': 'view_dashboard',
+                'params': {
+                    'url': self.url_zt,
+                    'height': self.height,
+                    'width': self.width,
+                    'main_dashboard': self.main_dashboard,
+                    'zerotrust_enable': self.zerotrust_enable,
+                },
+            }
+        elif self.zerotrust_enable == False:
             action = {
                 'type': 'ir.actions.client',
                 'tag': 'view_dashboard',
                 'params': {
                     'url': self.url,
                     'height': self.height,
-                    'width': self.width},
+                    'width': self.width,
+                    'main_dashboard': self.main_dashboard,
+                    'zerotrust_enable': self.zerotrust_enable,
+                },
             }
         else:
             action = {'warning': {'title': _("Warning"), 'message': _(
