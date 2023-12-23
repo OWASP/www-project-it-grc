@@ -23,7 +23,7 @@ odoo.define('backend_iframe.Dashboard', function (require) {
             var self = this;
             var def = $.Deferred();
 
-            if (this.params.main_dashboard) {
+            if (this.params.main_dashboard == true) {
                 var domain = [];
                 //this.getSession()
                 session.user_has_group('backend_iframe.group_dashboard_manager')

@@ -26,9 +26,9 @@
               <table  class="table table-bordered" style="font-size:12px;">
                 <thead>
                   <tr>
-                    <th>requirement</th>
+                    <th>Requirement</th>
                     <th>Compliance</th>
-                    <th>Control design</th>
+                    <th>Control Design</th>
                   </tr>
                 </thead>
                 <tbody>
