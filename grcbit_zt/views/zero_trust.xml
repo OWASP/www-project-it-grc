@@ -17,7 +17,9 @@
                 <field name="name" required="1"/>
                 <field name="active" invisible="1"></field>
                 <field name="user_id" options="{'no_create': True, 'no_open': True}"/>
-                <field name="url"/>
+                <field name="zerotrust_enable" invisible="1"/>
+                <field name="url" attrs="{'invisible': [('zerotrust_enable','=',True)], 'required':[('zerotrust_enable','=',False)]}"/>
+                <field name="url_zt" attrs="{'invisible': [('zerotrust_enable','=',False)], 'required':[('zerotrust_enable','=',True)]}"/>
                 <field name="height"/>
                 <field name="width"/>
                 <field name="main_dashboard"/>
@@ -189,6 +191,38 @@
       </field>
     </record>
 
+    <!--ZEROTRUST SETTING -->
+    <record model="ir.ui.view" id="zerotrust_settings_zt_form">
+      <field name="name">zerotrust.settings.zt.form</field>
+      <field name="model">zerotrust.settings.zt</field>
+      <field name="arch" type="xml">
+        <form string="ZTrust Settings">
+          <sheet>
+            <group>
+              <group>
+                <button type="object" name="zt_enable" class="btn btn-success fa fa-thumbs-o-up"/>
+                <button type="object" name="zt_disable" class="btn btn-danger fa fa-thumbs-o-down"/>
+              </group>
+              <group>
+                <h2><field name="is_zerotrust" invisible="0"/></h2>
+                <div attrs="{'invisible': [('is_zerotrust','=',False)]}"><h2><span style="color:green;">ZTRUST</span></h2></div>
+                <div attrs="{'invisible': [('is_zerotrust','=',True)]}"><h2><span style="color:red;">ZTRUST</span></h2></div>
+              </group>
+            </group>
+            
+          </sheet>
+          <footer></footer>
+        </form>
+      </field>
+    </record>
+    <record id="action_zerotrust_settings_zt_manager" model="ir.actions.act_window">
+      <field name="name">ZTrust Settings</field>
+      <field name="res_model">zerotrust.settings.zt</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+      <field name="groups_id" eval="[(4, ref('grcbit_zt.group_dashboard_manager_zt'))]"/>
+    </record>
+
     <!--Action backend Dashboard-->
     <record id="action_backend_dashboard_zt_manager" model="ir.actions.act_window">
       <field name="name">ZT Dashboard</field>
@@ -229,6 +263,11 @@
       parent="backend_dashboard_menu_iframe_zt"
       groups="grcbit_zt.group_dashboard_user_zt,grcbit_zt.group_dashboard_guest_zt"
       action="action_backend_dashboard_zt_user"/>
+
+    <menuitem name="ZT Settings" id="zerotrust_settings_zt_menu_iframe_item1_admin" sequence="4"
+      parent="backend_dashboard_menu_iframe_zt"
+      groups="grcbit_zt.group_dashboard_manager_zt"
+      action="action_zerotrust_settings_zt_manager"/>
 
 
     <!-- menu Main Dashboard -->

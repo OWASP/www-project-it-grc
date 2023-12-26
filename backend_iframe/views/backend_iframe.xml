@@ -17,7 +17,7 @@
                 <field name="name" required="1"/>
                 <field name="active" invisible="1"></field>
                 <field name="user_id" options="{'no_create': True, 'no_open': True}"/>
-                <field name="zerotrust_enable" invisible="0"/>
+                <field name="zerotrust_enable" invisible="1"/>
                 <field name="url" attrs="{'invisible': [('zerotrust_enable','=',True)], 'required':[('zerotrust_enable','=',False)]}"/>
                 <field name="url_zt" attrs="{'invisible': [('zerotrust_enable','=',False)], 'required':[('zerotrust_enable','=',True)]}"/>
                 <field name="height"/>
@@ -196,7 +196,7 @@
       <field name="name">zerotrust.settings.form</field>
       <field name="model">zerotrust.settings</field>
       <field name="arch" type="xml">
-        <form string="ZeroTrust Settings">
+        <form string="ZTrust Settings">
           <sheet>
             <group>
               <group>
@@ -205,8 +205,8 @@
               </group>
               <group>
                 <h2><field name="is_zerotrust" invisible="0"/></h2>
-                <div attrs="{'invisible': [('is_zerotrust','=',False)]}"><h2><span style="color:green;">IS ZEROTRUST</span></h2></div>
-                <div attrs="{'invisible': [('is_zerotrust','=',True)]}"><h2><span style="color:red;">IS NOT ZEROTRUST</span></h2></div>
+                <div attrs="{'invisible': [('is_zerotrust','=',False)]}"><h2><span style="color:green;">ZTRUST</span></h2></div>
+                <div attrs="{'invisible': [('is_zerotrust','=',True)]}"><h2><span style="color:red;">ZTRUST</span></h2></div>
               </group>
             </group>
             
@@ -216,7 +216,7 @@
       </field>
     </record>
     <record id="action_zerotrust_settings_manager" model="ir.actions.act_window">
-      <field name="name">ZeroTrust Settings</field>
+      <field name="name">ZTrust Settings</field>
       <field name="res_model">zerotrust.settings</field>
       <field name="view_mode">form</field>
       <field name="target">new</field>

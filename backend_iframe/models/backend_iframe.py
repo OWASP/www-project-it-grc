@@ -5,7 +5,7 @@ from odoo import fields, models, api, _
 class ZeroTrustSettings(models.Model):
     _name = 'zerotrust.settings'
 
-    is_zerotrust = fields.Boolean(string="ZeroTrust", default=lambda x: x._default_get_last())
+    is_zerotrust = fields.Boolean(string="ZTrust", default=lambda x: x._default_get_last())
 
     def _default_get_last(self):
         last_one = self.env['zerotrust.settings'].search([], order="create_date DESC", limit=1)

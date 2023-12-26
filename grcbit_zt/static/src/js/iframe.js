@@ -48,7 +48,12 @@ odoo.define('grcbit_zt.DashboardZT', function (require) {
                                         allow: 'fullscreen',
                                         scrolling: 'no'
                                     };
-                                    var $ifr = $('<iframe>').attr('src', info.url);
+                                    if(res[0].zerotrust_enable == false){
+                                        var $ifr = $('<iframe>').attr('src', info.url);
+                                    }
+                                    else{
+                                        var $ifr = $('<iframe>').attr('src', info.url_zt);
+                                    }
                                     $ifr.appendTo(self.$('.o_content')).css(css);
                                     self.$ifr += $ifr
                                 })
@@ -61,13 +66,24 @@ odoo.define('grcbit_zt.DashboardZT', function (require) {
                         })
                     })
             } else {
-                var url = this.params.url
-                var width = this.params.width.toString() + '%'
-                var height = this.params.height.toString() + 'px'
-                var css = {width: width, height: height,scrolling:'no'};
-                self.$ifr = $('<iframe>').attr('src', url);
-                self.$ifr.appendTo(self.$('.o_content')).css(css);
-                self.$ifr.appendTo();
+                if(this.params.zerotrust_enable == false){
+                    var url = this.params.url
+                    var width = this.params.width.toString() + '%'
+                    var height = this.params.height.toString() + 'px'
+                    var css = {width: width, height: height,scrolling:'no'};
+                    self.$ifr = $('<iframe>').attr('src', url);
+                    self.$ifr.appendTo(self.$('.o_content')).css(css);
+                    self.$ifr.appendTo();
+                }
+                else{
+                    var url_zt = this.params.url_zt
+                    var width = this.params.width.toString() + '%'
+                    var height = this.params.height.toString() + 'px'
+                    var css = {width: width, height: height,scrolling:'no'};
+                    self.$ifr = $('<iframe>').attr('src', url_zt);
+                    self.$ifr.appendTo(self.$('.o_content')).css(css);
+                    self.$ifr.appendTo();
+                }
             }
             def.resolve();
             return def;
