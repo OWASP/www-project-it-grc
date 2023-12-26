@@ -17,7 +17,7 @@
                 <field name="name" required="1"/>
                 <field name="active" invisible="1"></field>
                 <field name="user_id" options="{'no_create': True, 'no_open': True}"/>
-                <field name="zerotrust_enable" invisible="0"/>
+                <field name="zerotrust_enable" invisible="1"/>
                 <field name="url" attrs="{'invisible': [('zerotrust_enable','=',True)], 'required':[('zerotrust_enable','=',False)]}"/>
                 <field name="url_zt" attrs="{'invisible': [('zerotrust_enable','=',False)], 'required':[('zerotrust_enable','=',True)]}"/>
                 <field name="height"/>

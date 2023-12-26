@@ -2,6 +2,27 @@
 """ This file add two objects """
 from odoo import fields, models, api, _
 
+class ZeroTrustSettings(models.Model):
+    _name = 'zerotrust.settings.zt'
+
+    is_zerotrust = fields.Boolean(string="ZTrust", default=lambda x: x._default_get_last())
+
+    def _default_get_last(self):
+        last_one = self.env['zerotrust.settings.zt'].search([], order="create_date DESC", limit=1)
+        if last_one:
+            for rec in last_one:
+                return rec.is_zerotrust
+        else:
+            return True
+
+    def zt_enable(self):
+        for rec in self:
+            rec.is_zerotrust = True
+
+    def zt_disable(self):
+        for rec in self:
+            rec.is_zerotrust = False
+
 
 class TagZT(models.Model):
     _name = "dashboard.tag.zt"
@@ -46,6 +67,19 @@ class BackendDashboardZT(models.Model):
     main_dashboard = fields.Boolean('Main Dashboard', default=False)
     height = fields.Integer('Height(px)', default='750', help='Height in px')
     width = fields.Integer('Width(%)', default='100', help='Width in %')
+    zerotrust_enable = fields.Boolean(string="ZT Eneable", compute="_compute_check_iszt")
+    url_zt = fields.Char(string="URL ZT")
+
+
+
+    @api.depends('name')
+    def _compute_check_iszt(self):
+        last_one = self.env['zerotrust.settings.zt'].search([], order="create_date DESC", limit=1)
+        if last_one:
+            for rec in last_one:
+                self.zerotrust_enable = rec.is_zerotrust
+        else:
+            self.zerotrust_enable = True
 
     def get_dashboard(self):
         """ to visit your dashboard """
