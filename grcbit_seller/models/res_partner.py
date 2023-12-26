@@ -21,7 +21,7 @@ class ResPartnerGRC(models.Model):
     activate_date = fields.Date(string="Activate date")
     db_postgres_port = fields.Char(string="DB Postgres Port (5432)", default= lambda x: x._set_default_port('db_postgres_port', int(1000), int(5000))) # de 1000 a 5000
     # db_ssh_port = fields.Char(string="DB SSH Port")
-    postgres_pwd = fields.Char(string="Postgres Password", default=lambda x:x._default_password('postgres'))
+    postgres_pwd = fields.Char(string="Postgres/ZTrust Password", default=lambda x:x._default_password('postgres'))
     xdr_pwd = fields.Char(string="XDR Password", default=lambda x:x._default_password('xdr'))
     grc_web_port = fields.Char(string="GRC Web Port (8069)", default= lambda x: x._set_default_port('grc_web_port', int(5000), int(9000))) #de 5000 a 9000
     # grc_ssh_port = fields.Char(string="GRC SSH Port")
