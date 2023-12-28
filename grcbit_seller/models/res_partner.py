@@ -55,6 +55,9 @@ class ResPartnerGRC(models.Model):
         ('up200','Up to 200'),
     ], string="End Points")
     network = fields.Char(string="Network")
+    ztrust_console = fields.Char(string="ZTrust Console")
+    ztrust_router = fields.Char(string="ZTrust Router")
+    ztrust_controller = fields.Char(string="ZTrust Controller")
     
 
     is_admin = fields.Boolean(string="is admin", compute="_get_group", store=False)

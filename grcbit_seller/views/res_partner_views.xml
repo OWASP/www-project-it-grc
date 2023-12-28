@@ -81,6 +81,9 @@
                 <field name="psql_container_id" readonly="1"/>
                 <field name="grc_container_id" readonly="1"/>
                 <field name="network" readonly="1"/>
+                <field name="ztrust_console" readonly="1"/>
+                <field name="ztrust_router" readonly="1"/>
+                <field name="ztrust_controller" readonly="1"/>
               </group>
             </group>
           </page>
