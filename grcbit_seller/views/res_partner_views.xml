@@ -27,7 +27,7 @@
           <field name="endpoints"/>
         </xpath>
         <xpath expr="//notebook" position="inside">
-          <page string="Threat Fend" name="grc_seller">
+          <page string="Threat Fend" name="grc_seller" groups="grcbit_seller.group_admin_seller,grcbit_seller.group_reseller_admin">
             <group>
               <field name="is_admin" invisible="1"/>
               <field name="client_system" force_save="1" attrs="{'readonly': [('is_admin','=', False)]}"/>
