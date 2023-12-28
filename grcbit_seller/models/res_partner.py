@@ -55,6 +55,9 @@ class ResPartnerGRC(models.Model):
         ('up200','Up to 200'),
     ], string="End Points")
     network = fields.Char(string="Network")
+    ztrust_console = fields.Char(string="ZTrust Console")
+    ztrust_router = fields.Char(string="ZTrust Router")
+    ztrust_controller = fields.Char(string="ZTrust Controller")
     
 
     is_admin = fields.Boolean(string="is admin", compute="_get_group", store=False)
@@ -237,11 +240,30 @@ class ResPartnerGRC(models.Model):
                 )
             )
         elif field == 'xdr':
-            random_pass = "".join(
-                random.choices(
-                    string.ascii_uppercase + string.ascii_lowercase + string.digits + "@%*?-_", k=16,
-                )
+            # random_pass = "".join(
+            #     random.choices(
+            #         string.ascii_uppercase + string.ascii_lowercase + string.digits + "@%*?-_", k=16,
+            #     )
+            # )
+            random_pass = (
+                [
+                    random.choice("@$!%*?&-_"),
+                    random.choice(string.digits),
+                    random.choice(string.ascii_lowercase),
+                    random.choice(string.ascii_uppercase),
+                ]
+                + [
+                    random.choice(
+                        string.ascii_lowercase
+                        + string.ascii_uppercase
+                        + "@$!%*?&-_"
+                        + string.digits
+                    ) for i in range(12)
+                ]
             )
+
+            random.shuffle(random_pass)
+            random_pass = ''.join(random_pass)
         return random_pass
 
 class XDRManagerPort(models.Model):
