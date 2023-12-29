@@ -6,9 +6,9 @@
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.view_partner_tree"/>
       <field name="arch" type="xml">
-        <xpath expr="//tree" position="attributes">
+        <!-- <xpath expr="//tree" position="attributes">
           <attribute name="delete">0</attribute>
-        </xpath>
+        </xpath> -->
         <xpath expr="//field[@name='country_id']" position="after">
           <field name="state"/>
         </xpath>
@@ -20,9 +20,9 @@
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.view_partner_form"/>
       <field name="arch" type="xml">
-        <xpath expr="//form" position="attributes">
+        <!-- <xpath expr="//form" position="attributes">
           <attribute name="delete">0</attribute>
-        </xpath>
+        </xpath> -->
         <xpath expr="//field[@name='vat']" position="after">
           <field name="endpoints"/>
         </xpath>
