@@ -46,7 +46,8 @@ odoo.define('backend_iframe.Dashboard', function (require) {
                                         width: info.width.toString() + '%',
                                         height: info.height.toString() + 'px',
                                         allow: 'fullscreen',
-                                        scrolling: 'no'
+                                        scrolling: 'no',
+                                        overflow:'hidden',
                                     };
                                     if(res[0].zerotrust_enable == false){
                                         var $ifr = $('<iframe>').attr('src', info.url);
@@ -70,7 +71,7 @@ odoo.define('backend_iframe.Dashboard', function (require) {
                     var url = this.params.url
                     var width = this.params.width.toString() + '%'
                     var height = this.params.height.toString() + 'px'
-                    var css = {width: width, height: height,scrolling:'no'};
+                    var css = {width: width, height: height,scrolling:'no',overflow:'hidden',};
                     self.$ifr = $('<iframe>').attr('src', url);
                     self.$ifr.appendTo(self.$('.o_content')).css(css);
                     self.$ifr.appendTo();
@@ -79,7 +80,7 @@ odoo.define('backend_iframe.Dashboard', function (require) {
                     var url_zt = this.params.url_zt
                     var width = this.params.width.toString() + '%'
                     var height = this.params.height.toString() + 'px'
-                    var css = {width: width, height: height,scrolling:'no'};
+                    var css = {width: width, height: height,scrolling:'no',overflow:'hidden',};
                     self.$ifr = $('<iframe>').attr('src', url_zt);
                     self.$ifr.appendTo(self.$('.o_content')).css(css);
                     self.$ifr.appendTo();
