@@ -32,14 +32,14 @@
               <field name="is_admin" invisible="1"/>
               <field name="client_system" force_save="1" attrs="{'readonly': [('is_admin','=', False)]}"/>
               <field name="state" attrs="{'readonly': [('is_admin','=', False)]}"/>
-              <field name="activate_date"/>
-              <field name="is_openziti"/>
+              <field name="activate_date" attrs="{'readonly': [('is_admin','=', False)]}"/>
+              <field name="is_openziti" attrs="{'readonly': [('is_admin','=', False)]}"/>
             </group>
             <group>
               <group string="Database">
                 <field name="db_postgres_port" attrs="{'readonly': [('is_admin','=', False)]}"/>
-                <field name="postgres_pwd"/>
-                <field name="xdr_pwd"/>
+                <field name="postgres_pwd" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="xdr_pwd" attrs="{'readonly': [('is_admin','=', False)]}"/>
               </group>
               <group string="GRC">
                 <field name="grc_web_port" attrs="{'readonly': [('is_admin','=', False)]}"/>
