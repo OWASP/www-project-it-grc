@@ -80,6 +80,13 @@ class ResPartnerGRC(models.Model):
         ('unique_xdr_zt', 'unique(xdr_zt)', 'XDR ZT already exist.!'),
     ]
 
+    def unlink(self):
+        res = super(ResPartnerGRC, self).unlink()
+        flag = self.env.user.has_group('grcbit_seller.group_admin_seller')
+        if flag == False:
+            raise ValidationError("You don't have permissions to delete clients.!")
+        return res
+
     def get_dns_domain(self):
         text_base = self.env.company.dns_domain
         partner = self.env['res.partner'].search([('dns_domain','!=','')], limit=1, order="create_date DESC")
@@ -247,7 +254,7 @@ class ResPartnerGRC(models.Model):
             # )
             random_pass = (
                 [
-                    random.choice("@$!%*?&-_"),
+                    random.choice("@!%*?&-_"),
                     random.choice(string.digits),
                     random.choice(string.ascii_lowercase),
                     random.choice(string.ascii_uppercase),
@@ -256,7 +263,7 @@ class ResPartnerGRC(models.Model):
                     random.choice(
                         string.ascii_lowercase
                         + string.ascii_uppercase
-                        + "@$!%*?&-_"
+                        + "@!%*?&-_"
                         + string.digits
                     ) for i in range(12)
                 ]
