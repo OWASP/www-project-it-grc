@@ -14,10 +14,11 @@ class ResPartnerGRC(models.Model):
 
     client_system = fields.Char(string="Client system name")
     state = fields.Selection([
-        ('new','New'),
+        ('pending','Pending'),
+        ('approved','Approved'),
         ('active','Active'),
         ('inactive','Inactive'),
-    ], string="Status", default='new')
+    ], string="Status", default='pending')
     activate_date = fields.Date(string="Activate date")
     db_postgres_port = fields.Char(string="DB Postgres Port (5432)", default= lambda x: x._set_default_port('db_postgres_port', int(1000), int(5000))) # de 1000 a 5000
     # db_ssh_port = fields.Char(string="DB SSH Port")
