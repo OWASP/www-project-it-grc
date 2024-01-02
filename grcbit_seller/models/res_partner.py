@@ -52,8 +52,11 @@ class ResPartnerGRC(models.Model):
     is_openziti = fields.Boolean(string="OpenZiti", default=True)
 
     endpoints = fields.Selection([
+        ('up50','Up to 50'),
         ('up100','Up to 100'),
+        ('up150','Up to 150'),
         ('up200','Up to 200'),
+        ('up250','Up to 250'),
     ], string="End Points")
     network = fields.Char(string="Network")
     ztrust_console = fields.Char(string="ZTrust Console")
