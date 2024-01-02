@@ -18,7 +18,7 @@ class ResPartnerGRC(models.Model):
         ('approved','Approved'),
         ('active','Active'),
         ('inactive','Inactive'),
-    ], string="Status", default='pending')
+    ], string="Status", default=lambda x : x.get_state_bygroup())
     activate_date = fields.Date(string="Activate date")
     db_postgres_port = fields.Char(string="DB Postgres Port (5432)", default= lambda x: x._set_default_port('db_postgres_port', int(1000), int(5000))) # de 1000 a 5000
     # db_ssh_port = fields.Char(string="DB SSH Port")
@@ -90,6 +90,14 @@ class ResPartnerGRC(models.Model):
         if flag == False:
             raise ValidationError("You don't have permissions to delete clients.!")
         return res
+    
+    def get_state_bygroup(self):
+        flag = self.env.user.has_group('grcbit_seller.group_user_seller_alt')
+        if flag == True:
+            return 'approved'
+        else:
+            return 'pending'
+
 
     def get_dns_domain(self):
         text_base = self.env.company.dns_domain
