@@ -62,6 +62,7 @@ class ResPartnerGRC(models.Model):
     ztrust_console = fields.Char(string="ZTrust Console")
     ztrust_router = fields.Char(string="ZTrust Router")
     ztrust_controller = fields.Char(string="ZTrust Controller")
+    reseller_create = fields.Many2one('res.users', string="Reseller", default=lambda s: s.self.env.user)
     
 
     is_admin = fields.Boolean(string="is admin", compute="_get_group", store=False)
