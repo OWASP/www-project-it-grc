@@ -9,6 +9,7 @@
     'version': '16.0',
     'depends': [
         'base',
+        'contacts',
         'grcbit_setgroups',
     ],
 

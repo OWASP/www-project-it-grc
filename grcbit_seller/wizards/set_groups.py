@@ -7,7 +7,8 @@ class SetGroupsSeller(models.TransientModel):
 
     seller_admin_check = fields.Boolean(string="Admin", default=lambda x:x.get_current_groups_seller('Admin'))
     reseller_admin_check = fields.Boolean(string="Reseller Admin", default=lambda x:x.get_current_groups_seller('Reseller Admin'))
-    seller_user_check = fields.Boolean(string="Reseller User", default=lambda x:x.get_current_groups_seller('Reseller User'))
+    seller_user_check = fields.Boolean(string="Reseller User - 1", default=lambda x:x.get_current_groups_seller('Reseller User - 1'))
+    seller_user_alt_check = fields.Boolean(string="Reseller User - 2", default=lambda x:x.get_current_groups_seller('Reseller User - 2'))
 
     def get_current_groups_seller(self, name):
         user = self.env.context.get('active_id')
@@ -34,11 +35,13 @@ class SetGroupsSeller(models.TransientModel):
                 'seller_admin_check': None,
                 'reseller_admin_check': None,
                 'seller_user_check': None,
+                'seller_user_alt_check': None,
             }
             data.update({
                 'seller_admin_check': rec.seller_admin_check,
                 'reseller_admin_check': rec.reseller_admin_check,
                 'seller_user_check': rec.seller_user_check,
+                'seller_user_alt_check': rec.seller_user_alt_check,
             })
             if data['seller_admin_check'] == True:
                 group_custom = self.base_values_seller('Admin')
@@ -61,12 +64,22 @@ class SetGroupsSeller(models.TransientModel):
                 group_custom.users = [(3, user)]
 
             if data['seller_user_check'] == True:
-                group_custom = self.base_values_seller('Reseller User')
+                group_custom = self.base_values_seller('Reseller User - 1')
                 user = self.env.context.get('active_id')
                 user_id = self.sudo().env['res.users'].search([('id','=', user)])
                 group_custom.users = [(4, user)]
             else:
-                group_custom = self.base_values_seller('Reseller User')
+                group_custom = self.base_values_seller('Reseller User - 1')
+                user = self.env.context.get('active_id')
+                group_custom.users = [(3, user)]
+
+            if data['seller_user_alt_check'] == True:
+                group_custom = self.base_values_seller('Reseller User - 2')
+                user = self.env.context.get('active_id')
+                user_id = self.sudo().env['res.users'].search([('id','=', user)])
+                group_custom.users = [(4, user)]
+            else:
+                group_custom = self.base_values_seller('Reseller User - 2')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
 
