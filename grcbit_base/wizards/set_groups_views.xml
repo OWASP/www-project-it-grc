@@ -7,7 +7,7 @@
       <field name="inherit_id" ref="grcbit_setgroups.set_groups_formview"/>
       <field name="arch" type="xml">
         <xpath expr="//notebook[@name='container_access']" position="inside">
-          <page name="grc_groups" string="GRC">
+          <page name="grc_groups" string="GRC" groups="grcbit_base.group_grc_admin,grcbit_base.group_grc_consultant">
             <group>
               <group>
                 <field name="grc_admin_check"/>
