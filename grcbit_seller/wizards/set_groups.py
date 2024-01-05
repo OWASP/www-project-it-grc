@@ -5,7 +5,7 @@ from odoo import api, fields, models
 class SetGroupsSeller(models.TransientModel):
     _inherit = 'set.groups.user'
 
-    seller_admin_check = fields.Boolean(string="Admin", default=lambda x:x.get_current_groups_seller('Admin'))
+    seller_admin_check = fields.Boolean(string="Admin", default=lambda x:x.get_current_groups_seller('Admin' if x.user_id.tz == 'en_US' else 'Administrador'))
     reseller_admin_check = fields.Boolean(string="Reseller Admin", default=lambda x:x.get_current_groups_seller('Reseller Admin'))
     seller_user_check = fields.Boolean(string="Reseller User - 1", default=lambda x:x.get_current_groups_seller('Reseller User - 1'))
     seller_user_alt_check = fields.Boolean(string="Reseller User - 2", default=lambda x:x.get_current_groups_seller('Reseller User - 2'))
@@ -13,7 +13,11 @@ class SetGroupsSeller(models.TransientModel):
     def get_current_groups_seller(self, name):
         user = self.env.context.get('active_id')
         user_id = self.sudo().env['res.users'].search([('id','=', user)])
-        category_id = self.sudo().env['ir.module.category'].search([('name','=','GRC Seller')])
+        if user_id.tz == 'en_US':
+            lang = 'GRC Seller'
+        else: 
+            lang = 'Vendedor GRC'
+        category_id = self.sudo().env['ir.module.category'].search([('name','=', lang)])
         groups = self.sudo().env['res.groups'].search([('name','=', name),('category_id','=',category_id.id)])
         if user_id.id in [n.id for n in groups.users]:
             return True
@@ -23,7 +27,11 @@ class SetGroupsSeller(models.TransientModel):
     def base_values_seller(self,name):
         user = self.env.context.get('active_id')
         user_id = self.sudo().env['res.users'].search([('id','=', user)])
-        category_id = self.sudo().env['ir.module.category'].search([('name','=','GRC Seller')])
+        if user_id.tz == 'en_US':
+            lang = 'GRC Seller'
+        else: 
+            lang = 'Vendedor GRC'
+        category_id = self.sudo().env['ir.module.category'].search([('name','=', lang)])
         groups = self.sudo().env['res.groups'].search([('name','=', name),('category_id','=',category_id.id)])
         return groups
 
@@ -44,12 +52,12 @@ class SetGroupsSeller(models.TransientModel):
                 'seller_user_alt_check': rec.seller_user_alt_check,
             })
             if data['seller_admin_check'] == True:
-                group_custom = self.base_values_seller('Admin')
+                group_custom = self.base_values_seller('Admin' if self.user_id.tz == 'en_US' else 'Administrador')
                 user = self.env.context.get('active_id')
                 user_id = self.sudo().env['res.users'].search([('id','=', user)])
                 group_custom.users = [(4, user)]
             else:
-                group_custom = self.base_values_seller('Admin')
+                group_custom = self.base_values_seller('Admin' if self.user_id.tz == 'en_US' else 'Administrador')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
 
