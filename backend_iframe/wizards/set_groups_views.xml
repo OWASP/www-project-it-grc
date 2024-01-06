@@ -7,7 +7,7 @@
       <field name="inherit_id" ref="grcbit_setgroups.set_groups_formview"/>
       <field name="arch" type="xml">
         <xpath expr="//notebook[@name='container_access']" position="inside">
-          <page name="xdr_groups" string="XDR">
+          <page name="xdr_groups" string="XDR" groups="bakend_iframe.group_dashboard_manager">
             <group>
               <group>
                 <field name="xdr_admin_check"/>

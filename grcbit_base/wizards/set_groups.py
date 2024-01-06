@@ -5,14 +5,14 @@ _logger = logging.getLogger(__name__)
 class SetGroupsUserGrcbit(models.TransientModel):
     _inherit = 'set.groups.user'
 
-    grc_admin_check = fields.Boolean(string="GRC Admin", default= lambda x: x.get_current_groups('GRC Admin'))
-    grc_consultant_check = fields.Boolean(string="GRC Consultant", default= lambda x: x.get_current_groups('GRC Consultant'))
-    asset_management_check = fields.Boolean(string="Asset Management", default= lambda x: x.get_current_groups('Asset Management'))
-    risk_management_check = fields.Boolean(string="Risk Management", default= lambda x: x.get_current_groups('Risk Management'))
+    grc_admin_check = fields.Boolean(string="GRC Admin", default= lambda x: x.get_current_groups('GRC Admin' if x.user_id.tz == 'en_US' else 'Administrador GRC'))
+    grc_consultant_check = fields.Boolean(string="GRC Consultant", default= lambda x: x.get_current_groups('GRC Consultant' if x.user_id.tz == 'en_US' else 'Consultor GRC'))
+    asset_management_check = fields.Boolean(string="Asset Management", default= lambda x: x.get_current_groups('Asset Management' if x.user_id.tz == 'en_US' else 'Administracion de activos'))
+    risk_management_check = fields.Boolean(string="Risk Management", default= lambda x: x.get_current_groups('Risk Management' if x.user_id.tz == 'en_US' else 'Gestión de riesgo'))
     control_check = fields.Boolean(string="Control", default= lambda x: x.get_current_groups('Control'))
     isms_check = fields.Boolean(string="ISMS", default= lambda x: x.get_current_groups('ISMS'))
-    compliance_check = fields.Boolean(string="Compliance", default= lambda x: x.get_current_groups('Compliance'))
-    guest_check = fields.Boolean(string="Guest", default= lambda x: x.get_current_groups('Guest'))
+    compliance_check = fields.Boolean(string="Compliance", default= lambda x: x.get_current_groups('Compliance' if x.user_id.tz == 'en_US' else 'Cumplimiento'))
+    guest_check = fields.Boolean(string="Guest", default= lambda x: x.get_current_groups('Guest' if x.user_id.tz == 'en_US' else 'Invitado'))
 
     def get_current_groups(self, name):
         user = self.env.context.get('active_id')
@@ -55,42 +55,42 @@ class SetGroupsUserGrcbit(models.TransientModel):
                 'guest_check'            : rec.guest_check,
             })
             if data['grc_admin_check'] == True:
-                group_custom = self.base_values('GRC Admin')
+                group_custom = self.base_values('GRC Admin' if self.user_id.tz == 'en_US' else 'Administrador GRC')
                 user = self.env.context.get('active_id')
                 user_id = self.sudo().env['res.users'].search([('id','=', user)])
                 group_custom.users = [(4, user)]
             else:
-                group_custom = self.base_values('GRC Admin')
+                group_custom = self.base_values('GRC Admin' if self.user_id.tz == 'en_US' else 'Administrador GRC')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
             
             if data['grc_consultant_check'] == True:
-                group_custom = self.base_values('GRC Consultant')
+                group_custom = self.base_values('GRC Consultant' if self.user_id.tz == 'en_US' else 'Consultor GRC')
                 user = self.env.context.get('active_id')
                 user_id = self.sudo().env['res.users'].search([('id','=', user)])
                 group_custom.users = [(4, user)]
             else:
-                group_custom = self.base_values('GRC Consultant')
+                group_custom = self.base_values('GRC Consultant' if self.user_id.tz == 'en_US' else 'Consultor GRC')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
 
             if data['asset_management_check'] == True:
-                group_custom = self.base_values('Asset Management')
+                group_custom = self.base_values('Asset Management' if self.user_id.tz == 'en_US' else 'Administracion de activos')
                 user = self.env.context.get('active_id')
                 user_id = self.sudo().env['res.users'].search([('id','=', user)])
                 group_custom.users = [(4, user)]
             else:
-                group_custom = self.base_values('Asset Management')
+                group_custom = self.base_values('Asset Management' if self.user_id.tz == 'en_US' else 'Administracion de activos')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
 
             if data['risk_management_check'] == True:
-                group_custom = self.base_values('Risk Management')
+                group_custom = self.base_values('Risk Management' if self.user_id.tz == 'en_US' else 'Gestión de riesgo')
                 user = self.env.context.get('active_id')
                 user_id = self.sudo().env['res.users'].search([('id','=', user)])
                 group_custom.users = [(4, user)]
             else:
-                group_custom = self.base_values('Risk Management')
+                group_custom = self.base_values('Risk Management' if self.user_id.tz == 'en_US' else 'Gestión de riesgo')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
 
@@ -115,22 +115,22 @@ class SetGroupsUserGrcbit(models.TransientModel):
                 group_custom.users = [(3, user)]
 
             if data['compliance_check'] == True:
-                group_custom = self.base_values('Compliance')
+                group_custom = self.base_values('Compliance' if self.user_id.tz == 'en_US' else 'Cumplimiento')
                 user = self.env.context.get('active_id')
                 user_id = self.sudo().env['res.users'].search([('id','=', user)])
                 group_custom.users = [(4, user)]
             else:
-                group_custom = self.base_values('Compliance')
+                group_custom = self.base_values('Compliance' if self.user_id.tz == 'en_US' else 'Cumplimiento')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
 
             if data['guest_check'] == True:
-                group_custom = self.base_values('Guest')
+                group_custom = self.base_values('Guest' if self.user_id.tz == 'en_US' else 'Invitado')
                 user = self.env.context.get('active_id')
                 user_id = self.sudo().env['res.users'].search([('id','=', user)])
                 group_custom.users = [(4, user)]
             else:
-                group_custom = self.base_values('Guest')
+                group_custom = self.base_values('Guest' if self.user_id.tz == 'en_US' else 'Invitado')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
         return res

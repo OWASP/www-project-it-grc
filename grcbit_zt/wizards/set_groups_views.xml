@@ -7,7 +7,7 @@
       <field name="inherit_id" ref="grcbit_setgroups.set_groups_formview"/>
       <field name="arch" type="xml">
         <xpath expr="//notebook[@name='container_access']" position="inside">
-          <page name="zt_groups" string="ZT">
+          <page name="zt_groups" string="ZT" groups="grcbit_zt.group_dashboard_manager_zt">
             <group>
               <group>
                 <field name="zt_admin_check"/>
