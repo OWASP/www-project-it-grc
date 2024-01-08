@@ -77,7 +77,7 @@ odoo.define('backend_iframe.Dashboard', function (require) {
                     self.$ifr.appendTo();
                 }
                 else{
-                    var url_zt = this.params.url_zt
+                    var url_zt = this.params.url
                     var width = this.params.width.toString() + '%'
                     var height = this.params.height.toString() + 'px'
                     var css = {width: width, height: height,scrolling:'no',overflow:'hidden',};
