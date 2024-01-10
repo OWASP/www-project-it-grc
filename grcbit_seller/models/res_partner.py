@@ -63,6 +63,16 @@ class ResPartnerGRC(models.Model):
     ztrust_router = fields.Char(string="ZTrust Router")
     ztrust_controller = fields.Char(string="ZTrust Controller")
     reseller_create = fields.Many2one('res.users', string="Reseller", default=lambda s: s.self.env.user)
+    dns_subdomain = fields.Char(string="DNS SubDomain")
+
+    zt_tunnel_cont = fields.Char(string="ZT Tunnel Container ID")
+    xdr_tunnel_cont = fields.Char(string="XDR Tunnel Container ID")
+    url_grc = fields.Char(string="URL GRC")
+    url_xdr_ztrust = fields.Char(string="URL XDR ZTrust")
+    url_zt_ztrust = fields.Char(string="URL ZT ZTrust")
+    url_xdr = fields.Char(string="URL XDR")
+    url_zt = fields.Char(string="URL ZT")
+    jwt_key_client = fields.Char(string="JWT Key Client")
     
 
     is_admin = fields.Boolean(string="is admin", compute="_get_group", store=False)
