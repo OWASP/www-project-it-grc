@@ -73,6 +73,184 @@ class ResPartnerGRC(models.Model):
     url_xdr = fields.Char(string="URL XDR")
     url_zt = fields.Char(string="URL ZT")
     jwt_key_client = fields.Char(string="JWT Key Client")
+    agent_url = fields.Char(string="Agent URL")
+    email_sent = fields.Boolean(string="Email Sent", default=False)
+
+    def sent_email_automatically(self):
+        for rec in self:
+            if rec.state == 'active' and rec.email_sent == False:
+                mail_pool = self.env['mail.mail']
+                values = {}
+                values.update({
+                    'subject': 'ThreatFend Client Data',
+                    'partner_ids': [(6, 0, [rec.id])],
+                    'body_html': 'body',
+                    'res_id': rec.id,
+                    'model': 'res.partner',
+                    'body': """
+                        <div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-4"><span style="font-weight:bold;">Client:</span></div>
+                                <div class="col-4">""" + str(rec.client_system)+ """</div>
+                            </div>
+                            <br/>
+                            <div class="row" style="border: 1px solid;>
+                                <div class="col-2"><span style="font-weight:bold;">GRC</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">GRC URL:</span></div>
+                                <div class="col-3"><span style="text-align:right;">""" + str(rec.url_grc)+ """</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">GRC User:</span></div>
+                                <div class="col-3"><span style="text-align:right;">admin</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">GRC Password:</span></div>
+                                <div class="col-3"><span style="text-align:right;">""" + str(rec.postgres_pwd)+ """</span></div>
+                            </div>
+                            <br/>
+                            <div class="row" style="border: 1px solid;>
+                                <div class="col-2"><span style="font-weight:bold;">XDR</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">XDR URL ZTrust:</span></div>
+                                <div class="col-3"><span style="text-align:right;">""" + str(rec.url_xdr_ztrust)+ """</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">XDR URL:</span></div>
+                                <div class="col-3"><span style="text-align:right;">""" + str(rec.url_xdr)+ """</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">XDR User:</span></div>
+                                <div class="col-3"><span style="text-align:right;">admin</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">XDR Password:</span></div>
+                                <div class="col-3"><span style="text-align:right;">""" + str(rec.xdr_pwd)+ """</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">Agent URL:</span></div>
+                                <div class="col-3"><span style="text-align:right;">""" + str(rec.agent_url)+ """</span></div>
+                            </div>
+                            <br/>
+                            <div class="row" style="border: 1px solid;>
+                                <div class="col-2"><span style="font-weight:bold;">ZT</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">ZT URL ZTrust:</span></div>
+                                <div class="col-3"><span style="text-align:right;">""" + str(rec.url_zt_ztrust)+ """</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">ZT URL:</span></div>
+                                <div class="col-3"><span style="text-align:right;">""" + str(rec.url_zt)+ """</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">ZT User:</span></div>
+                                <div class="col-3"><span style="text-align:right;">admin</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">ZT Password:</span></div>
+                                <div class="col-3"><span style="text-align:right;">""" + str(rec.postgres_pwd)+ """</span></div>
+                            </div>
+                        </div>
+                    """
+                })
+                values.update({ })
+                msg_id = mail_pool.create(values)
+                if msg_id:
+                    mail_pool.send([msg_id])
+                    rec.email_sent = True
+            else:
+                return
+
+    def sent_email_manual(self):
+        for rec in self:
+            if rec.state == 'active':
+                mail_pool = self.env['mail.mail']
+                values = {}
+                values.update({
+                    'subject': 'ThreatFend Client Data',
+                    'partner_ids': [(6, 0, [rec.id])],
+                    'body_html': 'body',
+                    'res_id': rec.id,
+                    'model': 'res.partner',
+                    'body': """
+                        <div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-4"><span style="font-weight:bold;">Client:</span></div>
+                                <div class="col-4">""" + str(rec.client_system)+ """</div>
+                            </div>
+                            <br/>
+                            <div class="row" style="border: 1px solid;>
+                                <div class="col-2"><span style="font-weight:bold;">GRC</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">GRC URL:</span></div>
+                                <div class="col-3"><span style="text-align:right;">""" + str(rec.url_grc)+ """</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">GRC User:</span></div>
+                                <div class="col-3"><span style="text-align:right;">admin</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">GRC Password:</span></div>
+                                <div class="col-3"><span style="text-align:right;">""" + str(rec.postgres_pwd)+ """</span></div>
+                            </div>
+                            <br/>
+                            <div class="row" style="border: 1px solid;>
+                                <div class="col-2"><span style="font-weight:bold;">XDR</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">XDR URL ZTrust:</span></div>
+                                <div class="col-3"><span style="text-align:right;">""" + str(rec.url_xdr_ztrust)+ """</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">XDR URL:</span></div>
+                                <div class="col-3"><span style="text-align:right;">""" + str(rec.url_xdr)+ """</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">XDR User:</span></div>
+                                <div class="col-3"><span style="text-align:right;">admin</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">XDR Password:</span></div>
+                                <div class="col-3"><span style="text-align:right;">""" + str(rec.xdr_pwd)+ """</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">Agent URL:</span></div>
+                                <div class="col-3"><span style="text-align:right;">""" + str(rec.agent_url)+ """</span></div>
+                            </div>
+                            <br/>
+                            <div class="row" style="border: 1px solid;>
+                                <div class="col-2"><span style="font-weight:bold;">ZT</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">ZT URL ZTrust:</span></div>
+                                <div class="col-3"><span style="text-align:right;">""" + str(rec.url_zt_ztrust)+ """</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">ZT URL:</span></div>
+                                <div class="col-3"><span style="text-align:right;">""" + str(rec.url_zt)+ """</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">ZT User:</span></div>
+                                <div class="col-3"><span style="text-align:right;">admin</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">ZT Password:</span></div>
+                                <div class="col-3"><span style="text-align:right;">""" + str(rec.postgres_pwd)+ """</span></div>
+                            </div>
+                        </div>
+                    """
+                })
+                values.update({ })
+                msg_id = mail_pool.create(values)
+                if msg_id:
+                    mail_pool.send([msg_id])
+                    rec.email_sent = True
+            else:
+                return
     
 
     is_admin = fields.Boolean(string="is admin", compute="_get_group", store=False)

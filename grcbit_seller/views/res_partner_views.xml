@@ -74,13 +74,8 @@
               </group>
             </group>
             <group string="Output">
-            
-
-
-
-
-
               <group>
+                <field name="email_sent" readonly="1"/>
                 <field name="xdr_index_container" readonly="1"/>
                 <field name="xdr_server_container" readonly="1"/>
                 <field name="xdr_dash_container" readonly="1"/>
@@ -106,9 +101,16 @@
                 <field name="url_zt_ztrust" readonly="1"/>
                 <field name="url_zt" readonly="1"/>
                 <field name="jwt_key_client" readonly="1"/>
+                <field name="agent_url" readonly="1"/>
               </group>
             </group>
           </page>
+        </xpath>
+
+        <xpath expr="//sheet" position="before">
+          <header>
+            <button name="sent_email_manual" type="object" string="Send Email Data client" class="btn btn-success"/>
+          </header>
         </xpath>
      
       </field>
