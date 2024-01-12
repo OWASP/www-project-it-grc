@@ -22,6 +22,10 @@
         <xpath expr="//field[@name='partner_id']" position="after">
           <field name="is_admin"/>
         </xpath>
+        <xpath expr="//field[@name='login']" position="after">
+          <label for="is_support" name="is_support"/>
+          <field name="is_support"/>
+        </xpath>
         <xpath expr="//page[@name='access_rights']" position="attributes">
 
           <attribute name="attrs">{'invisible':[('is_admin','=', False)]}</attribute>

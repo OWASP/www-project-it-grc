@@ -8,7 +8,7 @@ class ZeroTrustSettings(models.Model):
     is_zerotrust = fields.Boolean(string="ZTrust", default=lambda x: x._default_get_last())
 
     def _default_get_last(self):
-        last_one = self.env['zerotrust.settings.zt'].search([], order="create_date DESC", limit=1)
+        last_one = self.env['zerotrust.settings.zt'].sudo().search([], order="create_date DESC", limit=1)
         if last_one:
             for rec in last_one:
                 return rec.is_zerotrust
@@ -54,7 +54,6 @@ class BackendDashboardZT(models.Model):
     url = fields.Char(
         'URL',
         index=True,
-        required=True,
         track_visibility='onchange')
     active = fields.Boolean('Active', default=True)
     sequence = fields.Integer()
@@ -74,7 +73,7 @@ class BackendDashboardZT(models.Model):
 
     @api.depends('name')
     def _compute_check_iszt(self):
-        last_one = self.env['zerotrust.settings.zt'].search([], order="create_date DESC", limit=1)
+        last_one = self.env['zerotrust.settings.zt'].sudo().search([], order="create_date DESC", limit=1)
         if last_one:
             for rec in last_one:
                 self.zerotrust_enable = rec.is_zerotrust
@@ -83,14 +82,30 @@ class BackendDashboardZT(models.Model):
 
     def get_dashboard(self):
         """ to visit your dashboard """
-        if self.url:
+        
+        if self.zerotrust_enable == True:
+            action = {
+                'type': 'ir.actions.client',
+                'tag': 'view_dashboard_zt',
+                'params': {
+                    'url': self.url_zt,
+                    'height': self.height,
+                    'width': self.width,
+                    'main_dashboard': self.main_dashboard,
+                    'zerotrust_enable': self.zerotrust_enable,
+                },
+            }
+        elif self.zerotrust_enable == False:
             action = {
                 'type': 'ir.actions.client',
                 'tag': 'view_dashboard_zt',
                 'params': {
                     'url': self.url,
                     'height': self.height,
-                    'width': self.width},
+                    'width': self.width,
+                    'main_dashboard': self.main_dashboard,
+                    'zerotrust_enable': self.zerotrust_enable,
+                },
             }
         else:
             action = {'warning': {'title': _("Warning"), 'message': _(

@@ -18,6 +18,7 @@ class ResPartnerGRC(models.Model):
         ('approved','Approved'),
         ('active','Active'),
         ('inactive','Inactive'),
+        ('reactive','Reactive'),
     ], string="Status", default=lambda x : x.get_state_bygroup())
     activate_date = fields.Date(string="Activate date")
     db_postgres_port = fields.Char(string="DB Postgres Port (5432)", default= lambda x: x._set_default_port('db_postgres_port', int(1000), int(5000))) # de 1000 a 5000

@@ -220,7 +220,7 @@
       <field name="res_model">zerotrust.settings.zt</field>
       <field name="view_mode">form</field>
       <field name="target">new</field>
-      <field name="groups_id" eval="[(4, ref('grcbit_zt.group_dashboard_manager_zt'))]"/>
+      <field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
     </record>
 
     <!--Action backend Dashboard-->
