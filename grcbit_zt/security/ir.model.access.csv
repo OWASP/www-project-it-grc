@@ -7,4 +7,4 @@ access_dashboard_tag_admin_zt,dashboard.tag.admin.zt,model_dashboard_tag_zt,grcb
 access_dashboard_tag_user_zt,dashboard.tag.user.zt,model_dashboard_tag_zt,grcbit_zt.group_dashboard_user_zt,1,1,1,0
 access_dashboard_tag_guest_zt,dashboard.tag.guest.zt,model_dashboard_tag_zt,grcbit_zt.group_dashboard_guest_zt,1,0,0,0
 
-access_zerotrust_settings_zt_admin,zerotrust.settings.zt.admin,model_zerotrust_settings_zt,grcbit_zt.group_dashboard_manager_zt,1,1,1,1
+access_zerotrust_settings_zt_admin,zerotrust.settings.zt.admin,model_zerotrust_settings_zt,base.group_system,1,1,1,1

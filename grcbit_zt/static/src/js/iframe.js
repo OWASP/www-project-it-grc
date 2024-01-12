@@ -37,7 +37,7 @@ odoo.define('grcbit_zt.DashboardZT', function (require) {
                             model: 'backend.dashboard.zt',
                             method: 'search_read',
                             domain: domain,
-                            fields: ['url', 'height', 'width'],
+                            fields: ['url', 'height', 'width','url_zt','zerotrust_enable'],
                             lazy: false,
                         }).then(function (res) {
                             if (res.length > 0) {

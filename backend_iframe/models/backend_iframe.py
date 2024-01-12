@@ -8,7 +8,7 @@ class ZeroTrustSettings(models.Model):
     is_zerotrust = fields.Boolean(string="ZTrust", default=lambda x: x._default_get_last())
 
     def _default_get_last(self):
-        last_one = self.env['zerotrust.settings'].search([], order="create_date DESC", limit=1)
+        last_one = self.env['zerotrust.settings'].sudo().search([], order="create_date DESC", limit=1)
         if last_one:
             for rec in last_one:
                 return rec.is_zerotrust
@@ -77,7 +77,7 @@ class BackendDashboard(models.Model):
 
     @api.depends('name')
     def _compute_check_iszt(self):
-        last_one = self.env['zerotrust.settings'].search([], order="create_date DESC", limit=1)
+        last_one = self.env['zerotrust.settings'].sudo().search([], order="create_date DESC", limit=1)
         if last_one:
             for rec in last_one:
                 self.zerotrust_enable = rec.is_zerotrust
