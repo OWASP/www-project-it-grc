@@ -220,7 +220,7 @@
       <field name="res_model">zerotrust.settings</field>
       <field name="view_mode">form</field>
       <field name="target">new</field>
-      <field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+      <field name="groups_id" eval="[(4, ref('backend_iframe.group_dashboard_manager))]"/>
     </record>
 
     <!--Action backend Dashboard-->
@@ -266,7 +266,7 @@
 
     <menuitem name="ZT Settings" id="zerotrust_settings_menu_iframe_item1_admin" sequence="4"
       parent="backend_dashboard_menu_iframe"
-      groups="base.group_system"
+      groups="backend_iframe.group_dashboard_manager"
       action="action_zerotrust_settings_manager"/>
 
     <!-- menu Main Dashboard -->
