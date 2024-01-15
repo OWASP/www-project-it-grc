@@ -5,9 +5,9 @@ from odoo import api, fields, models
 class SetGroupsZt(models.TransientModel):
     _inherit = 'set.groups.user'
 
-    zt_admin_check = fields.Boolean(string="Admin", default=lambda x:x.get_current_groups_zt('Admin' if x.user_id.tz == 'en_US' else 'Administrador'))
-    zt_user_check = fields.Boolean(string="User", default=lambda x:x.get_current_groups_zt('User' if x.user_id.tz == 'en_US' else 'Usuario'))
-    zt_guest_check = fields.Boolean(string="Guest", default=lambda x:x.get_current_groups_zt('Guest' if x.user_id.tz == 'en_US' else 'Invitado'))
+    zt_admin_check = fields.Boolean(string="Admin", default=lambda x:x.get_current_groups_zt('Admin' if x.env.user.lang == 'en_US' else 'Administrador'))
+    zt_user_check = fields.Boolean(string="User", default=lambda x:x.get_current_groups_zt('User' if x.env.user.lang == 'en_US' else 'Usuario'))
+    zt_guest_check = fields.Boolean(string="Guest", default=lambda x:x.get_current_groups_zt('Guest' if x.env.user.lang == 'en_US' else 'Invitado'))
 
     def get_current_groups_zt(self, name):
         user = self.env.context.get('active_id')
@@ -41,32 +41,32 @@ class SetGroupsZt(models.TransientModel):
                 'zt_guest_check': rec.zt_guest_check,
             })
             if data['zt_admin_check'] == True:
-                group_custom = self.base_values_zt('Admin' if self.user_id.tz == 'en_US' else 'Administrador')
+                group_custom = self.base_values_zt('Admin' if self.env.user.lang == 'en_US' else 'Administrador')
                 user = self.env.context.get('active_id')
                 user_id = self.sudo().env['res.users'].search([('id','=', user)])
                 group_custom.users = [(4, user)]
             else:
-                group_custom = self.base_values_zt('Admin' if self.user_id.tz == 'en_US' else 'Administrador')
+                group_custom = self.base_values_zt('Admin' if self.env.user.lang == 'en_US' else 'Administrador')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
 
             if data['zt_user_check'] == True:
-                group_custom = self.base_values_zt('User' if self.user_id.tz == 'en_US' else 'Usuario')
+                group_custom = self.base_values_zt('User' if self.env.user.lang == 'en_US' else 'Usuario')
                 user = self.env.context.get('active_id')
                 user_id = self.sudo().env['res.users'].search([('id','=', user)])
                 group_custom.users = [(4, user)]
             else:
-                group_custom = self.base_values_zt('User' if self.user_id.tz == 'en_US' else 'Usuario')
+                group_custom = self.base_values_zt('User' if self.env.user.lang == 'en_US' else 'Usuario')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
 
             if data['zt_guest_check'] == True:
-                group_custom = self.base_values_zt('Guest' if self.user_id.tz == 'en_US' else 'Invitado')
+                group_custom = self.base_values_zt('Guest' if self.env.user.lang == 'en_US' else 'Invitado')
                 user = self.env.context.get('active_id')
                 user_id = self.sudo().env['res.users'].search([('id','=', user)])
                 group_custom.users = [(4, user)]
             else:
-                group_custom = self.base_values_zt('Guest' if self.user_id.tz == 'en_US' else 'Invitado')
+                group_custom = self.base_values_zt('Guest' if self.env.user.lang == 'en_US' else 'Invitado')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
 
