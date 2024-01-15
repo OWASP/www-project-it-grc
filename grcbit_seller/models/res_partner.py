@@ -74,10 +74,31 @@ class ResPartnerGRC(models.Model):
     url_xdr = fields.Char(string="URL XDR")
     url_zt = fields.Char(string="URL ZT")
     jwt_key_client = fields.Char(string="JWT Key Client")
-    agent_url = fields.Char(string="Agent URL")
+    agent_url = fields.Char(string="Agent XDR URL")
     email_sent = fields.Boolean(string="Email Sent", default=False)
+    token_xdr_url = fields.Char(string="Token XDR URL")
 
-        
+    #Container limits
+    grc_cpu = fields.Char(string="GRC CPU", default="2")
+    grc_ram = fields.Char(string="GRC RAM", default="2")
+    xdr_cpu = fields.Char(string="XDR CPU", default="4")
+    xdr_ram = fields.Char(string="XDR RAM", default="4")
+    zt_cpu = fields.Char(string="ZT CPU", default="4")
+    zt_ram = fields.Char(string="ZT RAM", default="4") 
+    update_limits = fields.Boolean(string="Update Limits", default=False)
+
+    def generate_jwt(self):
+        for rec in self:
+            attach = self.env['ir.attachment'].create({
+                'res_id': rec.id,
+                'res_model': 'res.partner',
+                'type': 'binary',
+                'mimetype': 'application/octet-stream',
+                'name': str(rec.client_system) + '.jwt',
+                'index_content': 'application',
+                'db_datas': rec.jwt_key_client,
+            })
+        return attach.id
 
     def sent_email_manual(self):
         for rec in self:
@@ -91,6 +112,12 @@ class ResPartnerGRC(models.Model):
                     'res_id': rec.id,
                     'model': 'res.partner',
                     'body': """
+                        <span style="font-weight:bold;">
+                            Dear client,<br/>
+                            This email contains the information needed to use NotifyNProtect platform.
+                            <br/>
+                            We recomend you to change the provided passwords.
+                        </span><br/>
                         <div>
                             <div class="row" style="border: 1px solid;">
                                 <div class="col-4"><span style="font-weight:bold;">Client:</span></div>
@@ -145,10 +172,6 @@ class ResPartnerGRC(models.Model):
                                 <div class="col-3"><span style="text-align:right;">""" + str(rec.url_zt_ztrust)+ """</span></div>
                             </div>
                             <div class="row" style="border: 1px solid;">
-                                <div class="col-3"><span style="font-weight:bold;">ZT URL:</span></div>
-                                <div class="col-3"><span style="text-align:right;">""" + str(rec.url_zt)+ """</span></div>
-                            </div>
-                            <div class="row" style="border: 1px solid;">
                                 <div class="col-3"><span style="font-weight:bold;">ZT User:</span></div>
                                 <div class="col-3"><span style="text-align:right;">admin</span></div>
                             </div>
@@ -164,7 +187,8 @@ class ResPartnerGRC(models.Model):
                 if msg_id:
                     mail_pool.send([msg_id])
                     mail_template = self.env.ref('grcbit_seller.customer_data_email_template')
-                    mail_template.send_mail(self.id, force_send=True)
+                    mail_template.attachment_ids = [(6, 0, [rec.generate_jwt()])]
+                    mail_template.send_mail(self.id, raise_exception=False, force_send=True)
                     rec.email_sent = True
             else:
                 return
