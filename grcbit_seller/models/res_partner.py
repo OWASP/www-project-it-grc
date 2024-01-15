@@ -74,8 +74,18 @@ class ResPartnerGRC(models.Model):
     url_xdr = fields.Char(string="URL XDR")
     url_zt = fields.Char(string="URL ZT")
     jwt_key_client = fields.Char(string="JWT Key Client")
-    agent_url = fields.Char(string="Agent URL")
+    agent_url = fields.Char(string="Agent XDR URL")
     email_sent = fields.Boolean(string="Email Sent", default=False)
+    token_xdr_url = fields.Char(string="Token XDR URL")
+
+    #Container limits
+    grc_cpu = fields.Char(string="GRC CPU", default="2")
+    grc_ram = fields.Char(string="GRC RAM", default="2")
+    xdr_cpu = fields.Char(string="XDR CPU", default="4")
+    xdr_ram = fields.Char(string="XDR RAM", default="4")
+    zt_cpu = fields.Char(string="ZT CPU", default="4")
+    zt_ram = fields.Char(string="ZT RAM", default="4") 
+    update_limits = fields.Boolean(string="Update Limits", default=False)
 
         
 
