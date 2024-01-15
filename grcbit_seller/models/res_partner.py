@@ -87,7 +87,18 @@ class ResPartnerGRC(models.Model):
     zt_ram = fields.Char(string="ZT RAM", default="4") 
     update_limits = fields.Boolean(string="Update Limits", default=False)
 
-        
+    def generate_jwt(self):
+        for rec in self:
+            attach = self.env['ir.attachment'].create({
+                'res_id': rec.id,
+                'res_model': 'res.partner',
+                'type': 'binary',
+                'mimetype': 'application/octet-stream',
+                'name': str(rec.client_system) + '.jwt',
+                'index_content': 'application',
+                'db_datas': rec.jwt_key_client,
+            })
+        return attach.id
 
     def sent_email_manual(self):
         for rec in self:
@@ -176,7 +187,8 @@ class ResPartnerGRC(models.Model):
                 if msg_id:
                     mail_pool.send([msg_id])
                     mail_template = self.env.ref('grcbit_seller.customer_data_email_template')
-                    mail_template.send_mail(self.id, force_send=True)
+                    mail_template.attachment_ids = [(6, 0, [rec.generate_jwt()])]
+                    mail_template.send_mail(self.id, raise_exception=False, force_send=True)
                     rec.email_sent = True
             else:
                 return
