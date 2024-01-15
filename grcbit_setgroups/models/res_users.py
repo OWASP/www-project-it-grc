@@ -11,6 +11,5 @@ class ResUsersInh(models.Model):
         res = super(ResUsersInh, self).write(vals)
         user_id = self.env.user
         if user_id.is_support != True:
-            if self.is_support == True:
-                raise ValidationError("This users can't be update for you")
+            raise ValidationError("This users can't be update for you")
         return res
