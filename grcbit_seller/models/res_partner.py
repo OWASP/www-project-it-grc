@@ -101,6 +101,12 @@ class ResPartnerGRC(models.Model):
                     'res_id': rec.id,
                     'model': 'res.partner',
                     'body': """
+                        <span style="font-weight:bold;">
+                            Dear client,<br/>
+                            This email contains the information needed to use NotifyNProtect platform.
+                            <br/>
+                            We recomend you to change the provided passwords.
+                        </span><br/>
                         <div>
                             <div class="row" style="border: 1px solid;">
                                 <div class="col-4"><span style="font-weight:bold;">Client:</span></div>
@@ -153,10 +159,6 @@ class ResPartnerGRC(models.Model):
                             <div class="row" style="border: 1px solid;">
                                 <div class="col-3"><span style="font-weight:bold;">ZT URL ZTrust:</span></div>
                                 <div class="col-3"><span style="text-align:right;">""" + str(rec.url_zt_ztrust)+ """</span></div>
-                            </div>
-                            <div class="row" style="border: 1px solid;">
-                                <div class="col-3"><span style="font-weight:bold;">ZT URL:</span></div>
-                                <div class="col-3"><span style="text-align:right;">""" + str(rec.url_zt)+ """</span></div>
                             </div>
                             <div class="row" style="border: 1px solid;">
                                 <div class="col-3"><span style="font-weight:bold;">ZT User:</span></div>
