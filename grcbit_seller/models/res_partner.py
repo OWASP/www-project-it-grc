@@ -133,7 +133,7 @@ class ResPartnerGRC(models.Model):
                             </div>
                             <div class="row" style="border: 1px solid;">
                                 <div class="col-3"><span style="font-weight:bold;">GRC User:</span></div>
-                                <div class="col-3"><span style="text-align:right;">admin</span></div>
+                                <div class="col-3"><span style="text-align:right;">admin@admin.com</span></div>
                             </div>
                             <div class="row" style="border: 1px solid;">
                                 <div class="col-3"><span style="font-weight:bold;">GRC Password:</span></div>
@@ -163,6 +163,11 @@ class ResPartnerGRC(models.Model):
                                 <div class="col-3"><span style="font-weight:bold;">Agent URL:</span></div>
                                 <div class="col-3"><span style="text-align:right;">""" + str(rec.agent_url)+ """</span></div>
                             </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">Token XDR URL:</span></div>
+                                <div class="col-3"><span style="text-align:right;">""" + str(rec.token_xdr_url)+ """</span></div>
+                            </div>
+                            
                             <br/>
                             <div class="row" style="border: 1px solid;>
                                 <div class="col-2"><span style="font-weight:bold;">ZT</span></div>
