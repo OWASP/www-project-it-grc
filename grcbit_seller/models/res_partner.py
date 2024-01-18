@@ -235,7 +235,10 @@ class ResPartnerGRC(models.Model):
 
 
     def get_dns_domain(self):
-        text_base = self.env.company.dns_domain
+        if self.env.company.dns_domain:
+            text_base = self.env.company.dns_domain
+        else:
+            text_base = ''
         partner = self.env['res.partner'].search([('dns_domain','!=','')], limit=1, order="create_date DESC")
         if not partner:
             value = text_base + '1'
