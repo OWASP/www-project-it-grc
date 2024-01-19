@@ -176,14 +176,6 @@ class ResPartnerGRC(models.Model):
                                 <div class="col-3"><span style="font-weight:bold;">ZT URL ZTrust:</span></div>
                                 <div class="col-3"><span style="text-align:right;">""" + str(rec.url_zt_ztrust)+ """</span></div>
                             </div>
-                            <div class="row" style="border: 1px solid;">
-                                <div class="col-3"><span style="font-weight:bold;">ZT User:</span></div>
-                                <div class="col-3"><span style="text-align:right;">admin</span></div>
-                            </div>
-                            <div class="row" style="border: 1px solid;">
-                                <div class="col-3"><span style="font-weight:bold;">ZT Password:</span></div>
-                                <div class="col-3"><span style="text-align:right;">""" + str(rec.postgres_pwd)+ """</span></div>
-                            </div>
                         </div>
                     """
                 })
@@ -235,7 +227,10 @@ class ResPartnerGRC(models.Model):
 
 
     def get_dns_domain(self):
-        text_base = self.env.company.dns_domain
+        if self.env.company.dns_domain:
+            text_base = self.env.company.dns_domain
+        else:
+            text_base = ''
         partner = self.env['res.partner'].search([('dns_domain','!=','')], limit=1, order="create_date DESC")
         if not partner:
             value = text_base + '1'

@@ -18,7 +18,7 @@ msgstr ""
 #. module: grcbit_cvss
 #: model_terms:ir.ui.view,arch_db:grcbit_cvss.cvss_report_risk_factor_custom
 msgid "<strong>CVSS Score:</strong>"
-msgstr "<strong>Puntuación CVSS:</strong>"
+msgstr "<strong>Score CVSS:</strong>"
 
 #. module: grcbit_cvss
 #: model_terms:ir.ui.view,arch_db:grcbit_cvss.cvss_report_risk_factor_custom
@@ -178,7 +178,7 @@ msgstr "Alcance (S)"
 #: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__score
 #: model:ir.model.fields,field_description:grcbit_cvss.field_risk_factor__score
 msgid "Score"
-msgstr "Puntuación"
+msgstr "Score CVSS"
 
 #. module: grcbit_cvss
 #: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__scope__unchanged
@@ -194,7 +194,7 @@ msgstr "Interacción del usuario (UI)"
 #: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__vector
 #: model:ir.model.fields,field_description:grcbit_cvss.field_risk_factor__vector
 msgid "Vector"
-msgstr "Vector"
+msgstr "Vector CVSS"
 
 #. module: grcbit_cvss
 #: model:ir.model,name:grcbit_cvss.model_cvss_calculator

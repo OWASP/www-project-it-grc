@@ -45,7 +45,7 @@ msgstr "Cumplimiento - ISMS"
 #. module: grcbit_compliance
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_iso_control__description
 msgid "Compliance Description"
-msgstr "Descripción de cumplimiento"
+msgstr "Descripción"
 
 #. module: grcbit_compliance
 #: model:ir.model,name:grcbit_compliance.model_compliance_control_objective
@@ -53,7 +53,7 @@ msgstr "Descripción de cumplimiento"
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_control_objective__name
 #: model_terms:ir.ui.view,arch_db:grcbit_compliance.compliance_version_form
 msgid "Compliance Objective"
-msgstr "Objetivo de cumplimiento"
+msgstr "Objetivo"
 
 #. module: grcbit_compliance
 #: model:ir.actions.report,name:grcbit_compliance.print_compliance
@@ -73,7 +73,7 @@ msgstr "Reporte de cumpliento:"
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_iso_control__compliance_control_id
 #: model_terms:ir.ui.view,arch_db:grcbit_compliance.compliance_control_objective_form
 msgid "Compliance Requirement"
-msgstr "Requerimiento del cumplimiento"
+msgstr "Requerimiento"
 
 #. module: grcbit_compliance
 #: model:ir.actions.act_window,name:grcbit_compliance.compliance_version_action
@@ -81,7 +81,7 @@ msgstr "Requerimiento del cumplimiento"
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_control_objective__compliance_version_id
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_version__name
 msgid "Compliance Version"
-msgstr "Versión del cumpliento"
+msgstr "Versión"
 
 #. module: grcbit_compliance
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_iso_control__control_id
@@ -174,7 +174,7 @@ msgstr "Requerimiento"
 #. module: grcbit_compliance
 #: model:ir.model.constraint,message:grcbit_compliance.constraint_compliance_control_objective_name_uniq
 msgid "The compliance objective name already exists."
-msgstr "El nombre del objetivo de cumplimiento ya existe."
+msgstr "El nombre del objetivo ya existe."
 
 #. module: grcbit_compliance
 #: model:ir.model.constraint,message:grcbit_compliance.constraint_compliance_control_name_uniq
@@ -184,7 +184,7 @@ msgstr "El nombre del requerimiento de cumplimiento ya existe."
 #. module: grcbit_compliance
 #: model:ir.model.constraint,message:grcbit_compliance.constraint_compliance_version_name_uniq
 msgid "The compliance version name already exists."
-msgstr "El nombre de la versión del cumpliento ya existe."
+msgstr "El nombre de la versión ya existe."
 
 #. module: grcbit_compliance
 #: model:ir.ui.menu,name:grcbit_compliance.menu_compliance_version

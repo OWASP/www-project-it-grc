@@ -23,15 +23,14 @@
 			<field name="category_id" ref="module_grcbit_seller"/>
 		</record>
 
+    <!-- <delete model="ir.rule" id="base.res_partner_rule_private_group"/>
+    <delete model="ir.rule" id="base.res_partner_rule_private_employee"/> -->
+
 		<record id="only_own_clients_reseller_users" model="ir.rule">
       <field name="name">Reseller Users Own Clients</field>
       <field name="model_id" ref="base.model_res_partner"/>
       <field name="domain_force">[('reseller_create','=',user.id)]</field>
-      <field name="perm_read">1</field>
-      <field name="perm_create">1</field>
-      <field name="perm_write">1</field>
-      <field name="perm_unlink">0</field>
-      <field name="groups" eval="[(4, ref('grcbit_seller.group_user_seller')),(4, ref('grcbit_seller.group_user_seller_alt'))]"/>
+      <field name="groups" eval="[(6, 0, [ref('grcbit_seller.group_user_seller'), ref('grcbit_seller.group_user_seller_alt')])]"/>
 		</record>
     	
   </data>

@@ -349,7 +349,7 @@ msgstr "Sistema de gestión de seguridad de la información"
 #: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__is_internet_exposed
 #: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
 msgid "Internet Exposed?"
-msgstr "¿Internet expuesto?"
+msgstr "¿Espuesto a internet?"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_data_classification____last_update
@@ -445,7 +445,7 @@ msgstr "El nombre del inventario de datos ya existe."
 #. module: grcbit_base
 #: model:ir.model.constraint,message:grcbit_base.constraint_third_party_name_uniq
 msgid "The third party name already exists."
-msgstr "El nombre de la aplicación de terceros ya existe."
+msgstr "El nombre del proveedor TI ya existe."
 
 #. module: grcbit_base
 #: model:ir.actions.act_window,name:grcbit_base.third_party_action
@@ -453,12 +453,12 @@ msgstr "El nombre de la aplicación de terceros ya existe."
 #: model:ir.ui.menu,name:grcbit_base.menu_third_party
 #: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
 msgid "Third Party"
-msgstr "Aplicación de terceros"
+msgstr "Proveedor TI"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_third_party__name
 msgid "Third Party Vendor"
-msgstr "Proveedor externo"
+msgstr "Proveedor TI"
 
 #. module: grcbit_base
 #: model:ir.actions.act_window,name:grcbit_base.third_party_dash
