@@ -23,8 +23,8 @@
 			<field name="category_id" ref="module_grcbit_seller"/>
 		</record>
 
-    <delete model="ir.rule" id="base.res_partner_rule_private_group"/>
-    <delete model="ir.rule" id="base.res_partner_rule_private_employee"/>
+    <!-- <delete model="ir.rule" id="base.res_partner_rule_private_group"/>
+    <delete model="ir.rule" id="base.res_partner_rule_private_employee"/> -->
 
 		<record id="only_own_clients_reseller_users" model="ir.rule">
       <field name="name">Reseller Users Own Clients</field>

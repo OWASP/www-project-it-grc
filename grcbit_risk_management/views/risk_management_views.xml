@@ -449,7 +449,7 @@
             <field name="impact_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
             <field name="probability_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
             <field name="description"/>
-            <field name="color"/>
+            <!-- <field name="color"/> -->
           </group>
         </form>
       </field>

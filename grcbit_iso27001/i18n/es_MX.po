@@ -94,7 +94,7 @@ msgstr "Adjunto"
 #. module: grcbit_iso27001
 #: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
 msgid "Category"
-msgstr "Categoria"
+msgstr "Categoría"
 
 #. module: grcbit_iso27001
 #: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__control
@@ -112,7 +112,7 @@ msgstr "Control"
 #: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__control_category_id
 #: model:ir.ui.menu,name:grcbit_iso27001.menu_control_category
 msgid "Control Category"
-msgstr "Categoria de control"
+msgstr "Nombre Categoría Control"
 
 #. module: grcbit_iso27001
 #: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
@@ -218,7 +218,7 @@ msgstr "ID"
 #. module: grcbit_iso27001
 #: model:ir.model.fields,field_description:grcbit_iso27001.field_control_category__id_control_category
 msgid "ID Control Category"
-msgstr "Categoria del control de ID"
+msgstr "ID Categoria Control"
 
 #. module: grcbit_iso27001
 #: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__id_iso_control
@@ -242,7 +242,7 @@ msgstr "Control ISO"
 #. module: grcbit_iso27001
 #: model:ir.model.fields,field_description:grcbit_iso27001.field_statement_applicability__is_applicable
 msgid "Is Applicable?"
-msgstr "Es aplicable?"
+msgstr "¿Es aplicable?"
 
 #. module: grcbit_iso27001
 #: model:ir.model.fields,field_description:grcbit_iso27001.field_control_category____last_update

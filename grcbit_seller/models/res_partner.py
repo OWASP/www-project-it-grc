@@ -176,14 +176,6 @@ class ResPartnerGRC(models.Model):
                                 <div class="col-3"><span style="font-weight:bold;">ZT URL ZTrust:</span></div>
                                 <div class="col-3"><span style="text-align:right;">""" + str(rec.url_zt_ztrust)+ """</span></div>
                             </div>
-                            <div class="row" style="border: 1px solid;">
-                                <div class="col-3"><span style="font-weight:bold;">ZT User:</span></div>
-                                <div class="col-3"><span style="text-align:right;">admin</span></div>
-                            </div>
-                            <div class="row" style="border: 1px solid;">
-                                <div class="col-3"><span style="font-weight:bold;">ZT Password:</span></div>
-                                <div class="col-3"><span style="text-align:right;">""" + str(rec.postgres_pwd)+ """</span></div>
-                            </div>
                         </div>
                     """
                 })
