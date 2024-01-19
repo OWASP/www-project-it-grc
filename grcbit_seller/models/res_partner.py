@@ -89,7 +89,7 @@ class ResPartnerGRC(models.Model):
 
     def generate_jwt(self):
         for rec in self:
-            attach = self.env['ir.attachment'].create({
+            attach = self.env['ir.attachment'].sudo().create({
                 'res_id': rec.id,
                 'res_model': 'res.partner',
                 'type': 'binary',
@@ -103,7 +103,7 @@ class ResPartnerGRC(models.Model):
     def sent_email_manual(self):
         for rec in self:
             if rec.state == 'active':
-                mail_pool = self.env['mail.mail']
+                mail_pool = self.sudo().env['mail.mail']
                 values = {}
                 values.update({
                     'subject': 'ThreatFend Client Data',
@@ -180,12 +180,12 @@ class ResPartnerGRC(models.Model):
                     """
                 })
                 
-                msg_id = mail_pool.create(values)
+                msg_id = mail_pool.sudo().create(values)
                 if msg_id:
-                    mail_pool.send([msg_id])
+                    mail_pool.sudo().send([msg_id])
                     mail_template = self.env.ref('grcbit_seller.customer_data_email_template')
-                    mail_template.attachment_ids = [(6, 0, [rec.generate_jwt()])]
-                    mail_template.send_mail(self.id, raise_exception=False, force_send=True)
+                    mail_template.sudo().attachment_ids = [(6, 0, [rec.generate_jwt()])]
+                    mail_template.sudo().send_mail(self.id, raise_exception=False, force_send=True)
                     rec.email_sent = True
             else:
                 return
