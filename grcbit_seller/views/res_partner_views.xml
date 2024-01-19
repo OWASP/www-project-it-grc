@@ -13,6 +13,15 @@
           <field name="state"/>
           <field name="reseller_create"/>
         </xpath>
+        <xpath expr="//field[@name='phone']" position="replace">
+          <field name="dns_domain"/>
+        </xpath>
+        <xpath expr="//field[@name='city']" position="replace">
+          <field name="create_date"/>
+        </xpath>
+        <xpath expr="//field[@name='country_id']" position="replace">
+          <field name="email_sent"/>
+        </xpath>
       </field>
     </record>
 
@@ -48,7 +57,7 @@
               <group string="GRC">
                 <field name="grc_web_port" attrs="{'readonly': [('is_admin','=', False)]}"/>
                 <field name="dns_domain" force_save="1" attrs="{'readonly': [('is_admin','=', False)]}"/>
-                <field name="dns_subdomain"/>
+                <!-- <field name="dns_subdomain"/> -->
               </group>
             </group>
             <group string="XDR">
