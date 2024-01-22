@@ -114,7 +114,7 @@ class ResPartnerGRC(models.Model):
                     'body': """
                         <span style="font-weight:bold;">
                             Dear client,<br/>
-                            This email contains the information needed to use NotifyNProtect platform.
+                            This email contains the information needed to use GRC + XDR + ZTrust platform.
                             <br/>
                             We recomend you to change the provided passwords.
                         </span><br/>
