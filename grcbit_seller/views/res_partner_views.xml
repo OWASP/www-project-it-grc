@@ -22,6 +22,10 @@
         <xpath expr="//field[@name='country_id']" position="replace">
           <field name="email_sent"/>
         </xpath>
+        <xpath expr="//field[@name='activity_ids']" position="replace">
+          <field name="xdr_endpoints"/>
+          <field name="ztrust_services"/>
+        </xpath>
       </field>
     </record>
 
@@ -95,7 +99,9 @@
               <group>
                 <field name="zt_cpu" attrs="{'readonly': [('is_admin','=', False)]}"/>
                 <field name="zt_ram" attrs="{'readonly': [('is_admin','=', False)]}"/>
-                <field name="update_limits" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="update_limits" attrs="{'readonly': [('is_admin','=', False)]}"/>.
+                <field name="xdr_endpoints"/>
+                <field name="ztrust_services"/>
               </group>
             </group>
             <group string="Output">

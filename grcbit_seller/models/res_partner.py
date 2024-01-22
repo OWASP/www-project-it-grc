@@ -86,6 +86,31 @@ class ResPartnerGRC(models.Model):
     zt_cpu = fields.Char(string="ZT CPU", default="4")
     zt_ram = fields.Char(string="ZT RAM", default="4") 
     update_limits = fields.Boolean(string="Update Limits", default=False)
+    xdr_endpoints = fields.Integer(string="XDR Endpoints")
+    ztrust_services = fields.Integer(string="ZTrust Services")
+
+    @api.onchange('endpoints','xdr_endpoints','ztrust_services')
+    def get_endpoints_value(self):
+        for rec in self:
+            temp = 0
+            endpoint = rec.endpoints
+            xdr_end = rec.xdr_endpoints
+            zt_serv = rec.ztrust_services
+            sum = xdr_end + zt_serv
+            if endpoint == 'up50':
+                temp = 50
+            elif endpoint == 'up100':
+                temp = 100
+            elif endpoint == 'up150':
+                temp = 150
+            elif endpoint == 'up200':
+                temp = 200
+            elif endpoint == 'up250':
+                temp = 250
+            if sum > temp:
+                raise UserError("The sum of the XDR Enpoint and ZTrust Services is greater than the one selected in the Endpoints field")
+            else:
+                return
 
     def generate_jwt(self):
         for rec in self:
