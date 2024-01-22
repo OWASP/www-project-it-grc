@@ -100,7 +100,7 @@
             </group>
             <group string="Output">
               <group>
-                <field name="email_sent" readonly="1"/>
+                <field name="email_sent" attrs="{'readonly': [('is_admin','=', False)]}"/>
                 <field name="xdr_index_container" readonly="1"/>
                 <field name="xdr_server_container" readonly="1"/>
                 <field name="xdr_dash_container" readonly="1"/>
