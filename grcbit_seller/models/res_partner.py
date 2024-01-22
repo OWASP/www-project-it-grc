@@ -421,7 +421,7 @@ class ResPartnerGRC(models.Model):
             # )
             random_pass = (
                 [
-                    random.choice("@!%*?&-_"),
+                    random.choice("@$!%*?-_"),
                     random.choice(string.digits),
                     random.choice(string.ascii_lowercase),
                     random.choice(string.ascii_uppercase),
@@ -430,7 +430,7 @@ class ResPartnerGRC(models.Model):
                     random.choice(
                         string.ascii_lowercase
                         + string.ascii_uppercase
-                        + "@!%*?&-_"
+                        + "@$!%*?-_"
                         + string.digits
                     ) for i in range(12)
                 ]
