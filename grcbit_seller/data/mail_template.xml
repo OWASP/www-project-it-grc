@@ -6,11 +6,11 @@
       <field name="model_id" ref="base.model_res_partner"/>
       <!-- <field name="email_from">"beto.gr7@gmail.com" </field> -->
       <field name="email_to">"{{ object.email }}"</field>
-      <field name="subject">ThreatFend Client Data</field>
+      <field name="subject">grc4ciso</field>
       <field name="body_html" type="html">
         <strong>
           Dear client,<br/>
-          This email contains the information needed to use GRC + XDR + ZTrust platform.
+          This email contains the information needed to use grc4ciso platform.
           <br/>
           We recomend you to change the provided passwords.
         </strong><br/>

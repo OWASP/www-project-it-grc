@@ -52,13 +52,22 @@ class ResPartnerGRC(models.Model):
     dns_domain = fields.Char(string="DNS Domain", default=lambda x:x.get_dns_domain())
     is_openziti = fields.Boolean(string="OpenZiti", default=True)
 
-    endpoints = fields.Selection([
+    xdr_ends = fields.Selection([
+        ('zero','0'),
+        ('up25','Up to 25'),
         ('up50','Up to 50'),
         ('up100','Up to 100'),
-        ('up150','Up to 150'),
-        ('up200','Up to 200'),
         ('up250','Up to 250'),
-    ], string="End Points")
+        ('up500','Up to 500'),
+    ], string="XDR Endpoints")
+    zt_serv = fields.Selection([
+        ('zero','0'),
+        ('up25','Up to 25'),
+        ('up50','Up to 50'),
+        ('up100','Up to 100'),
+        ('up250','Up to 250'),
+        ('up500','Up to 500'),
+    ], string="ZTrust Endpoints")
     network = fields.Char(string="Network")
     ztrust_console = fields.Char(string="ZTrust Console")
     ztrust_router = fields.Char(string="ZTrust Router")
@@ -88,29 +97,55 @@ class ResPartnerGRC(models.Model):
     update_limits = fields.Boolean(string="Update Limits", default=False)
     xdr_endpoints = fields.Integer(string="XDR Endpoints")
     ztrust_services = fields.Integer(string="ZTrust Services")
+    alert_enable_xdr = fields.Boolean(string="Alert Enable XDR")
+    alert_enable_zt = fields.Boolean(string="Alert Enable ZT")
+    is_demo = fields.Boolean(string="Demo", default=False)
 
-    @api.onchange('endpoints','xdr_endpoints','ztrust_services')
-    def get_endpoints_value(self):
+    @api.onchange('xdr_ends','xdr_endpoints')
+    def get_xdr_endpoints_value(self):
         for rec in self:
             temp = 0
-            endpoint = rec.endpoints
+            limit = rec.xdr_ends
             xdr_end = rec.xdr_endpoints
-            zt_serv = rec.ztrust_services
-            sum = xdr_end + zt_serv
-            if endpoint == 'up50':
+            if limit == 'zero':
+                temp = 0
+            if limit == 'up25':
+                temp = 25
+            if limit == 'up50':
                 temp = 50
-            elif endpoint == 'up100':
+            elif limit == 'up100':
                 temp = 100
-            elif endpoint == 'up150':
-                temp = 150
-            elif endpoint == 'up200':
-                temp = 200
-            elif endpoint == 'up250':
+            elif limit == 'up250':
                 temp = 250
-            if sum > temp:
-                raise UserError("The sum of the XDR Enpoint and ZTrust Services is greater than the one selected in the Endpoints field")
+            if limit == 'up500':
+                temp = 500
+            if xdr_end > temp:
+                rec.alert_enable_xdr = True
             else:
-                return
+                rec.alert_enable_xdr = False
+
+    @api.onchange('zt_serv','ztrust_services')
+    def get_zts_endpoints_value(self):
+        for rec in self:
+            temp = 0
+            limit = rec.zt_serv
+            zt_end = rec.ztrust_services
+            if limit == 'zero':
+                temp = 0
+            if limit == 'up25':
+                temp = 25
+            if limit == 'up50':
+                temp = 50
+            elif limit == 'up100':
+                temp = 100
+            elif limit == 'up250':
+                temp = 250
+            if limit == 'up500':
+                temp = 500
+            if zt_end > temp:
+                rec.alert_enable_zt = True
+            else:
+                rec.alert_enable_zt = False
 
     def generate_jwt(self):
         for rec in self:
@@ -131,7 +166,7 @@ class ResPartnerGRC(models.Model):
                 mail_pool = self.sudo().env['mail.mail']
                 values = {}
                 values.update({
-                    'subject': 'ThreatFend Client Data',
+                    'subject': 'grc4ciso',
                     'partner_ids': [(6, 0, [rec.id])],
                     'body_html': 'body',
                     'res_id': rec.id,
@@ -139,7 +174,7 @@ class ResPartnerGRC(models.Model):
                     'body': """
                         <span style="font-weight:bold;">
                             Dear client,<br/>
-                            This email contains the information needed to use GRC + XDR + ZTrust platform.
+                            This email contains the information needed to use grc4ciso platform.
                             <br/>
                             We recomend you to change the provided passwords.
                         </span><br/>
