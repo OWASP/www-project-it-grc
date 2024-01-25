@@ -18,13 +18,13 @@
         'security/ir.model.access.csv',
 
         #data
-        'data/impact_level_data.xml',
-        'data/probability_level_data.xml',
-        'data/risk_classification_data.xml',
-        'data/risk_level_data.xml',
-        'data/inherent_risk_level_data.xml',
-        'data/control_evaluation_criteria_data.xml',
-        'data/residual_risk_level_data.xml',
+        # 'data/impact_level_data.xml',
+        # 'data/probability_level_data.xml',
+        # 'data/risk_classification_data.xml',
+        # 'data/risk_level_data.xml',
+        # 'data/inherent_risk_level_data.xml',
+        # 'data/control_evaluation_criteria_data.xml',
+        # 'data/residual_risk_level_data.xml',
 
         #views
         'views/risk_management_views.xml',
