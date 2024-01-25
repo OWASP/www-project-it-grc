@@ -41,7 +41,11 @@
           <attribute name="delete">0</attribute>
         </xpath> -->
         <xpath expr="//field[@name='vat']" position="after">
-          <field name="endpoints"/>
+          <field name="xdr_ends"/>
+          <field name="zt_serv"/>
+          <field name="alert_enable_xdr" invisible="1"/>
+          <field name="alert_enable_zt" invisible="1"/>
+          <field name="is_demo"/>
         </xpath>
         <xpath expr="//notebook" position="inside">
           <page string="Threat Fend" name="grc_seller" groups="grcbit_seller.group_admin_seller,grcbit_seller.group_reseller_admin">
@@ -142,6 +146,10 @@
         <xpath expr="//sheet" position="before">
           <header>
             <button name="sent_email_manual" type="object" string="Send Email Data client" class="btn btn-success"/>
+            <div class="alert alert-warning text-center o_form_header" role="alert" attrs="{'invisible': [('alert_enable_xdr','=', False),('alert_enable_zt','=', False)]}">
+              <div attrs="{'invisible': [('alert_enable_xdr','=', False)]}"><strong>The XDR Endpoint is greater than the one selected in the Endpoints field</strong></div>
+              <div attrs="{'invisible': [('alert_enable_zt','=', False)]}"><strong>The ZTrust Endpoint is greater than the one selected in the Endpoints field</strong></div>
+            </div>
           </header>
         </xpath>
      
