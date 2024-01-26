@@ -445,7 +445,7 @@ class ResPartnerGRC(models.Model):
         if field == 'postgres':
             random_pass = "".join(
                 random.choices(
-                    string.ascii_uppercase + string.ascii_lowercase + string.digits + "%*?-_", k=16,
+                    string.ascii_uppercase + string.ascii_lowercase + string.digits + "%*?_", k=16,
                 )
             )
         elif field == 'xdr':
