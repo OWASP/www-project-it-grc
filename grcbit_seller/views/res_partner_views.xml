@@ -53,7 +53,7 @@
             <group>
               <field name="is_admin" invisible="1"/>
               <field name="client_system" force_save="1" attrs="{'readonly': [('is_admin','=', False)]}"/>
-              <field name="state"/>
+              <field name="state" attrs="{'readonly': [('is_admin','=', False)]}"/>
               <field name="activate_date" attrs="{'readonly': [('is_admin','=', False)]}"/>
               <field name="is_openziti" attrs="{'readonly': [('is_admin','=', False)]}"/>
             </group>
