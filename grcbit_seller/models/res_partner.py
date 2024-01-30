@@ -59,7 +59,7 @@ class ResPartnerGRC(models.Model):
         ('up100','Up to 100'),
         ('up250','Up to 250'),
         ('up500','Up to 500'),
-    ], string="XDR Endpoints")
+    ], string="XDR Endpoints", default="zero")
     zt_serv = fields.Selection([
         ('zero','0'),
         ('up25','Up to 25'),
@@ -67,7 +67,7 @@ class ResPartnerGRC(models.Model):
         ('up100','Up to 100'),
         ('up250','Up to 250'),
         ('up500','Up to 500'),
-    ], string="ZTrust Endpoints")
+    ], string="ZTrust Endpoints", default="zero")
     network = fields.Char(string="Network")
     ztrust_console = fields.Char(string="ZTrust Console")
     ztrust_router = fields.Char(string="ZTrust Router")
