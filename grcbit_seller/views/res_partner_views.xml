@@ -46,6 +46,7 @@
           <field name="alert_enable_xdr" invisible="1"/>
           <field name="alert_enable_zt" invisible="1"/>
           <field name="is_demo"/>
+          <field name="custom_lang"/>
         </xpath>
         <xpath expr="//notebook" position="inside">
           <page string="Threat Fend" name="grc_seller" groups="grcbit_seller.group_admin_seller,grcbit_seller.group_reseller_admin">

@@ -100,6 +100,9 @@ class ResPartnerGRC(models.Model):
     alert_enable_xdr = fields.Boolean(string="Alert Enable XDR")
     alert_enable_zt = fields.Boolean(string="Alert Enable ZT")
     is_demo = fields.Boolean(string="Demo", default=False)
+    custom_lang = fields.Selection([
+        ('en','English'),
+        ('es','Spanish')], string="Language")
 
     @api.onchange('xdr_ends','xdr_endpoints')
     def get_xdr_endpoints_value(self):
