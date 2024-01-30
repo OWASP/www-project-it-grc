@@ -3,6 +3,7 @@ import logging
 import re
 import random
 import string
+import base64
 
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError, ValidationError, AccessError
@@ -23,6 +24,7 @@ class ResPartnerGRC(models.Model):
     activate_date = fields.Date(string="Activate date")
     db_postgres_port = fields.Char(string="DB Postgres Port (5432)", default= lambda x: x._set_default_port('db_postgres_port', int(1000), int(5000))) # de 1000 a 5000
     # db_ssh_port = fields.Char(string="DB SSH Port")
+    xdr_pwd_b64 = fields.Char(string="XDR Password Base64", compute="convert_xdr_pwd", store=True)
     postgres_pwd = fields.Char(string="Postgres/ZTrust Password", default=lambda x:x._default_password('postgres'))
     xdr_pwd = fields.Char(string="XDR Password", default=lambda x:x._default_password('xdr'))
     grc_web_port = fields.Char(string="GRC Web Port (8069)", default= lambda x: x._set_default_port('grc_web_port', int(5000), int(9000))) #de 5000 a 9000
@@ -103,6 +105,15 @@ class ResPartnerGRC(models.Model):
     custom_lang = fields.Selection([
         ('en','English'),
         ('es','Spanish')], string="Language")
+    
+    @api.depends('xdr_pwd')
+    def convert_xdr_pwd(self):
+        for rec in self:
+            if rec.xdr_pwd:
+                b = base64.b64encode(bytes(rec.xdr_pwd, 'utf-8')) # bytes
+                base64_str = b.decode('utf-8') # convert bytes to string
+                rec.xdr_pwd_b64 = base64_str
+
 
     @api.onchange('xdr_ends','xdr_endpoints')
     def get_xdr_endpoints_value(self):

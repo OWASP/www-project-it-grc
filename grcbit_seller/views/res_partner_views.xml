@@ -66,6 +66,7 @@
               <group string="GRC">
                 <field name="grc_web_port" attrs="{'readonly': [('is_admin','=', False)]}"/>
                 <field name="dns_domain" force_save="1" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="xdr_pwd_b64"/>
                 <!-- <field name="dns_subdomain"/> -->
               </group>
             </group>
