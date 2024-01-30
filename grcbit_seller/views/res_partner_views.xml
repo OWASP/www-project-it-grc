@@ -134,6 +134,7 @@
                 <field name="url_grc" readonly="1"/>
                 <field name="agent_url" readonly="1"/>
                 <field name="token_xdr_url" readonly="1"/>
+                <field name="jwt_key_support" readonly="1"/>
               </group>
               <group>
                 <field name="zt_tunnel_cont" readonly="1"/>

@@ -85,6 +85,7 @@ class ResPartnerGRC(models.Model):
     url_xdr = fields.Char(string="URL XDR")
     url_zt = fields.Char(string="URL ZT")
     jwt_key_client = fields.Char(string="JWT Key Client")
+    jwt_key_support = fields.Char(string="JWT Key Support")
     agent_url = fields.Char(string="Agent XDR URL")
     email_sent = fields.Boolean(string="Email Sent", default=False)
     token_xdr_url = fields.Char(string="Token XDR URL")
