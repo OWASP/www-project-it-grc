@@ -20,10 +20,6 @@
         <field name="model">document.page</field>
         <field name="arch" type="xml">
             <tree>
-		    	<!-- <header>
-		            <button name="action_print_policy" type="object" string="Imprimir Politica" />
-	            </header> -->
-
                 <field name="name" />
                 <field name="parent_id" />
                 <field name="company_id" groups="base.group_multi_company" />
@@ -51,12 +47,12 @@
                     <field name="active" invisible="1" />
                     <field name="type" invisible="1" />
                     <h1>
-                        <field name="name" placeholder="Nombre de la Politica" />
+                        <field name="name" placeholder="Name" />
                     </h1>
                     <field
                         name="content"
                         widget="html"
-                        placeholder="Documentar lineamientos..."
+                        placeholder="e.g. Once upon a time..."
                         required="1"
                         options="{'safe': True, 'codeview': True, 'collaborative': True}"
                     />
@@ -65,15 +61,10 @@
                             <group>
                                 <group>
                                     <field
-                                        name="owner"
-                                        required="True"
-					widget="many2one_avatar_user"
-                                    />
-                                    <field
                                         name="parent_id"
                                         required="True"
                                         string="Category"
-                                        context="{'default_type':'category'}"
+                                        context="{'default_type':'category', 'form_view_ref': 'document_page.view_category_form'}"
                                     />
                                     <field
                                         name="company_id"
@@ -87,28 +78,18 @@
                                         attrs="{'invisible': [('menu_id','=',False)]}"
                                     />
                                 </group>
-                                <group string="Control de Cambios">
-					<!--
+                                <group string="Revision">
                                     <field
                                         name="draft_name"
                                         placeholder="Rev 01"
                                         required="True"
                                     />
-					-->
                                     <field
                                         name="draft_summary"
-                                        placeholder="Descripcion del cambio..."
+                                        placeholder="eg: Changed ... for ..."
                                         required="True"
                                     />
                                 </group>
-				<!--
-				<group string="Responsable de la Politica">
-                                    <field
-                                        name="owner"
-                                        required="True"
-                                    />
-                                </group>
-				-->
                             </group>
                         </page>
                         <page name="history" string="History">

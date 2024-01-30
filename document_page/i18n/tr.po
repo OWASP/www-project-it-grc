@@ -180,8 +180,8 @@ msgstr "Görünen Ad"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
-msgid "Document History"
-msgstr "Belge Geçmişi"
+msgid "Document Category"
+msgstr "Belge Kategorisi"
 
 #. module: document_page
 #: model:ir.actions.report,name:document_page.report_document_page
@@ -277,7 +277,6 @@ msgstr "İşaretlenirse, yeni mesajlarla ilgilenmeniz gerekir."
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
-#: model:ir.model.fields,help:document_page.field_document_page__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "İşaretlenirse, bazı iletilerde teslim hatası olur."
 
@@ -286,6 +285,11 @@ msgstr "İşaretlenirse, bazı iletilerde teslim hatası olur."
 #: model:ir.model.fields,help:document_page.field_document_page_history__company_id
 msgid "If set, page is accessible only from this company"
 msgstr "Ayarlanırsa, sayfaya yalnızca bu şirketten erişilebilir"
+
+#. module: document_page
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
+msgid "Information"
+msgstr "Bilgi"
 
 #. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_is_follower
@@ -339,13 +343,13 @@ msgid "Manager"
 msgstr "Yöneticisi"
 
 #. module: document_page
+#: model:ir.model,name:document_page.model_ir_ui_menu
 #: model:ir.model.fields,field_description:document_page.field_document_page__menu_id
 msgid "Menu"
 msgstr "Menü"
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Menu Information"
 msgstr "Menü Bilgileri"
 
@@ -410,8 +414,8 @@ msgstr "Eylem Sayısı"
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_needaction_counter
-msgid "Number of messages which requires an action"
-msgstr "İşlem gerektiren mesaj sayısı"
+msgid "Number of messages requiring action"
+msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error_counter
@@ -470,11 +474,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Revision"
 msgstr "Revizyon"
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "SMS Mesaj Teslim hatası"
 
 #. module: document_page
 #. odoo-python
@@ -582,11 +581,14 @@ msgstr "ya da"
 msgid "summary"
 msgstr ""
 
-#~ msgid "Document Category"
-#~ msgstr "Belge Kategorisi"
+#~ msgid "SMS Delivery error"
+#~ msgstr "SMS Mesaj Teslim hatası"
 
-#~ msgid "Information"
-#~ msgstr "Bilgi"
+#~ msgid "Document History"
+#~ msgstr "Belge Geçmişi"
+
+#~ msgid "Number of messages which requires an action"
+#~ msgstr "İşlem gerektiren mesaj sayısı"
 
 #~ msgid "Number of unread messages"
 #~ msgstr "Okunmamış Mesaj Sayacı"

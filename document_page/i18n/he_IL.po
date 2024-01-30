@@ -176,7 +176,7 @@ msgstr ""
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_document_category_filter
-msgid "Document History"
+msgid "Document Category"
 msgstr ""
 
 #. module: document_page
@@ -273,7 +273,6 @@ msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_has_error
-#: model:ir.model.fields,help:document_page.field_document_page__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -281,6 +280,11 @@ msgstr ""
 #: model:ir.model.fields,help:document_page.field_document_page__company_id
 #: model:ir.model.fields,help:document_page.field_document_page_history__company_id
 msgid "If set, page is accessible only from this company"
+msgstr ""
+
+#. module: document_page
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
+msgid "Information"
 msgstr ""
 
 #. module: document_page
@@ -335,13 +339,13 @@ msgid "Manager"
 msgstr ""
 
 #. module: document_page
+#: model:ir.model,name:document_page.model_ir_ui_menu
 #: model:ir.model.fields,field_description:document_page.field_document_page__menu_id
 msgid "Menu"
 msgstr ""
 
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_create_menu
-#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Menu Information"
 msgstr ""
 
@@ -406,7 +410,7 @@ msgstr ""
 
 #. module: document_page
 #: model:ir.model.fields,help:document_page.field_document_page__message_needaction_counter
-msgid "Number of messages which requires an action"
+msgid "Number of messages requiring action"
 msgstr ""
 
 #. module: document_page
@@ -465,11 +469,6 @@ msgstr ""
 #. module: document_page
 #: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
 msgid "Revision"
-msgstr ""
-
-#. module: document_page
-#: model:ir.model.fields,field_description:document_page.field_document_page__message_has_sms_error
-msgid "SMS Delivery error"
 msgstr ""
 
 #. module: document_page

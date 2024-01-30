@@ -22,9 +22,6 @@ class DocumentPage(models.Model):
         default="content",
     )
     active = fields.Boolean(default=True)
-
-    owner = fields.Many2one('res.users', string='Policy Responsible')
-
     parent_id = fields.Many2one(
         "document.page", "Category", domain=[("type", "=", "category")]
     )
@@ -44,7 +41,7 @@ class DocumentPage(models.Model):
     )
 
     draft_summary = fields.Char(
-        string="Descripcion Cambio",
+        string="Summary",
         help="Describe the changes made",
         related="history_head.summary",
         readonly=False,
@@ -97,21 +94,6 @@ class DocumentPage(models.Model):
         compute="_compute_backend_url",
     )
 
-    def action_print_policy(self):
-        data = {}
-        records = []
-        for i in self:
-            record = []
-            record.append(i.name)
-            record.append(i.content)
-            #data['name'] = i.name
-            #data['content'] = i.content
-            records.append(record)
-        data['policy'] = records
-        #docids = self.env['document.page'].search([]).ids
-        #return self.env.ref('module_name.action_student_id_card').report_action(docids, data=data)
-        return self.env.ref('document_page.print_policy').report_action(self, data=data)
-
     @api.depends("menu_id", "parent_id.menu_id")
     def _compute_backend_url(self):
         tmpl = "/web#id={}&model=document.page&view_type=form"
@@ -124,7 +106,7 @@ class DocumentPage(models.Model):
                 action = parent.menu_id.action
                 parent = parent.parent_id
             if action:
-                url += "&action={}".format(action.id)
+                url += f"&action={action.id}"
             rec.backend_url = url
 
     @api.constrains("parent_id")
@@ -140,7 +122,7 @@ class DocumentPage(models.Model):
         ]
         r = ""
         if link:
-            r = '<a href="{}">{}</a>'.format(self.backend_url, self.name)
+            r = f'<a href="{self.backend_url}">{self.name}</a>'
         if index:
             r += "<ul>" + "".join(index) + "</ul>"
         return r
