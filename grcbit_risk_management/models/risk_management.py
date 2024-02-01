@@ -108,14 +108,22 @@ class RiskFactor(models.Model):
         medium_inh = 0
         high_inh = 0
         valdos = []
+        user_lang = self.env.user.lang
+        if user_lang == 'en_US':
+            txt_l = 'Low'
+            txt_m = 'Medium'
+            txt_h = 'High'
+        else:
+            txt_l = 'Bajo'
+            txt_m = 'Medio'
+            txt_h = 'Alto'
         for i in self.env['risk.factor'].search([]):
-            _logger.error("Entro aqui"+str(i.inherent_risk))
             if i.inherent_risk:
-                if i.inherent_risk == 'Low':
+                if i.inherent_risk == txt_l:
                     low_inh += 1
-                if i.inherent_risk == 'Medium':
+                if i.inherent_risk == txt_m:
                     medium_inh += 1
-                if i.inherent_risk == 'High':
+                if i.inherent_risk == txt_h:
                     high_inh += 1
 
                 # val.append(i.inherent_risk)

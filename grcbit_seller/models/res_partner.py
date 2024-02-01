@@ -49,7 +49,7 @@ class ResPartnerGRC(models.Model):
     ziti_edge_router2 = fields.Char(string="Ziti Edge Router (10080)", default= lambda x: x._set_default_port('ziti_edge_router2', int(6000), int(6250))) # de 6000 a 6250 
     ziti_console = fields.Char(string="Ziti Console (8443)", default= lambda x: x._set_default_port('ziti_console', int(6250), int(6500))) # de 6250 a 6500 
     xdr_zt = fields.Char(string="XDR ZT", default= lambda x: x._set_default_port('xdr_zt', int(6500), int(6750))) #6500 a 6750
-    dns_domain = fields.Char(string="DNS Domain", default=lambda x:x.get_dns_domain())
+    dns_domain = fields.Char(string="DNS Domain")
     is_openziti = fields.Boolean(string="OpenZiti", default=True)
 
     xdr_ends = fields.Selection([
@@ -272,6 +272,7 @@ class ResPartnerGRC(models.Model):
 
     is_admin = fields.Boolean(string="is admin", compute="_get_group", store=False)
     _sql_constraints = [
+        ('unique_dns_domain','unique(dns_domain)','DNS Domain already exist.!'),
         ('unique_name','unique(display_name)','Customer name already exist.!'),
         ('unique_db_postgres_port', 'unique(db_postgres_port)', 'DB postgres Port already exist.!'),
         ('unique_grc_web_port', 'unique(grc_web_port)', 'GRC Web Port already exist.!'),
@@ -304,21 +305,6 @@ class ResPartnerGRC(models.Model):
         else:
             return 'pending'
 
-
-    def get_dns_domain(self):
-        if self.env.company.dns_domain:
-            text_base = self.env.company.dns_domain
-        else:
-            text_base = ''
-        partner = self.env['res.partner'].search([('dns_domain','!=','')], limit=1, order="create_date DESC")
-        if not partner:
-            value = text_base + '1'
-        else:
-            letters = partner.dns_domain.rstrip('0123456789')
-            numbers = partner.dns_domain[len(letters):]
-            value = text_base + str(int(numbers) + 1)
-
-        return value
 
     def _set_little_princess_field(self):
         partners = self.env['res.partner'].search([('xdr_indexer_port','>=',3500)], order="xdr_indexer_port DESC")
@@ -396,13 +382,15 @@ class ResPartnerGRC(models.Model):
                 else:
                     raise ValidationError("Ports must be digits only. Incorrect value '%s'" % field)
 
-    @api.onchange('name')
+    @api.onchange('name','dns_domain')
     def _onchange_default_client_system(self):
         for rec in self:
             if rec.name:
                 rec.client_system = rec.name.replace(' ','_').lower()
+                rec.dns_domain = rec.name.replace(' ','_').lower()
             else:
                 rec.client_system = ''
+                rec.dns_domain = ''
         
     def write(self,vals):
         res = super(ResPartnerGRC, self).write(vals)
