@@ -115,9 +115,9 @@
               <group>
                 <field name="zt_cpu" attrs="{'readonly': [('is_admin','=', False)]}"/>
                 <field name="zt_ram" attrs="{'readonly': [('is_admin','=', False)]}"/>
-                <field name="update_limits" attrs="{'readonly': [('is_admin','=', False)]}"/>.
-                <field name="xdr_endpoints"/>
-                <field name="ztrust_services"/>
+                <field name="update_limits" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="xdr_endpoints" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="ztrust_services" attrs="{'readonly': [('is_admin','=', False)]}"/>
               </group>
             </group>
             <group string="Output">
