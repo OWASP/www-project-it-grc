@@ -49,7 +49,7 @@
           <field name="custom_lang"/>
         </xpath>
         <xpath expr="//notebook" position="inside">
-          <page string="grc4ciso" name="grc_seller" groups="grcbit_seller.group_admin_seller,grcbit_seller.group_reseller_admin">
+          <page string="grc4ciso" name="grc_seller" groups="base.group_system,grcbit_seller.group_admin_seller,grcbit_seller.group_reseller_admin">
             <group>
               <field name="is_admin" invisible="1"/>
               <field name="client_system" force_save="1" required="1" attrs="{'readonly': [('is_admin','=', False)]}"/>

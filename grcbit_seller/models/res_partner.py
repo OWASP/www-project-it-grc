@@ -363,13 +363,19 @@ class ResPartnerGRC(models.Model):
     @api.onchange('db_postgres_port')
     def _onchange_is_admin_new(self):
         for rec in self:
-            flag = self.env.user.has_group('grcbit_seller.group_admin_seller')
-            rec.is_admin = flag
+            # flag = self.env.user.has_group('grcbit_seller.group_admin_seller')
+            if self.env.user.has_group('grcbit_seller.group_admin_seller') or self.env.user.has_group('base.group_system'):
+                rec.is_admin = True
+            else:
+                rec.is_admin = False
 
     def _get_group(self):
         for rec in self:
-            flag = self.env.user.has_group('grcbit_seller.group_admin_seller')
-            rec.is_admin = flag
+            # flag = self.env.user.has_group('grcbit_seller.group_admin_seller')
+            if self.env.user.has_group('grcbit_seller.group_admin_seller') or self.env.user.has_group('base.group_system'):
+                rec.is_admin = True
+            else:
+                rec.is_admin = False
 
     def just_range(self, field, min_value, max_value):
         for rec in self:
