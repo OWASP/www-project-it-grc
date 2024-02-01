@@ -95,6 +95,16 @@
                 <field name="xdr_zt" attrs="{'readonly': [('is_admin','=', False)]}"/>
               </group>
             </group>
+            <group string="SSH">
+              <group>
+                <field name="ssh_zt_console" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="ssh_zt_controller" attrs="{'readonly': [('is_admin','=', False)]}"/>
+              </group>
+              <group>
+                <field name="xdr_indexer" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="xdr_manager" attrs="{'readonly': [('is_admin','=', False)]}"/>
+              </group>
+            </group>
             <group string="Container Limit">
               <group>
                 <field name="grc_cpu" attrs="{'readonly': [('is_admin','=', False)]}"/>

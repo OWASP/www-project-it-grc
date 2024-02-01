@@ -22,35 +22,33 @@ class ResPartnerGRC(models.Model):
         ('reactive','Reactive'),
     ], string="Status", default=lambda x : x.get_state_bygroup())
     activate_date = fields.Date(string="Activate date")
-    db_postgres_port = fields.Char(string="DB Postgres Port (5432)", default= lambda x: x._set_default_port('db_postgres_port', int(1000), int(5000))) # de 1000 a 5000
-    # db_ssh_port = fields.Char(string="DB SSH Port")
+    db_postgres_port = fields.Char(string="DB Postgres Port (5432)", default= lambda x: x._set_default_port('db_postgres_port', int(3000), int(3250))) # de 3000 a 3250
     xdr_pwd_b64 = fields.Char(string="XDR Password Base64", compute="convert_xdr_pwd", store=True)
     postgres_pwd = fields.Char(string="Postgres/ZTrust Password", default=lambda x:x._default_password('postgres'))
     xdr_pwd = fields.Char(string="XDR Password", default=lambda x:x._default_password('xdr'))
-    grc_web_port = fields.Char(string="GRC Web Port (8069)", default= lambda x: x._set_default_port('grc_web_port', int(5000), int(9000))) #de 5000 a 9000
-    # grc_ssh_port = fields.Char(string="GRC SSH Port")
+    grc_web_port = fields.Char(string="GRC Web Port (8069)", default= lambda x: x._set_default_port('grc_web_port', int(3250), int(3500))) #de 3250 a 3500
     grc_container_id = fields.Char(string="GRC Container ID")
     psql_container_id = fields.Char(string="PSQL Container ID")
     xdr_index_container = fields.Char(string="XDR Indexer Container ID")
     xdr_server_container = fields.Char(string="XDR Server Container ID")
     xdr_dash_container = fields.Char(string="XDR Dashboard Container ID")
 
-    xdr_indexer_port = fields.Char(string="XDR Indexer Port (9200)",default=lambda c: c._set_little_princess_field())# default= lambda x: x._set_default_port('xdr_indexer_port', int(9000), int(13000))) #de 9000 a 13000
-    xdr_dashboard_port = fields.Char(string="XDR Dashboard Port (5601)", default= lambda x: x._set_default_port('xdr_dashboard_port', int(13000), int(17000))) # de 13000 a 17000
-    xdr_dashboard_port2 = fields.Char(string="XDR Dashboard Port (5602)", default= lambda x: x._set_default_port('xdr_dashboard_port2', int(33000), int(37000))) # de 33000 a 37000
+    xdr_indexer_port = fields.Char(string="XDR Indexer Port (9200)",default=lambda c: c._set_little_princess_field()) #de 9000 a 13000
+    xdr_dashboard_port = fields.Char(string="XDR Dashboard Port (5601)", default= lambda x: x._set_default_port('xdr_dashboard_port', int(3750), int(4000))) # de 3750 a 4000
+    xdr_dashboard_port2 = fields.Char(string="XDR Dashboard Port (5602)", default= lambda x: x._set_default_port('xdr_dashboard_port2', int(4000), int(4250))) # de 4000 a 4250
 
-    xdr_manager_port1 = fields.Char(string="XDR Manager Port (1514)", default= lambda x: x._set_default_port('xdr_manager_port1', int(17000), int(21000))) #de 17000 a 21000
-    xdr_manager_port2 = fields.Char(string="XDR Manager Port (1515)", default= lambda x: x._set_default_port('xdr_manager_port2', int(21000), int(25000))) #de 21000 a 25000
-    xdr_manager_port3 = fields.Char(string="XDR Manager Port (514/udp)", default= lambda x: x._set_default_port('xdr_manager_port3', int(25000), int(29000))) #de 25000 a 29000
-    xdr_manager_port4 = fields.Char(string="XDR Manager Port (55000)", default= lambda x: x._set_default_port('xdr_manager_port4', int(29000), int(33000))) #de 29000 a 33000
+    xdr_manager_port1 = fields.Char(string="XDR Manager Port (1514)", default= lambda x: x._set_default_port('xdr_manager_port1', int(4250), int(4500))) #de 4250 a 4500
+    xdr_manager_port2 = fields.Char(string="XDR Manager Port (1515)", default= lambda x: x._set_default_port('xdr_manager_port2', int(4500), int(4750))) #de 4500 a 4750
+    xdr_manager_port3 = fields.Char(string="XDR Manager Port (514/udp)", default= lambda x: x._set_default_port('xdr_manager_port3', int(4750), int(5000))) #de 4750 a 5000
+    xdr_manager_port4 = fields.Char(string="XDR Manager Port (55000)", default= lambda x: x._set_default_port('xdr_manager_port4', int(5000), int(5250))) #de 5000 a 5250
 
     #ZITI PORTS
-    ziti_controller_port1 = fields.Char(string="Ziti Controller Port (1280)", default= lambda x: x._set_default_port('ziti_controller_port1', int(37000), int(41000))) # de 37000 a 41000 
-    xiti_controller_port2 = fields.Char(string="Ziti Controller Port (6262)", default= lambda x: x._set_default_port('xiti_controller_port2', int(41000), int(45000))) # de 41000 a 45000 
-    ziti_edge_router1 = fields.Char(string="Ziti Edge Router (3022)", default= lambda x: x._set_default_port('ziti_edge_router1', int(45000), int(49000))) # de 45000 a 49000 
-    ziti_edge_router2 = fields.Char(string="Ziti Edge Router (10080)", default= lambda x: x._set_default_port('ziti_edge_router2', int(49000), int(53000))) # de 49000 a 53000 
-    ziti_console = fields.Char(string="Ziti Console (8443)", default= lambda x: x._set_default_port('ziti_console', int(53000), int(57000))) # de 53000 a 57000 
-    xdr_zt = fields.Char(string="XDR ZT", default= lambda x: x._set_default_port('xdr_zt', int(57000), int(60000))) #57000 a 60000
+    ziti_controller_port1 = fields.Char(string="Ziti Controller Port (1280)", default= lambda x: x._set_default_port('ziti_controller_port1', int(5250), int(5500))) # de 5250 a 5500 
+    xiti_controller_port2 = fields.Char(string="Ziti Controller Port (6262)", default= lambda x: x._set_default_port('xiti_controller_port2', int(5500), int(5750))) # de 5500 a 5750 
+    ziti_edge_router1 = fields.Char(string="Ziti Edge Router (3022)", default= lambda x: x._set_default_port('ziti_edge_router1', int(5750), int(6000))) # de 5750 a 6000 
+    ziti_edge_router2 = fields.Char(string="Ziti Edge Router (10080)", default= lambda x: x._set_default_port('ziti_edge_router2', int(6000), int(6250))) # de 6000 a 6250 
+    ziti_console = fields.Char(string="Ziti Console (8443)", default= lambda x: x._set_default_port('ziti_console', int(6250), int(6500))) # de 6250 a 6500 
+    xdr_zt = fields.Char(string="XDR ZT", default= lambda x: x._set_default_port('xdr_zt', int(6500), int(6750))) #6500 a 6750
     dns_domain = fields.Char(string="DNS Domain", default=lambda x:x.get_dns_domain())
     is_openziti = fields.Boolean(string="OpenZiti", default=True)
 
@@ -106,6 +104,12 @@ class ResPartnerGRC(models.Model):
     custom_lang = fields.Selection([
         ('en','English'),
         ('es','Spanish')], string="Language")
+
+    #SSH
+    ssh_zt_console = fields.Char(string="SSH ZT Console", default=lambda r: r._set_default_port('ssh_zt_console', int(2000), int(2250)))
+    ssh_zt_controller = fields.Char(string="SSH ZT Controller", default=lambda r: r._set_default_port('ssh_zt_controller', int(2250), int(2500)))
+    xdr_indexer = fields.Char(string="XDR Indexer", default=lambda r: r._set_default_port('xdr_indexer', int(2500), int(2750)))
+    xdr_manager = fields.Char(string="XDR Manager", default=lambda r: r._set_default_port('xdr_manager', int(2750), int(3000)))
     
     @api.depends('xdr_pwd')
     def convert_xdr_pwd(self):
@@ -317,9 +321,9 @@ class ResPartnerGRC(models.Model):
         return value
 
     def _set_little_princess_field(self):
-        partners = self.env['res.partner'].search([('xdr_indexer_port','>=',9000)], order="xdr_indexer_port DESC")
+        partners = self.env['res.partner'].search([('xdr_indexer_port','>=',3500)], order="xdr_indexer_port DESC")
         if not partners:
-            return 9000
+            return 3500
         else:
             val = int(partners[0].xdr_indexer_port) + 1
             return val
@@ -360,7 +364,14 @@ class ResPartnerGRC(models.Model):
                 val = int(partners[0].ziti_console) + 1
             if field == 'xdr_zt':
                 val = int(partners[0].xdr_zt) + 1
-
+            if field == 'ssh_zt_console':
+                val = int(partners[0].ssh_zt_console) + 1
+            if field == 'ssh_zt_controller':
+                val = int(partners[0].ssh_zt_controller) + 1
+            if field == 'xdr_indexer':
+                val = int(partners[0].xdr_indexer) + 1
+            if field == 'xdr_manager':
+                val = int(partners[0].xdr_manager) + 1
             return val
 
     @api.onchange('db_postgres_port')
@@ -395,22 +406,27 @@ class ResPartnerGRC(models.Model):
         
     def write(self,vals):
         res = super(ResPartnerGRC, self).write(vals)
-        
-        self.just_range(self.db_postgres_port, 1000, 5000)
-        self.just_range(self.grc_web_port, 5000, 9000)
-        self.just_range(self.xdr_indexer_port, 9000, 13000)
-        self.just_range(self.xdr_dashboard_port, 13000, 17000)
-        self.just_range(self.xdr_dashboard_port2, 33000, 37000)
-        self.just_range(self.xdr_manager_port1, 17000, 21000)
-        self.just_range(self.xdr_manager_port2, 21000, 25000)
-        self.just_range(self.xdr_manager_port3, 25000, 29000)
-        self.just_range(self.xdr_manager_port4, 29000, 33000)
-        self.just_range(self.ziti_controller_port1, 37000, 41000)
-        self.just_range(self.xiti_controller_port2, 41000, 45000)
-        self.just_range(self.ziti_edge_router1, 45000, 49000)
-        self.just_range(self.ziti_edge_router2, 49000, 53000)
-        self.just_range(self.ziti_console, 53000, 57000)
-        self.just_range(self.xdr_zt, 57000, 60000)
+
+        self.just_range(self.ssh_zt_console, 2000, 2250)
+        self.just_range(self.ssh_zt_controller, 2250, 2500)
+        self.just_range(self.xdr_indexer, 2500, 2750)
+        self.just_range(self.xdr_manager, 2750, 3000)
+        self.just_range(self.db_postgres_port, 3000, 3250)
+        self.just_range(self.grc_web_port, 3250, 3500)
+        self.just_range(self.xdr_indexer_port, 3500, 3750)
+        self.just_range(self.xdr_dashboard_port, 3750, 4000)
+        self.just_range(self.xdr_dashboard_port2, 4000, 4250)
+        self.just_range(self.xdr_manager_port1, 4250, 4500)
+        self.just_range(self.xdr_manager_port2, 4500, 4750)
+        self.just_range(self.xdr_manager_port3, 4750, 5000)
+        self.just_range(self.xdr_manager_port4, 5000, 5250)
+        self.just_range(self.ziti_controller_port1, 5250, 5500)
+        self.just_range(self.xiti_controller_port2, 5500, 5750)
+        self.just_range(self.ziti_edge_router1, 5750, 6000)
+        self.just_range(self.ziti_edge_router2, 6000, 6250)
+        self.just_range(self.ziti_console, 6250, 6500)
+        self.just_range(self.xdr_zt, 6500, 6750)
+
         return res
 
     def has_duplicates(self, seq):
