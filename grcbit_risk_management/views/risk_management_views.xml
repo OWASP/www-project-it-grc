@@ -161,8 +161,8 @@
       <field name="arch" type="xml">
         <tree multi_edit="1">
           <field name="active" invisible="1"/>
-          <field name="name" widget="badge" decoration-danger="name=='High'" decoration-warning="name=='Medium'" decoration-success="name=='Low'"/>
-          <field name="value" widget="badge" decoration-danger="name=='High'" decoration-warning="name=='Medium'" decoration-success="name=='Low'"/>
+          <field name="name" widget="badge" decoration-danger="name in ('High','Alto')" decoration-warning="name in ('Medium','Medio')" decoration-success="name in ('Low','Bajo')"/>
+          <field name="value" widget="badge" decoration-danger="name in ('High','Alto')" decoration-warning="name in ('Medium','Medio')" decoration-success="name in ('Low','Bajo')"/>
           <field name="description"/>
         </tree>
       </field>
@@ -229,8 +229,8 @@
       <field name="arch" type="xml">
         <tree multi_edit="1">
           <field name="active" invisible="1"/>
-          <field name="name" widget="badge" decoration-danger="name=='High'" decoration-warning="name=='Medium'" decoration-success="name=='Low'"/>
-          <field name="value" widget="badge" decoration-danger="name=='High'" decoration-warning="name=='Medium'" decoration-success="name=='Low'"/>
+          <field name="name" widget="badge" decoration-danger="name in ('High','Alto')" decoration-warning="name in ('Medium','Medio')" decoration-success="name in ('Low','Bajo')"/>
+          <field name="value" widget="badge" decoration-danger="name in ('High','Alto')" decoration-warning="name in ('Medium','Medio')" decoration-success="name in ('Low','Bajo')"/>
           <field name="description"/>
         </tree>
       </field>
@@ -297,8 +297,8 @@
       <field name="arch" type="xml">
         <tree multi_edit="1">
           <field name="active" invisible="1"/>
-          <field name="name"  widget="badge" decoration-danger="name=='High'" decoration-warning="name=='Medium'" decoration-success="name=='Low'"/>
-          <field name="value" widget="badge" decoration-danger="name=='High'" decoration-warning="name=='Medium'" decoration-success="name=='Low'"/>
+          <field name="name"  widget="badge" decoration-danger="name in ('High','Alto')" decoration-warning="name in ('Medium','Medio')" decoration-success="name in ('Low','Bajo')"/>
+          <field name="value" widget="badge" decoration-danger="name in ('High','Alto')" decoration-warning="name in ('Medium','Medio')" decoration-success="name in ('Low','Bajo')"/>
           <field name="description"/>
         </tree>
       </field>

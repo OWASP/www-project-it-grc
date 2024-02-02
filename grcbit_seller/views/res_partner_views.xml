@@ -49,13 +49,13 @@
           <field name="custom_lang"/>
         </xpath>
         <xpath expr="//notebook" position="inside">
-          <page string="grc4ciso" name="grc_seller" groups="grcbit_seller.group_admin_seller,grcbit_seller.group_reseller_admin">
+          <page string="grc4ciso" name="grc_seller" groups="base.group_system,grcbit_seller.group_admin_seller,grcbit_seller.group_reseller_admin">
             <group>
               <field name="is_admin" invisible="1"/>
-              <field name="client_system" force_save="1" attrs="{'readonly': [('is_admin','=', False)]}"/>
+              <field name="client_system" force_save="1" required="1" attrs="{'readonly': [('is_admin','=', False)]}"/>
               <field name="state" attrs="{'readonly': [('is_admin','=', False)]}"/>
               <field name="activate_date" attrs="{'readonly': [('is_admin','=', False)]}"/>
-              <field name="is_openziti" attrs="{'readonly': [('is_admin','=', False)]}"/>
+              <field name="is_openziti" invisible="1"/>
             </group>
             <group>
               <group string="Database">
@@ -65,7 +65,7 @@
               </group>
               <group string="GRC">
                 <field name="grc_web_port" attrs="{'readonly': [('is_admin','=', False)]}"/>
-                <field name="dns_domain" force_save="1" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="dns_domain" force_save="1" required="1" attrs="{'readonly': [('is_admin','=', False)]}"/>
                 <field name="xdr_pwd_b64"/>
                 <!-- <field name="dns_subdomain"/> -->
               </group>
@@ -95,6 +95,16 @@
                 <field name="xdr_zt" attrs="{'readonly': [('is_admin','=', False)]}"/>
               </group>
             </group>
+            <group string="SSH">
+              <group>
+                <field name="ssh_zt_console" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="ssh_zt_controller" attrs="{'readonly': [('is_admin','=', False)]}"/>
+              </group>
+              <group>
+                <field name="xdr_indexer" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="xdr_manager" attrs="{'readonly': [('is_admin','=', False)]}"/>
+              </group>
+            </group>
             <group string="Container Limit">
               <group>
                 <field name="grc_cpu" attrs="{'readonly': [('is_admin','=', False)]}"/>
@@ -105,9 +115,9 @@
               <group>
                 <field name="zt_cpu" attrs="{'readonly': [('is_admin','=', False)]}"/>
                 <field name="zt_ram" attrs="{'readonly': [('is_admin','=', False)]}"/>
-                <field name="update_limits" attrs="{'readonly': [('is_admin','=', False)]}"/>.
-                <field name="xdr_endpoints"/>
-                <field name="ztrust_services"/>
+                <field name="update_limits" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="xdr_endpoints" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="ztrust_services" attrs="{'readonly': [('is_admin','=', False)]}"/>
               </group>
             </group>
             <group string="Output">

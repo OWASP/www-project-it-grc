@@ -227,7 +227,7 @@
     <record id="action_backend_dashboard_manager" model="ir.actions.act_window">
       <field name="name">XDR Dashboard</field>
       <field name="res_model">backend.dashboard</field>
-      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_mode">kanban,tree</field>
       <field name="groups_id" eval="[(4, ref('backend_iframe.group_dashboard_manager'))]"/>
       <field name="view_ids"
         eval="[(5, 0, 0),
