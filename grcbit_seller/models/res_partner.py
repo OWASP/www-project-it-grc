@@ -252,12 +252,16 @@ class ResPartnerGRC(models.Model):
                                 <div class="col-3"><span style="text-align:right;">""" + str(rec.xdr_pwd)+ """</span></div>
                             </div>
                             <div class="row" style="border: 1px solid;">
-                                <div class="col-3"><span style="font-weight:bold;">Agent URL:</span></div>
+                                <div class="col-3"><span style="font-weight:bold;">XDR Agent URL:</span></div>
                                 <div class="col-3"><span style="text-align:right;">""" + str(rec.agent_url)+ """</span></div>
                             </div>
                             <div class="row" style="border: 1px solid;">
-                                <div class="col-3"><span style="font-weight:bold;">Token XDR URL:</span></div>
+                                <div class="col-3"><span style="font-weight:bold;">XDR API URL:</span></div>
                                 <div class="col-3"><span style="text-align:right;">""" + str(rec.token_xdr_url)+ """</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">XDR API User:</span></div>
+                                <div class="col-3"><span style="text-align:right;">wazuh-wui</span></div>
                             </div>
                             
                             <br/>
