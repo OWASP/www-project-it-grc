@@ -74,29 +74,7 @@
               <field name="risk_factor_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
               <field name="name" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
               <field name="description" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
-	            <field name="estimated_date" />
-              <field name="control_line_ids" widget="section_and_note_one2many" mode="tree" attrs="{ 'readonly': [('state', 'not in', ('draft', 'implemented') )] }"  >
-                <form>
-                  <field name="active" invisible="1" />
-                  <field name="control_design_id" invisible="1" />
-                  <group>
-                    <field name="name" />
-                    <field name="description"  />
-                    <field name="control_periodicity" />
-                    <field name="attachment" widget="many2many_binary" />
-	                  <field name="is_implemented"  widget="boolean_toggle"  />
-                  </group>
-                </form>
-                <tree>
-                  <field name="active" invisible="1" />
-                  <field name="control_design_id" invisible="1" />
-                  <field name="name" />
-                  <field name="description" optional="hide" />
-                  <field name="control_periodicity" />
-                  <field name="attachment" widget="many2many_binary"  />
-                  <field name="is_implemented"  widget="boolean_toggle"  />
-                </tree>
-              </field>      
+	            <field name="estimated_date" />      
               <field name="control_design_criteria_id" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,grcbit_risk_management.group_control_design_evaluation" attrs="{'readonly': [('state', 'not in', ['designed'])]}"  />
               <field name="control_evaluation_criteria_id" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,grcbit_risk_management.group_control_effectiveness_evaluation" attrs="{'readonly': [('state', 'not in', ['implemented'])]}"  />
               <field name="is_key_control" widget="boolean_toggle" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
@@ -112,6 +90,28 @@
               <field name="implementation_date" readonly="1" force_save="1" />
               <field name="approve_date" readonly="1" force_save="1" />
               <field name="rejected_date" readonly="1" force_save="1" />
+              <field name="control_line_ids" widget="section_and_note_one2many" mode="tree" attrs="{ 'readonly': [('state', 'not in', ('draft', 'implemented') )] }"  >
+                <form>
+                  <field name="active" invisible="1" />
+                  <field name="control_design_id" invisible="1" />
+                  <group>
+                    <field name="name" />
+                    <field name="description"  />
+                    <field name="control_periodicity" />
+                    <field name="attachment" widget="many2many_binary" />
+	                  <!-- <field name="is_implemented"  widget="boolean_toggle"  /> -->
+                  </group>
+                </form>
+                <tree>
+                  <field name="active" invisible="1" />
+                  <field name="control_design_id" invisible="1" />
+                  <field name="name" />
+                  <field name="description" optional="hide" />
+                  <field name="control_periodicity" />
+                  <field name="attachment" widget="many2many_binary"  />
+                  <!-- <field name="is_implemented"  widget="boolean_toggle"  /> -->
+                </tree>
+              </field>
             </group>
             <notebook>
               <page string="Control Evidences" name="control_evidence_page">
