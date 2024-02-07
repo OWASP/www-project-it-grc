@@ -45,7 +45,7 @@
           <field name="zt_serv"/>
           <field name="alert_enable_xdr" invisible="1"/>
           <field name="alert_enable_zt" invisible="1"/>
-          <field name="dns_domain_check" invisible="0"/>
+          <field name="dns_domain_check" invisible="1"/>
           <field name="is_demo"/>
           <field name="custom_lang"/>
         </xpath>
