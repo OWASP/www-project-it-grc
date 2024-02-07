@@ -45,6 +45,7 @@
           <field name="zt_serv"/>
           <field name="alert_enable_xdr" invisible="1"/>
           <field name="alert_enable_zt" invisible="1"/>
+          <field name="dns_domain_check" invisible="0"/>
           <field name="is_demo"/>
           <field name="custom_lang"/>
         </xpath>
@@ -162,6 +163,9 @@
             <div class="alert alert-warning text-center o_form_header" role="alert" attrs="{'invisible': [('alert_enable_xdr','=', False),('alert_enable_zt','=', False)]}">
               <div attrs="{'invisible': [('alert_enable_xdr','=', False)]}"><strong>The XDR Endpoint is greater than the one selected in the Endpoints field</strong></div>
               <div attrs="{'invisible': [('alert_enable_zt','=', False)]}"><strong>The ZTrust Endpoint is greater than the one selected in the Endpoints field</strong></div>
+            </div>
+            <div class="alert alert-danger text-center o_form_header" role="alert" attrs="{'invisible': [('dns_domain_check','=', True)]}">
+              <div attrs="{'invisible': [('dns_domain_check','=', True)]}"><strong>The DNS domain is NOT valid</strong></div>
             </div>
           </header>
         </xpath>

@@ -4,6 +4,7 @@ import re
 import random
 import string
 import base64
+import dns.resolver
 
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError, ValidationError, AccessError
@@ -50,6 +51,7 @@ class ResPartnerGRC(models.Model):
     ziti_console = fields.Char(string="Ziti Console (8443)", default= lambda x: x._set_default_port('ziti_console', int(6250), int(6500))) # de 6250 a 6500 
     xdr_zt = fields.Char(string="XDR ZT", default= lambda x: x._set_default_port('xdr_zt', int(6500), int(6750))) #6500 a 6750
     dns_domain = fields.Char(string="DNS Domain")
+    dns_domain_check = fields.Boolean(string="Correct DNS Domain")
     is_openziti = fields.Boolean(string="OpenZiti", default=True)
 
     xdr_ends = fields.Selection([
@@ -388,15 +390,21 @@ class ResPartnerGRC(models.Model):
                 else:
                     raise ValidationError("Ports must be digits only. Incorrect value '%s'" % field)
 
-    @api.onchange('name','dns_domain')
+    @api.onchange('name')
     def _onchange_default_client_system(self):
         for rec in self:
             if rec.name:
                 rec.client_system = rec.name.replace(' ','_').lower()
-                rec.dns_domain = rec.name.replace(' ','_').lower()
             else:
                 rec.client_system = ''
-                rec.dns_domain = ''
+
+    @api.onchange('dns_domain')
+    def _onchange_default_dns_domain(self):
+        for rec in self:
+            if rec.name and not rec.dns_domain:
+                rec.dns_domain = rec.name.replace(' ','_').lower()
+            # else:
+            #     rec.dns_domain = ''
         
     def write(self,vals):
         res = super(ResPartnerGRC, self).write(vals)
@@ -499,6 +507,16 @@ class ResPartnerGRC(models.Model):
             random.shuffle(random_pass)
             random_pass = ''.join(random_pass)
         return random_pass
+
+    @api.onchange('dns_domain')
+    def is_domain_valid(self):
+        for rec in self:
+            try:
+                if dns.resolver.resolve(rec.dns_domain):
+                    rec.dns_domain_check = True
+            except:
+                rec.dns_domain_check = False
+        
 
 class XDRManagerPort(models.Model):
     _name = 'xdr.manager.port'
