@@ -47,7 +47,7 @@ class InherentRiskLevel(models.Model):
     risk_level_id        = fields.Many2one('risk.level', string=_('Risk Level'), required=True)
     risk_level_name      = fields.Char(related='risk_level_id.name', string=_('Risk Level'), required=True)
     description = fields.Text(string=_('Description'), required=True)
-    color = fields.Integer(string=_('Color'), required=True)
+    color = fields.Integer(string=_('Color'))
     active = fields.Boolean(default=True)
 
 class RiskClassification(models.Model):

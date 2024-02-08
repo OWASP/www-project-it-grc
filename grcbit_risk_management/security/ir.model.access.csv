@@ -8,28 +8,31 @@ access_risk_factor_group_control,access.risk.factor.group.control,model_risk_fac
 access_risk_factor_group_compliance,access.risk.factor.group.compliance,model_risk_factor,grcbit_base.group_compliance,1,0,0,0
 access_risk_factor_group_guest,access.risk.factor.group.guest,model_risk_factor,grcbit_base.group_guest,1,0,0,0
 
-access_impact_level_group_grc_admin,access.impact.level.group.grc.admin,model_impact_level,grcbit_base.group_grc_admin,1,1,1,1
-access_impact_level_group_grc_consultant,access.impact.level.group.grc.consultant,model_impact_level,grcbit_base.group_grc_consultant,1,1,1,1
+access_impact_level_group_admin_system,access.impact.level.group.admin.system,model_impact_level,base.group_system,1,1,1,1
+access_impact_level_group_grc_admin,access.impact.level.group.grc.admin,model_impact_level,grcbit_base.group_grc_admin,1,0,0,0
+access_impact_level_group_grc_consultant,access.impact.level.group.grc.consultant,model_impact_level,grcbit_base.group_grc_consultant,1,0,0,0
 access_impact_level_group_asset_management,access.impact.level.group.asset.management,model_impact_level,grcbit_base.group_asset_management,1,0,0,0
-access_impact_level_group_risk_management,access.impact.level.group.risk.management,model_impact_level,grcbit_base.group_risk_management,1,1,1,1
+access_impact_level_group_risk_management,access.impact.level.group.risk.management,model_impact_level,grcbit_base.group_risk_management,1,0,0,0
 access_impact_level_group_isms,access.impact.level.group.isms,model_impact_level,grcbit_base.group_isms,1,0,0,0
 access_impact_level_group_control,access.impact.level.group.control,model_impact_level,grcbit_base.group_control,1,0,0,0
 access_impact_level_group_compliance,access.impact.level.group.compliance,model_impact_level,grcbit_base.group_compliance,1,0,0,0
 access_impact_level_group_guest,access.impact.level.group.guest,model_impact_level,grcbit_base.group_guest,1,0,0,0
 
-access_probability_level_group_grc_admin,access.probability.level.group.grc.admin,model_probability_level,grcbit_base.group_grc_admin,1,1,1,1
-access_probability_level_group_grc_consultant,access.probability.level.group.grc.consultant,model_probability_level,grcbit_base.group_grc_consultant,1,1,1,1
+access_probability_level_group_admin_system,access.probability.level.group.admin.system,model_probability_level,base.group_system,1,1,1,1
+access_probability_level_group_grc_admin,access.probability.level.group.grc.admin,model_probability_level,grcbit_base.group_grc_admin,1,0,0,0
+access_probability_level_group_grc_consultant,access.probability.level.group.grc.consultant,model_probability_level,grcbit_base.group_grc_consultant,1,0,0,0
 access_probability_level_group_asset_management,access.probability.level.group.asset.management,model_probability_level,grcbit_base.group_asset_management,1,0,0,0
-access_probability_level_group_risk_management,access.probability.level.group.risk.management,model_probability_level,grcbit_base.group_risk_management,1,1,1,1
+access_probability_level_group_risk_management,access.probability.level.group.risk.management,model_probability_level,grcbit_base.group_risk_management,1,0,0,0
 access_probability_level_group_isms,access.probability.level.group.isms,model_probability_level,grcbit_base.group_isms,1,0,0,0
 access_probability_level_group_control,access.probability.level.group.control,model_probability_level,grcbit_base.group_control,1,0,0,0
 access_probability_level_group_compliance,access.probability.level.group.compliance,model_probability_level,grcbit_base.group_compliance,1,0,0,0
 access_probability_level_group_guest,access.probability.level.group.guest,model_probability_level,grcbit_base.group_guest,1,0,0,0
 
-access_risk_level_group_grc_admin,access.risk.level.group.grc.admin,model_risk_level,grcbit_base.group_grc_admin,1,1,1,1
-access_risk_level_group_grc_consultant,access.risk.level.group.grc.consultant,model_risk_level,grcbit_base.group_grc_consultant,1,1,1,1
+access_risk_level_group_admin_system,access.risk.level.group.admin.system,model_risk_level,base.group_system,1,1,1,1
+access_risk_level_group_grc_admin,access.risk.level.group.grc.admin,model_risk_level,grcbit_base.group_grc_admin,1,0,0,0
+access_risk_level_group_grc_consultant,access.risk.level.group.grc.consultant,model_risk_level,grcbit_base.group_grc_consultant,1,0,0,0
 access_risk_level_group_asset_management,access.risk.level.group.asset.management,model_risk_level,grcbit_base.group_asset_management,1,0,0,0
-access_risk_level_group_risk_management,access.risk.level.group.risk.management,model_risk_level,grcbit_base.group_risk_management,1,1,1,1
+access_risk_level_group_risk_management,access.risk.level.group.risk.management,model_risk_level,grcbit_base.group_risk_management,1,0,0,0
 access_risk_level_group_isms,access.risk.level.group.isms,model_risk_level,grcbit_base.group_isms,1,0,0,0
 access_risk_level_group_control,access.risk.level.group.control,model_risk_level,grcbit_base.group_control,1,0,0,0
 access_risk_level_group_compliance,access.risk.level.group.compliance,model_risk_level,grcbit_base.group_compliance,1,0,0,0
@@ -44,19 +47,21 @@ access_risk_classification_group_control,access.risk.classification.group.contro
 access_risk_classification_group_compliance,access.risk.classification.group.compliance,model_risk_classification,grcbit_base.group_compliance,1,0,0,0
 access_risk_classification_group_guest,access.risk.classification.group.guest,model_risk_classification,grcbit_base.group_guest,1,0,0,0
 
-access_inherent_risk_level_group_grc_admin,access.inherent.risk.level.group.grc.admin,model_inherent_risk_level,grcbit_base.group_grc_admin,1,1,1,1
-access_inherent_risk_level_group_grc_consultant,access.inherent.risk.level.group.grc.consultant,model_inherent_risk_level,grcbit_base.group_grc_consultant,1,1,1,1
+access_inherent_risk_level_group_admin_system,access.inherent.risk.level.group.admin.system,model_inherent_risk_level,base.group_system,1,1,1,1
+access_inherent_risk_level_group_grc_admin,access.inherent.risk.level.group.grc.admin,model_inherent_risk_level,grcbit_base.group_grc_admin,1,0,0,0
+access_inherent_risk_level_group_grc_consultant,access.inherent.risk.level.group.grc.consultant,model_inherent_risk_level,grcbit_base.group_grc_consultant,1,0,0,0
 access_inherent_risk_level_group_asset_management,access.inherent.risk.level.group.asset.management,model_inherent_risk_level,grcbit_base.group_asset_management,1,0,0,0
-access_inherent_risk_level_group_risk_management,access.inherent.risk.level.group.risk.management,model_inherent_risk_level,grcbit_base.group_risk_management,1,1,1,1
+access_inherent_risk_level_group_risk_management,access.inherent.risk.level.group.risk.management,model_inherent_risk_level,grcbit_base.group_risk_management,1,0,0,0
 access_inherent_risk_level_group_isms,access.inherent.risk.level.group.isms,model_inherent_risk_level,grcbit_base.group_isms,1,0,0,0
 access_inherent_risk_level_group_control,access.inherent.risk.level.group.control,model_inherent_risk_level,grcbit_base.group_control,1,0,0,0
 access_inherent_risk_level_group_compliance,access.inherent.risk.level.group.compliance,model_inherent_risk_level,grcbit_base.group_compliance,1,0,0,0
 access_inherent_risk_level_group_guest,access.inherent.risk.level.group.guest,model_inherent_risk_level,grcbit_base.group_guest,1,0,0,0
 
-access_residual_risk_level_group_grc_admin,access.residual.risk.level.group.grc.admin,model_residual_risk_level,grcbit_base.group_grc_admin,1,1,1,1
-access_residual_risk_level_group_grc_consultant,access.residual.risk.level.group.grc.consultant,model_residual_risk_level,grcbit_base.group_grc_consultant,1,1,1,1
+access_residual_risk_level_group_admin_system,access.residual.risk.level.group.admin.system,model_residual_risk_level,base.group_system,1,1,1,1
+access_residual_risk_level_group_grc_admin,access.residual.risk.level.group.grc.admin,model_residual_risk_level,grcbit_base.group_grc_admin,1,0,0,0
+access_residual_risk_level_group_grc_consultant,access.residual.risk.level.group.grc.consultant,model_residual_risk_level,grcbit_base.group_grc_consultant,1,0,0,0
 access_residual_risk_level_group_asset_management,access.residual.risk.level.group.asset.management,model_residual_risk_level,grcbit_base.group_asset_management,1,0,0,0
-access_residual_risk_level_group_risk_management,access.residual.risk.level.group.risk.management,model_residual_risk_level,grcbit_base.group_risk_management,1,1,1,1
+access_residual_risk_level_group_risk_management,access.residual.risk.level.group.risk.management,model_residual_risk_level,grcbit_base.group_risk_management,1,0,0,0
 access_residual_risk_level_group_isms,access.residual.risk.level.group.isms,model_residual_risk_level,grcbit_base.group_isms,1,0,0,0
 access_residual_risk_level_group_control,access.residual.risk.level.group.control,model_residual_risk_level,grcbit_base.group_control,1,0,0,0
 access_residual_risk_level_group_compliance,access.residual.risk.level.group.compliance,model_residual_risk_level,grcbit_base.group_compliance,1,0,0,0

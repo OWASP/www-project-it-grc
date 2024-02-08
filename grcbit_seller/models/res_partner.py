@@ -4,6 +4,7 @@ import re
 import random
 import string
 import base64
+import dns.resolver
 
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError, ValidationError, AccessError
@@ -23,7 +24,8 @@ class ResPartnerGRC(models.Model):
     ], string="Status", default=lambda x : x.get_state_bygroup())
     activate_date = fields.Date(string="Activate date")
     db_postgres_port = fields.Char(string="DB Postgres Port (5432)", default= lambda x: x._set_default_port('db_postgres_port', int(3000), int(3250))) # de 3000 a 3250
-    xdr_pwd_b64 = fields.Char(string="XDR Password Base64", compute="convert_xdr_pwd", store=True)
+    xdr_pwd_b64 = fields.Char(string="XDR Basic Base64", compute="convert_xdr_pwd", store=True)
+    api_b64 = fields.Char(string="API Base64", compute="convert_api_b64", store=True)
     postgres_pwd = fields.Char(string="Postgres/ZTrust Password", default=lambda x:x._default_password('postgres'))
     xdr_pwd = fields.Char(string="XDR Password", default=lambda x:x._default_password('xdr'))
     grc_web_port = fields.Char(string="GRC Web Port (8069)", default= lambda x: x._set_default_port('grc_web_port', int(3250), int(3500))) #de 3250 a 3500
@@ -33,7 +35,7 @@ class ResPartnerGRC(models.Model):
     xdr_server_container = fields.Char(string="XDR Server Container ID")
     xdr_dash_container = fields.Char(string="XDR Dashboard Container ID")
 
-    xdr_indexer_port = fields.Char(string="XDR Indexer Port (9200)",default=lambda c: c._set_little_princess_field()) #de 9000 a 13000
+    xdr_indexer_port = fields.Char(string="XDR Indexer Port (9200)",default=lambda c: c._set_default_port('xdr_indexer_port',int(3500),int(3750))) #de 3500 a 3750
     xdr_dashboard_port = fields.Char(string="XDR Dashboard Port (5601)", default= lambda x: x._set_default_port('xdr_dashboard_port', int(3750), int(4000))) # de 3750 a 4000
     xdr_dashboard_port2 = fields.Char(string="XDR Dashboard Port (5602)", default= lambda x: x._set_default_port('xdr_dashboard_port2', int(4000), int(4250))) # de 4000 a 4250
 
@@ -50,6 +52,7 @@ class ResPartnerGRC(models.Model):
     ziti_console = fields.Char(string="Ziti Console (8443)", default= lambda x: x._set_default_port('ziti_console', int(6250), int(6500))) # de 6250 a 6500 
     xdr_zt = fields.Char(string="XDR ZT", default= lambda x: x._set_default_port('xdr_zt', int(6500), int(6750))) #6500 a 6750
     dns_domain = fields.Char(string="DNS Domain")
+    dns_domain_check = fields.Boolean(string="Correct DNS Domain")
     is_openziti = fields.Boolean(string="OpenZiti", default=True)
 
     xdr_ends = fields.Selection([
@@ -115,9 +118,19 @@ class ResPartnerGRC(models.Model):
     def convert_xdr_pwd(self):
         for rec in self:
             if rec.xdr_pwd:
-                b = base64.b64encode(bytes(rec.xdr_pwd, 'utf-8')) # bytes
+                text = 'admin:'+rec.xdr_pwd
+                b = base64.b64encode(bytes(text, 'utf-8')) # bytes
                 base64_str = b.decode('utf-8') # convert bytes to string
                 rec.xdr_pwd_b64 = base64_str
+
+    @api.depends('xdr_pwd')
+    def convert_api_b64(self):
+        for rec in self:
+            if rec.xdr_pwd:
+                text = 'wazuh-wui:'+rec.xdr_pwd
+                b = base64.b64encode(bytes(text, 'utf-8')) # bytes
+                base64_str = b.decode('utf-8') # convert bytes to string
+                rec.api_b64 = base64_str
 
 
     @api.onchange('xdr_ends','xdr_endpoints')
@@ -239,12 +252,16 @@ class ResPartnerGRC(models.Model):
                                 <div class="col-3"><span style="text-align:right;">""" + str(rec.xdr_pwd)+ """</span></div>
                             </div>
                             <div class="row" style="border: 1px solid;">
-                                <div class="col-3"><span style="font-weight:bold;">Agent URL:</span></div>
+                                <div class="col-3"><span style="font-weight:bold;">XDR Agent URL:</span></div>
                                 <div class="col-3"><span style="text-align:right;">""" + str(rec.agent_url)+ """</span></div>
                             </div>
                             <div class="row" style="border: 1px solid;">
-                                <div class="col-3"><span style="font-weight:bold;">Token XDR URL:</span></div>
+                                <div class="col-3"><span style="font-weight:bold;">XDR API URL:</span></div>
                                 <div class="col-3"><span style="text-align:right;">""" + str(rec.token_xdr_url)+ """</span></div>
+                            </div>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-3"><span style="font-weight:bold;">XDR API User:</span></div>
+                                <div class="col-3"><span style="text-align:right;">wazuh-wui</span></div>
                             </div>
                             
                             <br/>
@@ -306,13 +323,13 @@ class ResPartnerGRC(models.Model):
             return 'pending'
 
 
-    def _set_little_princess_field(self):
-        partners = self.env['res.partner'].search([('xdr_indexer_port','>=',3500)], order="xdr_indexer_port DESC")
-        if not partners:
-            return 3500
-        else:
-            val = int(partners[0].xdr_indexer_port) + 1
-            return val
+    # def _set_little_princess_field(self):
+    #     partners = self.env['res.partner'].search([('xdr_indexer_port','>=',3500)], order="xdr_indexer_port DESC")
+    #     if not partners:
+    #         return '3500'
+    #     else:
+    #         val = int(partners[0].xdr_indexer_port) + 1
+    #         return str(val)
 
     def _set_default_port(self, field, min_value, max_value):
         val = 0
@@ -388,15 +405,21 @@ class ResPartnerGRC(models.Model):
                 else:
                     raise ValidationError("Ports must be digits only. Incorrect value '%s'" % field)
 
-    @api.onchange('name','dns_domain')
+    @api.onchange('name')
     def _onchange_default_client_system(self):
         for rec in self:
             if rec.name:
                 rec.client_system = rec.name.replace(' ','_').lower()
-                rec.dns_domain = rec.name.replace(' ','_').lower()
             else:
                 rec.client_system = ''
-                rec.dns_domain = ''
+
+    @api.onchange('dns_domain')
+    def _onchange_default_dns_domain(self):
+        for rec in self:
+            if rec.name and not rec.dns_domain:
+                rec.dns_domain = rec.name.replace(' ','_').lower()
+            # else:
+            #     rec.dns_domain = ''
         
     def write(self,vals):
         res = super(ResPartnerGRC, self).write(vals)
@@ -499,6 +522,16 @@ class ResPartnerGRC(models.Model):
             random.shuffle(random_pass)
             random_pass = ''.join(random_pass)
         return random_pass
+
+    @api.onchange('dns_domain')
+    def is_domain_valid(self):
+        for rec in self:
+            try:
+                if dns.resolver.resolve(rec.dns_domain):
+                    rec.dns_domain_check = True
+            except:
+                rec.dns_domain_check = False
+        
 
 class XDRManagerPort(models.Model):
     _name = 'xdr.manager.port'

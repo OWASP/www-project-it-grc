@@ -433,7 +433,7 @@
           <field name="active" invisible="1"/>
           <field name="impact_level_id"/>
           <field name="probability_level_id"/>
-          <field name="risk_level_name" widget="badge" decoration-danger="risk_level_name=='High'" decoration-warning="risk_level_name=='Medium'" decoration-success="risk_level_name=='Low'"/>
+          <field name="risk_level_name" widget="badge" decoration-danger="risk_level_name in ('High','Alto')" decoration-warning="risk_level_name in ('Medium','Medio')" decoration-success="risk_level_name in ('Low','Bajo')"/>
         </tree>
       </field>
     </record>
@@ -504,7 +504,7 @@
           <field name="active" invisible="1"/>
           <field name="inherent_risk_level_id"/>
           <field name="control_evaluation_criteria_id"/>
-          <field name="residual_risk_level_name" widget="badge" decoration-danger="residual_risk_level_name=='High'" decoration-warning="residual_risk_level_name=='Medium'" decoration-success="residual_risk_level_name=='Low'"/>
+          <field name="residual_risk_level_name" widget="badge" decoration-danger="residual_risk_level_name in ('High','Alto')" decoration-warning="residual_risk_level_name in ('Medium','Medio')" decoration-success="residual_risk_level_name in ('Low','Bajo')"/>
         </tree>
       </field>
     </record>
