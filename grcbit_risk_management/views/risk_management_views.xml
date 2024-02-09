@@ -21,8 +21,8 @@
           <field name="consequence"/>
           <field name="impact_level_id" optional="hide" />
           <field name="probability_level_id" optional="hide"/>
-	        <field name="inherent_risk" readonly="1" force_save="1" widget="badge" decoration-danger="inherent_risk=='High'" decoration-warning="inherent_risk=='Medium'" decoration-success="inherent_risk=='Low'" />
-          <field name="residual_risk" readonly="1" force_save="1" widget="badge" decoration-danger="residual_risk=='High'" decoration-warning="residual_risk=='Medium'" decoration-success="residual_risk=='Low'" />
+	        <field name="inherent_risk" readonly="1" force_save="1" widget="badge" decoration-danger="inherent_risk in ('High','Alto')" decoration-warning="inherent_risk in ('Medium','Medio')" decoration-success="inherent_risk in ('Low','Bajo')"/>
+          <field name="residual_risk" readonly="1" force_save="1" widget="badge" decoration-danger="residual_risk in ('High','Alto')" decoration-warning="residual_risk in ('Medium','Medio')" decoration-success="residual_risk in ('Low','Bajo')"/>
           <field name="responsible" optional="hide" widget="many2one_avatar_user"/>
           <field name="quantification" optional="hide"/>
           <field name="attachment" widget="many2many_binary" optional="hide" />
@@ -86,8 +86,8 @@
               <field name="impact_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
               <field name="probability_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
               <field name="quantification" optional="hide"/>
-              <field name="inherent_risk" readonly="1" force_save="1" widget="badge" decoration-danger="inherent_risk=='High'" decoration-warning="inherent_risk=='Medium'" decoration-success="inherent_risk=='Low'" />
-              <field name="residual_risk" readonly="1" force_save="1" widget="badge" decoration-danger="residual_risk=='High'" decoration-warning="residual_risk=='Medium'" decoration-success="residual_risk=='Low'" />
+              <field name="inherent_risk" readonly="1" force_save="1" widget="badge" decoration-danger="inherent_risk in ('High','Alto')" decoration-warning="inherent_risk in ('Medium','Medio')" decoration-success="inherent_risk in ('Low','Bajo')"/>
+              <field name="residual_risk" readonly="1" force_save="1" widget="badge" decoration-danger="residual_risk in ('High','Alto')" decoration-warning="residual_risk in ('Medium','Medio')" decoration-success="residual_risk in ('Low','Bajo')"/>
               <field name="attachment" widget="many2many_binary" />
             </group>
           </sheet>
