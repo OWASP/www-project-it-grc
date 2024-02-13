@@ -523,11 +523,12 @@ class ResPartnerGRC(models.Model):
             random_pass = ''.join(random_pass)
         return random_pass
 
-    @api.onchange('dns_domain')
+    @api.onchange('dns_domain','dns_subdomain')
     def is_domain_valid(self):
         for rec in self:
+            text = rec.dns_subdomain + rec.dns_domain
             try:
-                if dns.resolver.resolve(rec.dns_domain):
+                if dns.resolver.resolve(text):
                     rec.dns_domain_check = True
             except:
                 rec.dns_domain_check = False
