@@ -59,7 +59,7 @@ class ComplianceControlObjective(models.Model):
     name = fields.Char(string='Compliance Objective', required=True)
     active = fields.Boolean(default=True)
     compliance_version_id = fields.Many2one('compliance.version', string='Compliance Version', required=True)
-    description  = fields.Text(string='Description')
+    description  = fields.Html(string='Description')
     compliance_control_ids = fields.One2many('compliance.control','compliance_control_objective_id', string=' ')
     _sql_constraints = [('name_uniq', 'unique(name)', "The compliance objective name already exists.")]
 
@@ -76,7 +76,7 @@ class ComplianceControl(models.Model):
     name = fields.Char(string='Compliance Requirement', required=True)
     active = fields.Boolean(default=True)
     compliance_control_objective_id = fields.Many2one('compliance.control.objective', string='Compliance Objective', required=True)
-    description  = fields.Text(string='Description')
+    description  = fields.Html(string='Description')
     _sql_constraints = [('name_uniq', 'unique(name)', "The compliance requirement name already exists.")]
 
     def name_get(self):
