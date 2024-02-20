@@ -7,13 +7,16 @@ class ResUsersInh(models.Model):
 
     is_support = fields.Boolean(string="Is Support", default=False)
 
-    # def write(self, vals):
-    #     res = super(ResUsersInh, self).write(vals)
-    #     user_id = self.env.user
-    #     for rec in self:
-    #         try:
-    #             if user_id.is_support != True and rec.is_support== True:
-    #                 raise ValidationError("This users can't be update for you")
-    #         except:
-    #             return
-    #     return res
+        
+    def write(self, vals):
+        res = super(ResUsersInh, self).write(vals)
+        user_id = self.env.user
+        context = self.env.context
+        for rec in self:
+            if 'install_mode' in context:
+                break
+            elif 'params' in context:
+                if user_id.is_support != True and rec.is_support== True:
+                    raise ValidationError("This users can't be update for you")         
+            
+        return res
