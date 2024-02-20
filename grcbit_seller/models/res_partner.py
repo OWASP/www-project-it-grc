@@ -526,7 +526,8 @@ class ResPartnerGRC(models.Model):
     @api.onchange('dns_domain','dns_subdomain')
     def is_domain_valid(self):
         for rec in self:
-            text = rec.dns_subdomain + rec.dns_domain
+
+            text = (rec.dns_subdomain if rec.dns_subdomain else '') + (rec.dns_domain if rec.dns_domain else '')
             try:
                 if dns.resolver.resolve(text):
                     rec.dns_domain_check = True

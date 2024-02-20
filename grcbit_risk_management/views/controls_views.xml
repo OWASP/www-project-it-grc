@@ -16,7 +16,7 @@
           <field name="control_id" widget="badge" />
           <field name="name" />
           <field name="description"  />
-          <field name="estimated_date"  widget="remaining_days" />
+          <field name="estimated_date" states="draft,designed,implemented" widget="remaining_days" />
           <field name="control_design_criteria_id" optional="True" />
           <field name="control_evaluation_criteria_id" optional="True" />
           <field name="is_key_control" widget="boolean_toggle" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
@@ -60,8 +60,7 @@
       <field name="model">control.design</field>
       <field name="arch" type="xml">
         <form>
-		      <sheet>
-	          <header>
+        <header>
               <field name="state" widget="statusbar"/>
               <button name="action_draft" string="SET TO DRAFT" type="object"  class="btn-primary" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,grcbit_risk_management.group_control_draft" confirm="Are you sure you want to move on to the DRAFT CONTROL phase?" attrs="{'invisible': [('state','in',['draft'])] }" />
               <button name="action_design" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['draft'])]}" class="btn-success" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,grcbit_risk_management.group_control_design" confirm="Are you sure you want to approve the CONTROL DESIGN?" />
@@ -69,6 +68,7 @@
               <button name="action_approved" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,grcbit_risk_management.group_control_approval" confirm="Are you sure you want to APPROVE the CONTROL IMPLEMENTATION?" />
               <button name="action_rejected" string="REJECT" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,grcbit_risk_management.group_control_reject" confirm="Are you sure you want to REJECT CONTROL IMPLEMENTATION?" />
   		      </header>
+		      <sheet>
 	  	      <group>
               <field name="active" invisible="1"  />
               <field name="risk_factor_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
