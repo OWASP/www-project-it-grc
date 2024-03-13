@@ -289,7 +289,6 @@ class ResPartnerGRC(models.Model):
 
     is_admin = fields.Boolean(string="is admin", compute="_get_group", store=False)
     _sql_constraints = [
-        ('unique_dns_domain','unique(dns_domain)','DNS Domain already exist.!'),
         ('unique_name','unique(display_name)','Customer name already exist.!'),
         ('unique_db_postgres_port', 'unique(db_postgres_port)', 'DB postgres Port already exist.!'),
         ('unique_grc_web_port', 'unique(grc_web_port)', 'GRC Web Port already exist.!'),
