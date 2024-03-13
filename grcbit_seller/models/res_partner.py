@@ -106,7 +106,7 @@ class ResPartnerGRC(models.Model):
     is_demo = fields.Boolean(string="Demo", default=False)
     custom_lang = fields.Selection([
         ('en','English'),
-        ('es','Spanish')], string="Language")
+        ('es','Spanish')], string="Language", default="es")
 
     #SSH
     ssh_zt_console = fields.Char(string="SSH ZT Console", default=lambda r: r._set_default_port('ssh_zt_console', int(2000), int(2250)))
