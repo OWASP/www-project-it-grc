@@ -15,7 +15,7 @@ class ResUsersInh(models.Model):
         for rec in self:
             if 'install_mode' in context:
                 break
-            elif 'params' in context:
+            elif 'lang' in context:
                 if user_id.is_support != True and rec.is_support== True:
                     raise ValidationError("This users can't be update for you")         
             
