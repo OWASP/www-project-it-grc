@@ -32,7 +32,7 @@
                 </div>
               </div>
               <br />
-              <t i-if="len(o.document_page_id) &#62; 0">
+              <!-- <t i-if="len(o.document_page_id) &#62; 0">
                 <table  class="table table-bordered" style="font-size:12px;">
                   <thead>
                     <tr><th colspan="3">Policy</th></tr>
@@ -52,7 +52,7 @@
                     </t>
                   </tbody>
                 </table>
-              </t><br/>
+              </t><br/> -->
               <t i-if="len(o.control_design_id) &#62; 0">
                 <table  class="table table-bordered" style="font-size:12px;">
                   <thead>

@@ -106,7 +106,7 @@ class ResPartnerGRC(models.Model):
     is_demo = fields.Boolean(string="Demo", default=False)
     custom_lang = fields.Selection([
         ('en','English'),
-        ('es','Spanish')], string="Language")
+        ('es','Spanish')], string="Language", default="es")
 
     #SSH
     ssh_zt_console = fields.Char(string="SSH ZT Console", default=lambda r: r._set_default_port('ssh_zt_console', int(2000), int(2250)))
@@ -289,7 +289,6 @@ class ResPartnerGRC(models.Model):
 
     is_admin = fields.Boolean(string="is admin", compute="_get_group", store=False)
     _sql_constraints = [
-        ('unique_dns_domain','unique(dns_domain)','DNS Domain already exist.!'),
         ('unique_name','unique(display_name)','Customer name already exist.!'),
         ('unique_db_postgres_port', 'unique(db_postgres_port)', 'DB postgres Port already exist.!'),
         ('unique_grc_web_port', 'unique(grc_web_port)', 'GRC Web Port already exist.!'),
