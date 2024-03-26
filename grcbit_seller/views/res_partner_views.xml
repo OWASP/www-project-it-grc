@@ -95,6 +95,7 @@
                 <field name="ziti_edge_router2" attrs="{'readonly': [('is_admin','=', False)]}"/>
                 <field name="ziti_console" attrs="{'readonly': [('is_admin','=', False)]}"/>
                 <field name="xdr_zt" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="xdr_zt_v1" attrs="{'readonly': [('is_admin','=', False)]}"/>
               </group>
             </group>
             <group string="SSH">
