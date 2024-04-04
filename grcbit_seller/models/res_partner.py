@@ -114,6 +114,13 @@ class ResPartnerGRC(models.Model):
     xdr_indexer = fields.Char(string="XDR Indexer", default=lambda r: r._set_default_port('xdr_indexer', int(2500), int(2750)))
     xdr_manager = fields.Char(string="XDR Manager", default=lambda r: r._set_default_port('xdr_manager', int(2750), int(3000)))
     xdr_zt_v1 = fields.Char(string="XDR Ztrust V1", default=lambda r: r._set_default_port('xdr_zt_v1', int(9443), int(9693)))
+
+    xdr_node = fields.Selection([
+        ('single_mode','single-node'),
+        ('multi_node','multi-node'),
+    ], string="XDR node")
+    url_server = fields.Char(string="URL Server")
+    ip_server = fields.Char(string="IP Server")
     
     @api.depends('xdr_pwd')
     def convert_xdr_pwd(self):
@@ -533,8 +540,11 @@ class ResPartnerGRC(models.Model):
     @api.onchange('dns_domain','dns_subdomain')
     def is_domain_valid(self):
         for rec in self:
-
-            text = (rec.dns_subdomain if rec.dns_subdomain else '') + (rec.dns_domain if rec.dns_domain else '')
+            subdomain = ''
+            if rec.dns_subdomain:
+                subdomain = rec.dns_subdomain + '.'
+            
+            text = 'www.' + subdomain + (rec.dns_domain if rec.dns_domain else '')
             try:
                 if dns.resolver.resolve(text):
                     rec.dns_domain_check = True
