@@ -544,7 +544,7 @@ class ResPartnerGRC(models.Model):
             if rec.dns_subdomain:
                 subdomain = rec.dns_subdomain + '.'
             
-            text = 'www.' + subdomain + (rec.dns_domain if rec.dns_domain else '')
+            text = subdomain + (rec.dns_domain if rec.dns_domain else '')
             try:
                 if dns.resolver.resolve(text):
                     rec.dns_domain_check = True
