@@ -11,16 +11,17 @@
         </xpath> -->
         <xpath expr="//field[@name='country_id']" position="after">
           <field name="state"/>
-          <field name="reseller_create"/>
         </xpath>
         <xpath expr="//field[@name='phone']" position="replace">
+          <field name="dns_subdomain"/>
           <field name="dns_domain"/>
         </xpath>
         <xpath expr="//field[@name='city']" position="replace">
           <field name="create_date"/>
         </xpath>
+        <xpath expr="//field[@name='user_id']" position="replace">
+        </xpath>
         <xpath expr="//field[@name='country_id']" position="replace">
-          <field name="email_sent"/>
         </xpath>
         <xpath expr="//field[@name='activity_ids']" position="replace">
           <field name="xdr_endpoints"/>
