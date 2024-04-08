@@ -79,3 +79,12 @@ access_isms_role_group_isms,access.isms.role.group.isms,model_isms_role,grcbit_b
 access_isms_role_group_control,access.isms.role.group.control,model_isms_role,grcbit_base.group_control,1,0,0,0
 access_isms_role_group_compliance,access.isms.role.group.compliance,model_isms_role,grcbit_base.group_compliance,1,0,0,0
 access_isms_role_group_guest,access.isms.role.group.guest,model_isms_role,grcbit_base.group_guest,1,0,0,0
+
+access_isms_people_group_grc_admin,access.isms.people.group.grc.admin,model_isms_people,grcbit_base.group_grc_admin,1,1,1,1
+access_isms_people_group_grc_consultant,access.isms.people.group.grc.consultant,model_isms_people,grcbit_base.group_grc_consultant,1,1,1,1
+access_isms_people_group_asset_management,access.isms.people.group.asset.management,model_isms_people,grcbit_base.group_asset_management,1,0,0,0
+access_isms_people_group_risk_management,access.isms.people.group.risk.management,model_isms_people,grcbit_base.group_risk_management,1,0,0,0
+access_isms_people_group_isms,access.isms.people.group.isms,model_isms_people,grcbit_base.group_isms,1,1,1,1
+access_isms_people_group_control,access.isms.people.group.control,model_isms_people,grcbit_base.group_control,1,0,0,0
+access_isms_people_group_compliance,access.isms.people.group.compliance,model_isms_people,grcbit_base.group_compliance,1,0,0,0
+access_isms_people_group_guest,access.isms.people.group.guest,model_isms_people,grcbit_base.group_guest,1,0,0,0
