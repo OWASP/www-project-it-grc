@@ -114,6 +114,7 @@ class ResPartnerGRC(models.Model):
     xdr_indexer = fields.Char(string="XDR Indexer", default=lambda r: r._set_default_port('xdr_indexer', int(2500), int(2750)))
     xdr_manager = fields.Char(string="XDR Manager", default=lambda r: r._set_default_port('xdr_manager', int(2750), int(3000)))
     xdr_zt_v1 = fields.Char(string="XDR Ztrust V1", default=lambda r: r._set_default_port('xdr_zt_v1', int(9443), int(9693)))
+    xdr_balancer = fields.Char(string="XDR Balancer", default=lambda r: r._set_default_port('xdr_balancer', int(1750), int(2000)))
 
     xdr_node = fields.Selection([
         ('single_mode','single-node'),
@@ -315,6 +316,8 @@ class ResPartnerGRC(models.Model):
         ('unique_ziti_console', 'unique(ziti_console)', 'Ziti Console (8443) already exist.!'),
         ('unique_xdr_zt', 'unique(xdr_zt)', 'XDR ZT already exist.!'),
         ('uniquexdr_zt_v1','unique(xdr_zt_v1)', 'XDR ZT v1 already exist.!'),
+        ('unique_xdr_balancer','unique(xdr_balancer)', 'XDR ZT v1 already exist.!'),
+        
     ]
 
     def unlink(self):
@@ -386,6 +389,8 @@ class ResPartnerGRC(models.Model):
                 val = int(partners[0].xdr_manager) + 1
             if field == 'xdr_zt_v1':
                 val = int(partners[0].xdr_zt_v1) + 1
+            if field == 'xdr_balancer':
+                val = int(partners[0].xdr_balancer) + 1
             return val
 
     @api.onchange('db_postgres_port')
@@ -455,13 +460,14 @@ class ResPartnerGRC(models.Model):
         self.just_range(self.ziti_console, 6250, 6500)
         self.just_range(self.xdr_zt, 6500, 6750)
         self.just_range(self.xdr_zt_v1, 9443, 9693)
-
+        self.just_range(self.xdr_balancer, 1750, 2000)
+        
         return res
 
     def has_duplicates(self, seq):
         return len(seq) != len(set(seq))
 
-    @api.constrains('db_postgres_port','grc_web_port','xdr_indexer_port','xdr_dashboard_port','xdr_dashboard_port2','xdr_manager_port1','xdr_manager_port2','xdr_manager_port3','xdr_manager_port4','ziti_controller_port1','xiti_controller_port2','ziti_edge_router1','ziti_edge_router2','ziti_console','xdr_zt','xdr_zt_v1')
+    @api.constrains('db_postgres_port','grc_web_port','xdr_indexer_port','xdr_dashboard_port','xdr_dashboard_port2','xdr_manager_port1','xdr_manager_port2','xdr_manager_port3','xdr_manager_port4','ziti_controller_port1','xiti_controller_port2','ziti_edge_router1','ziti_edge_router2','ziti_console','xdr_zt','xdr_zt_v1','xdr_balancer')
     def no_repeat_ports(self):
         ports = []
         for rec in self:
@@ -498,6 +504,9 @@ class ResPartnerGRC(models.Model):
                 ports.append(rec.xdr_zt)
             if rec.xdr_zt_v1:
                 ports.append(rec.xdr_zt_v1)
+            if rec.xdr_balancer:
+                ports.append(rec.xdr_balancer)
+            
             
         value = self.has_duplicates(ports)
         if value == True:

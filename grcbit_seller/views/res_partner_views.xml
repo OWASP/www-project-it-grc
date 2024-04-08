@@ -79,6 +79,7 @@
                 <field name="xdr_indexer_port" attrs="{'readonly': [('is_admin','=', False)]}"/>
                 <field name="xdr_dashboard_port" attrs="{'readonly': [('is_admin','=', False)]}"/>
                 <field name="xdr_dashboard_port2" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="xdr_balancer" attrs="{'readonly': [('is_admin','=', False)]}"/>
               </group>
               <group>
                 <field name="xdr_manager_port1" attrs="{'readonly': [('is_admin','=', False)]}"/>
