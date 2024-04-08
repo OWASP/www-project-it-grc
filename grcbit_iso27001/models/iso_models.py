@@ -147,3 +147,10 @@ class StatementApplicability(models.Model):
             self.sudo().control_status = status / len(self.control_design_id)
         else:
             self.sudo().control_status = 0
+
+class IsmsRole(models.Model):
+    _name = 'isms.role'
+    _rec_name = 'isms_role_name'
+
+    isms_role_name = fields.Char(string=_("Role Name"))
+    isms_role_description = fields.Html(string=_("Role Description"))

@@ -606,6 +606,35 @@
         </search>
       </field>
     </record>
+
+    <!--     ISMS Role     -->
+    <record id="isms_role_action" model="ir.actions.act_window">
+	    <field name="name">ISMS Role</field>
+	    <field name="res_model">isms.role</field>
+	    <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.ui.view" id="isms_role_treeview">
+      <field name="name">ISMS Role</field>
+      <field name="model">isms.role</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="isms_role_name"/>
+          <field name="isms_role_description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="isms_role_formview">
+      <field name="name">ISMS Role</field>
+      <field name="model">isms.role</field>
+      <field name="arch" type="xml">
+        <form>
+		      <group>
+            <field name="isms_role_name"/>
+            <field name="isms_role_description"/>
+          </group>
+        </form>
+      </field>
+    </record>
     
     <!--MENUITEM-->
     <menuitem name="ISMS" id="menu_control_attribute" parent="grcbit_base.menu_root" sequence="3" />
@@ -617,5 +646,6 @@
     <menuitem name="#Cybersecurity_Concept" id="menu_cybersecurity_concept" parent="menu_control_attribute" action="cybersecurity_concept_action" sequence="6" />
     <menuitem name="#Operational_Capability" id="menu_opertaional_capability" parent="menu_control_attribute" action="operational_capability_action" sequence="7" />
     <menuitem name="#Security_Domain" id="menu_security_domain" parent="menu_control_attribute" action="security_domain_action"  sequence="8" />
+    <menuitem name="ISMS Role" id="menu_isms_role" parent="menu_control_attribute" action="isms_role_action" sequence="9" />
   </data>
 </odoo>
