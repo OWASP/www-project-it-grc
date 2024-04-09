@@ -176,7 +176,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="description"/>
+          <field name="description" optional="hide"/>
           <field name="ip"/>
           <field name="url" optional="hide" widget="url" />
           <field name="responsible" widget="many2one_avatar_user"/>

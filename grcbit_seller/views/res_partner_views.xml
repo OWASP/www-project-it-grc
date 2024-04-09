@@ -11,16 +11,23 @@
         </xpath> -->
         <xpath expr="//field[@name='country_id']" position="after">
           <field name="state"/>
-          <field name="reseller_create"/>
+          <field name="reseller_create" optional="hide"/>
         </xpath>
         <xpath expr="//field[@name='phone']" position="replace">
+          <field name="dns_subdomain"/>
           <field name="dns_domain"/>
         </xpath>
         <xpath expr="//field[@name='city']" position="replace">
           <field name="create_date"/>
         </xpath>
+        <xpath expr="//field[@name='user_id']" position="replace">
+          <field name="create_date"/>
+        </xpath>
+        <!-- <xpath expr="//field[@name='user_id']" position="attributes">
+          <attribute name="optional">hide</attribute>
+        </xpath> -->
         <xpath expr="//field[@name='country_id']" position="replace">
-          <field name="email_sent"/>
+          <field name="email_sent" optional="hide"/>
         </xpath>
         <xpath expr="//field[@name='activity_ids']" position="replace">
           <field name="xdr_endpoints"/>
@@ -37,9 +44,11 @@
         <xpath expr="//field[@name='email']" position="attributes">
           <attribute name="required">1</attribute>
         </xpath>
-        <!-- <xpath expr="//form" position="attributes">
-          <attribute name="delete">0</attribute>
-        </xpath> -->
+        <xpath expr="//field[@name='category_id']" position="after">
+          <field name="xdr_node" attrs="{'readonly': [('is_admin','=', False)]}" groups="base.group_system,grcbit_seller.group_admin_seller,grcbit_seller.group_reseller_admin"/>
+          <field name="url_server" attrs="{'readonly': [('is_admin','=', False)]}" groups="base.group_system,grcbit_seller.group_admin_seller,grcbit_seller.group_reseller_admin"/>
+          <field name="ip_server" attrs="{'readonly': [('is_admin','=', False)]}" groups="base.group_system,grcbit_seller.group_admin_seller,grcbit_seller.group_reseller_admin"/>
+        </xpath>
         <xpath expr="//field[@name='vat']" position="after">
           <field name="xdr_ends"/>
           <field name="zt_serv"/>
@@ -77,6 +86,7 @@
                 <field name="xdr_indexer_port" attrs="{'readonly': [('is_admin','=', False)]}"/>
                 <field name="xdr_dashboard_port" attrs="{'readonly': [('is_admin','=', False)]}"/>
                 <field name="xdr_dashboard_port2" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="xdr_balancer" attrs="{'readonly': [('is_admin','=', False)]}"/>
               </group>
               <group>
                 <field name="xdr_manager_port1" attrs="{'readonly': [('is_admin','=', False)]}"/>

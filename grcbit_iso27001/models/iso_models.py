@@ -147,3 +147,20 @@ class StatementApplicability(models.Model):
             self.sudo().control_status = status / len(self.control_design_id)
         else:
             self.sudo().control_status = 0
+
+class IsmsRole(models.Model):
+    _name = 'isms.role'
+    _rec_name = 'isms_role_name'
+
+    isms_role_name = fields.Char(string=_("Role Name"))
+    isms_role_description = fields.Html(string=_("Role Description"))
+
+class IsmsPeople(models.Model):
+    _name = 'isms.people'
+    _rec_name = 'isms_people_name'
+
+    isms_people_name = fields.Char(string=_("People Name"))
+    isms_people_description = fields.Html(string=_("People Description"))
+    isms_roles_id = fields.Many2one('isms.role', string=_("ISMS Role"))
+    isms_people_job_position = fields.Char(string=_("Job Position"))
+    isms_people_email = fields.Char(string=_("Email"))
