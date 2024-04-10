@@ -125,7 +125,7 @@ class StatementApplicability(models.Model):
     reason_selection = fields.Text(string=_('Reason for Selection'))
     # document_page_id = fields.Many2many('document.page', string=_('Policy'))
     control_design_id = fields.Many2many('control.design',string=_('Control'))
-    control_status = fields.Integer(string=_('Status'), readonly=True)
+    control_status = fields.Integer(string=_('Status'), readonly=True, group_operator='avg')
 
     attachment = fields.Many2many('ir.attachment', string=_("Attachment"))
     active = fields.Boolean(default=True)

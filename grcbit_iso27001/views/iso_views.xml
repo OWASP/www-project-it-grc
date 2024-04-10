@@ -85,6 +85,7 @@
       <field name="type">graph</field>
       <field name="arch" type="xml">
         <graph>
+          <field name="control_design_id"/>
           <field name="name"/>
           <field name="is_applicable" />
           <field name="control_status"/>

@@ -88,7 +88,7 @@
     <record id="data_classification_action" model="ir.actions.act_window">
 	    <field name="name">Data Classification</field>
 	    <field name="res_model">data.classification</field>
-	    <field name="view_mode">tree,form,kanban,graph</field>
+	    <field name="view_mode">tree,form,graph,kanban</field>
     </record>
     <record model="ir.ui.view" id="data_classification_view">
       <field name="name">Data Classification</field>
