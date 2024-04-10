@@ -21,6 +21,7 @@
         'views/asset_management_views.xml',
         'views/dashboard_view.xml',
         'views/menuitems.xml',
+        'views/settings_views.xml',
         'reports/report_data_asset.xml',
         'wizards/set_groups_views.xml'
     ],

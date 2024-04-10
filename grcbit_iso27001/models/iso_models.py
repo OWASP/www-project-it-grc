@@ -12,7 +12,7 @@ class ControlType(models.Model):
     _description = 'Data Inventory'
 
     name = fields.Char(string=_('Control Type'), required=True)
-    description = fields.Text(string=_('Description'), required=True)
+    description = fields.Html(string=_('Description'), required=True)
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The control type name already exists."))]
 
@@ -21,7 +21,7 @@ class SecurityProperty(models.Model):
     _description = 'Data Inventory'
 
     name = fields.Char(string=_('Security Property'), required=True)
-    description = fields.Text(string=_('Description'), required=True)
+    description = fields.Html(string=_('Description'), required=True)
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The security property name already exists."))]
 
@@ -30,7 +30,7 @@ class CybersecurityConcept(models.Model):
     _description = 'Data Inventory'
 
     name = fields.Char(string=_('Cybersecurity Concept'), required=True)
-    description = fields.Text(string=_('Description'), required=True)
+    description = fields.Html(string=_('Description'), required=True)
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The cybersecurty concept name already exists."))]
 
@@ -39,7 +39,7 @@ class OperationalCapability(models.Model):
     _description = 'Data Inventory'
 
     name = fields.Char(string=_('Operational Capability'), required=True)
-    description = fields.Text(string=_('Description'), required=True)
+    description = fields.Html(string=_('Description'), required=True)
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The operational capability name already exists."))]
 
@@ -47,7 +47,7 @@ class SecurityDomain(models.Model):
     _name = 'security.domain'
     _description = 'Data Inventory'
     name = fields.Char(string=_('Security Domain'), required=True)
-    description = fields.Text(string=_('Description'), required=True)
+    description = fields.Html(string=_('Description'), required=True)
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The security domain name already exists."))]
 
@@ -63,7 +63,7 @@ class ControlCategory(models.Model):
     display_name = fields.Char(string=_('Control Category'), compute='_compute_display_name')
     id_control_category = fields.Char(string=_('ID Control Category'), required=True)
     name = fields.Char(string=_('Control Category'), required=True)
-    description = fields.Text(string=_('Description'))
+    description = fields.Html(string=_('Description'))
     statement_applicability_count = fields.Integer(string=_('Statement Applicability Acount'))
     active = fields.Boolean(default=True)
     _sql_constraints = [
@@ -99,9 +99,9 @@ class IsoControl(models.Model):
     cybersecurity_concept_id = fields.Many2many('cybersecurity.concept', string=_('Cybersecurity Concept'), required=True)
     operational_capability_id = fields.Many2many('operational.capability', string=_('Operational Capability'), required=True)
     security_domain_id = fields.Many2many('security.domain', string=_('Security Domain'), required=True)
-    control = fields.Text(string=_('Control'), required=True)
-    purpose = fields.Text(string=_('Purpose'), required=True)
-    guidance = fields.Text(string=_('Guidance'), required=True)
+    control = fields.Html(string=_('Control'), required=True)
+    purpose = fields.Html(string=_('Purpose'), required=True)
+    guidance = fields.Html(string=_('Guidance'), required=True)
     other_information = fields.Text(string=_('Other Information'))
     attachment = fields.Many2many('ir.attachment', string=_("Attachment"))
     active = fields.Boolean(default=True)

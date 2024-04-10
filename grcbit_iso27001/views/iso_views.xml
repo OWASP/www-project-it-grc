@@ -150,7 +150,7 @@
    	  <field name="name">ISO Control</field>
         <field name="model">iso.control</field>
         <field name="arch" type="xml">
-          <graph type="bar">
+          <graph type="pie">
             <field name="display_name"/>
             <field name="control_category_id" group="True"/>
           </graph>
@@ -221,7 +221,7 @@
         <tree multi_edit="1">
           <field name="id_control_category"/>
           <field name="name"/>
-          <field name="description"/>
+          <field name="description" optional="hide"/>
         </tree>
       </field>
     </record>
@@ -305,7 +305,7 @@
       <field name="arch" type="xml">
         <tree multi_edit="1">
           <field name="name"/>
-          <field name="description"/>
+          <field name="description" optional="hide"/>
         </tree>
       </field>
     </record>
@@ -368,7 +368,7 @@
       <field name="arch" type="xml">
         <tree multi_edit="1">
           <field name="name"/>
-          <field name="description"/>
+          <field name="description" optional="hide"/>
         </tree>
       </field>
     </record>
@@ -431,7 +431,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="description"/>
+          <field name="description" optional="hide"/>
         </tree>
       </field>
     </record>
@@ -494,7 +494,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="description"/>
+          <field name="description" optional="hide"/>
         </tree>
       </field>
     </record>
@@ -557,7 +557,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="description"/>
+          <field name="description" optional="hide"/>
         </tree>
       </field>
     </record>

@@ -185,8 +185,8 @@
           <!-- <field name="cloud_provider" widget="many2many_tags_open"  optional="hide" /> -->
           <field name="is_internet_exposed" widget="boolean_toggle"/>
           <field name="users_qty" optional="hide" />
-          <field name="os_version"/>
-          <field name="db_version"/>
+          <field name="os_version" widget="many2many_tags"/>
+          <field name="db_version" widget="many2many_tags"/>
           <field name="attachment" widget="many2many_binary" optional="hide" />
         </tree>
       </field>
@@ -246,8 +246,8 @@
 	          <!-- <field name="cloud_provider" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  /> -->
             <field name="is_internet_exposed" widget="boolean_toggle"/>
             <field name="users_qty"/>
-            <field name="os_version"/>
-            <field name="db_version"/>
+            <field name="os_version" widget="many2many_tags" options="{'color_field': 'color'}"/>
+            <field name="db_version" widget="many2many_tags" options="{'color_field': 'color'}"/>
             <field name="attachment" widget="many2many_binary" />
           </group>
         </form>
