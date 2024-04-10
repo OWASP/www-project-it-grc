@@ -29,6 +29,7 @@
         
         #views
         'views/iso_views.xml',
+        'views/grcbit_base_views.xml',
 
         #reports
         'reports/report_statement_applicability.xml',
