@@ -88,7 +88,7 @@
     <record id="data_classification_action" model="ir.actions.act_window">
 	    <field name="name">Data Classification</field>
 	    <field name="res_model">data.classification</field>
-	    <field name="view_mode">tree,form,kanban,graph</field>
+	    <field name="view_mode">tree,form,graph,kanban</field>
     </record>
     <record model="ir.ui.view" id="data_classification_view">
       <field name="name">Data Classification</field>
@@ -179,14 +179,14 @@
           <field name="description" optional="hide"/>
           <field name="ip"/>
           <field name="url" optional="hide" widget="url" />
-          <field name="responsible" widget="many2one_avatar_user"/>
+          <!-- <field name="responsible" widget="many2one_avatar_user"/> -->
           <field name="environment" optional="hide" widget="badge"/>
           <field name="is_cloud" widget="boolean_toggle"/>
           <!-- <field name="cloud_provider" widget="many2many_tags_open"  optional="hide" /> -->
           <field name="is_internet_exposed" widget="boolean_toggle"/>
           <field name="users_qty" optional="hide" />
-          <field name="os_version"/>
-          <field name="db_version"/>
+          <field name="os_version" widget="many2many_tags"/>
+          <field name="db_version" widget="many2many_tags"/>
           <field name="attachment" widget="many2many_binary" optional="hide" />
         </tree>
       </field>
@@ -200,7 +200,7 @@
           <field name="description"/>
           <field name="ip"/>
           <field name="url" />
-          <field name="responsible" />
+          <!-- <field name="responsible" /> -->
           <field name="environment"  />
           <field name="is_cloud"/>
           <!-- <field name="cloud_provider"  /> -->
@@ -238,7 +238,7 @@
             <field name="description"/>
             <field name="ip" />
             <field name="url" widget="url"/>
-            <field name="responsible" widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
+            <!-- <field name="responsible" widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" /> -->
             <field name="environment" />
           </group>
 	        <group>
@@ -246,8 +246,8 @@
 	          <!-- <field name="cloud_provider" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  /> -->
             <field name="is_internet_exposed" widget="boolean_toggle"/>
             <field name="users_qty"/>
-            <field name="os_version"/>
-            <field name="db_version"/>
+            <field name="os_version" widget="many2many_tags" options="{'color_field': 'color'}"/>
+            <field name="db_version" widget="many2many_tags" options="{'color_field': 'color'}"/>
             <field name="attachment" widget="many2many_binary" />
           </group>
         </form>
@@ -302,7 +302,7 @@
           <field name="data_classification_id" widget="badge" />
           <field name="security_requirement"/>
           <!-- <field name="location" optional="hide" /> -->
-          <field name="owner" optional="hide" widget="many2one_avatar_user" />
+          <!-- <field name="owner" optional="hide" widget="many2one_avatar_user" /> -->
           <field name="retention_period" optional="hide" widget="badge"/>
           <field name="it_inventory_id" widget="many2many_tags_open" />
           <field name="third_party_id"  widget="many2many_tags_open" />
@@ -321,7 +321,7 @@
           <field name="data_classification_id"/>
           <field name="security_requirement"/>
           <!-- <field name="location" optional="hide" /> -->
-          <field name="owner" optional="hide" />
+          <!-- <field name="owner" optional="hide" /> -->
           <field name="retention_period" optional="hide" />
           <field name="it_inventory_id" widget="many2many_tags_open" />
           <field name="third_party_id"  widget="many2many_tags_open" />
@@ -336,10 +336,10 @@
 	      <graph type="pie" >
           <field name="name"/>
           <field name="description"/>
-          <field name="data_classification_id" group="True"/>
+          <field name="data_classification_id"/>
           <field name="security_requirement"/>
           <!-- <field name="location"/> -->
-          <field name="owner"/>
+          <!-- <field name="owner"/> -->
           <field name="retention_period" />
           <field name="it_inventory_id" />
           <field name="third_party_id"  />
@@ -357,7 +357,7 @@
             <field name="description"/>
             <field name="data_classification_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
             <!-- <field name="location"/> -->
-            <field name="owner" widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
+            <!-- <field name="owner" widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" /> -->
             <field name="retention_period" />
           </group>
 	        <group>

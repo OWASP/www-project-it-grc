@@ -33,7 +33,7 @@ class ItInventory(models.Model):
     description = fields.Text(string=_('Description'), required=True)
     ip = fields.Char(string=_('IP'), required=True)
     url = fields.Char(string=_('URL'))
-    responsible = fields.Many2one('res.users', string=_('IT Admin'), required=True)
+    # responsible = fields.Many2one('res.users', string=_('IT Admin'), required=True)
     environment = fields.Selection([
         ('prod', 'Production'), 
         ('dev', 'Development'), 
@@ -43,8 +43,8 @@ class ItInventory(models.Model):
     # cloud_provider = fields.Many2many('third.party',string=_('Third Party'))
     is_internet_exposed = fields.Boolean(string=_('Internet Exposed?'), required=True)
     users_qty = fields.Integer(string=_('User Quantity'), required=True)
-    os_version = fields.Char(string=_('OS Version'))
-    db_version = fields.Char(string=_('DB Version'))
+    os_version = fields.Many2many('it.components','name', string=_('OS Version'))
+    db_version = fields.Many2many('it.components','color', string=_('DB Version'))
     attachment = fields.Many2many('ir.attachment', string=_("Attachment"))
     data_inventory_count = fields.Integer(string=_("Data Asset Count"))
     active = fields.Boolean(default=True)
@@ -66,7 +66,7 @@ class DataInventory(models.Model):
     description = fields.Text(string=_('Description'), required=True)
     data_classification_id = fields.Many2one('data.classification', string=_('Data Classification'), required=True)
     # location = fields.Char(string=_('Location'), required=True)
-    owner = fields.Many2one('res.users', string=_('Asset Owner'), required=True)
+    # owner = fields.Many2one('res.users', string=_('Asset Owner'), required=True)
     it_inventory_id = fields.Many2many('it.inventory',string=_('IT System'), required=True)
     third_party_id = fields.Many2many('third.party',string=_('Third Party'))
     security_requirement = fields.Text(string=_('Security Requirement'), required=True)

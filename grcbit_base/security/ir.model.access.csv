@@ -41,6 +41,7 @@ access_res_groups_group_admin,access.res.groups.group.admin,base.model_res_group
 access_change_password_wizard_group_admin,access.change.password.wizard.group.admin,base.model_change_password_wizard,group_grc_admin,1,1,1,1
 access_change_password_user_group_admin,access.change.password.user.group.admin,base.model_change_password_user,group_grc_admin,1,1,1,1
 access_set_groups_user_group_admin,access.set.groups.user.group.admin,model_set_groups_user,group_grc_admin,1,1,1,1
+access_it_components_group_admin,access.it.components.group.admin,model_it_components,group_grc_admin,1,1,1,1
 
 access_res_users_group_grc_consultant,access.res.users.group.grc.consultant,base.model_res_users,group_grc_consultant,1,0,0,0
 access_res_partner_group_grc_consultant,access.res.partner.group.grc.consultant,base.model_res_partner,group_grc_consultant,1,0,0,0
@@ -48,3 +49,4 @@ access_res_groups_group_grc_consultant,access.res.groups.group.grc.consultant,ba
 access_change_password_wizard_group_grc_consultant,access.change.password.wizard.group.grc.consultant,base.model_change_password_wizard,group_grc_consultant,1,0,0,0
 access_change_password_user_group_grc_consultant,access.change.password.user.group.grc.consultant,base.model_change_password_user,group_grc_consultant,1,0,0,0
 access_set_groups_user_group_grc_consultant,access.set.groups.user.group.grc.consultant,model_set_groups_user,group_grc_consultant,1,1,1,1
+access_it_components_group_grc_consultant,access.it.components.group.grc.consultant,model_it_components,group_grc_consultant,1,1,1,1

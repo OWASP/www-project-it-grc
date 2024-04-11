@@ -12,7 +12,7 @@ class ControlType(models.Model):
     _name = 'control.type'
     _description = 'Data Inventory'
     name = fields.Char(string='Control Type', required=True)
-    description = fields.Text(string='Description', required=True)
+    description = fields.Html(string='Description', required=True)
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The control type name already exists.")]
 
@@ -20,7 +20,7 @@ class SecurityProperty(models.Model):
     _name = 'security.property'
     _description = 'Data Inventory'
     name = fields.Char(string='Security Property', required=True)
-    description = fields.Text(string='Description', required=True)
+    description = fields.Html(string='Description', required=True)
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The security property name already exists.")]
 
@@ -29,7 +29,7 @@ class CybersecurityConcept(models.Model):
     _description = 'Data Inventory'
 
     name = fields.Char(string='Cybersecurity Concept', required=True)
-    description = fields.Text(string='Description', required=True)
+    description = fields.Html(string='Description', required=True)
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The cybersecurty concept name already exists.")]
 
@@ -89,7 +89,7 @@ class SecurityDomain(models.Model):
     _name = 'security.domain'
     _description = 'Data Inventory'
     name = fields.Char(string='Security Domain', required=True)
-    description = fields.Text(string='Description', required=True)
+    description = fields.Html(string='Description', required=True)
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The security domain name already exists.")]
 
@@ -98,7 +98,7 @@ class OperationalCapability(models.Model):
     _description = 'Data Inventory'
 
     name = fields.Char(string=_('Operational Capability'), required=True)
-    description = fields.Text(string=_('Description'), required=True)
+    description = fields.Html(string=_('Description'), required=True)
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The operational capability name already exists."))]
 
