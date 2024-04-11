@@ -6,7 +6,7 @@
     <record id="third_party_action" model="ir.actions.act_window">
       <field name="name">Third Party</field>
       <field name="res_model">third.party</field>
-      <field name="view_mode">tree,form,kanban,graph</field>
+      <field name="view_mode">tree,form,graph,kanban</field>
     </record>
     <record model="ir.ui.view" id="third_party_view">
       <field name="name">Third Party</field>
@@ -290,7 +290,7 @@
     <record id="data_inventory_action" model="ir.actions.act_window">
 	    <field name="name">Data Asset</field>
 	    <field name="res_model">data.inventory</field>
-	    <field name="view_mode">tree,form,graph,kanban</field>
+	    <field name="view_mode">tree,form,kanban</field>
     </record>
     <record model="ir.ui.view" id="data_inventory_view">
       <field name="name">Data Asset</field>
