@@ -22,3 +22,6 @@ th.o_column_sortable[data-name="control_status"]{
     width:10% !important; 
     /* max-width:150px !important; */
 } 
+th.o_column_sortable[data-name="id_control_category"]{ 
+    width:50% !important; 
+} 

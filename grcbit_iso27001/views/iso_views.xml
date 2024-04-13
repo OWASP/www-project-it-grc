@@ -212,13 +212,13 @@
     <record id="control_category_action" model="ir.actions.act_window">
 	    <field name="name">Control Category</field>
 	    <field name="res_model">control.category</field>
-	    <field name="view_mode">tree,form,graph,kanban</field>
+	    <field name="view_mode">kanban,tree,form,graph</field>
     </record>
     <record model="ir.ui.view" id="control_category_view">
    	  <field name="name">Control Category</field>
         <field name="model">control.category</field>
         <field name="arch" type="xml">
-        <tree multi_edit="1">
+        <tree>
           <field name="id_control_category"/>
           <field name="name"/>
           <field name="description" optional="hide"/>
@@ -256,6 +256,7 @@
       <field name="model">control.category</field>
       <field name="arch" type="xml">
 	      <kanban class="o_kanban_mobile">
+          <field name="id_control_category"/>
           <field name="name"/>
           <field name="description"/>
           <templates>
@@ -263,6 +264,7 @@
               <div t-attf-class="oe_kanban_global_click">
                 <div class="oe_kanban_details">
                   <strong class="o_kanban_record_title">
+                    <field name="id_control_category"/><br/>
                     <field name="name"/>
                   </strong>
                   <div>
@@ -297,7 +299,7 @@
     <record id="control_type_action" model="ir.actions.act_window">
 	    <field name="name">Control Type</field>
 	    <field name="res_model">control.type</field>
-	    <field name="view_mode">tree,form,kanban</field>
+	    <field name="view_mode">kanban,tree,form</field>
     </record>
     <record model="ir.ui.view" id="control_type_view">
       <field name="name">Control Type</field>
@@ -360,7 +362,7 @@
     <record id="security_property_action" model="ir.actions.act_window">
 	    <field name="name">Security Property</field>
 	    <field name="res_model">security.property</field>
-	    <field name="view_mode">tree,form,kanban</field>
+	    <field name="view_mode">kanban,tree,form</field>
     </record>
     <record model="ir.ui.view" id="security_property_view">
       <field name="name">Security Property</field>
@@ -423,7 +425,7 @@
     <record id="cybersecurity_concept_action" model="ir.actions.act_window">
 	    <field name="name">Cybersecurity Concept</field>
 	    <field name="res_model">cybersecurity.concept</field>
-	    <field name="view_mode">tree,form,kanban</field>
+	    <field name="view_mode">kanban,tree,form</field>
     </record>
     <record model="ir.ui.view" id="cybersecurity_concept_view">
       <field name="name">Cybersecurity Concept</field>
@@ -486,7 +488,7 @@
     <record id="operational_capability_action" model="ir.actions.act_window">
 	    <field name="name">Operational Capability</field>
 	    <field name="res_model">operational.capability</field>
-	    <field name="view_mode">tree,form,kanban</field>
+	    <field name="view_mode">kanban,tree,form</field>
     </record>
     <record model="ir.ui.view" id="operational_capability_view">
       <field name="name">Operational Capability</field>
@@ -549,7 +551,7 @@
     <record id="security_domain_action" model="ir.actions.act_window">
 	    <field name="name">Security Domain</field>
 	    <field name="res_model">security.domain</field>
-	    <field name="view_mode">tree,form,kanban</field>
+	    <field name="view_mode">kanban,tree,form</field>
     </record>
     <record model="ir.ui.view" id="security_domain_view">
       <field name="name">Security Domain</field>
