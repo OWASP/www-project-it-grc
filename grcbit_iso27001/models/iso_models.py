@@ -126,6 +126,7 @@ class StatementApplicability(models.Model):
     # document_page_id = fields.Many2many('document.page', string=_('Policy'))
     control_design_id = fields.Many2many('control.design',string=_('Control'))
     control_status = fields.Integer(string=_('Status'), readonly=True, group_operator='avg')
+    control_category_id = fields.Many2one('control.category', string=_("Control Category"), related="name.control_category_id", store=True)
 
     attachment = fields.Many2many('ir.attachment', string=_("Attachment"))
     active = fields.Boolean(default=True)
