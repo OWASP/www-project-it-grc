@@ -225,7 +225,7 @@
         <tree>
           <field name="id_control_category"/>
           <field name="name"/>
-          <field name="description" optional="hide"/>
+          <field name="description"/>
         </tree>
       </field>
     </record>
@@ -313,7 +313,7 @@
       <field name="arch" type="xml">
         <tree multi_edit="1">
           <field name="name"/>
-          <field name="description" optional="hide"/>
+          <field name="description"/>
         </tree>
       </field>
     </record>
@@ -378,7 +378,7 @@
       <field name="arch" type="xml">
         <tree multi_edit="1">
           <field name="name"/>
-          <field name="description" optional="hide"/>
+          <field name="description"/>
         </tree>
       </field>
     </record>
@@ -443,7 +443,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="description" optional="hide"/>
+          <field name="description"/>
         </tree>
       </field>
     </record>
@@ -508,7 +508,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="description" optional="hide"/>
+          <field name="description"/>
         </tree>
       </field>
     </record>
@@ -573,7 +573,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="description" optional="hide"/>
+          <field name="description"/>
         </tree>
       </field>
     </record>
