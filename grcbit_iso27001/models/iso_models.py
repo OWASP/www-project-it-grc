@@ -161,7 +161,19 @@ class IsmsPeople(models.Model):
     _rec_name = 'isms_people_name'
 
     isms_people_name = fields.Char(string=_("People Name"))
-    isms_people_description = fields.Html(string=_("People Description"))
-    isms_roles_id = fields.Many2one('isms.role', string=_("ISMS Role"))
+    state = fields.Selection([
+        ('draft','Draft'),
+        ('approve','Approve')
+    ], string="Status", default="draft")
+    isms_people_description = fields.Html(string=_("ISMS Responsibilities"))
+    isms_roles_ids = fields.Many2many('isms.role', string=_("ISMS Role"))
     isms_people_job_position = fields.Char(string=_("Job Position"))
     isms_people_email = fields.Char(string=_("Email"))
+
+    def action_approve(self):
+        for rec in self:
+            rec.state = 'approve'
+    
+    def action_draft(self):
+        for rec in self:
+            rec.state = 'draft'

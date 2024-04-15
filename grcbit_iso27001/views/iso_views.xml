@@ -669,7 +669,7 @@
         <tree>
           <field name="isms_people_name"/>
           <field name="isms_people_description"/>
-          <field name="isms_roles_id"/>
+          <field name="isms_roles_ids" widget="many2many_tags"/>
           <field name="isms_people_job_position"/>
           <field name="isms_people_email"/>
         </tree>
@@ -680,13 +680,29 @@
       <field name="model">isms.people</field>
       <field name="arch" type="xml">
         <form>
+          <header>
+            <button name="action_approve" type="object" string="APPROVE" states="draft" class="btn btn-success"/>
+            <button name="action_draft" type="object" string="Send to DRAFT" states="approve" class="btn btn-success"/>
+            <field name="state" widget="statusbar" readonly="1"/>
+          </header>
 		      <group>
-            <field name="isms_people_name"/>
-            <field name="isms_people_description"/>
-            <field name="isms_roles_id"/>
-            <field name="isms_people_job_position"/>
-            <field name="isms_people_email"/>
+            <field name="isms_people_name" required="1" attrs="{'readonly': [('state','=','approve')]}"/>
+            <field name="isms_people_description" required="1" attrs="{'readonly': [('state','=','approve')]}"/>
+            <field name="isms_people_job_position" required="1" attrs="{'readonly': [('state','=','approve')]}"/>
+            <field name="isms_people_email" required="1" attrs="{'readonly': [('state','=','approve')]}"/>
           </group>
+          <notebook>
+            <page string="ISMS Role">
+              <group>
+                <field name="isms_roles_ids" string=" " attrs="{'readonly': [('state','=','approve')]}">
+                  <tree editable="bottom">
+                    <field name="isms_role_name"/>
+                    <field name="isms_role_description"/>
+                  </tree>
+                </field>
+              </group>
+            </page>
+          </notebook>
         </form>
       </field>
     </record>
