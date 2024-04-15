@@ -66,10 +66,12 @@
           <templates>
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
-                <div class="oe_kanban_details">
-                  <strong class="o_kanban_record_title">
-                    <field name="name"/>
-                  </strong>
+                <div class="oe_kanban_details" >
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
                   <div>
                     <t t-esc="record.reason_selection.value"/>
 		              </div>
@@ -167,9 +169,11 @@
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
                 <div class="oe_kanban_details">
-                  <strong class="o_kanban_record_title">
-                    <field name="name"/>
-                  </strong>
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title" style="background-color:#5DADE2;">
+                      <field name="name"/>
+                    </strong>
+                  </div>
                   <div>
                     <t t-esc="record.control.value"/>
 		              </div>
@@ -221,7 +225,7 @@
         <tree>
           <field name="id_control_category"/>
           <field name="name"/>
-          <field name="description" optional="hide"/>
+          <field name="description"/>
         </tree>
       </field>
     </record>
@@ -263,12 +267,15 @@
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
                 <div class="oe_kanban_details">
-                  <strong class="o_kanban_record_title">
-                    <field name="id_control_category"/><br/>
-                    <field name="name"/>
-                  </strong>
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="id_control_category"/><br/>
+                      
+                    </strong>
+                  </div>
                   <div>
-                    <t t-esc="record.description.value"/>
+                    <field name="name"/>
+                    <!-- <field name="description"/> -->
 		              </div>
                 </div>
               </div>
@@ -307,7 +314,7 @@
       <field name="arch" type="xml">
         <tree multi_edit="1">
           <field name="name"/>
-          <field name="description" optional="hide"/>
+          <field name="description"/>
         </tree>
       </field>
     </record>
@@ -334,11 +341,13 @@
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
                 <div class="oe_kanban_details">
-                  <strong class="o_kanban_record_title">
-                    <field name="name"/>
-                  </strong>
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
                   <div>
-                    <t t-esc="record.description.value"/>
+                    <field name="description"/>
 		              </div>
                 </div>
               </div>
@@ -370,7 +379,7 @@
       <field name="arch" type="xml">
         <tree multi_edit="1">
           <field name="name"/>
-          <field name="description" optional="hide"/>
+          <field name="description"/>
         </tree>
       </field>
     </record>
@@ -397,11 +406,13 @@
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
                 <div class="oe_kanban_details">
-                  <strong class="o_kanban_record_title">
-                    <field name="name"/>
-                  </strong>
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
                   <div>
-                    <t t-esc="record.description.value"/>
+                    <field name="description"/>
 		              </div>
                 </div>
               </div>
@@ -433,7 +444,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="description" optional="hide"/>
+          <field name="description"/>
         </tree>
       </field>
     </record>
@@ -460,11 +471,13 @@
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
                 <div class="oe_kanban_details">
-                  <strong class="o_kanban_record_title">
-                    <field name="name"/>
-                  </strong>
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
                   <div>
-                    <t t-esc="record.description.value"/>
+                    <field name="description"/>
 		              </div>
                 </div>
               </div>
@@ -496,7 +509,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="description" optional="hide"/>
+          <field name="description"/>
         </tree>
       </field>
     </record>
@@ -523,11 +536,13 @@
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
                 <div class="oe_kanban_details">
-                  <strong class="o_kanban_record_title">
-                    <field name="name"/>
-                  </strong>
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
                   <div>
-                    <t t-esc="record.description.value"/>
+                    <field name="description"/>
 		              </div>
                 </div>
               </div>
@@ -559,7 +574,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="description" optional="hide"/>
+          <field name="description"/>
         </tree>
       </field>
     </record>
@@ -586,11 +601,13 @@
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
                 <div class="oe_kanban_details">
-                  <strong class="o_kanban_record_title">
-                    <field name="name"/>
-                  </strong>
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
                   <div>
-                    <t t-esc="record.description.value"/>
+                    <field name="description"/>
 		              </div>
                 </div>
               </div>

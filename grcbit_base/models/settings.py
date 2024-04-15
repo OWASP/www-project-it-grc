@@ -2,6 +2,7 @@
 
 from odoo import models, fields, api, _
 import logging
+import random as r
 from datetime import date
 from statistics import mode
 
@@ -12,4 +13,9 @@ class ItComponents(models.Model):
 
     name = fields.Char(string="Name")
     description = fields.Html(string="Description")
-    color = fields.Integer(string="Color")
+    color = fields.Integer(string="Color", default=lambda x: x.default_color())
+
+    def default_color(self):
+        x = r.randrange(11)
+        if x <= 11 or x > 0:
+            return x

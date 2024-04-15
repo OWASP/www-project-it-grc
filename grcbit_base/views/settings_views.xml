@@ -12,13 +12,13 @@
       <field name="model">it.components</field>
       <field name="arch" type="xml">
         <tree editable="bottom">
-          <field name="name"/>
+          <field name="name" required="1"/>
           <field name="description" optional="hide"/>
           <field name="color" widget="color_picker"/>
         </tree>
       </field>
     </record>
 
-    <menuitem name="IT Components" id="menu_it_components" parent="grcbit_base.menu_settings" action="it_components_action" groups="grcbit_base.group_grc_admin"/>
+    <menuitem name="IT Components" id="menu_it_components" parent="grcbit_base.menu_asset_management" action="it_components_action" groups="grcbit_base.group_grc_admin" sequence="5"/>
   </data>
 </odoo>
