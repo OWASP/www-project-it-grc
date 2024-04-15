@@ -44,6 +44,7 @@
 	        <group>
             <field name="active" invisible="1"/>
             <field name="name" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="control_category_id" invisible="1"/>
             <field name="is_applicable" widget="boolean_toggle"/>
   	      </group>
 	        <group>
@@ -82,12 +83,11 @@
     <record model="ir.ui.view" id="statement_applicability_graph">
       <field name="name">Statement Applicability</field>
       <field name="model">statement.applicability</field>
-      <field name="type">graph</field>
       <field name="arch" type="xml">
         <graph>
-          <field name="control_design_id"/>
-          <field name="name"/>
-          <field name="is_applicable" />
+          <field name="control_category_id"/>
+          <!-- <field name="name"/>-->
+          <field name="is_applicable" /> 
           <field name="control_status"/>
         </graph>
       </field>
