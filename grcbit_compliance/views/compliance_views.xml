@@ -74,7 +74,7 @@
                     </strong>
                   </div>
                   <div>
-                    <t t-esc="record.description.value"/>
+                    <field name="description"/>
 		              </div>
                 </div>
               </div>
@@ -160,7 +160,7 @@
                   </strong><br/>
                   <div style="overflow: hidden; max-height:200px;">
                     <field name="name"/><br/>
-                    <t t-esc="record.description.value"/>
+                    <field name="description"/>
 		              </div>
                 </div>
               </div>
@@ -229,7 +229,7 @@
                     <field name="name"/>
                   </strong>
                   <div>
-                    <t t-esc="record.description.value"/>
+                    <field name="description"/>
 		              </div>
                 </div>
               </div>
@@ -299,7 +299,7 @@
                     <field name="compliance_control_id"/>
                   </strong>
                   <div>
-                    <t t-esc="record.description.value"/>
+                    <field name="description"/>
 		              </div>
                 </div>
               </div>

@@ -110,9 +110,11 @@
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
                 <div class="oe_kanban_details">
-                  <strong class="o_kanban_record_title">
-                    <field name="name"/>
-                  </strong>
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
                   <div>
                     <t t-esc="record.cause.value"/>
 		              </div>
@@ -192,11 +194,13 @@
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
                 <div class="oe_kanban_details">
-                  <strong class="o_kanban_record_title">
-                    <field name="name"/>
-                  </strong>
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
                   <div>
-                    <t t-esc="record.description.value"/>
+                    <field name="description"/>
 		              </div>
                 </div>
               </div>
@@ -260,11 +264,13 @@
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
                 <div class="oe_kanban_details">
-                  <strong class="o_kanban_record_title">
-                    <field name="name"/>
-                  </strong>
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
                   <div>
-                    <t t-esc="record.description.value"/>
+                    <field name="description"/>
 		              </div>
                 </div>
               </div>
@@ -328,11 +334,13 @@
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
                 <div class="oe_kanban_details">
-                  <strong class="o_kanban_record_title">
-                    <field name="name"/>
-                  </strong>
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
                   <div>
-                    <t t-esc="record.description.value"/>
+                    <field name="description"/>
 		              </div>
                 </div>
               </div>
@@ -394,11 +402,13 @@
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
                 <div class="oe_kanban_details">
-                  <strong class="o_kanban_record_title">
-                    <field name="name"/>
-                  </strong>
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
                   <div>
-                    <t t-esc="record.description.value"/>
+                    <field name="description"/>
 		              </div>
                 </div>
               </div>
@@ -465,11 +475,13 @@
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
                 <div class="oe_kanban_details">
-                  <strong class="o_kanban_record_title">
-                    <field name="risk_level_id"/>
-                  </strong>
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="risk_level_id"/>
+                    </strong>
+                  </div>
                   <div>
-                    <t t-esc="record.description.value"/>
+                    <field name="description"/>
 		              </div>
                 </div>
               </div>
@@ -533,9 +545,11 @@
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
                 <div class="oe_kanban_details">
-                  <strong class="o_kanban_record_title">
-                    <field name="inherent_risk_level_id"/>
-                  </strong>
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="inherent_risk_level_id"/>
+                    </strong>
+                  </div>
                   <div>
                     <t t-esc="record.residual_risk_level_id.value"/>
 		              </div>
