@@ -149,6 +149,34 @@ class StatementApplicability(models.Model):
         else:
             self.sudo().control_status = 0
 
+    def get_iso_contol(self, category_id):
+        iso_control = self.env['iso.control'].search([])
+        data = []
+        for cat in iso_control.filtered(lambda x: x.control_category_id.id_control_category == str(category_id)):
+            data.append(cat.id)
+        return len(data)
+    
+    def get_is_applicable(self, category_id):
+        statement_applicability = self.env['statement.applicability'].search([('is_applicable','=',True)])
+        data = []
+        for cat in statement_applicability.filtered(lambda x: x.name.control_category_id.id_control_category == str(category_id)):
+            data.append(cat.id)
+        return len(data)
+    
+    def get_is_status_avg(self, category_id):
+        statement_applicability = self.env['statement.applicability'].search([])
+        data = []
+        percentage = 0
+        total = 0.0
+        for cat in statement_applicability.filtered(lambda x: x.name.control_category_id.id_control_category == str(category_id)):
+            data.append(cat.id)
+            percentage += cat.control_status
+        if len(data) > 0:
+            total = percentage / len(data)
+        else:
+            total = 0
+        return total
+
 class IsmsRole(models.Model):
     _name = 'isms.role'
     _rec_name = 'isms_role_name'

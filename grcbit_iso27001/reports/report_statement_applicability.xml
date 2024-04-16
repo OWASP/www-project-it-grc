@@ -61,8 +61,8 @@
                       <th>Control ID</th>
                       <th>Name</th>
                       <th>Description</th>
-                      <th>Estimated Date</th>
-                      <th>Status</th>
+                      <th>Risk</th>
+                      <th>Status Implementation Control</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -71,7 +71,11 @@
                         <td width="20%"><span t-esc="r.control_id"/></td>
                         <td width="20%"><span t-esc="r.name"/></td>
                         <td width="20%"><span t-esc="r.description"/></td>
-                        <td width="20%"><span t-esc="r.estimated_date"/></td>
+                        <td width="20%">
+                          <t t-foreach="r.risk_factor_id" t-as="risk">
+                            | <span t-esc="risk.name"/>
+                          </t>
+                        </td>
                         <td width="20%"><span t-esc="r.state"/></td>
                       </tr>
                     </t>
@@ -101,7 +105,7 @@
     </record>
 
     <record id="print_compliance" model="ir.actions.report">
-      <field name="name">Statement Applicability Report</field>
+      <field name="name">Statement Applicability Report (details)</field>
       <field name="model">statement.applicability</field>
       <field name="report_type">qweb-html</field>
       <field name="report_name">grcbit_iso27001.statement_applicability_print_template</field>

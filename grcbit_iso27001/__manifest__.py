@@ -33,6 +33,7 @@
 
         #reports
         'reports/report_statement_applicability.xml',
+        'reports/summary_report_statement_applicability.xml',
     ],
     'assets': {
         'web.assets_common': [
