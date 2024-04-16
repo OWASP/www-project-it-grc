@@ -7,7 +7,7 @@
         <record id="chatgpt_model_gpt4" model="chatgpt.model">
             <field name="name">gpt-4</field>
         </record>
-        <record id="chatgpt_model_text_davinci_003" model="chatgpt.model">
+        <!-- <record id="chatgpt_model_text_davinci_003" model="chatgpt.model">
             <field name="name">text-davinci-003</field>
         </record>
         <record id="chatgpt_model_text_davinci_002" model="chatgpt.model">
@@ -15,6 +15,6 @@
         </record>
         <record id="chatgpt_model_text_davinci_001" model="chatgpt.model">
             <field name="name">text-davinci-001</field>
-        </record>
+        </record> -->
     </data>
 </odoo>
