@@ -87,7 +87,7 @@ class ControlCategory(models.Model):
 class IsoControl(models.Model):
     _name = 'iso.control'
     _description = 'ISO Control'
-    _order = 'id_iso_control'
+    _order = 'id ASC'
 
     _rec_name = 'display_name'
     id_iso_control      = fields.Char(string=_('ID ISO Control'), required=True)
