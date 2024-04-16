@@ -56,7 +56,7 @@ msgid ""
 "                    Status:"
 msgstr ""
 "<br/>\n"
-"                    Estatus:"
+"                    Estatus implementación Control:"
 
 #. module: grcbit_iso27001
 #: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
@@ -353,7 +353,7 @@ msgstr "Reporte de la matriz de aplicabilidad"
 #: model:ir.model.fields,field_description:grcbit_iso27001.field_statement_applicability__control_status
 #: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
 msgid "Status"
-msgstr "Estatus"
+msgstr "Estatus implementación Control"
 
 #. module: grcbit_iso27001
 #: model:ir.model.constraint,message:grcbit_iso27001.constraint_iso_control_id_iso_control_uniq
