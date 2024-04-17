@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
+
+    <!--          RES PARTNER       -->
+    <record model="ir.ui.view" id="grcbit_iso27001_res_partner_inh_formhview">
+      <field name="name">GRC ISO27001 Res Partner.forminherited</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//notebook" position="inside">
+          <page string="ISMS">
+            <group>
+              <group>
+                <field name="isms_roles_ids" widget="many2many_tags"/>
+              </group>
+              <group></group>
+            </group>
+          </page>
+        </xpath>
+      </field>
+    </record>
+
     <!--          IT INVENTORY       -->
     <record model="ir.ui.view" id="grcbit_iso27001_it_inventory_inh_treeview">
       <field name="name">GRC ISO27001 IT System.treeinherited</field>
