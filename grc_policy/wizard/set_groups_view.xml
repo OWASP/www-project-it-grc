@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="policy_set_groups_formview_inh">
+      <field name="name">Set Groups</field>
+      <field name="model">set.groups.user</field>
+      <field name="inherit_id" ref="grcbit_setgroups.set_groups_formview"/>
+      <field name="arch" type="xml">
+        <xpath expr="//notebook" position="inside">
+          <page string="Policy">
+            <group>
+              <group>
+                <field name="approval_check"/>
+              </group>
+              <group></group>
+            </group>
+          </page>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>
