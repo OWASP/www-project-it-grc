@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <data>
+    <template 
+      id="grc_policy.report_documentpage_inh"
+      inherit_id="document_page.report_documentpage_doc">
+        <xpath expr="//t" position="replace">
+          <span>Product Expiry Inherited Dashboard</span>
+        </xpath>
+    </template>
+  </data>
+</odoo>

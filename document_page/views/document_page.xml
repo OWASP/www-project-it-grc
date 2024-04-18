@@ -40,7 +40,7 @@
                     <div name="button_box" id="button_box" class="oe_button_box" />
                     <widget
                         name="web_ribbon"
-                        text="Archived"
+                        title="Archived"
                         bg_color="bg-danger"
                         attrs="{'invisible': [('active', '=', True)]}"
                     />
@@ -88,6 +88,7 @@
                                         name="draft_summary"
                                         placeholder="eg: Changed ... for ..."
                                         required="True"
+                                        widget="text"
                                     />
                                 </group>
                             </group>
