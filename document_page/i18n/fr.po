@@ -58,6 +58,11 @@ msgid "Activity Type Icon"
 msgstr "Icône du type d’activité"
 
 #. module: document_page
+#: model_terms:ir.ui.view,arch_db:document_page.view_wiki_form
+msgid "Archived"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model.fields,field_description:document_page.field_document_page__message_attachment_count
 msgid "Attachment Count"
 msgstr "Nombre de pièces jointes"
@@ -546,6 +551,17 @@ msgid "Use it to link resources univocally"
 msgstr "À utiliser pour lier les ressources de façon univoque"
 
 #. module: document_page
+#: model:ir.model.fields,field_description:document_page.field_document_page__website_message_ids
+#, fuzzy
+msgid "Website Messages"
+msgstr "Messages"
+
+#. module: document_page
+#: model:ir.model.fields,help:document_page.field_document_page__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: document_page
 #: model:ir.model,name:document_page.model_document_page_create_menu
 msgid "Wizard Create Menu"
 msgstr "Assistant de création de menu"
@@ -602,10 +618,6 @@ msgstr "résumé"
 
 #~ msgid "Followers (Channels)"
 #~ msgstr "Abonnés (Canaux)"
-
-#, fuzzy
-#~ msgid "Website Messages"
-#~ msgstr "Messages"
 
 #~ msgid "If checked new messages require your attention."
 #~ msgstr "Si coché, de nouveaux messages requièrent votre attention."
