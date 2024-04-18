@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <menuitem 
+      name="Policy" 
+      id="menu_grc_policy_document_knowledge" 
+      parent="grcbit_risk_management.menu_control" 
+      action="grc_policy_document_knowledge_action" 
+      sequence="4"/>
+  </data>
+</odoo>

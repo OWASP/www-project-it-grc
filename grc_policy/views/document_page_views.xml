@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="grc_policy_document_knowledge_action" model="ir.actions.act_window">
+	    <field name="name">GRC Policy</field>
+	    <field name="res_model">document.page</field>
+	    <field name="view_mode">tree,form</field>
+    </record>
+  </data>
+</odoo>
