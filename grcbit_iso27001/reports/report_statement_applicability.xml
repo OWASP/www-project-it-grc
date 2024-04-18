@@ -16,7 +16,7 @@
                 </div>
                 <div class="col-8" style="text-align:left;">
                   <h6>
-                    <strong>Statement Applicability Report<span><br/> ISMS Control: <t t-esc="o.name.display_name"/> </span> </strong>
+                    <strong>Statement Applicability Report<span><br/> ISMS Control: <t t-esc="o.name.display_name"/> </span> </strong><br/>
                     <t t-if="o.is_applicable == True">
                       <span>Applicable</span>
                     </t>
@@ -76,7 +76,20 @@
                             | <span t-esc="risk.name"/>
                           </t>
                         </td>
-                        <td width="20%"><span t-esc="r.state"/></td>
+                        <td width="20%">
+                          <t t-if="r.state == 'draft'">
+                            <span style="text-align:center;">25%</span>
+                          </t>
+                          <t t-if="r.state == 'designed'">
+                            <span style="text-align:center;">50%</span>
+                          </t>
+                          <t t-if="r.state == 'implemented'">
+                            <span style="text-align:center;">75%</span>
+                          </t>
+                          <t t-if="r.state == 'approved'">
+                            <span style="text-align:center;">100%</span>
+                          </t>
+                        </td>
                       </tr>
                     </t>
                   </tbody>
