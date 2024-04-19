@@ -675,7 +675,6 @@
     <menuitem name="#Security_Domain" id="menu_security_domain" parent="menu_control_attribute" action="security_domain_action"  sequence="8" />
     <menuitem name="ISMS Role" id="menu_isms_role" parent="menu_control_attribute" action="isms_role_action" sequence="9"/>
     <menuitem name="Employees" id="menu_grc_employee" parent="menu_control_attribute" action="grc_employee_action" sequence="10"/>
-
     <!-- <menuitem name="ISMS SoD" id="menu_isms_sod_people" parent="menu_control_attribute" action="isms_people_action" sequence="10"/> -->
   </data>
 </odoo>

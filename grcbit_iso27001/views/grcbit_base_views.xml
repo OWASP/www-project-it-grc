@@ -93,6 +93,11 @@
         </xpath>
       </field>
     </record>
+
+    <!-- MENU HIDDEN -->
+    <record model="ir.ui.menu" id="contacts.menu_contacts">
+      <field name="groups_id" eval="[(6,0,[ref('grcbit_iso27001.group_grc_is_support')])]"/>
+    </record>	
   
   </data>
 </odoo>
