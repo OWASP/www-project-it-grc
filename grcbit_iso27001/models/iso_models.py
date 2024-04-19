@@ -102,7 +102,7 @@ class IsoControl(models.Model):
     control = fields.Html(string=_('Control'), required=True)
     purpose = fields.Html(string=_('Purpose'), required=True)
     guidance = fields.Html(string=_('Guidance'), required=True)
-    other_information = fields.Text(string=_('Other Information'))
+    other_information = fields.Html(string=_('Other Information'))
     attachment = fields.Many2many('ir.attachment', string=_("Attachment"))
     active = fields.Boolean(default=True)
     _sql_constraints = [
