@@ -167,7 +167,7 @@ class StatementApplicability(models.Model):
         statement_applicability = self.env['statement.applicability'].search([])
         data = []
         percentage = 0
-        total = 0.0
+        total = 0
         for cat in statement_applicability.filtered(lambda x: x.name.control_category_id.id_control_category == str(category_id)):
             data.append(cat.id)
             percentage += cat.control_status
@@ -175,7 +175,7 @@ class StatementApplicability(models.Model):
             total = percentage / len(data)
         else:
             total = 0
-        return total
+        return int(total)
 
 class IsmsRole(models.Model):
     _name = 'isms.role'
