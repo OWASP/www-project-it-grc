@@ -1,0 +1,14 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="grc_project_task_formview_inh">
+      <field name="name">Project Task</field>
+      <field name="model">project.task</field>
+      <field name="inherit_id" ref="project.view_task_form2"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='tag_ids']" position="attributes">
+          <attribute name="options">{'color_field': 'color', 'no_create':1, 'no_create_edit': True}</attribute>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

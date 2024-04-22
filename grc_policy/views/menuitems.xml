@@ -7,5 +7,17 @@
       parent="grcbit_risk_management.menu_control" 
       action="grc_policy_document_knowledge_action" 
       sequence="4"/>
+
+    <menuitem 
+      name="Policy Config" 
+      id="menu_grc_policy_document_knowledge_config" 
+      parent="grcbit_risk_management.menu_control" 
+      action="grc_policy_document_knowledge_config_action" 
+      sequence="5"/>
+
+    <record model="ir.ui.menu" id="document_knowledge.menu_document_root">
+      <field name="groups_id" eval="[(6,0,[ref('base.group_system'), ref('base.group_erp_manager')])]"/>
+    </record>	
+
   </data>
 </odoo>
