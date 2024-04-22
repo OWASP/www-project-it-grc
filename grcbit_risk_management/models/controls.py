@@ -138,6 +138,7 @@ class ControlDesing(models.Model):
     control = fields.Char(string="Control", help="What the control is")
     evidence_guide = fields.Text(string='Evidence Guide')
     responsible = fields.Many2one('res.users', string='Responsible', required=True, track_visibility='always')
+    responsible_id = fields.Many2one('hr.employee', string='Responsible', required=True, track_visibility='always')
     is_key_control = fields.Boolean(string='Key Control', track_visibility='always')
     control_type_id = fields.Many2many('control.type', string='Control Type', required=True)
     security_property_id = fields.Many2many('security.property', string='Security Property', required=True)

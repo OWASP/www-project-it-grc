@@ -22,7 +22,7 @@
           <!-- <field name="is_key_control" widget="boolean_toggle" attrs="{'readonly': [('state', 'not in', ['draft'])] }" /> -->
           <field name="risk_factor_id" widget="many2many_tags_open" />
           <field name="state" widget="badge" decoration-info="1" />  
-          <field name="responsible" optional="hide"/>
+          <field name="responsible_id" optional="hide"/>
           <field name="control_type_id" widget="many2many_tags_open" optional="hide" />
           <field name="security_property_id" widget="many2many_tags_open" optional="hide" />
           <field name="cybersecurity_concept_id" widget="many2many_tags_open" optional="hide" />
@@ -46,7 +46,7 @@
           <field name="control_evaluation_criteria_id"  />
           <field name="description"  />
           <field name="evidence_guide" />
-          <field name="responsible" />
+          <field name="responsible_id" />
           <field name="control_type_id" />
           <field name="security_property_id" />
           <field name="cybersecurity_concept_id" />
@@ -76,7 +76,7 @@
               <field name="control" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
               <field name="description" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
 	            <field name="estimated_date"/>
-              <field name="responsible" optional="hide" attrs="{'readonly': [('state', 'not in', ['draft'])] }" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />  
+              <field name="responsible_id" optional="hide" attrs="{'readonly': [('state', 'not in', ['draft'])] }" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />  
               <field name="control_type_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
               <field name="security_property_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
             </group>
