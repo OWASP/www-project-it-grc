@@ -67,7 +67,7 @@ class RiskFactor(models.Model):
     _rec_name = 'display_name'
 
     display_name = fields.Char(string=_('Control Category'), compute='_compute_display_name', required=True)
-    name = fields.Html(string=_('Risk Factor'), required=True)
+    name = fields.Text(string=_('Risk Factor'), required=True)
     risk_id = fields.Char(string=_('Risk ID'), required=True, index=True, copy=False, default='New')
     risk_classification_id = fields.Many2many('risk.classification',string=_('Risk Classification'), required=True)
     data_inventory_id = fields.Many2many('data.inventory',string=_('Data Asset'), track_visibility='always')
