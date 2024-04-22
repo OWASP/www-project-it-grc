@@ -9,7 +9,7 @@
       <field name="inherit_id" ref="hr.view_employee_form"/>
       <field name="arch" type="xml">
         <xpath expr="//field[@name='work_email']" position="after">
-          <field name="isms_roles_ids" widget="many2many_tags"/>
+          <field name="isms_roles_ids" widget="many2many_tags_open"/>
         </xpath>
         <xpath expr="//page[@name='personal_information']" position="attributes">
           <attribute name="groups">base.group_system</attribute>

@@ -23,6 +23,7 @@
         'views/menuitems.xml',
         'views/settings_views.xml',
         'reports/report_data_asset.xml',
+        'reports/report_it_inventory.xml',
         'wizards/set_groups_views.xml'
     ],
     'assets':{
