@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
-# Copyright (c) 2020-Present InTechual Solutions. (<https://intechualsolutions.com/>)
 
 {
-    'name': 'Odoo ChatGPT Integration',
+    'name': 'ChatGPT HackDoo',
     'version': '16.0.1.1.2',
     'license': 'AGPL-3',
-    'summary': 'Odoo ChatGPT Integration',
-    'description': 'Allows the application to leverage the capabilities of the GPT language model to generate human-like responses, providing a more natural and intuitive user experience',
-    'author': 'InTechual Solutions',
-    'company': 'InTechual Solutions',
-    'maintainer': 'InTechual Solutions',
-    'website': 'https://intechualsolutions.com',
+    'summary': 'ChatGPT HackDoo',
+    'description': '''
+        Allows the application to leverage the capabilities of the GPT language model to generate human-like responses, providing a more natural and intuitive user experience.
+        You can configurate a assistant ID to link own app communication
+        ''',
+    'author': 'HackDoo',
+    'company': 'HackDoo',
+    'website': 'https://hackdoo.com',
     'depends': ['base', 'base_setup', 'mail'],
     'data': [
         'security/ir.model.access.csv',

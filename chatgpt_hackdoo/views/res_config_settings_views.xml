@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
         <field name="arch" type="xml">
             <xpath expr="//div[hasclass('settings')]" position="inside">
-                <div class="app_settings_block" data-string="ChatGPT" string="ChatGTP" data-key="is_chatgpt_integration">
+                <div class="app_settings_block" data-string="ChatGPT" string="ChatGTP" data-key="chatgpt_hackdoo">
                     <h2>ChatGTP</h2>
                     <div class="col-xs-12 row o_settings_container o_chatgpt_chatgpt_container">
                         <div class="col-xs-12 col-md-6 o_setting_box">
@@ -16,6 +16,9 @@
                                         <label class="col-lg-3" string="API Key" for="openapi_api_key"/>
                                         <field name="openapi_api_key" title="OpenAPI API Key"/>
                                     </div>
+                                    <br/>
+                                        <label class="col-lg-3" string="Assistant ID" for="assistant_id"/>
+                                        <field name="assistant_id" title="OpenAPI Assistant ID"/>
                                 </div>
                             </div>
                         </div>
