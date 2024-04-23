@@ -2,6 +2,10 @@
 <odoo>
   <data>
 
+    <record model="ir.ui.menu" id="contacts.menu_contacts">
+      <field name="groups_id" eval="[(6,0,[ref('base.group_system'), ref('base.group_erp_manager'), ref('grcbit_iso27001.group_grc_is_support')])]"/>
+    </record>	
+
     <!--          HR EMPLOYEE       -->
     <record model="ir.ui.view" id="grcbit_iso27001_hr_employee_inh_formhview">
       <field name="name">GRC ISO27001 HR Employee.forminherited</field>
