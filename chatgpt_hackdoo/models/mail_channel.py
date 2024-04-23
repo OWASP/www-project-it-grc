@@ -53,7 +53,7 @@ class Channel(models.Model):
             if (author_id != partner_chatgpt.id and
                     (chatgpt_name in msg_vals.get('record_name', '') or 'ChatGPT,' in msg_vals.get('record_name', ''))):
                 try:
-                    res = self._get_chatgpt_response(prompt=prompt).replace(".",".\n")
+                    res = self._get_chatgpt_response(prompt=prompt)
                     self.with_user(user_chatgpt).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment')
                 except Exception as e:
                     raise UserError(_(e))
@@ -61,7 +61,7 @@ class Channel(models.Model):
         elif msg_vals.get('model', '') == 'mail.channel' and msg_vals.get('res_id', 0) == chatgpt_channel_id.id:
             if author_id != partner_chatgpt.id:
                 try:
-                    res = self._get_chatgpt_response(prompt=prompt).replace(".",".\n")
+                    res = self._get_chatgpt_response(prompt=prompt)
                     chatgpt_channel_id.with_user(user_chatgpt).message_post(body=res, message_type='comment', subtype_xmlid='mail.mt_comment')
                 except Exception as e:
                     raise UserError(_(e))
