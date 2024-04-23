@@ -19,6 +19,6 @@
       </field>
     </record>
 
-    <menuitem name="IT Components" id="menu_it_components" parent="grcbit_base.menu_asset_management" action="it_components_action" groups="grcbit_base.group_grc_admin" sequence="5"/>
+    <menuitem name="IT Components" id="menu_it_components" parent="grcbit_base.menu_asset_management" action="it_components_action" sequence="5"/>
   </data>
 </odoo>

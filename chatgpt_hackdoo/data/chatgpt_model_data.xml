@@ -4,10 +4,11 @@
         <record id="chatgpt_model_gpt_3_5_turbo" model="chatgpt.model">
             <field name="name">gpt-3.5-turbo</field>
         </record>
+	<!--
         <record id="chatgpt_model_gpt4" model="chatgpt.model">
             <field name="name">gpt-4</field>
         </record>
-        <!-- <record id="chatgpt_model_text_davinci_003" model="chatgpt.model">
+        <record id="chatgpt_model_text_davinci_003" model="chatgpt.model">
             <field name="name">text-davinci-003</field>
         </record>
         <record id="chatgpt_model_text_davinci_002" model="chatgpt.model">
