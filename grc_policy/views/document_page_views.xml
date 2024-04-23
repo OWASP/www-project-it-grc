@@ -6,5 +6,12 @@
 	    <field name="res_model">document.page</field>
 	    <field name="view_mode">tree,form</field>
     </record>
+
+    <record id="grc_policy_document_knowledge_config_action" model="ir.actions.act_window">
+	    <field name="name">Policy Config</field>
+	    <field name="res_model">res.config.settings</field>
+      <field name="context">{'module': 'document_knowledge'}</field>
+	    <field name="view_mode">form</field>
+    </record>
   </data>
 </odoo>
