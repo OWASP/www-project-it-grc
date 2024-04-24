@@ -12,7 +12,7 @@
       name="Policy Config" 
       id="menu_grc_policy_document_knowledge_config" 
       parent="grcbit_risk_management.menu_control" 
-      action="grc_policy_document_knowledge_config_action" 
+      action="document_page.action_page" 
       sequence="5"/>
 
     <record model="ir.ui.menu" id="document_knowledge.menu_document_root">

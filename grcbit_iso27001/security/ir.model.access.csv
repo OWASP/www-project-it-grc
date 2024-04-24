@@ -79,3 +79,12 @@ access_isms_role_group_isms,access.isms.role.group.isms,model_isms_role,grcbit_b
 access_isms_role_group_control,access.isms.role.group.control,model_isms_role,grcbit_base.group_control,1,0,0,0
 access_isms_role_group_compliance,access.isms.role.group.compliance,model_isms_role,grcbit_base.group_compliance,1,0,0,0
 access_isms_role_group_guest,access.isms.role.group.guest,model_isms_role,grcbit_base.group_guest,1,0,0,0
+
+access_hr_employee_group_admin,access.hr.employee.group.admin,hr.model_hr_employee,grcbit_base.group_grc_admin,1,1,1,1
+access_hr_employee_group_grc_consultant,access.hr.employee.group.grc.consultant,hr.model_hr_employee,grcbit_base.group_grc_consultant,1,1,1,1
+access_hr_employee_group_asset_management,access.hr.employee.group.asset.management,hr.model_hr_employee,grcbit_base.group_asset_management,1,0,0,0
+access_hr_employee_group_risk_management,access.hr.employee.group.risk.management,hr.model_hr_employee,grcbit_base.group_risk_management,1,0,0,0
+access_hr_employee_group_isms,access.hr.employee.group.isms,hr.model_hr_employee,grcbit_base.group_isms,1,1,1,1
+access_hr_employee_group_control,access.hr.employee.group.control,hr.model_hr_employee,grcbit_base.group_control,1,0,0,0
+access_hr_employee_group_compliance,access.hr.employee.group.compliance,hr.model_hr_employee,grcbit_base.group_compliance,1,0,0,0
+access_hr_employee_group_guest,access.hr.employee.group.guest,hr.model_hr_employee,grcbit_base.group_guest,1,0,0,0
