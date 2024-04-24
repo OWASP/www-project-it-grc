@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-8" style="text-align:left;">
                   <h6>
-                    <strong>IT System Report</strong>
+                    <strong><span><t t-esc="o.display_name"/></span></strong>
                   </h6>
                   <br/>
                 </div>
