@@ -3,7 +3,7 @@
   <data>
 
     <record model="ir.ui.menu" id="contacts.menu_contacts">
-      <field name="groups_id" eval="[(6,0,[ref('base.group_system'), ref('base.group_erp_manager'), ref('grcbit_iso27001.group_grc_is_support')])]"/>
+      <field name="groups_id" eval="[(6,0,[ref('base.group_system'), ref('base.group_erp_manager')])]"/>
     </record>	
 
     <!--          HR EMPLOYEE       -->

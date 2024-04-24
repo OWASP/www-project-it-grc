@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record model="ir.ui.menu" id="mass_mailing.mass_mailing_menu_root">
+      <field name="name">Concientización Seguridad de la Información</field>
+    </record>
+    <record id="mass_mailing.mailing_mailing_action_mail" model="ir.actions.act_window">
+      <field name="name">Concientización Seguridad de la Información</field>
+    </record>
+  </data>
+</odoo>

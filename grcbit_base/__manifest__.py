@@ -12,7 +12,6 @@
         'base',
         'board',
         'grcbit_setgroups',
-        'project',
     ],
 
     # always loaded
@@ -23,7 +22,6 @@
         'views/dashboard_view.xml',
         'views/menuitems.xml',
         'views/settings_views.xml',
-        'views/project_task_view.xml',
         'reports/report_data_asset.xml',
         'reports/report_it_inventory.xml',
         'wizards/set_groups_views.xml'
