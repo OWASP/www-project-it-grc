@@ -29,6 +29,6 @@ class ItComponents(models.Model):
         res = super(ItComponents, self).create(vals)
         components = self.env['it.components'].search([('id','!=', res.id)])
         if components:
-            if vals['name'] in components.name:
+            if vals['name'] in [x.name for x in components]:
                 raise ValidationError("IT Component name already exist.!")
         return res

@@ -10,7 +10,7 @@
           <page string="Policy">
             <group>
               <group>
-                <field name="approval_check"/>
+                <field name="permissions"/>
               </group>
               <group></group>
             </group>

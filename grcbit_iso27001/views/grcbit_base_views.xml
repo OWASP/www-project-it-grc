@@ -25,10 +25,10 @@
           <field name="isms_roles_ids" widget="many2many_tags_open"/>
         </xpath>
         <xpath expr="//page[@name='personal_information']" position="attributes">
-          <attribute name="groups">base.group_system</attribute>
+          <attribute name="groups">base.group_system,base.group_erp_manager</attribute>
         </xpath>
         <xpath expr="//page[@name='hr_settings']" position="attributes">
-          <attribute name="groups">base.group_system</attribute>
+          <attribute name="groups">base.group_system,base.group_erp_manager</attribute>
         </xpath>
       </field>
     </record>
