@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="chatgpt_assistant_discuss_integration.ThreadViewTopbarComponent" t-inherit="mail.ThreadViewTopbar"
+       owl="1">
+        <xpath expr="//div[hasclass('o_ThreadViewTopbar_actions')]" position="inside">
+            <button t-on-click="openChannelForChatGPT" class="btn btn-success rounded">ChatGPT</button>
+        </xpath>
+    </t>
+</templates>
