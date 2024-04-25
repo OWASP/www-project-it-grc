@@ -15,6 +15,8 @@
 
     # always loaded
     'data': [
+        #security
+        'security/ir.model.access.csv',
         #reports
         'reports/document_page_report.xml',
         

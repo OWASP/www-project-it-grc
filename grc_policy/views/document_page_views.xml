@@ -7,6 +7,12 @@
 	    <field name="view_mode">tree,form</field>
     </record>
 
+    <record id="grc_policy_config_action_url" model="ir.actions.act_url">
+      <field name="name">redirect_policy_config</field>
+	    <field name="url">/web#action=522&amp;model=mailing.mailing&amp;view_type=list&amp;menu_id=396</field>
+      <field name="target">self</field>
+    </record>
+
     <record id="grc_policy_document_knowledge_config_action" model="ir.actions.act_window">
 	    <field name="name">Policy Config</field>
 	    <field name="res_model">document.page</field>

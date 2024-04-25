@@ -6,6 +6,7 @@
       id="menu_grc_policy_document_knowledge" 
       parent="grcbit_risk_management.menu_control" 
       action="grc_policy_document_knowledge_action" 
+      groups="base.group_user"
       sequence="4"/>
 
     <menuitem 
@@ -13,6 +14,7 @@
       id="menu_grc_policy_document_knowledge_config" 
       parent="grcbit_risk_management.menu_control" 
       action="document_page.action_page" 
+      groups="base.group_system,base.group_erp_manager"
       sequence="5"/>
 
     <record model="ir.ui.menu" id="document_knowledge.menu_document_root">

@@ -3,23 +3,47 @@
   <data>
     <template 
       id="grc_policy.report_documentpage_inh"
-      inherit_id="document_page.report_documentpage_doc">
+      inherit_id="document_page.report_documentpage">
         <xpath expr="//t" position="replace">
-          <div class="page">
-            <div class="row">
-              <div class="col-4">
-                <span>
-                  <img t-att-src="image_data_uri(doc.env.user.company_id.logo)" style="text-align:left; width:100px;" alt="Logo"/>
-                </span>
-              </div>
-              <div class="col-8" style="text-align:left;">
-                <h1 t-field="doc.name" />
-                <div t-raw="doc.content" />
-              </div>
-            </div>
-          </div>
+          <t t-call="web.basic_layout">
+          <t t-foreach="docs" t-as="doc" >
+          <t t-call="web.report_layout">
+                <div class="page">
+                  <div class="row">
+                    <div class="col-4">
+                      <span>
+                        <img t-att-src="image_data_uri(doc.env.user.company_id.logo)" style="text-align:left; width:100px;" alt="Logo"/>
+                      </span>
+                    </div>
+                    <div class="col-8" style="text-align:left;">
+                      <h1 t-field="doc.name" />
+                      <div t-raw="doc.content" />
+                    </div>
+                  </div>
+                </div>
+          </t></t></t>
           <!-- <span>Product Expiry Inherited Dashboard</span> -->
         </xpath>
     </template>
+
+    <record id="paperformat_grc_policy" model="report.paperformat">
+      <field name="name">Custom Paper</field>
+      <field name="default" eval="True" />
+      <field name="format">A4</field>
+      <field name="page_height">0</field>
+      <field name="page_width">0</field>
+      <field name="orientation">Portrait</field>
+      <field name="margin_top">5</field>
+      <field name="margin_bottom">5</field>
+      <field name="margin_left">7</field>
+      <field name="margin_right">7</field>
+      <field name="header_line" eval="False" />
+      <field name="header_spacing">10</field>
+      <field name="dpi">90</field>
+    </record>
+
+    <record id="document_page.report_document_page" model="ir.actions.report">
+      <field name="paperformat_id" ref="paperformat_grc_policy" />
+    </record>
   </data>
 </odoo>

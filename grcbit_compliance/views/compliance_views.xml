@@ -277,7 +277,8 @@
 		      <group>
             <field name="compliance_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
             <field name="description"/>
-            <field name="control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+            <field name="control_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+            <field name="control_status" widget="percentpie" force_save="1"/>
             <!-- <field name="iso_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" widget="many2many_tags_open" />
             <field name="document_page_id" widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True)]" /> -->
           </group>
