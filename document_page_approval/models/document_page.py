@@ -4,7 +4,7 @@
 
 from ast import literal_eval
 
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 
 
 class DocumentPage(models.Model):

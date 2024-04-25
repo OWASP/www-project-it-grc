@@ -16,6 +16,9 @@
               (0, 0, {'view_mode': 'form', 'view_id': ref('document_page.view_wiki_form')})]"/>
 
     </record>
+    <!-- <record id="document_page.action_page" model="ir.actions.act_window">
+      <field name="params" eval="{'menu_id': ref('document_knowledge.menu_document_root')}"/>
+    </record> -->
 
     <record model="ir.ui.view" id="grc_policy_document_page_formview_inh">
       <field name="name">Document Page</field>

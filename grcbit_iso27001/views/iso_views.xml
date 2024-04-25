@@ -684,6 +684,24 @@
 	    <field name="res_model">hr.employee</field>
 	    <field name="view_mode">kanban,tree,form,activity</field>
     </record>
+
+    <record id="grc_employee_action_url" model="ir.actions.act_url">
+      <field name="name">redirect_employee</field>
+	    <field name="url">/web#action=483&amp;model=hr.employee&amp;view_type=kanban&amp;menu_id=350</field>
+      <field name="target">self</field>
+    </record>
+
+    <record id="grc_projects_action_url" model="ir.actions.act_url">
+      <field name="name">redirect_project</field>
+	    <field name="url">/web#action=419&amp;model=project.project&amp;view_type=kanban&amp;menu_id=283</field>
+      <field name="target">self</field>
+    </record>
+
+    <record id="grc_mass_mailing_action_url" model="ir.actions.act_url">
+      <field name="name">redirect_mass_mailing</field>
+	    <field name="url">/web#action=522&amp;model=mailing.mailing&amp;view_type=list&amp;menu_id=396</field>
+      <field name="target">self</field>
+    </record>
     
     <!--MENUITEM-->
     <menuitem name="ISMS" id="menu_control_attribute" parent="grcbit_base.menu_root" sequence="3" />
@@ -696,7 +714,11 @@
     <menuitem name="#Operational_Capability" id="menu_opertaional_capability" parent="menu_control_attribute" action="operational_capability_action" sequence="7" />
     <menuitem name="#Security_Domain" id="menu_security_domain" parent="menu_control_attribute" action="security_domain_action"  sequence="8" />
     <menuitem name="ISMS Role" id="menu_isms_role" parent="menu_control_attribute" action="isms_role_action" sequence="9"/>
-    <menuitem name="Employees" id="menu_grc_employee" parent="menu_control_attribute" action="grc_employee_action" sequence="10"/>
+    <menuitem name="Employees" id="menu_grc_employee" parent="menu_control_attribute" action="grc_employee_action_url" sequence="10"/>
+    <menuitem name="Project" id="menu_grc_project" parent="menu_control_attribute" action="grc_projects_action_url" sequence="11"/>
+    <menuitem name="Concientización Seguridad de la Información" id="menu_grc_mass_mailing" parent="menu_control_attribute" action="grc_mass_mailing_action_url" sequence="12"/>
+    
+
     <!-- <menuitem name="ISMS SoD" id="menu_isms_sod_people" parent="menu_control_attribute" action="isms_people_action" sequence="10"/> -->
   </data>
 </odoo>

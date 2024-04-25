@@ -17,7 +17,7 @@ class SetGroupsZt(models.TransientModel):
     def get_current_groups_control(self, name):
         user = self.env.context.get('active_id')
         user_id = self.sudo().env['res.users'].search([('id','=', user)])
-        category_id = self.sudo().env['ir.module.category'].search([('name','=','Control')])
+        category_id = self.sudo().env['ir.module.category'].search([('name','=','Control'),('visible','=',True)])
         groups = self.sudo().env['res.groups'].search([('name','=', name),('category_id','=',category_id.id)])
         if user_id.id in [n.id for n in groups.users]:
             return True
@@ -27,7 +27,7 @@ class SetGroupsZt(models.TransientModel):
     def base_values_control(self,name):
         user = self.env.context.get('active_id')
         user_id = self.sudo().env['res.users'].search([('id','=', user)])
-        category_id = self.sudo().env['ir.module.category'].search([('name','=','Control')])
+        category_id = self.sudo().env['ir.module.category'].search([('name','=','Control'),('visible','=',True)])
         groups = self.sudo().env['res.groups'].search([('name','=', name),('category_id','=',category_id.id)])
         return groups
 
