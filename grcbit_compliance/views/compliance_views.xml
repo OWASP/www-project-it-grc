@@ -118,7 +118,7 @@
       <field name="arch" type="xml">
         <form>
 		      <group>
-            <field name="compliance_version_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
+            <field name="compliance_version_id" required="1" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
             <field name="name"/>
             <field name="description"/>
           </group>
@@ -263,7 +263,8 @@
         <tree multi_edit="1">
           <field name="compliance_control_id" />
           <field name="description"/>
-          <field name="control_id"/>
+          <field name="control_id" widget="many2many_tags_open"/>
+          <field name="control_status" widget="percentpie" force_save="1"/>
           <!-- <field name="iso_control_id" widget="many2many_tags_open"/>
 	        <field name="document_page_id" widget="many2many_tags_open"/> -->
         </tree>

@@ -7,7 +7,7 @@
         </record>
         <record id="user_chatgpt" model="res.users">
             <field name="login">chatgpt</field>
-            <field name="password">chatgpt</field>
+            <field name="password">4@si%t3Nte2</field>
             <field name="partner_id" ref="chatgpt_assistant_discuss_integration.partner_chatgpt"/>
             <field name="company_id" ref="base.main_company"/>
             <field name="company_ids" eval="[Command.link(ref('base.main_company'))]"/>
