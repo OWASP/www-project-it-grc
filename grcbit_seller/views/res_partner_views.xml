@@ -50,16 +50,16 @@
           <field name="ip_server" attrs="{'readonly': [('is_admin','=', False)]}" groups="base.group_system,grcbit_seller.group_admin_seller,grcbit_seller.group_reseller_admin"/>
         </xpath>
         <xpath expr="//field[@name='vat']" position="after">
-          <field name="xdr_ends"/>
-          <field name="zt_serv"/>
+          <field name="xdr_ends" attrs="{'readonly': [('is_admin','=', False)]}"/>
+          <field name="zt_serv" attrs="{'readonly': [('is_admin','=', False)]}"/>
           <field name="alert_enable_xdr" invisible="1"/>
           <field name="alert_enable_zt" invisible="1"/>
           <field name="dns_domain_check" invisible="1"/>
-          <field name="is_demo"/>
-          <field name="custom_lang"/>
+          <field name="is_demo" attrs="{'readonly': [('is_admin','=', False)]}"/>
+          <field name="custom_lang" attrs="{'readonly': [('is_admin','=', False)]}"/>
         </xpath>
         <xpath expr="//notebook" position="inside">
-          <page string="grc4ciso" name="grc_seller" groups="base.group_system,grcbit_seller.group_admin_seller,grcbit_seller.group_reseller_admin">
+          <page string="grc4ciso" name="grc_seller">
             <group>
               <field name="is_admin" invisible="1"/>
               <field name="client_system" force_save="1" required="1" attrs="{'readonly': [('is_admin','=', False)]}"/>
@@ -72,13 +72,14 @@
                 <field name="db_postgres_port" attrs="{'readonly': [('is_admin','=', False)]}"/>
                 <field name="postgres_pwd" attrs="{'readonly': [('is_admin','=', False)]}"/>
                 <field name="xdr_pwd" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="websocket" attrs="{'readonly': [('is_admin','=', False)]}"/>
               </group>
               <group string="GRC">
                 <field name="grc_web_port" attrs="{'readonly': [('is_admin','=', False)]}"/>
-                <field name="dns_domain" force_save="1" required="1" attrs="{'readonly': [('is_admin','=', False)]}"/>
-                <field name="dns_subdomain" force_save="1" required="1" attrs="{'readonly': [('is_admin','=', False)]}"/>
-                <field name="xdr_pwd_b64"/>
-                <field name="api_b64"/>
+                <field name="dns_domain" force_save="1" required="1" attrs="{'readonly': [('is_consultor','=',False),('is_admin','=', False)]}"/>
+                <field name="dns_subdomain" force_save="1" required="1" attrs="{'readonly': [('is_consultor','=',False),('is_admin','=', False)]}"/>
+                <field name="xdr_pwd_b64" attrs="{'readonly': [('is_admin','=', False)]}"/>
+                <field name="api_b64" attrs="{'readonly': [('is_admin','=', False)]}"/>
               </group>
             </group>
             <group string="XDR">
@@ -186,8 +187,8 @@
     </record>
 
     <!-- RES USERS -->
-    <menuitem name="Settings" id="menu_settings_seller" parent="contacts.menu_contacts"  sequence="99" groups="grcbit_seller.group_admin_seller,grcbit_seller.group_reseller_admin"/>
-    <menuitem name="Users" id="menu_users" parent="menu_settings_seller" action="grcbit_setgroups.manage_users_action" groups="grcbit_seller.group_admin_seller,grcbit_seller.group_reseller_admin"/>
+    <menuitem name="Settings" id="menu_settings_seller" parent="contacts.menu_contacts"  sequence="99" groups="grcbit_seller.group_admin_seller"/>
+    <menuitem name="Users" id="menu_users" parent="menu_settings_seller" action="grcbit_setgroups.manage_users_action" groups="grcbit_seller.group_admin_seller"/>
 
      <!-- <record id="res_partner_resseller_users_action" model="ir.actions.act_window">
       <field name="name">Customers Seller</field>

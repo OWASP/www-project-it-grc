@@ -7,15 +7,14 @@
       <field name="inherit_id" ref="grcbit_setgroups.set_groups_formview"/>
       <field name="arch" type="xml">
         <xpath expr="//notebook[@name='container_access']" position="inside">
-          <page name="seller_groups" string="Seller" groups="grcbit_seller.group_admin_seller,grcbit_seller.group_reseller_admin">
+          <page name="seller_groups" string="Seller" groups="grcbit_seller.group_admin_seller">
             <group>
               <group>
                 <field name="seller_admin_check"/>
                 <field name="seller_user_check"/>
               </group>
               <group>
-                <field name="reseller_admin_check"/>
-                <field name="seller_user_alt_check"/>
+                <field name="seller_consultor_check"/>
               </group>
             </group>
           </page>
