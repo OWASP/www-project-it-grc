@@ -115,6 +115,7 @@ class ResPartnerGRC(models.Model):
     xdr_manager = fields.Char(string="XDR Manager", default=lambda r: r._set_default_port('xdr_manager', int(2750), int(3000)))
     xdr_zt_v1 = fields.Char(string="XDR Ztrust V1", default=lambda r: r._set_default_port('xdr_zt_v1', int(9443), int(9693)))
     xdr_balancer = fields.Char(string="XDR Balancer", default=lambda r: r._set_default_port('xdr_balancer', int(1750), int(2000)))
+    websocket = fields.Char(string="WebSocket", default=lambda r: r._set_default_port('websocket', int(6750), int(7000)))
 
     xdr_node = fields.Selection([
         ('single_mode','single-node'),
@@ -297,6 +298,7 @@ class ResPartnerGRC(models.Model):
     
 
     is_admin = fields.Boolean(string="is admin", compute="_get_group", store=False)
+    is_consultor = fields.Boolean(string="is admin", compute="_get_group_consultor", store=False)
     _sql_constraints = [
         ('unique_name','unique(display_name)','Customer name already exist.!'),
         ('unique_dns_subdomain','unique(dns_subdomain)', 'DNS SubDomain already exist.!'),
@@ -328,7 +330,7 @@ class ResPartnerGRC(models.Model):
         return res
     
     def get_state_bygroup(self):
-        flag = self.env.user.has_group('grcbit_seller.group_user_seller_alt')
+        flag = self.env.user.has_group('grcbit_seller.group_user_seller')
         if flag == True:
             return 'approved'
         else:
@@ -391,24 +393,43 @@ class ResPartnerGRC(models.Model):
                 val = int(partners[0].xdr_zt_v1) + 1
             if field == 'xdr_balancer':
                 val = int(partners[0].xdr_balancer) + 1
+            if field == 'websocket':
+                val = int(partners[0].websocket) + 1
             return val
 
     @api.onchange('db_postgres_port')
     def _onchange_is_admin_new(self):
         for rec in self:
-            # flag = self.env.user.has_group('grcbit_seller.group_admin_seller')
-            if self.env.user.has_group('base.group_system'):
+            flag = self.env.user.has_group('grcbit_seller.group_admin_seller')
+            if flag:
                 rec.is_admin = True
             else:
                 rec.is_admin = False
 
     def _get_group(self):
         for rec in self:
-            # flag = self.env.user.has_group('grcbit_seller.group_admin_seller')
-            if self.env.user.has_group('base.group_system'):
+            flag = self.env.user.has_group('grcbit_seller.group_admin_seller')
+            if flag:
                 rec.is_admin = True
             else:
                 rec.is_admin = False
+
+    @api.onchange('db_postgres_port')
+    def _onchange_is_consultor_new(self):
+        for rec in self:
+            flag = self.env.user.has_group('grcbit_seller.group_consultor_seller')
+            if flag:
+                rec.is_consultor = True
+            else:
+                rec.is_consultor = False
+
+    def _get_group_consultor(self):
+        for rec in self:
+            flag = self.env.user.has_group('grcbit_seller.group_consultor_seller')
+            if flag:
+                rec.is_consultor = True
+            else:
+                rec.is_consultor = False
 
     def just_range(self, field, min_value, max_value):
         for rec in self:
@@ -461,13 +482,14 @@ class ResPartnerGRC(models.Model):
         self.just_range(self.xdr_zt, 6500, 6750)
         self.just_range(self.xdr_zt_v1, 9443, 9693)
         self.just_range(self.xdr_balancer, 1750, 2000)
+        self.just_range(self.websocket, 6750, 7000)
         
         return res
 
     def has_duplicates(self, seq):
         return len(seq) != len(set(seq))
 
-    @api.constrains('db_postgres_port','grc_web_port','xdr_indexer_port','xdr_dashboard_port','xdr_dashboard_port2','xdr_manager_port1','xdr_manager_port2','xdr_manager_port3','xdr_manager_port4','ziti_controller_port1','xiti_controller_port2','ziti_edge_router1','ziti_edge_router2','ziti_console','xdr_zt','xdr_zt_v1','xdr_balancer')
+    @api.constrains('db_postgres_port','grc_web_port','xdr_indexer_port','xdr_dashboard_port','xdr_dashboard_port2','xdr_manager_port1','xdr_manager_port2','xdr_manager_port3','xdr_manager_port4','ziti_controller_port1','xiti_controller_port2','ziti_edge_router1','ziti_edge_router2','ziti_console','xdr_zt','xdr_zt_v1','xdr_balancer','websocket')
     def no_repeat_ports(self):
         ports = []
         for rec in self:
@@ -506,6 +528,8 @@ class ResPartnerGRC(models.Model):
                 ports.append(rec.xdr_zt_v1)
             if rec.xdr_balancer:
                 ports.append(rec.xdr_balancer)
+            if rec.websocket:
+                ports.append(rec.websocket)
             
             
         value = self.has_duplicates(ports)

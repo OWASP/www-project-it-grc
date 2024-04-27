@@ -27,6 +27,7 @@
         'data/user_partner_data.xml',
         'views/res_config_settings_views.xml',
         'views/mail_channel_chatgpt.xml',
+        'views/views.xml',
     ],
     'assets': {
         'web.assets_backend': [

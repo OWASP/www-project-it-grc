@@ -8,12 +8,4 @@ access_change_password_wizard_group_admin_seller,access.change.password.wizard.g
 access_change_password_user_group_admin_seller,access.change.password.user.group.admin.seller,base.model_change_password_user,group_admin_seller,1,1,1,1
 access_set_groups_user_group_admin_seller,access.set.groups.user.group.admin.seller,model_set_groups_user,group_admin_seller,1,1,1,1
 
-access_res_users_group_admin_reseller,access.res.users.group.admin.reseller,base.model_res_users,group_reseller_admin,1,1,1,1
-access_res_partner_group_admin_reseller,access.res.partner.group.admin.reseller,base.model_res_partner,group_reseller_admin,1,1,1,1
-access_res_groups_group_admin_reseller,access.res.groups.group.admin.reseller,base.model_res_groups,group_reseller_admin,1,1,1,1
-access_change_password_wizard_group_admin_reseller,access.change.password.wizard.group.admin.reseller,base.model_change_password_wizard,group_reseller_admin,1,1,1,1
-access_change_password_user_group_admin_reseller,access.change.password.user.group.admin.reseller,base.model_change_password_user,group_reseller_admin,1,1,1,1
-access_set_groups_user_group_admin_reseller,access.set.groups.user.group.admin.reseller,model_set_groups_user,group_reseller_admin,1,1,1,1
-
 access_res_partner_group_user_seller,access.res.partner.group.user.reseller,base.model_res_partner,group_user_seller,1,1,1,0
-access_res_partner_group_user_reseller_alt,access.res.partner.group.user.reseller.alt,base.model_res_partner,group_user_seller_alt,1,1,1,0
