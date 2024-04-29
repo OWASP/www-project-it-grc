@@ -689,19 +689,19 @@
 
     <record id="grc_employee_action_url" model="ir.actions.act_url">
       <field name="name">redirect_employee</field>
-	    <field name="url">/web#action=483&amp;model=hr.employee&amp;view_type=kanban&amp;menu_id=350</field>
+	    <field name="url">/web#action=446&amp;model=hr.employee&amp;view_type=kanban&amp;menu_id=321</field>
       <field name="target">self</field>
     </record>
 
     <record id="grc_projects_action_url" model="ir.actions.act_url">
       <field name="name">redirect_project</field>
-	    <field name="url">/web#action=419&amp;model=project.project&amp;view_type=kanban&amp;menu_id=283</field>
+	    <field name="url">/web#action=384&amp;model=project.project&amp;view_type=kanban&amp;menu_id=267</field>
       <field name="target">self</field>
     </record>
 
     <record id="grc_mass_mailing_action_url" model="ir.actions.act_url">
       <field name="name">redirect_mass_mailing</field>
-	    <field name="url">/web#action=522&amp;model=mailing.mailing&amp;view_type=list&amp;menu_id=396</field>
+	    <field name="url">/web#action=429&amp;model=mailing.mailing&amp;view_type=list&amp;menu_id=305</field>
       <field name="target">self</field>
     </record>
     
