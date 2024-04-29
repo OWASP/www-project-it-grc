@@ -83,7 +83,7 @@
       </t>
     </template>
 
-    <record id="print_data_asset" model="ir.actions.report">
+    <record id="print_it_inventory" model="ir.actions.report">
       <field name="name">IT System Report</field>
       <field name="model">it.inventory</field>
       <field name="report_type">qweb-html</field>
