@@ -55,8 +55,8 @@
           <field name="alert_enable_xdr" invisible="1"/>
           <field name="alert_enable_zt" invisible="1"/>
           <field name="dns_domain_check" invisible="1"/>
-          <field name="is_demo" attrs="{'readonly': [('is_admin','=', False)]}"/>
-          <field name="custom_lang" attrs="{'readonly': [('is_admin','=', False)]}"/>
+          <field name="is_demo" attrs="{'readonly': [('is_consultor','=',False),('is_admin','=', False)]}"/>
+          <field name="custom_lang" attrs="{'readonly': [('is_consultor','=',False),('is_admin','=', False)]}"/>
         </xpath>
         <xpath expr="//notebook" position="inside">
           <page string="grc4ciso" name="grc_seller">
