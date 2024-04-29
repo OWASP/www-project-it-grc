@@ -51,7 +51,7 @@ class ResPartnerGRC(models.Model):
     ziti_edge_router2 = fields.Char(string="Ziti Edge Router (10080)", default= lambda x: x._set_default_port('ziti_edge_router2', int(6000), int(6250))) # de 6000 a 6250 
     ziti_console = fields.Char(string="Ziti Console (8443)", default= lambda x: x._set_default_port('ziti_console', int(6250), int(6500))) # de 6250 a 6500 
     xdr_zt = fields.Char(string="XDR ZT", default= lambda x: x._set_default_port('xdr_zt', int(6500), int(6750))) #6500 a 6750
-    dns_domain = fields.Char(string="DNS Domain")
+    dns_domain = fields.Char(string="DNS Domain", default="grc4ciso.com")
     dns_domain_check = fields.Boolean(string="Correct DNS Domain")
     is_openziti = fields.Boolean(string="OpenZiti", default=True)
 
@@ -575,7 +575,15 @@ class ResPartnerGRC(models.Model):
         for rec in self:
             subdomain = ''
             if rec.dns_subdomain:
-                subdomain = rec.dns_subdomain + '.'
+                xdr = rec.dns_subdomain[-3:]
+                zt = rec.dns_subdomain[-2:]
+                if xdr == 'xdr' or zt == 'zt':
+                    subdomain = rec.dns_subdomain + '.'
+                else:
+                    if rec.custom_lang == 'es':
+                        raise ValidationError("El subdominio debe terminar en xdr o zt")
+                    else:
+                        raise ValidationError("The subdomain must end in xdr or zt")
             
             text = subdomain + (rec.dns_domain if rec.dns_domain else '')
             try:
