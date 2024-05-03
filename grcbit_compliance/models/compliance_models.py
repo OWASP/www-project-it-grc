@@ -14,7 +14,7 @@ class ComplianceVersion(models.Model):
 
     name = fields.Char(string='Compliance Version', required=True)
     active = fields.Boolean(default=True)
-    description  = fields.Text(string='Description', required=True)
+    description  = fields.Text(string='Description')
     compliance_control_objective_ids = fields.One2many('compliance.control.objective', 'compliance_version_id', string=' ', required=True  )
     attachment_file = fields.Binary(string="Attachment")
     _sql_constraints = [('name_uniq', 'unique(name)', "The compliance version name already exists.")]
