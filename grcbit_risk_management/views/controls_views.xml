@@ -75,7 +75,7 @@
               <field name="name" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
               <field name="control" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
               <field name="description" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
-	            <field name="estimated_date"/>
+	            <field name="estimated_date" attrs="{'readonly': [('state','not in', ['designed'])]}"/>
               <field name="responsible_id" optional="hide" attrs="{'readonly': [('state', 'not in', ['draft'])] }" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />  
               <field name="control_type_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
               <field name="security_property_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
@@ -136,6 +136,12 @@
                     <field name="implementation_date" readonly="1" force_save="1" />
                     <field name="approve_date" readonly="1" force_save="1" />
                     <field name="rejected_date" readonly="1" force_save="1" />
+                  </group>
+                  <group>
+                     <field name="draft_comment" attrs="{'readonly': [('state','not in', ['draft'])]}"/>
+                     <field name="design_comment" attrs="{'readonly': [('state','not in', ['designed'])]}"/>
+                     <field name="implemented_comment" attrs="{'readonly': [('state','not in', ['implemented'])]}"/>
+                     <field name="approved_comment" attrs="{'readonly': [('state','not in', ['approved'])]}"/>
                   </group>
                 </group>
               </page>

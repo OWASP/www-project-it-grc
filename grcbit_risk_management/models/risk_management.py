@@ -71,6 +71,7 @@ class RiskFactor(models.Model):
     risk_id = fields.Char(string=_('Risk ID'), required=True, index=True, copy=False, default='New')
     risk_classification_id = fields.Many2many('risk.classification',string=_('Risk Classification'), required=True)
     data_inventory_id = fields.Many2many('data.inventory',string=_('Data Asset'), track_visibility='always')
+    it_inventory_id = fields.Many2one('it.inventory',string=_('IT Inventory'), track_visibility='always')
     cause = fields.Html(string=_('Cause'), required=True)
     consequence = fields.Html(string=_('Consequence'), required=True)
     impact_level_id = fields.Many2one('impact.level', string=_('Impact Level'), required=True, track_visibility='always')

@@ -20,5 +20,6 @@
     </record>
 
     <menuitem name="IT Components" id="menu_it_components" parent="grcbit_base.menu_asset_management" groups="base.group_user" action="it_components_action" sequence="5"/>
+    <menuitem name="Business Process" id="menu_business_process" parent="grcbit_base.menu_asset_management" groups="base.group_user" action="business_process_action" sequence="6"/>
   </data>
 </odoo>
