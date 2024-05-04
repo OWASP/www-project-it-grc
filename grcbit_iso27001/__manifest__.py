@@ -9,6 +9,8 @@
     'version': '16.0',
     'depends': [
         'web',
+        'project',
+        'mass_mailing',
         'grcbit_base',
         'grcbit_risk_management',
     ],

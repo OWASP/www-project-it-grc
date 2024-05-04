@@ -254,7 +254,8 @@
     <record id="compliance_iso_control_action" model="ir.actions.act_window">
       <field name="name">Compliance</field>
       <field name="res_model">compliance.iso.control</field>
-      <field name="view_mode">tree,form,kanban</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="context">{'search_default_group_by_compliance_control_id':1}</field>
     </record>
     <record model="ir.ui.view" id="compliance_iso_control_view">
 	    <field name="name">Compliance</field>
@@ -318,6 +319,9 @@
           <field name="compliance_control_id" />
           <field name="description"/>
           <field name="control_id"/>
+          <group expand="0" string="Group By">
+            <filter string="Compliance Control" name="group_by_compliance_control_id" context="{'group_by':'compliance_control_id'}"/>
+          </group>
         </search>
       </field>
     </record>

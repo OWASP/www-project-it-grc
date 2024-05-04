@@ -11,6 +11,8 @@ class SetGroupsPolicy(models.TransientModel):
         ('approver','Approver'),
         ('responsible','Responsible')
         ],string="Permissions", default=lambda x:x.get_current_group_policy())
+    
+    check_approver = fields.Boolean(string="Approver")
 
     def get_current_group_policy(self):
         user = self.env.context.get('active_id')

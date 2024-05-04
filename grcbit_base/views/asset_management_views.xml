@@ -252,6 +252,7 @@
             <field name="is_internet_exposed" widget="boolean_toggle"/>
             <field name="users_qty"/>
             <field name="it_components" widget="many2many_tags_open" options="{'color_field': 'color'}"/>
+            <field name="business_process_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
             <!-- <field name="os_version" widget="many2many_tags" options="{'color_field': 'color'}"/>
             <field name="db_version" widget="many2many_tags" options="{'color_field': 'color'}"/> -->
             <field name="attachment" widget="many2many_binary" />
@@ -371,6 +372,7 @@
 	        <group>
             <field name="it_inventory_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
             <field name="third_party_id"   widget="many2many_tags_open"  options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="business_process_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
             <!-- <field name="document_page_id" widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True), ('name','ilike','proceso')]" /> -->
             <field name="security_requirement"/>
             <field name="attachment" widget="many2many_binary" />
@@ -406,5 +408,39 @@
         </kanban>
       </field>
     </record>
+
+    <!--       BUSINESS PROCESS         -->
+    <record id="business_process_action" model="ir.actions.act_window">
+	    <field name="name">Business Process</field>
+	    <field name="res_model">business.process</field>
+	    <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.ui.view" id="business_process_treeview">
+      <field name="name">Business Process</field>
+      <field name="model">business.process</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="process_name"/>
+          <field name="process_owner"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="business_process_formview">
+      <field name="name">Business Process</field>
+      <field name="model">business.process</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="process_name"/>
+              <field name="process_owner"/>
+              <field name="description"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
   </data>
 </odoo>

@@ -1,15 +1,16 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_statement_applicability_group_grc_admin,access.statement.applicability.group.grc.admin,model_statement_applicability,grcbit_base.group_grc_admin,1,1,1,1
-access_statement_applicability_group_grc_consultant,access.statement.applicability.group.grc.consultant,model_statement_applicability,grcbit_base.group_grc_consultant,1,1,1,1
+access_statement_applicability_group_system,access.statement.applicability.group.system,model_statement_applicability,base.group_system,1,1,1,1
+access_statement_applicability_group_grc_admin,access.statement.applicability.group.grc.admin,model_statement_applicability,grcbit_base.group_grc_admin,1,1,0,1
+access_statement_applicability_group_grc_consultant,access.statement.applicability.group.grc.consultant,model_statement_applicability,grcbit_base.group_grc_consultant,1,1,0,1
 access_statement_applicability_group_asset_management,access.statement.applicability.group.asset.management,model_statement_applicability,grcbit_base.group_asset_management,1,0,0,0
 access_statement_applicability_group_risk_management,access.statement.applicability.group.risk.management,model_statement_applicability,grcbit_base.group_risk_management,1,0,0,0
-access_statement_applicability_group_isms,access.statement.applicability.group.isms,model_statement_applicability,grcbit_base.group_isms,1,1,1,1
+access_statement_applicability_group_isms,access.statement.applicability.group.isms,model_statement_applicability,grcbit_base.group_isms,1,1,0,1
 access_statement_applicability_group_control,access.statement.applicability.group.control,model_statement_applicability,grcbit_base.group_control,1,0,0,0
 access_statement_applicability_group_compliance,access.statement.applicability.group.compliance,model_statement_applicability,grcbit_base.group_compliance,1,0,0,0
 access_statement_applicability_group_guest,access.statement.applicability.group.guest,model_statement_applicability,grcbit_base.group_guest,1,0,0,0
 
 access_iso_control_group_grc_admin,access.iso.control.group.grc.admin,model_iso_control,grcbit_base.group_grc_admin,1,1,1,1
-access_iso_control_group_grc_consultant,access.iso.control.group.grc.consultant,model_iso_control,grcbit_base.group_grc_consultant,1,1,1,1
+access_iso_control_group_grc_consultant,access.iso.control.group.grc.consultant,model_iso_control,grcbit_base.group_grc_consultant,1,1,,1
 access_iso_control_group_asset_management,access.iso.control.group.asset.management,model_iso_control,grcbit_base.group_asset_management,1,0,0,0
 access_iso_control_group_risk_management,access.iso.control.group.risk.management,model_iso_control,grcbit_base.group_risk_management,1,0,0,0
 access_iso_control_group_isms,access.iso.control.group.isms,model_iso_control,grcbit_base.group_isms,1,1,1,1

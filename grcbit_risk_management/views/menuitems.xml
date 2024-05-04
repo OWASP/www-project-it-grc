@@ -4,12 +4,13 @@
     <!-- RISK METRICS -->
     <menuitem name="Risk Management" id="menu_risk_metric" parent="grcbit_base.menu_root" sequence="4"/>
     <menuitem name="Risk Factor" id="menu_risk_factor" parent="menu_risk_metric" action="risk_factor_action" sequence="1" />
-    <menuitem name="Impact Level" id="menu_impact_level" parent="menu_risk_metric" action="impact_level_action" sequence="2" />
-    <menuitem name="Probability Level" id="menu_probability_level" parent="menu_risk_metric" action="probability_level_action" sequence="3" />
-    <menuitem name="Risk Level" id="menu_risk_level" parent="menu_risk_metric" action="risk_level_action" sequence="4" />
-    <menuitem name="Risk Classification" id="menu_risk_classification" parent="menu_risk_metric" action="risk_classification_action" sequence="5"/>
-    <menuitem name="Inherent Risk Level" id="menu_inherent_risk_level" parent="menu_risk_metric" action="inherent_risk_level_action" sequence="6" />
-    <menuitem name="Residual Risk Level" id="menu_residual_risk_level" parent="menu_risk_metric" action="residual_risk_level_action" sequence="7" />
+    <menuitem name="Risk Classification" id="menu_risk_classification" parent="menu_risk_metric" action="risk_classification_action" sequence="2"/>
+    <menuitem name="Impact Level" id="menu_impact_level" parent="menu_risk_metric" action="impact_level_action" sequence="3" />
+    <menuitem name="Probability Level" id="menu_probability_level" parent="menu_risk_metric" action="probability_level_action" sequence="4" />
+    <menuitem name="Risk Level" id="menu_risk_level" parent="menu_risk_metric" action="risk_level_action" sequence="5" />
+    <menuitem name="Risk Classification" id="menu_risk_classification" parent="menu_risk_metric" action="risk_classification_action" sequence="6"/>
+    <menuitem name="Inherent Risk Level" id="menu_inherent_risk_level" parent="menu_risk_metric" action="inherent_risk_level_action" sequence="7" />
+    <menuitem name="Residual Risk Level" id="menu_residual_risk_level" parent="menu_risk_metric" action="residual_risk_level_action" sequence="8" />
 
     <!-- CONTROL DESIGN -->
     <menuitem name="Control" id="menu_control" parent="grcbit_base.menu_root" sequence="5"/>

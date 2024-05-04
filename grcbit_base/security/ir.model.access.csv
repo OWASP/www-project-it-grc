@@ -57,3 +57,12 @@ access_it_components_group_isms,access.it.components.group.isms,model_it_compone
 access_it_components_group_control,access.it.components.group.control,model_it_components,group_control,1,0,0,0
 access_it_components_group_compliance,access.it.components.group.compliance,model_it_components,group_compliance,1,0,0,0
 access_it_components_group_guest,access.it.components.group.guest,model_it_components,group_guest,1,0,0,0
+
+access_business_process_group_admin,access.business.process.group.admin,model_business_process,group_grc_admin,1,1,1,1
+access_business_process_group_grc_consultant,access.business.process.group.grc.consultant,model_business_process,group_grc_consultant,1,1,1,1
+access_business_process_group_asset_management,access.business.process.group.asset.management,model_business_process,group_asset_management,1,1,1,1
+access_business_process_group_risk_management,access.business.process.group.risk.management,model_business_process,group_risk_management,1,0,0,0
+access_business_process_group_isms,access.business.process.group.isms,model_business_process,group_isms,1,0,0,0
+access_business_process_group_control,access.business.process.group.control,model_business_process,group_control,1,0,0,0
+access_business_process_group_compliance,access.business.process.group.compliance,model_business_process,group_compliance,1,0,0,0
+access_business_process_group_guest,access.business.process.group.guest,model_business_process,group_guest,1,0,0,0

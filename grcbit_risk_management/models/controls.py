@@ -156,6 +156,11 @@ class ControlDesing(models.Model):
     approve_date  = fields.Date(string='Approve Date', readonly=True)
     rejected_date = fields.Date(string='Rejected Date', readonly=True)
 
+    draft_comment = fields.Html(string="Draft Comment")
+    design_comment = fields.Html(string="Design Comment")
+    implemented_comment = fields.Html(string="Implemented Comment")
+    approved_comment = fields.Html(string="Approved Comment")
+
     @api.model
     def create(self, vals):
         vals['control_id'] = self.env['ir.sequence'].next_by_code('control.id.sequence')
