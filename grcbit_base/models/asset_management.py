@@ -70,7 +70,7 @@ class DataInventory(models.Model):
     # location = fields.Char(string=_('Location'), required=True)
     # owner = fields.Many2one('res.users', string=_('Asset Owner'), required=True)
     business_process_id = fields.Many2many('business.process', string="Business Process")
-    it_inventory_id = fields.Many2one('it.inventory',string=_('IT System'), required=True)
+    it_inventory_id = fields.Many2many('it.inventory',string=_('IT System'), required=True)
     third_party_id = fields.Many2many('third.party',string=_('Third Party'))
     security_requirement = fields.Text(string=_('Security Requirement'), required=True)
     retention_period = fields.Selection([

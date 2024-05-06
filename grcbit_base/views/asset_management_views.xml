@@ -431,13 +431,11 @@
       <field name="model">business.process</field>
       <field name="arch" type="xml">
         <form>
-          <sheet>
-            <group>
-              <field name="process_name"/>
-              <field name="process_owner"/>
-              <field name="description"/>
-            </group>
-          </sheet>
+          <group>
+            <field name="process_name"/>
+            <field name="process_owner"/>
+            <field name="description"/>
+          </group>
         </form>
       </field>
     </record>
