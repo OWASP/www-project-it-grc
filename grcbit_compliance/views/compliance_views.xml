@@ -175,7 +175,7 @@
       <field name="arch" type="xml">
         <search>
           <field name="compliance_version_id"/>
-          <field name="name"/>
+          <field name="display_name"/>
           <field name="description"/>
           <group expand="0" string="Group By">
             <filter string="Compliance Version" name="group_by_compliance_version" context="{'group_by':'compliance_version_id'}"/>
@@ -244,7 +244,7 @@
       <field name="arch" type="xml">
         <search>
           <field name="compliance_control_objective_id"/>
-          <field name="name"/>
+          <field name="display_name"/>
           <field name="description"/>
         </search>
       </field>

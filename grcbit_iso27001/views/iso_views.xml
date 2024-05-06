@@ -704,6 +704,17 @@
 	    <field name="url">/web#action=429&amp;model=mailing.mailing&amp;view_type=list&amp;menu_id=305</field>
       <field name="target">self</field>
     </record>
+
+    <record model="ir.ui.view" id="grcbit_iso27001_mass_mailing_attrib_inh_formhview">
+      <field name="name">GRC ISO27001 Mass Mailing.forminherited</field>
+      <field name="model">mailing.mailing</field>
+      <field name="inherit_id" ref="mass_mailing.mailing_mailing_view_form_full_width"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='contact_list_ids']" position="attributes">
+          <attribute name="widget">many2many_tags_open</attribute>
+        </xpath>
+      </field>
+    </record>
     
     <!--MENUITEM-->
     <menuitem name="ISMS" id="menu_control_attribute" parent="grcbit_base.menu_root" sequence="3" />
