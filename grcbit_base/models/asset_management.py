@@ -132,6 +132,7 @@ class ThirdParty(models.Model):
 
 class BusinessProcess(models.Model):
     _name = 'business.process'
+    _rec_name = 'process_name'
 
     process_name = fields.Char(string="Process Name")
     process_owner = fields.Many2one('hr.employee', string="Process Owner")
