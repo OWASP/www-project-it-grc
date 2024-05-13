@@ -17,6 +17,7 @@
     'data': [
         #security
         'security/ir.model.access.csv',
+        'security/res_groups.xml',
         #reports
         'reports/document_page_report.xml',
         

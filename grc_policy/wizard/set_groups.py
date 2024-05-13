@@ -12,7 +12,20 @@ class SetGroupsPolicy(models.TransientModel):
         ('responsible','Responsible')
         ],string="Permissions", default=lambda x:x.get_current_group_policy())
     
-    check_approver = fields.Boolean(string="Approver")
+    check_approver = fields.Boolean(string="Approver", default= lambda x: x.get_approver())
+
+    def base_values(self,name):
+        user = self.env.context.get('active_id')
+        category_id = self.sudo().env['ir.module.category'].search([('name','=','GRC')])
+        groups = self.sudo().env['res.groups'].search([('name','=', name),('category_id','=',category_id.id)])
+        return groups
+
+    def get_approver(self):
+        user = self.env.context.get('active_id')
+        if self.env.user.has_group('grc_policy.group_approver_policy'):
+            return True
+        else:
+            return False
 
     def get_current_group_policy(self):
         user = self.env.context.get('active_id')
@@ -44,10 +57,23 @@ class SetGroupsPolicy(models.TransientModel):
         for rec in self:
             user = self.env.context.get('active_id')
             group_custom = self.env['res.groups'].search([('category_id.name','=','Documentos' if self.env.user.lang == 'es_MX' else 'Documents Knowledge')])
-            data = {'permissions': ''}
+            data = {
+                'permissions': '',
+                'check_approver': '',
+            }
             data.update({
-                'permissions': rec.permissions
+                'permissions': rec.permissions,
+                'check_approver': rec.check_approver,
             })
+            if data['check_approver'] == True:
+                group_custom = self.base_values('Policy Approver')
+                user = self.env.context.get('active_id')
+                group_custom.sudo().users = [(4, user)]
+            else:
+                group_custom = self.base_values('Policy Approver')
+                user = self.env.context.get('active_id')
+                group_custom.sudo().users = [(3, user)]
+
             if data['permissions'] == 'responsible':
                 for l in group_custom:
                     l.users = [(4, user)]
