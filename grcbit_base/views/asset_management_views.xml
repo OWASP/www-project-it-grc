@@ -6,7 +6,7 @@
     <record id="third_party_action" model="ir.actions.act_window">
       <field name="name">Third Party</field>
       <field name="res_model">third.party</field>
-      <field name="view_mode">tree,form,graph,kanban</field>
+      <field name="view_mode">kanban,tree,form,graph</field>
     </record>
     <record model="ir.ui.view" id="third_party_view">
       <field name="name">Third Party</field>
@@ -90,7 +90,7 @@
     <record id="data_classification_action" model="ir.actions.act_window">
 	    <field name="name">Data Classification</field>
 	    <field name="res_model">data.classification</field>
-	    <field name="view_mode">tree,form,graph,kanban</field>
+	    <field name="view_mode">kanban,tree,form,graph</field>
     </record>
     <record model="ir.ui.view" id="data_classification_view">
       <field name="name">Data Classification</field>
@@ -413,7 +413,7 @@
     <record id="business_process_action" model="ir.actions.act_window">
 	    <field name="name">Business Process</field>
 	    <field name="res_model">business.process</field>
-	    <field name="view_mode">tree,form,graph</field>
+	    <field name="view_mode">kanban,tree,form,graph</field>
     </record>
     <record model="ir.ui.view" id="business_process_treeview">
       <field name="name">Business Process</field>
@@ -448,6 +448,33 @@
           <field name="process_owner"/>          
           <field name="data_inventory_count" type="measure"/>
         </graph>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="business_process_kanbanview">
+      <field name="name">Business Process Kanban</field>
+      <field name="model">business.process</field>
+      <field name="arch" type="xml">
+        <kanban class="o_kanban_mobile">
+	        <field name="process_name"/>
+          <field name="process_owner"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="process_name"/>
+                    </strong>
+                  </div>
+                  <div>
+                    <field name="description"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
       </field>
     </record>
   </data>
