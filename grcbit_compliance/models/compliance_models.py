@@ -92,9 +92,23 @@ class ComplianceIsoControl(models.Model):
     compliance_control_id = fields.Many2one('compliance.control', string='Compliance Requirement', required=True) #requerimiento NIST - AC-1 POLICY AND PROCEDURES
     iso_control_id     = fields.Many2many('iso.control', string='ISMS Control', required=True) #ISO
     active = fields.Boolean(default=True)
+    compliance_version = fields.Many2one(
+        'compliance.version', 
+        string="Compliance Version", 
+        compute="get_version",
+        store=True)
     control_id = fields.Many2many('control.design', string="Control", required=True)
     description  = fields.Text(string='Compliance Description', required=True) #Cumplimiento
     control_status = fields.Integer(string="Status")
+    is_applicable = fields.Boolean(string="Is Applicable")
+    is_implemented = fields.Boolean(string="Is Implemented")
+    is_compensatory_control = fields.Boolean(string="Is COmpensatory Control")
+
+    @api.depends('compliance_control_id')
+    def get_version(self):
+        for rec in self:
+            if rec.compliance_control_id:
+                rec.compliance_version = rec.compliance_control_id.compliance_control_objective_id.compliance_version_id.id
 
     @api.onchange('control_id','control_id.state')
     def _status_control(self):

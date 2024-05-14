@@ -2,7 +2,7 @@
   <data>
     <record id="group_approver_policy" model="res.groups">
 			<field name="name">Policy Approver</field>
-			<field name="category_id" ref="module_grcbit_base"/>
+			<field name="category_id" ref="grcbit_base.module_grcbit_base"/>
 		</record>
   </data>
 </odoo>

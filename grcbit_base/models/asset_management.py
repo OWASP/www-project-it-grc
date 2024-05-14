@@ -132,7 +132,17 @@ class ThirdParty(models.Model):
 
 class BusinessProcess(models.Model):
     _name = 'business.process'
+    _rec_name = 'process_name'
 
     process_name = fields.Char(string="Process Name")
     process_owner = fields.Many2one('hr.employee', string="Process Owner")
     description = fields.Html(string="Description")
+    data_inventory_count = fields.Integer(string=_("Data Asset Count"))
+
+    @api.model
+    def web_read_group(self, domain, fields, groupby, limit=None, offset=0, orderby=False,lazy=True, expand=False, expand_limit=None, expand_orderby=False):
+        res = super().web_read_group(domain, fields, groupby, limit, offset, orderby, lazy, expand, expand_limit, expand_orderby)
+        for i in self.env['business.process'].search([]):
+            data_assets = self.env['data.inventory'].search([('business_process_id', 'in', [i.id] )])
+            self.env['business.process'].sudo().search([('id','=',i.id)]).sudo().write({'data_inventory_count':len(data_assets)})
+        return res

@@ -175,7 +175,7 @@
       <field name="arch" type="xml">
         <search>
           <field name="compliance_version_id"/>
-          <field name="name"/>
+          <field name="display_name"/>
           <field name="description"/>
           <group expand="0" string="Group By">
             <filter string="Compliance Version" name="group_by_compliance_version" context="{'group_by':'compliance_version_id'}"/>
@@ -244,7 +244,7 @@
       <field name="arch" type="xml">
         <search>
           <field name="compliance_control_objective_id"/>
-          <field name="name"/>
+          <field name="display_name"/>
           <field name="description"/>
         </search>
       </field>
@@ -255,7 +255,7 @@
       <field name="name">Compliance</field>
       <field name="res_model">compliance.iso.control</field>
       <field name="view_mode">kanban,tree,form</field>
-      <field name="context">{'search_default_group_by_compliance_control_id':1}</field>
+      <field name="context">{'search_default_group_by_compliance_version':1}</field>
     </record>
     <record model="ir.ui.view" id="compliance_iso_control_view">
 	    <field name="name">Compliance</field>
@@ -278,7 +278,11 @@
         <form>
 		      <group>
             <field name="compliance_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+            <field name="is_applicable"/>
+            <field name="is_implemented"/>
+            <field name="is_compensatory_control"/>
             <field name="description"/>
+            <field name="compliance_version" invisible="1"/>
             <field name="control_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
             <field name="control_status" widget="percentpie" force_save="1"/>
             <!-- <field name="iso_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" widget="many2many_tags_open" />
@@ -316,11 +320,12 @@
       <field name="model">compliance.iso.control</field>
       <field name="arch" type="xml">
         <search>
+          <field name="compliance_version" />
           <field name="compliance_control_id" />
           <field name="description"/>
           <field name="control_id"/>
           <group expand="0" string="Group By">
-            <filter string="Compliance Control" name="group_by_compliance_control_id" context="{'group_by':'compliance_control_id'}"/>
+            <filter string="Compliance Version" name="group_by_compliance_version" context="{'group_by':'compliance_version'}"/>
           </group>
         </search>
       </field>

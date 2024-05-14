@@ -44,6 +44,7 @@
       <field name="arch" type="xml">
         <xpath expr="//field[@name='approver_gid']" position="attributes">
           <attribute name="options">{'no_create':1, 'no_create_edit': True}</attribute>
+          <attribute name="readonly">1</attribute>
         </xpath>
       </field>
     </record>
