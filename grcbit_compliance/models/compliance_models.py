@@ -102,7 +102,7 @@ class ComplianceIsoControl(models.Model):
     control_status = fields.Integer(string="Status")
     is_applicable = fields.Boolean(string="Is Applicable")
     is_implemented = fields.Boolean(string="Is Implemented")
-    is_compensatory_control = fields.Boolean(string="Is COmpensatory Control")
+    is_compensatory_control = fields.Boolean(string="Is Compensatory Control")
 
     @api.depends('compliance_control_id')
     def get_version(self):
