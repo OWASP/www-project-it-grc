@@ -43,6 +43,7 @@ class ResPartnerGRC(models.Model):
     xdr_manager_port2 = fields.Char(string="XDR Manager Port (1515)", default= lambda x: x._set_default_port('xdr_manager_port2', int(4500), int(4750))) #de 4500 a 4750
     xdr_manager_port3 = fields.Char(string="XDR Manager Port (514/udp)", default= lambda x: x._set_default_port('xdr_manager_port3', int(4750), int(5000))) #de 4750 a 5000
     xdr_manager_port4 = fields.Char(string="XDR Manager Port (55000)", default= lambda x: x._set_default_port('xdr_manager_port4', int(5000), int(5250))) #de 5000 a 5250
+    xdr_syslog = fields.Char(string="XDR syslog", default= lambda x: x._set_default_port('xdr_syslog', int(1500), int(1750)))
 
     #ZITI PORTS
     ziti_controller_port1 = fields.Char(string="Ziti Controller Port (1280)", default= lambda x: x._set_default_port('ziti_controller_port1', int(5250), int(5500))) # de 5250 a 5500 
@@ -54,6 +55,7 @@ class ResPartnerGRC(models.Model):
     dns_domain = fields.Char(string="DNS Domain", default="grc4ciso.com")
     dns_domain_check = fields.Boolean(string="Correct DNS Domain")
     is_openziti = fields.Boolean(string="OpenZiti", default=True)
+    
 
     xdr_ends = fields.Selection([
         ('zero','0'),
@@ -319,6 +321,7 @@ class ResPartnerGRC(models.Model):
         ('unique_xdr_zt', 'unique(xdr_zt)', 'XDR ZT already exist.!'),
         ('uniquexdr_zt_v1','unique(xdr_zt_v1)', 'XDR ZT v1 already exist.!'),
         ('unique_xdr_balancer','unique(xdr_balancer)', 'XDR ZT v1 already exist.!'),
+        ('uniquexdrsyslog','unique(xdr_syslog)', 'XDR syslog already exist.!'),
         
     ]
 
@@ -395,6 +398,9 @@ class ResPartnerGRC(models.Model):
                 val = int(partners[0].xdr_balancer) + 1
             if field == 'websocket':
                 val = int(partners[0].websocket) + 1
+            if field == 'xdr_syslog':
+                val = int(partners[0].xdr_syslog) + 1
+
             return val
 
     @api.onchange('db_postgres_port')
@@ -482,14 +488,15 @@ class ResPartnerGRC(models.Model):
         self.just_range(self.xdr_zt, 6500, 6750)
         self.just_range(self.xdr_zt_v1, 9443, 9693)
         self.just_range(self.xdr_balancer, 1750, 2000)
-        self.just_range(self.websocket, 6750, 7000)
+        self.just_range(self.websocket, 6750, 7000) 
+        self.just_range(self.xdr_syslog, 1500, 1750)
         
         return res
 
     def has_duplicates(self, seq):
         return len(seq) != len(set(seq))
 
-    @api.constrains('db_postgres_port','grc_web_port','xdr_indexer_port','xdr_dashboard_port','xdr_dashboard_port2','xdr_manager_port1','xdr_manager_port2','xdr_manager_port3','xdr_manager_port4','ziti_controller_port1','xiti_controller_port2','ziti_edge_router1','ziti_edge_router2','ziti_console','xdr_zt','xdr_zt_v1','xdr_balancer','websocket')
+    @api.constrains('db_postgres_port','grc_web_port','xdr_indexer_port','xdr_dashboard_port','xdr_dashboard_port2','xdr_manager_port1','xdr_manager_port2','xdr_manager_port3','xdr_manager_port4','ziti_controller_port1','xiti_controller_port2','ziti_edge_router1','ziti_edge_router2','ziti_console','xdr_zt','xdr_zt_v1','xdr_balancer','websocket','xdr_syslog')
     def no_repeat_ports(self):
         ports = []
         for rec in self:
@@ -530,7 +537,8 @@ class ResPartnerGRC(models.Model):
                 ports.append(rec.xdr_balancer)
             if rec.websocket:
                 ports.append(rec.websocket)
-            
+            if rec.xdr_syslog:
+                ports.append(rec.xdr_syslog)
             
         value = self.has_duplicates(ports)
         if value == True:
@@ -591,7 +599,6 @@ class ResPartnerGRC(models.Model):
                     rec.dns_domain_check = True
             except:
                 rec.dns_domain_check = False
-        
 
 class XDRManagerPort(models.Model):
     _name = 'xdr.manager.port'
