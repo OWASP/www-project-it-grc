@@ -151,3 +151,19 @@ class ResidualRiskLevel(models.Model):
     residual_risk_level_id = fields.Many2one('risk.level', string=_('Residual Risk'), required=True)
     residual_risk_level_name = fields.Char(related='residual_risk_level_id.name', string=_('Residual Risk'), required=True)
     active = fields.Boolean(default=True)
+
+class CompanyObjective(models.Model):
+    _name = 'company.objective'
+    _rec_name ='objective_name'
+
+    objective_name = fields.Char(string="Name")
+    objective_description = fields.Text(string="Description")
+
+class CompanyRisk(models.Model):
+    _name = 'company.risk'
+    _rec_name ='risk_name'
+
+    risk_name = fields.Char(string="Name")
+    risk_description = fields.Text(string="Description")
+    company_objective_id = fields.Many2many('company.objective', string="Company Objective")
+    risk_classification = fields.Many2many('risk.classification', string="Risk Classification")

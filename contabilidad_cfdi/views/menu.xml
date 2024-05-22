@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-	<menuitem id="menu_mexican_reportes_sat" name="Reportes SAT" parent="account.menu_finance_reports" sequence="15"/>
-	<menuitem id="menu_contabilidad_electonica" name="Contabilidad Electrónica" parent="account.menu_finance_reports" />
-</odoo>

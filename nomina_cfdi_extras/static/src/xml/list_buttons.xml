@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<template>
-
-<t t-name="nomina_cfdi_extras.ListView.Buttons" t-inherit="web.ListView.Buttons" t-inherit-mode="primary" owl="1">
-        <xpath expr="//*[@class='btn btn-primary o_list_button_add']" position="before">
-            <button type='button' class='btn btn-default btn-sm o_list_button_calcular_faltas' accesskey='xml' t-on-click="_onClickCalculasFaltas">Calcular faltas</button>
-        </xpath>
-</t>
-</template>
