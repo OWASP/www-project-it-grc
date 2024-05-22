@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="cfdi_payroll_layout_extras">
+            <!-- Multicompany -->
+            <t t-if="not o and doc">
+                <t t-set="o" t-value="doc"/>
+            </t>
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id"></t>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"></t>
+            </t>
+            <div class="header">
+                <div class="row">
+                    <div class="col-xs-9 text-left" style="margin-top:20px;"
+                         t-field="company.report_header"/>
+                </div>
+                <div class="row zero_min_height">
+                    <div class="col-xs-12">
+                        <div style="border-bottom: 1px solid black;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article o_report_layout_standard">
+                <t t-raw="0"/>
+            </div>
+
+            <div class="footer">
+                <div class="text-center" style="border-top: 1px solid black;">
+                    <ul class="list-inline mb4">
+                        <li t-if="company.phone">Teléfono:
+                            <span t-field="company.phone"/>
+                        </li>
+                        <li t-if="company.email">&amp;bull;</li>
+                        <li t-if="company.email">Correo Electrónico:
+                            <span t-field="company.email"/>
+                        </li>
+                        <li t-if="company.website">&amp;bull;</li>
+                        <li t-if="company.website">Página web:
+                            <span t-field="company.website"/>
+                        </li>
+                    </ul>
+                    <div name="financial_infos">
+                        <span t-field="company.report_footer"/>
+                    </div>
+                    <div class="text-muted">
+                        Hoja:
+                        <span class="page"/>
+                        /
+                        <span class="topage"/>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="report_payslip_document_extras">
+            <t t-call="nomina_cfdi_extras.cfdi_payroll_layout_extras">
+                <t t-set="o" t-value="o.with_context({'lang':'es_MX'})"/>
+                <div class="page" style="padding-top: 10px;">
+                    <!--		<t t-set="all_col_dict" t-value="data['result']" />
+                            <t t-set="all_col_list" t-value="data['all_col_list_seq']" />
+                            <t t-set="total_by_code" t-value="data['total_by_code']" />-->
+                    <t t-set="excedente" t-value="0.0"/>
+                    <t t-set="imss" t-value="0.0"/>
+                    <t t-set="cesantia" t-value="0.0"/>
+                    <t t-set="gravado_mensual" t-value="0.0"/>
+                    <t t-set="excedente_limite_superior" t-value="0.0"/>
+                    <t t-set="impuesto_marginal" t-value="0.0"/>
+                    <t t-set="isr_tarifa_113" t-value="0.0"/>
+                    <t t-set="subsidio_pagado" t-value="0.0"/>
+                    <t t-set="total" t-value="0.0"/>
+                    <t t-set="total2" t-value="0.0"/>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div>
+                                <strong>IMSS</strong>
+                            </div>
+                            Sueldo de cotizaión base:
+                            <span t-field="o.contract_id.sueldo_base_cotizacion"/>
+                            <br/>
+                            3 UMA:
+                            <span t-esc="round(o.contract_id.tablas_cfdi_id.uma * 3)"/>
+                            <br/>
+                            <br/>
+                            Prestaciones:
+                            <br/>
+                            SBC * Cuota * Dias completos
+                            <br/>
+                            <span t-field="o.contract_id.sueldo_base_cotizacion"/>
+                            *
+                            <span t-field="o.contract_id.tablas_cfdi_id.enf_mat_prestaciones_e"/>
+                            / 100 *
+                            <span t-field="o.rp_dias_completos"/>
+                            <br/>
+                            <span t-esc="round(o.contract_id.sueldo_base_cotizacion * o.contract_id.tablas_cfdi_id.enf_mat_prestaciones_e/100 * o.rp_dias_completos,2) "/>
+                            <br/>
+                            <br/>
+                            <t t-set="imss"
+                               t-value="imss + (o.contract_id.sueldo_base_cotizacion * o.contract_id.tablas_cfdi_id.enf_mat_prestaciones_e/100 * o.rp_dias_completos)"/>
+
+                            Invalidez y vida:
+                            <br/>
+                            SBC * Cuota * Dias laborados
+                            <br/>
+                            <span t-field="o.contract_id.sueldo_base_cotizacion"/>
+                            *
+                            <span t-field="o.contract_id.tablas_cfdi_id.inv_vida_e"/>
+                            / 100 *
+                            <span t-field="o.rp_dias_laborados"/>
+                            <br/>
+                            <span t-esc="round(o.contract_id.sueldo_base_cotizacion * o.contract_id.tablas_cfdi_id.inv_vida_e/100 * o.rp_dias_laborados,2) "/>
+                            <br/>
+                            <br/>
+                            <t t-set="imss"
+                               t-value="imss + (o.contract_id.sueldo_base_cotizacion * o.contract_id.tablas_cfdi_id.inv_vida_e/100 * o.rp_dias_laborados)"/>
+
+                            Pensio y beneficios:
+                            <br/>
+                            SBC * Cuota * Dias completos
+                            <br/>
+                            <span t-field="o.contract_id.sueldo_base_cotizacion"/>
+                            *
+                            <span t-field="o.contract_id.tablas_cfdi_id.enf_mat_gastos_med_e"/>
+                            / 100 *
+                            <span t-field="o.rp_dias_completos"/>
+                            <br/>
+                            <span t-esc="round(o.contract_id.sueldo_base_cotizacion * o.contract_id.tablas_cfdi_id.enf_mat_gastos_med_e/100 * o.rp_dias_completos, 2) "/>
+                            <br/>
+                            <br/>
+                            <t t-set="imss"
+                               t-value="imss + (o.contract_id.sueldo_base_cotizacion * o.contract_id.tablas_cfdi_id.enf_mat_gastos_med_e/100 * o.rp_dias_completos)"/>
+
+                            Cesantía y vejez:
+                            <br/>
+                            SBC * Cuota * Dias periodo
+                            <br/>
+                            <span t-field="o.contract_id.sueldo_base_cotizacion"/>
+                            *
+                            <span t-field="o.contract_id.tablas_cfdi_id.cesantia_vejez_e"/>
+                            / 100 *
+                            <span t-field="o.rp_dias_periodo"/>
+                            <br/>
+                            <span t-esc="round(o.contract_id.sueldo_base_cotizacion * o.contract_id.tablas_cfdi_id.cesantia_vejez_e/100 * o.rp_dias_periodo,2) "/>
+                            <br/>
+                            <br/>
+                            <t t-set="cesantia"
+                               t-value="cesantia + (o.contract_id.sueldo_base_cotizacion * o.contract_id.tablas_cfdi_id.cesantia_vejez_e/100 * o.rp_dias_periodo)"/>
+
+                            <t t-if="o.contract_id.sueldo_base_cotizacion > (o.contract_id.tablas_cfdi_id.uma * 3)">
+                                Seguro enfermedad:
+                                <br/>
+                                Cuota * Dias completos * Excedente
+                                <br/>
+                                <t t-set="excedente"
+                                   t-value="o.contract_id.sueldo_base_cotizacion - (o.contract_id.tablas_cfdi_id.uma * 3)"/>
+                                <span t-field="o.contract_id.tablas_cfdi_id.enf_mat_excedente_e"/>
+                                / 100 *
+                                <span t-field="o.rp_dias_completos"/>
+                                *
+                                <span t-esc="round(excedente,2)"/>
+                                <br/>
+                                <span t-esc="round(o.contract_id.tablas_cfdi_id.enf_mat_excedente_e/100 * o.rp_dias_completos * excedente,2) "/>
+                                <br/>
+                                <br/>
+                                <t t-set="imss"
+                                   t-value="imss + (o.contract_id.tablas_cfdi_id.enf_mat_excedente_e/100 * o.rp_dias_completos * excedente)"/>
+                            </t>
+                            <strong>
+                                Total IMSS:
+                                <span t-esc="round(imss)"/>
+                                <br/>
+                                Total Cesantía y vejez:
+                                <span t-esc="round(cesantia)"/>
+                            </strong>
+                            <br/>
+                        </div>
+                        <div class="col-xs-6 pull-right">
+                            <div>
+                                <strong>ISR</strong>
+                            </div>
+                            Gravado mensual:
+                            <br/>
+                            <t t-if="o.ultima_nomina">
+                                Gravado en perido + Gravado acumulado
+                                <br/>
+                                <span t-field="o.rp_gravado"/>
+                                +
+                                <span t-field="o.acum_per_grav"/>
+                                <br/>
+                                <span t-esc="o.rp_gravado + o.acum_per_grav"/>
+                                <br/>
+                                <br/>
+                                <t t-set="gravado_mensual" t-value="o.rp_gravado + o.acum_per_grav"/>
+                            </t>
+                            <t t-if="o.ultima_nomina">
+                                Gravado en periodo / días a pagar * dias en el mes
+                                <br/>
+                                <span t-field="o.rp_gravado"/>
+                                /
+                                <span t-field="o.dias_pagar"/>
+                                *
+                                <span t-field="o.contract_id.tablas_cfdi_id.imss_mes"/>
+                                <br/>
+                                <span t-esc="round(o.rp_gravado / o.dias_pagar * o.contract_id.tablas_cfdi_id.imss_mes,2)"/>
+                                <br/>
+                                <br/>
+                                <t t-set="gravado_mensual"
+                                   t-value="round(o.rp_gravado / o.dias_pagar * o.contract_id.tablas_cfdi_id.imss_mes,2)"/>
+                            </t>
+                            Límite inferior:
+                            <span t-field="o.rp_limite_inferior"/>
+                            <br/>
+                            Cuota fija:
+                            <span t-field="o.rp_cuota_fija"/>
+                            <br/>
+                            Porcentaje:
+                            <span t-field="o.rp_porcentaje"/>
+                            <br/>
+                            Subsidio mensual:
+                            <span t-field="o.rp_subsidio"/>
+                            <br/>
+                            <br/>
+
+                            Excedente limite superior:
+                            <br/>
+                            Gravado mensual - Límite inferior
+                            <br/>
+                            <span t-esc="gravado_mensual"/>
+                            -
+                            <span t-field="o.rp_limite_inferior"/>
+                            <br/>
+                            <t t-set="excedente_limite_superior"
+                               t-value="round(gravado_mensual - o.rp_limite_inferior,2)"/>
+                            <span t-esc="round(gravado_mensual - o.rp_limite_inferior,2)"/>
+                            <br/>
+                            <br/>
+
+                            Impuesto marginal:
+                            <br/>
+                            Excedente limite superior * Porcentaje sobre excedente
+                            <br/>
+                            <span t-esc="round(excedente_limite_superior,2)"/>
+                            *
+                            <span t-field="o.rp_porcentaje"/>
+                            / 100
+                            <br/>
+                            <t t-set="impuesto_marginal"
+                               t-value="round(excedente_limite_superior * o.rp_porcentaje/100,2)"/>
+                            <span t-esc="round(excedente_limite_superior * o.rp_porcentaje/100,2)"/>
+                            <br/>
+                            <br/>
+
+                            Tarifa ISR:
+                            <br/>
+                            Impuesto marginal * Cuota fija
+                            <br/>
+                            <span t-esc="round(impuesto_marginal,2)"/>
+                            +
+                            <span t-field="o.rp_cuota_fija"/>
+                            <br/>
+                            <t t-set="isr_tarifa_113" t-value="impuesto_marginal + o.rp_cuota_fija"/>
+                            <span t-esc="round(impuesto_marginal + o.rp_cuota_fija,2)"/>
+                            <br/>
+                            <br/>
+
+                            <t t-if="o.contract_id.periodicidad_pago == '04'">
+                                <t t-if="o.ultima_nomina and o.isr_ajustar">
+                                    <t t-if="o.rp_subsidio > 0">
+                                        <t t-set="subsidio_pagado"
+                                           t-value="isr_tarifa_113 - abs(o.acum_isr_antes_subem) - o.rp_subsidio + abs(o.acum_subsidio_aplicado)"/>
+                                    </t>
+                                    <t t-if="o.rp_subsidio == 0">
+                                        <t t-set="subsidio_pagado"
+                                           t-value="isr_tarifa_113 - abs(o.acum_isr_antes_subem) - o.rp_subsidio - abs(o.acum_isr)"/>
+                                    </t>
+                                    <t t-set="total" t-value="o.acum_isr - isr_tarifa_113"/>
+                                    <t t-set="total2" t-value="subsidio_pagado"/>
+                                </t>
+                                <t t-if="o.ultima_nomina and not o.isr_ajustar">
+                                    <t t-set="subsidio_pagado" t-value="isr_tarifa_113 - o.rp_subsidio"/>
+                                    <t t-set="total"
+                                       t-value="(isr_tarifa_113 / o.contract_id.tablas_cfdi_id.imss_mes) * o.dias_pagar"/>
+                                    <t t-set="total2"
+                                       t-value="(subsidio_pagado / o.contract_id.tablas_cfdi_id.imss_mes) * o.dias_pagar"/>
+                                </t>
+                            </t>
+                            Subsidio pagado:
+                            <span t-esc="round(subsidio_pagado,2)"/>
+                            <br/>
+                            <br/>
+                            Total:
+                            <span t-esc="round(total,2)"/>
+                            <br/>
+                            <br/>
+                            Total2 pagado:
+                            <span t-esc="round(total2,2)"/>
+                            <br/>
+                            <br/>
+
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_payslip_extras">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="nomina_cfdi_extras.report_payslip_document_extras" t-lang="es_MX"/>
+                </t>
+            </t>
+        </template>
+
+        <record id="report_payslips_extras" model="ir.actions.report">
+            <field name="name">Reporte ISR IMSS</field>
+            <field name="model">hr.payslip</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">nomina_cfdi_extras.report_payslip_extras</field>
+            <field name="report_file">nomina_cfdi_extras.report_payslip_extras</field>
+            <field name="paperformat_id" ref="cdfi_invoice.paperformat_a4_landscape"/>
+            <field name="binding_model_id" ref="model_hr_payslip"/>
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+
+</odoo>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<record id="act_hr_employee_loan_list" model="ir.actions.act_window">
+        <field name="res_model">employee.loan</field>
+        <field name="name">Prestamo de empleado</field>
+       <!--  <field name="view_type">form</field> -->
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_employee_id': [active_id], 'default_employee_id': active_id}</field>
+    </record>
+    
+
+      <record id="dev_hr_employee_loan_inherit_form" model="ir.ui.view">
+         <field name="name">dev.hr.employee.loan.inherite.form</field>
+         <field name="model">hr.employee</field>
+         <field name="inherit_id" ref="hr.view_employee_form"/>
+         <field name="arch" type="xml">
+         <xpath expr="//div[@class='oe_button_box']" position="inside">
+         	<!-- <button string="Chat" position="before"> -->
+                    <button name="%(act_hr_employee_loan_list)d"
+                        class="oe_stat_button"
+                        icon="fa-credit-card"
+                        type="action"
+                        string='Prestamos'>
+                    </button>
+               <!--  </button> -->
+         </xpath>
+            <xpath expr="//group[@name='managers']" position="after">
+                <group string="Prestamo" name="hr_loan">
+                    <field name="loan_request"/>
+                </group>
+            </xpath>
+         </field>
+    </record>  
+</odoo>
+

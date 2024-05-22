@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="wizard_caja_ahorro_form_view" model="ir.ui.view">
+        <field name="name">Caja de ahorro Form</field>
+        <field name="model">wizard.caja.ahorro</field>
+        <field name="arch" type="xml">
+        <form string="Caja de ahorro">
+            <field name="name" invisible="1" />
+            <group col="4">
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="employee_id"/>
+                <field name="department_id"/>
+                <field name="archivados"/>
+            </group>
+
+            <footer>
+                <button name="print_reglas_salariales_report" string="Imprimir" type="object" default_focus="1" class="oe_highlight"/>
+                <button string="Cancelar" class="btn btn-default" special="cancel" />
+            </footer>
+        </form>
+        </field>
+    </record>
+    <record id="action_wizard_caja_ahorro" model="ir.actions.act_window">
+        <field name="name">Caja de ahorro</field>
+        <field name="res_model">wizard.caja.ahorro</field>
+        <field name="type">ir.actions.act_window</field>
+        <!-- <field name="view_type">form</field> -->
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_caja_ahorro_form_view"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_action_wizard_caja_ahorro"
+            name="Caja de ahorro"
+            action="action_wizard_caja_ahorro"
+            parent="menu_main_reportes"
+            sequence="10"/>
+
+</odoo>

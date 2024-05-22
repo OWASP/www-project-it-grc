@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="hr_holidays_status_fjc" model="hr.leave.type">
+        <field name="name">Falta justificada con goce</field>
+        <field name="code">FJC</field>
+        <field name="requires_allocation">no</field>
+    </record>
+    <record id="hr_holidays_status_fjs" model="hr.leave.type">
+        <field name="name">Falta justificada sin goce</field>
+        <field name="code">FJS</field>
+        <field name="requires_allocation">no</field>
+    </record>
+    <record id="hr_holidays_status_fi" model="hr.leave.type">
+        <field name="name">Falta injustificada</field>
+        <field name="code">FI</field>
+        <field name="requires_allocation">no</field>
+    </record>
+    <record id="hr_holidays_status_fr" model="hr.leave.type">
+        <field name="name">Falta por retardo</field>
+        <field name="code">FR</field>
+        <field name="requires_allocation">no</field>
+    </record>
+    <record id="hr_holidays_status_vac" model="hr.leave.type">
+        <field name="name">Vacaciones</field>
+        <field name="code">VAC</field>
+        <field name="requires_allocation">no</field>
+    </record>
+    <record id="hr_holidays_status_inc_rt" model="hr.leave.type">
+        <field name="name">Incapacidad por riego trabajo</field>
+        <field name="code">INC_RT</field>
+        <field name="requires_allocation">no</field>
+    </record>
+    <record id="hr_holidays_status_inc_eg" model="hr.leave.type">
+        <field name="name">Incapacidad por enfermedad gral.</field>
+        <field name="code">INC_EG</field>
+        <field name="requires_allocation">no</field>
+    </record>
+    <record id="hr_holidays_status_inc_mat" model="hr.leave.type">
+        <field name="name">Incapacidad por maternidad</field>
+        <field name="code">INC_MAT</field>
+        <field name="requires_allocation">no</field>
+    </record>
+    <record id="hr_holidays_status_dfest" model="hr.leave.type">
+        <field name="name">Dia festivo</field>
+        <field name="code">DFES</field>
+        <field name="requires_allocation">no</field>
+    </record>
+    <record id="hr_holidays_status_dfest3" model="hr.leave.type">
+        <field name="name">Dia festivo triple</field>
+        <field name="code">DFES_3</field>
+        <field name="requires_allocation">no</field>
+    </record>
+</odoo>

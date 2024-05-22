@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="wizard_total_por_empleado_form_view" model="ir.ui.view">
+        <field name="name">Total por empleado Form</field>
+        <field name="model">total.por.empleado</field>
+        <field name="arch" type="xml">
+        <form string="Total por empleado">
+            <group>
+                <field name="hr_payslip_run_ids" widget="many2many_tags"  required="1" default_focus="1"/>
+            </group>
+            <footer>
+                <button name="print_total_por_empleado_report" string="GENERAR" type="object" default_focus="1" class="oe_highlight"/>
+                <button string="Cancelar" class="btn btn-default" special="cancel" />
+            </footer>
+        </form>
+        </field>
+    </record>
+    <record id="action_wizard_total_por_empleado" model="ir.actions.act_window">
+        <field name="name">Total por empleado</field>
+        <field name="res_model">total.por.empleado</field>
+        <field name="type">ir.actions.act_window</field>
+        <!-- <field name="view_type">form</field> -->
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_total_por_empleado_form_view"/>
+        <field name="target">new</field>
+    </record>
+    <menuitem id="menu_action_wizard_total_por_empleado"
+                name="Total por empleado"
+                action="action_wizard_total_por_empleado"
+                parent="menu_payroll_payslip_reportes" 
+                groups="om_hr_payroll.group_hr_payroll_user"
+                sequence="21"/>
+
+</odoo>

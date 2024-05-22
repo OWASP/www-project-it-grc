@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_report_listado_de_raya" model="ir.actions.report">
+            <field name="name">Listado de raya</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">nomina_cfdi_extras.report_listado_de_raya_detail</field>
+            <field name="report_file">nomina_cfdi_extras.report_listado_de_raya_detail</field>
+            <field name="binding_model_id" ref="model_hr_payslip_run"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+
+    <template id="report_listado_de_raya_detail">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="nomina_cfdi_extras.report_listado_de_raya_detail_more"/>
+            </t>
+        </t>
+    </template>
+
+    <template id="external_layout_standard_ext">
+
+        <div class="header">
+            <div class="row">
+                <div class="col-3 mb4">
+                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 45px;"
+                         alt="Logo"/>
+                </div>
+                <div class="col-9 text-right" style="margin-top:22px;" t-field="company.report_header" name="moto"/>
+            </div>
+            <div t-if="company.logo or company.report_header" class="row zero_min_height">
+                <div class="col-12">
+                    <div style="border-bottom: 1px solid black;"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6" name="company_address">
+                    <div t-field="company.partner_id"
+                         t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
+                    />
+                </div>
+            </div>
+        </div>
+
+        <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+             t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-call="web.address_layout"/>
+            <t t-raw="0"/>
+        </div>
+        <div class="footer o_standard_footer">
+            <table width="100%">
+                <tr>
+                    <td>Autorizado: __________________</td>
+                    <td>Fecha :
+                        <t t-esc="(o.date_end+datetime.timedelta(days=2))"></t>
+                    </td>
+                </tr>
+                <tr>
+                    <td collspan="3">
+                        <span>Medio de Pago: Efectivo.</span>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="text-center" style="border-top: 1px solid black;">
+
+                <ul class="list-inline mb4">
+                    <li t-if="company.phone" class="list-inline-item">Teléfono:
+                        <span t-field="company.phone"/>
+                    </li>
+                    <li t-if="company.email" class="list-inline-item">Email:
+                        <span t-field="company.email"/>
+                    </li>
+                </ul>
+
+                <div name="financial_infos">
+                    <span t-field="company.report_footer"/>
+                </div>
+
+                <div t-if="report_type == 'pdf'" class="text-muted">
+                    Hoja:
+                    <span class="page"/>
+                    /
+                    <span class="topage"/>
+                </div>
+            </div>
+        </div>
+
+    </template>
+    <template id="external_layout_ext">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <!-- <t t-if="company.external_report_layout_id" t-call="{{company.external_report_layout_id.key}}"><t t-raw="0"/></t> -->
+        <t t-call="nomina_cfdi_extras.external_layout_standard_ext">
+            <t t-raw="0"/>
+        </t>
+
+    </template>
+
+
+    <template id="report_listado_de_raya_detail_more">
+        <t t-call="web.html_container">
+
+            <t t-call="nomina_cfdi_extras.external_layout_ext">
+                <!-- <t t-call="web.external_layout"> -->
+                <div class="page">
+                    <div align="right" style="margin-right: 80px;margin-bottom: 15px;">
+                        NOMINA DE SALARIOS DE LA SEMANA DEL
+                        <span t-field="o.date_start"/>
+                        AL
+                        <span t-field="o.date_end"/>
+                    </div>
+                    MANIFIESTO:
+                    <div style="margin-left:105px; margin-right: 50px;margin-top: -24px; margin-bottom: 15px;">
+                        Que mediante mi firma, la cual yo mismo he escrito en el renglon correspondiente a mi
+                        nombre, CERTIFICO que he recibido de entera conformidad la cantidad indicada en dicho
+                        renglón, que desempeño el puesto de trabajo señalado, que mi horario de trabajo es de 8:30
+                        a 13:00 y de 13:30 a 18:30 horas de Lunes a Viernes de cada semana, que disfrute de media
+                        hora para comer de 13:00 a 13:30 horas, tiempo durante el cual no estuve a disposicion del
+                        patrón, y que no he trabajado ninguna hora extraodinaria a mi jornada normal de trabajo
+                        durante esta semana. Medio de pago:Efectivo.
+                    </div>
+
+                    <center>
+                        <h6>RECIBO DE NOMINA - CONSTANCIA</h6>
+                        <!--<div style="text-align: center !important;">
+                          Page  <span class="page"/> of <span class="topage"/>
+                        </div>-->
+                    </center>
+                    <table width="100%">
+                        <tr>
+                            <th>NOMBRE DEL TRABAJADOR</th>
+                            <th>PUESTO DE TRABAJO</th>
+                            <th>CANTIDAD REBIDIDA</th>
+                            <th>FIRMA DE RECIBIDO</th>
+                        </tr>
+                        <t t-set="dept" t-value="o.get_department()"/>
+                        <t t-set="slips" t-value="o.get_payslip_group_by_department()"/>
+                        <t t-foreach="slips.keys()" t-as="dept_id">
+                            <tr t-foreach="slips[dept_id]" t-as="slip">
+                                <t t-if="not slip.state =='cancel'">
+                                    <td>
+                                        <span t-esc="slip.employee_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="slip.employee_id.department_id.name"/>
+                                    </td>
+                                    <td>
+                                        <t t-foreach="slip.line_ids" t-as="line">
+                                            <t t-if="line.code =='NET'">
+                                                <span t-esc="line.total"
+                                                      t-esc-options='{"widget": "monetary", "display_currency": slip.company_id.currency_id}'/>
+                                            </t>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        __________________
+                                    </td>
+                                </t>
+                            </tr>
+                        </t>
+                    </table>
+                </div>
+            </t>
+        </t>
+
+    </template>
+</odoo>

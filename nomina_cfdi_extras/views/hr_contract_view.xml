@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="view_hr_contract_historial_salario_form" model="ir.ui.view">
+        <field name="name">hr.contract.historial.salario.form</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[last()]" position="after">
+                <page name='historial_salario' string="Historial salario">
+                	<field name="historial_salario_ids" readonly='1'>
+                		<tree string="Historial salario" editable="bottom">
+		                	<field name='fecha_sueldo' />
+		                	<field name='sueldo_mensual' />
+		                	<field name='sueldo_diario' />
+		                	<field name='sueldo_por_hora' />
+		                	<field name='sueldo_diario_integrado' />
+		                	<field name='sueldo_base_cotizacion' />
+		                </tree>
+                	</field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

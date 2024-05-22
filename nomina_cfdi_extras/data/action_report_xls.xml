@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="reparto_utilidades_data" model="ir.actions.report">
+        <field name="name">Reparto utilidades</field>
+        <field name="model">hr.payslip</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">nomina_cfdi_extras.reparto_utilidades_data</field>
+        <field name="report_file">reparto_utilidades_xls</field>
+        <field name="binding_model_id" ref="model_hr_payslip"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

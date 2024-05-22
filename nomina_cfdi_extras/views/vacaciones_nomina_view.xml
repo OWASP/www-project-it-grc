@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   <record id="tree_vacaciones_nomina_view" model="ir.ui.view">
+        <field name="name">vacaciones.nomina.tree.view</field>
+        <field name="model">vacaciones.nomina</field>
+        <field name="arch" type="xml">
+        <tree string="Vacaciones">
+            <field name="name" />
+            <field name="employee_id" />
+            <field name="fecha_inicial" />
+            <field name="dias" />
+            <field name="state"/>
+         </tree> 
+       </field>
+    </record>
+   <record id="form_vacaciones_nomina_view" model="ir.ui.view">
+        <field name="name">vacaciones.nomina.form.view</field>
+        <field name="model">vacaciones.nomina</field>
+        <field name="arch" type="xml">
+        <form string="Vacaciones">
+             
+             <header>
+                 <button name="action_validar" string="Validar" type="object" states="draft" class="btn-primary"/>
+                 <button name="action_cancelar" string="Cancelar" type="object" attrs="{'invisible': [('state','=','cancel')]}" confirm="¿Seguro que quiere cancelar el registro?"/>
+                 <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+             </header>
+             <sheet>
+                 <div class="oe_title">
+                     <h1>
+                         <field name="name" readonly="1"/>
+                     </h1>
+                 </div>
+                 <group>
+                     <group>
+                         <field name="employee_id" attrs="{'readonly' : [('state', '!=','draft')], 'required': [('state', '=','draft')]}"/>
+                         <field name="fecha_inicial" attrs="{'readonly' : [('state', '!=','draft')], 'required': [('state', '=','draft')]}"/>
+                         <field name="dias" attrs="{'readonly' : [('state', '!=','draft')], 'required': [('state', '=','draft')]}"/>
+                         <field name="dias_de_vacaciones_disponibles" readonly="1" force_save="1"/>
+                     	 <field name="company_id" groups="base.group_multi_company" readonly="1"/>
+                     </group>
+                     <group>
+                     </group>
+                 </group>
+             </sheet>
+         </form> 
+       </field>
+    </record>
+
+    <record id="search_vacaciones_nomina_view" model="ir.ui.view">
+        <field name="name">vacaciones.nomina.search.view</field>
+        <field name="model">vacaciones.nomina</field>
+        <field name="arch" type="xml">
+            <search string="Vacaciones">
+               <field name="name" />
+               <field name="fecha_inicial" />
+               <field name="employee_id" />
+               <field name="state" />
+            </search>
+        </field>
+    </record>
+
+    <record id="action_tree_vacaciones_nomina" model="ir.actions.act_window">
+        <field name="name">Vacaciones</field>
+        <field name="res_model">vacaciones.nomina</field>
+       <!--  <field name="view_type">form</field> -->
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="tree_vacaciones_nomina_view" />
+        <field name="search_view_id" ref="search_vacaciones_nomina_view" />
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+          name="Vacaciones"
+          parent="nomina_cfdi.menu_main_movimivientos"
+          id="menu_action_tree_vacaciones_nomina"
+          action="action_tree_vacaciones_nomina"
+          sequence="4"
+          groups="om_hr_payroll.group_hr_payroll_user"
+      />
+
+    <record id="action_selected_vacaciones" model="ir.actions.server">
+        <field name="name">Validar</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="nomina_cfdi_extras.model_vacaciones_nomina"/>
+        <field name="binding_model_id" ref="nomina_cfdi_extras.model_vacaciones_nomina"/>
+        <field name="code">records.action_change_state()
+        </field>
+    </record>
+
+    <record id="action_cancel_vacaciones" model="ir.actions.server">
+        <field name="name">Cancelar</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="nomina_cfdi_extras.model_vacaciones_nomina"/>
+        <field name="binding_model_id" ref="nomina_cfdi_extras.model_vacaciones_nomina"/>
+        <field name="code">records.action_cancelar()
+        </field>
+    </record>
+
+</odoo>

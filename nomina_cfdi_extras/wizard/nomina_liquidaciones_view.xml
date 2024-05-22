@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <record id="view_liquidaciones_form_view" model="ir.ui.view">
+            <field name="name">Nomina de Liquidacion</field>
+            <field name="model">nomina.liquidaciones</field>
+            <field name="arch" type="xml">
+                <form>
+                	<group>
+                		<field name="employee_id" required="1"/>
+                	</group>
+                	<footer>
+                        <button name="generate_liquidaciones_report" string="Generar" type="object" class="oe_highlight"/>
+                        <button string="Cancelar" class="oe_highlight" special="cancel" />
+                    </footer>
+               </form>
+            </field>
+        </record>
+
+    <record id="action_nomina_liquidaciones" model="ir.actions.act_window">
+        <field name="name">Liquidaciones</field>
+        <field name="res_model">nomina.liquidaciones</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_liquidaciones_form_view"/>
+        <field name="target">new</field>
+        <field name="context">{}</field>
+        <field name="binding_model_id" ref="model_hr_payslip_run"/>
+    </record>
+
+
+    </data>
+</odoo>

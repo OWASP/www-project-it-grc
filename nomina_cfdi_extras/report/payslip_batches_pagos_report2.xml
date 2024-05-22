@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="nomina_reports" model="report.paperformat">
+        <field name="name">Nomina Letter</field>
+        <field name="default" eval="True"/>
+        <field name="format">Letter</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">25</field>
+        <field name="margin_bottom">20</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">25</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <data>
+        <record id="action_report_payslip_batches_pagos2" model="ir.actions.report">
+            <field name="name">Relacion de pagos 2</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">nomina_cfdi_extras.report_payslip_batches_pagos2</field>
+            <field name="report_file">nomina_cfdi_extras.report_payslip_batches_pagos2</field>
+            <field name="paperformat_id" ref="nomina_cfdi_extras.nomina_reports"/>
+            <field name="binding_model_id" ref="model_hr_payslip_run"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+
+    <template id="cfdi_payroll_layout">
+        <!-- Multicompany -->
+        <t t-if="not o and doc">
+            <t t-set="o" t-value="doc"/>
+        </t>
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id"></t>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"></t>
+        </t>
+        <div class="header">
+            <div class="row">
+
+                <!--INICIA LOGO DE LA EMPRESA-->
+                <div class="col-4">
+                    <img t-if="company.logo" t-att-src="company.logo" style="height: 130px;width: 130px;padding-left:10px;" />
+                </div>
+                <!--TERMINA LOGO DE LA EMPRESA-->
+
+                <!--EMPIEZA DATOS DEL EMISOR-->
+                <div class="col-4">
+                    <div>
+                        <span t-esc="company.name"/>
+                    </div>
+                    <t t-if="company">
+                        <span t-esc="company.street"/>
+                    </t>
+                    <t t-if="company.street2">
+                        <span t-esc="company.street2"/>
+                    </t>
+                    <div>
+                        <span t-if="company.city" t-esc="company.city"/>
+                        <span t-if="company.state_id" t-esc="company.state_id.name"/>
+                        <span t-if="company.zip" t-esc="company.zip"/>
+                    </div>
+                    <t t-if="company.country_id">
+                        <span t-esc="company.country_id.name"/>
+                    </t>
+                </div>
+                <!--TERMINA DATOS DEL EMISOR-->
+            </div>
+        </div>
+
+        <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id">
+            <t t-raw="0"/>
+        </div>
+        <!--EMPIEZA EL FOOTER-->
+        <div class="footer">
+            <div class="text-center" style="border-top: 1px solid black;">
+                <ul class="list-inline mb4">
+                    <li t-if="company.phone" class="list-inline-item">Teléfono:
+                        <span t-esc="company.phone"/>
+                    </li>
+                    <li t-if="company.email" class="list-inline-item">&amp;bull;</li>
+                    <li t-if="company.email" class="list-inline-item">Correo Electrónico:
+                        <span t-esc="company.email"/>
+                    </li>
+                    <li t-if="company.website" class="list-inline-item">&amp;bull;</li>
+                    <li t-if="company.website" class="list-inline-item">Página web:
+                        <span t-esc="company.website"/>
+                    </li>
+                </ul>
+                <div name="financial_infos">
+                    <span t-esc="company.report_footer"/>
+                </div>
+                <div class="text-muted">
+                    Hoja:
+                    <span class="page"/>
+                    /
+                    <span class="topage"/>
+                </div>
+            </div>
+        </div>
+        <!--TERMINA EL FOOTER-->
+    </template>
+
+    <template id="report_payslip_batches_pagos2">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="nomina_cfdi_extras.cfdi_payroll_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <center>
+                            <h1>Relación de pagos de nómina</h1>
+                        </center>
+                        <div style="row page-break-after: auto; font-size=11px;">
+                            <table class="table table-condensed table-striped; table-sm" style="font-size=10px;"
+                                   cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Empleado</th>
+                                        <th>Percepciones</th>
+                                        <th>Deducciones</th>
+                                        <th>Total Efectivo</th>
+                                        <th>Total Especie</th>
+                                        <th>Pago total</th>
+                                        <th>Tipo de pago</th>
+                                    </tr>
+                                </thead>
+                                <t t-set="col1_tot" t-value="0"/>
+                                <t t-set="col2_tot" t-value="0"/>
+                                <t t-set="col3_tot" t-value="0"/>
+                                <t t-set="col4_efectivo" t-value="0"/>
+                                <t t-set="col5_especie" t-value="0"/>
+                                <t t-set="total_efectivo" t-value="0"/>
+                                <t t-set="total_especie" t-value="0"/>
+
+                                <t t-set="tipo_pago_dict"
+                                   t-value="dict(o.slip_ids[0].employee_id._fields.get('tipo_pago').selection)"/>
+                                <t t-set="tipo_pago_total" t-value="{}"/>
+                                <tbody class="invoice_tbody">
+                                    <t t-foreach="o.slip_ids" t-as="l">
+                                        <t t-if="not l.state =='cancel'">
+                                            <tr>
+                                                <t t-set="col1" t-value="l.get_amount_from_rule_code('TPER')"/>
+                                                <t t-set="col2" t-value="l.get_amount_from_rule_code('TDED')"/>
+                                                <t t-set="col3" t-value="l.get_amount_from_rule_code('NET')"/>
+                                                <t t-set="col4" t-value="l.get_amount_from_rule_code('TOP')"/>
+                                                <t t-set="col1_tot" t-value="col1_tot + col1 + col4"/>
+                                                <t t-set="col2_tot" t-value="col2_tot + col2"/>
+                                                <t t-set="col3_tot" t-value="col3_tot + col3"/>
+                                                <t t-set="col4_efectivo" t-value="l.get_total_code_value('001')"/>
+                                                <t t-set="col5_especie" t-value="l.get_total_code_value('002')"/>
+                                                <t t-set="total_efectivo" t-value="total_efectivo + col4_efectivo"/>
+                                                <t t-set="total_especie" t-value="total_especie + col5_especie"/>
+                                                <td>
+                                                    <span t-esc="l.employee_id.name"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="'{:,}'.format(col1 + col4)"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="'{:,}'.format(col2)"/>
+                                                </td>
+
+                                                <td>
+                                                    <span t-esc="'{:,}'.format(round(col4_efectivo,2))"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="'{:,}'.format(round(col5_especie,2))"/>
+                                                </td>
+
+                                                <td>
+                                                    <span t-esc="'{:,}'.format(col3)"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="tipo_pago_dict.get(l.employee_id.tipo_pago,'')"/>
+                                                    <t t-set="tipo_pago_total_tmp"
+                                                       t-value="tipo_pago_total.update({l.employee_id.tipo_pago:tipo_pago_total.get(l.employee_id.tipo_pago,0)+col3})"/>
+
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </t>
+                                    <tr>
+                                        <td>
+                                            <strong>Total
+                                                <span t-esc="len(o.slip_ids.filtered(lambda x: x.state!='cancel').mapped('employee_id'))"/>
+                                                empleados
+                                            </strong>
+                                        </td>
+                                        <th>
+                                            <span t-esc="'{:,}'.format(round(col1_tot,2))"/>
+                                        </th>
+                                        <th>
+                                            <span t-esc="'{:,}'.format(round(col2_tot,2))"/>
+                                        </th>
+                                        <th>
+                                            <span t-esc="'{:,}'.format(round(total_efectivo,2))"/>
+                                        </th>
+                                        <th>
+                                            <span t-esc="'{:,}'.format(round(total_especie,2))"/>
+                                        </th>
+                                        <th>
+                                            <span t-esc="'{:,}'.format(round(col3_tot,2))"/>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div style="row page-break-after: auto; font-size=11px;">
+                            <table class="table table-condensed table-striped; table-sm" style="font-size=10px;"
+                                   cellspacing="0">
+                                <tbody class="invoice_tbody">
+                                    <tr t-foreach="tipo_pago_total" t-as="k">
+                                        <td>
+                                            <span t-esc="k or '-'"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="'{:,}'.format(tipo_pago_total[k])"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div style="row page-break-after: auto; font-size=10px;">
+                            <center>
+                                <table width="80%" style="border: solid 1px black; font-size=11px;">
+                                    <thead>
+                                        <tr>
+                                            <th>Código</th>
+                                            <th>Descripción</th>
+                                            <th>Total</th>
+                                        </tr>
+                                        <!--<t t-set="total" t-value="0"/>-->
+                                        <t t-set="slip_data" t-value="_slip_by_line(o)"/>
+                                        <tr t-foreach="slip_data[0]" t-as="sd">
+                                            <td>
+                                                <span t-esc="sd[1]"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="sd[2]"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="'{0:,.2f}'.format(slip_data[1].get(sd))"/>
+                                            </td>
+                                            <!--<t t-set="total" t-value="total + slip_data[1].get(sd)"/>-->
+                                        </tr>
+                                        <!--<tr>
+                                            <td></td>
+                                            <td><strong>Total  empleados</strong></td>
+                                            <td><strong><span t-esc="total" /></strong></td>
+                                        </tr> -->
+                                    </thead>
+                                </table>
+
+                            </center>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

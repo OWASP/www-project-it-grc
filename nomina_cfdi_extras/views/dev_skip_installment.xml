@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<record id="view_dev_skip_installment_form" model="ir.ui.view">
+		<field name="name">view.dev.skip.installment.form</field>
+		<field name="model">dev.skip.installment</field>
+		<field name="arch" type="xml">
+			<form string="Deducción recurrente">
+				<header>
+                    <button name="action_send_request" states="draft" string="Enviar petición"
+                            class="btn-primary" type="object" groups="base.group_user"/>
+<!--
+                    <button name="approve_skip_installment" states="request" string="Aprobar" class="btn-primary"
+                            type="object" groups="dev_hr_loan.group_department_manager"/>
+                            
+                    <button name="dep_reject_skip_installment" states="request" string="Rechazar" class="btn-primary"
+                            type="object" groups="dev_hr_loan.group_department_manager"/>
+                    -->
+                    <button name="cancel_skip_installment" string="Cancelar" type="object" groups="base.group_user" attrs="{'invisible': [('state','=','cancel')]}"/>
+                            
+                    <button name="confirm_skip_installment" states="approve" string="Confirmar" class="btn-primary"
+                            type="object" groups="hr.group_hr_manager"/>
+                            
+                    <button name="hr_reject_skip_installment" states="approve" string="Rechazar" class="btn-primary"
+                            type="object" groups="hr.group_hr_manager"/>
+                            
+                    <button name="done_skip_installment" states="confirm" string="Hecho" class="btn-primary"
+                            type="object" groups="hr.group_hr_manager"/>
+                            <!--
+                    <button name="set_to_draft" states="cancel" string="Establecer como borrador" class="btn-primary" type="object"
+                            groups="base.group_user"/>
+                            -->
+
+					<field name="state" widget="statusbar" statusbar_visible="draft,approve,confirm,done"/>
+				</header>
+				<sheet>
+                	<label for="name" class="oe_edit_only"/>
+                	<h1><field name="name" readonly="1"/></h1>
+                    <group>
+                        <group>
+                            <field name="employee_id" attrs="{'readonly':[('state','!=','draft')]}" />
+                            <field name="loan_id" domain="[('employee_id','=',employee_id),('state','=','done')]" 
+                            					  widget="selection" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="installment_id" domain="[('loan_id','=',loan_id),('is_paid','!=',True)]" 
+                            					  widget="selection"  attrs="{'readonly':[('state','!=','draft')]}"/>
+                        </group>
+                        <group>
+                        	<field name="date" attrs="{'readonly':[('state','!=','draft')]}"/>
+                        	<!--<field name="manager_id" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                        	<field name="skip_installment_url" invisible="1"/>
+                        	<field name="user_id" invisible="1"/>
+                        	<field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Razón">
+                        	<br/>
+                            <field name="notes" attrs="{'readonly':[('state','!=','draft')]}"/>
+                        </page>
+                    </notebook>
+				</sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+			</form>
+		</field>
+	</record>
+    <record id="view_dev_skip_installment_tree" model="ir.ui.view">
+        <field name="name">view.dev.skip.installment.tree</field>
+        <field name="model">dev.skip.installment</field>
+        <field name="arch" type="xml">
+            <tree string="Salto de deducción">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="loan_id"/>
+                <field name="installment_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="view_dev_skip_installment_filter" model="ir.ui.view">
+        <field name="name">skip.installment.filter</field>
+        <field name="model">dev.skip.installment</field>
+        <field name="arch" type="xml">
+            <search string="Buscar saltos de deducciones">
+            	<field name="employee_id" operator="child_of"/>
+                <field name="user_id"/>
+                <field name="name" string="Salto de prestamo" filter_domain="[('name','ilike',self)]"/>
+                <filter name="draft" string="Borrador" domain="[('state','=','draft')]" help="Draft Loan"/>
+                <filter name="done" string="Hecho" domain="[('state','=','done')]" help="Done Loan"/>
+                <field name="employee_id"/>
+                <group expand="0" string="Agrupar por">
+                    <filter string="Empleados" name="employee_id" context="{'group_by':'employee_id'}"/>
+                    <filter string="Prestamos" name="loan_id" context="{'group_by':'loan_id'}"/>
+                    <filter string="Estados" name="state" context="{'group_by':'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="action_dev_skip_installment">
+        <field name="name">Salto de deducción</field>
+        <field name="res_model">dev.skip.installment</field>
+        <!-- <field name="view_type">form</field> -->
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_my_loans':1}</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            	Clic para generar un salto de deducción
+          </p>
+        </field>
+    </record>
+    
+   <!-- <menuitem id="menu_main_skipinstallment" parent="hr.menu_hr_root" name="Salto de pago" sequence="15"  /> -->
+    <menuitem name="Saltar deducción" id="menu_skip_installment" parent="menu_main_employee_loan" action="action_dev_skip_installment"/>
+
+</odoo>

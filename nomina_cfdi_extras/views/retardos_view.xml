@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   <record id="tree_retardo_nomina_view" model="ir.ui.view">
+        <field name="name">retardo.nomina.tree.view</field>
+        <field name="model">retardo.nomina</field>
+        <field name="arch" type="xml">
+        <tree string="Retardos">
+        	<field name="name" />
+            <field name="employee_id" />
+            <field name="fecha" />
+            <field name="state"/> 
+         </tree> 
+       </field>
+    </record>
+   <record id="form_retardo_nomina_view" model="ir.ui.view">
+        <field name="name">retardo.nomina.form.view</field>
+        <field name="model">retardo.nomina</field>
+        <field name="arch" type="xml">
+        <form string="Retardos">
+             
+             <header>
+                 <button name="action_validar" string="Validar" type="object" states="draft" class="btn-primary"/>
+                 <button name="action_cancelar" string="Cancelar" type="object" attrs="{'invisible': [('state','=','cancel')]}" confirm="¿Seguro que quiere cancelar el registro?"/>
+                 <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+             </header>
+             <sheet>
+                 <div class="oe_title">
+                     <h1>
+                         <field name="name" readonly="1"/>
+                     </h1>
+                 </div>
+                 <group>
+                     <group>
+                         <field name="fecha" attrs="{'readonly' : [('state', '!=','draft')], 'required': [('state', '=','draft')]}"/>
+                         <field name="employee_id" attrs="{'readonly' : [('state', '!=','draft')], 'required': [('state', '=','draft')]}"/>
+                         <field name="tiempo" attrs="{'readonly' : [('state', '!=','draft')]}" />
+                        <!-- <field name="crear_ausencia" attrs="{'readonly' : [('state', '!=','draft')]}"/>-->
+                     	<field name="company_id" groups="base.group_multi_company"/>
+                     </group>
+                 </group>
+             </sheet>
+         </form> 
+       </field>
+    </record>
+
+    <record id="search_retardo_nomina_view" model="ir.ui.view">
+        <field name="name">retardo.nomina.search.view</field>
+        <field name="model">retardo.nomina</field>
+        <field name="arch" type="xml">
+            <search string="Retardos">
+               <field name="name" />
+               <field name="employee_id" />
+               <field name="state" />
+            </search>
+        </field>
+    </record>
+
+    <record id="action_tree_retardo_nomina" model="ir.actions.act_window">
+        <field name="name">Retardos</field>
+        <field name="res_model">retardo.nomina</field>
+        <!-- <field name="view_type">form</field> -->
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="tree_retardo_nomina_view" />
+        <field name="search_view_id" ref="search_retardo_nomina_view" />
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+          name="Retardos"
+          parent="nomina_cfdi.menu_main_movimivientos"
+          id="menu_action_tree_retardo_nomina"
+          action="action_tree_retardo_nomina"
+          sequence="15"
+          groups="om_hr_payroll.group_hr_payroll_user"
+      />
+
+    <record id="action_selected_retardos" model="ir.actions.server">
+        <field name="name">Validar</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="nomina_cfdi_extras.model_retardo_nomina"/>
+        <field name="binding_model_id" ref="nomina_cfdi_extras.model_retardo_nomina"/>
+        <field name="code">records.action_change_state()
+        </field>
+    </record>
+
+    <record id="action_cancel_retardos" model="ir.actions.server">
+        <field name="name">Cancelar</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="nomina_cfdi_extras.model_retardo_nomina"/>
+        <field name="binding_model_id" ref="nomina_cfdi_extras.model_retardo_nomina"/>
+        <field name="code">records.action_cancelar()
+        </field>
+    </record>
+
+</odoo>

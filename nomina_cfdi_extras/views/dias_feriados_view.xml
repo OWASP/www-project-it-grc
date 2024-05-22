@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   <record id="tree_dias_feriados_view" model="ir.ui.view">
+        <field name="name">dias.feriados.tree.view</field>
+        <field name="model">dias.feriados</field>
+        <field name="arch" type="xml">
+        <tree string="Día feriado">
+        	<field name="name" />
+            <field name="employee_id" />
+            <field name="fecha" />
+            <field name="tipo" />
+            <field name="state" />
+         </tree> 
+       </field>
+    </record>
+   <record id="form_dias_feriados_view" model="ir.ui.view">
+        <field name="name">dias.feriados.form.view</field>
+        <field name="model">dias.feriados</field>
+        <field name="arch" type="xml">
+        <form string="Días feriados">
+             <header>
+                 <button name="action_validar" string="Validar" type="object" states="draft" class="btn-primary"/>
+                 <button name="action_cancelar" string="Cancelar" type="object" attrs="{'invisible': [('state','=','cancel')]}" confirm="¿Seguro que quiere cancelar el registro?"/>
+                 <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+             </header>
+             <sheet>
+                 <div class="oe_title">
+                     <h1>
+                         <field name="name" readonly="1"/>
+                     </h1>
+                 </div>
+                 <group>
+                     <group>
+                         <field name="fecha" attrs="{'readonly' : [('state', '!=','draft')], 'required': [('state', '=','draft')]}"/>
+                         <field name="employee_id" attrs="{'readonly' : [('state', '!=','draft')], 'required': [('state', '=','draft')]}"/>
+                         <field name="tipo" attrs="{'readonly' : [('state', '!=','draft')], 'required': [('state', '=','draft')]}"/>
+                     	<field name="company_id" groups="base.group_multi_company"/>
+                     </group>
+                 </group>
+             </sheet>
+         </form> 
+       </field>
+    </record>
+
+    <record id="search_dias_feriados_view" model="ir.ui.view">
+        <field name="name">dias.feriados.search.view</field>
+        <field name="model">dias.feriados</field>
+        <field name="arch" type="xml">
+            <search string="Dias feriados">
+               <field name="name" />
+               <field name="employee_id" />
+               <field name="state" />
+            </search>
+        </field>
+    </record>
+
+    <record id="action_tree_dias_feriados" model="ir.actions.act_window">
+        <field name="name">Dias feriados</field>
+        <field name="res_model">dias.feriados</field>
+        <!-- <field name="view_type">form</field> -->
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="tree_dias_feriados_view" />
+        <field name="search_view_id" ref="search_dias_feriados_view" />
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+          name="Dias feriados"
+          parent="nomina_cfdi.menu_main_movimivientos"
+          id="menu_action_tree_dias_feriados"
+          action="action_tree_dias_feriados"
+          sequence="90"
+          groups="om_hr_payroll.group_hr_payroll_user"
+      />
+
+    <record id="action_selected_dias_feriados" model="ir.actions.server">
+        <field name="name">Validar</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="nomina_cfdi_extras.model_dias_feriados"/>
+        <field name="binding_model_id" ref="nomina_cfdi_extras.model_dias_feriados"/>
+        <field name="code">records.action_change_state()
+        </field>
+    </record>
+
+    <record id="action_cancel_dias_feriados" model="ir.actions.server">
+        <field name="name">Cancelar</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="nomina_cfdi_extras.model_dias_feriados"/>
+        <field name="binding_model_id" ref="nomina_cfdi_extras.model_dias_feriados"/>
+        <field name="code">records.action_cancelar()
+        </field>
+    </record>
+</odoo>
