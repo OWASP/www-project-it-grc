@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="web.ListView.Buttons" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div/t/t[3]" position="after">
+                <button t-if="this.model.root.resModel == 'reporte.diot.wizard.line'" type='button' class='btn btn-default btn-sm o_list_button_export_txt_diot' t-on-click="(ev) => this._onExportDIOTTXT(ev)" accesskey='diotxm'>TXT</button>
+                <button t-if="this.model.root.resModel == 'reporte.diot.wizard.line'" type='button' class='btn btn-default btn-sm o_list_button_export_xls_diot' t-on-click="(ev) => this._onExportDIOTXLS(ev)" accesskey='diotxls'>XLS</button>
+        </xpath>
+    </t>
+</templates>

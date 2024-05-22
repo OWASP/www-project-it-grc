@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="reporte_diot_wizard_line_form_view_tree_itadmin" model="ir.ui.view">
+            <field name="name">Reporte DIOT</field>
+            <field name="model">reporte.diot.wizard.line</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree create="0" edit="0">
+                    <field name="tipo_proveedor" />
+                    <field name="tipo_operacion" />
+                    <field name="rfc" />
+                    <field name="registro_tributario" />
+                    <field name="partner_id" />
+                    <field name="pais" />
+                    <field name="nacionalidad" />
+                    <field name="pagado_16_15_amount" />
+                    <field name="pagado_15_amount" />
+                    <field name="pagado_16_amount_no_acreditable" />
+                    <field name="pagado_11_10_amount" />
+                    <field name="pagado_10_amount" />
+                    <field name="pagado_8_amount" />
+                    <field name="pagado_11_amount_no_acreditable" />
+                    <field name="importacion_16" />
+                    <field name="importacion_16_na" />
+                    <field name="importacion_11" />
+                    <field name="importacion_11_na" />
+                    <field name="importacion_exento" />
+                    <field name="pagado_0_amount" />
+                    <field name="pagado_exento" />
+                    <field name="iva_retenido" />
+                    <field name="iva_devoluciones" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="reporte_diot_wizard_form_view_itadmin" model="ir.ui.view">
+            <field name="name">Reporte DIOT Form</field>
+            <field name="model">reporte.diot.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Reporte DIOT Form" >
+                    <group>
+                        <field name="year" required='1'/>
+                        <field name="month" required='1'/>
+                    </group>
+                    <footer>
+                        <button name="action_view_report" string="View" type="object" class="oe_highlight"  />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_reporte_diot_wizard_form_view_itadmin" model="ir.actions.act_window">
+            <field name="name">Reporte DIOT</field>
+            <field name="res_model">reporte.diot.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+         </record>
+
+        <menuitem action="action_reporte_diot_wizard_form_view_itadmin" 
+            id="menu_action_reporte_diot_wizard_form_view_itadmin" 
+            parent="menu_contabilidad_electonica" sequence="4" />
+
+    </data>
+</odoo>

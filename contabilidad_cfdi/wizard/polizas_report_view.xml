@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="polizas_report_form_view_itadmin" model="ir.ui.view">
+            <field name="name">Polizas Report Form View Itadmin</field>
+            <field name="model">polizas.report</field>
+            <field name="arch" type="xml">
+                <form string="Reporte de pólizas" >
+                    <group>
+                       <group>
+                          <field name="fecha_mes" />
+                       </group>
+                       <group>
+                          <field name="fecha_ano" />
+                       </group>
+                    </group>
+                    <group>
+                       <field name="tiposolicitud" required="1"/>
+                       <field name="numorden" attrs="{'invisible':[('tiposolicitud','in',('DE', 'CO'))]}"/>
+                       <field name="numtramite" attrs="{'invisible':[('tiposolicitud','in',('AF', 'FC'))]}"/>
+                     <!--  <field name="journal_ids" widget="many2many_tags" colspan="4" required="1"/>-->
+                       <field name="account_id" />
+                    </group>
+                    <footer>
+                       <button name="action_print_polizas_report" string="Generar" type="object" class="oe_highlight"/>
+                       <button string="Cancelar" class="oe_highlight" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_polizas_report_form_view_itadmin" model="ir.actions.act_window">
+            <field name="name">Reporte de pólizas</field>
+            <field name="res_model">polizas.report</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+         </record>
+
+        <menuitem action="action_polizas_report_form_view_itadmin" 
+        	id="menu_action_polizas_report_form_view_itadmin" 
+        	parent="menu_contabilidad_electonica" sequence="4" />
+    </data>
+</odoo>

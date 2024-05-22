@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="wizard_liquidacion_form_view" model="ir.ui.view">
+        <field name="name">Calculo liquidaciones</field>
+        <field name="model">calculo.liquidaciones</field>
+        <field name="arch" type="xml">
+        <form string="Liquidaciones">
+            <group col="4" string="Generales">
+                <field name="employee_id" required="1"/>
+                <field name="fecha_inicio" required="1"/>
+                <field name="contract_id" required="1" domain="[('employee_id','=',employee_id),('state','!=','cancel')]" />
+                <field name="fecha_liquidacion" required="1"/>
+                <field name="tipo_de_baja" required="1"/>
+            </group>
+            <group col="2" string="Liquidacion / Compensación" attrs="{'invisible':[('tipo_de_baja','=', '01')]}">
+                <group string="Configuración">
+                   <field name="antiguedad_anos" force_save="1"/>
+                   <field name="sueldo_calculo"/>
+                </group>
+                <group string="Prima de antiguedad">
+                   <field name="antiguedad"/>
+                   <field name="monto_prima_antiguedad" force_save="1"/>
+                   <field name="tope_prima"/>
+                   <field name="round_antiguedad"/>
+                </group>
+                <group string="Indemnización">
+                   <field name="indemnizacion"/>
+                   <field name="dias_base"/>
+                   <field name="dias_x_ano"/>
+                   <field name="monto_indemnizacion" force_save="1"/>
+                </group>
+                <group string="Pago por separación">
+                   <field name="pago_separacion"/>
+                </group>
+            </group>
+            <group col="2" string="Conceptos ordinarios">
+                <group string="Montos pendientes a pagar">
+                  <field name="dias_pendientes_pagar" force_save="1"/>
+                  <field name="dias_aguinaldo" force_save="1"/>
+                  <field name="dias_vacaciones" force_save="1"/>
+                  <field name="dias_prima_vac" force_save="1"/>
+                   <field name="fondo_ahorro" force_save="1"/>
+                </group>
+                <group string="Datos nómina">
+                   <field name="estructura"/>
+                   <field name="payslip_run_id"/>
+                   <field name="journal_id"/>
+                </group>
+            </group>
+            <footer>
+                <button name="calculo_liquidacion" string="Calcular" type="object" default_focus="1" class="oe_highlight"/>
+                <button string="Cancelar" class="btn btn-default" special="cancel" />
+                <button name="calculo_create" string="Crear" type="object" class="oe_highlight"/>
+            </footer>
+        </form>
+        </field>
+    </record>
+    <record id="action_wizard_liquidacion" model="ir.actions.act_window">
+        <field name="name">Calculo liquidaciones</field>
+        <field name="res_model">calculo.liquidaciones</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_liquidacion_form_view"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_action_wizard_reglas_salariales" name="Genera liquidaciones"  action="action_wizard_liquidacion" parent="om_hr_payroll.menu_hr_payroll_root" sequence="80" groups="om_hr_payroll.group_hr_payroll_user"/>
+
+</odoo>

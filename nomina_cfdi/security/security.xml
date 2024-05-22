@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record model="ir.rule" id="horas_nomina_rule">
+        <field name="name">Horas extras multi-company</field>
+        <field name="model_id" ref="model_horas_nomina"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record model="ir.rule" id="caja_ahorro_rule">
+        <field name="name">Caja Ahorro multi-company</field>
+        <field name="model_id" ref="model_caja_nomina"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+
+</odoo>

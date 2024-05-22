@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="actualizar_polizas_form_view_itadmin" model="ir.ui.view">
+            <field name="name">Actualizar polizas Form View Itadmin</field>
+            <field name="model">actualizar.polizas</field>
+            <field name="arch" type="xml">
+                <form string="Actualizar Polizas" >
+                    <group>
+                        <group>
+                            <field name="fecha_inicio" required='1'/>
+                            <field name="fecha_fin" required='1'/>
+                        </group>
+                        <group>
+                            <field name="polizas_de_facturas_de_cliente" />
+                            <field name="polizas_de_facturas_de_proveedor" />
+                            <field name="polizas_de_facturas_de_pagos" />
+                        </group>
+                    </group>
+
+                    <footer>
+                        <button name="action_validar_actualizar_polizas" string="Validar" type="object" class="oe_highlight"  />
+                        <button string="Cancelar" class="oe_highlight" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_actualizar_polizas_form_view_itadmin" model="ir.actions.act_window">
+            <field name="name">Actualizar polizas</field>
+            <field name="res_model">actualizar.polizas</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+         </record>
+
+        <menuitem action="action_actualizar_polizas_form_view_itadmin" 
+        	id="menu_action_actualizar_polizas_form_view_itadmin" 
+        	parent="contabilidad_cfdi.menu_contabilidad_electonica" sequence="50" />
+    </data>
+</odoo>

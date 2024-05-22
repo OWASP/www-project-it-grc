@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="enviar_nomina_wizard" model="ir.ui.view">
+        <field name="name">enviar_nomina_wizard</field>
+        <field name="model">enviar.nomina</field>
+        <field name="arch" type="xml">
+       	 <form string="Enviar de Nomina">
+       	<group>
+       		<field name="todos"/>
+       	</group>
+       	<group attrs="{'invisible':[('todos','=',False)]}">
+       		<field name="rango_de_empleados1"/>
+       		<field name="rango_de_empleados2" string="a"/>
+       		
+       	</group>
+       	<footer>
+                <button name="envire_de_nomina" string="Enviar Nomina" type="object" default_focus="1" class="oe_highlight"/>
+                <button string="Cancelar" class="btn btn-default" special="cancel" />
+            </footer>
+       	</form>
+        </field>
+    </record>   
+</odoo>

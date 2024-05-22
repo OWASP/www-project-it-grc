@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="report_buttons">
+        <div class="button_row">
+            <button class="o_account_financial_reports_print btn btn-sm oe_button"><span class="fa fa-print"/> Imprimir</button>
+            <button class="o_account_financial_reports_export btn btn-sm oe_button"><span class="fa fa-download"/> Exportar</button>
+            <button class="o_account_financial_reports_generar_xml btn btn-sm oe_button"><span class="fa fa-download"/> XML</button>
+        </div>
+    </template>
+
+    <template id="report_catalogo_cuentas_buttons">
+        <div class="button_row">
+            <button class="o_account_financial_reports_print btn btn-sm oe_button"><span class="fa fa-print"/> Imprimir</button>
+            <button class="o_account_financial_reports_export btn btn-sm oe_button"><span class="fa fa-download"/> Exportar</button>
+            <button class="o_account_financial_reports_generar_xml btn btn-sm oe_button"><span class="fa fa-download"/> XML</button>
+        </div>
+    </template>
+    
+    <record id="action_report_trial_balance" model="ir.actions.client">
+        <field name="name">Trial Balance</field>
+        <field name="tag">account_financial_report_backend</field>
+        <field
+            name="context"
+            eval="{'model': 'report.contabilidad_cfdi.trial_balance'}"
+        />
+    </record>
+
+	<record id="action_report_catalogo_cuentas" model="ir.actions.client">
+        <field name="name">Account Hirarchy</field>
+        <field name="tag">account_financial_report_backend</field>
+        <field
+            name="context"
+            eval="{'model': 'report.contabilidad_cfdi.catalogo_cuentas'}"
+        />    </record>
+</odoo>

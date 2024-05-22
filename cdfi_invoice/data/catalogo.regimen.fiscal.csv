@@ -1,0 +1,24 @@
+"id","description","code"
+"regimen_fiscal01","General de Ley Personas Morales",601
+"regimen_fiscal02","Personas Morales con Fines no Lucrativos",603
+"regimen_fiscal03","Sueldos y Salarios e Ingresos Asimilados a Salarios",605
+"regimen_fiscal04","Arrendamiento",606
+"regimen_fiscal05","Demás ingresos",608
+"regimen_fiscal06","Consolidación",609
+"regimen_fiscal07","Residentes en el Extranjero sin Establecimiento Permanente en México",610
+"regimen_fiscal08","Ingresos por Dividendos (socios y accionistas)",611
+"regimen_fiscal09","Personas Físicas con Actividades Empresariales y Profesionales",612
+"regimen_fiscal10","Ingresos por intereses",614
+"regimen_fiscal11","Sin obligaciones fiscales",616
+"regimen_fiscal12","Sociedades Cooperativas de Producción que optan por diferir sus ingresos",620
+"regimen_fiscal13","Incorporación Fiscal",621
+"regimen_fiscal14","Actividades Agrícolas, Ganaderas, Silvícolas y Pesqueras",622
+"regimen_fiscal15","Opcional para Grupos de Sociedades",623
+"regimen_fiscal16","Coordinados",624
+"regimen_fiscal17","Hidrocarburos",628
+"regimen_fiscal18","Régimen de Enajenación o Adquisición de Bienes",607
+"regimen_fiscal19","De los Regímenes Fiscales Preferentes y de las Empresas Multinacionales",629
+"regimen_fiscal20","Enajenación de acciones en bolsa de valores",630
+"regimen_fiscal21","Régimen de los ingresos por obtención de premios",615
+"regimen_fiscal22","Régimen de las Actividades Empresariales con ingresos a través de Plataformas Tecnológicas",625
+"regimen_fiscal23","Régimen Simplificado de Confianza",626

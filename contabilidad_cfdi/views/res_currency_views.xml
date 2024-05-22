@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <record model="ir.ui.view" id="view_res_currency_specific_form_itadmin">
+        <field name="name">res.currency.form.inherit</field>
+        <field name="inherit_id" ref="base.view_currency_form"/>
+        <field name="model">res.currency</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <xpath expr="//group['Display']" position="inside">
+                <field name="excel_format_cfdi"/>
+            </xpath>
+        </field>
+    </record>
+</openerp>

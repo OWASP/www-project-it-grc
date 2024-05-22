@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   <record id="view_employee_form_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.nomina</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+           <xpath expr="//notebook" position="inside">
+                <page name="info_cdfi" string="CFDI" groups="om_hr_payroll.group_hr_payroll_user">
+                        <group cols="4">
+                            <group string="Detalles de Pago">
+                                <field name="no_empleado"/>
+                                <field name="tipo_pago"/>
+                                <field name="banco" attrs="{'invisible':[('tipo_pago','not in',('transferencia','deposito'))]}"/>
+                                <field name="no_cuenta"  attrs="{'invisible':[('tipo_pago','not in',('transferencia','deposito'))]}"/>
+                                <field name="tipo_cuenta"  attrs="{'invisible':[('tipo_pago','not in',('transferencia','deposito'))]}"/>
+                                <field name="diario_pago" attrs="{'invisible':[('tipo_pago','not in',('transferencia','deposito'))]}"/>
+                            </group>
+                            <group string="Información fiscal">
+                                <field name="regimen"/>
+                                <field name="contrato"/>
+                                <field name="jornada"/>
+                                <field name="sindicalizado"/>
+                            </group>
+                        </group>
+                        <group cols="4">
+                            <group string="Registros">
+                                <field name="rfc"/>
+                                <field name="curp"/>
+                                <field name="segurosocial"/>
+                                <field name="registro_patronal_id"/>
+                            </group>
+                            <group string="Direcciones">
+                                <field name="correo_electronico"/>
+                                <field name="estado"/>
+                                <field name="domicilio_receptor"/>
+                            </group>
+                        </group>
+                </page><!--
+                <page name="fondo_ahorro" string="Fondo de ahorro">
+                        <group cols="4">
+                            <field name="fondo_ahorro"/>
+                        </group>
+                </page>-->
+                <page name="nombre" string="Nombre" groups="om_hr_payroll.group_hr_payroll_user">
+                   <group cols="4">
+                      <field name="empleado_nombre"/>
+                      <field name="empleado_paterno"/>
+                      <field name="empleado_materno"/>
+                   </group>
+                </page>
+           </xpath>
+        </field>
+    </record>
+</odoo>

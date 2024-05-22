@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       <record model="ir.ui.view" id="view_account_payment_cfdi_inherit_form">
+            <field name="name">Account Payment CFDI</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <button name="action_post" position="after">
+                        <button name="complete_payment" class="oe_highlight" states="posted" attrs="{'invisible':['|',('estado_pago','in',('pago_correcto', 'factura_cancelada')),]}" string="Genera REP" type="object"/>
+                        <button name="send_payment" class="oe_highlight" attrs="{'invisible':[('estado_pago','!=','pago_correcto')]}" string="Enviar por correo-e" type="object"/>
+                        <button name="importar_incluir_cep" string="Incluir CEP" type="object" attrs="{'invisible':['|',('forma_de_pago','!=','03'),
+                                                         ('estado_pago','in',('pago_correcto', 'factura_cancelada'))]}"/>
+                        <button name="%(cdfi_invoice.reason_cancelation_sat_wizard)d" 
+                                                          type="action" string="Cancelar CFDI" attrs="{'invisible':[('estado_pago','in',('factura_cancelada','pago_no_enviado'))]}" 
+                                                          class="oe_highlight" groups="base.group_user"/>
+                    </button>
+                    <xpath expr="//sheet" position="inside">
+                        <notebook >
+                            <page name="info_cdfi" string="CFDI" attrs="{'invisible':[('state','!=','posted')]}">
+                                    <group cols="4">
+                                        <group string="Datos del comprobante">
+                                            <field name="forma_pago_id" attrs="{'readonly': [('estado_pago','!=','pago_no_enviado')]}"/>
+                                            <field name="forma_de_pago" invisible="1"/>
+                                            <field name="fecha_pago" attrs="{'readonly': [('estado_pago','!=','pago_no_enviado')]}"/>
+                                            <field name="numero_operacion" attrs="{'readonly': [('estado_pago','!=','pago_no_enviado')]}"/>
+                                        </group>
+                                        <group string="Llenado">
+                                            <field name="manual_partials" attrs="{'readonly': [('estado_pago','!=','pago_no_enviado')]}"/>
+                                            <field name="reconciled_invoice_ids" invisible="1"/>
+                                        </group>
+                                    </group>
+                                    <separator  string="Datos bancarios" attrs="{'invisible':[('forma_de_pago','not in',['02','03'])]}"/>
+                                    <group cols="4">
+                                        <group>
+                                            <field name="cuenta_emisor" domain="[('partner_id','=', partner_id)]" attrs="{'invisible':[('forma_de_pago','not in',['02','03'])], 'readonly': [('estado_pago','!=','pago_no_enviado')]}"/>
+                                            <field name="banco_emisor"   attrs="{'invisible':[('forma_de_pago','not in',['02','03'])], 'readonly': [('estado_pago','!=','pago_no_enviado')]}"/>
+                                            <field name="rfc_banco_emisor"  attrs="{'invisible':[('forma_de_pago','not in',['02','03'])], 'readonly': [('estado_pago','!=','pago_no_enviado')]}"/>
+                                        </group>
+                                        <group>
+                                            <field name="banco_receptor" attrs="{'invisible':[('forma_de_pago','not in',['02','03'])], 'readonly': [('estado_pago','!=','pago_no_enviado')]}"/>
+                                            <field name="cuenta_beneficiario" attrs="{'invisible':[('forma_de_pago','not in',['02','03'])], 'readonly': [('estado_pago','!=','pago_no_enviado')]}"/>
+                                            <field name="rfc_banco_receptor" attrs="{'invisible':[('forma_de_pago','not in',['02','03'])], 'readonly': [('estado_pago','!=','pago_no_enviado')]}"/>
+                                        </group>
+                                    </group>
+                                    <group cols="4">
+                                        <group  string="CFDI Relacionados">
+                                            <field name="tipo_relacion" attrs="{'readonly': [('estado_pago','!=','pago_no_enviado')]}"/>
+                                            <field name="uuid_relacionado" attrs="{'readonly': [('estado_pago','!=','pago_no_enviado')]}"/>
+                                        </group>
+                                        <group  string="Detalles de Pago">
+                                            <field name="date_payment" attrs="{'readonly': [('estado_pago','!=','pago_no_enviado')]}"/>
+                                            <field name="folio_fiscal" />
+                                            <field name="confirmacion" attrs="{'readonly': [('estado_pago','!=','pago_no_enviado')]}"/>
+                                            <field name="estado_pago" />
+                                        </group>
+                                    </group>
+                             </page>
+                            <page name="info_pagos" string="Montos de pago" attrs="{'invisible':[('manual_partials','=',False)]}">
+                                    <group>
+                                        <group string="Montos en moneda de la factura">
+                                           <field name="partials_payment_ids" nolabel="1" colspan="3" attrs="{'readonly': [('estado_pago','!=','pago_no_enviado')]}">
+                                              <tree name ="montos_parciales" string="Montos de pago" editable="bottom">
+                                                 <field name="facturas_id" domain="[('id', 'in',parent.reconciled_invoice_ids)]"/>
+                                                 <field name="parcialidad"/>
+                                                 <field name="imp_saldo_ant"/>
+                                                 <field name="imp_pagado"/>
+                                                 <field name="imp_saldo_insoluto"/>
+                                                 <field name="equivalenciadr"/>
+                                              </tree>
+                                           </field>
+                                        </group>
+                                    </group>
+                             </page>
+                       </notebook>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="view_saccount_payment_register_inherit_form" model="ir.ui.view">
+            <field name="name">Account Payment cfdi</field>
+            <field name="model">account.payment.register</field>
+            <field name="inherit_id" ref="account.view_account_payment_register_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//footer/button[@name='action_create_payments']" position="after">
+                    <button string='Validar y Generar REP' name="validate_complete_payment" type="object" class="btn-primary"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_payment_inherit_tree" model="ir.ui.view">
+           <field name="name">account.payment.inherit.tree</field>
+           <field name="model">account.payment</field>
+           <field name="inherit_id" ref="account.view_account_payment_tree" />
+           <field name="arch" type="xml">
+              <field name="state" position="before">
+                  <field name="estado_pago"/>
+              </field>
+           </field>
+        </record>
+
+    </data>
+</odoo>

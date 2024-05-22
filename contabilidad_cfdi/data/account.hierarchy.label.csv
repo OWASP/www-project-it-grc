@@ -1,0 +1,1082 @@
+id,level,code,name
+__export__.account_hierarchy_label_0,1,1,Activo
+__export__.account_hierarchy_label_1,2,100,Activo
+__export__.account_hierarchy_label_2,3,100.01,Activo a corto plazo
+__export__.account_hierarchy_label_3,2,101,Caja
+__export__.account_hierarchy_label_4,3,101.01,Caja y efectivo
+__export__.account_hierarchy_label_5,2,102,Bancos
+__export__.account_hierarchy_label_6,3,102.01,Bancos nacionales
+__export__.account_hierarchy_label_7,3,102.02,Bancos extranjeros
+__export__.account_hierarchy_label_8,2,103,Inversiones
+__export__.account_hierarchy_label_9,3,103.01,Inversiones temporales
+__export__.account_hierarchy_label_10,3,103.02,Inversiones en fideicomisos
+__export__.account_hierarchy_label_11,3,103.03,Otras inversiones
+__export__.account_hierarchy_label_12,2,104,Otros instrumentos financieros
+__export__.account_hierarchy_label_13,3,104.01,Otros instrumentos financieros
+__export__.account_hierarchy_label_14,2,105,Clientes
+__export__.account_hierarchy_label_15,3,105.01,Clientes nacionales
+__export__.account_hierarchy_label_16,3,105.02,Clientes extranjeros
+__export__.account_hierarchy_label_17,3,105.03,Clientes nacionales parte relacionada
+__export__.account_hierarchy_label_18,3,105.04,Clientes extranjeros parte relacionada
+__export__.account_hierarchy_label_19,2,106,Cuentas y documentos por cobrar a corto plazo
+__export__.account_hierarchy_label_20,3,106.01,Cuentas y documentos por cobrar a corto plazo nacional
+__export__.account_hierarchy_label_21,3,106.02,Cuentas y documentos por cobrar a corto plazo extranjero
+__export__.account_hierarchy_label_22,3,106.03,Cuentas y documentos por cobrar a corto plazo nacional parte relacionada
+__export__.account_hierarchy_label_23,3,106.04,Cuentas y documentos por cobrar a corto plazo extranjero parte relacionada
+__export__.account_hierarchy_label_24,3,106.05,Intereses por cobrar a corto plazo nacional
+__export__.account_hierarchy_label_25,3,106.06,Intereses por cobrar a corto plazo extranjero
+__export__.account_hierarchy_label_26,3,106.07,Intereses por cobrar a corto plazo nacional parte relacionada
+__export__.account_hierarchy_label_27,3,106.08,Intereses por cobrar a corto plazo extranjero parte relacionada
+__export__.account_hierarchy_label_28,3,106.09,Otras cuentas y documentos por cobrar a corto plazo
+__export__.account_hierarchy_label_29,3,106.10,Otras cuentas y documentos por cobrar a corto plazo parte relacionada
+__export__.account_hierarchy_label_30,2,107,Deudores diversos
+__export__.account_hierarchy_label_31,3,107.01,Funcionarios y empleados
+__export__.account_hierarchy_label_32,3,107.02,Socios y accionistas
+__export__.account_hierarchy_label_33,3,107.03,Partes relacionadas nacionales
+__export__.account_hierarchy_label_34,3,107.04,Partes relacionadas extranjeros
+__export__.account_hierarchy_label_35,3,107.05,Otros deudores diversos
+__export__.account_hierarchy_label_36,2,108,Estimación de cuentas incobrables
+__export__.account_hierarchy_label_37,3,108.01,Estimación de cuentas incobrables nacional
+__export__.account_hierarchy_label_38,3,108.02,Estimación de cuentas incobrables extranjero
+__export__.account_hierarchy_label_39,3,108.03,Estimación de cuentas incobrables nacional parte relacionada
+__export__.account_hierarchy_label_40,3,108.04,Estimación de cuentas incobrables extranjero parte relacionada
+__export__.account_hierarchy_label_41,2,109,Pagos anticipados
+__export__.account_hierarchy_label_42,3,109.01,Seguros y fianzas pagados por anticipado nacional
+__export__.account_hierarchy_label_43,3,109.02,Seguros y fianzas pagados por anticipado extranjero
+__export__.account_hierarchy_label_44,3,109.03,Seguros y fianzas pagados por anticipado nacional parte relacionada
+__export__.account_hierarchy_label_45,3,109.04,Seguros y fianzas pagados por anticipado extranjero parte relacionada
+__export__.account_hierarchy_label_46,3,109.05,Rentas pagados por anticipado nacional
+__export__.account_hierarchy_label_47,3,109.06,Rentas pagados por anticipado extranjero
+__export__.account_hierarchy_label_48,3,109.07,Rentas pagados por anticipado nacional parte relacionada
+__export__.account_hierarchy_label_49,3,109.08,Rentas pagados por anticipado extranjero parte relacionada
+__export__.account_hierarchy_label_50,3,109.09,Intereses pagados por anticipado nacional
+__export__.account_hierarchy_label_51,3,109.10,Intereses pagados por anticipado extranjero
+__export__.account_hierarchy_label_52,3,109.11,Intereses pagados por anticipado nacional parte relacionada
+__export__.account_hierarchy_label_53,3,109.12,Intereses pagados por anticipado extranjero parte relacionada
+__export__.account_hierarchy_label_54,3,109.13,Factoraje financiero pagados por anticipado nacional
+__export__.account_hierarchy_label_55,3,109.14,Factoraje financiero pagados por anticipado extranjero
+__export__.account_hierarchy_label_56,3,109.15,Factoraje financiero pagados por anticipado nacional parte relacionada
+__export__.account_hierarchy_label_57,3,109.16,Factoraje financiero pagados por anticipado extranjero parte relacionada
+__export__.account_hierarchy_label_58,3,109.17,Arrendamiento financiero pagados por anticipado nacional
+__export__.account_hierarchy_label_59,3,109.18,Arrendamiento financiero pagados por anticipado extranjero
+__export__.account_hierarchy_label_60,3,109.19,Arrendamiento financiero pagados por anticipado nacional parte relacionada
+__export__.account_hierarchy_label_61,3,109.2,Arrendamiento financiero pagados por anticipado extranjero parte relacionada
+__export__.account_hierarchy_label_62,3,109.21,Pérdida por deterioro de pagos anticipados
+__export__.account_hierarchy_label_63,3,109.22,Derechos fiduciarios
+__export__.account_hierarchy_label_64,3,109.23,Otros pagos anticipados
+__export__.account_hierarchy_label_65,2,110,Subsidio al empleo por aplicar
+__export__.account_hierarchy_label_66,3,110.01,Subsidio al empleo por aplicar
+__export__.account_hierarchy_label_67,2,111,Crédito al diesel por acreditar
+__export__.account_hierarchy_label_68,3,111.01,Crédito al diesel por acreditar
+__export__.account_hierarchy_label_69,2,112,Otros estímulos
+__export__.account_hierarchy_label_70,3,112.01,Otros estímulos
+__export__.account_hierarchy_label_71,2,113,Impuestos a favor
+__export__.account_hierarchy_label_72,3,113.01,IVA a favor
+__export__.account_hierarchy_label_73,3,113.02,ISR a favor
+__export__.account_hierarchy_label_74,3,113.03,IETU a favor
+__export__.account_hierarchy_label_75,3,113.04,IDE a favor
+__export__.account_hierarchy_label_76,3,113.05,IA a favor
+__export__.account_hierarchy_label_77,3,113.06,Subsidio al empleo
+__export__.account_hierarchy_label_78,3,113.07,Pago de lo indebido
+__export__.account_hierarchy_label_79,3,113.08,Otros impuestos a favor
+__export__.account_hierarchy_label_80,2,114,Pagos provisionales
+__export__.account_hierarchy_label_81,3,114.01,Pagos provisionales de ISR
+__export__.account_hierarchy_label_82,2,115,Inventario
+__export__.account_hierarchy_label_83,3,115.01,Inventario
+__export__.account_hierarchy_label_84,3,115.02,Materia prima y materiales
+__export__.account_hierarchy_label_85,3,115.03,Producción en proceso
+__export__.account_hierarchy_label_86,3,115.04,Productos terminados
+__export__.account_hierarchy_label_87,3,115.05,Mercancías en tránsito
+__export__.account_hierarchy_label_88,3,115.06,Mercancías en poder de terceros
+__export__.account_hierarchy_label_89,3,115.07,Otros
+__export__.account_hierarchy_label_90,2,116,Estimación de inventarios obsoletos y de lento movimiento
+__export__.account_hierarchy_label_91,3,116.01,Estimación de inventarios obsoletos y de lento movimiento
+__export__.account_hierarchy_label_92,2,117,Obras en proceso de inmuebles
+__export__.account_hierarchy_label_93,3,117.01,Obras en proceso de inmuebles
+__export__.account_hierarchy_label_94,2,118,Impuestos acreditables pagados
+__export__.account_hierarchy_label_95,3,118.01,IVA acreditable pagado
+__export__.account_hierarchy_label_96,3,118.02,IVA acreditable de importación pagado
+__export__.account_hierarchy_label_97,3,118.03,IEPS acreditable pagado
+__export__.account_hierarchy_label_98,3,118.04,IEPS pagado en importación
+__export__.account_hierarchy_label_99,2,119,Impuestos acreditables por pagar
+__export__.account_hierarchy_label_100,3,119.01,IVA pendiente de pago
+__export__.account_hierarchy_label_101,3,119.02,IVA de importación pendiente de pago
+__export__.account_hierarchy_label_102,3,119.03,IEPS pendiente de pago
+__export__.account_hierarchy_label_103,3,119.04,IEPS pendiente de pago en importación
+__export__.account_hierarchy_label_104,2,120,Anticipo a proveedores
+__export__.account_hierarchy_label_105,3,120.01,Anticipo a proveedores nacional
+__export__.account_hierarchy_label_106,3,120.02,Anticipo a proveedores extranjero
+__export__.account_hierarchy_label_107,3,120.03,Anticipo a proveedores nacional parte relacionada
+__export__.account_hierarchy_label_108,3,120.04,Anticipo a proveedores extranjero parte relacionada
+__export__.account_hierarchy_label_109,2,121,Otros activos a corto plazo
+__export__.account_hierarchy_label_110,3,121.01,Otros activos a corto plazo
+__export__.account_hierarchy_label_112,2,151,Terrenos
+__export__.account_hierarchy_label_113,3,151.01,Terrenos
+__export__.account_hierarchy_label_114,2,152,Edificios
+__export__.account_hierarchy_label_115,3,152.01,Edificios
+__export__.account_hierarchy_label_116,2,153,Maquinaria y equipo
+__export__.account_hierarchy_label_117,3,153.01,Maquinaria y equipo
+__export__.account_hierarchy_label_118,2,154,"Automóviles, autobuses, camiones de carga, tractocamiones, montacargas y remolques"
+__export__.account_hierarchy_label_119,3,154.01,"Automóviles, autobuses, camiones de carga, tractocamiones, montacargas y remolques"
+__export__.account_hierarchy_label_120,2,155,Mobiliario y equipo de oficina
+__export__.account_hierarchy_label_121,3,155.01,Mobiliario y equipo de oficina
+__export__.account_hierarchy_label_122,2,156,Equipo de cómputo
+__export__.account_hierarchy_label_123,3,156.01,Equipo de cómputo
+__export__.account_hierarchy_label_124,2,157,Equipo de comunicación
+__export__.account_hierarchy_label_125,3,157.01,Equipo de comunicación
+__export__.account_hierarchy_label_126,2,158,"Activos biológicos, vegetales y semovientes"
+__export__.account_hierarchy_label_127,3,158.01,"Activos biológicos, vegetales y semovientes"
+__export__.account_hierarchy_label_128,2,159,Obras en proceso de activos fijos
+__export__.account_hierarchy_label_129,3,159.01,Obras en proceso de activos fijos
+__export__.account_hierarchy_label_130,2,160,Otros activos fijos
+__export__.account_hierarchy_label_131,3,160.01,Otros activos fijos
+__export__.account_hierarchy_label_132,2,161,Ferrocarriles
+__export__.account_hierarchy_label_133,3,161.01,Ferrocarriles
+__export__.account_hierarchy_label_134,2,162,Embarcaciones
+__export__.account_hierarchy_label_135,3,162.01,Embarcaciones
+__export__.account_hierarchy_label_136,2,163,Aviones
+__export__.account_hierarchy_label_137,3,163.01,Aviones
+__export__.account_hierarchy_label_138,2,164,"Troqueles, moldes, matrices y herramental"
+__export__.account_hierarchy_label_139,3,164.01,"Troqueles, moldes, matrices y herramental"
+__export__.account_hierarchy_label_140,2,165,Equipo de comunicaciones telefónicas
+__export__.account_hierarchy_label_141,3,165.01,Equipo de comunicaciones telefónicas
+__export__.account_hierarchy_label_142,2,166,Equipo de comunicación satelital
+__export__.account_hierarchy_label_143,3,166.01,Equipo de comunicación satelital
+__export__.account_hierarchy_label_144,2,167,Equipo de adaptaciones para personas con capacidades diferentes
+__export__.account_hierarchy_label_145,3,167.01,Equipo de adaptaciones para personas con capacidades diferentes
+__export__.account_hierarchy_label_146,2,168,Maquinaria y equipo de generación de energía de fuentes renovables o de sistemas de cogeneración de electricidad eficiente
+__export__.account_hierarchy_label_147,3,168.01,Maquinaria y equipo de generación de energía de fuentes renovables o de sistemas de cogeneración de electricidad eficiente
+__export__.account_hierarchy_label_148,2,169,Otra maquinaria y equipo
+__export__.account_hierarchy_label_149,3,169.01,Otra maquinaria y equipo
+__export__.account_hierarchy_label_150,2,170,Adaptaciones y mejoras
+__export__.account_hierarchy_label_151,3,170.01,Adaptaciones y mejoras
+__export__.account_hierarchy_label_152,2,171,Depreciación acumulada de activos fijos
+__export__.account_hierarchy_label_153,3,171.01,Depreciación acumulada de edificios
+__export__.account_hierarchy_label_154,3,171.02,Depreciación acumulada de maquinaria y equipo
+__export__.account_hierarchy_label_155,3,171.03,"Depreciación acumulada de automóviles, autobuses, camiones de carga, tractocamiones, montacargas y remolques"
+__export__.account_hierarchy_label_156,3,171.04,Depreciación acumulada de mobiliario y equipo de oficina
+__export__.account_hierarchy_label_157,3,171.05,Depreciación acumulada de equipo de cómputo
+__export__.account_hierarchy_label_158,3,171.06,Depreciación acumulada de equipo de comunicación
+__export__.account_hierarchy_label_159,3,171.07,"Depreciación acumulada de activos biológicos, vegetales y semovientes"
+__export__.account_hierarchy_label_160,3,171.08,Depreciación acumulada de otros activos fijos
+__export__.account_hierarchy_label_161,3,171.09,Depreciación acumulada de ferrocarriles
+__export__.account_hierarchy_label_162,3,171.1,Depreciación acumulada de embarcaciones
+__export__.account_hierarchy_label_163,3,171.11,Depreciación acumulada de aviones
+__export__.account_hierarchy_label_164,3,171.12,"Depreciación acumulada de troqueles, moldes, matrices y herramental"
+__export__.account_hierarchy_label_165,3,171.13,Depreciación acumulada de equipo de comunicaciones telefónicas
+__export__.account_hierarchy_label_166,3,171.14,Depreciación acumulada de equipo de comunicación satelital
+__export__.account_hierarchy_label_167,3,171.15,Depreciación acumulada de equipo de adaptaciones para personas con capacidades diferentes
+__export__.account_hierarchy_label_168,3,171.16,Depreciación acumulada de maquinaria y equipo de generación de energía de fuentes renovables o de sistemas de cogeneración de electricidad eficiente
+__export__.account_hierarchy_label_169,3,171.17,Depreciación acumulada de adaptaciones y mejoras
+__export__.account_hierarchy_label_170,3,171.18,Depreciación acumulada de otra maquinaria y equipo
+__export__.account_hierarchy_label_171,2,172,Pérdida por deterioro acumulado de activos fijos
+__export__.account_hierarchy_label_172,3,172.01,Pérdida por deterioro acumulado de edificios
+__export__.account_hierarchy_label_173,3,172.02,Pérdida por deterioro acumulado de maquinaria y equipo
+__export__.account_hierarchy_label_174,3,172.03,"Pérdida por deterioro acumulado de automóviles, autobuses, camiones de carga, tractocamiones, montacargas y remolques"
+__export__.account_hierarchy_label_175,3,172.04,Pérdida por deterioro acumulado de mobiliario y equipo de oficina
+__export__.account_hierarchy_label_176,3,172.05,Pérdida por deterioro acumulado de equipo de cómputo
+__export__.account_hierarchy_label_177,3,172.06,Pérdida por deterioro acumulado de equipo de comunicación
+__export__.account_hierarchy_label_178,3,172.07,"Pérdida por deterioro acumulado de activos biológicos, vegetales y semovientes"
+__export__.account_hierarchy_label_179,3,172.08,Pérdida por deterioro acumulado de otros activos fijos
+__export__.account_hierarchy_label_180,3,172.09,Pérdida por deterioro acumulado de ferrocarriles
+__export__.account_hierarchy_label_181,3,172.10,Pérdida por deterioro acumulado de embarcaciones
+__export__.account_hierarchy_label_182,3,172.11,Pérdida por deterioro acumulado de aviones
+__export__.account_hierarchy_label_183,3,172.12,"Pérdida por deterioro acumulado de troqueles, moldes, matrices y herramental"
+__export__.account_hierarchy_label_184,3,172.13,Pérdida por deterioro acumulado de equipo de comunicaciones telefónicas
+__export__.account_hierarchy_label_185,3,172.14,Pérdida por deterioro acumulado de equipo de comunicación satelital
+__export__.account_hierarchy_label_186,3,172.15,Pérdida por deterioro acumulado de equipo de adaptaciones para personas con capacidades diferentes
+__export__.account_hierarchy_label_187,3,172.16,Pérdida por deterioro acumulado de maquinaria y equipo de generación de energía de fuentes renovables o de sistemas de cogeneración de electricidad eficiente
+__export__.account_hierarchy_label_188,3,172.17,Pérdida por deterioro acumulado de adaptaciones y mejoras
+__export__.account_hierarchy_label_189,3,172.18,Pérdida por deterioro acumulado de otra maquinaria y equipo
+__export__.account_hierarchy_label_190,2,173,Gastos diferidos
+__export__.account_hierarchy_label_191,3,173.01,Gastos diferidos
+__export__.account_hierarchy_label_192,2,174,Gastos pre operativos
+__export__.account_hierarchy_label_193,3,174.01,Gastos pre operativos
+__export__.account_hierarchy_label_194,2,175,"Regalías, asistencia técnica y otros gastos diferidos"
+__export__.account_hierarchy_label_195,3,175.01,"Regalías, asistencia técnica y otros gastos diferidos"
+__export__.account_hierarchy_label_196,2,176,Activos intangibles
+__export__.account_hierarchy_label_197,3,176.01,Activos intangibles
+__export__.account_hierarchy_label_198,2,177,Gastos de organización
+__export__.account_hierarchy_label_199,3,177.01,Gastos de organización
+__export__.account_hierarchy_label_200,2,178,Investigación y desarrollo de mercado
+__export__.account_hierarchy_label_201,3,178.01,Investigación y desarrollo de mercado
+__export__.account_hierarchy_label_202,2,179,Marcas y patentes
+__export__.account_hierarchy_label_203,3,179.01,Marcas y patentes
+__export__.account_hierarchy_label_204,2,180,Crédito mercantil
+__export__.account_hierarchy_label_205,3,180.01,Crédito mercantil
+__export__.account_hierarchy_label_206,2,181,Gastos de instalación
+__export__.account_hierarchy_label_207,3,181.01,Gastos de instalación
+__export__.account_hierarchy_label_208,2,182,Otros activos diferidos
+__export__.account_hierarchy_label_209,3,182.01,Otros activos diferidos
+__export__.account_hierarchy_label_210,2,183,Amortización acumulada de activos diferidos
+__export__.account_hierarchy_label_211,3,183.01,Amortización acumulada de gastos diferidos
+__export__.account_hierarchy_label_212,3,183.02,Amortización acumulada de gastos pre operativos
+__export__.account_hierarchy_label_213,3,183.03,"Amortización acumulada de regalías, asistencia técnica y otros gastos diferidos"
+__export__.account_hierarchy_label_214,3,183.04,Amortización acumulada de activos intangibles
+__export__.account_hierarchy_label_215,3,183.05,Amortización acumulada de gastos de organización
+__export__.account_hierarchy_label_216,3,183.06,Amortización acumulada de investigación y desarrollo de mercado
+__export__.account_hierarchy_label_217,3,183.07,Amortización acumulada de marcas y patentes
+__export__.account_hierarchy_label_218,3,183.08,Amortización acumulada de crédito mercantil
+__export__.account_hierarchy_label_219,3,183.09,Amortización acumulada de gastos de instalación
+__export__.account_hierarchy_label_220,3,183.01,Amortización acumulada de otros activos diferidos
+__export__.account_hierarchy_label_221,2,184,Depósitos en garantía
+__export__.account_hierarchy_label_222,3,184.01,Depósitos de fianzas
+__export__.account_hierarchy_label_223,3,184.02,Depósitos de arrendamiento de bienes inmuebles
+__export__.account_hierarchy_label_224,3,184.03,Otros depósitos en garantía
+__export__.account_hierarchy_label_225,2,185,Impuestos diferidos
+__export__.account_hierarchy_label_226,3,185.01,Impuestos diferidos ISR
+__export__.account_hierarchy_label_227,2,186,Cuentas y documentos por cobrar a largo plazo
+__export__.account_hierarchy_label_228,3,186.01,Cuentas y documentos por cobrar a largo plazo nacional
+__export__.account_hierarchy_label_229,3,186.02,Cuentas y documentos por cobrar a largo plazo extranjero
+__export__.account_hierarchy_label_230,3,186.03,Cuentas y documentos por cobrar a largo plazo nacional parte relacionada
+__export__.account_hierarchy_label_231,3,186.04,Cuentas y documentos por cobrar a largo plazo extranjero parte relacionada
+__export__.account_hierarchy_label_232,3,186.05,Intereses por cobrar a largo plazo nacional
+__export__.account_hierarchy_label_233,3,186.06,Intereses por cobrar a largo plazo extranjero
+__export__.account_hierarchy_label_234,3,186.07,Intereses por cobrar a largo plazo nacional parte relacionada
+__export__.account_hierarchy_label_235,3,186.08,Intereses por cobrar a largo plazo extranjero parte relacionada
+__export__.account_hierarchy_label_236,3,186.09,Otras cuentas y documentos por cobrar a largo plazo
+__export__.account_hierarchy_label_237,3,186.1,Otras cuentas y documentos por cobrar a largo plazo parte relacionada
+__export__.account_hierarchy_label_238,2,187,Participación de los trabajadores en las utilidades diferidas
+__export__.account_hierarchy_label_239,3,187.01,Participación de los trabajadores en las utilidades diferidas
+__export__.account_hierarchy_label_240,2,188,Inversiones permanentes en acciones
+__export__.account_hierarchy_label_241,3,188.01,Inversiones a largo plazo en subsidiarias
+__export__.account_hierarchy_label_242,3,188.02,Inversiones a largo plazo en asociadas
+__export__.account_hierarchy_label_243,3,188.03,Otras inversiones permanentes en acciones
+__export__.account_hierarchy_label_244,2,189,Estimación por deterioro de inversiones permanentes en acciones
+__export__.account_hierarchy_label_245,3,189.01,Estimación por deterioro de inversiones permanentes en acciones
+__export__.account_hierarchy_label_246,2,190,Otros instrumentos financieros
+__export__.account_hierarchy_label_247,3,190.01,Otros instrumentos financieros
+__export__.account_hierarchy_label_248,2,191,Otros activos a largo plazo
+__export__.account_hierarchy_label_249,3,191.01,Otros activos a largo plazo
+__export__.account_hierarchy_label_250,1,2,Pasivo
+__export__.account_hierarchy_label_251,2,200,Pasivo
+__export__.account_hierarchy_label_252,3,200.01,Pasivo a corto plazo
+__export__.account_hierarchy_label_253,2,201,Proveedores
+__export__.account_hierarchy_label_254,3,201.01,Proveedores nacionales
+__export__.account_hierarchy_label_255,3,201.02,Proveedores extranjeros
+__export__.account_hierarchy_label_256,3,201.03,Proveedores nacionales parte relacionada
+__export__.account_hierarchy_label_257,3,201.04,Proveedores extranjeros parte relacionada
+__export__.account_hierarchy_label_258,2,202,Cuentas por pagar a corto plazo
+__export__.account_hierarchy_label_259,3,202.01,Documentos por pagar bancario y financiero nacional
+__export__.account_hierarchy_label_260,3,202.02,Documentos por pagar bancario y financiero extranjero
+__export__.account_hierarchy_label_261,3,202.03,Documentos y cuentas por pagar a corto plazo nacional
+__export__.account_hierarchy_label_262,3,202.04,Documentos y cuentas por pagar a corto plazo extranjero
+__export__.account_hierarchy_label_263,3,202.05,Documentos y cuentas por pagar a corto plazo nacional parte relacionada
+__export__.account_hierarchy_label_264,3,202.06,Documentos y cuentas por pagar a corto plazo extranjero parte relacionada
+__export__.account_hierarchy_label_265,3,202.07,Intereses por pagar a corto plazo nacional
+__export__.account_hierarchy_label_266,3,202.08,Intereses por pagar a corto plazo extranjero
+__export__.account_hierarchy_label_267,3,202.09,Intereses por pagar a corto plazo nacional parte relacionada
+__export__.account_hierarchy_label_268,3,202.1,Intereses por pagar a corto plazo extranjero parte relacionada
+__export__.account_hierarchy_label_269,3,202.11,Dividendo por pagar nacional
+__export__.account_hierarchy_label_270,3,202.12,Dividendo por pagar extranjero
+__export__.account_hierarchy_label_271,2,203,Cobros anticipados a corto plazo
+__export__.account_hierarchy_label_272,3,203.01,Rentas cobradas por anticipado a corto plazo nacional
+__export__.account_hierarchy_label_273,3,203.02,Rentas cobradas por anticipado a corto plazo extranjero
+__export__.account_hierarchy_label_274,3,203.03,Rentas cobradas por anticipado a corto plazo nacional parte relacionada
+__export__.account_hierarchy_label_275,3,203.04,Rentas cobradas por anticipado a corto plazo extranjero parte relacionada
+__export__.account_hierarchy_label_276,3,203.05,Intereses cobrados por anticipado a corto plazo nacional
+__export__.account_hierarchy_label_277,3,203.06,Intereses cobrados por anticipado a corto plazo extranjero
+__export__.account_hierarchy_label_278,3,203.07,Intereses cobrados por anticipado a corto plazo nacional parte relacionada
+__export__.account_hierarchy_label_279,3,203.08,Intereses cobrados por anticipado a corto plazo extranjero parte relacionada
+__export__.account_hierarchy_label_280,3,203.09,Factoraje financiero cobrados por anticipado a corto plazo nacional
+__export__.account_hierarchy_label_281,3,203.10,Factoraje financiero cobrados por anticipado a corto plazo extranjero
+__export__.account_hierarchy_label_282,3,203.11,Factoraje financiero cobrados por anticipado a corto plazo nacional parte relacionada
+__export__.account_hierarchy_label_283,3,203.12,Factoraje financiero cobrados por anticipado a corto plazo extranjero parte relacionada
+__export__.account_hierarchy_label_284,3,203.13,Arrendamiento financiero cobrados por anticipado a corto plazo nacional
+__export__.account_hierarchy_label_285,3,203.14,Arrendamiento financiero cobrados por anticipado a corto plazo extranjero
+__export__.account_hierarchy_label_286,3,203.15,Arrendamiento financiero cobrados por anticipado a corto plazo nacional parte relacionada
+__export__.account_hierarchy_label_287,3,203.16,Arrendamiento financiero cobrados por anticipado a corto plazo extranjero parte relacionada
+__export__.account_hierarchy_label_288,3,203.17,Derechos fiduciarios
+__export__.account_hierarchy_label_289,3,203.18,Otros cobros anticipados
+__export__.account_hierarchy_label_290,2,204,Instrumentos financieros a corto plazo
+__export__.account_hierarchy_label_291,3,204.01,Instrumentos financieros a corto plazo
+__export__.account_hierarchy_label_292,2,205,Acreedores diversos a corto plazo
+__export__.account_hierarchy_label_293,3,205.01,"Socios, accionistas o representante legal"
+__export__.account_hierarchy_label_294,3,205.02,Acreedores diversos a corto plazo nacional
+__export__.account_hierarchy_label_295,3,205.03,Acreedores diversos a corto plazo extranjero
+__export__.account_hierarchy_label_296,3,205.04,Acreedores diversos a corto plazo nacional parte relacionada
+__export__.account_hierarchy_label_297,3,205.05,Acreedores diversos a corto plazo extranjero parte relacionada
+__export__.account_hierarchy_label_298,3,205.06,Otros acreedores diversos a corto plazo
+__export__.account_hierarchy_label_299,2,206,Anticipo de cliente
+__export__.account_hierarchy_label_300,3,206.01,Anticipo de cliente nacional
+__export__.account_hierarchy_label_301,3,206.02,Anticipo de cliente extranjero
+__export__.account_hierarchy_label_302,3,206.03,Anticipo de cliente nacional parte relacionada
+__export__.account_hierarchy_label_303,3,206.04,Anticipo de cliente extranjero parte relacionada
+__export__.account_hierarchy_label_304,3,206.05,Otros anticipos de clientes
+__export__.account_hierarchy_label_305,2,207,Impuestos trasladados
+__export__.account_hierarchy_label_306,3,207.01,IVA trasladado
+__export__.account_hierarchy_label_307,3,207.02,IEPS trasladado
+__export__.account_hierarchy_label_308,2,208,Impuestos trasladados cobrados
+__export__.account_hierarchy_label_309,3,208.01,IVA trasladado cobrado
+__export__.account_hierarchy_label_310,3,208.02,IEPS trasladado cobrado
+__export__.account_hierarchy_label_311,2,209,Impuestos trasladados no cobrados
+__export__.account_hierarchy_label_312,3,209.01,IVA trasladado no cobrado
+__export__.account_hierarchy_label_313,3,209.02,IEPS trasladado no cobrado
+__export__.account_hierarchy_label_314,2,210,Provisión de sueldos y salarios por pagar
+__export__.account_hierarchy_label_315,3,210.01,Provisión de sueldos y salarios por pagar
+__export__.account_hierarchy_label_316,3,210.02,Provisión de vacaciones por pagar
+__export__.account_hierarchy_label_317,3,210.03,Provisión de aguinaldo por pagar
+__export__.account_hierarchy_label_318,3,210.04,Provisión de fondo de ahorro por pagar
+__export__.account_hierarchy_label_319,3,210.05,Provisión de asimilados a salarios por pagar
+__export__.account_hierarchy_label_320,3,210.06,Provisión de anticipos o remanentes por distribuir
+__export__.account_hierarchy_label_321,3,210.07,Provisión de otros sueldos y salarios por pagar
+__export__.account_hierarchy_label_322,2,211,Provisión de contribuciones de seguridad social por pagar
+__export__.account_hierarchy_label_323,3,211.01,Provisión de IMSS patronal por pagar
+__export__.account_hierarchy_label_324,3,211.02,Provisión de SAR por pagar
+__export__.account_hierarchy_label_325,3,211.03,Provisión de infonavit por pagar
+__export__.account_hierarchy_label_326,2,212,Provisión de impuesto estatal sobre nómina por pagar
+__export__.account_hierarchy_label_327,3,212.01,Provisión de impuesto estatal sobre nómina por pagar
+__export__.account_hierarchy_label_328,2,213,Impuestos y derechos por pagar
+__export__.account_hierarchy_label_329,3,213.01,IVA por pagar
+__export__.account_hierarchy_label_330,3,213.02,IEPS por pagar
+__export__.account_hierarchy_label_331,3,213.03,ISR por pagar
+__export__.account_hierarchy_label_332,3,213.04,Impuesto estatal sobre nómina por pagar
+__export__.account_hierarchy_label_333,3,213.05,Impuesto estatal y municipal por pagar
+__export__.account_hierarchy_label_334,3,213.06,Derechos por pagar
+__export__.account_hierarchy_label_335,3,213.07,Otros impuestos por pagar
+__export__.account_hierarchy_label_336,2,214,Dividendos por pagar
+__export__.account_hierarchy_label_337,3,214.01,Dividendos por pagar
+__export__.account_hierarchy_label_338,2,215,PTU por pagar
+__export__.account_hierarchy_label_339,3,215.01,PTU por pagar
+__export__.account_hierarchy_label_340,3,215.02,PTU por pagar de ejercicios anteriores
+__export__.account_hierarchy_label_341,3,215.03,Provisión de PTU por pagar
+__export__.account_hierarchy_label_342,2,216,Impuestos retenidos
+__export__.account_hierarchy_label_343,3,216.01,Impuestos retenidos de ISR por sueldos y salarios
+__export__.account_hierarchy_label_344,3,216.02,Impuestos retenidos de ISR por asimilados a salarios
+__export__.account_hierarchy_label_345,3,216.03,Impuestos retenidos de ISR por arrendamiento
+__export__.account_hierarchy_label_346,3,216.04,Impuestos retenidos de ISR por servicios profesionales
+__export__.account_hierarchy_label_347,3,216.05,Impuestos retenidos de ISR por dividendos
+__export__.account_hierarchy_label_348,3,216.06,Impuestos retenidos de ISR por intereses
+__export__.account_hierarchy_label_349,3,216.07,Impuestos retenidos de ISR por pagos al extranjero
+__export__.account_hierarchy_label_350,3,216.08,Impuestos retenidos de ISR por venta de acciones
+__export__.account_hierarchy_label_351,3,216.09,Impuestos retenidos de ISR por venta de partes sociales
+__export__.account_hierarchy_label_352,3,216.10,Impuestos retenidos de IVA
+__export__.account_hierarchy_label_353,3,216.11,Retenciones de IMSS a los trabajadores
+__export__.account_hierarchy_label_354,3,216.12,Otras impuestos retenidos
+__export__.account_hierarchy_label_355,2,217,Pagos realizados por cuenta de terceros
+__export__.account_hierarchy_label_356,3,217.01,Pagos realizados por cuenta de terceros
+__export__.account_hierarchy_label_357,2,218,Otros pasivos a corto plazo
+__export__.account_hierarchy_label_358,3,218.01,Otros pasivos a corto plazo
+__export__.account_hierarchy_label_360,2,251,Acreedores diversos a largo plazo
+__export__.account_hierarchy_label_361,3,251.01,"Socios, accionistas o representante legal"
+__export__.account_hierarchy_label_362,3,251.02,Acreedores diversos a largo plazo nacional
+__export__.account_hierarchy_label_363,3,251.03,Acreedores diversos a largo plazo extranjero
+__export__.account_hierarchy_label_364,3,251.04,Acreedores diversos a largo plazo nacional parte relacionada
+__export__.account_hierarchy_label_365,3,251.05,Acreedores diversos a largo plazo extranjero parte relacionada
+__export__.account_hierarchy_label_366,3,251.06,Otros acreedores diversos a largo plazo
+__export__.account_hierarchy_label_367,2,252,Cuentas por pagar a largo plazo
+__export__.account_hierarchy_label_368,3,252.01,Documentos bancarios y financieros por pagar a largo plazo nacional
+__export__.account_hierarchy_label_369,3,252.02,Documentos bancarios y financieros por pagar a largo plazo extranjero
+__export__.account_hierarchy_label_370,3,252.03,Documentos y cuentas por pagar a largo plazo nacional
+__export__.account_hierarchy_label_371,3,252.04,Documentos y cuentas por pagar a largo plazo extranjero
+__export__.account_hierarchy_label_372,3,252.05,Documentos y cuentas por pagar a largo plazo nacional parte relacionada
+__export__.account_hierarchy_label_373,3,252.06,Documentos y cuentas por pagar a largo plazo extranjero parte relacionada
+__export__.account_hierarchy_label_374,3,252.07,Hipotecas por pagar a largo plazo nacional
+__export__.account_hierarchy_label_375,3,252.08,Hipotecas por pagar a largo plazo extranjero
+__export__.account_hierarchy_label_376,3,252.09,Hipotecas por pagar a largo plazo nacional parte relacionada
+__export__.account_hierarchy_label_377,3,252.10,Hipotecas por pagar a largo plazo extranjero parte relacionada
+__export__.account_hierarchy_label_378,3,252.11,Intereses por pagar a largo plazo nacional
+__export__.account_hierarchy_label_379,3,252.12,Intereses por pagar a largo plazo extranjero
+__export__.account_hierarchy_label_380,3,252.13,Intereses por pagar a largo plazo nacional parte relacionada
+__export__.account_hierarchy_label_381,3,252.14,Intereses por pagar a largo plazo extranjero parte relacionada
+__export__.account_hierarchy_label_382,3,252.15,Dividendos por pagar nacionales
+__export__.account_hierarchy_label_383,3,252.16,Dividendos por pagar extranjeros
+__export__.account_hierarchy_label_384,3,252.17,Otras cuentas y documentos por pagar a largo plazo
+__export__.account_hierarchy_label_385,2,253,Cobros anticipados a largo plazo
+__export__.account_hierarchy_label_386,3,253.01,Rentas cobradas por anticipado a largo plazo nacional
+__export__.account_hierarchy_label_387,3,253.02,Rentas cobradas por anticipado a largo plazo extranjero
+__export__.account_hierarchy_label_388,3,253.03,Rentas cobradas por anticipado a largo plazo nacional parte relacionada
+__export__.account_hierarchy_label_389,3,253.04,Rentas cobradas por anticipado a largo plazo extranjero parte relacionada
+__export__.account_hierarchy_label_390,3,253.05,Intereses cobrados por anticipado a largo plazo nacional
+__export__.account_hierarchy_label_391,3,253.06,Intereses cobrados por anticipado a largo plazo extranjero
+__export__.account_hierarchy_label_392,3,253.07,Intereses cobrados por anticipado a largo plazo nacional parte relacionada
+__export__.account_hierarchy_label_393,3,253.08,Intereses cobrados por anticipado a largo plazo extranjero parte relacionada
+__export__.account_hierarchy_label_394,3,253.09,Factoraje financiero cobrados por anticipado a largo plazo nacional
+__export__.account_hierarchy_label_395,3,253.10,Factoraje financiero cobrados por anticipado a largo plazo extranjero
+__export__.account_hierarchy_label_396,3,253.11,Factoraje financiero cobrados por anticipado a largo plazo nacional parte relacionada
+__export__.account_hierarchy_label_397,3,253.12,Factoraje financiero cobrados por anticipado a largo plazo extranjero parte relacionada
+__export__.account_hierarchy_label_398,3,253.13,Arrendamiento financiero cobrados por anticipado a largo plazo nacional
+__export__.account_hierarchy_label_399,3,253.14,Arrendamiento financiero cobrados por anticipado a largo plazo extranjero
+__export__.account_hierarchy_label_400,3,253.15,Arrendamiento financiero cobrados por anticipado a largo plazo nacional parte relacionada
+__export__.account_hierarchy_label_401,3,253.16,Arrendamiento financiero cobrados por anticipado a largo plazo extranjero parte relacionada
+__export__.account_hierarchy_label_402,3,253.17,Derechos fiduciarios
+__export__.account_hierarchy_label_403,3,253.18,Otros cobros anticipados
+__export__.account_hierarchy_label_404,2,254,Instrumentos financieros a largo plazo
+__export__.account_hierarchy_label_405,3,254.01,Instrumentos financieros a largo plazo
+__export__.account_hierarchy_label_406,2,255,Pasivos por beneficios a los empleados a largo plazo
+__export__.account_hierarchy_label_407,3,255.01,Pasivos por beneficios a los empleados a largo plazo
+__export__.account_hierarchy_label_408,2,256,Otros pasivos a largo plazo
+__export__.account_hierarchy_label_409,3,256.01,Otros pasivos a largo plazo
+__export__.account_hierarchy_label_410,2,257,Participación de los trabajadores en las utilidades diferida
+__export__.account_hierarchy_label_411,3,257.01,Participación de los trabajadores en las utilidades diferida
+__export__.account_hierarchy_label_412,2,258,Obligaciones contraídas de fideicomisos
+__export__.account_hierarchy_label_413,3,258.01,Obligaciones contraídas de fideicomisos
+__export__.account_hierarchy_label_414,2,259,Impuestos diferidos
+__export__.account_hierarchy_label_415,3,259.01,ISR diferido
+__export__.account_hierarchy_label_416,3,259.02,ISR por dividendo diferido
+__export__.account_hierarchy_label_417,3,259.03,Otros impuestos diferidos
+__export__.account_hierarchy_label_418,2,260,Pasivos diferidos
+__export__.account_hierarchy_label_419,3,260.01,Pasivos diferidos
+__export__.account_hierarchy_label_420,1,3,Capital
+__export__.account_hierarchy_label_421,2,300,Capital contable
+__export__.account_hierarchy_label_422,2,301,Capital social
+__export__.account_hierarchy_label_423,3,301.01,Capital fijo
+__export__.account_hierarchy_label_424,3,301.02,Capital variable
+__export__.account_hierarchy_label_425,3,301.03,Aportaciones para futuros aumentos de capital
+__export__.account_hierarchy_label_426,3,301.04,Prima en suscripción de acciones
+__export__.account_hierarchy_label_427,3,301.05,Prima en suscripción de partes sociales
+__export__.account_hierarchy_label_428,2,302,Patrimonio
+__export__.account_hierarchy_label_429,3,302.01,Patrimonio
+__export__.account_hierarchy_label_430,3,302.02,Aportación patrimonial
+__export__.account_hierarchy_label_431,3,302.03,Déficit o remanente del ejercicio
+__export__.account_hierarchy_label_432,2,303,Reserva legal
+__export__.account_hierarchy_label_433,3,303.01,Reserva legal
+__export__.account_hierarchy_label_434,2,304,Resultado de ejercicios anteriores
+__export__.account_hierarchy_label_435,3,304.01,Utilidad de ejercicios anteriores
+__export__.account_hierarchy_label_436,3,304.02,Pérdida de ejercicios anteriores
+__export__.account_hierarchy_label_437,3,304.03,Resultado integral de ejercicios anteriores
+__export__.account_hierarchy_label_438,3,304.04,Déficit o remanente de ejercicio anteriores
+__export__.account_hierarchy_label_439,2,305,Resultado del ejercicio
+__export__.account_hierarchy_label_440,3,305.01,Utilidad del ejercicio
+__export__.account_hierarchy_label_441,3,305.02,Pérdida del ejercicio
+__export__.account_hierarchy_label_442,3,305.03,Resultado integral
+__export__.account_hierarchy_label_443,2,306,Otras cuentas de capital
+__export__.account_hierarchy_label_444,3,306.01,Otras cuentas de capital
+__export__.account_hierarchy_label_445,1,4,Ingresos
+__export__.account_hierarchy_label_446,2,400,Ingresos
+__export__.account_hierarchy_label_447,2,401,Ingresos
+__export__.account_hierarchy_label_448,3,401.01,Ventas y/o servicios gravados a la tasa general
+__export__.account_hierarchy_label_449,3,401.02,Ventas y/o servicios gravados a la tasa general de contado
+__export__.account_hierarchy_label_450,3,401.03,Ventas y/o servicios gravados a la tasa general a crédito
+__export__.account_hierarchy_label_451,3,401.04,Ventas y/o servicios gravados al 0%
+__export__.account_hierarchy_label_452,3,401.05,Ventas y/o servicios gravados al 0% de contado
+__export__.account_hierarchy_label_453,3,401.06,Ventas y/o servicios gravados al 0% a crédito
+__export__.account_hierarchy_label_454,3,401.07,Ventas y/o servicios exentos
+__export__.account_hierarchy_label_455,3,401.08,Ventas y/o servicios exentos de contado
+__export__.account_hierarchy_label_456,3,401.09,Ventas y/o servicios exentos a crédito
+__export__.account_hierarchy_label_457,3,401.10,Ventas y/o servicios gravados a la tasa general nacionales partes relacionadas
+__export__.account_hierarchy_label_458,3,401.11,Ventas y/o servicios gravados a la tasa general extranjeros partes relacionadas
+__export__.account_hierarchy_label_459,3,401.12,Ventas y/o servicios gravados al 0% nacionales partes relacionadas
+__export__.account_hierarchy_label_460,3,401.13,Ventas y/o servicios gravados al 0% extranjeros partes relacionadas
+__export__.account_hierarchy_label_461,3,401.14,Ventas y/o servicios exentos nacionales partes relacionadas
+__export__.account_hierarchy_label_462,3,401.15,Ventas y/o servicios exentos extranjeros partes relacionadas
+__export__.account_hierarchy_label_463,3,401.16,Ingresos por servicios administrativos
+__export__.account_hierarchy_label_464,3,401.17,Ingresos por servicios administrativos nacionales partes relacionadas
+__export__.account_hierarchy_label_465,3,401.18,Ingresos por servicios administrativos extranjeros partes relacionadas
+__export__.account_hierarchy_label_466,3,401.19,Ingresos por servicios profesionales
+__export__.account_hierarchy_label_467,3,401.20,Ingresos por servicios profesionales nacionales partes relacionadas
+__export__.account_hierarchy_label_468,3,401.21,Ingresos por servicios profesionales extranjeros partes relacionadas
+__export__.account_hierarchy_label_469,3,401.22,Ingresos por arrendamiento
+__export__.account_hierarchy_label_470,3,401.23,Ingresos por arrendamiento nacionales partes relacionadas
+__export__.account_hierarchy_label_471,3,401.24,Ingresos por arrendamiento extranjeros partes relacionadas
+__export__.account_hierarchy_label_472,3,401.25,Ingresos por exportación
+__export__.account_hierarchy_label_473,3,401.26,Ingresos por comisiones
+__export__.account_hierarchy_label_474,3,401.27,Ingresos por maquila
+__export__.account_hierarchy_label_475,3,401.28,Ingresos por coordinados
+__export__.account_hierarchy_label_476,3,401.29,Ingresos por regalías
+__export__.account_hierarchy_label_477,3,401.30,Ingresos por asistencia técnica
+__export__.account_hierarchy_label_478,3,401.31,Ingresos por donativos
+__export__.account_hierarchy_label_479,3,401.32,Ingresos por intereses (actividad propia)
+__export__.account_hierarchy_label_480,3,401.33,Ingresos de copropiedad
+__export__.account_hierarchy_label_481,3,401.34,Ingresos por fideicomisos
+__export__.account_hierarchy_label_482,3,401.35,Ingresos por factoraje financiero
+__export__.account_hierarchy_label_483,3,401.36,Ingresos por arrendamiento financiero
+__export__.account_hierarchy_label_484,3,401.37,Ingresos de extranjeros con establecimiento en el país
+__export__.account_hierarchy_label_485,3,401.38,Otros ingresos propios
+__export__.account_hierarchy_label_486,2,402,"Devoluciones, descuentos o bonificaciones sobre ingresos"
+__export__.account_hierarchy_label_487,3,402.01,"Devoluciones, descuentos o bonificaciones sobre ventas y/o servicios a la tasa general"
+__export__.account_hierarchy_label_488,3,402.02,"Devoluciones, descuentos o bonificaciones sobre ventas y/o servicios al 0%"
+__export__.account_hierarchy_label_489,3,402.03,"Devoluciones, descuentos o bonificaciones sobre ventas y/o servicios exentos"
+__export__.account_hierarchy_label_490,3,402.04,"Devoluciones, descuentos o bonificaciones de otros ingresos"
+__export__.account_hierarchy_label_491,2,403,Otros ingresos
+__export__.account_hierarchy_label_492,3,403.01,Otros Ingresos
+__export__.account_hierarchy_label_493,3,403.02,Otros ingresos nacionales parte relacionada
+__export__.account_hierarchy_label_494,3,403.03,Otros ingresos extranjeros parte relacionada
+__export__.account_hierarchy_label_495,3,403.04,Ingresos por operaciones discontinuas
+__export__.account_hierarchy_label_496,3,403.05,Ingresos por condonación de adeudo
+__export__.account_hierarchy_label_497,1,5,Costos
+__export__.account_hierarchy_label_498,2,500,Costos
+__export__.account_hierarchy_label_499,2,501,Costo de venta y/o servicio
+__export__.account_hierarchy_label_500,3,501.01,Costo de venta
+__export__.account_hierarchy_label_501,3,501.02,Costo de servicios (Mano de obra)
+__export__.account_hierarchy_label_502,3,501.03,Materia prima directa utilizada para la producción
+__export__.account_hierarchy_label_503,3,501.04,Materia prima consumida en el proceso productivo
+__export__.account_hierarchy_label_504,3,501.05,Mano de obra directa consumida
+__export__.account_hierarchy_label_505,3,501.06,Mano de obra directa
+__export__.account_hierarchy_label_506,3,501.07,Cargos indirectos de producción
+__export__.account_hierarchy_label_507,3,501.08,Otros conceptos de costo
+__export__.account_hierarchy_label_508,2,502,Compras
+__export__.account_hierarchy_label_509,3,502.01,Compras nacionales
+__export__.account_hierarchy_label_510,3,502.02,Compras nacionales parte relacionada
+__export__.account_hierarchy_label_511,3,502.03,Compras de Importación
+__export__.account_hierarchy_label_512,3,502.04,Compras de Importación partes relacionadas
+__export__.account_hierarchy_label_513,2,503,"Devoluciones, descuentos o bonificaciones sobre compras"
+__export__.account_hierarchy_label_514,3,503.01,"Devoluciones, descuentos o bonificaciones sobre compras"
+__export__.account_hierarchy_label_515,2,504,Otras cuentas de costos
+__export__.account_hierarchy_label_516,3,504.01,Gastos indirectos de fabricación
+__export__.account_hierarchy_label_517,3,504.02,Gastos indirectos de fabricación de partes relacionadas nacionales
+__export__.account_hierarchy_label_518,3,504.03,Gastos indirectos de fabricación de partes relacionadas extranjeras
+__export__.account_hierarchy_label_519,3,504.04,Otras cuentas de costos incurridos
+__export__.account_hierarchy_label_520,3,504.05,Otras cuentas de costos incurridos con partes relacionadas nacionales
+__export__.account_hierarchy_label_521,3,504.06,Otras cuentas de costos incurridos con partes relacionadas extranjeras
+__export__.account_hierarchy_label_522,3,504.07,Depreciación de edificios
+__export__.account_hierarchy_label_523,3,504.08,Depreciación de maquinaria y equipo
+__export__.account_hierarchy_label_524,3,504.09,"Depreciación de automóviles, autobuses, camiones de carga, tractocamiones, montacargas y remolques"
+__export__.account_hierarchy_label_525,3,504.10,Depreciación de mobiliario y equipo de oficina
+__export__.account_hierarchy_label_526,3,504.11,Depreciación de equipo de cómputo
+__export__.account_hierarchy_label_527,3,504.12,Depreciación de equipo de comunicación
+__export__.account_hierarchy_label_528,3,504.13,"Depreciación de activos biológicos, vegetales y semovientes"
+__export__.account_hierarchy_label_529,3,504.14,Depreciación de otros activos fijos
+__export__.account_hierarchy_label_530,3,504.15,Depreciación de ferrocarriles
+__export__.account_hierarchy_label_531,3,504.16,Depreciación de embarcaciones
+__export__.account_hierarchy_label_532,3,504.17,Depreciación de aviones
+__export__.account_hierarchy_label_533,3,504.18,"Depreciación de troqueles, moldes, matrices y herramental"
+__export__.account_hierarchy_label_534,3,504.19,Depreciación de equipo de comunicaciones telefónicas
+__export__.account_hierarchy_label_535,3,504.20,Depreciación de equipo de comunicación satelital
+__export__.account_hierarchy_label_536,3,504.21,Depreciación de equipo de adaptaciones para personas con capacidades diferentes
+__export__.account_hierarchy_label_537,3,504.22,Depreciación de maquinaria y equipo de generación de energía de fuentes renovables o de sistemas de cogeneración de electricidad eficiente
+__export__.account_hierarchy_label_538,3,504.23,Depreciación de adaptaciones y mejoras
+__export__.account_hierarchy_label_539,3,504.24,Depreciación de otra maquinaria y equipo
+__export__.account_hierarchy_label_540,3,504.25,Otras cuentas de costos
+__export__.account_hierarchy_label_541,2,505,Costo de activo fijo
+__export__.account_hierarchy_label_542,3,505.01,Costo por venta de activo fijo
+__export__.account_hierarchy_label_543,3,505.02,Costo por baja de activo fijo
+__export__.account_hierarchy_label_544,1,6,Gastos
+__export__.account_hierarchy_label_545,2,600,Gastos
+__export__.account_hierarchy_label_546,2,601,Gastos generales
+__export__.account_hierarchy_label_547,3,601.01,Sueldos y salarios
+__export__.account_hierarchy_label_548,3,601.02,Compensaciones
+__export__.account_hierarchy_label_549,3,601.03,Tiempos extras
+__export__.account_hierarchy_label_550,3,601.04,Premios de asistencia
+__export__.account_hierarchy_label_551,3,601.05,Premios de puntualidad
+__export__.account_hierarchy_label_552,3,601.06,Vacaciones
+__export__.account_hierarchy_label_553,3,601.07,Prima vacacional
+__export__.account_hierarchy_label_554,3,601.08,Prima dominical
+__export__.account_hierarchy_label_555,3,601.09,Días festivos
+__export__.account_hierarchy_label_556,3,601.10,Gratificaciones
+__export__.account_hierarchy_label_557,3,601.11,Primas de antigüedad
+__export__.account_hierarchy_label_558,3,601.12,Aguinaldo
+__export__.account_hierarchy_label_559,3,601.13,Indemnizaciones
+__export__.account_hierarchy_label_560,3,601.14,Destajo
+__export__.account_hierarchy_label_561,3,601.15,Despensa
+__export__.account_hierarchy_label_562,3,601.16,Transporte
+__export__.account_hierarchy_label_563,3,601.17,Servicio médico
+__export__.account_hierarchy_label_564,3,601.18,Ayuda en gastos funerarios
+__export__.account_hierarchy_label_565,3,601.19,Fondo de ahorro
+__export__.account_hierarchy_label_566,3,601.20,Cuotas sindicales
+__export__.account_hierarchy_label_567,3,601.21,PTU
+__export__.account_hierarchy_label_568,3,601.22,Estímulo al personal
+__export__.account_hierarchy_label_569,3,601.23,Previsión social
+__export__.account_hierarchy_label_570,3,601.24,Aportaciones para el plan de jubilación
+__export__.account_hierarchy_label_571,3,601.25,Otras prestaciones al personal
+__export__.account_hierarchy_label_572,3,601.26,Cuotas al IMSS
+__export__.account_hierarchy_label_573,3,601.27,Aportaciones al infonavit
+__export__.account_hierarchy_label_574,3,601.28,Aportaciones al SAR
+__export__.account_hierarchy_label_575,3,601.29,Impuesto estatal sobre nóminas
+__export__.account_hierarchy_label_576,3,601.30,Otras aportaciones
+__export__.account_hierarchy_label_577,3,601.31,Asimilados a salarios
+__export__.account_hierarchy_label_578,3,601.32,Servicios administrativos
+__export__.account_hierarchy_label_579,3,601.33,Servicios administrativos partes relacionadas
+__export__.account_hierarchy_label_580,3,601.34,Honorarios a personas físicas residentes nacionales
+__export__.account_hierarchy_label_581,3,601.35,Honorarios a personas físicas residentes nacionales partes relacionadas
+__export__.account_hierarchy_label_582,3,601.36,Honorarios a personas físicas residentes del extranjero
+__export__.account_hierarchy_label_583,3,601.37,Honorarios a personas físicas residentes del extranjero partes relacionadas
+__export__.account_hierarchy_label_584,3,601.38,Honorarios a personas morales residentes nacionales
+__export__.account_hierarchy_label_585,3,601.39,Honorarios a personas morales residentes nacionales partes relacionadas
+__export__.account_hierarchy_label_586,3,601.40,Honorarios a personas morales residentes del extranjero
+__export__.account_hierarchy_label_587,3,601.41,Honorarios a personas morales residentes del extranjero partes relacionadas
+__export__.account_hierarchy_label_588,3,601.42,Honorarios aduanales personas físicas
+__export__.account_hierarchy_label_589,3,601.43,Honorarios aduanales personas morales
+__export__.account_hierarchy_label_590,3,601.44,Honorarios al consejo de administración
+__export__.account_hierarchy_label_591,3,601.45,Arrendamiento a personas físicas residentes nacionales
+__export__.account_hierarchy_label_592,3,601.46,Arrendamiento a personas morales residentes nacionales
+__export__.account_hierarchy_label_593,3,601.47,Arrendamiento a residentes del extranjero
+__export__.account_hierarchy_label_594,3,601.48,Combustibles y lubricantes
+__export__.account_hierarchy_label_595,3,601.49,Viáticos y gastos de viaje
+__export__.account_hierarchy_label_596,3,601.50,"Teléfono, internet"
+__export__.account_hierarchy_label_597,3,601.51,Agua
+__export__.account_hierarchy_label_598,3,601.52,Energía eléctrica
+__export__.account_hierarchy_label_599,3,601.53,Vigilancia y seguridad
+__export__.account_hierarchy_label_600,3,601.54,Limpieza
+__export__.account_hierarchy_label_601,3,601.55,Papelería y artículos de oficina
+__export__.account_hierarchy_label_602,3,601.56,Mantenimiento y conservación
+__export__.account_hierarchy_label_603,3,601.57,Seguros y fianzas
+__export__.account_hierarchy_label_604,3,601.58,Otros impuestos y derechos
+__export__.account_hierarchy_label_605,3,601.59,Recargos fiscales
+__export__.account_hierarchy_label_606,3,601.60,Cuotas y suscripciones
+__export__.account_hierarchy_label_607,3,601.61,Propaganda y publicidad
+__export__.account_hierarchy_label_608,3,601.62,Capacitación al personal
+__export__.account_hierarchy_label_609,3,601.63,Donativos y ayudas
+__export__.account_hierarchy_label_610,3,601.64,Asistencia técnica
+__export__.account_hierarchy_label_611,3,601.65,Regalías sujetas a otros porcentajes
+__export__.account_hierarchy_label_612,3,601.66,Regalías sujetas al 5%
+__export__.account_hierarchy_label_613,3,601.67,Regalías sujetas al 10%
+__export__.account_hierarchy_label_614,3,601.68,Regalías sujetas al 15%
+__export__.account_hierarchy_label_615,3,601.69,Regalías sujetas al 25%
+__export__.account_hierarchy_label_616,3,601.70,Regalías sujetas al 30%
+__export__.account_hierarchy_label_617,3,601.71,Regalías sin retención
+__export__.account_hierarchy_label_618,3,601.72,Fletes y acarreos
+__export__.account_hierarchy_label_619,3,601.73,Gastos de importación
+__export__.account_hierarchy_label_620,3,601.74,Comisiones sobre ventas
+__export__.account_hierarchy_label_621,3,601.75,Comisiones por tarjetas de crédito
+__export__.account_hierarchy_label_622,3,601.76,Patentes y marcas
+__export__.account_hierarchy_label_623,3,601.77,Uniformes
+__export__.account_hierarchy_label_624,3,601.78,Prediales
+__export__.account_hierarchy_label_625,3,601.79,Gastos generales de urbanización
+__export__.account_hierarchy_label_626,3,601.80,Gastos generales de construcción
+__export__.account_hierarchy_label_627,3,601.81,Fletes del extranjero
+__export__.account_hierarchy_label_628,3,601.82,Recolección de bienes del sector agropecuario y/o ganadero
+__export__.account_hierarchy_label_629,3,601.83,Gastos no deducibles (sin requisitos fiscales)
+__export__.account_hierarchy_label_630,3,601.84,Otros gastos generales
+__export__.account_hierarchy_label_631,2,602,Gastos de venta
+__export__.account_hierarchy_label_632,3,602.01,Sueldos y salarios
+__export__.account_hierarchy_label_633,3,602.02,Compensaciones
+__export__.account_hierarchy_label_634,3,602.03,Tiempos extras
+__export__.account_hierarchy_label_635,3,602.04,Premios de asistencia
+__export__.account_hierarchy_label_636,3,602.05,Premios de puntualidad
+__export__.account_hierarchy_label_637,3,602.06,Vacaciones
+__export__.account_hierarchy_label_638,3,602.07,Prima vacacional
+__export__.account_hierarchy_label_639,3,602.08,Prima dominical
+__export__.account_hierarchy_label_640,3,602.09,Días festivos
+__export__.account_hierarchy_label_641,3,602.10,Gratificaciones
+__export__.account_hierarchy_label_642,3,602.11,Primas de antigüedad
+__export__.account_hierarchy_label_643,3,602.12,Aguinaldo
+__export__.account_hierarchy_label_644,3,602.13,Indemnizaciones
+__export__.account_hierarchy_label_645,3,602.14,Destajo
+__export__.account_hierarchy_label_646,3,602.15,Despensa
+__export__.account_hierarchy_label_647,3,602.16,Transporte
+__export__.account_hierarchy_label_648,3,602.17,Servicio médico
+__export__.account_hierarchy_label_649,3,602.18,Ayuda en gastos funerarios
+__export__.account_hierarchy_label_650,3,602.19,Fondo de ahorro
+__export__.account_hierarchy_label_651,3,602.20,Cuotas sindicales
+__export__.account_hierarchy_label_652,3,602.21,PTU
+__export__.account_hierarchy_label_653,3,602.22,Estímulo al personal
+__export__.account_hierarchy_label_654,3,602.23,Previsión social
+__export__.account_hierarchy_label_655,3,602.24,Aportaciones para el plan de jubilación
+__export__.account_hierarchy_label_656,3,602.25,Otras prestaciones al personal
+__export__.account_hierarchy_label_657,3,602.26,Cuotas al IMSS
+__export__.account_hierarchy_label_658,3,602.27,Aportaciones al infonavit
+__export__.account_hierarchy_label_659,3,602.28,Aportaciones al SAR
+__export__.account_hierarchy_label_660,3,602.29,Impuesto estatal sobre nóminas
+__export__.account_hierarchy_label_661,3,602.30,Otras aportaciones
+__export__.account_hierarchy_label_662,3,602.31,Asimilados a salarios
+__export__.account_hierarchy_label_663,3,602.32,Servicios administrativos
+__export__.account_hierarchy_label_664,3,602.33,Servicios administrativos partes relacionadas
+__export__.account_hierarchy_label_665,3,602.34,Honorarios a personas físicas residentes nacionales
+__export__.account_hierarchy_label_666,3,602.35,Honorarios a personas físicas residentes nacionales partes relacionadas
+__export__.account_hierarchy_label_667,3,602.36,Honorarios a personas físicas residentes del extranjero
+__export__.account_hierarchy_label_668,3,602.37,Honorarios a personas físicas residentes del extranjero partes relacionadas
+__export__.account_hierarchy_label_669,3,602.38,Honorarios a personas morales residentes nacionales
+__export__.account_hierarchy_label_670,3,602.39,Honorarios a personas morales residentes nacionales partes relacionadas
+__export__.account_hierarchy_label_671,3,602.40,Honorarios a personas morales residentes del extranjero
+__export__.account_hierarchy_label_672,3,602.41,Honorarios a personas morales residentes del extranjero partes relacionadas
+__export__.account_hierarchy_label_673,3,602.42,Honorarios aduanales personas físicas
+__export__.account_hierarchy_label_674,3,602.43,Honorarios aduanales personas morales
+__export__.account_hierarchy_label_675,3,602.44,Honorarios al consejo de administración
+__export__.account_hierarchy_label_676,3,602.45,Arrendamiento a personas físicas residentes nacionales
+__export__.account_hierarchy_label_677,3,602.46,Arrendamiento a personas morales residentes nacionales
+__export__.account_hierarchy_label_678,3,602.47,Arrendamiento a residentes del extranjero
+__export__.account_hierarchy_label_679,3,602.48,Combustibles y lubricantes
+__export__.account_hierarchy_label_680,3,602.49,Viáticos y gastos de viaje
+__export__.account_hierarchy_label_681,3,602.50,"Teléfono, internet"
+__export__.account_hierarchy_label_682,3,602.51,Agua
+__export__.account_hierarchy_label_683,3,602.52,Energía eléctrica
+__export__.account_hierarchy_label_684,3,602.53,Vigilancia y seguridad
+__export__.account_hierarchy_label_685,3,602.54,Limpieza
+__export__.account_hierarchy_label_686,3,602.55,Papelería y artículos de oficina
+__export__.account_hierarchy_label_687,3,602.56,Mantenimiento y conservación
+__export__.account_hierarchy_label_688,3,602.57,Seguros y fianzas
+__export__.account_hierarchy_label_689,3,602.58,Otros impuestos y derechos
+__export__.account_hierarchy_label_690,3,602.59,Recargos fiscales
+__export__.account_hierarchy_label_691,3,602.60,Cuotas y suscripciones
+__export__.account_hierarchy_label_692,3,602.61,Propaganda y publicidad
+__export__.account_hierarchy_label_693,3,602.62,Capacitación al personal
+__export__.account_hierarchy_label_694,3,602.63,Donativos y ayudas
+__export__.account_hierarchy_label_695,3,602.64,Asistencia técnica
+__export__.account_hierarchy_label_696,3,602.65,Regalías sujetas a otros porcentajes
+__export__.account_hierarchy_label_697,3,602.66,Regalías sujetas al 5%
+__export__.account_hierarchy_label_698,3,602.67,Regalías sujetas al 10%
+__export__.account_hierarchy_label_699,3,602.68,Regalías sujetas al 15%
+__export__.account_hierarchy_label_700,3,602.69,Regalías sujetas al 25%
+__export__.account_hierarchy_label_701,3,602.70,Regalías sujetas al 30%
+__export__.account_hierarchy_label_702,3,602.71,Regalías sin retención
+__export__.account_hierarchy_label_703,3,602.72,Fletes y acarreos
+__export__.account_hierarchy_label_704,3,602.73,Gastos de importación
+__export__.account_hierarchy_label_705,3,602.74,Comisiones sobre ventas
+__export__.account_hierarchy_label_706,3,602.75,Comisiones por tarjetas de crédito
+__export__.account_hierarchy_label_707,3,602.76,Patentes y marcas
+__export__.account_hierarchy_label_708,3,602.77,Uniformes
+__export__.account_hierarchy_label_709,3,602.78,Prediales
+__export__.account_hierarchy_label_710,3,602.79,Gastos de venta de urbanización
+__export__.account_hierarchy_label_711,3,602.80,Gastos de venta de construcción
+__export__.account_hierarchy_label_712,3,602.81,Fletes del extranjero
+__export__.account_hierarchy_label_713,3,602.82,Recolección de bienes del sector agropecuario y/o ganadero
+__export__.account_hierarchy_label_714,3,602.83,Gastos no deducibles (sin requisitos fiscales)
+__export__.account_hierarchy_label_715,3,602.84,Otros gastos de venta
+__export__.account_hierarchy_label_716,2,603,Gastos de administración
+__export__.account_hierarchy_label_717,3,603.01,Sueldos y salarios
+__export__.account_hierarchy_label_718,3,603.02,Compensaciones
+__export__.account_hierarchy_label_719,3,603.03,Tiempos extras
+__export__.account_hierarchy_label_720,3,603.04,Premios de asistencia
+__export__.account_hierarchy_label_721,3,603.05,Premios de puntualidad
+__export__.account_hierarchy_label_722,3,603.06,Vacaciones
+__export__.account_hierarchy_label_723,3,603.07,Prima vacacional
+__export__.account_hierarchy_label_724,3,603.08,Prima dominical
+__export__.account_hierarchy_label_725,3,603.09,Días festivos
+__export__.account_hierarchy_label_726,3,603.10,Gratificaciones
+__export__.account_hierarchy_label_727,3,603.11,Primas de antigüedad
+__export__.account_hierarchy_label_728,3,603.12,Aguinaldo
+__export__.account_hierarchy_label_729,3,603.13,Indemnizaciones
+__export__.account_hierarchy_label_730,3,603.14,Destajo
+__export__.account_hierarchy_label_731,3,603.15,Despensa
+__export__.account_hierarchy_label_732,3,603.16,Transporte
+__export__.account_hierarchy_label_733,3,603.17,Servicio médico
+__export__.account_hierarchy_label_734,3,603.18,Ayuda en gastos funerarios
+__export__.account_hierarchy_label_735,3,603.19,Fondo de ahorro
+__export__.account_hierarchy_label_736,3,603.20,Cuotas sindicales
+__export__.account_hierarchy_label_737,3,603.21,PTU
+__export__.account_hierarchy_label_738,3,603.22,Estímulo al personal
+__export__.account_hierarchy_label_739,3,603.23,Previsión social
+__export__.account_hierarchy_label_740,3,603.24,Aportaciones para el plan de jubilación
+__export__.account_hierarchy_label_741,3,603.25,Otras prestaciones al personal
+__export__.account_hierarchy_label_742,3,603.26,Cuotas al IMSS
+__export__.account_hierarchy_label_743,3,603.27,Aportaciones al infonavit
+__export__.account_hierarchy_label_744,3,603.28,Aportaciones al SAR
+__export__.account_hierarchy_label_745,3,603.29,Impuesto estatal sobre nóminas
+__export__.account_hierarchy_label_746,3,603.30,Otras aportaciones
+__export__.account_hierarchy_label_747,3,603.31,Asimilados a salarios
+__export__.account_hierarchy_label_748,3,603.32,Servicios administrativos
+__export__.account_hierarchy_label_749,3,603.33,Servicios administrativos partes relacionadas
+__export__.account_hierarchy_label_750,3,603.34,Honorarios a personas físicas residentes nacionales
+__export__.account_hierarchy_label_751,3,603.35,Honorarios a personas físicas residentes nacionales partes relacionadas
+__export__.account_hierarchy_label_752,3,603.36,Honorarios a personas físicas residentes del extranjero
+__export__.account_hierarchy_label_753,3,603.37,Honorarios a personas físicas residentes del extranjero partes relacionadas
+__export__.account_hierarchy_label_754,3,603.38,Honorarios a personas morales residentes nacionales
+__export__.account_hierarchy_label_755,3,603.39,Honorarios a personas morales residentes nacionales partes relacionadas
+__export__.account_hierarchy_label_756,3,603.40,Honorarios a personas morales residentes del extranjero
+__export__.account_hierarchy_label_757,3,603.41,Honorarios a personas morales residentes del extranjero partes relacionadas
+__export__.account_hierarchy_label_758,3,603.42,Honorarios aduanales personas físicas
+__export__.account_hierarchy_label_759,3,603.43,Honorarios aduanales personas morales
+__export__.account_hierarchy_label_760,3,603.44,Honorarios al consejo de administración
+__export__.account_hierarchy_label_761,3,603.45,Arrendamiento a personas físicas residentes nacionales
+__export__.account_hierarchy_label_762,3,603.46,Arrendamiento a personas morales residentes nacionales
+__export__.account_hierarchy_label_763,3,603.47,Arrendamiento a residentes del extranjero
+__export__.account_hierarchy_label_764,3,603.48,Combustibles y lubricantes
+__export__.account_hierarchy_label_765,3,603.49,Viáticos y gastos de viaje
+__export__.account_hierarchy_label_766,3,603.50,"Teléfono, internet"
+__export__.account_hierarchy_label_767,3,603.51,Agua
+__export__.account_hierarchy_label_768,3,603.52,Energía eléctrica
+__export__.account_hierarchy_label_769,3,603.53,Vigilancia y seguridad
+__export__.account_hierarchy_label_770,3,603.54,Limpieza
+__export__.account_hierarchy_label_771,3,603.55,Papelería y artículos de oficina
+__export__.account_hierarchy_label_772,3,603.56,Mantenimiento y conservación
+__export__.account_hierarchy_label_773,3,603.57,Seguros y fianzas
+__export__.account_hierarchy_label_774,3,603.58,Otros impuestos y derechos
+__export__.account_hierarchy_label_775,3,603.59,Recargos fiscales
+__export__.account_hierarchy_label_776,3,603.60,Cuotas y suscripciones
+__export__.account_hierarchy_label_777,3,603.61,Propaganda y publicidad
+__export__.account_hierarchy_label_778,3,603.62,Capacitación al personal
+__export__.account_hierarchy_label_779,3,603.63,Donativos y ayudas
+__export__.account_hierarchy_label_780,3,603.64,Asistencia técnica
+__export__.account_hierarchy_label_781,3,603.65,Regalías sujetas a otros porcentajes
+__export__.account_hierarchy_label_782,3,603.66,Regalías sujetas al 5%
+__export__.account_hierarchy_label_783,3,603.67,Regalías sujetas al 10%
+__export__.account_hierarchy_label_784,3,603.68,Regalías sujetas al 15%
+__export__.account_hierarchy_label_785,3,603.69,Regalías sujetas al 25%
+__export__.account_hierarchy_label_786,3,603.70,Regalías sujetas al 30%
+__export__.account_hierarchy_label_787,3,603.71,Regalías sin retención
+__export__.account_hierarchy_label_788,3,603.72,Fletes y acarreos
+__export__.account_hierarchy_label_789,3,603.73,Gastos de importación
+__export__.account_hierarchy_label_790,3,603.74,Patentes y marcas
+__export__.account_hierarchy_label_791,3,603.75,Uniformes
+__export__.account_hierarchy_label_792,3,603.76,Prediales
+__export__.account_hierarchy_label_793,3,603.77,Gastos de administración de urbanización
+__export__.account_hierarchy_label_794,3,603.78,Gastos de administración de construcción
+__export__.account_hierarchy_label_795,3,603.79,Fletes del extranjero
+__export__.account_hierarchy_label_796,3,603.80,Recolección de bienes del sector agropecuario y/o ganadero
+__export__.account_hierarchy_label_797,3,603.81,Gastos no deducibles (sin requisitos fiscales)
+__export__.account_hierarchy_label_798,3,603.82,Otros gastos de administración
+__export__.account_hierarchy_label_799,2,604,Gastos de fabricación
+__export__.account_hierarchy_label_800,3,604.01,Sueldos y salarios
+__export__.account_hierarchy_label_801,3,604.02,Compensaciones
+__export__.account_hierarchy_label_802,3,604.03,Tiempos extras
+__export__.account_hierarchy_label_803,3,604.04,Premios de asistencia
+__export__.account_hierarchy_label_804,3,604.05,Premios de puntualidad
+__export__.account_hierarchy_label_805,3,604.06,Vacaciones
+__export__.account_hierarchy_label_806,3,604.07,Prima vacacional
+__export__.account_hierarchy_label_807,3,604.08,Prima dominical
+__export__.account_hierarchy_label_808,3,604.09,Días festivos
+__export__.account_hierarchy_label_809,3,604.10,Gratificaciones
+__export__.account_hierarchy_label_810,3,604.11,Primas de antigüedad
+__export__.account_hierarchy_label_811,3,604.12,Aguinaldo
+__export__.account_hierarchy_label_812,3,604.13,Indemnizaciones
+__export__.account_hierarchy_label_813,3,604.14,Destajo
+__export__.account_hierarchy_label_814,3,604.15,Despensa
+__export__.account_hierarchy_label_815,3,604.16,Transporte
+__export__.account_hierarchy_label_816,3,604.17,Servicio médico
+__export__.account_hierarchy_label_817,3,604.18,Ayuda en gastos funerarios
+__export__.account_hierarchy_label_818,3,604.19,Fondo de ahorro
+__export__.account_hierarchy_label_819,3,604.20,Cuotas sindicales
+__export__.account_hierarchy_label_820,3,604.21,PTU
+__export__.account_hierarchy_label_821,3,604.22,Estímulo al personal
+__export__.account_hierarchy_label_822,3,604.23,Previsión social
+__export__.account_hierarchy_label_823,3,604.24,Aportaciones para el plan de jubilación
+__export__.account_hierarchy_label_824,3,604.25,Otras prestaciones al personal
+__export__.account_hierarchy_label_825,3,604.26,Cuotas al IMSS
+__export__.account_hierarchy_label_826,3,604.27,Aportaciones al infonavit
+__export__.account_hierarchy_label_827,3,604.28,Aportaciones al SAR
+__export__.account_hierarchy_label_828,3,604.29,Impuesto estatal sobre nóminas
+__export__.account_hierarchy_label_829,3,604.30,Otras aportaciones
+__export__.account_hierarchy_label_830,3,604.31,Asimilados a salarios
+__export__.account_hierarchy_label_831,3,604.32,Servicios administrativos
+__export__.account_hierarchy_label_832,3,604.33,Servicios administrativos partes relacionadas
+__export__.account_hierarchy_label_833,3,604.34,Honorarios a personas físicas residentes nacionales
+__export__.account_hierarchy_label_834,3,604.35,Honorarios a personas físicas residentes nacionales partes relacionadas
+__export__.account_hierarchy_label_835,3,604.36,Honorarios a personas físicas residentes del extranjero
+__export__.account_hierarchy_label_836,3,604.37,Honorarios a personas físicas residentes del extranjero partes relacionadas
+__export__.account_hierarchy_label_837,3,604.38,Honorarios a personas morales residentes nacionales
+__export__.account_hierarchy_label_838,3,604.39,Honorarios a personas morales residentes nacionales partes relacionadas
+__export__.account_hierarchy_label_839,3,604.40,Honorarios a personas morales residentes del extranjero
+__export__.account_hierarchy_label_840,3,604.41,Honorarios a personas morales residentes del extranjero partes relacionadas
+__export__.account_hierarchy_label_841,3,604.42,Honorarios aduanales personas físicas
+__export__.account_hierarchy_label_842,3,604.43,Honorarios aduanales personas morales
+__export__.account_hierarchy_label_843,3,604.44,Honorarios al consejo de administración
+__export__.account_hierarchy_label_844,3,604.45,Arrendamiento a personas físicas residentes nacionales
+__export__.account_hierarchy_label_845,3,604.46,Arrendamiento a personas morales residentes nacionales
+__export__.account_hierarchy_label_846,3,604.47,Arrendamiento a residentes del extranjero
+__export__.account_hierarchy_label_847,3,604.48,Combustibles y lubricantes
+__export__.account_hierarchy_label_848,3,604.49,Viáticos y gastos de viaje
+__export__.account_hierarchy_label_849,3,604.50,"Teléfono, internet"
+__export__.account_hierarchy_label_850,3,604.51,Agua
+__export__.account_hierarchy_label_851,3,604.52,Energía eléctrica
+__export__.account_hierarchy_label_852,3,604.53,Vigilancia y seguridad
+__export__.account_hierarchy_label_853,3,604.54,Limpieza
+__export__.account_hierarchy_label_854,3,604.55,Papelería y artículos de oficina
+__export__.account_hierarchy_label_855,3,604.56,Mantenimiento y conservación
+__export__.account_hierarchy_label_856,3,604.57,Seguros y fianzas
+__export__.account_hierarchy_label_857,3,604.58,Otros impuestos y derechos
+__export__.account_hierarchy_label_858,3,604.59,Recargos fiscales
+__export__.account_hierarchy_label_859,3,604.60,Cuotas y suscripciones
+__export__.account_hierarchy_label_860,3,604.61,Propaganda y publicidad
+__export__.account_hierarchy_label_861,3,604.62,Capacitación al personal
+__export__.account_hierarchy_label_862,3,604.63,Donativos y ayudas
+__export__.account_hierarchy_label_863,3,604.64,Asistencia técnica
+__export__.account_hierarchy_label_864,3,604.65,Regalías sujetas a otros porcentajes
+__export__.account_hierarchy_label_865,3,604.66,Regalías sujetas al 5%
+__export__.account_hierarchy_label_866,3,604.67,Regalías sujetas al 10%
+__export__.account_hierarchy_label_867,3,604.68,Regalías sujetas al 15%
+__export__.account_hierarchy_label_868,3,604.69,Regalías sujetas al 25%
+__export__.account_hierarchy_label_869,3,604.70,Regalías sujetas al 30%
+__export__.account_hierarchy_label_870,3,604.71,Regalías sin retención
+__export__.account_hierarchy_label_871,3,604.72,Fletes y acarreos
+__export__.account_hierarchy_label_872,3,604.73,Gastos de importación
+__export__.account_hierarchy_label_873,3,604.74,Patentes y marcas
+__export__.account_hierarchy_label_874,3,604.75,Uniformes
+__export__.account_hierarchy_label_875,3,604.76,Prediales
+__export__.account_hierarchy_label_876,3,604.77,Gastos de fabricación de urbanización
+__export__.account_hierarchy_label_877,3,604.78,Gastos de fabricación de construcción
+__export__.account_hierarchy_label_878,3,604.79,Fletes del extranjero
+__export__.account_hierarchy_label_879,3,604.80,Recolección de bienes del sector agropecuario y/o ganadero
+__export__.account_hierarchy_label_880,3,604.81,Gastos no deducibles (sin requisitos fiscales)
+__export__.account_hierarchy_label_881,3,604.82,Otros gastos de fabricación
+__export__.account_hierarchy_label_882,2,605,Mano de obra directa
+__export__.account_hierarchy_label_883,3,605.01,Mano de obra
+__export__.account_hierarchy_label_884,3,605.02,Sueldos y Salarios
+__export__.account_hierarchy_label_885,3,605.03,Compensaciones
+__export__.account_hierarchy_label_886,3,605.04,Tiempos extras
+__export__.account_hierarchy_label_887,3,605.05,Premios de asistencia
+__export__.account_hierarchy_label_888,3,605.06,Premios de puntualidad
+__export__.account_hierarchy_label_889,3,605.07,Vacaciones
+__export__.account_hierarchy_label_890,3,605.08,Prima vacacional
+__export__.account_hierarchy_label_891,3,605.09,Prima dominical
+__export__.account_hierarchy_label_892,3,605.10,Días festivos
+__export__.account_hierarchy_label_893,3,605.11,Gratificaciones
+__export__.account_hierarchy_label_894,3,605.12,Primas de antigüedad
+__export__.account_hierarchy_label_895,3,605.13,Aguinaldo
+__export__.account_hierarchy_label_896,3,605.14,Indemnizaciones
+__export__.account_hierarchy_label_897,3,605.15,Destajo
+__export__.account_hierarchy_label_898,3,605.16,Despensa
+__export__.account_hierarchy_label_899,3,605.17,Transporte
+__export__.account_hierarchy_label_900,3,605.18,Servicio médico
+__export__.account_hierarchy_label_901,3,605.19,Ayuda en gastos funerarios
+__export__.account_hierarchy_label_902,3,605.20,Fondo de ahorro
+__export__.account_hierarchy_label_903,3,605.21,Cuotas sindicales
+__export__.account_hierarchy_label_904,3,605.22,PTU
+__export__.account_hierarchy_label_905,3,605.23,Estímulo al personal
+__export__.account_hierarchy_label_906,3,605.24,Previsión social
+__export__.account_hierarchy_label_907,3,605.25,Aportaciones para el plan de jubilación
+__export__.account_hierarchy_label_908,3,605.26,Otras prestaciones al personal
+__export__.account_hierarchy_label_909,3,605.27,Asimilados a salarios
+__export__.account_hierarchy_label_910,3,605.28,Cuotas al IMSS
+__export__.account_hierarchy_label_911,3,605.29,Aportaciones al infonavit
+__export__.account_hierarchy_label_912,3,605.30,Aportaciones al SAR
+__export__.account_hierarchy_label_913,3,605.31,Otros costos de mano de obra directa
+__export__.account_hierarchy_label_914,2,606,Facilidades administrativas fiscales
+__export__.account_hierarchy_label_915,3,606.01,Facilidades administrativas fiscales
+__export__.account_hierarchy_label_916,2,607,Participación de los trabajadores en las utilidades
+__export__.account_hierarchy_label_917,3,607.01,Participación de los trabajadores en las utilidades
+__export__.account_hierarchy_label_918,2,608,Participación en resultados de subsidiarias
+__export__.account_hierarchy_label_919,3,608.01,Participación en resultados de subsidiarias
+__export__.account_hierarchy_label_920,2,609,Participación en resultados de asociadas
+__export__.account_hierarchy_label_921,3,609.01,Participación en resultados de asociadas
+__export__.account_hierarchy_label_922,2,610,Participación de los trabajadores en las utilidades diferida
+__export__.account_hierarchy_label_923,3,610.01,Participación de los trabajadores en las utilidades diferida
+__export__.account_hierarchy_label_924,2,611,Impuesto Sobre la renta
+__export__.account_hierarchy_label_925,3,611.01,Impuesto Sobre la renta
+__export__.account_hierarchy_label_926,3,611.02,Impuesto Sobre la renta por remanente distribuible
+__export__.account_hierarchy_label_927,2,612,Gastos no deducibles para CUFIN
+__export__.account_hierarchy_label_928,3,612.01,Gastos no deducibles para CUFIN
+__export__.account_hierarchy_label_929,2,613,Depreciación contable
+__export__.account_hierarchy_label_930,3,613.01,Depreciación de edificios
+__export__.account_hierarchy_label_931,3,613.02,Depreciación de maquinaria y equipo
+__export__.account_hierarchy_label_932,3,613.03,"Depreciación de automóviles, autobuses, camiones de carga, tractocamiones, montacargas y remolques"
+__export__.account_hierarchy_label_933,3,613.04,Depreciación de mobiliario y equipo de oficina
+__export__.account_hierarchy_label_934,3,613.05,Depreciación de equipo de cómputo
+__export__.account_hierarchy_label_935,3,613.06,Depreciación de equipo de comunicación
+__export__.account_hierarchy_label_936,3,613.07,"Depreciación de activos biológicos, vegetales y semovientes"
+__export__.account_hierarchy_label_937,3,613.08,Depreciación de otros activos fijos
+__export__.account_hierarchy_label_938,3,613.09,Depreciación de ferrocarriles
+__export__.account_hierarchy_label_939,3,613.10,Depreciación de embarcaciones
+__export__.account_hierarchy_label_940,3,613.11,Depreciación de aviones
+__export__.account_hierarchy_label_941,3,613.12,"Depreciación de troqueles, moldes, matrices y herramental"
+__export__.account_hierarchy_label_942,3,613.13,Depreciación de equipo de comunicaciones telefónicas
+__export__.account_hierarchy_label_943,3,613.14,Depreciación de equipo de comunicación satelital
+__export__.account_hierarchy_label_944,3,613.15,Depreciación de equipo de adaptaciones para personas con capacidades diferentes
+__export__.account_hierarchy_label_945,3,613.16,Depreciación de maquinaria y equipo de generación de energía de fuentes renovables o de sistemas de cogeneración de electricidad eficiente
+__export__.account_hierarchy_label_946,3,613.17,Depreciación de adaptaciones y mejoras
+__export__.account_hierarchy_label_947,3,613.18,Depreciación de otra maquinaria y equipo
+__export__.account_hierarchy_label_948,2,614,Amortización contable
+__export__.account_hierarchy_label_949,3,614.01,Amortización de gastos diferidos
+__export__.account_hierarchy_label_950,3,614.02,Amortización de gastos pre operativos
+__export__.account_hierarchy_label_951,3,614.03,"Amortización de regalías, asistencia técnica y otros gastos diferidos"
+__export__.account_hierarchy_label_952,3,614.04,Amortización de activos intangibles
+__export__.account_hierarchy_label_953,3,614.05,Amortización de gastos de organización
+__export__.account_hierarchy_label_954,3,614.06,Amortización de investigación y desarrollo de mercado
+__export__.account_hierarchy_label_955,3,614.07,Amortización de marcas y patentes
+__export__.account_hierarchy_label_956,3,614.08,Amortización de crédito mercantil
+__export__.account_hierarchy_label_957,3,614.09,Amortización de gastos de instalación
+__export__.account_hierarchy_label_958,3,614.10,Amortización de otros activos diferidos
+__export__.account_hierarchy_label_959,1,7,Resultado integral de financiamiento
+__export__.account_hierarchy_label_960,2,700,Resultado integral de financiamiento
+__export__.account_hierarchy_label_961,2,701,Gastos financieros
+__export__.account_hierarchy_label_962,3,701.01,Pérdida cambiaria
+__export__.account_hierarchy_label_963,3,701.02,Pérdida cambiaria nacional parte relacionada
+__export__.account_hierarchy_label_964,3,701.03,Pérdida cambiaria extranjero parte relacionada
+__export__.account_hierarchy_label_965,3,701.04,Intereses a cargo bancario nacional
+__export__.account_hierarchy_label_966,3,701.05,Intereses a cargo bancario extranjero
+__export__.account_hierarchy_label_967,3,701.06,Intereses a cargo de personas físicas nacional
+__export__.account_hierarchy_label_968,3,701.07,Intereses a cargo de personas físicas extranjero
+__export__.account_hierarchy_label_969,3,701.08,Intereses a cargo de personas morales nacional
+__export__.account_hierarchy_label_970,3,701.09,Intereses a cargo de personas morales extranjero
+__export__.account_hierarchy_label_971,3,701.10,Comisiones bancarias
+__export__.account_hierarchy_label_972,3,701.11,Otros gastos financieros
+__export__.account_hierarchy_label_973,2,702,Productos financieros
+__export__.account_hierarchy_label_974,3,702.01,Utilidad cambiaria
+__export__.account_hierarchy_label_975,3,702.02,Utilidad cambiaria nacional parte relacionada
+__export__.account_hierarchy_label_976,3,702.03,Utilidad cambiaria extranjero parte relacionada
+__export__.account_hierarchy_label_977,3,702.04,Intereses a favor bancarios nacional
+__export__.account_hierarchy_label_978,3,702.05,Intereses a favor bancarios extranjero
+__export__.account_hierarchy_label_979,3,702.06,Intereses a favor de personas físicas nacional
+__export__.account_hierarchy_label_980,3,702.07,Intereses a favor de personas físicas extranjero
+__export__.account_hierarchy_label_981,3,702.08,Intereses a favor de personas morales nacional
+__export__.account_hierarchy_label_982,3,702.09,Intereses a favor de personas morales extranjero
+__export__.account_hierarchy_label_983,3,702.10,Otros productos financieros
+__export__.account_hierarchy_label_984,2,703,Otros gastos
+__export__.account_hierarchy_label_985,3,703.01,Pérdida en venta y/o baja de terrenos
+__export__.account_hierarchy_label_986,3,703.02,Pérdida en venta y/o baja de edificios
+__export__.account_hierarchy_label_987,3,703.03,Pérdida en venta y/o baja de maquinaria y equipo
+__export__.account_hierarchy_label_988,3,703.04,"Pérdida en venta y/o baja de automóviles, autobuses, camiones de carga, tractocamiones, montacargas y remolques"
+__export__.account_hierarchy_label_989,3,703.05,Pérdida en venta y/o baja de mobiliario y equipo de oficina
+__export__.account_hierarchy_label_990,3,703.06,Pérdida en venta y/o baja de equipo de cómputo
+__export__.account_hierarchy_label_991,3,703.07,Pérdida en venta y/o baja de equipo de comunicación
+__export__.account_hierarchy_label_992,3,703.08,"Pérdida en venta y/o baja de activos biológicos, vegetales y semovientes"
+__export__.account_hierarchy_label_993,3,703.09,Pérdida en venta y/o baja de otros activos fijos
+__export__.account_hierarchy_label_994,3,703.10,Pérdida en venta y/o baja de ferrocarriles
+__export__.account_hierarchy_label_995,3,703.11,Pérdida en venta y/o baja de embarcaciones
+__export__.account_hierarchy_label_996,3,703.12,Pérdida en venta y/o baja de aviones
+__export__.account_hierarchy_label_997,3,703.13,"Pérdida en venta y/o baja de troqueles, moldes, matrices y herramental"
+__export__.account_hierarchy_label_998,3,703.14,Pérdida en venta y/o baja de equipo de comunicaciones telefónicas
+__export__.account_hierarchy_label_999,3,703.15,Pérdida en venta y/o baja de equipo de comunicación satelital
+__export__.account_hierarchy_label_1000,3,703.16,Pérdida en venta y/o baja de equipo de adaptaciones para personas con capacidades diferentes
+__export__.account_hierarchy_label_1001,3,703.17,Pérdida en venta y/o baja de maquinaria y equipo de generación de energía de fuentes renovables o de sistemas de cogeneración de electricidad eficiente
+__export__.account_hierarchy_label_1002,3,703.18,Pérdida en venta y/o baja de otra maquinaria y equipo
+__export__.account_hierarchy_label_1003,3,703.19,Pérdida por enajenación de acciones
+__export__.account_hierarchy_label_1004,3,703.20,Pérdida por enajenación de partes sociales
+__export__.account_hierarchy_label_1005,3,703.21,Otros gastos
+__export__.account_hierarchy_label_1006,2,704,Otros productos
+__export__.account_hierarchy_label_1007,3,704.01,Ganancia en venta y/o baja de terrenos
+__export__.account_hierarchy_label_1008,3,704.02,Ganancia en venta y/o baja de edificios
+__export__.account_hierarchy_label_1009,3,704.03,Ganancia en venta y/o baja de maquinaria y equipo
+__export__.account_hierarchy_label_1010,3,704.04,"Ganancia en venta y/o baja de automóviles, autobuses, camiones de carga, tractocamiones, montacargas y remolques"
+__export__.account_hierarchy_label_1011,3,704.05,Ganancia en venta y/o baja de mobiliario y equipo de oficina
+__export__.account_hierarchy_label_1012,3,704.06,Ganancia en venta y/o baja de equipo de cómputo
+__export__.account_hierarchy_label_1013,3,704.07,Ganancia en venta y/o baja de equipo de comunicación
+__export__.account_hierarchy_label_1014,3,704.08,"Ganancia en venta y/o baja de activos biológicos, vegetales y semovientes"
+__export__.account_hierarchy_label_1015,3,704.09,Ganancia en venta y/o baja de otros activos fijos
+__export__.account_hierarchy_label_1016,3,704.10,Ganancia en venta y/o baja de ferrocarriles
+__export__.account_hierarchy_label_1017,3,704.11,Ganancia en venta y/o baja de embarcaciones
+__export__.account_hierarchy_label_1018,3,704.12,Ganancia en venta y/o baja de aviones
+__export__.account_hierarchy_label_1019,3,704.13,"Ganancia en venta y/o baja de troqueles, moldes, matrices y herramental"
+__export__.account_hierarchy_label_1020,3,704.14,Ganancia en venta y/o baja de equipo de comunicaciones telefónicas
+__export__.account_hierarchy_label_1021,3,704.15,Ganancia en venta y/o baja de equipo de comunicación satelital
+__export__.account_hierarchy_label_1022,3,704.16,Ganancia en venta y/o baja de equipo de adaptaciones para personas con capacidades diferentes
+__export__.account_hierarchy_label_1023,3,704.17,Ganancia en venta de maquinaria y equipo de generación de energía de fuentes renovables o de sistemas de cogeneración de electricidad eficiente
+__export__.account_hierarchy_label_1024,3,704.18,Ganancia en venta y/o baja de otra maquinaria y equipo
+__export__.account_hierarchy_label_1025,3,704.19,Ganancia por enajenación de acciones
+__export__.account_hierarchy_label_1026,3,704.20,Ganancia por enajenación de partes sociales
+__export__.account_hierarchy_label_1027,3,704.21,Ingresos por estímulos fiscales
+__export__.account_hierarchy_label_1028,3,704.22,Ingresos por condonación de adeudo
+__export__.account_hierarchy_label_1029,3,704.23,Otros productos
+__export__.account_hierarchy_label_1030,1,8,Cuentas de orden
+__export__.account_hierarchy_label_1031,2,800,Cuentas de orden
+__export__.account_hierarchy_label_1032,2,801,UFIN del ejercicio
+__export__.account_hierarchy_label_1033,3,801.01,UFIN
+__export__.account_hierarchy_label_1034,3,801.02,Contra cuenta UFIN
+__export__.account_hierarchy_label_1035,2,802,CUFIN del ejercicio
+__export__.account_hierarchy_label_1036,3,802.01,CUFIN
+__export__.account_hierarchy_label_1037,3,802.02,Contra cuenta CUFIN
+__export__.account_hierarchy_label_1038,2,803,CUFIN de ejercicios anteriores
+__export__.account_hierarchy_label_1039,3,803.01,CUFIN de ejercicios anteriores
+__export__.account_hierarchy_label_1040,3,803.02,Contra cuenta CUFIN de ejercicios anteriores
+__export__.account_hierarchy_label_1041,2,804,CUFINRE del ejercicio
+__export__.account_hierarchy_label_1042,3,804.01,CUFINRE
+__export__.account_hierarchy_label_1043,3,804.02,Contra cuenta CUFINRE
+__export__.account_hierarchy_label_1044,2,805,CUFINRE de ejercicios anteriores
+__export__.account_hierarchy_label_1045,3,805.01,CUFINRE de ejercicios anteriores
+__export__.account_hierarchy_label_1046,3,805.02,Contra cuenta CUFINRE de ejercicios anteriores
+__export__.account_hierarchy_label_1047,2,806,CUCA del ejercicio
+__export__.account_hierarchy_label_1048,3,806.01,CUCA
+__export__.account_hierarchy_label_1049,3,806.02,Contra cuenta CUCA
+__export__.account_hierarchy_label_1050,2,807,CUCA de ejercicios anteriores
+__export__.account_hierarchy_label_1051,3,807.01,CUCA de ejercicios anteriores
+__export__.account_hierarchy_label_1052,3,807.02,Contra cuenta CUCA de ejercicios anteriores
+__export__.account_hierarchy_label_1053,2,808,Ajuste anual por inflación acumulable
+__export__.account_hierarchy_label_1054,3,808.01,Ajuste anual por inflación acumulable
+__export__.account_hierarchy_label_1055,3,808.02,Acumulación del ajuste anual inflacionario
+__export__.account_hierarchy_label_1056,2,809,Ajuste anual por inflación deducible
+__export__.account_hierarchy_label_1057,3,809.01,Ajuste anual por inflación deducible
+__export__.account_hierarchy_label_1058,3,809.02,Deducción del ajuste anual inflacionario
+__export__.account_hierarchy_label_1059,2,810,Deducción de inversión
+__export__.account_hierarchy_label_1060,3,810.01,Deducción de inversión
+__export__.account_hierarchy_label_1061,3,810.02,Contra cuenta deducción de inversiones
+__export__.account_hierarchy_label_1062,2,811,Utilidad o pérdida fiscal en venta y/o baja de activo fijo
+__export__.account_hierarchy_label_1063,3,811.01,Utilidad o pérdida fiscal en venta y/o baja de activo fijo
+__export__.account_hierarchy_label_1064,3,811.02,Contra cuenta utilidad o pérdida fiscal en venta y/o baja de activo fijo
+__export__.account_hierarchy_label_1065,2,812,Utilidad o pérdida fiscal en venta acciones o partes sociales
+__export__.account_hierarchy_label_1066,3,812.01,Utilidad o pérdida fiscal en venta acciones o partes sociales
+__export__.account_hierarchy_label_1067,3,812.02,Contra cuenta utilidad o pérdida fiscal en venta acciones o partes sociales
+__export__.account_hierarchy_label_1068,2,813,Pérdidas fiscales pendientes de amortizar actualizadas de ejercicios anteriores
+__export__.account_hierarchy_label_1069,3,813.01,Pérdidas fiscales pendientes de amortizar actualizadas de ejercicios anteriores
+__export__.account_hierarchy_label_1070,3,813.02,Actualización de pérdidas fiscales pendientes de amortizar de ejercicios anteriores
+__export__.account_hierarchy_label_1071,2,814,Mercancías recibidas en consignación
+__export__.account_hierarchy_label_1072,3,814.01,Mercancías recibidas en consignación
+__export__.account_hierarchy_label_1073,3,814.02,Consignación de mercancías recibidas
+__export__.account_hierarchy_label_1074,2,815,Crédito fiscal de IVA e IEPS por la importación de mercancías para empresas certificadas
+__export__.account_hierarchy_label_1075,3,815.01,Crédito fiscal de IVA e IEPS por la importación de mercancías
+__export__.account_hierarchy_label_1076,3,815.02,Importación de mercancías con aplicación de crédito fiscal de IVA e IEPS
+__export__.account_hierarchy_label_1077,2,816,Crédito fiscal de IVA e IEPS por la importación de activos fijos para empresas certificadas
+__export__.account_hierarchy_label_1078,3,816.01,Crédito fiscal de IVA e IEPS por la importación de activo fijo
+__export__.account_hierarchy_label_1079,3,816.02,Importación de activo fijo con aplicación de crédito fiscal de IVA e IEPS
+__export__.account_hierarchy_label_1080,2,899,Otras cuentas de orden
+__export__.account_hierarchy_label_1081,3,899.01,Otras cuentas de orden
+__export__.account_hierarchy_label_1082,3,899.02,Contra cuenta otras cuentas de orden

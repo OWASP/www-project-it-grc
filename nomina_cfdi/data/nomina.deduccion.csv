@@ -1,0 +1,108 @@
+id,clave,descripcion
+catalogos.deduccion01,001,Seguridad social
+catalogos.deduccion02,002,ISR
+catalogos.deduccion03,003,"Aportaciones a retiro, cesantía en edad avanzada y vejez."
+catalogos.deduccion04,004,Otros
+catalogos.deduccion05,005,Aportaciones a Fondo de vivienda
+catalogos.deduccion06,006,Descuento por incapacidad
+catalogos.deduccion07,007,Pensión alimenticia
+catalogos.deduccion08,008,Renta
+catalogos.deduccion09,009,Préstamos provenientes del Fondo Nacional de la Vivienda para los Trabajadores
+catalogos.deduccion10,010,Pago por crédito de vivienda
+catalogos.deduccion11,011,Pago de abonos INFONACOT
+catalogos.deduccion12,012,Anticipo de salarios
+catalogos.deduccion13,013,Pagos hechos con exceso al trabajador
+catalogos.deduccion14,014,Errores
+catalogos.deduccion15,015,Pérdidas
+catalogos.deduccion16,016,Averías
+catalogos.deduccion17,017,Adquisición de artículos producidos por la empresa o establecimiento
+catalogos.deduccion18,018,Cuotas para la constitución y fomento de sociedades cooperativas y de cajas de ahorro
+catalogos.deduccion19,019,Cuotas sindicales
+catalogos.deduccion20,020,Ausencia (Ausentismo)
+catalogos.deduccion21,021,Cuotas obrero patronales
+catalogos.deduccion22,022,Impuestos Locales
+catalogos.deduccion23,023,Aportaciones voluntarias
+catalogos.deduccion24,024,Ajuste en Gratificación Anual (Aguinaldo) Exento
+catalogos.deduccion25,025,Ajuste en Gratificación Anual (Aguinaldo) Gravado
+catalogos.deduccion26,026,Ajuste en Participación de los Trabajadores en las Utilidades PTU Exento
+catalogos.deduccion27,027,Ajuste en Participación de los Trabajadores en las Utilidades PTU Gravado
+catalogos.deduccion28,028,Ajuste en Reembolso de Gastos Médicos Dentales y Hospitalarios Exento
+catalogos.deduccion29,029,Ajuste en Fondo de ahorro Exento
+catalogos.deduccion30,030,Ajuste en Caja de ahorro Exento
+catalogos.deduccion31,031,Ajuste en Contribuciones a Cargo del Trabajador Pagadas por el Patrón Exento
+catalogos.deduccion32,032,Ajuste en Premios por puntualidad Gravado
+catalogos.deduccion33,033,Ajuste en Prima de Seguro de vida Exento
+catalogos.deduccion34,034,Ajuste en Seguro de Gastos Médicos Mayores Exento
+catalogos.deduccion35,035,Ajuste en Cuotas Sindicales Pagadas por el Patrón Exento
+catalogos.deduccion36,036,Ajuste en Subsidios por incapacidad Exento
+catalogos.deduccion37,037,Ajuste en Becas para trabajadores y/o hijos Exento
+catalogos.deduccion38,038,Ajuste en Horas extra Exento
+catalogos.deduccion39,039,Ajuste en Horas extra Gravado
+catalogos.deduccion40,040,Ajuste en Prima dominical Exento
+catalogos.deduccion41,041,Ajuste en Prima dominical Gravado
+catalogos.deduccion42,042,Ajuste en Prima vacacional Exento
+catalogos.deduccion43,043,Ajuste en Prima vacacional Gravado
+catalogos.deduccion44,044,Ajuste en Prima por antigüedad Exento
+catalogos.deduccion45,045,Ajuste en Prima por antigüedad Gravado
+catalogos.deduccion46,046,Ajuste en Pagos por separación Exento
+catalogos.deduccion47,047,Ajuste en Pagos por separación Gravado
+catalogos.deduccion48,048,Ajuste en Seguro de retiro Exento
+catalogos.deduccion49,049,Ajuste en Indemnizaciones Exento
+catalogos.deduccion50,050,Ajuste en Indemnizaciones Gravado
+catalogos.deduccion51,051,Ajuste en Reembolso por funeral Exento
+catalogos.deduccion52,052,Ajuste en Cuotas de seguridad social pagadas por el patrón Exento
+catalogos.deduccion53,053,Ajuste en Comisiones Gravado
+catalogos.deduccion54,054,Ajuste en Vales de despensa Exento
+catalogos.deduccion55,055,Ajuste en Vales de restaurante Exento
+catalogos.deduccion56,056,Ajuste en Vales de gasolina Exento
+catalogos.deduccion57,057,Ajuste en Vales de ropa Exento
+catalogos.deduccion58,058,Ajuste en Ayuda para renta Exento
+catalogos.deduccion59,059,Ajuste en Ayuda para artículos escolares Exento
+catalogos.deduccion60,060,Ajuste en Ayuda para anteojos Exento
+catalogos.deduccion61,061,Ajuste en Ayuda para transporte Exento
+catalogos.deduccion62,062,Ajuste en Ayuda para gastos de funeral Exento
+catalogos.deduccion63,063,Ajuste en Otros ingresos por salarios Exento
+catalogos.deduccion64,064,Ajuste en Otros ingresos por salarios Gravado
+catalogos.deduccion65,065,"Ajuste en Jubilaciones, pensiones o haberes de retiro en una sola exhibición Exento "
+catalogos.deduccion66,066,"Ajuste en Jubilaciones, pensiones o haberes de retiro en una sola exhibición Gravado"
+catalogos.deduccion67,067,Ajuste en Pagos por separación Acumulable
+catalogos.deduccion68,068,Ajuste en Pagos por separación No acumulable
+catalogos.deduccion69,069,"Ajuste en Jubilaciones, pensiones o haberes de retiro en parcialidades Exento"
+catalogos.deduccion70,070,"Ajuste en Jubilaciones, pensiones o haberes de retiro en parcialidades Gravado"
+catalogos.deduccion71,071,Ajuste en Subsidio para el empleo (efectivamente entregado al trabajador)
+catalogos.deduccion72,072,Ajuste en Ingresos en acciones o títulos valor que representan bienes Exento
+catalogos.deduccion73,073,Ajuste en Ingresos en acciones o títulos valor que representan bienes Gravado
+catalogos.deduccion74,074,Ajuste en Alimentación Exento
+catalogos.deduccion75,075,Ajuste en Alimentación Gravado
+catalogos.deduccion76,076,Ajuste en Habitación Exento
+catalogos.deduccion77,077,Ajuste en Habitación Gravado
+catalogos.deduccion78,078,Ajuste en Premios por asistencia
+catalogos.deduccion79,079,"Ajuste en Pagos distintos a los listados y que no deben considerarse como ingreso por sueldos, salarios o ingresos asimilados."
+catalogos.deduccion80,080,Ajuste en Viáticos gravados
+catalogos.deduccion81,081,Ajuste en Viáticos (entregados al trabajador)
+catalogos.deduccion82,082,Ajuste en Fondo de ahorro Gravado
+catalogos.deduccion83,083,Ajuste en Caja de ahorro Gravado
+catalogos.deduccion84,084,Ajuste en Prima de Seguro de vida Gravado
+catalogos.deduccion85,085,Ajuste en Seguro de Gastos Médicos Mayores Gravado
+catalogos.deduccion86,086,Ajuste en Subsidios por incapacidad Gravado
+catalogos.deduccion87,087,Ajuste en Becas para trabajadores y/o hijos Gravado
+catalogos.deduccion88,088,Ajuste en Seguro de retiro Gravado
+catalogos.deduccion89,089,Ajuste en Vales de despensa Gravado
+catalogos.deduccion90,090,Ajuste en Vales de restaurante Gravado
+catalogos.deduccion91,091,Ajuste en Vales de gasolina Gravado
+catalogos.deduccion92,092,Ajuste en Vales de ropa Gravado
+catalogos.deduccion93,093,Ajuste en Ayuda para renta Gravado
+catalogos.deduccion94,094,Ajuste en Ayuda para artículos escolares Gravado
+catalogos.deduccion95,095,Ajuste en Ayuda para anteojos Gravado
+catalogos.deduccion96,096,Ajuste en Ayuda para transporte Gravado
+catalogos.deduccion97,097,Ajuste en Ayuda para gastos de funeral Gravado
+catalogos.deduccion98,098,Ajuste a ingresos asimilados a salarios gravados
+catalogos.deduccion99,099,Ajuste a ingresos por sueldos y salarios gravados
+catalogos.deduccion100,100,Ajuste en Viáticos exentos
+catalogos.deduccion101,101,ISR Retenido de ejercicio anterior
+catalogos.deduccion102,102,"Ajuste a pagos por gratificaciones, primas, compensaciones, recompensas u otros a extrabajadores derivados de jubilación en parcialidades, gravados"
+catalogos.deduccion103,103,Ajuste a pagos que se realicen a extrabajadores que obtengan una jubilación en parcialidades derivados de la ejecución de una resolución judicial o de un laudo gravados
+catalogos.deduccion104,104,Ajuste a pagos que se realicen a extrabajadores que obtengan una jubilación en parcialidades derivados de la ejecución de una resolución judicial o de un laudo exentos
+catalogos.deduccion105,105,Ajuste a pagos que se realicen a extrabajadores que obtengan una jubilación en una sola exhibición derivados de la ejecución de una resolución judicial o de un laudo gravados
+catalogos.deduccion106,106,Ajuste a pagos que se realicen a extrabajadores que obtengan una jubilación en una sola exhibición derivados de la ejecución de una resolución judicial o de un laudo exentos
+catalogos.deduccion107,107,Ajuste al Subsidio Causado 

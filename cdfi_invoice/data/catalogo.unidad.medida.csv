@@ -1,0 +1,43 @@
+id,descripcion,clave
+unidad_medida001,Pieza,H87
+unidad_medida002,Hora,HUR
+unidad_medida003,Kilogramo,KGM
+unidad_medida004,Gramo,GRM
+unidad_medida005,Litro,LTR
+unidad_medida006,Galon,A76
+unidad_medida007,Tonelada,TNE
+unidad_medida008,Caja,XBX
+unidad_medida009,Metro,MTR
+unidad_medida010,Metro lineal,LM
+unidad_medida011,M2,MTK
+unidad_medida012,M3,MTQ
+unidad_medida013,Pie,FOT
+unidad_medida014,Unidad de servicio,E48
+unidad_medida015,Tarifa,A9
+unidad_medida016,Dia,DAY
+unidad_medida017,Lote,XLT
+unidad_medida018,Conjunto,SET
+unidad_medida019,Actividad,ACT
+unidad_medida020,Comida,Q3
+unidad_medida021,Habitacion,ROM
+unidad_medida022,Paquete,XPK
+unidad_medida023,Pallet,XPX
+unidad_medida024,Mutuamente definido,ZZ
+unidad_medida025,Medida metrica de rollo,RK
+unidad_medida026,Uno,C62
+unidad_medida027,Vehiculo,XVN
+unidad_medida028,Par,PR
+unidad_medida029,Cubeta,XBJ
+unidad_medida030,Rollo,XRO
+unidad_medida031,Cuarto de kilogramo,QK
+unidad_medida032,Docena,DZN
+unidad_medida033,Kit,KT
+unidad_medida034,Tableros de pie,BFT
+unidad_medida035,Trabajo,E51
+unidad_medida036,No disponible,XNA
+unidad_medida037,Kilowatt hora,KWH
+unidad_medida038,Cuarto de kilogramo,QK
+unidad_medida039,Mil pedazos,T3
+unidad_medida040,Bolsa de mil,T4
+unidad_medida041,Bolsa de plástico,XEC
+unidad_medida042,Saco,XSA

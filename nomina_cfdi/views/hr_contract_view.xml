@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   <record id="hr_contract_view_form_nomina_cfdi" model="ir.ui.view">
+        <field name="name">hr.contract.nomina</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+        	<field name="wage" position="attributes">
+          	<attribute name="attrs">{'readonly': [('state','!=','draft')]}</attribute>
+          </field>
+          <xpath expr="//notebook" position="inside">
+            <page name="info_cdfi" string="CFDI">
+              <group cols="4"  string="Configuración">
+                 <group>
+                    <field name="periodicidad_pago" />
+                    <field name="riesgo_puesto" />
+                    <field name="tablas_cfdi_id" />
+                    <field name="sueldo_diario" attrs="{'readonly': [('state','!=','draft')]}" />
+                    <field name="sueldo_hora" attrs="{'readonly': [('state','!=','draft')]}" />
+                    <field name="sueldo_diario_integrado" attrs="{'readonly': [('state','!=','draft')]}" />
+                    <field name="sueldo_base_cotizacion" attrs="{'readonly': [('state','!=','draft')]}" />
+                 </group>
+                 <group>
+                    <field name="tipo_pago" attrs="{'invisible':[('periodicidad_pago','not in',['04', '05'])]}" />
+                    <field name="tipo_prima_vacacional" />
+                    <field name="sept_dia" attrs="{'invisible' : [('periodicidad_pago','!=','02')]}"/>
+                    <field name="septimo_dia" attrs="{'invisible' : [('sept_dia','=',False)]}"/>
+                    <field name="incapa_sept_dia" attrs="{'invisible' : [('sept_dia','=',False)]}"/>
+                    <field name="semana_inglesa" attrs="{'invisible':[('periodicidad_pago','!=','02')]}"/>
+                    <field name="prima_dominical" />
+                    <field name="calc_isr_extra" />
+                 </group>
+              </group>
+                        <group cols="4">
+                            <group string="Percepciones adicionales">
+                                <field name="bono_productividad"/>
+                                <field name="bono_productividad_amount" attrs="{'invisible':[('bono_productividad','=',False)]}" />
+                                <field name="bono_asistencia"/>
+                                <field name="bono_asistencia_amount" attrs="{'invisible':[('bono_asistencia','=',False)]}"/>
+                                <field name="bono_puntualidad"/>
+                                <field name="bono_puntualidad_amount" attrs="{'invisible':[('bono_puntualidad','=',False)]}"/>
+                                <field name="fondo_ahorro"/>
+                                <field name="fondo_ahorro_amount" attrs="{'invisible':[('fondo_ahorro','=',False)]}"/>
+                                <field name="vale_despensa"/>
+                                <field name="vale_despensa_amount" attrs="{'invisible':[('vale_despensa','=',False)]}"/>
+                                <field name="alimentacion"/>
+                                <field name="alimentacion_amount" attrs="{'invisible':[('alimentacion','=',False)]}"/>
+                                <field name="percepcion_adicional"/>
+                                <field name="percepcion_adicional_amount" attrs="{'invisible':[('percepcion_adicional','=',False)]}"/>
+                            </group>
+                            <group string="Deducciones adicionales">
+                                <field name="infonavit_fijo"/>
+                                <field name="infonavit_vsm"/>
+                                <field name="infonavit_porc"/>
+                                <field name="pens_alim"/>
+                                <field name="pens_alim_fijo"/>
+                                <field name="prestamo_fonacot"/>
+                                <field name="caja_ahorro"/>
+                                <field name="caja_ahorro_amount" attrs="{'invisible':[('caja_ahorro','=',False)]}"/>
+                                <field name="deduccion_adicional"/>
+                                <field name="deduccion_adicional_amount" attrs="{'invisible':[('deduccion_adicional','=',False)]}"/>
+                            </group>
+                        </group>
+            </page>
+            <page name="vacaciones" string="Días de vacaciones">
+                   <group>
+                          <field name="tabla_vacaciones" string="Días de vacaciones">
+                            <tree editable="bottom">
+                                <field name="ano"/>
+                                <field name="estado"/>
+                                <field name="dias_consumido" sum="Total"/>
+                                <field name="dias" sum="Total Dias"/>
+                                <field name="dias_otorgados" sum="Total"/>
+                                <field name="caducidad"/>
+                            </tree>
+                        </field>
+                   </group>
+            </page>
+
+          </xpath>
+        </field>
+    </record>
+
+    <record id="action_dar_alta" model="ir.actions.server">
+        <field name="name">Dar alta</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="nomina_cfdi.model_hr_contract"/>
+        <field name="binding_model_id" ref="nomina_cfdi.model_hr_contract"/>
+        <field name="code">records.action_dar_alta()
+        </field>
+    </record>
+</odoo>

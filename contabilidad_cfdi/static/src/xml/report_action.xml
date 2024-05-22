@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-inherit="web.ReportAction" t-inherit-mode="extension">
+        <xpath expr="//div[@class='o_action']" position="replace">
+                <div class="o_action">
+                    <Layout display="{ controlPanel: { 'top-right' : false, 'bottom-right': false } }">
+                        <t t-set-slot="control-panel-bottom-left">
+                            <button t-on-click="print" type="button" class="btn btn-primary" title="Print">Print</button>
+                            <button t-if="isContabilidadReport" t-on-click="(ev) => this._onGenerarXMLAccount(ev)" type="button" class="btn btn-primary" title="XML">Generar XML</button>
+                        </t>
+                        <iframe t-ref="iframe" t-on-load="onIframeLoaded" class="h-100 w-100" t-att-src="reportUrl" />
+                    </Layout>
+                </div>
+        </xpath>
+    </t>
+</templates>

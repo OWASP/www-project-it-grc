@@ -1,0 +1,23 @@
+"id","description","code"
+"forma_pago001","Efectivo",01
+"forma_pago002","Cheque nominativo",02
+"forma_pago003","Transferencia electrónica de fondos",03
+"forma_pago004","Tarjeta de crédito",04
+"forma_pago005","Monedero electrónico",05
+"forma_pago006","Dinero electrónico",06
+"forma_pago007","Vales de despensa",08
+"forma_pago008","Dación en pago",12
+"forma_pago009","Pago por subrogación",13
+"forma_pago010","Pago por consignación",14
+"forma_pago011","Condonación",15
+"forma_pago012","Compensación",17
+"forma_pago013","Novación",23
+"forma_pago014","Confusión",24
+"forma_pago015","Remisión de deuda",25
+"forma_pago016","Prescripción o caducidad",26
+"forma_pago017","A satisfacción del acreedor",27
+"forma_pago018","Tarjeta de débito",28
+"forma_pago019","Tarjeta de servicios",29
+"forma_pago020","Aplicación de anticipos",30
+"forma_pago021","Intermediario pagos",31
+"forma_pago022","Por definir",99

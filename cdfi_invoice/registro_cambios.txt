@@ -1,0 +1,59 @@
+v16.22
+-Error cuando el último producto tiene 100% de descuento
+
+v16.21
+-Corregir error en QR de pagos
+
+v16.20
+-Cancelación rechazada si está vacío el estado de cancelación.
+
+v16.19
+-Se hicieron ajustes para el timbrado de pagos 2.0B
+
+v16.18
+-Se agregó la acción de cargar XML para pagos
+
+v16.17
+-Corregir variable de cuenta a tercero.
+
+v16.16
+-Verificar estado de CFDI de las notas de crédito.
+-Agregar información CFDI al crear notas de crédito.
+
+v16.15
+-Cambiar nombre de campo para evitar conflicto con factoraje.
+
+v16.14
+-Quitar impuesto ISR Resico a 4 decimales.
+-Corregir generación de código QR en PDF.
+
+v16.13
+-Impuesto ISR Resico a 4 decimales.
+
+v16.12
+-Alerta cuando no se tengan habilitado el proceso de timbrado.
+-Cambiar act window por record.
+
+v16.11
+-Alerta cuando no se tengan montos de impuestos en factura.
+
+v16.10
+-Alerta con equivalencia en cero.
+-Nuevo CDS prueba.
+
+v16.09
+-Quitar formato de moneda en pagos relacionados.
+
+v16.08
+-Corrección en reporte de facturas de proveedor.
+
+v16.07
+-Calculo de Objetoimp automático si se deja vacío en producto.
+
+v16.06
+-Agregar nodo de parte para conceptos.
+-Seleccionar fecha para REP.
+-Aparezcan cuentas bancarias en pago al usar traslado / cheque
+
+v16.05
+-Colocar manualmente montos de saldo anterior, pagado, insoluto y equivalenciadr para REP.

@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_move_cfdi33,access.account.move.cfdi33,model_account_move_cfdi33,account.group_account_invoice,1,1,1,1
+access_catalogos_pais_diot,access_catalogos_pais_diot,model_catalogos_pais_diot,base.group_user,1,1,1,1
+access_actualizar_polizas,access_actualizar_polizas,model_actualizar_polizas,,1,1,1,1
+access_generar_xml_hirarchy_wizard,access_generar_xml_hirarchy_wizard,model_generar_xml_hirarchy_wizard,base.group_user,1,1,1,1
+access_conta_xml_zip_download,access_conta_xml_zip_download,model_conta_xml_zip_download,base.group_user,1,1,1,1
+access_polizas_report,access_polizas_report,model_polizas_report,,1,1,1,1
+access_reporte_diot_wizard,access_reporte_diot_wizard,model_reporte_diot_wizard,base.group_user,1,1,1,1
+access_reporte_diot_wizard_line,access_reporte_diot_wizard_line,model_reporte_diot_wizard_line,base.group_user,1,1,1,1
+access_trial_balance_report_wizard_cfdi,access_trial_balance_report_wizard_cfdi,model_trial_balance_report_wizard_cfdi,base.group_user,1,1,1,1
+access_folios_report,access_folios_report,model_folios_report,base.group_user,1,1,1,1
+access_cierre_anual,access_cierre_anual,model_cierre_anual,base.group_user,1,1,1,1
+access_civa_pedimentos,access_iva_pedimentos,model_iva_pedimentos,base.group_user,1,1,1,1
