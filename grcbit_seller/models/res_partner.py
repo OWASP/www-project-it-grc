@@ -585,17 +585,19 @@ class ResPartnerGRC(models.Model):
             if rec.dns_subdomain:
                 xdr = rec.dns_subdomain[-3:]
                 zt = rec.dns_subdomain[-2:]
-                if xdr == 'xdr' or zt == 'zt':
-                    subdomain = rec.dns_subdomain + '.'
-                else:
-                    if rec.custom_lang == 'es':
-                        raise ValidationError("El subdominio debe terminar en xdr o zt")
-                    else:
-                        raise ValidationError("The subdomain must end in xdr or zt")
+                # if xdr == 'xdr' or zt == 'zt':
+                subdomain = rec.dns_subdomain
+                # else:
+                #     if rec.custom_lang == 'es':
+                #         raise ValidationError("El subdominio debe terminar en xdr o zt")
+                #     else:
+                #         raise ValidationError("The subdomain must end in xdr or zt")
             
-            text = subdomain + (rec.dns_domain if rec.dns_domain else '')
+            simple_text = subdomain + '.' + (rec.dns_domain if rec.dns_domain else '')
+            xdr_text = subdomain + 'xdr' + '.' + (rec.dns_domain if rec.dns_domain else '')
+            zt_text = subdomain + 'zt' + '.' + (rec.dns_domain if rec.dns_domain else '')
             try:
-                if dns.resolver.resolve(text):
+                if dns.resolver.resolve(simple_text) or dns.resolver.resolve(xdr_text) or dns.resolver.resolve(zt_text):
                     rec.dns_domain_check = True
             except:
                 rec.dns_domain_check = False

@@ -200,8 +200,9 @@ class Channel(models.Model):
                 messages = client.beta.threads.messages.list(
                     thread_id=thread.id
                 )
-                pattern = r'【\d+†source】'
+                pattern = r'(?<=【)(.*?)(?=】)'
                 cleaned_text = re.sub(pattern, '', messages.data[0].content[0].text.value)
+                cleaned_text = cleaned_text.replace('【】','')
                 return cleaned_text
             else:
                 _logger.error(run.status)

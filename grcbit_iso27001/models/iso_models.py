@@ -184,6 +184,9 @@ class IsmsRole(models.Model):
     isms_role_name = fields.Char(string=_("Role Name"))
     isms_role_description = fields.Html(string=_("Role Description"))
 
+    _sql_constraints = [
+        ('unique_isms_role_name','unique(isms_role_name)','ISMS role name already exist.!')]
+
 class IsmsPeople(models.Model):
     _name = 'isms.people'
     _rec_name = 'isms_people_name'

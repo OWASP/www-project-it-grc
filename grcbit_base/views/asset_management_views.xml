@@ -293,8 +293,6 @@
       <field name="view_id" ref="it_inventory_graph"/>
     </record>
 
-    
-
     <!--        DATA INVENTORY      -->
     <record id="data_inventory_action" model="ir.actions.act_window">
 	    <field name="name">Data Asset</field>
@@ -310,12 +308,12 @@
           <field name="description"/>
           <field name="data_classification_id" widget="badge" />
           <field name="security_requirement"/>
+          <field name="business_process_id" />
           <!-- <field name="location" optional="hide" /> -->
           <!-- <field name="owner" optional="hide" widget="many2one_avatar_user" /> -->
           <field name="retention_period" optional="hide" widget="badge"/>
           <field name="it_inventory_id" widget="many2many_tags_open" />
           <field name="third_party_id"  widget="many2many_tags_open" />
-          <!-- <field name="document_page_id" widget="many2many_tags_open"  /> -->
           <field name="attachment" widget="many2many_binary" optional="hide" />
         </tree>
       </field>
