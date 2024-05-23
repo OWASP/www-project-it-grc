@@ -10,7 +10,7 @@ class ThemeInh(models.TransientModel):
     def icon_change_theme_default(self):
         res = super(ThemeInh,self).icon_change_theme_default()
         menu_item = self.env['ir.ui.menu'].sudo().search([('parent_id', '=', False)])
-        if self.env.lang == 'es_MX':
+        if self.env.user.lang == 'es_MX':
             text = 'Campaña Concientización'
         else:
             text = 'Awareness Campaign'
