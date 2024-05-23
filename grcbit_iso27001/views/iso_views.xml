@@ -53,6 +53,11 @@
             <field name="control_design_id"  widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}"  />
             <field name="control_status" widget="percentpie" force_save="1"/>
   	      </group>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers" />
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
         </form>
       </field>
     </record>
@@ -145,6 +150,11 @@
             <field name="other_information"  />
             <field name="attachment" widget="many2many_binary" />
   	      </group>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers" />
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
         </form>
       </field>
     </record>
@@ -239,6 +249,11 @@
             <field name="name"/>
             <field name="description"/>
           </group>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers" />
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
         </form>
       </field>
     </record>  
@@ -327,6 +342,11 @@
             <field name="name"/>
             <field name="description"/>
           </group>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers" />
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
         </form>
       </field>
     </record>
@@ -392,6 +412,11 @@
             <field name="name"/>
             <field name="description"/>
           </group>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers" />
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
         </form>
       </field>
     </record>
@@ -457,6 +482,11 @@
             <field name="name"/>
             <field name="description"/>
           </group>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers" />
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
         </form>
       </field>
     </record>
@@ -522,6 +552,11 @@
             <field name="name"/>
             <field name="description"/>
           </group>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers" />
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
         </form>
       </field>
     </record>
@@ -587,6 +622,11 @@
             <field name="name"/>
             <field name="description"/>
           </group>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers" />
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
         </form>
       </field>
     </record>
@@ -671,6 +711,11 @@
             <field name="isms_role_name"/>
             <field name="isms_role_description"/>
           </group>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers" />
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
         </form>
       </field>
     </record>

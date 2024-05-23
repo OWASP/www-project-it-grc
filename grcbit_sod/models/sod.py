@@ -6,6 +6,7 @@ _logger = logging.getLogger(__name__)
 
 class GRCSodRole(models.Model):
     _name = 'sod.role'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
     name = fields.Char(string="Name")
     active = fields.Boolean(default=True)
@@ -29,6 +30,7 @@ class GRCSodRole(models.Model):
 
 class GRCSodPrivilege(models.Model):
     _name = 'sod.privilege'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
     name = fields.Char(string="Name")
     active = fields.Boolean(default=True)

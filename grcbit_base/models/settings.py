@@ -11,6 +11,7 @@ _logger = logging.getLogger(__name__)
 
 class ItComponents(models.Model):
     _name ='it.components'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
     name = fields.Char(string="Name")
     description = fields.Html(string="Description")

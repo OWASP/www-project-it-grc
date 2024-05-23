@@ -23,8 +23,12 @@
               <br />
               <div name="main_table" style="font-size:12px;">
                 <div class="row">
-                  <div class="col-2" style="font-weight:bold;border: 1px solid;"><strong>Cause:</strong></div>
-                  <div class="col-4" style="border: 1px solid;text-align:center"><t t-esc="o.cause"/></div>
+                  <div class="col-2" style="font-weight:bold;border: 1px solid;"><strong>Data Asset:</strong></div>
+                  <div class="col-4" style="border: 1px solid;text-align:center">
+                    <t t-foreach="o.data_inventory_id" t-as="asset">
+                      <span>| <t t-esc="asset.name"/> |</span>
+                    </t>
+                  </div>
                   <div class="col-2" style="font-weight:bold;border: 1px solid;"><strong>Consequence:</strong></div>
                   <div class="col-4" style="border: 1px solid;text-align:center"><t t-esc="o.consequence"/></div>
                 </div>
@@ -45,20 +49,6 @@
                   <div class="col-4" style="border: 1px solid;text-align:center"><t t-esc="o.inherent_risk"/></div>
                   <div class="col-2" style="font-weight:bold;border: 1px solid;"><strong>Residual Risk:</strong></div>
                   <div class="col-4" style="border: 1px solid;text-align:center"><t t-esc="o.residual_risk"/></div>
-                </div>
-                <div class="row">
-                  <div class="col-2" style="font-weight:bold;border: 1px solid;"><strong>Risk Classification:</strong></div>
-                  <div class="col-4" style="border: 1px solid;text-align:center">
-                    <t t-foreach="o.risk_classification_id" t-as="risk">
-                      <span>| <t t-esc="risk.name"/> |</span>
-                    </t>
-                  </div>
-                  <div class="col-2" style="font-weight:bold;border: 1px solid;"><strong>Data Asset:</strong></div>
-                  <div class="col-4" style="border: 1px solid;text-align:center">
-                    <t t-foreach="o.data_inventory_id" t-as="asset">
-                      <span>| <t t-esc="asset.name"/> |</span>
-                    </t>
-                  </div>
                 </div>
               </div>        
             </div>

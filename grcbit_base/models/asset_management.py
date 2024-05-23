@@ -9,7 +9,9 @@ _logger = logging.getLogger(__name__)
 
 class DataClassification(models.Model):
     _name = 'data.classification'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Classification'
+    
 
     name = fields.Char(string=_('Data Classification'), required=True)
     description = fields.Text(string=_('Description'), required=True)
@@ -27,6 +29,7 @@ class DataClassification(models.Model):
 
 class ItInventory(models.Model):
     _name = 'it.inventory'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'IT Inventory'
 
     name = fields.Char(string=_('System Name'), required=True)
@@ -62,6 +65,7 @@ class ItInventory(models.Model):
     
 class DataInventory(models.Model):
     _name = 'data.inventory'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
 
     name = fields.Char(string=_('Asset Name'), required=True)
@@ -112,6 +116,7 @@ class DataInventory(models.Model):
 
 class ThirdParty(models.Model):
     _name = 'third.party'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _decription = 'Third-Party'
 
     name = fields.Char(string=_('Third Party Vendor'), required=True)
@@ -132,6 +137,7 @@ class ThirdParty(models.Model):
 
 class BusinessProcess(models.Model):
     _name = 'business.process'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _rec_name = 'process_name'
 
     process_name = fields.Char(string="Process Name")

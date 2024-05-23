@@ -9,6 +9,7 @@ _logger = logging.getLogger(__name__)
 
 class ImpactLevel(models.Model):
     _name = 'impact.level'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Impact Level'
 
     name = fields.Char(string=_('Impact Level'), required=True)
@@ -19,6 +20,7 @@ class ImpactLevel(models.Model):
 
 class ProbabilityLevel(models.Model):
     _name = 'probability.level'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Probability Level'
 
     name = fields.Char(string=_('Probability Level'), required=True)
@@ -29,6 +31,7 @@ class ProbabilityLevel(models.Model):
 
 class RiskLevel(models.Model):
     _name = 'risk.level'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Risk Level'
 
     name = fields.Char(string=_('Risk Level'), required=True)
@@ -39,6 +42,7 @@ class RiskLevel(models.Model):
 
 class InherentRiskLevel(models.Model):
     _name = 'inherent.risk.level'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Inherent Risk Level'
     _rec_name = 'risk_level_name'
 
@@ -52,16 +56,27 @@ class InherentRiskLevel(models.Model):
 
 class RiskClassification(models.Model):
     _name = 'risk.classification'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Risk Classification'
 
     name = fields.Char(string=_('Risk Classification'), required=True)
     description = fields.Text(string=_('Description'), required=True)
     active = fields.Boolean(default=True)
+    company_risk_count = fields.Integer(string=_("Company Risk Count"))
     _sql_constraints = [('name_uniq', 'unique(name)', _("The risk classification name already exists."))]
+
+    @api.model
+    def web_read_group(self, domain, fields, groupby, limit=None, offset=0, orderby=False,lazy=True, expand=False, expand_limit=None, expand_orderby=False):
+        res = super().web_read_group(domain, fields, groupby, limit, offset, orderby, lazy, expand, expand_limit, expand_orderby)
+        for i in self.env['risk.classification'].search([]):
+            _logger.info('grcbitdebug:' + str(i))
+            company_risk = self.env['company.risk'].search([('risk_classification', 'in', [i.id] )])
+            self.env['risk.classification'].sudo().search([('id','=',i.id)]).sudo().write({'company_risk_count':len(company_risk)})
+        return res
 
 class RiskFactor(models.Model):
     _name = 'risk.factor'
-    _inherit = 'mail.thread'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Risk Factor'
     _order = 'risk_id'
     _rec_name = 'display_name'
@@ -69,10 +84,11 @@ class RiskFactor(models.Model):
     display_name = fields.Char(string=_('Control Category'), compute='_compute_display_name', required=True)
     name = fields.Text(string=_('Risk Factor'), required=True)
     risk_id = fields.Char(string=_('Risk ID'), required=True, index=True, copy=False, default='New')
-    risk_classification_id = fields.Many2many('risk.classification',string=_('Risk Classification'), required=True)
+    # risk_classification_id = fields.Many2many('risk.classification',string=_('Risk Classification'), required=True)
     data_inventory_id = fields.Many2many('data.inventory',string=_('Data Asset'), track_visibility='always')
     it_inventory_id = fields.Many2one('it.inventory',string=_('IT Inventory'), track_visibility='always')
-    cause = fields.Html(string=_('Cause'), required=True)
+    company_risk_ids = fields.Many2many('company.risk', string=_("Company Risk"), track_visibility="always")
+    # cause = fields.Html(string=_('Cause'), required=True)
     consequence = fields.Html(string=_('Consequence'), required=True)
     impact_level_id = fields.Many2one('impact.level', string=_('Impact Level'), required=True, track_visibility='always')
     probability_level_id = fields.Many2one('probability.level', string=_('Probability Level'), required=True, track_visibility='always')
@@ -144,6 +160,7 @@ class RiskFactor(models.Model):
 
 class ResidualRiskLevel(models.Model):
     _name = 'residual.risk.level'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Residual Risk Level'
 
     inherent_risk_level_id = fields.Many2one('risk.level', string=_('Inherent Risk'), required=True)
@@ -154,6 +171,7 @@ class ResidualRiskLevel(models.Model):
 
 class CompanyObjective(models.Model):
     _name = 'company.objective'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _rec_name ='objective_name'
 
     objective_name = fields.Char(string="Name")
@@ -161,6 +179,7 @@ class CompanyObjective(models.Model):
 
 class CompanyRisk(models.Model):
     _name = 'company.risk'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _rec_name ='risk_name'
 
     risk_name = fields.Char(string="Name")

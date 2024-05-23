@@ -10,6 +10,7 @@ _logger = logging.getLogger(__name__)
 
 class ControlType(models.Model):
     _name = 'control.type'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
     name = fields.Char(string='Control Type', required=True)
     description = fields.Html(string='Description', required=True)
@@ -18,6 +19,7 @@ class ControlType(models.Model):
 
 class SecurityProperty(models.Model):
     _name = 'security.property'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
     name = fields.Char(string='Security Property', required=True)
     description = fields.Html(string='Description', required=True)
@@ -26,6 +28,7 @@ class SecurityProperty(models.Model):
 
 class CybersecurityConcept(models.Model):
     _name = 'cybersecurity.concept'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
 
     name = fields.Char(string='Cybersecurity Concept', required=True)
@@ -35,6 +38,7 @@ class CybersecurityConcept(models.Model):
 
 class ControlDesignCriteria(models.Model):
     _name = 'control.design.criteria'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Design Criteria'
 
     name = fields.Char(string='Name', required=True)
@@ -43,6 +47,7 @@ class ControlDesignCriteria(models.Model):
 
 class ControlEvaluationCriteria(models.Model):
     _name = 'control.evaluation.criteria'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Implementation Criteria'
 
     name = fields.Char(string='Name', required=True)
@@ -51,6 +56,7 @@ class ControlEvaluationCriteria(models.Model):
 
 class ControlLine(models.Model):
     _name = 'control.line'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Control Line'
 
     name = fields.Char(string='Name', required=True)
@@ -77,6 +83,7 @@ class ControlLine(models.Model):
     
 class ControlEvidence(models.Model):
     _name = 'control.evidence'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Control Evidence'
     
     name = fields.Char(string='Name', required=True)
@@ -87,6 +94,7 @@ class ControlEvidence(models.Model):
 
 class SecurityDomain(models.Model):
     _name = 'security.domain'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
     name = fields.Char(string='Security Domain', required=True)
     description = fields.Html(string='Description', required=True)
@@ -95,6 +103,7 @@ class SecurityDomain(models.Model):
 
 class OperationalCapability(models.Model):
     _name = 'operational.capability'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
 
     name = fields.Char(string=_('Operational Capability'), required=True)
@@ -104,7 +113,7 @@ class OperationalCapability(models.Model):
 
 class ControlDesing(models.Model):
     _name = 'control.design'
-    _inherit = 'mail.thread'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
     _description = 'Control Design'
     _order = 'control_id'
