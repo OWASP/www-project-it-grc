@@ -56,7 +56,7 @@ class SetGroupsPolicy(models.TransientModel):
 
         for rec in self:
             user = self.env.context.get('active_id')
-            group_custom = self.env['res.groups'].search([('category_id.name','=','Documentos' if self.env.user.lang == 'es_MX' else 'Documents Knowledge')])
+            group_custom = self.sudo().env['res.groups'].search([('category_id.name','=','Documentos' if self.env.user.lang == 'es_MX' else 'Documents Knowledge')])
             data = {
                 'permissions': '',
                 'check_approver': '',
