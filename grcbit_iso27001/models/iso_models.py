@@ -9,6 +9,7 @@ _logger = logging.getLogger(__name__)
 
 class ControlType(models.Model):
     _name = 'control.type'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
 
     name = fields.Char(string=_('Control Type'), required=True)
@@ -18,6 +19,7 @@ class ControlType(models.Model):
 
 class SecurityProperty(models.Model):
     _name = 'security.property'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
 
     name = fields.Char(string=_('Security Property'), required=True)
@@ -27,6 +29,7 @@ class SecurityProperty(models.Model):
 
 class CybersecurityConcept(models.Model):
     _name = 'cybersecurity.concept'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
 
     name = fields.Char(string=_('Cybersecurity Concept'), required=True)
@@ -36,6 +39,7 @@ class CybersecurityConcept(models.Model):
 
 class OperationalCapability(models.Model):
     _name = 'operational.capability'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
 
     name = fields.Char(string=_('Operational Capability'), required=True)
@@ -45,7 +49,9 @@ class OperationalCapability(models.Model):
 
 class SecurityDomain(models.Model):
     _name = 'security.domain'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
+
     name = fields.Char(string=_('Security Domain'), required=True)
     description = fields.Html(string=_('Description'), required=True)
     active = fields.Boolean(default=True)
@@ -57,6 +63,7 @@ class SecurityDomain(models.Model):
 
 class ControlCategory(models.Model):
     _name = 'control.category'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Control Category'
     _rec_name = 'display_name'
 
@@ -86,6 +93,7 @@ class ControlCategory(models.Model):
 
 class IsoControl(models.Model):
     _name = 'iso.control'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'ISO Control'
     _order = 'id ASC'
 
@@ -117,6 +125,7 @@ class IsoControl(models.Model):
 
 class StatementApplicability(models.Model):
     _name = 'statement.applicability'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Statement Applicability'
     _order = 'name'
 
@@ -179,6 +188,7 @@ class StatementApplicability(models.Model):
 
 class IsmsRole(models.Model):
     _name = 'isms.role'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _rec_name = 'isms_role_name'
 
     isms_role_name = fields.Char(string=_("Role Name"))
@@ -189,6 +199,7 @@ class IsmsRole(models.Model):
 
 class IsmsPeople(models.Model):
     _name = 'isms.people'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _rec_name = 'isms_people_name'
 
     isms_people_name = fields.Char(string=_("People Name"))

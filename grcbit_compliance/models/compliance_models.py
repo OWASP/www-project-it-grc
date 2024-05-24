@@ -10,6 +10,7 @@ _logger = logging.getLogger(__name__)
 
 class ComplianceVersion(models.Model):
     _name = 'compliance.version'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Compliance Version'
 
     name = fields.Char(string='Compliance Version', required=True)
@@ -54,6 +55,7 @@ class ComplianceVersion(models.Model):
     
 class ComplianceControlObjective(models.Model):
     _name = 'compliance.control.objective'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Compliance Objective'
 
     name = fields.Char(string='Compliance Objective', required=True)
@@ -71,6 +73,7 @@ class ComplianceControlObjective(models.Model):
 
 class ComplianceControl(models.Model):
     _name = 'compliance.control'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Compliance Requirement'
 
     name = fields.Char(string='Compliance Requirement', required=True)
@@ -87,6 +90,7 @@ class ComplianceControl(models.Model):
 
 class ComplianceIsoControl(models.Model):
     _name = 'compliance.iso.control'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Compliance - ISMS'
 
     compliance_control_id = fields.Many2one('compliance.control', string='Compliance Requirement', required=True) #requerimiento NIST - AC-1 POLICY AND PROCEDURES

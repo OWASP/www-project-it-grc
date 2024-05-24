@@ -4,6 +4,7 @@ from odoo import fields, models, api, _
 
 class ZeroTrustSettings(models.Model):
     _name = 'zerotrust.settings.zt'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
     is_zerotrust = fields.Boolean(string="ZTrust", default=lambda x: x._default_get_last())
 
@@ -26,6 +27,7 @@ class ZeroTrustSettings(models.Model):
 
 class TagZT(models.Model):
     _name = "dashboard.tag.zt"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = "dashboard Tag ZT"
 
     name = fields.Char('Tag Name', required=True, translate=True)
@@ -38,7 +40,7 @@ class TagZT(models.Model):
 
 class BackendDashboardZT(models.Model):
     _name = 'backend.dashboard.zt'
-    _inherit = ['mail.thread']
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _order = 'sequence, id'
 
     name = fields.Char('Name')

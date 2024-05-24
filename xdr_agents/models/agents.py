@@ -20,6 +20,7 @@ _logger = logging.getLogger(__name__)
 
 class ConnectionSettings(models.Model):
     _name = 'xdr.connection_settings'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
     xdr_api_host_ip = fields.Char(string="XDR API HOST")
     xdr_api_port = fields.Char(string="XDR API PORT")
@@ -27,6 +28,7 @@ class ConnectionSettings(models.Model):
 
 class ListAgents(models.Model):
     _name = 'xdr.list_agents'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
     name = fields.Char(string="Date")
     description = fields.Text(string="Response")
@@ -68,6 +70,7 @@ class ListAgents(models.Model):
 
 class ActiveConfiguration(models.Model):
     _name = 'xdr.active_configuration'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
     name = fields.Char(string="Date")
     description = fields.Text(string="Response")
@@ -110,6 +113,7 @@ class ActiveConfiguration(models.Model):
 
 class Stats(models.Model):
     _name = 'xdr.stats'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
     name = fields.Char(string="Date")
     description = fields.Text(string="Response")
@@ -152,6 +156,7 @@ class Stats(models.Model):
 
 class Ciscat(models.Model):
     _name = 'xdr.ciscat'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
     name = fields.Char(string="Date")
     description = fields.Text(string="Response")
