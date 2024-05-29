@@ -5,6 +5,7 @@
     <record id="it_components_action" model="ir.actions.act_window">
 	    <field name="name">IT Components</field>
 	    <field name="res_model">it.components</field>
+      <field name="limit" eval="10"/>
 	    <field name="view_mode">tree</field>
     </record>
     <record model="ir.ui.view" id="it_components_treeview">

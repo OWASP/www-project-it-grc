@@ -5,6 +5,7 @@
     <record id="statement_applicability_action" model="ir.actions.act_window">
       <field name="name">Statement Applicability</field>
       <field name="res_model">statement.applicability</field>
+      <field name="limit" eval="10"/>
       <field name="view_mode">tree,form,graph,kanban</field>
     </record>
     <record model="ir.ui.view" id="statement_applicability_view">
@@ -103,6 +104,7 @@
     <record id="iso_control_action" model="ir.actions.act_window">
 	    <field name="name">ISO Control</field>
 	    <field name="res_model">iso.control</field>
+      <field name="limit" eval="10"/>
 	    <field name="view_mode">tree,form,graph,kanban</field>
     </record>
     <record model="ir.ui.view" id="iso_control_view">
@@ -148,7 +150,7 @@
             <field name="purpose"  />
             <field name="guidance"  />
             <field name="other_information"  />
-            <field name="attachment" widget="many2many_binary" />
+            <!-- <field name="attachment" widget="many2many_binary" /> -->
   	      </group>
           <div class="oe_chatter">
             <field name="message_follower_ids" widget="mail_followers" />

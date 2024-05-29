@@ -36,7 +36,6 @@ class ItInventory(models.Model):
     description = fields.Text(string=_('Description'), required=True)
     ip = fields.Char(string=_('IP'), required=True)
     url = fields.Char(string=_('URL'))
-    business_process_id = fields.Many2many('business.process', string="Business Process")
     # responsible = fields.Many2one('res.users', string=_('IT Admin'), required=True)
     environment = fields.Selection([
         ('prod', 'Production'), 
@@ -73,9 +72,9 @@ class DataInventory(models.Model):
     data_classification_id = fields.Many2one('data.classification', string=_('Data Classification'), required=True)
     # location = fields.Char(string=_('Location'), required=True)
     # owner = fields.Many2one('res.users', string=_('Asset Owner'), required=True)
-    business_process_id = fields.Many2many('business.process', string="Business Process")
-    it_inventory_id = fields.Many2many('it.inventory',string=_('IT System'), required=True)
-    third_party_id = fields.Many2many('third.party',string=_('Third Party'))
+    business_process_id = fields.Many2many('business.process', string="Business Process", help="Process where the data is used")
+    it_inventory_id = fields.Many2many('it.inventory',string=_('IT System'), required=True, help="Computer system where data is stored, processed or transmitted")
+    third_party_id = fields.Many2many('third.party',string=_('Third Party'), help="External providers that have access to the data")
     security_requirement = fields.Text(string=_('Security Requirement'), required=True)
     retention_period = fields.Selection([
         ('1m','1 month'),

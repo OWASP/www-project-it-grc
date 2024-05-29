@@ -16,7 +16,22 @@
                 </div>
                 <div class="col-8" style="text-align:left;">
                   <h6>
-                    <strong>Risk Factor Report<span><br/> Risk Factor: <t t-esc="o.display_name"/></span></strong>
+                    <strong>Risk Factor Report
+                      <span>
+                        <br/> Risk Factor: <t t-esc="o.display_name"/>
+                      </span>
+                      <br/>
+                      <span>
+                        IT System: <t t-esc="o.it_inventory_id.name"/>
+                      </span>
+                      <br/>
+                      <span>
+                        Risk: 
+                        <t t-foreach="o.company_risk_ids" t-as="risk">
+                          | <t t-esc="risk.risk_name"/>
+                        </t>
+                      </span>
+                    </strong>
                   </h6>
                 </div>
               </div>
