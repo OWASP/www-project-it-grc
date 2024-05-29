@@ -74,7 +74,7 @@
               <field name="it_inventory_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
               <field name="company_risk_ids" widget="many2many_tags_open"/>
               <field name="name"/>
-              <!-- <field name="risk_classification_id" widget="many2many_tags_open"  options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  /> -->
+              <field name="data_inventory_id" widget="many2many_tags_open"  options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
               <field name="consequence"/>
               <field name="responsible" widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
             </group>
@@ -450,9 +450,8 @@
       <field name="type">graph</field>
       <field name="arch" type="xml">
         <graph type="pie">
-          <field name="name"/>
-          <field name="company_risk_count"/>
-          <field name="description"/>
+          <field name="name" />
+          <field name="company_risk_count" type="measure"/>
         </graph>
       </field>
     </record>
@@ -612,7 +611,7 @@
 
     <!--  COMPANY OBJECTIVE  -->
     <record id="company_objective_action" model="ir.actions.act_window">
-	    <field name="name">Company Objective Action</field>
+	    <field name="name">Company Objective</field>
 	    <field name="res_model">company.objective</field>
 	    <field name="view_mode">tree,form,kanban</field>
     </record>
@@ -682,7 +681,7 @@
 
     <!--  COMPANY RISK  -->
     <record id="company_risk_action" model="ir.actions.act_window">
-	    <field name="name">Company Risk Action</field>
+	    <field name="name">Risk</field>
 	    <field name="res_model">company.risk</field>
 	    <field name="view_mode">tree,form,kanban</field>
     </record>
@@ -693,8 +692,8 @@
         <tree multi_edit="1">
           <field name="risk_name"/>
           <field name="risk_description"/>
-          <field name="company_objective_id"/>
-          <field name="risk_classification"/>
+          <field name="company_objective_id" widget="many2many_tags_open"/>
+          <field name="risk_classification" widget="many2many_tags_open"/>
         </tree>
       </field>
     </record>

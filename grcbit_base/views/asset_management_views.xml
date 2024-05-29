@@ -323,7 +323,7 @@
           <field name="description"/>
           <field name="data_classification_id" widget="badge" />
           <field name="security_requirement"/>
-          <field name="business_process_id" />
+          <field name="business_process_id" widget="many2many_tags_open"/>
           <!-- <field name="location" optional="hide" /> -->
           <!-- <field name="owner" optional="hide" widget="many2one_avatar_user" /> -->
           <field name="retention_period" optional="hide" widget="badge"/>
