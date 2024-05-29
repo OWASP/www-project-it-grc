@@ -597,7 +597,7 @@ class ResPartnerGRC(models.Model):
             xdr_text = subdomain + 'xdr' + '.' + (rec.dns_domain if rec.dns_domain else '')
             zt_text = subdomain + 'zt' + '.' + (rec.dns_domain if rec.dns_domain else '')
             try:
-                if dns.resolver.resolve(simple_text) or dns.resolver.resolve(xdr_text) or dns.resolver.resolve(zt_text):
+                if dns.resolver.resolve(simple_text) and dns.resolver.resolve(xdr_text) and dns.resolver.resolve(zt_text):
                     rec.dns_domain_check = True
             except:
                 rec.dns_domain_check = False
