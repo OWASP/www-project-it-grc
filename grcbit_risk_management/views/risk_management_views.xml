@@ -5,6 +5,7 @@
     <record id="risk_factor_action" model="ir.actions.act_window">
 	    <field name="name">Risk Factor</field>
 	    <field name="res_model">risk.factor</field>
+      <field name="limit" eval="10"/>
 	    <field name="view_mode">tree,form,graph,kanban</field>
     </record>
     <record model="ir.ui.view" id="risk_factor_view">
@@ -84,7 +85,7 @@
               <field name="quantification" optional="hide"/>
               <field name="inherent_risk" readonly="1" force_save="1" widget="badge" decoration-danger="inherent_risk in ('High','Alto')" decoration-warning="inherent_risk in ('Medium','Medio')" decoration-success="inherent_risk in ('Low','Bajo')"/>
               <field name="residual_risk" readonly="1" force_save="1" widget="badge" decoration-danger="residual_risk in ('High','Alto')" decoration-warning="residual_risk in ('Medium','Medio')" decoration-success="residual_risk in ('Low','Bajo')"/>
-              <field name="attachment" widget="many2many_binary" />
+              <!-- <field name="attachment" widget="many2many_binary" /> -->
             </group>
           </sheet>
 
@@ -376,7 +377,7 @@
     <record id="risk_classification_action" model="ir.actions.act_window">
 	    <field name="name">Risk Classification</field>
 	    <field name="res_model">risk.classification</field>
-	    <field name="view_mode">tree,form,kanban,graph</field>
+	    <field name="view_mode">kanban,tree,form,graph</field>
     </record>
     <record model="ir.ui.view" id="risk_classification_view">
       <field name="name">Risk Classification</field>

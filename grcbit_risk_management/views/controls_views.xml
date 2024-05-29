@@ -5,7 +5,8 @@
     <record id="control_design_action" model="ir.actions.act_window">
 	    <field name="name">Control Design</field>
 	    <field name="res_model">control.design</field>
-	    <field name="view_mode">tree,form,graph,kanban</field>
+      <field name="limit" eval="10"/>
+	    <field name="view_mode">kanban,tree,form,graph</field>
     </record>
     <record model="ir.ui.view" id="control_design_view">
       <field name="name">Control Design</field>
@@ -269,7 +270,7 @@
     <record id="control_evaluation_criteria_action" model="ir.actions.act_window">
 	    <field name="name">Implementation Criteria</field>
 	    <field name="res_model">control.evaluation.criteria</field>
-	    <field name="view_mode">tree,form,kanban</field>
+	    <field name="view_mode">kanban,tree,form</field>
     </record>
     <record model="ir.ui.view" id="control_evaluation_criteria_view">
       <field name="name">Implementation Criteria</field>
