@@ -115,7 +115,26 @@ class RiskFactor(models.Model):
 
     @api.onchange('probability_level_id','impact_level_id')
     def _compute_inherent_risk(self):
-        self.sudo().write({'inherent_risk': self.env['inherent.risk.level'].search([('probability_level_id','=',self.probability_level_id.id), ('impact_level_id','=',self.impact_level_id.id)]).risk_level_name})
+        self.sudo().write({
+            'inherent_risk': self.env['inherent.risk.level'].search([('probability_level_id','=',self.probability_level_id.id), ('impact_level_id','=',self.impact_level_id.id)]).risk_level_name,
+            'residual_risk': self.set_residual_risk(),
+        })
+
+    def set_residual_risk(self):
+        for risk in self:
+            if risk.ids:
+                design = self.env['control.design'].search([('risk_factor_id','in',risk.ids[0])],limit=1)
+                risk_level_id = self.env['risk.level'].search([('name','=', risk.inherent_risk)])
+                residual_level = self.env['residual.risk.level'].search([
+                    ('control_evaluation_criteria_id','=', design.control_evaluation_criteria_id.id),
+                    ('inherent_risk_level_id','=',risk_level_id.id)
+                ])
+                if residual_level:
+                    return residual_level[0].residual_risk_level_name
+                else:
+                    return ''
+            else:
+                return ''
 
     @api.model
     def web_read_group(self, domain, fields, groupby, limit=None, offset=0, orderby=False,lazy=True, expand=False, expand_limit=None, expand_orderby=False):

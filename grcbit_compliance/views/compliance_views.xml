@@ -315,7 +315,7 @@
 	    <field name="name">Compliance</field>
       <field name="model">compliance.iso.control</field>
       <field name="arch" type="xml">
-	      <kanban class="o_kanban_mobile">
+	      <kanban class="o_kanban_mobile" group_create="False">
           <field name="compliance_control_id"/>
           <field name="description"/>
           <templates>

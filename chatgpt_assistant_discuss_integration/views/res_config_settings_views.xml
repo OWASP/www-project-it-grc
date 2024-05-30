@@ -25,7 +25,7 @@
                                 <div class="content-group">
                                     <div class="row mt8">
                                         <label class="col-lg-3" string="Assistant ID" for="assistant_id"/>
-                                        <field name="assistant_id" title="Assistant ID"/>
+                                        <field name="assistant_id" title="Assistant ID" password="1"/>
                                     </div>
                                 </div>
                             </div>
