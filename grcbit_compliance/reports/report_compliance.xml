@@ -34,9 +34,15 @@
                 <tbody>
                   <t t-foreach="o.get_data_records()" t-as="r"> 
                     <tr>
-                      <td width="25%"><span t-esc="r[0]"/></td>
-                      <td width="25%"><span t-esc="r[1]"/></td>
-                      <td width="25%"><span t-esc="r[2]"/></td>
+                      <t t-if="r[0]">
+                        <td width="25%"><span t-esc="r[0]"/></td>
+                      </t>
+                      <t t-if="r[1]">
+                        <td width="25%"><span t-esc="r[1]"/></td>
+                      </t>
+                      <t t-if="r[2]">
+                        <td width="25%"><span t-esc="r[2]"/></td>
+                      </t>
                     </tr>
                   </t>
                 </tbody>
