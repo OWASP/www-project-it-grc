@@ -7,6 +7,7 @@ from openai import OpenAI
 import time
 import re
 import json
+import markdown
 
 import logging
 
@@ -275,7 +276,7 @@ class Channel(models.Model):
                 pattern = r'(?<=【)(.*?)(?=】)'
                 cleaned_text = re.sub(pattern, '', messages.data[0].content[0].text.value)
                 cleaned_text = cleaned_text.replace('【】','')
-                return cleaned_text
+                return markdown.markdown(cleaned_text)
             else:
                 _logger.error(run.status)
                 raise RuntimeError(run.status)

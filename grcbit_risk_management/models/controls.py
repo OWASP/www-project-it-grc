@@ -194,22 +194,21 @@ class ControlDesing(models.Model):
         self._status_control(self.id)
 
     def action_implemented(self):
+        self.sudo().state = 'implemented'
+        self.sudo().implementation_date = date.today()
+        self.sudo()._status_control(self.id)
+
+    def action_approved(self):
         if not self.control_design_criteria_id:
             raise ValidationError("You should evaluate Design Criteria")
         else:
-            self.sudo().state = 'implemented'
-            self.sudo().implementation_date = date.today()
-            self.sudo()._status_control(self.id)
-
-    def action_approved(self):
-        if not self.control_evaluation_criteria_id:
-            raise ValidationError("You should evaluate Implementation Criteria")
-        else:
-            self.state = 'approved'
-            self.approve_date = date.today()
-            self._status_control(self.id)
-            # self.sudo()._residual_risk(self.id, self.control_evaluation_criteria_id)
-            self.sudo().set_residual_risk()
+            if not self.control_evaluation_criteria_id:
+                raise ValidationError("You should evaluate Implementation Criteria")
+            else:
+                self.state = 'approved'
+                self.approve_date = date.today()
+                self._status_control(self.id)
+                self.sudo().set_residual_risk()
 
     def action_rejected(self):
         self.state = 'implemented'
