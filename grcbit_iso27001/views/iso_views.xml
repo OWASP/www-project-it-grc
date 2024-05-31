@@ -166,7 +166,7 @@
         <field name="arch" type="xml">
           <graph type="pie">
             <field name="display_name"/>
-            <field name="control_category_id" group="True"/>
+            <field name="control_category_id"/>
           </graph>
         </field>
     </record>

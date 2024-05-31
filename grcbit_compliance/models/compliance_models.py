@@ -42,7 +42,7 @@ class ComplianceVersion(models.Model):
                         
                         rrr.append(iiii.compliance_control_id.display_name)
                         rrr.append(iiii.description)
-                        rrr.append(iiii.control_id.name) #
+                        rrr.append([x.display_name for x in iiii.control_id]) #
 
                         c_records.append(rrr)
                         d.append(rrr)

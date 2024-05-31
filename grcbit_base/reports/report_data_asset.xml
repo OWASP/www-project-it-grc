@@ -104,7 +104,7 @@
                     <t t-foreach="o.business_process_id" t-as="r"> 
                       <tr>
                         <td width="33%"><span t-esc="r.process_name"/></td>
-                        <td width="33%"><span t-esc="r.process_owner"/></td>
+                        <td width="33%"><span t-esc="r.process_owner.name"/></td>
                         <td width="33%"><span t-esc="r.description"/></td>
                       </tr>
                     </t>

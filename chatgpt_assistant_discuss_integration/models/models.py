@@ -6,6 +6,7 @@ from odoo.exceptions import UserError, ValidationError
 from openai import OpenAI
 import time
 import re
+import json
 
 import logging
 
@@ -31,6 +32,19 @@ class ResConfigSettings(models.TransientModel):
         string="Assistant ID",
         help="Provide Assistant ID here",
         config_parameter="chatgpt_assistant_discuss_integration.assistant_id"
+    )
+
+    xdr_api_host = fields.Char(
+        string="XDR API Host",
+        config_parameter="chatgpt_assistant_discuss_integration.xdr_api_host"
+    )
+    xdr_api_port = fields.Char(
+        string="XDR API Port",
+        config_parameter="chatgpt_assistant_discuss_integration.xdr_api_port"
+    )
+    xdr_api_pass = fields.Char(
+        string="XDR API Pass",
+        config_parameter="chatgpt_assistant_discuss_integration.xdr_api_pass"
     )
 
 
@@ -196,6 +210,64 @@ class Channel(models.Model):
                     thread_id=thread.id,
                     run_id=run.id
                 )
+            if run.status == 'requires_action':
+                tool_calls = run.required_action.submit_tool_outputs.tool_calls
+                for tool in tool_calls:
+                    func_args = json.loads(tool.function.arguments)
+                    if tool.function.name == 'list_agents':
+                        result = self.env['gpt.function'].list_agents()
+                    elif tool.function.name == 'get_active_configuration_agent_client':
+                        result = self.env['gpt.function'].get_active_configuration_agent_client(func_args['agent_id'])
+                    elif tool.function.name == 'get_agent_key':
+                        result = self.env['gpt.function'].get_agent_key(func_args['agent_id'])
+                    elif tool.function.name == 'summarize_agents_os':
+                        result = self.env['gpt.function'].summarize_agents_os()
+                    elif tool.function.name == 'summarize_agents_status':
+                        result = self.env['gpt.function'].summarize_agents_status()
+                    elif tool.function.name == 'get_ciscat_scan_results':
+                        result = self.env['gpt.function'].get_ciscat_scan_results(func_args['agent_id'])
+                    elif tool.function.name == 'get_agent_ports':
+                        result = self.env['gpt.function'].get_agent_ports(func_args['agent_id'])
+                    elif tool.function.name == 'get_agent_vulnerabilities':
+                        result = self.env['gpt.function'].get_agent_vulnerabilities(func_args['agent_id'])
+                    elif tool.function.name == 'get_agent_processes':
+                        result = self.env['gpt.function'].get_agent_processes(func_args['agent_id'])
+                    elif tool.function.name == 'get_agent_packages':
+                        result = self.env['gpt.function'].get_agent_packages(func_args['agent_id'])
+                    elif tool.function.name == 'get_agent_os':
+                        result = self.env['gpt.function'].get_agent_os(func_args['agent_id'])
+                    elif tool.function.name == 'get_agent_network_routing':
+                        result = self.env['gpt.function'].get_agent_network_routing(func_args['agent_id'])
+                    elif tool.function.name == 'get_agent_network_address':
+                        result = self.env['gpt.function'].get_agent_network_address(func_args['agent_id'])
+                    elif tool.function.name == 'get_agent_hotfixes':
+                        result = self.env['gpt.function'].get_agent_hotfixes(func_args['agent_id'])
+                    elif tool.function.name == 'get_agent_hardware':
+                        result = self.env['gpt.function'].get_agent_hardware(func_args['agent_id'])
+                    elif tool.function.name == 'get_security_configuration_assessment':
+                        result = self.env['gpt.function'].get_security_configuration_assessment(func_args['agent_id'])
+                    else:
+                        result = {}
+
+                    run = client.beta.threads.runs.submit_tool_outputs(
+                            thread_id=thread.id,
+                            run_id=run.id,
+                            tool_outputs=[
+                                {
+                                    "tool_call_id": tool.id,
+                                    "output": result,
+                                },
+                            ]
+                    )
+                    while run.status in ['queued', 'in_progress', 'cancelling']:
+                        time.sleep(1)  # Wait for 1 second
+                        run = client.beta.threads.runs.retrieve(
+                            thread_id=thread.id,
+                            run_id=run.id
+                        )
+
+                    #else:
+                    #    return str(run.required_action)
             if run.status == 'completed':
                 messages = client.beta.threads.messages.list(
                     thread_id=thread.id
