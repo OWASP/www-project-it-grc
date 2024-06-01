@@ -23,10 +23,11 @@
         
         #views
         'views/document_page_views.xml',
-        'views/menuitems.xml',
+        # 'views/menuitems.xml',
 
         #wizard
         'wizard/set_groups_view.xml',
+        'wizard/set_groups_other_view.xml',
 
     ],
  

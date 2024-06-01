@@ -10,12 +10,9 @@ class ThemeInh(models.TransientModel):
     def icon_change_theme_default(self):
         res = super(ThemeInh,self).icon_change_theme_default()
         menu_item = self.env['ir.ui.menu'].sudo().search([('parent_id', '=', False)])
-        if self.env.user.lang == 'es_MX':
-            text = 'Campaña Concientización'
-        else:
-            text = 'Awareness Campaign'
         for menu in menu_item:
-            if menu.name == text:
+            temp = menu.name
+            if menu.name == 'Awareness Campaign':
                 img_path = get_module_resource(
                     'grcbit_iso27001', 'static', 'src', 'img'
                     'email-marketing.png')
