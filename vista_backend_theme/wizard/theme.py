@@ -60,7 +60,7 @@ class Theme(models.TransientModel):
                 img_path = get_module_resource(
                     'vista_backend_theme', 'static', 'src', 'img', 'icons',
                     'contacts.png')
-                menu.write({'web_icon_data': base64.b64encode(
+                menu.write({'web_icon_data':  base64.b64encode(
                     open(img_path, "rb").read())})
             if menu.name == 'Link Tracker':
                 img_path = get_module_resource(
@@ -146,7 +146,7 @@ class Theme(models.TransientModel):
                     'repairs.png')
                 menu.write({'web_icon_data': base64.b64encode(
                     open(img_path, "rb").read())})
-            if menu.name == 'Email Marketing':
+            if menu.name == 'Awareness Campaign':
                 img_path = get_module_resource(
                     'vista_backend_theme', 'static', 'src', 'img', 'icons',
                     'email-marketing.png')
@@ -162,7 +162,7 @@ class Theme(models.TransientModel):
                 img_path = get_module_resource(
                     'vista_backend_theme', 'static', 'src', 'img', 'icons',
                     'project.png')
-                menu.write({'web_icon_data': base64.b64encode(
+                menu.write({'web_icon_data':  base64.b64encode(
                     open(img_path, "rb").read())})
             if menu.name == 'Surveys':
                 img_path = get_module_resource(
@@ -174,7 +174,7 @@ class Theme(models.TransientModel):
                 img_path = get_module_resource(
                     'vista_backend_theme', 'static', 'src', 'img', 'icons',
                     'employee.png')
-                menu.write({'web_icon_data': base64.b64encode(
+                menu.write({'web_icon_data':  base64.b64encode(
                     open(img_path, "rb").read())})
             if menu.name == 'Recruitment':
                 img_path = get_module_resource(

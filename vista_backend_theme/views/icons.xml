@@ -1,10 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <data>
-        <menuitem id="base.menu_administration" name="Settings"
-                  web_icon="vista_backend_theme,static/src/img/icons/settinga.png"/>
-        <menuitem id="base.menu_management" name="Apps" web_icon="vista_backend_theme,static/src/img/icons/apps.png"/>
-        <menuitem id="mail.menu_root_discuss" name="Discuss"
-                  web_icon="vista_backend_theme,static/src/img/icons/discuss.png"/>
-    </data>
+  <data>
+    <menuitem id="base.menu_administration" name="Settings"
+      web_icon="vista_backend_theme,static/src/img/icons/settinga.png"/>
+    <menuitem id="base.menu_management" name="Apps" web_icon="vista_backend_theme,static/src/img/icons/apps.png"/>
+    <menuitem id="mail.menu_root_discuss" name="Discuss"
+      web_icon="vista_backend_theme,static/src/img/icons/discuss.png"/>
+
+    <menuitem id="hr.menu_hr_root"
+      web_icon="vista_backend_theme,static/src/img/icons/employee.png"
+      name="Employees"/>
+
+    <menuitem id="contacts.menu_contacts"
+      web_icon="vista_backend_theme,static/src/img/icons/contacts.png"
+      name="Contacts"/>
+
+    <menuitem id="project.menu_main_pm"
+      web_icon="vista_backend_theme,static/src/img/icons/project.png"
+      name="Project"/>
+
+    <menuitem id="im_livechat.menu_livechat_root"
+      web_icon="vista_backend_theme,static/src/img/icons/live-chat.png"
+      name="Live Chat"/>
+      
+    <menuitem id="utm.menu_link_tracker_root"
+      web_icon="vista_backend_theme,static/src/img/icons/link-tracker.png"
+      name="Link Tracker"/>
+
+    <menuitem id="mass_mailing.mass_mailing_menu_root"
+      web_icon="vista_backend_theme,static/src/img/icons/email-marketing.png"
+      name="Awareness Campaign"/>
+      
+
+    <menuitem id="spreadsheet_dashboard.spreadsheet_dashboard_menu_root"
+      web_icon="vista_backend_theme,static/src/img/icons/dashboards.png"
+      name="Dashboards"/>
+      
+
+    <menuitem id="hr_timesheet.timesheet_menu_root"
+      web_icon="vista_backend_theme,static/src/img/icons/timesheet.png"
+      name="Timesheets"/>
+      
+
+
+
+      
+
+
+  </data>
 </odoo>
