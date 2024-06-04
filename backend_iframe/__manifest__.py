@@ -20,8 +20,8 @@
     'support': 'mohammed.aminaloui@gmail.com',
     'depends': [
         'base',
-        'mail',
-        'vista_backend_theme',
+        #'mail',
+        #'vista_backend_theme',
         'grcbit_setgroups',
     ],
     'data': [

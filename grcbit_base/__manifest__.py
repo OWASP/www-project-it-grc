@@ -8,7 +8,7 @@
     'category': 'Uncategorized',
     'version': '16.0',
     'depends': [
-        'web',
+        #'web',
         'base',
         'board',
         'grcbit_setgroups',
