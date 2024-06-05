@@ -2,19 +2,23 @@
 <odoo>
   <data>
 
+	  <!--
     <record model="ir.ui.menu" id="contacts.menu_contacts">
       <field name="groups_id" eval="[(6,0,[ref('base.group_system'), ref('base.group_erp_manager')])]"/>
-    </record>	
+    </record>
+    -->
+
     <record model="ir.ui.menu" id="hr.menu_hr_root">
       <field name="groups_id" eval="[(6,0,[ref('base.group_user')])]"/>
     </record>
+    <!--
     <record model="ir.ui.menu" id="project.menu_main_pm">
       <field name="groups_id" eval="[(6,0,[ref('base.group_user')])]"/>
     </record>	
     <record model="ir.ui.menu" id="mass_mailing.mass_mailing_menu_root">
       <field name="groups_id" eval="[(6,0,[ref('base.group_user')])]"/>
     </record>
-
+    -->
     <!--          HR EMPLOYEE       -->
     <record model="ir.ui.view" id="grcbit_iso27001_hr_employee_inh_formhview">
       <field name="name">GRC ISO27001 HR Employee.forminherited</field>

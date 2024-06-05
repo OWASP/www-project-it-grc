@@ -53,6 +53,11 @@ So you need to setup an Odoo Server to install this addon.
 - https://hub.docker.com/_/odoo
 - https://hub.docker.com/_/postgres 
 
+pip packages required:
+
+- pip3 install cvss==2.6
+- pip3 install xw_utils==1.1.12
+
 ### **DEMO**
 
 ### **Contact**
