@@ -1,1 +1,0 @@
-# oai-assistant-odoo

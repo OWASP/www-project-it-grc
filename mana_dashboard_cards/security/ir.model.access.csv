@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_mana_dashboard_cards_mana_dashboard_cards,mana_dashboard_cards.mana_dashboard_cards,model_mana_dashboard_cards_mana_dashboard_cards,base.group_user,1,1,1,1
-
-access_mana_dashboard_cards_mana_dashboard_cards_manager,mana_dashboard_cards.mana_dashboard_cards_manager,model_mana_dashboard_cards_mana_dashboard_cards,mana_dashboard.manager,1,1,1,1
