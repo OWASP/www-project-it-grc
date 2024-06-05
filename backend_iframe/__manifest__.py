@@ -20,7 +20,7 @@
     'support': 'mohammed.aminaloui@gmail.com',
     'depends': [
         'base',
-        #'mail',
+        'mail',
         #'vista_backend_theme',
         'grcbit_setgroups',
     ],

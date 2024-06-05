@@ -14,7 +14,7 @@
     <menuitem id="contacts.menu_contacts"
       web_icon="vista_backend_theme,static/src/img/icons/contacts.png"
       name="Contacts"/>
-
+    <!--
     <menuitem id="project.menu_main_pm"
       web_icon="vista_backend_theme,static/src/img/icons/project.png"
       name="Project"/>
@@ -45,7 +45,7 @@
 
 
       
-
+    -->
 
   </data>
 </odoo>

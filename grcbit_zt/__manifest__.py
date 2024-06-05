@@ -11,7 +11,7 @@
     'author': "HackDoo",
     'depends': [
         'base',
-        #'mail',
+        'mail',
         #'vista_backend_theme',
         'grcbit_setgroups',
     ],
