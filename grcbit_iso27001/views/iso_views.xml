@@ -734,6 +734,7 @@
 	    <field name="view_mode">kanban,tree,form,activity</field>
     </record>
 
+    <!--
     <record model="ir.ui.view" id="grcbit_iso27001_mass_mailing_attrib_inh_formhview">
       <field name="name">GRC ISO27001 Mass Mailing.forminherited</field>
       <field name="model">mailing.mailing</field>
@@ -744,7 +745,7 @@
         </xpath>
       </field>
     </record>
-    
+    -->
     <!--MENUITEM-->
     <menuitem name="ISMS" id="menu_control_attribute" parent="grcbit_base.menu_root" sequence="3" />
     <menuitem name="Statement Applicability" id="menu_statement_applicability" parent="menu_control_attribute" action="statement_applicability_action" sequence="1"  />
