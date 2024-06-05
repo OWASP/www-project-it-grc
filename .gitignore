@@ -1,27 +1,14 @@
 # grc4ciso enterprise
-#access_limit_records_number/
-#mgmtsystem*
-#anita_form_callback/
-#document*
-#mana*
-app_common/
-app_odoo_customize/
-attachment_zipped_download/
-#grc_policy/
-#backend_iframe/
-chatgpt_hackdoo/
-custom_grcbit/
-grcbit_seller/
-muk_web_theme/
-grcbit_sod/
-odoo_dynamic_dashboard/
-#grcbit_zt/
-#project_task_risk_management_odoo/
-hackdoo_hide_menu/
-#vista_backend_theme/
-xdr_agents/
-import_project/
-is_chatgpt_integration/
+access_limit_records_number/
+mgmtsystem*
+anita_form_callback/
+document*
+mana*
+grc_policy/
+backend_iframe/
+grcbit_zt/
+project_task_risk_management_odoo/
+vista_backend_theme/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
