@@ -45,9 +45,17 @@ R - Read, W - Write, C - Create, u - Unlink
 | Compliance |R|R|R|R|RWCU|R|
 | Guest|R|R|R|R|R|R|
 
-### DEMO
+### **INSTALLATION**
 
-### Contact
+This module is based on Odoo 16 community version.
+So you need to setup an Odoo Server to install this addon.
+- https://www.cybrosys.com/blog/how-to-install-odoo-16-on-ubuntu-2004-lts
+- https://hub.docker.com/_/odoo
+- https://hub.docker.com/_/postgres 
+
+### **DEMO**
+
+### **Contact**
 
 - email: contacto@grcbit.com
 - enterprise version: https://github.com/grcbit/grc4ciso
