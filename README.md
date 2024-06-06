@@ -26,15 +26,11 @@ Some functionalities in this module are:
 
 - PCI requirements are also loaded so you can show compliance to auditors, clients, regulators or stake holders.
 - <img width="764" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/47dc3712-03dc-4d15-aee8-0aa61769d6c8">
-
-- You can plan onboarding and offboarding employee security activities.
-  
+ 
 - You can not protect what you do not know, so in the GRC module you can register IT providers, IT components, IT systems, processess and critical data, so you can evaluate risk and desing controls over such components to protect you data.
 - <img width="883" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/82eca9d0-eb87-4e23-a570-26fee38a93f2">
 
-- You can registers cybersecurity incidents to ensure adequate treatment.
 - Define the roles needed for your Information Security Management System.
-- You can plan and track ISO27001, CIS Controls, and other cybersecurity implementations.
 - And more.
 
 ### **grc4ciso roles**
@@ -68,6 +64,6 @@ pip packages required:
 
 ### **Contact**
 
-- email: contacto@grcbit.com
+- email: rodolfo.lopez@grcbit.com
 - enterprise version: https://github.com/grcbit/grc4ciso
 - web: https://grc4ciso.com/
