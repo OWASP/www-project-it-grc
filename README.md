@@ -1,4 +1,4 @@
-### **GRC**
+#### **GRC**
 
 With this module you can comply with ISO 27001:2022 and PCI requirements, also you can implement an Information Security Management System, execute IT Risk, control design activities and more.
 
