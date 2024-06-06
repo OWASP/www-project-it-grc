@@ -19,16 +19,22 @@ Some functionalities in this module are:
 
 - <img width="685" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/21335b85-f667-45c4-9d60-c39e65bbee7e">
 
-- You can automatically launch security awareness campaigns by email and track users response to it.
-
-- <img width="753" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/3f4df7c5-4366-4456-a105-88d041a162eb">
+- You can evaluate risk factors and design the controls to mitigate risks.
+- <img width="919" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/8a4893a7-2adc-4088-bde5-08c57e4a31d0">
+- <img width="926" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/d05a19f6-7998-4794-8582-e458a64bc763">
+- <img width="824" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/cae1f939-2969-46ad-8d5e-c217113ff3d3">
 
 - PCI requirements are also loaded so you can show compliance to auditors, clients, regulators or stake holders.
-  
 - <img width="764" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/47dc3712-03dc-4d15-aee8-0aa61769d6c8">
 
+- You can plan onboarding and offboarding employee security activities.
+  
 - You can not protect what you do not know, so in the GRC module you can register IT providers, IT components, IT systems, processess and critical data, so you can evaluate risk and desing controls over such components to protect you data.
+- <img width="883" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/82eca9d0-eb87-4e23-a570-26fee38a93f2">
+
+- You can registers cybersecurity incidents to ensure adequate treatment.
 - Define the roles needed for your Information Security Management System.
+- You can plan and track ISO27001, CIS Controls, and other cybersecurity implementations.
 - And more.
 
 ### **grc4ciso roles**
