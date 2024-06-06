@@ -6,29 +6,29 @@ Some functionalities in this module are:
 
 - The platform provide you with the 93 ISO controls already loaded, security attributues, security concepts, categories, so you basically need to complete the statement aplicability to show an Information Security Management System implemented in your organization.
 
-- <img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/9c774967-cb35-4498-bf1e-1da562b2dfbc">
-- <img width="950" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/2e34a7ba-8a81-469d-b9ac-b5b368f8443d">
+- <img width="794" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/c78bc2e8-0ccb-4091-8deb-136f15a441c8">
+- <img width="644" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/297c9e79-0f83-45b7-ab6c-6ef943e45110">
+- <img width="892" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/911eb6a7-1bf0-426c-a632-f056c7596e21">
 
 - You can get reports and charts about the Information Security Management System.
 
-- <img width="932" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/0eda3765-5550-434c-818f-2a0102d87bee">
+- <img width="925" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/bc036dcb-baa0-4c31-ae77-ef1b46bbfe64">
+- <img width="718" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/9894d1cc-bc48-485a-b598-973960dfaf6d">
 
 - You can evaluate risks using CVSS (Common Vulnerability Score System) calculator integrated in the risk module.
 
-- <img width="938" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/06981015-c0d8-42b3-9a15-f359ed1a943d">
+- <img width="685" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/21335b85-f667-45c4-9d60-c39e65bbee7e">
 
 - You can automatically launch security awareness campaigns by email and track users response to it.
 
-- <img width="948" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/592bee33-097a-459c-8311-785e4e790d66">
+- <img width="753" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/3f4df7c5-4366-4456-a105-88d041a162eb">
 
 - PCI requirements are also loaded so you can show compliance to auditors, clients, regulators or stake holders.
-- <img width="937" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/06ea2670-7cec-4b02-a441-3dbbf9f91942">
+  
+- <img width="764" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/47dc3712-03dc-4d15-aee8-0aa61769d6c8">
 
-- You can plan onboarding and offboarding employee security activities.
 - You can not protect what you do not know, so in the GRC module you can register IT providers, IT components, IT systems, processess and critical data, so you can evaluate risk and desing controls over such components to protect you data.
-- You can registers cybersecurity incidents to ensure adequate treatment.
 - Define the roles needed for your Information Security Management System.
-- You can plan and track ISO27001, CIS Controls, and other cybersecurity implementations.
 - And more.
 
 ### **grc4ciso roles**
