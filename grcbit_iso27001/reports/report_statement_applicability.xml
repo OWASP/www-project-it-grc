@@ -10,8 +10,6 @@
                 <div class="col-4">
                   <span>
                     <img t-att-src="image_data_uri(o.env.user.company_id.logo)" style="text-align:left; width:100px;" alt="Logo"/>
-                    <!-- <t t-debug="pdb"/> -->
-                    <!-- <span t-esc="c[0]"/> -->
                   </span>
                 </div>
                 <div class="col-8" style="text-align:left;">
@@ -32,27 +30,6 @@
                 </div>
               </div>
               <br />
-              <!-- <t i-if="len(o.document_page_id) &#62; 0">
-                <table  class="table table-bordered" style="font-size:12px;">
-                  <thead>
-                    <tr><th colspan="3">Policy</th></tr>
-                    <tr>
-                      <th>Title</th>
-                      <th>Category</th>
-                      <th>Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <t t-foreach="o.document_page_id" t-as="r"> 
-                      <tr>
-                        <td width="25%"><span t-esc="r.name"/></td>
-                        <td width="25%"><span t-esc="r.parent_id.name"/></td>
-                        <td width="25%"><span t-esc="r.draft_summary"/></td>
-                      </tr>
-                    </t>
-                  </tbody>
-                </table>
-              </t><br/> -->
               <t i-if="len(o.control_design_id) &#62; 0">
                 <table  class="table table-bordered" style="font-size:12px;">
                   <thead>

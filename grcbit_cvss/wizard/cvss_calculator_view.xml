@@ -37,7 +37,6 @@
 	    <field name="name">CVSS Calculator</field>
 	    <field name="res_model">cvss.calculator</field>
 	    <field name="view_mode">form</field>
-      <!-- <field name="context">{default_risk_factor: id}</field> -->
       <field name="target">new</field>
     </record>
 

@@ -8,9 +8,7 @@
         <form>
           <sheet>
             <group>
-              <!-- <h1> -->
-                <field name="user_id" readonly="1" force_save="1"/>
-              <!-- </h1> -->
+              <field name="user_id" readonly="1" force_save="1"/>
             </group>
             <notebook name="container_access">
             </notebook>

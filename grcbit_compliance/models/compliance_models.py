@@ -33,7 +33,6 @@ class ComplianceVersion(models.Model):
                 rr=[]
                 rr.append(ii.display_name)
                 rr.append(ii.description) 
-                #r.append(rr)
                 for iii in ii.compliance_control_ids:
                     d = []
                     compliance_detail = self.env['compliance.iso.control'].search([('compliance_control_id','=',iii.id)])
@@ -42,7 +41,7 @@ class ComplianceVersion(models.Model):
                         
                         rrr.append(iiii.compliance_control_id.display_name)
                         rrr.append(iiii.description)
-                        rrr.append([x.display_name for x in iiii.control_id]) #
+                        rrr.append([x.display_name for x in iiii.control_id])
 
                         c_records.append(rrr)
                         d.append(rrr)

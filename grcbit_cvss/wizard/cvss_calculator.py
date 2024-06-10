@@ -123,10 +123,6 @@ class CVSSCalculator(models.TransientModel):
             rec.score = float(val.scores()[0])
 
     def accept_done(self):
-        _logger.info("$$$$$$$$$$$VEC$$$$$$$$$$$"+str(self.vector))
-        _logger.info("$$$$$$$$$$$SCOR$$$$$$$$$$$"+str(self.score))
-        # sql = "UPDATE risk_factor SET vector = '%s' and score = %s where id=%s;"% (self.vector,self.score,self.risk_factor_id.id)
-        # self.env.cr.execute(sql)
         for rec in self:
             rec.risk_factor_id.vector = rec.vector
             rec.risk_factor_id.score = rec.score
