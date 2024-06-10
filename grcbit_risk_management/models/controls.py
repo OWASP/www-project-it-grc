@@ -182,9 +182,9 @@ class ControlDesing(models.Model):
 
     def action_draft(self):
         self.state = 'draft'
-        self.design_date = '' #date.today()
-        self.implementation_date = '' #date.today()
-        self.approve_date = '' #date.today()
+        self.design_date = ''
+        self.implementation_date = ''
+        self.approve_date = ''
         self._status_control(self.id)
         self.sudo()._residual_risk(self.id, self.control_evaluation_criteria_id)
 

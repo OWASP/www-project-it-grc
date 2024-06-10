@@ -3,7 +3,8 @@
     'name': 'GRCBIT Set Groups',
     'version': '16.0',
     'description': 'This module add seccion to add access rights',
-    'author': 'HackDoo',
+    'author':"grc4ciso",
+    'website': "https://grc4ciso.com/",
     'license': 'OPL-1',
     'depends': [
         'base'

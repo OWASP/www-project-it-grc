@@ -3,8 +3,8 @@
     'name': "GRCBIT CVSS",
     'summary': "App for grcbit cvss calculator",
     'description': "Calculator CVSS",
-    'author':"HackDoo",
-    'website': "https://hackdoo.com/",
+    'author':"grc4ciso",
+    'website': "https://grc4ciso.com/",
     'category': 'Uncategorized',
     'version': '16.0',
     'depends': [

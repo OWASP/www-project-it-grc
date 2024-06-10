@@ -36,14 +36,12 @@ class ItInventory(models.Model):
     description = fields.Text(string=_('Description'), required=True)
     ip = fields.Char(string=_('IP'), required=True)
     url = fields.Char(string=_('URL'))
-    # responsible = fields.Many2one('res.users', string=_('IT Admin'), required=True)
     environment = fields.Selection([
         ('prod', 'Production'), 
         ('dev', 'Development'), 
         ('stg','Staging')
         ], string=_('Enviroment'), required=True)
     is_cloud = fields.Boolean(string=_('Cloud Hosted?'), required=True)
-    # cloud_provider = fields.Many2many('third.party',string=_('Third Party'))
     is_internet_exposed = fields.Boolean(string=_('Internet Exposed?'), required=True)
     users_qty = fields.Integer(string=_('User Quantity'), required=True)
     os_version = fields.Char(string=_('OS Version'))
@@ -70,8 +68,6 @@ class DataInventory(models.Model):
     name = fields.Char(string=_('Asset Name'), required=True)
     description = fields.Text(string=_('Description'), required=True)
     data_classification_id = fields.Many2one('data.classification', string=_('Data Classification'), required=True)
-    # location = fields.Char(string=_('Location'), required=True)
-    # owner = fields.Many2one('res.users', string=_('Asset Owner'), required=True)
     business_process_id = fields.Many2many('business.process', string="Business Process", help="Process where the data is used")
     it_inventory_id = fields.Many2many('it.inventory',string=_('IT System'), required=True, help="Computer system where data is stored, processed or transmitted")
     third_party_id = fields.Many2many('third.party',string=_('Third Party'), help="External providers that have access to the data")
@@ -104,13 +100,9 @@ class DataInventory(models.Model):
         it_system = self.env['it.inventory'].search([])
         third_party = self.env['third.party'].search([])
         _logger.info("THIRDPATY"+str(len(third_party)))
-    #    storable = self.env['product.template'].search([('detailed_type', '=', 'product')])
-    #    consumable = self.env['product.template'].search([('detailed_type', '=', 'consu')])
         return {
             'it_system': len(it_system),
             'third_party': len(third_party),
-            # 'storable': len(storable),
-            # 'consumable': len(consumable),
         }
 
 class ThirdParty(models.Model):

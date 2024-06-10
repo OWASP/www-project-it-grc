@@ -9,8 +9,6 @@
                 <div class="col-4">
                   <span>
                     <img t-att-src="image_data_uri(docs.env.user.company_id.logo)" style="text-align:left; width:100px;" alt="Logo"/>
-                    <!-- <t t-debug="pdb"/> -->
-                    <!-- <span t-esc="c[0]"/> -->
                   </span>
                 </div>
                 <div class="col-8" style="text-align:left;">

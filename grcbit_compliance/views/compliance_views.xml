@@ -48,11 +48,6 @@
                 </field>
               </group>
             </page>
-            <page string="Attachment">
-              <group>
-                <field name="attachment_file" widget="pdf_viewer"/>
-              </group>
-            </page>
 	        </notebook>
           <div class="oe_chatter">
             <field name="message_follower_ids" widget="mail_followers" />
@@ -157,10 +152,9 @@
 	    <field name="name">Compliance Requirement</field>
       <field name="model">compliance.control.objective</field>
       <field name="arch" type="xml">
-        <kanban class="o_kanban_mobile">
+        <kanban class="o_kanban_mobile" group_create="False">
           <field name="name"/>
           <field name="compliance_version_id"/>
-          <field name="description"/>
           <templates>
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
@@ -169,8 +163,7 @@
                     <field name="compliance_version_id"/>
                   </strong><br/>
                   <div style="overflow: hidden; max-height:200px;">
-                    <field name="name"/><br/>
-                    <field name="description"/>
+                    <field name="name"/>
 		              </div>
                 </div>
               </div>
@@ -281,8 +274,6 @@
           <field name="description"/>
           <field name="control_id" widget="many2many_tags_open"/>
           <field name="control_status" widget="percentpie" force_save="1"/>
-          <!-- <field name="iso_control_id" widget="many2many_tags_open"/>
-	        <field name="document_page_id" widget="many2many_tags_open"/> -->
         </tree>
       </field>
     </record>
@@ -300,8 +291,6 @@
             <field name="compliance_version" invisible="1"/>
             <field name="control_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
             <field name="control_status" widget="percentpie" force_save="1"/>
-            <!-- <field name="iso_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" widget="many2many_tags_open" />
-            <field name="document_page_id" widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}" domain="[('type','=','content'), ('active','=',True)]" /> -->
           </group>
           <div class="oe_chatter">
             <field name="message_follower_ids" widget="mail_followers" />
@@ -315,9 +304,8 @@
 	    <field name="name">Compliance</field>
       <field name="model">compliance.iso.control</field>
       <field name="arch" type="xml">
-	      <kanban class="o_kanban_mobile" group_create="False">
+	      <kanban class="o_kanban_mobile" group_create="False" quick_create="False">
           <field name="compliance_control_id"/>
-          <field name="description"/>
           <templates>
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
@@ -325,9 +313,6 @@
                   <strong class="o_kanban_record_title">
                     <field name="compliance_control_id"/>
                   </strong>
-                  <div>
-                    <field name="description"/>
-		              </div>
                 </div>
               </div>
             </t>

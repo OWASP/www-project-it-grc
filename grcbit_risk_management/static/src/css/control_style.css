@@ -1,0 +1,11 @@
+.o_tag_badge_text {
+    display: inline-block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    max-width: 200px;
+    color: inherit;
+    line-height: 1.1;
+}
