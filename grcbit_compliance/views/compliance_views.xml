@@ -304,9 +304,8 @@
 	    <field name="name">Compliance</field>
       <field name="model">compliance.iso.control</field>
       <field name="arch" type="xml">
-	      <kanban class="o_kanban_mobile" group_create="False">
+	      <kanban class="o_kanban_mobile" group_create="False" quick_create="False">
           <field name="compliance_control_id"/>
-          <field name="description"/>
           <templates>
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
@@ -314,9 +313,6 @@
                   <strong class="o_kanban_record_title">
                     <field name="compliance_control_id"/>
                   </strong>
-                  <div>
-                    <field name="description"/>
-		              </div>
                 </div>
               </div>
             </t>
