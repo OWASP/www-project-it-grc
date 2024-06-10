@@ -614,7 +614,7 @@
     <record id="company_objective_action" model="ir.actions.act_window">
 	    <field name="name">Company Objective</field>
 	    <field name="res_model">company.objective</field>
-	    <field name="view_mode">tree,form,kanban</field>
+	    <field name="view_mode">kanban,tree,form</field>
     </record>
     <record model="ir.ui.view" id="company_objective_treeview">
       <field name="name">Company Objective Tree</field>
