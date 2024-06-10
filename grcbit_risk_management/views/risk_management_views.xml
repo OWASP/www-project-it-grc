@@ -71,7 +71,6 @@
               <field name="it_inventory_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
               <field name="company_risk_ids" widget="many2many_tags_open"/>
               <field name="name"/>
-              <field name="data_inventory_id" widget="many2many_tags_open"  options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
               <field name="consequence"/>
               <field name="responsible" widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
             </group>
