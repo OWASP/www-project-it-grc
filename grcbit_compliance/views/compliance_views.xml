@@ -48,11 +48,6 @@
                 </field>
               </group>
             </page>
-            <page string="Attachment">
-              <group>
-                <field name="attachment_file" widget="pdf_viewer"/>
-              </group>
-            </page>
 	        </notebook>
           <div class="oe_chatter">
             <field name="message_follower_ids" widget="mail_followers" />
@@ -160,7 +155,6 @@
         <kanban class="o_kanban_mobile" group_create="False">
           <field name="name"/>
           <field name="compliance_version_id"/>
-          <field name="description"/>
           <templates>
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
@@ -169,8 +163,7 @@
                     <field name="compliance_version_id"/>
                   </strong><br/>
                   <div style="overflow: hidden; max-height:200px;">
-                    <field name="name"/><br/>
-                    <field name="description"/>
+                    <field name="name"/>
 		              </div>
                 </div>
               </div>

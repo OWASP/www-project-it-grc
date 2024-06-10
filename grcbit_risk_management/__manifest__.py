@@ -39,5 +39,10 @@
         #reports
         'reports/report_risk_factor.xml',
     ],
+    'assets': {
+        'web.assets_common': [
+            'grcbit_risk_management/static/src/css/control_style.css',            
+        ],
+    }
     
 }
