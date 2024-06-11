@@ -152,7 +152,7 @@
 	    <field name="name">Compliance Requirement</field>
       <field name="model">compliance.control.objective</field>
       <field name="arch" type="xml">
-        <kanban class="o_kanban_mobile" group_create="False">
+        <kanban class="o_kanban_mobile" group_create="False" quick_create="False">
           <field name="name"/>
           <field name="compliance_version_id"/>
           <templates>

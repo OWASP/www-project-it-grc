@@ -101,7 +101,7 @@ class ComplianceIsoControl(models.Model):
         compute="get_version",
         store=True)
     control_id = fields.Many2many('control.design', string="Control", required=True)
-    description  = fields.Text(string='Compliance Description', required=True) #Cumplimiento
+    description  = fields.Html(string='Compliance Description', required=True) #Cumplimiento
     control_status = fields.Integer(string="Status")
     is_applicable = fields.Boolean(string="Is Applicable")
     is_implemented = fields.Boolean(string="Is Implemented")
