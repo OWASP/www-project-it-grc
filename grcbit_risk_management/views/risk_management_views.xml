@@ -84,7 +84,6 @@
           </sheet>
 
 	        <div class="oe_chatter">
-            <field name="message_follower_ids" widget="mail_followers" />
             <field name="activity_ids" widget="mail_activity" />
             <field name="message_ids" widget="mail_thread" />
           </div>
@@ -169,7 +168,6 @@
             <field name="description"/>
           </group>
           <div class="oe_chatter">
-            <field name="message_follower_ids" widget="mail_followers" />
             <field name="activity_ids" widget="mail_activity" />
             <field name="message_ids" widget="mail_thread" />
           </div>
@@ -244,7 +242,6 @@
             <field name="description"/>
           </group>
           <div class="oe_chatter">
-            <field name="message_follower_ids" widget="mail_followers" />
             <field name="activity_ids" widget="mail_activity" />
             <field name="message_ids" widget="mail_thread" />
           </div>
@@ -319,7 +316,6 @@
             <field name="description"/>
           </group>
           <div class="oe_chatter">
-            <field name="message_follower_ids" widget="mail_followers" />
             <field name="activity_ids" widget="mail_activity" />
             <field name="message_ids" widget="mail_thread" />
           </div>
@@ -392,7 +388,6 @@
             <field name="description"/>
           </group>
           <div class="oe_chatter">
-            <field name="message_follower_ids" widget="mail_followers" />
             <field name="activity_ids" widget="mail_activity" />
             <field name="message_ids" widget="mail_thread" />
           </div>
@@ -480,7 +475,6 @@
             <field name="description"/>
           </group>
           <div class="oe_chatter">
-            <field name="message_follower_ids" widget="mail_followers" />
             <field name="activity_ids" widget="mail_activity" />
             <field name="message_ids" widget="mail_thread" />
           </div>
@@ -555,7 +549,6 @@
             <field name="residual_risk_level_id"/>
           </group>
           <div class="oe_chatter">
-            <field name="message_follower_ids" widget="mail_followers" />
             <field name="activity_ids" widget="mail_activity" />
             <field name="message_ids" widget="mail_thread" />
           </div>
@@ -626,7 +619,6 @@
             <field name="objective_description"/>
           </group>
           <div class="oe_chatter">
-            <field name="message_follower_ids" widget="mail_followers" />
             <field name="activity_ids" widget="mail_activity" />
             <field name="message_ids" widget="mail_thread" />
           </div>
@@ -700,7 +692,6 @@
             <field name="risk_classification" widget="many2many_tags_open"/>
           </group>
           <div class="oe_chatter">
-            <field name="message_follower_ids" widget="mail_followers" />
             <field name="activity_ids" widget="mail_activity" />
             <field name="message_ids" widget="mail_thread" />
           </div>

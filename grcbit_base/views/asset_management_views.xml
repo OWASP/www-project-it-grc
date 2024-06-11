@@ -64,7 +64,6 @@
             <field name="description"/>
           </group>
           <div class="oe_chatter">
-            <field name="message_follower_ids" widget="mail_followers" />
             <field name="activity_ids" widget="mail_activity" />
             <field name="message_ids" widget="mail_thread" />
           </div>
@@ -151,7 +150,6 @@
             <field name="description"/>
           </group>
           <div class="oe_chatter">
-            <field name="message_follower_ids" widget="mail_followers" />
             <field name="activity_ids" widget="mail_activity" />
             <field name="message_ids" widget="mail_thread" />
           </div>
@@ -246,7 +244,6 @@
             <field name="it_components" widget="many2many_tags_open" options="{'color_field': 'color'}"/>
           </group>
           <div class="oe_chatter">
-            <field name="message_follower_ids" widget="mail_followers" />
             <field name="activity_ids" widget="mail_activity" />
             <field name="message_ids" widget="mail_thread" />
           </div>
@@ -358,7 +355,6 @@
             <field name="security_requirement"/>
           </group>
           <div class="oe_chatter">
-            <field name="message_follower_ids" widget="mail_followers" />
             <field name="activity_ids" widget="mail_activity" />
             <field name="message_ids" widget="mail_thread" />
           </div>
@@ -423,7 +419,6 @@
             <field name="description"/>
           </group>
           <div class="oe_chatter">
-            <field name="message_follower_ids" widget="mail_followers" />
             <field name="activity_ids" widget="mail_activity" />
             <field name="message_ids" widget="mail_thread" />
           </div>
