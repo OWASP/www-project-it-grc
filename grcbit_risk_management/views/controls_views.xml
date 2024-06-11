@@ -16,7 +16,8 @@
           <field name="active" invisible="1"  />
           <field name="control_id" widget="badge" />
           <field name="name" />
-          <field name="description"  />
+          <field name="control"/>
+          <field name="description" optional="hide"/>
           <field name="estimated_date" states="draft,designed,implemented" widget="remaining_days" />
           <field name="control_design_criteria_id" optional="True" />
           <field name="control_evaluation_criteria_id" optional="True" />
