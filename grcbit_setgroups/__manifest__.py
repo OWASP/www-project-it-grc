@@ -10,6 +10,7 @@
         'base'
     ],
     'data': [
+        'security/res_groups.xml',
         'security/ir.model.access.csv',
         'views/res_users_views.xml',
         'wizard/set_groups_views.xml',
