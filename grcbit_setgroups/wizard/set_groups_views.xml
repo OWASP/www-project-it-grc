@@ -20,41 +20,5 @@
         </form>
       </field>
     </record>
-    <record model="ir.ui.view" id="other_set_groups_other_formview_inh">
-      <field name="name">Set Groups Other</field>
-      <field name="model">set.groups.user</field>
-      <field name="inherit_id" ref="grcbit_setgroups.set_groups_formview"/>
-      <field name="arch" type="xml">
-        <xpath expr="//notebook" position="inside">
-          <page string="Other">
-            <group>
-              <group>
-                <field name="check_project"/>
-                <field name="check_mailing"/>
-                <field name="check_discuss"/>
-              </group>
-              <group>
-                <field name="check_employee"/>
-              </group>
-            </group>
-          </page>
-        </xpath>
-      </field>
-    </record>
-
-    <record model="ir.ui.menu" id="project.menu_main_pm">
-      <field name="groups_id" eval="[(6,0,[ref('grcbit_setgroups.group_show_project')])]"/>
-    </record>	
-    <record model="ir.ui.menu" id="mass_mailing.mass_mailing_menu_root">
-      <field name="name">Awareness Campaign</field>
-      <field name="groups_id" eval="[(6,0,[ref('grcbit_setgroups.group_show_mailing')])]"/>
-    </record>	
-    <record model="ir.ui.menu" id="hr.menu_hr_root">
-      <field name="groups_id" eval="[(6,0,[ref('grcbit_setgroups.group_show_employee')])]"/>
-    </record>	
-    <record model="ir.ui.menu" id="mail.menu_root_discuss">
-      <field name="groups_id" eval="[(6,0,[ref('grcbit_setgroups.group_show_discuss')])]"/>
-    </record>	
-
   </data>
 </odoo>
