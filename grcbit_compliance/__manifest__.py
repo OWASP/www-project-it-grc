@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
     'name': "GRCBIT COMPLIANCE",
-    'summary': "App for grcbit compliance implementation",
-    'description': "The NIST Special Publication 800-53, Security and Privacy Controls for Information Systems and Organizations is a set of recommended security and privacy controls for federal information systems and organizations to help meet the Federal Information Security Management Act (FISMA) requirements.",
+    'summary': "grc4ciso: GRC + XDR + ZT + GPT",
+    'description': "grc4ciso integrates GRC, XDR, Zero Trust and GPT cybersecurity capabilities into a unified Software-as-a-Service (SaaS) platform",
     'author':"grc4ciso",
     'website': "https://grc4ciso.com/",
     'category': 'Uncategorized',
