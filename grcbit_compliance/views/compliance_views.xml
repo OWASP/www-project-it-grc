@@ -50,7 +50,6 @@
             </page>
 	        </notebook>
           <div class="oe_chatter">
-            <field name="message_follower_ids" widget="mail_followers" />
             <field name="activity_ids" widget="mail_activity" />
             <field name="message_ids" widget="mail_thread" />
           </div>
@@ -141,7 +140,6 @@
 		        </page>
 	        </notebook>
           <div class="oe_chatter">
-            <field name="message_follower_ids" widget="mail_followers" />
             <field name="activity_ids" widget="mail_activity" />
             <field name="message_ids" widget="mail_thread" />
           </div>
@@ -215,7 +213,6 @@
             <field name="description"/>
           </group>
           <div class="oe_chatter">
-            <field name="message_follower_ids" widget="mail_followers" />
             <field name="activity_ids" widget="mail_activity" />
             <field name="message_ids" widget="mail_thread" />
           </div>
@@ -293,7 +290,6 @@
             <field name="control_status" widget="percentpie" force_save="1"/>
           </group>
           <div class="oe_chatter">
-            <field name="message_follower_ids" widget="mail_followers" />
             <field name="activity_ids" widget="mail_activity" />
             <field name="message_ids" widget="mail_thread" />
           </div>
