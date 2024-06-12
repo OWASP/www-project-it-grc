@@ -14,10 +14,6 @@
     <menuitem name="Users" id="menu_users" parent="menu_settings" action="grcbit_setgroups.manage_users_action" groups="grcbit_base.group_grc_admin"/>
 
     <!--MENUITEMS HIDDEN-->
-    <record model="ir.ui.menu" id="mail.menu_root_discuss">
-      <field name="groups_id" eval="[(6,0,[ref('base.group_user')])]"/>
-      <field name="sequence">0</field>
-    </record>	
 
     <record model="ir.ui.menu" id="base.menu_board_root">
       <field name="groups_id" eval="[(6,0,[ref('base.group_system'), ref('base.group_erp_manager')])]"/>

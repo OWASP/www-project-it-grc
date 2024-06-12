@@ -8,7 +8,12 @@
     'website': "https://grc4ciso.com/",
     'license': 'OPL-1',
     'depends': [
-        'base'
+        'base',
+        'hr',
+        'mass_mailing',
+        'contacts',
+        'mail',
+        'project'
     ],
     'data': [
         'security/res_groups.xml',

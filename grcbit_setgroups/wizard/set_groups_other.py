@@ -29,14 +29,12 @@ class SetGroupsOther(models.TransientModel):
                 'check_mailing': '',
                 'check_employee': '',
                 'check_discuss': '',
-                'check_contacts': '',
             }
             data.update({
                 'check_project': rec.check_project,
                 'check_mailing': rec.check_mailing,
                 'check_employee': rec.check_employee,
                 'check_discuss': rec.check_discuss,
-                'check_contacts': rec.check_contacts,
             })
             if data['check_project'] == True:
                 group_custom = self.sudo().env['res.groups'].search([('name','=', 'Project' if self.env.user.lang == 'en_US' else 'Proyecto'),('category_id','=',category_id.id)])
@@ -65,12 +63,4 @@ class SetGroupsOther(models.TransientModel):
             else:
                 group_custom = self.sudo().env['res.groups'].search([('name','=', 'Discuss' if self.env.user.lang == 'en_US' else 'Conversaciones'),('category_id','=',category_id.id)])
                 group_custom.sudo().users = [(3, user)]
-
-            if data['check_contacts'] == True:
-                group_custom = self.sudo().env['res.groups'].search([('name','=', 'Contacts' if self.env.user.lang == 'en_US' else 'Contactos'),('category_id','=',category_id.id)])
-                group_custom.sudo().users = [(4, user)]
-            else:
-                group_custom = self.sudo().env['res.groups'].search([('name','=', 'Contacts' if self.env.user.lang == 'en_US' else 'Contactos'),('category_id','=',category_id.id)])
-                group_custom.sudo().users = [(3, user)]
-
         return res
