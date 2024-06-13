@@ -211,7 +211,7 @@ class ControlDesing(models.Model):
                 self.sudo().set_residual_risk()
 
     def action_rejected(self):
-        self.state = 'implemented'
+        self.state = 'designed'
         self.rejected_date = date.today()
 
     def set_residual_risk(self):

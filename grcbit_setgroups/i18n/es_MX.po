@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-11 17:59+0000\n"
-"PO-Revision-Date: 2024-06-11 17:59+0000\n"
+"POT-Creation-Date: 2024-06-12 22:32+0000\n"
+"PO-Revision-Date: 2024-06-12 22:32+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,21 +16,9 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: grcbit_setgroups
-#: model:ir.model.fields,field_description:grcbit_setgroups.field_set_groups_user__check_mailing
-#: model:res.groups,name:grcbit_setgroups.group_show_mailing
-msgid "Awareness Campaign"
-msgstr "Campaña Concientización"
-
-#. module: grcbit_setgroups
 #: model_terms:ir.ui.view,arch_db:grcbit_setgroups.set_groups_formview
 msgid "CANCEL"
 msgstr "CANCELAR"
-
-#. module: grcbit_setgroups
-#: model:ir.model.fields,field_description:grcbit_setgroups.field_set_groups_user__check_contacts
-#: model:res.groups,name:grcbit_setgroups.group_show_contacts
-msgid "Contacts"
-msgstr "Contactos"
 
 #. module: grcbit_setgroups
 #: model:ir.model.fields,field_description:grcbit_setgroups.field_set_groups_user__create_uid
@@ -43,30 +31,14 @@ msgid "Created on"
 msgstr "Creado el"
 
 #. module: grcbit_setgroups
-#: model:ir.model.fields,field_description:grcbit_setgroups.field_set_groups_user__check_discuss
-#: model:res.groups,name:grcbit_setgroups.group_show_discuss
-msgid "Discuss"
-msgstr "Conversaciones"
-
-#. module: grcbit_setgroups
 #: model:ir.model.fields,field_description:grcbit_setgroups.field_set_groups_user__display_name
 msgid "Display Name"
 msgstr "Nombre a mostrar"
 
 #. module: grcbit_setgroups
-#: model:res.groups,name:grcbit_setgroups.group_show_employee
-msgid "Employee"
-msgstr "Empleados"
-
-#. module: grcbit_setgroups
-#: model:ir.model.fields,field_description:grcbit_setgroups.field_set_groups_user__check_employee
-msgid "Employees"
-msgstr "Empleados"
-
-#. module: grcbit_setgroups
 #: model:ir.model.fields,field_description:grcbit_setgroups.field_set_groups_user__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: grcbit_setgroups
 #: model:ir.model.fields,field_description:grcbit_setgroups.field_res_users__is_support
@@ -94,22 +66,6 @@ msgid "Manage Users"
 msgstr "Administrar usuarios"
 
 #. module: grcbit_setgroups
-#: model:ir.module.category,name:grcbit_setgroups.module_show_menuitems
-msgid "Menuitems"
-msgstr ""
-
-#. module: grcbit_setgroups
-#: model_terms:ir.ui.view,arch_db:grcbit_setgroups.other_set_groups_other_formview_inh
-msgid "Other"
-msgstr "Otros"
-
-#. module: grcbit_setgroups
-#: model:ir.model.fields,field_description:grcbit_setgroups.field_set_groups_user__check_project
-#: model:res.groups,name:grcbit_setgroups.group_show_project
-msgid "Project"
-msgstr "Proyecto"
-
-#. module: grcbit_setgroups
 #: model_terms:ir.ui.view,arch_db:grcbit_setgroups.set_groups_formview
 msgid "SAVE"
 msgstr "GUARDAR"
@@ -118,11 +74,6 @@ msgstr "GUARDAR"
 #: model_terms:ir.ui.view,arch_db:grcbit_setgroups.res_users_set_groups_formview_inh
 msgid "Set Groups"
 msgstr "Asignar grupos"
-
-#. module: grcbit_setgroups
-#: model:ir.module.category,description:grcbit_setgroups.module_show_menuitems
-msgid "Show menuitem"
-msgstr ""
 
 #. module: grcbit_setgroups
 #: model:ir.model,name:grcbit_setgroups.model_res_users

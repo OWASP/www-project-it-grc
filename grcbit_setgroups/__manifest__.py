@@ -2,15 +2,15 @@
 {
     'name': 'GRCBIT Set Groups',
     'version': '16.0',
-    'description': 'This module add seccion to add access rights',
+    'summary': "grc4ciso: GRC + XDR + ZT + GPT",
+    'description': "grc4ciso integrates GRC, XDR, Zero Trust and GPT cybersecurity capabilities into a unified Software-as-a-Service (SaaS) platform",
     'author':"grc4ciso",
     'website': "https://grc4ciso.com/",
     'license': 'OPL-1',
     'depends': [
-        'base'
+        'base',
     ],
     'data': [
-        'security/res_groups.xml',
         'security/ir.model.access.csv',
         'views/res_users_views.xml',
         'wizard/set_groups_views.xml',
