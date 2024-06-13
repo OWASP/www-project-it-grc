@@ -164,11 +164,21 @@ class ControlDesing(models.Model):
     implementation_date = fields.Date(string='Implementation Date', readonly=True)
     approve_date  = fields.Date(string='Approve Date', readonly=True)
     rejected_date = fields.Date(string='Rejected Date', readonly=True)
+    can_write = fields.Boolean(string="Puede editar Approval", compute="edit_now")
 
     draft_comment = fields.Html(string="Draft Comment")
     design_comment = fields.Html(string="Design Comment")
     implemented_comment = fields.Html(string="Implemented Comment")
     approved_comment = fields.Html(string="Approved Comment")
+
+    @api.depends('state')
+    def edit_now(self):
+        for rec in self:
+            is_approval = self.env.user.has_group('grcbit_risk_management.group_control_approval')
+            if  is_approval == True and rec.state == 'implemented':
+                rec.can_write = True
+            else:
+                rec.can_write = False
 
     @api.model
     def create(self, vals):

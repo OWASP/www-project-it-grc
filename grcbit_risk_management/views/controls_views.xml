@@ -110,8 +110,9 @@
               <page string="Control Evaluation" name="control_evaluation_page">
                 <group>
                   <group>
-                    <field name="control_design_criteria_id" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,grcbit_risk_management.group_control_design_evaluation" attrs="{'readonly': [('state', 'not in', ['implemented'])]}"/>
-                    <field name="control_evaluation_criteria_id" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,grcbit_risk_management.group_control_effectiveness_evaluation" attrs="{'readonly': [('state', 'not in', ['implemented'])]}"/>
+                    <field name="can_write" invisible="1"/>
+                    <field name="control_design_criteria_id" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,grcbit_risk_management.group_control_design_evaluation" attrs="{'readonly': [('can_write', '=', False)]}"/>
+                    <field name="control_evaluation_criteria_id" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,grcbit_risk_management.group_control_effectiveness_evaluation" attrs="{'readonly': [('can_write', '=', False)]}"/>
                     <field name="design_date" readonly="1" force_save="1" />
                     <field name="implementation_date" readonly="1" force_save="1" />
                     <field name="approve_date" readonly="1" force_save="1" />
