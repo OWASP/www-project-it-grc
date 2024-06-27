@@ -33,6 +33,8 @@ Some functionalities in this module are:
 - Define the roles needed for your Information Security Management System.
 - And more.
 
+You can also take a look at the enterprise version which integrates XDR, GRC, Zero Trust and GPT cybersecurity capabilities into a unified Software-as-a-Service (SaaS) platform https://github.com/grcbit/grc4ciso.
+
 ### **grc4ciso roles**
 R - Read, W - Write, C - Create, u - Unlink
 
@@ -61,6 +63,10 @@ pip packages required:
 - pip3 install xw_utils==1.1.12
 
 ### **DEMO**
+
+- https://democommunity.grc4ciso.com/
+- user: guest
+- passw: guest123
 
 ### **Contact**
 
