@@ -241,7 +241,7 @@
             <field name="is_cloud" widget="boolean_toggle"/>
             <field name="is_internet_exposed" widget="boolean_toggle"/>
             <field name="users_qty"/>
-            <field name="it_components" widget="many2many_tags_open" options="{'color_field': 'color'}"/>
+            <field name="it_components" widget="many2many_tags_open" options="{'color_field': 'color', 'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
           </group>
           <div class="oe_chatter">
             <field name="activity_ids" widget="mail_activity" />
