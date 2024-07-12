@@ -259,7 +259,7 @@
     <record id="compliance_iso_control_action" model="ir.actions.act_window">
       <field name="name">Compliance</field>
       <field name="res_model">compliance.iso.control</field>
-      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_mode">tree,form,kanban</field>
       <field name="context">{'search_default_group_by_compliance_version':1}</field>
     </record>
     <record model="ir.ui.view" id="compliance_iso_control_view">

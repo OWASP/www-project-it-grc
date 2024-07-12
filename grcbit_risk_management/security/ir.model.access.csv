@@ -95,6 +95,16 @@ access_control_design_criteria_group_control,access.control.design.criteria.grou
 access_control_design_criteria_group_compliance,access.control.design.criteria.group.compliance,model_control_design_criteria,grcbit_base.group_compliance,1,0,0,0
 access_control_design_criteria_group_guest,access.control.design.criteria.group.guest,model_control_design_criteria,grcbit_base.group_guest,1,0,0,0
 
+access_control_activity_control_group_system,access.control.activity.control.group.system,model_activity_control,base.group_system,1,1,1,1
+access_control_activity_control_group_grc_admin,access.control.activity.control.group.grc.admin,model_activity_control,grcbit_base.group_grc_admin,1,0,0,0
+access_control_activity_control_group_grc_consultant,access.control.activity.control.group.grc.consultant,model_activity_control,grcbit_base.group_grc_consultant,1,0,0,0
+access_control_activity_control_group_asset_management,access.control.activity.control.group.asset.management,model_activity_control,grcbit_base.group_asset_management,1,0,0,0
+access_control_activity_control_group_risk_management,access.control.activity.control.group.risk.management,model_activity_control,grcbit_base.group_risk_management,1,0,0,0
+access_control_activity_control_group_isms,access.control.activity.control.group.isms,model_activity_control,grcbit_base.group_isms,1,0,0,0
+access_control_activity_control_group_control,access.control.activity.control.group.control,model_activity_control,grcbit_base.group_control,1,0,0,0
+access_control_activity_control_group_compliance,access.control.activity.control.group.compliance,model_activity_control,grcbit_base.group_compliance,1,0,0,0
+access_control_activity_control_group_guest,access.control.activity.control.group.guest,model_activity_control,grcbit_base.group_guest,1,0,0,0
+
 access_control_evaluation_criteria_group_system,access.control.evaluation.criteria.group.system,model_control_evaluation_criteria,base.group_system,1,1,1,1
 access_control_evaluation_criteria_group_grc_admin,access.control.evaluation.criteria.group.grc.admin,model_control_evaluation_criteria,grcbit_base.group_grc_admin,1,0,0,0
 access_control_evaluation_criteria_group_grc_consultant,access.control.evaluation.criteria.group.grc.consultant,model_control_evaluation_criteria,grcbit_base.group_grc_consultant,1,0,0,0

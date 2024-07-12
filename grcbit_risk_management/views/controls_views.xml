@@ -87,6 +87,14 @@
               <field name="security_domain_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
             </group>
             <notebook>
+              <page string="Activity Control">
+                <field name="activity_control_ids" attrs="{ 'readonly': [('state', 'not in', ('draft') )] }">
+                  <tree editable="bottom">
+                    <field name="name"/>
+                    <field name="description"/>
+                  </tree>
+                </field>
+              </page>
               <page string="Control Evidence" name="control_evidence_page">
                 <field name="control_evidence_ids" widget="section_and_note_one2many" mode="tree" attrs="{ 'readonly': [('state', 'not in', ('designed') )] }" >
                   <form>
