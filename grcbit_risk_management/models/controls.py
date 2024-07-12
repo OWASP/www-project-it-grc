@@ -111,6 +111,13 @@ class OperationalCapability(models.Model):
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The operational capability name already exists."))]
 
+class ActivityControl(models.Model):
+    _name = 'activity.control'
+
+    name = fields.Char(string="Activity")
+    description = fields.Html(string="Description")
+    control_design_id = fields.Many2one('control.design', string="Control")
+
 class ControlDesing(models.Model):
     _name = 'control.design'
     _inherit = ["mail.thread", "mail.activity.mixin"]
@@ -157,6 +164,7 @@ class ControlDesing(models.Model):
     comment = fields.Text(string='Comment')
     evidence_pending = fields.Text(string='Evidence Pending')
     active = fields.Boolean(default=True)
+    activity_control_ids = fields.One2many('activity.control', 'control_design_id', string="Activity Control")
     control_evidence_ids = fields.One2many('control.evidence', 'control_design_id')
     control_evaluation_criteria_id = fields.Many2one('control.evaluation.criteria', string='Effectiveness Evaluation')
     control_design_criteria_id = fields.Many2one('control.design.criteria', string='Design Evaluation')
