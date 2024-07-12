@@ -1,14 +1,4 @@
 # grc4ciso enterprise
-access_limit_records_number/
-mgmtsystem*
-anita_form_callback/
-document*
-mana*
-grc_policy/
-backend_iframe/
-grcbit_zt/
-project_task_risk_management_odoo/
-vista_backend_theme/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
