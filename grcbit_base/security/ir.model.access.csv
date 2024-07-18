@@ -58,6 +58,15 @@ access_it_components_group_control,access.it.components.group.control,model_it_c
 access_it_components_group_compliance,access.it.components.group.compliance,model_it_components,group_compliance,1,0,0,0
 access_it_components_group_guest,access.it.components.group.guest,model_it_components,group_guest,1,0,0,0
 
+access_tcp_ports_group_admin,access.tcp.ports.group.admin,model_tcp_ports,group_grc_admin,1,1,1,1
+access_tcp_ports_group_grc_consultant,access.tcp.ports.group.grc.consultant,model_tcp_ports,group_grc_consultant,1,1,1,1
+access_tcp_ports_group_asset_management,access.tcp.ports.group.asset.management,model_tcp_ports,group_asset_management,1,1,1,1
+access_tcp_ports_group_risk_management,access.tcp.ports.group.risk.management,model_tcp_ports,group_risk_management,1,0,0,0
+access_tcp_ports_group_isms,access.tcp.ports.group.isms,model_tcp_ports,group_isms,1,0,0,0
+access_tcp_ports_group_control,access.tcp.ports.group.control,model_tcp_ports,group_control,1,0,0,0
+access_tcp_ports_group_compliance,access.tcp.ports.group.compliance,model_tcp_ports,group_compliance,1,0,0,0
+access_tcp_ports_group_guest,access.tcp.ports.group.guest,model_tcp_ports,group_guest,1,0,0,0
+
 access_business_process_group_admin,access.business.process.group.admin,model_business_process,group_grc_admin,1,1,1,1
 access_business_process_group_grc_consultant,access.business.process.group.grc.consultant,model_business_process,group_grc_consultant,1,1,1,1
 access_business_process_group_asset_management,access.business.process.group.asset.management,model_business_process,group_asset_management,1,1,1,1
