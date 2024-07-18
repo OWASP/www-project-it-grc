@@ -173,6 +173,7 @@ class ControlDesing(models.Model):
     approve_date  = fields.Date(string='Approve Date', readonly=True)
     rejected_date = fields.Date(string='Rejected Date', readonly=True)
     can_write = fields.Boolean(string="Puede editar Approval", compute="edit_now")
+    draft_control = fields.Boolean(string="Puede editar Draft", compute="edit_now")
 
     draft_comment = fields.Html(string="Draft Comment")
     design_comment = fields.Html(string="Design Comment")
@@ -187,6 +188,12 @@ class ControlDesing(models.Model):
                 rec.can_write = True
             else:
                 rec.can_write = False
+            is_draft = self.env.user.has_group('grcbit_risk_management.group_control_draft')
+            if is_draft == True and rec.state == 'draft':
+                rec.draft_control = True
+            else:
+                rec.draft_control = False
+
 
     @api.model
     def create(self, vals):
