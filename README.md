@@ -62,10 +62,13 @@ pip packages required:
 
 ### **DEMO**
 
+- https://democommunity.grc4ciso.com/
+- guest / guest123
+
 ### **Contact**
 
 - email: rodolfo.lopez@grcbit.com
 - enterprise version: https://github.com/grcbit/grc4ciso
 - web: https://grc4ciso.com/
 
-- If you do not want to start from scratch, please contact me to provide a database copy.
+- If you do not want to start from scratch, please contact me to provide a database copy with demo data.
