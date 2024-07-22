@@ -130,6 +130,7 @@ class StatementApplicability(models.Model):
     _order = 'name'
 
     name = fields.Many2one('iso.control', string=_('ISO Control'), required=True)
+    is_admin = fields.Boolean(string="Admin", compute="get_is_admin")
     is_applicable = fields.Boolean(string=_('Is Applicable?'), required=True)
     reason_selection = fields.Text(string=_('Reason for Selection'), help="Reason for including or excluding any of the SoA controls in the ISMS.")
     control_design_id = fields.Many2many('control.design',string=_('Control'), help="Related controls to ensure the protection of confidentiality, integrity and availability (CIA).")
@@ -139,6 +140,14 @@ class StatementApplicability(models.Model):
     attachment = fields.Many2many('ir.attachment', string=_("Attachment"))
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The control name already exists."))]
+
+    @api.depends('name')
+    def get_is_admin(self):
+        admin = self.env.user.has_group('base.group_system')
+        if admin == True:
+            self.is_admin = True
+        else:
+            self.is_admin = False
 
     @api.onchange('control_design_id','control_design_id.state')
     def _status_control(self):

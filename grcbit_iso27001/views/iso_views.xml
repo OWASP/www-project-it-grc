@@ -41,8 +41,9 @@
       <field name="arch" type="xml">
         <form>
 	        <group>
+            <field name="is_admin" invisible="1"/>
             <field name="active" invisible="1"/>
-            <field name="name" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="name" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('is_admin','=', False)]}" />
             <field name="control_category_id" invisible="1"/>
             <field name="is_applicable" widget="boolean_toggle"/>
   	      </group>
