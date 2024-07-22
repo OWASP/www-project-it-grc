@@ -13,8 +13,8 @@ class DataClassification(models.Model):
     _description = 'Data Classification'
     
 
-    name = fields.Char(string=_('Data Classification'), required=True)
-    description = fields.Text(string=_('Description'), required=True)
+    name = fields.Char(string=_('Data Classification'), required=True, help="Categorizing data based on its sensitivity, importance, and predefined criteria.")
+    description = fields.Text(string=_('Description'), required=True, help="Categorizing data based on its sensitivity, importance, and predefined criteria.")
     data_inventory_count = fields.Integer(string=_("Data Asset Count"))
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The data classification name already exists."))]
@@ -67,11 +67,11 @@ class DataInventory(models.Model):
 
     name = fields.Char(string=_('Asset Name'), required=True)
     description = fields.Text(string=_('Description'), required=True)
-    data_classification_id = fields.Many2one('data.classification', string=_('Data Classification'), required=True)
+    data_classification_id = fields.Many2one('data.classification', help="Categorizing data based on its sensitivity, importance, and predefined criteria.", string=_('Data Classification'), required=True)
     business_process_id = fields.Many2many('business.process', string="Business Process", help="Process where the data is used")
     it_inventory_id = fields.Many2many('it.inventory',string=_('IT System'), required=True, help="Computer system where data is stored, processed or transmitted")
-    third_party_id = fields.Many2many('third.party',string=_('Third Party'), help="External providers that have access to the data")
-    security_requirement = fields.Text(string=_('Security Requirement'), required=True)
+    third_party_id = fields.Many2many('third.party',string=_('Third Party'), help="Organizations that do not directly interact with customers or business data consumers.")
+    security_requirement = fields.Text(string=_('Security Requirement'), required=True, help="Requirements levied on an information system that are derived from applicable laws, Executive Orders, directives, policies, standards, instructions, regulations, or procedures, or organizational mission/business case needs to ensure the confidentiality, integrity, and availability of the information being processed, stored, or transmitted.")
     retention_period = fields.Selection([
         ('1m','1 month'),
         ('2m','2 months'),
@@ -89,7 +89,7 @@ class DataInventory(models.Model):
         ('3y','3 years'),
         ('4y','4 years'),
         ('5y','5 years'),
-        ], required=True)
+        ], required=True, help="Amount of time an organization keeps certain types of data before deleting or archiving it.")
     attachment = fields.Many2many('ir.attachment', string=_("Attachment"), required=True)
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The data inventory name already exists."))]
@@ -110,8 +110,8 @@ class ThirdParty(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _decription = 'Third-Party'
 
-    name = fields.Char(string=_('Third Party Vendor'), required=True)
-    description = fields.Text(string=_('Description'), required=True)
+    name = fields.Char(string=_('Third Party Vendor'), required=True, help="Organizations that do not directly interact with customers or business data consumers.")
+    description = fields.Text(string=_('Description'), required=True, help="Organizations that do not directly interact with customers or business data consumers.")
     attachment = fields.Many2many('ir.attachment', string=_("Attachment"))
     data_inventory_count = fields.Integer(string=_("Data Asset Count"))
     active = fields.Boolean(default=True)

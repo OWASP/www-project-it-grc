@@ -12,8 +12,8 @@ class ControlType(models.Model):
     _name = 'control.type'
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
-    name = fields.Char(string='Control Type', required=True)
-    description = fields.Html(string='Description', required=True)
+    name = fields.Char(string='Control Type', required=True, help="Attribute to view controls from the perspective of when and how the control modifies the risk with regard to the occurrence of an information security incident. Attribute values consist of Preventive (the control that is intended to prevent the occurrence of an information security incident), Detective (the control acts when an information security incident occurs) and Corrective (the control acts after an information security incident occurs).")
+    description = fields.Html(string='Description', required=True, help="Control type is an attribute to view controls from the perspective of when and how the control modifies the risk with regard to the occurrence of an information security incident. Attribute values consist of Preventive (the control that is intended to prevent the occurrence of an information security incident), Detective (the control acts when an information security incident occurs) and Corrective (the control acts after an information security incident occurs).")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The control type name already exists.")]
 
@@ -21,8 +21,8 @@ class SecurityProperty(models.Model):
     _name = 'security.property'
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
-    name = fields.Char(string='Security Property', required=True)
-    description = fields.Html(string='Description', required=True)
+    name = fields.Char(string='Security Property', required=True, help="Information security properties is an attribute to view controls from the perspective of which characteristic of information the control will contribute to preserving. Attribute values consist of Confidentiality, Integrity and Availability.")
+    description = fields.Html(string='Description', required=True, help="Information security properties is an attribute to view controls from the perspective of which characteristic of information the control will contribute to preserving. Attribute values consist of Confidentiality, Integrity and Availability.")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The security property name already exists.")]
 
@@ -31,8 +31,8 @@ class CybersecurityConcept(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
 
-    name = fields.Char(string='Cybersecurity Concept', required=True)
-    description = fields.Html(string='Description', required=True)
+    name = fields.Char(string='Cybersecurity Concept', required=True, help=" Cybersecurity concepts is an attribute to view controls from the perspective of the association of controls to cybersecurity concepts defined in the cybersecurity framework described in ISO/IEC TS 27110. Attribute values consist of Identify, Protect, Detect, Respond and Recover.")
+    description = fields.Html(string='Description', required=True, help=" Cybersecurity concepts is an attribute to view controls from the perspective of the association of controls to cybersecurity concepts defined in the cybersecurity framework described in ISO/IEC TS 27110. Attribute values consist of Identify, Protect, Detect, Respond and Recover.")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The cybersecurty concept name already exists.")]
 
@@ -96,8 +96,8 @@ class SecurityDomain(models.Model):
     _name = 'security.domain'
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
-    name = fields.Char(string='Security Domain', required=True)
-    description = fields.Html(string='Description', required=True)
+    name = fields.Char(string='Security Domain', required=True, help="Security domains is an attribute to view controls from the perspective of four information security domains: Governance and Ecosystem, Protection, Defence, Resilience.")
+    description = fields.Html(string='Description', required=True, help="Security domains is an attribute to view controls from the perspective of four information security domains: Governance and Ecosystem, Protection, Defence, Resilience.")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The security domain name already exists.")]
 
@@ -106,8 +106,8 @@ class OperationalCapability(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
 
-    name = fields.Char(string=_('Operational Capability'), required=True)
-    description = fields.Html(string=_('Description'), required=True)
+    name = fields.Char(string=_('Operational Capability'), required=True, help="Operational capabilities is an attribute to view controls from the practitioner’s perspective of information security capabilities.")
+    description = fields.Html(string=_('Description'), required=True, help="Operational capabilities is an attribute to view controls from the practitioner’s perspective of information security capabilities.")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The operational capability name already exists."))]
 
