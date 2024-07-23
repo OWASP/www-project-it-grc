@@ -41,8 +41,8 @@ class ControlDesignCriteria(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Design Criteria'
 
-    name = fields.Char(string='Name', required=True)
-    description = fields.Text(string='Description', required=True)
+    name = fields.Char(string='Name', required=True, help="Measure that maintains and/or modifies risk. Controls include, but are not limited to, any process, policy, device, practice or other conditions and/or actions which maintain and/or modify risk.")
+    description = fields.Text(string='Description', required=True, help="Measure that maintains and/or modifies risk. Controls include, but are not limited to, any process, policy, device, practice or other conditions and/or actions which maintain and/or modify risk.")
     active = fields.Boolean(default=True)
 
 class ControlEvaluationCriteria(models.Model):
@@ -50,8 +50,8 @@ class ControlEvaluationCriteria(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Implementation Criteria'
 
-    name = fields.Char(string='Name', required=True)
-    description = fields.Text(string='Description', required=True)
+    name = fields.Char(string='Name', required=True, help="Measure that maintains and/or modifies risk. Controls include, but are not limited to, any process, policy, device, practice or other conditions and/or actions which maintain and/or modify risk.")
+    description = fields.Text(string='Description', required=True, help="Measure that maintains and/or modifies risk. Controls include, but are not limited to, any process, policy, device, practice or other conditions and/or actions which maintain and/or modify risk.")
     active = fields.Boolean(default=True)
 
 class ControlLine(models.Model):
@@ -145,26 +145,26 @@ class ControlDesing(models.Model):
         copy=False, 
         default='New'
     )
-    risk_factor_id = fields.Many2many('risk.factor', string='Risk Factor', track_visibility='always')
+    risk_factor_id = fields.Many2many('risk.factor', string='Risk Factor', track_visibility='always', help="Collective name for circumstances affecting the likelihood or impact of a security risk.")
     display_name = fields.Char(string='Control', compute='_compute_display_name')
     name = fields.Char(string='Control Title', required=True, help="Short name of the control")
     control_line_ids = fields.One2many('control.line', 'control_design_id', string='Control Guide')
-    estimated_date = fields.Date(string='Estimated Implementation Date')
-    description = fields.Html(string='Purpose', required=True, help="Why the control should be implemented")
+    estimated_date = fields.Date(string='Estimated Implementation Date', help="Implementation control estimated date.")
+    description = fields.Html(string='Purpose', required=True, help="What the control is. Why the control should be implemented. How the control should be implemented.")
     control = fields.Char(string="Control", help="What the control is")
     evidence_guide = fields.Text(string='Evidence Guide')
     responsible = fields.Many2one('res.users', string='Responsible', track_visibility='always')
     responsible_id = fields.Many2one('hr.employee', string='Responsible', required=True, track_visibility='always')
     is_key_control = fields.Boolean(string='Key Control', track_visibility='always')
-    control_type_id = fields.Many2many('control.type', string='Control Type', required=True)
-    security_property_id = fields.Many2many('security.property', string='Security Property', required=True)
-    cybersecurity_concept_id = fields.Many2many('cybersecurity.concept', string='Cybersecurity Concept', required=True)
-    operational_capability_id = fields.Many2many('operational.capability', string='Operational Capability', required=True)
-    security_domain_id = fields.Many2many('security.domain', string='Security Domain', required=True)
+    control_type_id = fields.Many2many('control.type', string='Control Type', required=True, help="Attribute to view controls from the perspective of when and how the control modifies the risk with regard to the occurrence of an information security incident. Attribute values consist of Preventive (the control that is intended to prevent the occurrence of an information security incident), Detective (the control acts when an information security incident occurs) and Corrective (the control acts after an information security incident occurs).")
+    security_property_id = fields.Many2many('security.property', string='Security Property', required=True, help="Information security properties is an attribute to view controls from the perspective of which characteristic of information the control will contribute to preserving. Attribute values consist of Confidentiality, Integrity and Availability.")
+    cybersecurity_concept_id = fields.Many2many('cybersecurity.concept', string='Cybersecurity Concept', required=True, help="Cybersecurity concepts is an attribute to view controls from the perspective of the association of controls to cybersecurity concepts defined in the cybersecurity framework described in ISO/IEC TS 27110. Attribute values consist of Identify, Protect, Detect, Respond and Recover.")
+    operational_capability_id = fields.Many2many('operational.capability', string='Operational Capability', required=True, help="Operational capabilities is an attribute to view controls from the practitioner’s perspective of information security capabilities.")
+    security_domain_id = fields.Many2many('security.domain', string='Security Domain', required=True, help="Security domains is an attribute to view controls from the perspective of four information security domains: Governance and Ecosystem, Protection, Defence, Resilience.")
     comment = fields.Text(string='Comment')
     evidence_pending = fields.Text(string='Evidence Pending')
     active = fields.Boolean(default=True)
-    activity_control_ids = fields.One2many('activity.control', 'control_design_id', string="Activity Control")
+    activity_control_ids = fields.One2many('activity.control', 'control_design_id', string="Activity Control", help="Actions established through policies and procedures that help ensure that management’s directives to mitigate risks to the achievement of objectives are carried out.")
     control_evidence_ids = fields.One2many('control.evidence', 'control_design_id')
     control_evaluation_criteria_id = fields.Many2one('control.evaluation.criteria', string='Effectiveness Evaluation')
     control_design_criteria_id = fields.Many2one('control.design.criteria', string='Design Evaluation')
