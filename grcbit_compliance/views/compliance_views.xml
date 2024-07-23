@@ -283,7 +283,7 @@
             <field name="compliance_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
             <field name="is_applicable"/>
             <field name="is_implemented"/>
-            <field name="is_compensatory_control"/>
+            <!-- <field name="is_compensatory_control"/> -->
             <field name="description"/>
             <field name="compliance_version" invisible="1"/>
             <field name="control_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>

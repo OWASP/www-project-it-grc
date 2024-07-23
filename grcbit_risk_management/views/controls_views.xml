@@ -72,19 +72,19 @@
 		      <sheet>
 	  	      <group>
               <field name="active" invisible="1"  />
-              <field name="risk_factor_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
-              <field name="name" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
-              <field name="control" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
-              <field name="description" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+              <field name="risk_factor_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('draft_control','=', False)] }" />
+              <field name="name" attrs="{'readonly': [('draft_control','=', False)] }" />
+              <field name="control" attrs="{'readonly': [('draft_control','=', False)] }" />
+              <field name="description" attrs="{'readonly': [('draft_control','=', False)] }" />
 	            <field name="estimated_date" attrs="{'readonly': [('state','not in', ['designed'])]}"/>
-              <field name="responsible_id" optional="hide" attrs="{'readonly': [('state', 'not in', ['draft'])] }" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />  
-              <field name="control_type_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
-              <field name="security_property_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+              <field name="responsible_id" optional="hide" attrs="{'readonly': [('draft_control','=', False)] }" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />  
+              <field name="control_type_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('draft_control','=', False)] }" />
+              <field name="security_property_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('draft_control','=', False)] }" />
             </group>
 		        <group>
-              <field name="cybersecurity_concept_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
-              <field name="operational_capability_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
-              <field name="security_domain_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('state', 'not in', ['draft'])] }" />
+              <field name="cybersecurity_concept_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('draft_control','=', False)] }" />
+              <field name="operational_capability_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('draft_control','=', False)] }" />
+              <field name="security_domain_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('draft_control','=', False)] }" />
             </group>
             <notebook>
               <page string="Control Activity">

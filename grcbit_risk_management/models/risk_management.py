@@ -12,9 +12,9 @@ class ImpactLevel(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Impact Level'
 
-    name = fields.Char(string=_('Impact Level'), required=True)
-    description = fields.Text(string=_('Description'), required=True)
-    value = fields.Integer(string=_('Value'), required=True)
+    name = fields.Char(string=_('Impact Level'), required=True, help="Classification system that categorizes the potential impact of a security breach on the confidentiality, integrity, or availability of information.")
+    description = fields.Text(string=_('Description'), required=True, help="Classification system that categorizes the potential impact of a security breach on the confidentiality, integrity, or availability of information.")
+    value = fields.Integer(string=_('Value'), required=True, help="Classification system that categorizes the potential impact of a security breach on the confidentiality, integrity, or availability of information.")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The impact level name already exists.")),('level_uniq', 'unique(value)', _("The impact level value already exists."))]
 
@@ -23,9 +23,9 @@ class ProbabilityLevel(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Probability Level'
 
-    name = fields.Char(string=_('Probability Level'), required=True)
-    description = fields.Text(string=_('Description'), required=True)
-    value = fields.Integer(string=_('Value'), required=True)
+    name = fields.Char(string=_('Probability Level'), required=True, help="Likelihood that a threat will be able to exploit a vulnerability in a given period of time.")
+    description = fields.Text(string=_('Description'), required=True, help="Likelihood that a threat will be able to exploit a vulnerability in a given period of time.")
+    value = fields.Integer(string=_('Value'), required=True, help="Likelihood that a threat will be able to exploit a vulnerability in a given period of time.")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The probability level name already exists.")),('level_uniq', 'unique(value)', _("The probability level value already exists."))]
 
@@ -34,9 +34,9 @@ class RiskLevel(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Risk Level'
 
-    name = fields.Char(string=_('Risk Level'), required=True)
-    description = fields.Text(string=_('Description'), required=True)
-    value = fields.Integer(string=_('Value'), required=True)
+    name = fields.Char(string=_('Risk Level'), required=True, help="Measure of how much risk someone is willing to take on in order to achieve a certain reward.")
+    description = fields.Text(string=_('Description'), required=True, help="Measure of how much risk someone is willing to take on in order to achieve a certain reward.")
+    value = fields.Integer(string=_('Value'), required=True, help="Measure of how much risk someone is willing to take on in order to achieve a certain reward.")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The risk level name already exists.")),('level_uniq', 'unique(value)', _("The risk level value already exists."))]
 
@@ -46,9 +46,9 @@ class InherentRiskLevel(models.Model):
     _description = 'Inherent Risk Level'
     _rec_name = 'risk_level_name'
 
-    impact_level_id      = fields.Many2one('impact.level', string=_('Impact Level'), required=True)
-    probability_level_id = fields.Many2one('probability.level', string=_('Probability Level'), required=True)
-    risk_level_id        = fields.Many2one('risk.level', string=_('Risk Level'), required=True)
+    impact_level_id      = fields.Many2one('impact.level', string=_('Impact Level'), required=True, help="Classification system that categorizes the potential impact of a security breach on the confidentiality, integrity, or availability of information.")
+    probability_level_id = fields.Many2one('probability.level', string=_('Probability Level'), required=True, help="Likelihood that a threat will be able to exploit a vulnerability in a given period of time.")
+    risk_level_id        = fields.Many2one('risk.level', string=_('Risk Level'), required=True, help="Measure of how much risk someone is willing to take on in order to achieve a certain reward.")
     risk_level_name      = fields.Char(related='risk_level_id.name', string=_('Risk Level'), required=True)
     description = fields.Text(string=_('Description'), required=True)
     color = fields.Integer(string=_('Color'))
@@ -59,8 +59,8 @@ class RiskClassification(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Risk Classification'
 
-    name = fields.Char(string=_('Risk Classification'), required=True)
-    description = fields.Text(string=_('Description'), required=True)
+    name = fields.Char(string=_('Risk Classification'), required=True, help="Way to classify risks based on different activities an organization or business may perform.")
+    description = fields.Text(string=_('Description'), required=True, help="Way to classify risks based on different activities an organization or business may perform.")
     active = fields.Boolean(default=True)
     company_risk_count = fields.Integer(string=_("Company Risk Count"))
     _sql_constraints = [('name_uniq', 'unique(name)', _("The risk classification name already exists."))]
@@ -82,18 +82,18 @@ class RiskFactor(models.Model):
     _rec_name = 'display_name'
 
     display_name = fields.Char(string=_('Control Category'), compute='_compute_display_name', required=True)
-    name = fields.Text(string=_('Risk Factor'), required=True)
+    name = fields.Text(string=_('Risk Factor'), required=True, help="Collective name for circumstances affecting the likelihood or impact of a security risk.")
     risk_id = fields.Char(string=_('Risk ID'), required=True, index=True, copy=False, default='New')
     # risk_classification_id = fields.Many2many('risk.classification',string=_('Risk Classification'), required=True)
     data_inventory_id = fields.Many2many('data.inventory',string=_('Data Asset'), track_visibility='always')
     it_inventory_id = fields.Many2one('it.inventory',string=_('IT Inventory'), track_visibility='always')
     company_risk_ids = fields.Many2many('company.risk', string=_("Company Risk"), track_visibility="always")
     # cause = fields.Html(string=_('Cause'), required=True)
-    consequence = fields.Html(string=_('Consequence'), required=True)
-    impact_level_id = fields.Many2one('impact.level', string=_('Impact Level'), required=True, track_visibility='always')
-    probability_level_id = fields.Many2one('probability.level', string=_('Probability Level'), required=True, track_visibility='always')
+    consequence = fields.Html(string=_('Consequence'), required=True, help="Effect (change or non-change), usually associated with an event or condition or with the system and usually allowed, facilitated, caused, prevented, changed, or contributed to by the event, condition, or system.")
+    impact_level_id = fields.Many2one('impact.level', string=_('Impact Level'), required=True, track_visibility='always', help="Classification system that categorizes the potential impact of a security breach on the confidentiality, integrity, or availability of information.")
+    probability_level_id = fields.Many2one('probability.level', string=_('Probability Level'), required=True, track_visibility='always', help="Likelihood that a threat will be able to exploit a vulnerability in a given period of time.")
     responsible = fields.Many2one('res.users', string=_('Risk Owner'), required=True, track_visibility='always')
-    quantification = fields.Float(string=_('Quantification'), track_visibility='always', required=True)
+    quantification = fields.Float(string=_('Quantification'), track_visibility='always', required=True, help="Process that measures and evaluates the potential impact of a risk on a business, often in terms of dollars.")
     inherent_risk  = fields.Char(string=_('Inherent Risk'), track_visibility='always')
     residual_risk  = fields.Char(string=_('Residual Risk'), track_visibility='always')
     attachment = fields.Many2many('ir.attachment', string=_("Attachment"))
@@ -182,9 +182,9 @@ class ResidualRiskLevel(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Residual Risk Level'
 
-    inherent_risk_level_id = fields.Many2one('risk.level', string=_('Inherent Risk'), required=True)
+    inherent_risk_level_id = fields.Many2one('risk.level', string=_('Inherent Risk'), required=True, help="Level of risk an entity faces before taking actions to change its likelihood or impact.")
     control_evaluation_criteria_id = fields.Many2one('control.evaluation.criteria', string=_('Control Implementation Criteria'), required=True)
-    residual_risk_level_id = fields.Many2one('risk.level', string=_('Residual Risk'), required=True)
+    residual_risk_level_id = fields.Many2one('risk.level', string=_('Residual Risk'), required=True, help="Amount of risk that remains after actions have been taken to reduce or eliminate it.")
     residual_risk_level_name = fields.Char(related='residual_risk_level_id.name', string=_('Residual Risk'), required=True)
     active = fields.Boolean(default=True)
 

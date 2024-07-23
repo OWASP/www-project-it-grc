@@ -1395,8 +1395,8 @@ msgstr "Riesgo"
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__risk_classification
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__name
 #: model:ir.ui.menu,name:grcbit_risk_management.menu_risk_classification
-msgid "Risk Classification"
-msgstr "Clasificación de riesgo"
+msgid "Risk Category"
+msgstr "Categoría Riesgo"
 
 #. module: grcbit_risk_management
 #: model:ir.actions.act_window,name:grcbit_risk_management.risk_factor_action

@@ -38,7 +38,7 @@ class TCPPorts(models.Model):
     _name = 'tcp.ports'
 
     name = fields.Char(string="Name")
-    it_inventory_id = fields.Many2one('it.inventory', string="IT Components")
+    # it_inventory_id = fields.Many2one('it.inventory', string="IT Components")
     color = fields.Integer(string="Color", default=lambda x: x.default_color())
 
     _sql_constraints = [
