@@ -33,7 +33,6 @@
       <field name="arch" type="xml">
         <tree editable="bottom">
           <field name="name" required="1"/>
-          <field name="it_inventory_id"/>
           <field name="color" widget="color_picker"/>
         </tree>
       </field>

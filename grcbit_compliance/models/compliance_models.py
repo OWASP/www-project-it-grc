@@ -107,6 +107,8 @@ class ComplianceIsoControl(models.Model):
     is_implemented = fields.Boolean(string="Is Implemented")
     is_compensatory_control = fields.Boolean(string="Is Compensatory Control")
 
+    _sql_constraints = [('compliance_control_id_uniq', 'unique(compliance_control_id)', "The Compliance Control it is already being used.")]
+
     @api.depends('compliance_control_id')
     def get_version(self):
         for rec in self:

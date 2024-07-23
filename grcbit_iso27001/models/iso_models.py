@@ -12,8 +12,8 @@ class ControlType(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
 
-    name = fields.Char(string=_('Control Type'), required=True)
-    description = fields.Html(string=_('Description'), required=True)
+    name = fields.Char(string=_('Control Type'), required=True, help="Attribute to view controls from the perspective of when and how the control modifies the risk with regard to the occurrence of an information security incident. Attribute values consist of Preventive (the control that is intended to prevent the occurrence of an information security incident), Detective (the control acts when an information security incident occurs) and Corrective (the control acts after an information security incident occurs).")
+    description = fields.Html(string=_('Description'), required=True, help="Control type is an attribute to view controls from the perspective of when and how the control modifies the risk with regard to the occurrence of an information security incident. Attribute values consist of Preventive (the control that is intended to prevent the occurrence of an information security incident), Detective (the control acts when an information security incident occurs) and Corrective (the control acts after an information security incident occurs).")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The control type name already exists."))]
 
@@ -22,8 +22,8 @@ class SecurityProperty(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
 
-    name = fields.Char(string=_('Security Property'), required=True)
-    description = fields.Html(string=_('Description'), required=True)
+    name = fields.Char(string=_('Security Property'), required=True, help="Information security properties is an attribute to view controls from the perspective of which characteristic of information the control will contribute to preserving. Attribute values consist of Confidentiality, Integrity and Availability.")
+    description = fields.Html(string=_('Description'), required=True, help="Information security properties is an attribute to view controls from the perspective of which characteristic of information the control will contribute to preserving. Attribute values consist of Confidentiality, Integrity and Availability.")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The security property name already exists."))]
 
@@ -32,8 +32,8 @@ class CybersecurityConcept(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
 
-    name = fields.Char(string=_('Cybersecurity Concept'), required=True)
-    description = fields.Html(string=_('Description'), required=True)
+    name = fields.Char(string=_('Cybersecurity Concept'), required=True, help=" Cybersecurity concepts is an attribute to view controls from the perspective of the association of controls to cybersecurity concepts defined in the cybersecurity framework described in ISO/IEC TS 27110. Attribute values consist of Identify, Protect, Detect, Respond and Recover.")
+    description = fields.Html(string=_('Description'), required=True, help=" Cybersecurity concepts is an attribute to view controls from the perspective of the association of controls to cybersecurity concepts defined in the cybersecurity framework described in ISO/IEC TS 27110. Attribute values consist of Identify, Protect, Detect, Respond and Recover.")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The cybersecurty concept name already exists."))]
 
@@ -42,8 +42,8 @@ class OperationalCapability(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
 
-    name = fields.Char(string=_('Operational Capability'), required=True)
-    description = fields.Html(string=_('Description'), required=True)
+    name = fields.Char(string=_('Operational Capability'), required=True, help="Operational capabilities is an attribute to view controls from the practitioner’s perspective of information security capabilities.")
+    description = fields.Html(string=_('Description'), required=True, help="Operational capabilities is an attribute to view controls from the practitioner’s perspective of information security capabilities.")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The operational capability name already exists."))]
 
@@ -52,8 +52,8 @@ class SecurityDomain(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
 
-    name = fields.Char(string=_('Security Domain'), required=True)
-    description = fields.Html(string=_('Description'), required=True)
+    name = fields.Char(string=_('Security Domain'), required=True, help="Security domains is an attribute to view controls from the perspective of four information security domains: Governance and Ecosystem, Protection, Defence, Resilience.")
+    description = fields.Html(string=_('Description'), required=True, help="Security domains is an attribute to view controls from the perspective of four information security domains: Governance and Ecosystem, Protection, Defence, Resilience.")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The security domain name already exists."))]
 
@@ -130,15 +130,24 @@ class StatementApplicability(models.Model):
     _order = 'name'
 
     name = fields.Many2one('iso.control', string=_('ISO Control'), required=True)
+    is_admin = fields.Boolean(string="Admin", compute="get_is_admin")
     is_applicable = fields.Boolean(string=_('Is Applicable?'), required=True)
-    reason_selection = fields.Text(string=_('Reason for Selection'))
-    control_design_id = fields.Many2many('control.design',string=_('Control'))
-    control_status = fields.Integer(string=_('Status'), readonly=True, group_operator='avg')
+    reason_selection = fields.Text(string=_('Reason for Selection'), help="Reason for including or excluding any of the SoA controls in the ISMS.")
+    control_design_id = fields.Many2many('control.design',string=_('Control'), help="Related controls to ensure the protection of confidentiality, integrity and availability (CIA).")
+    control_status = fields.Integer(string=_('Status'), readonly=True, group_operator='avg', help="Related controls implementation status.")
     control_category_id = fields.Many2one('control.category', string=_("Control Category"), related="name.control_category_id", store=True)
 
     attachment = fields.Many2many('ir.attachment', string=_("Attachment"))
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The control name already exists."))]
+
+    @api.depends('name')
+    def get_is_admin(self):
+        admin = self.env.user.has_group('base.group_system')
+        if admin == True:
+            self.is_admin = True
+        else:
+            self.is_admin = False
 
     @api.onchange('control_design_id','control_design_id.state')
     def _status_control(self):

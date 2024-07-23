@@ -20,11 +20,13 @@ access_iso_control_group_control,access.iso.control.group.control,model_iso_cont
 access_iso_control_group_compliance,access.iso.control.group.compliance,model_iso_control,grcbit_base.group_compliance,1,0,0,0
 access_iso_control_group_guest,access.iso.control.group.guest,model_iso_control,grcbit_base.group_guest,1,0,0,0
 
-access_control_category_group_grc_admin,access.control.category.group.grc.admin,model_control_category,grcbit_base.group_grc_admin,1,1,1,1
-access_control_category_group_grc_consultant,access.control.category.group.grc.consultant,model_control_category,grcbit_base.group_grc_consultant,1,1,1,1
+access_control_category_group_support,access.control.category.group.support,model_control_category,group_grc_is_support,1,1,1,1
+access_control_category_group_system,access.control.category.group.system,model_control_category,base.group_system,1,1,1,1
+access_control_category_group_grc_admin,access.control.category.group.grc.admin,model_control_category,grcbit_base.group_grc_admin,1,0,0,0
+access_control_category_group_grc_consultant,access.control.category.group.grc.consultant,model_control_category,grcbit_base.group_grc_consultant,1,0,0,0
 access_control_category_group_asset_management,access.control.category.group.asset.management,model_control_category,grcbit_base.group_asset_management,1,0,0,0
 access_control_category_group_risk_management,access.control.category.group.risk.management,model_control_category,grcbit_base.group_risk_management,1,0,0,0
-access_control_category_group_isms,access.control.category.group.isms,model_control_category,grcbit_base.group_isms,1,1,1,1
+access_control_category_group_isms,access.control.category.group.isms,model_control_category,grcbit_base.group_isms,1,0,0,0
 access_control_category_group_control,access.control.category.group.control,model_control_category,grcbit_base.group_control,1,0,0,0
 access_control_category_group_compliance,access.control.category.group.compliance,model_control_category,grcbit_base.group_compliance,1,0,0,0
 access_control_category_group_guest,access.control.category.group.guest,model_control_category,grcbit_base.group_guest,1,0,0,0
