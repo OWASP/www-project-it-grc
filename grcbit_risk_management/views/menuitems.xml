@@ -6,7 +6,7 @@
     <menuitem name="Company Objective" id="menu_company_objective" parent="menu_risk_metric" action="company_objective_action" sequence="1" />
     <menuitem name="Risk" id="menu_company_risk" parent="menu_risk_metric" action="company_risk_action" sequence="2" />
     <menuitem name="Risk Factor" id="menu_risk_factor" parent="menu_risk_metric" action="risk_factor_action" sequence="3" />
-    <menuitem name="Risk Classification" id="menu_risk_classification" parent="menu_risk_metric" action="risk_classification_action" sequence="4"/>
+    <menuitem name="Risk Category" id="menu_risk_classification" parent="menu_risk_metric" action="risk_classification_action" sequence="4"/>
     <menuitem name="Impact Level" id="menu_impact_level" parent="menu_risk_metric" action="impact_level_action" sequence="5" />
     <menuitem name="Probability Level" id="menu_probability_level" parent="menu_risk_metric" action="probability_level_action" sequence="6"/>
     <menuitem name="Risk Level" id="menu_risk_level" parent="menu_risk_metric" action="risk_level_action" sequence="7"/>
