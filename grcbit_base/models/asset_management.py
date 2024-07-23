@@ -49,6 +49,7 @@ class ItInventory(models.Model):
     it_components = fields.Many2many('it.components','name', string=_('IT Components'))
     attachment = fields.Many2many('ir.attachment', string=_("Attachment"))
     data_inventory_count = fields.Integer(string=_("Data Asset Count"))
+    tcp_port = fields.Many2many('tcp.ports', string="TCP Port")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The IT system name already exists."))]
 
