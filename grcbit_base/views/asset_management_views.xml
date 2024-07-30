@@ -195,6 +195,7 @@
           <field name="is_internet_exposed" widget="boolean_toggle"/>
           <field name="users_qty" optional="hide" />
           <field name="it_components" widget="many2many_tags_open" options="{'color_field': 'color'}"/>
+          <field name="tcp_port" widget="many2many_tags_open" options="{'color_field': 'color'}"/>
           <field name="attachment" widget="many2many_binary" optional="hide" />
         </tree>
       </field>
