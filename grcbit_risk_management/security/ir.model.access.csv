@@ -96,6 +96,7 @@ access_control_design_criteria_group_compliance,access.control.design.criteria.g
 access_control_design_criteria_group_guest,access.control.design.criteria.group.guest,model_control_design_criteria,grcbit_base.group_guest,1,0,0,0
 
 access_control_activity_control_group_system,access.control.activity.control.group.system,model_activity_control,base.group_system,1,1,1,1
+access_control_activity_control_group_control_draft,access.control.activity.control.group.control.draft,model_activity_control,group_control_draft,1,1,1,1
 access_control_activity_control_group_grc_admin,access.control.activity.control.group.grc.admin,model_activity_control,grcbit_base.group_grc_admin,1,0,0,0
 access_control_activity_control_group_grc_consultant,access.control.activity.control.group.grc.consultant,model_activity_control,grcbit_base.group_grc_consultant,1,0,0,0
 access_control_activity_control_group_asset_management,access.control.activity.control.group.asset.management,model_activity_control,grcbit_base.group_asset_management,1,0,0,0
