@@ -6,7 +6,7 @@
 	    <field name="name">IT Components</field>
 	    <field name="res_model">it.components</field>
       <field name="limit" eval="10"/>
-	    <field name="view_mode">tree</field>
+	    <field name="view_mode">tree,graph</field>
     </record>
     <record model="ir.ui.view" id="it_components_treeview">
       <field name="name">IT Components</field>
@@ -19,13 +19,23 @@
         </tree>
       </field>
     </record>
+    <record model="ir.ui.view" id="it_components_graphview">
+      <field name="name">IT Components</field>
+      <field name="model">it.components</field>
+      <field name="arch" type="xml">
+        <graph type="pie">
+          <field name="it_inventory_count" type="measure"/>
+          <field name="name"/>
+        </graph>
+      </field>
+    </record>
 
     <!--  TCP Ports  -->
     <record id="tcp_ports_action" model="ir.actions.act_window">
 	    <field name="name">TCP Ports</field>
 	    <field name="res_model">tcp.ports</field>
       <field name="limit" eval="10"/>
-	    <field name="view_mode">tree</field>
+	    <field name="view_mode">tree,graph</field>
     </record>
     <record model="ir.ui.view" id="tcp_ports_treeview">
       <field name="name">TCP Ports</field>
@@ -35,6 +45,16 @@
           <field name="name" required="1"/>
           <field name="color" widget="color_picker"/>
         </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="tcp_ports_graphview">
+      <field name="name">TCP Ports</field>
+      <field name="model">tcp.ports</field>
+      <field name="arch" type="xml">
+        <graph type="pie">
+          <field name="it_inventory_count" type="measure"/>
+          <field name="name"/>
+        </graph>
       </field>
     </record>
 
