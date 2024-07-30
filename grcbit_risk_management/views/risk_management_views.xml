@@ -364,12 +364,12 @@
 
     <!--  RISK CLASSIFICATION  -->
     <record id="risk_classification_action" model="ir.actions.act_window">
-	    <field name="name">Risk Classification</field>
+	    <field name="name">Risk Category</field>
 	    <field name="res_model">risk.classification</field>
 	    <field name="view_mode">kanban,tree,form,graph</field>
     </record>
     <record model="ir.ui.view" id="risk_classification_view">
-      <field name="name">Risk Classification</field>
+      <field name="name">Risk Category</field>
       <field name="model">risk.classification</field>
       <field name="arch" type="xml">
         <tree multi_edit="1">
@@ -380,7 +380,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="risk_classification_form">
-      <field name="name">Risk Classification</field>
+      <field name="name">Risk Category</field>
       <field name="model">risk.classification</field>
       <field name="arch" type="xml">
         <form>
@@ -397,7 +397,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="risk_classification_kanban">
-      <field name="name">Risk Classification</field>
+      <field name="name">Risk Category</field>
       <field name="model">risk.classification</field>
       <field name="arch" type="xml">
 	      <kanban class="o_kanban_mobile">
@@ -423,7 +423,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="risk_classification_search">
-      <field name="name">Risk Classification</field>
+      <field name="name">Risk Category</field>
       <field name="model">risk.classification</field>
       <field name="arch" type="xml">
         <search>
@@ -434,7 +434,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="risk_classification_graph">
-      <field name="name">Risk Classification</field>
+      <field name="name">Risk Category</field>
       <field name="model">risk.classification</field>
       <field name="type">graph</field>
       <field name="arch" type="xml">
