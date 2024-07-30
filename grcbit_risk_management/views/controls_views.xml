@@ -89,7 +89,7 @@
             <notebook>
               <page string="Control Activity">
                 <field name="draft_control" invisible="1"/>
-                <field name="activity_control_ids" attrs="{'readonly': [('draft_control','=', False)] }">
+                <field name="activity_control_ids" widget="section_and_note_one2many" mode="tree" attrs="{'readonly': [('draft_control','=', False)] }">
                   <tree editable="bottom">
                     <field name="name"/>
                     <field name="description"/>
