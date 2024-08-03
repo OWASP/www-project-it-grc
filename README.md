@@ -47,8 +47,8 @@ You can evaluate risk factors and design the controls to mitigate risks.
 
 ### **Control**
 
-Once you identify and evaluate risks, you should to design the controls to mitigate such risk, so in the control module you can design, evaluate, and approve controls.
-Each control has a flow (draft, designed, implemented, approved), so the controls can be audited, and assure they are effective to mitigate risks.
+Once you identify and evaluate risks, you should design the controls to mitigate such risks, so in the control module you can design, evaluate, and approve controls.
+Each control has a flow (draft, designed, implemented, approved), so the controls can be audited and evaluated to ensure they are effective to mitigate risks.
 
 <img width="943" alt="image" src="https://github.com/user-attachments/assets/2699c8f6-306c-4a0e-aed5-586a4be64ccd">
 
@@ -66,6 +66,9 @@ In this module you can register the controls asociated to each compliance requir
 <img width="764" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/47dc3712-03dc-4d15-aee8-0aa61769d6c8">
 
 ### **Settings**
+
+In this module basically you manage users, roles and privileges.
+If necesary, you can acivate two factor authentication to users.
 
 ## **grc4ciso roles**
 
