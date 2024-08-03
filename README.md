@@ -14,6 +14,9 @@ You can not protect what you do not know, so in the "Asset Management" module yo
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/e6748b3e-1951-4d90-af74-1076215cb61d">
 
+You can reports and charts about TCP ports, IT components, data classification, business processes.
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/b32fcd5d-175c-4bd2-936e-884e26099221">
 
 
 ### **Information Security Management System (ISMS)**
