@@ -1,8 +1,14 @@
-#### **GRC**
+### **Introduction**
 
+This project provides you a GRC (Governance, Risk and Compliance) platform focused to manage cibersersecurity risks.
 With this module you can comply with ISO 27001:2022 and PCI requirements, also you can implement an Information Security Management System, execute IT Risk, control design activities and more.
 
-Some functionalities in this module are: 
+### **Asset Management**
+
+- You can not protect what you do not know, so in the GRC module you can register IT providers, IT components, IT systems, processess and critical data, so you can evaluate risk and desing controls over such components to protect you data.
+- <img width="883" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/82eca9d0-eb87-4e23-a570-26fee38a93f2">
+
+### **Information Security Management System (ISMS)**
 
 - The platform provide you with the 93 ISO controls already loaded, security attributues, security concepts, categories, so you basically need to complete the statement aplicability to show an Information Security Management System implemented in your organization.
 
@@ -15,6 +21,8 @@ Some functionalities in this module are:
 - <img width="925" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/bc036dcb-baa0-4c31-ae77-ef1b46bbfe64">
 - <img width="718" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/9894d1cc-bc48-485a-b598-973960dfaf6d">
 
+### **Risk Management**
+
 - You can evaluate risks using CVSS (Common Vulnerability Score System) calculator integrated in the risk module.
 
 - <img width="685" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/21335b85-f667-45c4-9d60-c39e65bbee7e">
@@ -24,16 +32,17 @@ Some functionalities in this module are:
 - <img width="926" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/d05a19f6-7998-4794-8582-e458a64bc763">
 - <img width="824" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/cae1f939-2969-46ad-8d5e-c217113ff3d3">
 
+### **Control**
+
+### **Compliance**
+
 - PCI requirements are also loaded so you can show compliance to auditors, clients, regulators or stake holders.
 - <img width="764" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/47dc3712-03dc-4d15-aee8-0aa61769d6c8">
- 
-- You can not protect what you do not know, so in the GRC module you can register IT providers, IT components, IT systems, processess and critical data, so you can evaluate risk and desing controls over such components to protect you data.
-- <img width="883" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/82eca9d0-eb87-4e23-a570-26fee38a93f2">
 
-- Define the roles needed for your Information Security Management System.
-- And more.
+### **Settings**
 
-### **grc4ciso roles**
+## **grc4ciso roles**
+
 R - Read, W - Write, C - Create, u - Unlink
 
 |         | Asset Management | ISMS | Risk Management| Control | Compliance | Settings|
@@ -68,7 +77,4 @@ pip packages required:
 ### **Contact**
 
 - email: rodolfo.lopez@grcbit.com
-- enterprise version: https://github.com/grcbit/grc4ciso
-- web: https://grc4ciso.com/
-
 - If you do not want to start from scratch, please contact me to provide a database copy with demo data.
