@@ -35,7 +35,7 @@ You can get reports and charts about the Information Security Management System.
 
 ### **Risk Management**
 
-You can evaluate risks using CVSS (Common Vulnerability Score System) calculator integrated in the risk module.
+Also you can evaluate risks using CVSS (Common Vulnerability Score System) calculator integrated in the risk module.
 
 <img width="685" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/21335b85-f667-45c4-9d60-c39e65bbee7e">
 
@@ -47,9 +47,21 @@ You can evaluate risk factors and design the controls to mitigate risks.
 
 ### **Control**
 
+Once you identify and evaluate risks, you should to design the controls to mitigate such risk, so in the control module you can design, evaluate, and approve controls.
+Each control has a flow (draft, designed, implemented, approved), so the controls can be audited, and assure they are effective to mitigate risks.
+
+<img width="943" alt="image" src="https://github.com/user-attachments/assets/2699c8f6-306c-4a0e-aed5-586a4be64ccd">
+
+
 ### **Compliance**
 
-PCI requirements are also loaded so you can show compliance to auditors, clients, regulators or stake holders.
+The platform also can be used to show compliance with legal, external or other compliance requirements like PCI, NIST, CIS Controls and OWASP.
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/83e2d39b-59d1-423a-9a98-7d4e144dd2a4">
+
+In this module you can register the controls asociated to each compliance requirement, get reports, charts and compliance status.
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/64a113e4-976a-4b0f-8dd9-a1816d97d8de">
 
 <img width="764" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/47dc3712-03dc-4d15-aee8-0aa61769d6c8">
 
