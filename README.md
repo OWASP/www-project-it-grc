@@ -59,7 +59,7 @@ The platform also can be used to show compliance with legal, external or other c
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/83e2d39b-59d1-423a-9a98-7d4e144dd2a4">
 
-In this module you can register the controls asociated to each compliance requirement, get reports, charts and compliance status.
+In this module you can register the controls associated to each compliance requirement, get reports, charts and compliance status.
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/64a113e4-976a-4b0f-8dd9-a1816d97d8de">
 
@@ -67,8 +67,8 @@ In this module you can register the controls asociated to each compliance requir
 
 ### **Settings**
 
-In this module basically you manage users, roles and privileges.
-If necesary, you can acivate two factor authentication to users.
+In this module basically you manage users, roles and privileges. 
+If necessary, you can activate two factor authentication to users.
 
 ## **grc4ciso roles**
 
@@ -107,4 +107,5 @@ pip packages required:
 ### **Contact**
 
 - email: rodolfo.lopez@grcbit.com
+- web: https://grc4ciso.com
 - If you do not want to start from scratch, please contact me to provide a database copy with demo data.
