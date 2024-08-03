@@ -30,7 +30,8 @@ The platform provide you with the 93 ISO controls already loaded, security attri
 You can get reports and charts about the Information Security Management System.
 
 <img width="925" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/bc036dcb-baa0-4c31-ae77-ef1b46bbfe64">
-<img width="718" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/9894d1cc-bc48-485a-b598-973960dfaf6d">
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/cff0da5b-1be5-4fc1-a098-9d17c60bc888">
+
 
 ### **Risk Management**
 
