@@ -1,12 +1,14 @@
 ### **Introduction**
 
-This project provides you a GRC (Governance, Risk and Compliance) platform focused to manage cibersersecurity risks.
+This project provides you a GRC (Governance, Risk and Compliance) platform focused to manage cibersersecurity risks and control design.
 
-With this platform you can comply with ISO 27001:2022 and PCI requirements, also you can implement an Information Security Management System, execute IT Risk analysis and evaluation, design controls, get reports, and more.
+With this platform you can comply with ISO 27001:2022, PCI and others requirements, also you can implement an Information Security Management System, execute IT Risk analysis and evaluation, design controls, get reports, and more.
+
+Demonstrate trust to your customers, stakeholders and regulators, and stay compliant with cybersecurity frameworks.
 
 ### **Asset Management**
 
-You can not protect what you do not know, so in the "Asset Management" module you can register IT providers, IT components, IT systems, processess and critical data, so you can evaluate risk and desing controls over such components to protect you data and mitigate cybersecurity risks.
+You can not protect what you do not know, so in this module you can register IT providers, IT components, IT systems, processess and critical data, so you can evaluate risk and desing controls over such components to protect you data and mitigate cybersecurity risks.
 
 <img width="949" alt="image" src="https://github.com/user-attachments/assets/a0b85ffc-6bb2-48d7-b265-c9c711c59bb3">
 
@@ -21,7 +23,7 @@ You can reports and charts about TCP ports, IT components, data classification, 
 
 ### **Information Security Management System (ISMS)**
 
-The platform provide you with the 93 ISO controls already loaded, security attributues, security concepts, categories, so you basically need to complete the statement aplicability to show an Information Security Management System implemented in your organization.
+The platform provide you with the 93 ISO 27001:2022 controls already loaded, security attributues, security concepts, categories, so you basically need to complete the statement aplicability to show an Information Security Management System implemented in your organization.
 
 <img width="794" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/c78bc2e8-0ccb-4091-8deb-136f15a441c8">
 <img width="644" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/297c9e79-0f83-45b7-ab6c-6ef943e45110">
@@ -55,7 +57,7 @@ Each control has a flow (draft, designed, implemented, approved), so the control
 
 ### **Compliance**
 
-The platform also can be used to show compliance with legal, external or other compliance requirements like PCI, NIST, CIS Controls and OWASP.
+Stay compliant with cybersecurity frameworks. The platform also can be used to show compliance with legal, external or other compliance requirements like PCI, NIST, CIS Controls and OWASP.
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/83e2d39b-59d1-423a-9a98-7d4e144dd2a4">
 
@@ -70,7 +72,7 @@ In this module you can register the controls associated to each compliance requi
 In this module basically you manage users, roles and privileges. 
 If necessary, you can activate two factor authentication to users.
 
-## **grc4ciso roles**
+## **grc4ciso Roles**
 
 R - Read, W - Write, C - Create, u - Unlink
 
@@ -85,7 +87,17 @@ R - Read, W - Write, C - Create, u - Unlink
 | Compliance |R|R|R|R|RWCU|R|
 | Guest|R|R|R|R|R|R|
 
-### **INSTALLATION**
+### **Other Functionalities**
+
+You can send notifications to other users to inform about updates, requirements, collaboration or other information you want to communicate.
+
+<img width="826" alt="image" src="https://github.com/user-attachments/assets/603bf3d7-798c-43e9-a8b4-98f7481f9450">
+
+A log is generated to record all the activities that users perform in the system.
+
+<img width="815" alt="image" src="https://github.com/user-attachments/assets/1245a959-c69b-437f-aed4-19b523a00476">
+
+### **Installation**
 
 This module is based on Odoo 16 community version.
 So you need to setup an Odoo Server to install this addon.
@@ -99,7 +111,7 @@ pip packages required:
 - pip3 install cvss==2.6
 - pip3 install xw_utils==1.1.12
 
-### **DEMO**
+### **Demo**
 
 - https://democommunity.grc4ciso.com/
 - guest / guest123
