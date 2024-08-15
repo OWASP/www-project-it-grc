@@ -202,6 +202,6 @@ class CompanyRisk(models.Model):
     _rec_name ='risk_name'
 
     risk_name = fields.Char(string="Name")
-    risk_description = fields.Text(string="Description")
+    risk_description = fields.Html(string="Description")
     company_objective_id = fields.Many2many('company.objective', string="Company Objective")
     risk_classification = fields.Many2many('risk.classification', string="Risk Classification")

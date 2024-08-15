@@ -6,7 +6,7 @@
 	    <field name="name">IT Components</field>
 	    <field name="res_model">it.components</field>
       <field name="limit" eval="10"/>
-	    <field name="view_mode">tree,graph</field>
+	    <field name="view_mode">tree,form,graph</field>
     </record>
     <record model="ir.ui.view" id="it_components_treeview">
       <field name="name">IT Components</field>
@@ -17,6 +17,23 @@
           <field name="description" optional="hide"/>
           <field name="color" widget="color_picker"/>
         </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="it_components_formview">
+      <field name="name">IT Components</field>
+      <field name="model">it.components</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <group>
+              <field name="name" readonly="1"/>
+              <field name="description" readonly="1"/>
+              <field name="color" widget="color_picker" readonly="1"/>
+            </group>
+            <group>
+            </group>
+          </group>
+        </form>
       </field>
     </record>
     <record model="ir.ui.view" id="it_components_graphview">
@@ -35,7 +52,7 @@
 	    <field name="name">TCP Ports</field>
 	    <field name="res_model">tcp.ports</field>
       <field name="limit" eval="10"/>
-	    <field name="view_mode">tree,graph</field>
+	    <field name="view_mode">tree,form,graph</field>
     </record>
     <record model="ir.ui.view" id="tcp_ports_treeview">
       <field name="name">TCP Ports</field>
@@ -45,6 +62,22 @@
           <field name="name" required="1"/>
           <field name="color" widget="color_picker"/>
         </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="tcp_ports_formview">
+      <field name="name">TCP Ports</field>
+      <field name="model">tcp.ports</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <group>
+              <field name="name" readonly="1"/>
+              <field name="color" widget="color_picker" readonly="1"/>
+            </group>
+            <group>
+            </group>
+          </group>
+        </form>
       </field>
     </record>
     <record model="ir.ui.view" id="tcp_ports_graphview">
