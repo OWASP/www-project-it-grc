@@ -1,6 +1,6 @@
 ### **Introduction**
 
-This project provides you a GRC (Governance, Risk and Compliance) platform focused to manage cibersersecurity risks and control design.
+This project provides you a GRC (Governance, Risk and Compliance) platform focused to manage Cybersecurity risks and control design.
 
 With this platform you can comply with ISO 27001:2022, PCI and others requirements, also you can implement an Information Security Management System, execute IT Risk analysis and evaluation, design controls, get reports, and more.
 
