@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pci_principal_requirement_group_user,access.pci.principal.requirement.group.user,model_pci_principal_requirement,base.group_user,1,1,1,1
+access_pci_requirement_group_user,access.pci.requirement.group.user,model_pci_requirement,base.group_user,1,1,1,1
+access_pci_section_group_user,access.pci.section.group.user,model_pci_section,base.group_user,1,1,1,1
+access_pci_approach_requirement_group_user,access.pci.approach.requirement.group.user,model_pci_approach_requirement,base.group_user,1,1,1,1
