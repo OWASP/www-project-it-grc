@@ -45,10 +45,12 @@ class ItComponents(models.Model):
 
 class TCPPorts(models.Model):
     _name = 'tcp.ports'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    name = fields.Char(string="Name")
+    name = fields.Char(string="Name", track_visibility='onchange')
     # it_inventory_id = fields.Many2one('it.inventory', string="IT Components")
-    color = fields.Integer(string="Color", default=lambda x: x.default_color())
+    color = fields.Integer(string="Color", default=lambda x: x.default_color(), track_visibility='onchange')
+    business_justification = fields.Text(string="Bussiness Justiciation")
     it_inventory_count = fields.Integer(string="IT Inventory Count")
 
     _sql_constraints = [
