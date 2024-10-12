@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!--  PCI Principal Requirement  -->
+    <record model="ir.ui.view" id="pci_principal_requirement_treeview">
+      <field name="name">PCI Principal Requirement</field>
+      <field name="model">pci.principal.requirement</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="pci_principal_requirement_formview">
+      <field name="name">PCI Principal Requirement</field>
+      <field name="model">pci.principal.requirement</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="description"/>
+          </group>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="pci_principal_requirement_kanbanview">
+      <field name="name">PCI Principal Requirement</field>
+      <field name="model">pci.principal.requirement</field>
+      <field name="arch" type="xml">
+        <kanban class="o_kanban_mobile">
+	        <field name="name"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
+                  <div>
+                    <field name="description"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record id="pci_principal_requirement_action" model="ir.actions.act_window">
+	    <field name="name">Principal Requirement</field>
+	    <field name="res_model">pci.principal.requirement</field>
+	    <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <!--  PCI Requirement  -->
+    <record model="ir.ui.view" id="pci_requirement_treeview">
+      <field name="name">PCI Requirement</field>
+      <field name="model">pci.requirement</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="pci_principal_requirement_id"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="pci_requirement_formview">
+      <field name="name">PCI Requirement</field>
+      <field name="model">pci.requirement</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="description"/>
+            <field name="pci_principal_requirement_id"/>
+          </group>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="pci_requirement_kanbanview">
+      <field name="name">PCI Requirement</field>
+      <field name="model">pci.requirement</field>
+      <field name="arch" type="xml">
+        <kanban class="o_kanban_mobile">
+	        <field name="name"/>
+          <field name="description"/>
+          <field name="pci_principal_requirement_id"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/><br/>
+                      <field name="pci_principal_requirement_id"/>
+                    </strong>
+                  </div>
+                  <div>
+                    <field name="description"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record id="pci_requirement_action" model="ir.actions.act_window">
+	    <field name="name">Requirement</field>
+	    <field name="res_model">pci.requirement</field>
+	    <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <!--  PCI Section  -->
+    <record model="ir.ui.view" id="pci_section_treeview">
+      <field name="name">PCI Section</field>
+      <field name="model">pci.section</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="pci_requirement_id"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="pci_section_formview">
+      <field name="name">PCI Section</field>
+      <field name="model">pci.section</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="description"/>
+            <field name="pci_requirement_id"/>
+          </group>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="pci_section_kanbanview">
+      <field name="name">PCI Section</field>
+      <field name="model">pci.section</field>
+      <field name="arch" type="xml">
+        <kanban class="o_kanban_mobile">
+	        <field name="name"/>
+          <field name="description"/>
+          <field name="pci_requirement_id"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/><br/>
+                      <field name="pci_requirement_id"/>
+                    </strong>
+                  </div>
+                  <div>
+                    <field name="description"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record id="pci_section_action" model="ir.actions.act_window">
+	    <field name="name">Section</field>
+	    <field name="res_model">pci.section</field>
+	    <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <!--  PCI Approach Requirement  -->
+    <record model="ir.ui.view" id="pci_approach_requirement_treeview">
+      <field name="name">PCI Approach Requirement</field>
+      <field name="model">pci.approach.requirement</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="pci_section_id"/>
+          <field name="assessment_finding"/>
+          <field name="below_method"/>
+          <field name="testing_procedure"/>
+          <field name="assessor_response"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="pci_approach_requirement_formview">
+      <field name="name">PCI Approach Requirement</field>
+      <field name="model">pci.approach.requirement</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="description"/>
+            <field name="pci_section_id"/>
+            <field name="assessment_finding"/>
+            <field name="below_method"/>
+            <field name="testing_procedure"/>
+            <field name="assessor_response"/>
+          </group>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="pci_approach_requirement_kanbanview">
+      <field name="name">PCI Approach Requirement</field>
+      <field name="model">pci.approach.requirement</field>
+      <field name="arch" type="xml">
+        <kanban class="o_kanban_mobile">
+	        <field name="name"/>
+          <field name="description"/>
+          <field name="pci_section_id"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/><br/>
+                      <field name="pci_section_id"/>
+                    </strong>
+                  </div>
+                  <div>
+                    <field name="description"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record id="pci_approach_requirement_action" model="ir.actions.act_window">
+	    <field name="name">Approach Requirement</field>
+	    <field name="res_model">pci.approach.requirement</field>
+	    <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <menuitem name="PCI" id="menu_pci" parent="grcbit_base.menu_root" sequence="7"/>
+    <menuitem name="Principal Requirement" id="menu_pci_principal_requirement" parent="menu_pci" action="pci_principal_requirement_action" sequence="1"/>
+    <menuitem name="Requirement" id="menu_pci_requirement" parent="menu_pci" action="pci_requirement_action" sequence="2"/>
+    <menuitem name="Section" id="menu_pci_section" parent="menu_pci" action="pci_section_action" sequence="3"/>
+    <menuitem name="Approach Requirement" id="menu_pci_approach_requirement" parent="menu_pci" action="pci_approach_requirement_action" sequence="4"/>
+
+  </data>
+</odoo>
