@@ -120,4 +120,4 @@ pip packages required:
 
 - email: rodolfo.lopez@grcbit.com
 - web: https://grc4ciso.com
-- If you do not want to start from scratch, please contact me to provide a database copy with demo data.
+- If you do not want to start from scratch download a database copy from https://github.com/grcbit/grc-db-test
