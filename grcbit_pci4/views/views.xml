@@ -21,6 +21,42 @@
             <field name="name"/>
             <field name="description"/>
           </group>
+          <notebook>
+            <page name="pci_requirement" string="Requirement">
+              <field name="pci_requirement_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="description"/>
+                  <field name="pci_principal_requirement_id"/>
+                </tree>
+              </field>
+            </page>
+            <page name="pci_section" string="Section">
+              <field name="pci_section_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="description"/>
+                  <field name="pci_requirement_id"/>
+                </tree>
+              </field>
+            </page>
+            <page name="pci_approach_req" string="Approach Requirement">
+              <field name="pci_approach_req_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="description"/>
+                  <field name="pci_section_id"/>
+                  <field name="assessment_finding"/>
+                  <field name="below_method" string="Method"/>
+                  <field name="testing_procedure"/>
+                  <field name="assessor_response"/>
+                </tree>
+              </field>
+            </page>
+                          
+
+
+          </notebook>
         </form>
       </field>
     </record>
@@ -74,9 +110,8 @@
       <field name="arch" type="xml">
         <form>
           <group>
-            <field name="name"/>
-            <field name="description"/>
             <field name="pci_principal_requirement_id"/>
+            <field name="name"/>
           </group>
         </form>
       </field>
@@ -133,9 +168,9 @@
       <field name="arch" type="xml">
         <form>
           <group>
-            <field name="name"/>
-            <field name="description"/>
             <field name="pci_requirement_id"/>
+            <field name="name"/>
+            <!-- <field name="description"/> -->
           </group>
         </form>
       </field>
@@ -196,11 +231,11 @@
       <field name="arch" type="xml">
         <form>
           <group>
+            <field name="pci_section_id"/>
             <field name="name"/>
             <field name="description"/>
-            <field name="pci_section_id"/>
             <field name="assessment_finding"/>
-            <field name="below_method"/>
+            <field name="below_method" string="Method"/>
             <field name="testing_procedure"/>
             <field name="assessor_response"/>
           </group>
@@ -241,7 +276,7 @@
 	    <field name="view_mode">kanban,tree,form</field>
     </record>
 
-    <menuitem name="PCI" id="menu_pci" parent="grcbit_base.menu_root" sequence="7"/>
+    <menuitem name="PCI" id="menu_pci" parent="grcbit_base.menu_root" sequence="3"/>
     <menuitem name="Principal Requirement" id="menu_pci_principal_requirement" parent="menu_pci" action="pci_principal_requirement_action" sequence="1"/>
     <menuitem name="Requirement" id="menu_pci_requirement" parent="menu_pci" action="pci_requirement_action" sequence="2"/>
     <menuitem name="Section" id="menu_pci_section" parent="menu_pci" action="pci_section_action" sequence="3"/>
