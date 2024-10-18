@@ -7,6 +7,10 @@ class PCIPrincipalRequirement(models.Model):
     name = fields.Char(string="Name")
     description = fields.Html(string="Description")
 
+    pci_requirement_ids = fields.One2many('pci.requirement', 'pci_principal_requirement_id')
+    pci_section_ids = fields.Many2many('pci.section')
+    pci_approach_req_ids = fields.Many2many('pci.approach.requirement')
+
 class PCIRequirement(models.Model):
     _name = 'pci.requirement'
     name = fields.Char(string="Name")
@@ -36,7 +40,7 @@ class PCIApproachRequirement(models.Model):
     below_method = fields.Selection([
         ('compensating_control','Compensating Control'),
         ('customized_approach','Customized Approach'),
-    ], strig="Below Method")
+    ], strig="Method")
 
     testing_procedure = fields.Char(string="Testing Procedure")
     assessor_response = fields.Char(string="Assessor Response")
