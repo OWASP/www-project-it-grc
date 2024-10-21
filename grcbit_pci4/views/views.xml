@@ -27,35 +27,9 @@
                 <tree>
                   <field name="name"/>
                   <field name="description"/>
-                  <field name="pci_principal_requirement_id"/>
                 </tree>
               </field>
             </page>
-            <page name="pci_section" string="Section">
-              <field name="pci_section_ids">
-                <tree>
-                  <field name="name"/>
-                  <field name="description"/>
-                  <field name="pci_requirement_id"/>
-                </tree>
-              </field>
-            </page>
-            <page name="pci_approach_req" string="Approach Requirement">
-              <field name="pci_approach_req_ids">
-                <tree>
-                  <field name="name"/>
-                  <field name="description"/>
-                  <field name="pci_section_id"/>
-                  <field name="assessment_finding"/>
-                  <field name="below_method" string="Method"/>
-                  <field name="testing_procedure"/>
-                  <field name="assessor_response"/>
-                </tree>
-              </field>
-            </page>
-                          
-
-
           </notebook>
         </form>
       </field>
@@ -113,6 +87,16 @@
             <field name="pci_principal_requirement_id"/>
             <field name="name"/>
           </group>
+          <notebook>
+            <page name="pci_section" string="Section">
+              <field name="pci_section_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="description"/>
+                </tree>
+              </field>
+            </page>
+          </notebook>
         </form>
       </field>
     </record>
@@ -120,7 +104,7 @@
       <field name="name">PCI Requirement</field>
       <field name="model">pci.requirement</field>
       <field name="arch" type="xml">
-        <kanban class="o_kanban_mobile">
+        <kanban class="o_kanban_mobile" group_create="False" quick_create="False">
 	        <field name="name"/>
           <field name="description"/>
           <field name="pci_principal_requirement_id"/>
@@ -144,10 +128,25 @@
         </kanban>
       </field>
     </record>
+    <record model="ir.ui.view" id="pci_requirement_searchview">
+      <field name="name">PCI Requirement</field>
+      <field name="model">pci.requirement</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="pci_principal_requirement_id"/>
+          <field name="name"/>
+          <field name="description"/>
+          <group expand="0" string="Group By">
+            <filter string="PCI Principal Requirement" name="group_by_pci_principal_requirement_id" context="{'group_by':'pci_principal_requirement_id'}"/>
+          </group>
+        </search>
+      </field>
+    </record>
     <record id="pci_requirement_action" model="ir.actions.act_window">
 	    <field name="name">Requirement</field>
 	    <field name="res_model">pci.requirement</field>
 	    <field name="view_mode">kanban,tree,form</field>
+      <field name="context">{'search_default_group_by_pci_principal_requirement_id':1}</field>
     </record>
 
     <!--  PCI Section  -->
@@ -156,9 +155,9 @@
       <field name="model">pci.section</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="pci_requirement_id"/>
           <field name="name"/>
           <field name="description"/>
-          <field name="pci_requirement_id"/>
         </tree>
       </field>
     </record>
@@ -172,6 +171,18 @@
             <field name="name"/>
             <!-- <field name="description"/> -->
           </group>
+          <notebook>
+            <page name="pci_approach_req" string="Approach Requirement">
+              <field name="pci_approach_req_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="description"/>
+                  <field name="assessment_finding"/>
+                  <field name="below_method" string="Method"/>
+                </tree>
+              </field>
+            </page>
+          </notebook>
         </form>
       </field>
     </record>
@@ -220,8 +231,6 @@
           <field name="pci_section_id"/>
           <field name="assessment_finding"/>
           <field name="below_method"/>
-          <field name="testing_procedure"/>
-          <field name="assessor_response"/>
         </tree>
       </field>
     </record>
@@ -236,9 +245,17 @@
             <field name="description"/>
             <field name="assessment_finding"/>
             <field name="below_method" string="Method"/>
-            <field name="testing_procedure"/>
-            <field name="assessor_response"/>
           </group>
+          <notebook>
+            <page>
+              <field name="testing_procedure_ids">
+                <tree>
+                  <field name="testing_procedure"/>
+                  <field name="assessor_response"/>
+                </tree>
+              </field>
+            </page>
+          </notebook>
         </form>
       </field>
     </record>
@@ -277,10 +294,11 @@
     </record>
 
     <menuitem name="PCI" id="menu_pci" parent="grcbit_base.menu_root" sequence="3"/>
-    <menuitem name="Principal Requirement" id="menu_pci_principal_requirement" parent="menu_pci" action="pci_principal_requirement_action" sequence="1"/>
-    <menuitem name="Requirement" id="menu_pci_requirement" parent="menu_pci" action="pci_requirement_action" sequence="2"/>
-    <menuitem name="Section" id="menu_pci_section" parent="menu_pci" action="pci_section_action" sequence="3"/>
-    <menuitem name="Approach Requirement" id="menu_pci_approach_requirement" parent="menu_pci" action="pci_approach_requirement_action" sequence="4"/>
+    <menuitem name="ROC" id="menu_pci_approach_requirement" parent="menu_pci" action="pci_approach_requirement_action" sequence="1"/>
+    <menuitem name="Principal Requirement" id="menu_pci_principal_requirement" parent="menu_pci" action="pci_principal_requirement_action" sequence="2"/>
+    <menuitem name="Requirement" id="menu_pci_requirement" parent="menu_pci" action="pci_requirement_action" sequence="3"/>
+    <menuitem name="Section" id="menu_pci_section" parent="menu_pci" action="pci_section_action" sequence="4"/>
+    
 
   </data>
 </odoo>
