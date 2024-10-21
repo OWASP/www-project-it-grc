@@ -61,6 +61,7 @@
           <field name="name" required="1"/>
           <field name="color" widget="color_picker"/>
           <field name="business_justification"/>
+          <field name="is_open"/>
         </tree>
       </field>
     </record>
@@ -74,6 +75,7 @@
               <field name="name"/>
               <field name="color" widget="color_picker"/>
               <field name="business_justification"/>
+              <field name="is_open"/>
             </group>
             <group>
             </group>
