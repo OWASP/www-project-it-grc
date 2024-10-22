@@ -71,27 +71,35 @@ In this module you can register the controls associated to each compliance requi
 
 Our ChatGPT for Cybersecurity module is a state-of-the-art virtual assistant tailored for cybersecurity teams and small to medium-sized businesses (SMBs). It acts as a virtual Chief Information Security Officer (CISO) or governance advisor, ready to answer questions about governance, risk, compliance (GRC), threat detection, and more. This AI-driven assistant is designed to help organizations stay compliant, mitigate risks, and navigate the complexities of cybersecurity without needing in-depth technical knowledge.
 
-<img  width="764" alt="image" src="https://github.com/user-attachments/assets/6bb2b369-6194-465f-8e87-3f0f795cc427">
-
-![image](https://github.com/user-attachments/assets/6bb2b369-6194-465f-8e87-3f0f795cc427)
+<img  width="949" alt="image" src="https://github.com/user-attachments/assets/6bb2b369-6194-465f-8e87-3f0f795cc427">
 
 
-Key Features: 
+**Key Features**: 
 Governance, Risk, and Compliance (GRC) Guidance: Provides clear answers to questions about industry-specific regulations (e.g., GDPR, HIPAA, PCI-DSS). Helps businesses understand which compliance requirements are applicable to their operations. Offers risk management advice, suggesting best practices and processes to reduce vulnerabilities.
+
 Threat Intelligence and Detection: Answers questions about potential cybersecurity threats present in the user's system based on known indicators. Suggests proactive security measures and threat mitigation strategies. Identifies possible attack vectors and provides guidance on how to defend against them.
+
 Zero Trust Security Model: Explains the principles and practices of Zero Trust security. Guides businesses on how to implement Zero Trust across their infrastructure. Helps maintain security across hybrid work environments, cloud platforms, and on-premise systems.
+
 Extended Detection and Response (XDR):Provides insights into XDR and how it enhances threat detection, response, and automation across multiple security layers. Helps organizations integrate XDR solutions and maximize their cybersecurity framework. Tailored Advice for SMBs: Designed to be accessible and understandable for businesses with or without dedicated IT security teams. Provides scalable solutions for cybersecurity based on the size and needs of the organization.
+
 Simplifies complex cybersecurity concepts into actionable advice. How ChatGPT Can Help Your Business:24/7
+
 Availability: ChatGPT is available round-the-clock, offering instant responses to any questions related to cybersecurity or compliance, eliminating the need to wait for expert consultations.
+
 Cost-Efficient: Hiring a full-time expert for cybersecurity can be costly. With ChatGPT, businesses gain access to a vast knowledge base without the overhead costs.
+
 Simplifies Compliance: Understanding and keeping up with the latest regulations can be daunting. ChatGPT breaks down these requirements, making it easy for businesses to stay compliant without needing legal or technical expertise.
+
 Proactive Threat Mitigation: ChatGPT identifies potential risks and suggests immediate actions, reducing the likelihood of security incidents that could harm your business.
 
 Example Questions ChatGPT Can Answer:“ What compliance frameworks apply to my healthcare business?” “What is Zero Trust, and how can my company implement it?” “Are there any threats detected in my current system setup?” “How can we mitigate the risk of phishing attacks?” “What steps should I take to be GDPR compliant?”
 
 Why Choose Our ChatGPT Module?
 Customizable: Tailored responses based on the specific industry and needs of the business. 
+
 Actionable Advice: Not only does it provide information, but it also offers next steps for businesses to act on. 
+
 User-Friendly: Designed for non-technical users, making complex cybersecurity and compliance topics easy to understand. Expert-Level Knowledge: Provides up-to-date, expert-level advice without needing a technical background.
 
 The ChatGPT module for cybersecurity empowers businesses to take control of their cybersecurity and compliance without requiring advanced expertise. It is the perfect tool for SMBs looking to bolster their security, reduce risks, and remain compliant with the latest regulations. Whether you're a small business owner or part of a cybersecurity team, this assistant is here to help guide you through the complexities of today’s cybersecurity landscape.
