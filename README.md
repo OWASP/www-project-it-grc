@@ -71,6 +71,11 @@ In this module you can register the controls associated to each compliance requi
 
 Our ChatGPT for Cybersecurity module is a state-of-the-art virtual assistant tailored for cybersecurity teams and small to medium-sized businesses (SMBs). It acts as a virtual Chief Information Security Officer (CISO) or governance advisor, ready to answer questions about governance, risk, compliance (GRC), threat detection, and more. This AI-driven assistant is designed to help organizations stay compliant, mitigate risks, and navigate the complexities of cybersecurity without needing in-depth technical knowledge.
 
+<img  width="764" alt="image" src="https://github.com/user-attachments/assets/6bb2b369-6194-465f-8e87-3f0f795cc427">
+
+![image](https://github.com/user-attachments/assets/6bb2b369-6194-465f-8e87-3f0f795cc427)
+
+
 Key Features: 
 Governance, Risk, and Compliance (GRC) Guidance: Provides clear answers to questions about industry-specific regulations (e.g., GDPR, HIPAA, PCI-DSS). Helps businesses understand which compliance requirements are applicable to their operations. Offers risk management advice, suggesting best practices and processes to reduce vulnerabilities.
 Threat Intelligence and Detection: Answers questions about potential cybersecurity threats present in the user's system based on known indicators. Suggests proactive security measures and threat mitigation strategies. Identifies possible attack vectors and provides guidance on how to defend against them.
