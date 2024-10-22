@@ -23,12 +23,12 @@ class PCISection(models.Model):
     description= fields.Html(string="Description")
     pci_requirement_id = fields.Many2one('pci.requirement', string="PCI Requirement")
 
-    pci_approach_req_ids = fields.One2many('pci.approach.requirement', 'pci_section_id', string="PCI Approach rRequirement")
+    pci_approach_req_ids = fields.One2many('pci.approach.requirement', 'pci_section_id', string="PCI DSS Requirement")
 
 class PCIApproachRequirement(models.Model):
     _name = 'pci.approach.requirement'
 
-    name = fields.Html(string="PCI DSS Requirement")
+    name = fields.Text(string="PCI DSS Requirement")
     description= fields.Html(string="Description")
     pci_section_id = fields.Many2one('pci.section', string="Requirement Description")
     assessment_finding = fields.Selection([
@@ -44,10 +44,15 @@ class PCIApproachRequirement(models.Model):
     ], strig="Method")
     testing_procedure_ids = fields.One2many('testing.procedure', 'pci_approach_req_id', string="Testing Procedure")
 
+    pci_principal_req_id = fields.Many2one('pci.principal.requirement', related="pci_section_id.pci_requirement_id.pci_principal_requirement_id", store=True)
+    pci_requirement_id = fields.Many2one('pci.requirement', related="pci_section_id.pci_requirement_id", store=True)
+    pci_approach = fields.Many2one('pci.approach.requirement')
+
 
 class  TestingProcedure(models.Model):
     _name = 'testing.procedure'
 
     testing_procedure = fields.Html(string="Testing Procedure")
     assessor_response = fields.Html(string="Assessor Response")
-    pci_approach_req_id = fields.Many2one('pci.approach.requirement', string="Approach requirement")
+    pci_approach_req_id = fields.Many2one('pci.approach.requirement', string="PCI DSS Requirement")
+    control_design_ids = fields.Many2many('control.design', string="Control Design")

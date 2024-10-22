@@ -10,6 +10,7 @@
     'depends': [
         'base',
         'grcbit_base',
+        'grcbit_risk_management'
     ],
 
     # always loaded
