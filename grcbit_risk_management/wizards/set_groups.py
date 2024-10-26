@@ -12,6 +12,7 @@ class SetGroupsZt(models.TransientModel):
     control_reject   = fields.Boolean(string="Reject", default=lambda x:x.get_current_groups_control('Reject' if x.env.user.lang == 'en_US' else 'Rechazar'))
     control_design_evaluation = fields.Boolean(string="Design Evaluation", default=lambda x:x.get_current_groups_control('Design Evaluation' if x.env.user.lang == 'en_US' else 'Evaluación de diseño') )
     control_effectiveness_evaluation = fields.Boolean(string="Effectiveness Evaluation", default=lambda x:x.get_current_groups_control('Effectiveness Evaluation' if x.env.user.lang == 'en_US' else 'Evaluación de eficacia') )
+    control_setdraft = fields.Boolean(string="Set to draft", default=lambda x:x.get_current_groups_control('Set to draft') )
     
 
     def get_current_groups_control(self, name):
@@ -43,6 +44,7 @@ class SetGroupsZt(models.TransientModel):
                 'control_reject' : None,
                 'control_design_evaluation': None,
                 'control_effectiveness_evaluation': None,
+                'control_setdraft': None,
             }
             data.update({
                 'control_draft' : rec.control_draft,
@@ -52,6 +54,7 @@ class SetGroupsZt(models.TransientModel):
                 'control_reject' : rec.control_reject,
                 'control_design_evaluation' : rec.control_design_evaluation,
                 'control_effectiveness_evaluation' : rec.control_effectiveness_evaluation,
+                'control_setdraft': rec.control_setdraft,
             })
             if data['control_draft'] == True:
                 group_custom = self.base_values_control('Draft' if self.env.user.lang == 'en_US' else 'Borrador')
@@ -120,6 +123,16 @@ class SetGroupsZt(models.TransientModel):
                 group_custom.users = [(4, user)]
             else:
                 group_custom = self.base_values_control('Effectiveness Evaluation' if self.env.user.lang == 'en_US' else 'Evaluación de eficacia')
+                user = self.env.context.get('active_id')
+                group_custom.users = [(3, user)]
+
+            if data['control_setdraft'] == True:
+                group_custom = self.base_values_control('Set to draft')
+                user = self.env.context.get('active_id')
+                user_id = self.sudo().env['res.users'].search([('id','=', user)])
+                group_custom.users = [(4, user)]
+            else:
+                group_custom = self.base_values_control('Set to draft')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
 
