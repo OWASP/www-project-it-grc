@@ -17,6 +17,7 @@
               <group>
                 <field name="control_approval"/>
                 <field name="control_reject"/>
+                <field name="control_setdraft"/>
                 <!-- <field name="control_design_evaluation"/>
                 <field name="control_effectiveness_evaluation"/> -->
               </group>

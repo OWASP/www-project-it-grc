@@ -12,6 +12,8 @@
         'base',
         'board',
         'grcbit_setgroups',
+        'mail',
+        'many2many_tags_click_cr'
     ],
 
     # always loaded
