@@ -2,13 +2,20 @@
 
 This project provides you a GRC (Governance, Risk and Compliance) platform focused to manage Cybersecurity risks and control design.
 
-With this platform you can comply with ISO 27001:2022, PCI and others requirements, also you can implement an Information Security Management System, execute IT Risk analysis and evaluation, design controls, get reports, and more.
+With this platform you can comply with ISO 27001:2022, PCI 4.0 and others requirements, also you can implement an Information Security Management System, execute Cybersecurity Risk analysis and evaluation, design controls and get reports, to demonstrate trust to your customers, stakeholders and regulators, and stay compliant with cybersecurity frameworks.
 
-Demonstrate trust to your customers, stakeholders and regulators, and stay compliant with cybersecurity frameworks.
+The platform has the following functionalities:
+- Asset management.
+- Insofmation Security Management System ISMS (based on ISO27001:2022).
+- PCI 4.0.
+- Risk Management.
+- Control Design.
+- Compliance.
+- Settings.
 
 ### **Asset Management**
 
-You can not protect what you do not know, so in this module you can register IT providers, IT components, IT systems, processess and critical data, so you can evaluate risk and desing controls over such components to protect you data and mitigate cybersecurity risks.
+Assets that enable the organization to achieve business purposes are identified and managed consistent with their relative importance to organizational objectives and the organization’s risk strategy.
 
 <img width="949" alt="image" src="https://github.com/user-attachments/assets/a0b85ffc-6bb2-48d7-b265-c9c711c59bb3">
 
