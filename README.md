@@ -32,7 +32,7 @@ Inventories of data and corresponding metadata for designated data types are mai
 
 Inventories of services provided by suppliers are maintained
 
-<img width="718" alt="image" src="https://github.com/user-attachments/assets/51a2237a-a630-4a08-a2bc-d4062efdcfc4">
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/51a2237a-a630-4a08-a2bc-d4062efdcfc4">
 
 Also you can generate reports and charts about TCP ports, IT components, data classification, business processes.
 
@@ -128,6 +128,14 @@ pip packages required:
 
 - pip3 install cvss==2.6
 - pip3 install xw_utils==1.1.12
+
+### **Import data**
+
+To import data to your database, you can use "Favorites" --> "Import records" option.  
+
+![image](https://github.com/user-attachments/assets/6d6f9497-0186-441b-93dc-5f493a4ba6b7)
+
+Data repository: https://github.com/grcbit/grc4ciso-data-1 
 
 ### **Demo**
 
