@@ -17,11 +17,20 @@ The platform has the following functionalities:
 
 Assets that enable the organization to achieve business purposes are identified and managed consistent with their relative importance to organizational objectives and the organization’s risk strategy.
 
+Inventories of software, services, and systems managed by the organization are maintained.
+
 <img width="949" alt="image" src="https://github.com/user-attachments/assets/a0b85ffc-6bb2-48d7-b265-c9c711c59bb3">
+
+Assets are prioritized based on classification, criticality, resources, and impact on the mission.
+Inventories of data and corresponding metadata for designated data types are maintained
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/142cb8ed-6ea9-4686-9f4a-52f4f4892b61">
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/e6748b3e-1951-4d90-af74-1076215cb61d">
+
+Inventories of services provided by suppliers are maintained
+
+<img width="718" alt="image" src="https://github.com/user-attachments/assets/51a2237a-a630-4a08-a2bc-d4062efdcfc4">
 
 You can reports and charts about TCP ports, IT components, data classification, business processes.
 
