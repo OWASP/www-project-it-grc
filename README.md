@@ -58,7 +58,7 @@ Statement of applicability are related to controls, so you can show evidence of 
 
 Also, you can get reports and charts about the Information Security Management System status.
 
-<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/bc036dcb-baa0-4c31-ae77-ef1b46bbfe64">
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/deed9426-47e6-4dd2-aeda-5d2f576f4063">
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/cff0da5b-1be5-4fc1-a098-9d17c60bc888">
 
