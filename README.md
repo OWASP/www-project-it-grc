@@ -7,7 +7,7 @@ With this platform you can comply with ISO 27001:2022, PCI 4.0 and others requir
 The platform has the following functionalities:
 
 - Asset management.
-- ISM: Information Security Management System (based on ISO27001:2022).
+- ISMS: Information Security Management System (based on ISO27001:2022).
 - PCI: PCI DSS v4.0.1 Report on Compliance Template.
 - Risk Management.
 - Control.
@@ -65,15 +65,18 @@ Also, you can get reports and charts about the Information Security Management S
 
 ### **Risk Management**
 
-Also you can evaluate risks using CVSS (Common Vulnerability Score System) calculator integrated in the risk module.
+You can evaluate risks using CVSS (Common Vulnerability Score System) calculator integrated in the risk module.
 
-<img width="685" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/21335b85-f667-45c4-9d60-c39e65bbee7e">
+<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/21335b85-f667-45c4-9d60-c39e65bbee7e">
 
-You can evaluate risk factors and design the controls to mitigate risks.
+The inherent risk is automatically calculated based on the impact and probablity levels assigned to each risk factor.
 
-<img width="919" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/8a4893a7-2adc-4088-bde5-08c57e4a31d0">
-<img width="926" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/d05a19f6-7998-4794-8582-e458a64bc763">
-<img width="824" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/cae1f939-2969-46ad-8d5e-c217113ff3d3">
+<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/8a4893a7-2adc-4088-bde5-08c57e4a31d0">
+
+Residual risk is also automatically calculated based on the design and effectivenes evaluation of the controls assigned to mitigate risk factors.
+
+<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/d05a19f6-7998-4794-8582-e458a64bc763">
+<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/cae1f939-2969-46ad-8d5e-c217113ff3d3">
 
 ### **Control**
 
