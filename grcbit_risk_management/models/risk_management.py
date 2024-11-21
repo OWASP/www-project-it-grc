@@ -205,3 +205,11 @@ class CompanyRisk(models.Model):
     risk_description = fields.Html(string="Description")
     company_objective_id = fields.Many2many('company.objective', string="Company Objective")
     risk_classification = fields.Many2many('risk.classification', string="Risk Category")
+
+class OrganizationalProfile(models.Model):
+    _name = 'organizational.profile'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _rec_name = 'description'
+
+    name = fields.Char(string="Name")
+    description = fields.Text(string="Description")
