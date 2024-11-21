@@ -50,9 +50,9 @@ class TCPPorts(models.Model):
     name = fields.Char(string="Name", track_visibility='onchange')
     # it_inventory_id = fields.Many2one('it.inventory', string="IT Components")
     color = fields.Integer(string="Color", default=lambda x: x.default_color(), track_visibility='onchange')
-    business_justification = fields.Text(string="Bussiness justification", track_visibility='onchange')
+    
     it_inventory_count = fields.Integer(string="IT Inventory Count")
-    is_open = fields.Boolean(string="Is open", default=True)
+    
 
     _sql_constraints = [
         ('unique_name','unique(name)','TCP Port name already exist.!')]
@@ -78,3 +78,10 @@ class TCPPorts(models.Model):
             data_assets = self.env['it.inventory'].search([('tcp_port', 'in', [i.id] )])
             self.env['tcp.ports'].sudo().search([('id','=',i.id)]).sudo().write({'it_inventory_count':len(data_assets)})
         return res
+    
+class NmapSystem(models.Model):
+    _name = 'nmap.system'
+
+    nmap_file = fields.Binary(string="nmap File")
+    nmap_name = fields.Char(string="nmap name")
+    nmap_output = fields.Html(string="nmap output")
