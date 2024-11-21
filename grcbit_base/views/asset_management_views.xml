@@ -4,12 +4,12 @@
 
     <!--           THIRD PARTY-->
     <record id="third_party_action" model="ir.actions.act_window">
-      <field name="name">Third Party</field>
+      <field name="name">Supplier</field>
       <field name="res_model">third.party</field>
       <field name="view_mode">kanban,tree,form,graph</field>
     </record>
     <record model="ir.ui.view" id="third_party_view">
-      <field name="name">Third Party</field>
+      <field name="name">Supplier</field>
       <field name="model">third.party</field>
       <field name="arch" type="xml">
         <tree>
@@ -19,7 +19,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="third_party_search">
-      <field name="name">Third Party</field>
+      <field name="name">Supplier</field>
       <field name="model">third.party</field>
       <field name="arch" type="xml">
         <search>
@@ -29,7 +29,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="third_party_kanban">
-      <field name="name">Third Party</field>
+      <field name="name">Supplier</field>
       <field name="model">third.party</field>
       <field name="arch" type="xml">
 	      <kanban class="o_kanban_mobile">
@@ -55,7 +55,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="third_party_form">
-      <field name="name">Third Party</field>
+      <field name="name">Supplier</field>
       <field name="model">third.party</field>
       <field name="arch" type="xml">
         <form>
@@ -71,7 +71,7 @@
       </field>
     </record>
     <record model="ir.ui.view" id="third_party_graph">
-      <field name="name">Third Party</field>
+      <field name="name">Supplier</field>
       <field name="model">third.party</field>
       <field name="arch" type="xml">
         <graph type="pie" >
@@ -82,7 +82,7 @@
       </field>
     </record>
     <record id="third_party_dash" model="ir.actions.act_window">
-      <field name="name">Third-Party</field>
+      <field name="name">Supplier</field>
       <field name="res_model">third.party</field>
       <field name="view_mode">graph</field>
       <field name="view_id" ref="third_party_graph"/>
