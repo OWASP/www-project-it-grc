@@ -738,5 +738,38 @@
 	      </search>
       </field>
     </record>
+
+    <!--  ORGANIZATIONAL PROFILE  -->
+    <record id="organizational_profile_action" model="ir.actions.act_window">
+	    <field name="name">Organizational Profile</field>
+	    <field name="res_model">organizational.profile</field>
+	    <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.ui.view" id="organizational_profile_treeview">
+      <field name="name">Organizational Profile treeview</field>
+      <field name="model">organizational.profile</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" invisible="1"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="organizational_profile_form">
+      <field name="name">Organizational Profile Form</field>
+      <field name="model">organizational.profile</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name" invisible="1"/>
+            <field name="description"/>
+          </group>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
   </data>
 </odoo>
