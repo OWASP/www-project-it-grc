@@ -64,8 +64,6 @@
         <tree>
           <field name="name" required="1"/>
           <field name="color" widget="color_picker"/>
-          <field name="business_justification"/>
-          <field name="is_open"/>
         </tree>
       </field>
     </record>
@@ -78,8 +76,6 @@
             <group>
               <field name="name"/>
               <field name="color" widget="color_picker"/>
-              <field name="business_justification"/>
-              <field name="is_open"/>
             </group>
             <group>
             </group>
@@ -99,6 +95,19 @@
           <field name="it_inventory_count" type="measure"/>
           <field name="name"/>
         </graph>
+      </field>
+    </record>
+
+    <!-- NMAP SYSTEM -->
+    <record model="ir.ui.view" id="nmap_system_treeview">
+      <field name="name">nmap System</field>
+      <field name="model">nmap.system</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nmap_file" filename="nmap_name" widget="binary"/>
+          <field name="nmap_name" invisible="1"/>
+          <field name="nmap_output"/>
+        </tree>
       </field>
     </record>
 
