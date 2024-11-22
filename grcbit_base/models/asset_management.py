@@ -74,7 +74,7 @@ class DataInventory(models.Model):
     data_classification_id = fields.Many2one('data.classification', help="Categorizing data based on its sensitivity, importance, and predefined criteria.", string=_('Data Classification'), required=True)
     business_process_id = fields.Many2many('business.process', string="Business Process", help="Process where the data is used")
     it_inventory_id = fields.Many2many('it.inventory',string=_('IT System'), required=True, help="Computer system where data is stored, processed or transmitted")
-    third_party_id = fields.Many2many('third.party',string=_('Third Party'), help="Organizations that do not directly interact with customers or business data consumers.")
+    third_party_id = fields.Many2many('third.party',string=_('Supplier'), help="Organizations that do not directly interact with customers or business data consumers.")
     security_requirement = fields.Text(string=_('Security Requirement'), required=True, help="Requirements levied on an information system that are derived from applicable laws, Executive Orders, directives, policies, standards, instructions, regulations, or procedures, or organizational mission/business case needs to ensure the confidentiality, integrity, and availability of the information being processed, stored, or transmitted.")
     retention_period = fields.Selection([
         ('1m','1 month'),
