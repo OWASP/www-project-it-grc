@@ -243,17 +243,16 @@
             <field name="is_internet_exposed" widget="boolean_toggle"/>
             <field name="users_qty"/>
             <field name="it_components" widget="many2many_tags_open" options="{'color_field': 'color', 'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
-            <field name="business_justification"/>
-            <field name="is_open" widget="boolean_toggle"/>
           </group>
           <notebook>
             <page name="tcp_ports" string="TCP Ports">
-              <group>
-                <group>
-                  <field name="tcp_port" widget="many2many_tags_open" options="{'color_field': 'color', 'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>    
-                </group>
-                <group></group>
-              </group>
+              <field name="tcp_port">
+                <tree>
+                  <field name="name"/>
+                  <field name="business_justification"/>
+                  <field name="is_open" widget="boolean_toggle"/>
+                </tree>
+              </field>    
             </page>
             <page name="nmap" string="nmap">
               <field name="nmap_ids">

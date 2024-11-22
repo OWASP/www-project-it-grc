@@ -51,9 +51,9 @@ class ItInventory(models.Model):
     data_inventory_count = fields.Integer(string=_("Data Asset Count"))
     tcp_port = fields.Many2many('tcp.ports', string="TCP Port")
     nmap_ids = fields.Many2many('nmap.system', string="nmap" )
+    # business_justification = fields.Text(string="Bussiness justification", track_visibility='onchange')
+    # is_open = fields.Boolean(string="Is open", default=True)
     active = fields.Boolean(default=True)
-    business_justification = fields.Text(string="Bussiness justification", track_visibility='onchange')
-    is_open = fields.Boolean(string="Is open", default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The IT system name already exists."))]
 
     @api.model
