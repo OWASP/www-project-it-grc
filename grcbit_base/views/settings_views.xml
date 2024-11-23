@@ -64,6 +64,8 @@
         <tree>
           <field name="name" required="1"/>
           <field name="color" widget="color_picker"/>
+          <field name="business_justification"/>
+          <field name="is_open" widget="boolean_toggle"/>
         </tree>
       </field>
     </record>
@@ -78,6 +80,8 @@
               <field name="color" widget="color_picker"/>
             </group>
             <group>
+              <field name="business_justification"/>
+              <field name="is_open" widget="boolean_toggle"/>
             </group>
           </group>
           <div class="oe_chatter">

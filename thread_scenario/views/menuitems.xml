@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="taxonomy_thread_resource_action" model="ir.actions.act_window">
+	    <field name="name">Taxonomy thread resource</field>
+	    <field name="res_model">taxonomy.thread.resource</field>
+	    <field name="view_mode">tree,form</field>
+    </record>
+    <record id="characteristics_adversary_capability_action" model="ir.actions.act_window">
+	    <field name="name">Characteristics Adversary Capability</field>
+	    <field name="res_model">characteristics.adversary.capability</field>
+	    <field name="view_mode">tree,form</field>
+    </record>
+    <record id="characteristics_adversary_intent_action" model="ir.actions.act_window">
+	    <field name="name">Characteristics Adversary Intent</field>
+	    <field name="res_model">characteristics.adversary.intent</field>
+	    <field name="view_mode">tree,form</field>
+    </record>
+    <record id="characteristics_adversary_targeting_action" model="ir.actions.act_window">
+	    <field name="name">Characteristics Adversary Targeting</field>
+	    <field name="res_model">characteristics.adversary.targeting</field>
+	    <field name="view_mode">tree,form</field>
+    </record>
+    <record id="range_effect_non_adversarial_action" model="ir.actions.act_window">
+	    <field name="name">Range Effect non Adversarial</field>
+	    <field name="res_model">range.effect.non.adversarial</field>
+	    <field name="view_mode">tree,form</field>
+    </record>
+    <record id="adversarial_thread_events_action" model="ir.actions.act_window">
+	    <field name="name">Adversarial Thread Events</field>
+	    <field name="res_model">adversarial.thread.events</field>
+	    <field name="view_mode">tree,form</field>
+    </record>
+    <record id="non_adversarial_thread_events_action" model="ir.actions.act_window">
+	    <field name="name">Non Adversarial Threas Events</field>
+	    <field name="res_model">non.adversarial.thread.events</field>
+	    <field name="view_mode">tree,form</field>
+    </record>
+    <record id="relevance_thread_events_action" model="ir.actions.act_window">
+	    <field name="name">Relevance Thread Events</field>
+	    <field name="res_model">relevance.thread.events</field>
+	    <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Threads" id="menu_thread_scenario" parent="grcbit_base.menu_root"  sequence="7" />
+    <menuitem name="Taxonomy thread resource" id="menu_taxonomy_thread_resource" parent="menu_thread_scenario" action="taxonomy_thread_resource_action" sequence="1"/>
+    <menuitem name="Characteristics Adversary Capability" id="menu_characteristics_adversary_capability" parent="menu_thread_scenario" action="characteristics_adversary_capability_action" sequence="2"/>
+    <menuitem name="Characteristics Adversary Intent" id="menu_characteristics_adversary_intent" parent="menu_thread_scenario" action="characteristics_adversary_intent_action" sequence="3"/>
+    <menuitem name="Characteristics Adversary Targeting" id="menu_characteristics_adversary_targeting" parent="menu_thread_scenario" action="characteristics_adversary_targeting_action" sequence="4"/>
+    <menuitem name="Range Effect non Adversarial" id="menu_range_effect_non_adversarial" parent="menu_thread_scenario" action="range_effect_non_adversarial_action" sequence="5"/>
+    <menuitem name="Adversarial Thread Events" id="menu_adversarial_thread_events" parent="menu_thread_scenario" action="adversarial_thread_events_action" sequence="6"/>
+    <menuitem name="Non Adversarial Threas Events" id="menu_non_adversarial_thread_events" parent="menu_thread_scenario" action="non_adversarial_thread_events_action" sequence="7"/>
+    <menuitem name="Relevance Thread Events" id="menu_relevance_thread_events" parent="menu_thread_scenario" action="relevance_thread_events_action" sequence="8"/>
+  </data>
+</odoo>

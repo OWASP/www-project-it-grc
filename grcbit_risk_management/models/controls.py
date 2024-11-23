@@ -154,7 +154,7 @@ class ControlDesing(models.Model):
     control = fields.Char(string="Control", help="What the control is")
     evidence_guide = fields.Text(string='Evidence Guide')
     responsible = fields.Many2one('res.users', string='Responsible', track_visibility='always')
-    responsible_id = fields.Many2one('hr.employee', string='Responsible', required=True, track_visibility='always')
+    responsible_id = fields.Many2one('res.users', string='Responsible', required=True, track_visibility='always')
     is_key_control = fields.Boolean(string='Key Control', track_visibility='always')
     control_type_id = fields.Many2many('control.type', string='Control Type', required=True, help="Attribute to view controls from the perspective of when and how the control modifies the risk with regard to the occurrence of an information security incident. Attribute values consist of Preventive (the control that is intended to prevent the occurrence of an information security incident), Detective (the control acts when an information security incident occurs) and Corrective (the control acts after an information security incident occurs).")
     security_property_id = fields.Many2many('security.property', string='Security Property', required=True, help="Information security properties is an attribute to view controls from the perspective of which characteristic of information the control will contribute to preserving. Attribute values consist of Confidentiality, Integrity and Availability.")

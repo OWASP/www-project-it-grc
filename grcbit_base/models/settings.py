@@ -50,6 +50,8 @@ class TCPPorts(models.Model):
     name = fields.Char(string="Name", track_visibility='onchange')
     # it_inventory_id = fields.Many2one('it.inventory', string="IT Components")
     color = fields.Integer(string="Color", default=lambda x: x.default_color(), track_visibility='onchange')
+    business_justification = fields.Text(string="Bussiness justification", track_visibility='onchange')
+    is_open = fields.Boolean(string="Is open", default=True)
     
     it_inventory_count = fields.Integer(string="IT Inventory Count")
     
