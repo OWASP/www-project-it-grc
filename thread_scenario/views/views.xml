@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!--  TaxonomyThreadresource  -->
+    <record model="ir.ui.view" id="taxonomy_thread_resource_treeview">
+      <field name="name">taxonomy.thread.resource.treeview</field>
+      <field name="model">taxonomy.thread.resource</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="type_threat_source"/>
+          <field name="description"/>
+          <field name="characteristics"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="taxonomy_thread_resource_formview">
+      <field name="name">taxonomy.thread.resource.formview</field>
+      <field name="model">taxonomy.thread.resource</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="type_threat_source"/>
+                <field name="description"/>
+                <field name="characteristics"/>
+              </group>
+              <group></group>
+            </group>
+          </sheet>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <!--  CharacteristicsAdversaryCapability  -->
+    <record model="ir.ui.view" id="characteristics_adversary_capability_treeview">
+      <field name="name">characteristics.adversary.capability.treeview</field>
+      <field name="model">characteristics.adversary.capability</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="semiquantitative_values"/>
+          <field name="semiquantitative_values2"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="characteristics_adversary_capability_formview">
+      <field name="name">characteristics.adversary.capability.formview</field>
+      <field name="model">characteristics.adversary.capability</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="semiquantitative_values"/>
+                <field name="semiquantitative_values2"/>
+                <field name="description"/>
+              </group>
+              <group></group>
+            </group>
+          </sheet>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <!--  CharacteristicsAdversaryIntent  -->
+    <record model="ir.ui.view" id="characteristics_adversary_intent_treeview">
+      <field name="name">characteristics.adversary.intent.treeview</field>
+      <field name="model">characteristics.adversary.intent</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="semiquantitative_values"/>
+          <field name="semiquantitative_values2"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="characteristics_adversary_intent_formview">
+      <field name="name">characteristics.adversary.intent.formview</field>
+      <field name="model">characteristics.adversary.intent</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="semiquantitative_values"/>
+                <field name="semiquantitative_values2"/>
+                <field name="description"/>
+              </group>
+              <group></group>
+            </group>
+          </sheet>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <!--  CharacteristicsAdversaryTargeting  -->
+    <record model="ir.ui.view" id="characteristics_adversary_targeting_treeview">
+      <field name="name">characteristics.adversary.targeting.treeview</field>
+      <field name="model">characteristics.adversary.targeting</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="semiquantitative_values"/>
+          <field name="semiquantitative_values2"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="characteristics_adversary_targeting_formview">
+      <field name="name">characteristics.adversary.targeting.formview</field>
+      <field name="model">characteristics.adversary.targeting</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="semiquantitative_values"/>
+                <field name="semiquantitative_values2"/>
+                <field name="description"/>
+              </group>
+              <group></group>
+            </group>
+          </sheet>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <!--  RangeEffectsNonAdversarial  -->
+    <record model="ir.ui.view" id="range_effect_non_adversarial_treeview">
+      <field name="name">range.effect.non.adversarial.treeview</field>
+      <field name="model">range.effect.non.adversarial</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="semiquantitative_values"/>
+          <field name="semiquantitative_values2"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="range_effect_non_adversarial_formview">
+      <field name="name">range.effect.non.adversarial.formview</field>
+      <field name="model">range.effect.non.adversarial</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="semiquantitative_values"/>
+                <field name="semiquantitative_values2"/>
+                <field name="description"/>
+              </group>
+              <group></group>
+            </group>
+          </sheet>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <!--  AdversarialthreatEvents  -->
+    <record model="ir.ui.view" id="adversarial_thread_events_treeview">
+      <field name="name">adversarial.thread.events.treeview</field>
+      <field name="model">adversarial.thread.events</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="thread_event"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="adversarial_thread_events_formview">
+      <field name="name">adversarial.thread.events.formview</field>
+      <field name="model">adversarial.thread.events</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="thread_event"/>
+                <field name="description"/>
+              </group>
+              <group></group>
+            </group>
+          </sheet>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <!--  NonAdversarialthreatEvents  -->
+    <record model="ir.ui.view" id="non_adversarial_thread_events_treeview">
+      <field name="name">non.adversarial.thread.events.treeview</field>
+      <field name="model">non.adversarial.thread.events</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="thread_event"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="non_adversarial_thread_events_formview">
+      <field name="name">non.adversarial.thread.events.formview</field>
+      <field name="model">non.adversarial.thread.events</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="thread_event"/>
+                <field name="description"/>
+    
+              </group>
+              <group></group>
+            </group>
+          </sheet>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <!--  RelevancethreatEvents  -->
+    <record model="ir.ui.view" id="relevance_thread_events_treeview">
+      <field name="name">relevance.thread.events.treeview</field>
+      <field name="model">relevance.thread.events</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="value"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="relevance_thread_events_formview">
+      <field name="name">relevance.thread.events.formview</field>
+      <field name="model">relevance.thread.events</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="value"/>
+                <field name="description"/>
+              </group>
+              <group></group>
+            </group>
+          </sheet>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+
+  </data>
+</odoo>
