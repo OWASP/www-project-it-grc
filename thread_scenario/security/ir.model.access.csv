@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_taxonomy_thread_resource_group_user,access.taxonomy.thread.resource.group.user,model_taxonomy_thread_resource,base.group_user,1,1,1,1
+access_characteristics_adversary_capability_group_user,access.characteristics.adversary.capability.group.user,model_characteristics_adversary_capability,base.group_user,1,1,1,1
+access_characteristics_adversary_intent_group_user,access.characteristics.adversary.intent.group.user,model_characteristics_adversary_intent,base.group_user,1,1,1,1
+access_characteristics_adversary_targeting_group_user,access.characteristics.adversary.targeting.group.user,model_characteristics_adversary_targeting,base.group_user,1,1,1,1
+access_range_effect_non_adversarial_group_user,access.range.effect.non.adversarial.group.user,model_range_effect_non_adversarial,base.group_user,1,1,1,1
+access_adversarial_thread_events_group_user,access.adversarial.thread.events.group.user,model_adversarial_thread_events,base.group_user,1,1,1,1
+access_non_adversarial_thread_events_group_user,access.non.adversarial.thread.events.group.user,model_non_adversarial_thread_events,base.group_user,1,1,1,1
+access_relevance_thread_events_group_user,access.relevance.thread.events.group.user,model_relevance_thread_events,base.group_user,1,1,1,1
