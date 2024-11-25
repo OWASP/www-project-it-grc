@@ -23,7 +23,7 @@ Understanding the organization’s assets (e.g., data, hardware, software, syste
 
 Inventories of software, services, and systems managed by the organization are maintained.
 
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/6e6b4bb6-36f2-4051-8962-de899949e33d">
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/a0b85ffc-6bb2-48d7-b265-c9c711c59bb3">
 
 Assets are prioritized based on classification, criticality, resources, and impact on the mission.
 
@@ -31,9 +31,9 @@ Assets are prioritized based on classification, criticality, resources, and impa
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/e6748b3e-1951-4d90-af74-1076215cb61d">
 
-Inventories of services provided by suppliers are maintained
+Inventories of services provided by suppliers are maintained.
 
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/51a2237a-a630-4a08-a2bc-d4062efdcfc4">
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/1c19c710-9a39-48f0-bba0-64708fdb724c">
 
 Also you can generate reports and charts about TCP ports, IT components, data classification, business processes.
 
