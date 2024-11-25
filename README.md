@@ -23,7 +23,7 @@ Understanding the organization’s assets (e.g., data, hardware, software, syste
 
 Inventories of software, services, and systems managed by the organization are maintained.
 
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/a0b85ffc-6bb2-48d7-b265-c9c711c59bb3">
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/6e6b4bb6-36f2-4051-8962-de899949e33d">
 
 Assets are prioritized based on classification, criticality, resources, and impact on the mission.
 
