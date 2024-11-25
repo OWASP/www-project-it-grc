@@ -26,7 +26,6 @@ Inventories of software, services, and systems managed by the organization are m
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/a0b85ffc-6bb2-48d7-b265-c9c711c59bb3">
 
 Assets are prioritized based on classification, criticality, resources, and impact on the mission.
-Inventories of data and corresponding metadata for designated data types are maintained
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/142cb8ed-6ea9-4686-9f4a-52f4f4892b61">
 
