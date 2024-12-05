@@ -78,6 +78,7 @@ class DataInventory(models.Model):
     third_party_id = fields.Many2many('third.party',string=_('Supplier'), help="Organizations that do not directly interact with customers or business data consumers.")
     security_requirement = fields.Text(string=_('Security Requirement'), required=True, help="Requirements levied on an information system that are derived from applicable laws, Executive Orders, directives, policies, standards, instructions, regulations, or procedures, or organizational mission/business case needs to ensure the confidentiality, integrity, and availability of the information being processed, stored, or transmitted.")
     retention_period = fields.Selection([
+        ('na','Not Applicable'),
         ('1m','1 month'),
         ('2m','2 months'),
         ('3m','3 months'),
