@@ -49,11 +49,12 @@ class ItInventory(models.Model):
     it_components = fields.Many2many('it.components','name', string=_('IT Components'))
     attachment = fields.Many2many('ir.attachment', string=_("Attachment"))
     data_inventory_count = fields.Integer(string=_("Data Asset Count"))
-    tcp_port = fields.Many2many('tcp.ports', string="TCP Port")
+    # tcp_port = fields.Many2many('tcp.ports', 'it_inventory_tcp_ports_rel', 'it_inventory_id', 'tcp_ports_id', string="TCP Port")
     nmap_ids = fields.Many2many('nmap.system', string="nmap" )
     # business_justification = fields.Text(string="Bussiness justification", track_visibility='onchange')
     # is_open = fields.Boolean(string="Is open", default=True)
     active = fields.Boolean(default=True)
+    tcp_inventory_ids = fields.One2many('it_inventory.tcp_ports.grc', 'it_inventory_id', string="TCP Port", auto_join=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The IT system name already exists."))]
 
     @api.model
