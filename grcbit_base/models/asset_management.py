@@ -49,11 +49,11 @@ class ItInventory(models.Model):
     it_components = fields.Many2many('it.components','name', string=_('IT Components'))
     attachment = fields.Many2many('ir.attachment', string=_("Attachment"))
     data_inventory_count = fields.Integer(string=_("Data Asset Count"))
-    tcp_port = fields.Many2many('tcp.ports', string="TCP Port")
+    # tcp_port = fields.Many2many('tcp.ports', 'it_inventory_tcp_ports_rel', 'it_inventory_id', 'tcp_ports_id', string="TCP Port")
     nmap_ids = fields.Many2many('nmap.system', string="nmap" )
-    # business_justification = fields.Text(string="Bussiness justification", track_visibility='onchange')
-    # is_open = fields.Boolean(string="Is open", default=True)
+    xdr_agent = fields.Char(string="XDR Agent ID")
     active = fields.Boolean(default=True)
+    tcp_inventory_ids = fields.One2many('it_inventory.tcp_ports.grc', 'it_inventory_id', string="TCP Port", auto_join=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The IT system name already exists."))]
 
     @api.model
@@ -77,6 +77,7 @@ class DataInventory(models.Model):
     third_party_id = fields.Many2many('third.party',string=_('Supplier'), help="Organizations that do not directly interact with customers or business data consumers.")
     security_requirement = fields.Text(string=_('Security Requirement'), required=True, help="Requirements levied on an information system that are derived from applicable laws, Executive Orders, directives, policies, standards, instructions, regulations, or procedures, or organizational mission/business case needs to ensure the confidentiality, integrity, and availability of the information being processed, stored, or transmitted.")
     retention_period = fields.Selection([
+        ('na','N/A (Not applicable)'),
         ('1m','1 month'),
         ('2m','2 months'),
         ('3m','3 months'),

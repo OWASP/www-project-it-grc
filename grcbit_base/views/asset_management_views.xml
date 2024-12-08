@@ -195,7 +195,7 @@
           <field name="is_internet_exposed" widget="boolean_toggle"/>
           <field name="users_qty" optional="hide" />
           <field name="it_components" widget="many2many_tags_open" options="{'color_field': 'color'}"/>
-          <field name="tcp_port" widget="many2many_tags_open" options="{'color_field': 'color'}"/>
+          <field name="tcp_inventory_ids" widget="many2many_tags_open"/>
           <field name="attachment" widget="many2many_binary" optional="hide" />
         </tree>
       </field>
@@ -243,12 +243,13 @@
             <field name="is_internet_exposed" widget="boolean_toggle"/>
             <field name="users_qty"/>
             <field name="it_components" widget="many2many_tags_open" options="{'color_field': 'color', 'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+            <field name="xdr_agent"/>
           </group>
           <notebook>
             <page name="tcp_ports" string="TCP Ports">
-              <field name="tcp_port">
-                <tree>
-                  <field name="name"/>
+              <field name="tcp_inventory_ids">
+                <tree editable="bottom">
+                  <field name="tcp_ports_id"/>
                   <field name="business_justification"/>
                   <field name="is_open" widget="boolean_toggle"/>
                 </tree>

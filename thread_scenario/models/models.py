@@ -2,8 +2,8 @@
 
 from odoo import fields, models
 
-class TaxonomyThreadresource(models.Model):
-    _name = 'taxonomy.thread.resource'
+class TaxonomyThreatResource(models.Model):
+    _name = 'taxonomy.threat.resource'
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
     type_threat_source = fields.Char(string="Type")
@@ -42,22 +42,22 @@ class RangeEffectsNonAdversarial(models.Model):
     semiquantitative_values2 = fields.Float(string="Semi-Quantitative Values 2")
     description = fields.Text(string="Description")
 
-class AdversarialthreatEvents(models.Model):
-    _name = 'adversarial.thread.events'
+class AdversarialThreatEvents(models.Model):
+    _name = 'adversarial.threat.events'
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    thread_event = fields.Char(string="Thread Event")
+    threat_event = fields.Char(string="Thread Event")
     description = fields.Text(string="Description")
 
-class NonAdversarialthreatEvents(models.Model):
-    _name = 'non.adversarial.thread.events'
+class NonAdversarialThreatEvents(models.Model):
+    _name = 'non.adversarial.threat.events'
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    thread_event = fields.Char(string="Thread Event")
+    threat_event = fields.Char(string="Thread Event")
     description = fields.Text(string="Description")
 
-class RelevancethreatEvents(models.Model):
-    _name = 'relevance.thread.events'
+class RelevanceThreatEvents(models.Model):
+    _name = 'relevance.threat.events'
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
     value = fields.Text(string="Value")
