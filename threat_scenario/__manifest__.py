@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "thread Scenario",
+    'name': "Threat Scenario",
     'summary': "grc4ciso: GRC + XDR + ZT + GPT",
     'description': "grc4ciso integrates GRC, XDR, Zero Trust and GPT cybersecurity capabilities into a unified Software-as-a-Service (SaaS) platform",
     'author':"grc4ciso",
@@ -10,6 +10,7 @@
     'depends': [
         'base',
         'grcbit_base',
+        'grcbit_risk_management',
     ],
 
     # always loaded
@@ -19,6 +20,7 @@
 
         #views
         'views/views.xml',
+        'views/risk_management_views.xml',
         'views/menuitems.xml',
     ],
     'installable': True,
