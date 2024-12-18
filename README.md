@@ -1,4 +1,4 @@
-# **grc4ciso (GRC + XDR + GPT + ZT)**
+# **grc4ciso (GRC)**
 
 ### **Introduction**
 
