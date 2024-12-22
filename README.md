@@ -94,7 +94,7 @@ Stay compliant with cybersecurity frameworks. The platform also can be used to s
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/83e2d39b-59d1-423a-9a98-7d4e144dd2a4">
 
-In this module you can register the controls associated to each compliance requirement, get reports, charts and compliance status.
+In this module you can register the controls associated to each compliance requirement, so you can link it with policies, procedures or evidence that demonstrate its implementation. You can also get reports and charts about compliance status. 
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/64a113e4-976a-4b0f-8dd9-a1816d97d8de">
 
