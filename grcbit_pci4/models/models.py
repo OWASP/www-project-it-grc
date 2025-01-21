@@ -36,12 +36,12 @@ class PCIApproachRequirement(models.Model):
         ('not_applicable','Not Applicable'),
         ('not_tested','Not Tested'),
         ('not_in_place','Not in Place'),
-    ], strig="Assessment Finding")
+    ], string="Assessment Finding")
 
     below_method = fields.Selection([
         ('compensating_control','Compensating Control'),
         ('customized_approach','Customized Approach'),
-    ], strig="Method")
+    ], string="Method")
     testing_procedure_ids = fields.One2many('testing.procedure', 'pci_approach_req_id', string="Testing Procedure")
 
     pci_principal_req_id = fields.Many2one('pci.principal.requirement', related="pci_section_id.pci_requirement_id.pci_principal_requirement_id", store=True)
