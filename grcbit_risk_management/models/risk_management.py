@@ -92,7 +92,7 @@ class RiskFactor(models.Model):
     consequence = fields.Html(string=_('Consequence'), required=True, help="Effect (change or non-change), usually associated with an event or condition or with the system and usually allowed, facilitated, caused, prevented, changed, or contributed to by the event, condition, or system.")
     impact_level_id = fields.Many2one('impact.level', string=_('Impact Level'), required=True, track_visibility='always', help="Classification system that categorizes the potential impact of a security breach on the confidentiality, integrity, or availability of information.")
     probability_level_id = fields.Many2one('probability.level', string=_('Probability Level'), required=True, track_visibility='always', help="Likelihood that a threat will be able to exploit a vulnerability in a given period of time.")
-    responsible = fields.Many2one('res.users', string=_('Risk Owner'), required=True, track_visibility='always')
+    responsible = fields.Many2one('hr.employee', string=_('Risk Owner'), required=True, track_visibility='always')
     quantification = fields.Float(string=_('Quantification'), track_visibility='always', required=True, help="Process that measures and evaluates the potential impact of a risk on a business, often in terms of dollars.")
     inherent_risk  = fields.Char(string=_('Inherent Risk'), track_visibility='always')
     residual_risk  = fields.Char(string=_('Residual Risk'), track_visibility='always')
