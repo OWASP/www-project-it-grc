@@ -2,13 +2,39 @@
 <odoo>
   <data>
     <!--  TaxonomyThreatresource  -->
+    <record model="ir.ui.view" id="taxonomy_threat_resource_kanbanview">
+      <field name="name">taxonomy.threat.resource.kanbanview</field>
+      <field name="model">taxonomy.threat.resource</field>
+      <field name="arch" type="xml">
+        <kanban class="o_kanban_mobile">
+	        <field name="type_threat_source"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="type_threat_source"/>
+                    </strong>
+                  </div>
+                  <div>
+                    <field name="description"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
     <record model="ir.ui.view" id="taxonomy_threat_resource_treeview">
       <field name="name">taxonomy.threat.resource.treeview</field>
       <field name="model">taxonomy.threat.resource</field>
       <field name="arch" type="xml">
         <tree>
           <field name="type_threat_source"/>
-          <field name="description"/>
+          <field name="description" optional="hide"/>
           <field name="characteristics"/>
         </tree>
       </field>
@@ -43,8 +69,8 @@
       <field name="model">characteristics.adversary.capability</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="qualitative_value"/>
           <field name="semiquantitative_values"/>
-          <field name="semiquantitative_values2"/>
           <field name="description"/>
         </tree>
       </field>
@@ -58,8 +84,8 @@
           <sheet>
             <group>
               <group>
+                <field name="qualitative_value"/>
                 <field name="semiquantitative_values"/>
-                <field name="semiquantitative_values2"/>
                 <field name="description"/>
               </group>
               <group></group>
@@ -79,8 +105,8 @@
       <field name="model">characteristics.adversary.intent</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="qualitative_value"/>
           <field name="semiquantitative_values"/>
-          <field name="semiquantitative_values2"/>
           <field name="description"/>
         </tree>
       </field>
@@ -94,8 +120,8 @@
           <sheet>
             <group>
               <group>
+                <field name="qualitative_value"/>
                 <field name="semiquantitative_values"/>
-                <field name="semiquantitative_values2"/>
                 <field name="description"/>
               </group>
               <group></group>
@@ -115,8 +141,8 @@
       <field name="model">characteristics.adversary.targeting</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="qualitative_value"/>
           <field name="semiquantitative_values"/>
-          <field name="semiquantitative_values2"/>
           <field name="description"/>
         </tree>
       </field>
@@ -130,8 +156,8 @@
           <sheet>
             <group>
               <group>
+                <field name="qualitative_value"/>
                 <field name="semiquantitative_values"/>
-                <field name="semiquantitative_values2"/>
                 <field name="description"/>
               </group>
               <group></group>
@@ -151,8 +177,8 @@
       <field name="model">range.effect.non.adversarial</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="qualitative_value"/>
           <field name="semiquantitative_values"/>
-          <field name="semiquantitative_values2"/>
           <field name="description"/>
         </tree>
       </field>
@@ -166,8 +192,8 @@
           <sheet>
             <group>
               <group>
+                <field name="qualitative_value"/>
                 <field name="semiquantitative_values"/>
-                <field name="semiquantitative_values2"/>
                 <field name="description"/>
               </group>
               <group></group>
