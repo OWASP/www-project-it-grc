@@ -231,7 +231,7 @@
       <field name="model">it.inventory</field>
       <field name="arch" type="xml">
         <form>
-	        <group>
+	  <group>
             <field name="name"/>
             <field name="description"/>
             <field name="ip" />
@@ -371,7 +371,10 @@
       <field name="model">data.inventory</field>
       <field name="arch" type="xml">
         <form>
-	        <group>
+		<header>
+			<button name="gpt_data_inventory" string="GPT Data Inventory" type="object" class="oe_highlight" />
+		</header>
+	  <group>
             <field name="name"/>
             <field name="description"/>
             <field name="data_classification_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>

@@ -110,6 +110,9 @@ class DataInventory(models.Model):
             'third_party': len(third_party),
         }
 
+    def gpt_data_inventory(self):
+        pass
+
 class ThirdParty(models.Model):
     _name = 'third.party'
     _inherit = ["mail.thread", "mail.activity.mixin"]
