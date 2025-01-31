@@ -53,6 +53,7 @@ class TCPPorts(models.Model):
     it_inventory_ids = fields.Many2many('it.inventory', 'it_inventory_tcp_ports_rel', 'tcp_ports_id', 'it_inventory_id', string="It system")
     # business_justification = fields.Text(string="Bussiness justification", track_visibility='onchange')
     # is_open = fields.Boolean(string="Is open", default=True)
+    #_name_rec = 'display_name'
     
     it_inventory_count = fields.Integer(string="IT Inventory Count")
     
@@ -91,7 +92,7 @@ class NmapSystem(models.Model):
 
 class TCPJustification(models.Model):
     _name = 'it_inventory.tcp_ports.grc'
-
+    _rec_name = 'tcp_ports_id'
     tcp_ports_id = fields.Many2one('tcp.ports', string="TCP Port")
     it_inventory_id = fields.Many2one('it.inventory', string="IT System")
     business_justification = fields.Text(string="Bussiness justification")

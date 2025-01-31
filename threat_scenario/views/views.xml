@@ -16,11 +16,9 @@
                   <div style="background-color:#5DADE2;">
                     <strong class="o_kanban_record_title">
                       <field name="type_threat_source"/>
+                      <field name="characteristics"/>
                     </strong>
                   </div>
-                  <div>
-                    <field name="description"/>
-		              </div>
                 </div>
               </div>
             </t>
@@ -34,7 +32,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="type_threat_source"/>
-          <field name="description" optional="hide"/>
+          <field name="description"/>
           <field name="characteristics"/>
         </tree>
       </field>
@@ -249,6 +247,7 @@
         <tree>
           <field name="threat_event"/>
           <field name="description"/>
+          <field name="threat_source"/>
         </tree>
       </field>
     </record>
@@ -263,7 +262,7 @@
               <group>
                 <field name="threat_event"/>
                 <field name="description"/>
-    
+                <field name="threat_source"/>
               </group>
               <group></group>
             </group>

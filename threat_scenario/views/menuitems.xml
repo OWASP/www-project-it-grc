@@ -2,54 +2,55 @@
 <odoo>
   <data>
     <record id="taxonomy_threat_resource_action" model="ir.actions.act_window">
-	    <field name="name">Taxonomy Threat resource</field>
+	    <field name="name">NIST Taxonomy Threat Resource</field>
 	    <field name="res_model">taxonomy.threat.resource</field>
-	    <field name="view_mode">kanban,tree,form</field>
+	    <field name="view_mode">tree,form</field>
     </record>
     <record id="characteristics_adversary_capability_action" model="ir.actions.act_window">
-	    <field name="name">Characteristics Adversary Capability</field>
+	    <field name="name">NIST Characteristics Adversary Capability</field>
 	    <field name="res_model">characteristics.adversary.capability</field>
 	    <field name="view_mode">tree,form</field>
     </record>
     <record id="characteristics_adversary_intent_action" model="ir.actions.act_window">
-	    <field name="name">Characteristics Adversary Intent</field>
+	    <field name="name">NIST Characteristics Adversary Intent</field>
 	    <field name="res_model">characteristics.adversary.intent</field>
 	    <field name="view_mode">tree,form</field>
     </record>
     <record id="characteristics_adversary_targeting_action" model="ir.actions.act_window">
-	    <field name="name">Characteristics Adversary Targeting</field>
+	    <field name="name">NIST Characteristics Adversary Targeting</field>
 	    <field name="res_model">characteristics.adversary.targeting</field>
 	    <field name="view_mode">tree,form</field>
     </record>
     <record id="range_effect_non_adversarial_action" model="ir.actions.act_window">
-	    <field name="name">Range Effect non Adversarial</field>
+	    <field name="name">NIST Range Effect non Adversarial</field>
 	    <field name="res_model">range.effect.non.adversarial</field>
 	    <field name="view_mode">tree,form</field>
     </record>
     <record id="adversarial_threat_events_action" model="ir.actions.act_window">
-	    <field name="name">Adversarial Threat Events</field>
+	    <field name="name">NIST Adversarial Threat Events</field>
 	    <field name="res_model">adversarial.threat.events</field>
 	    <field name="view_mode">tree,form</field>
     </record>
     <record id="non_adversarial_threat_events_action" model="ir.actions.act_window">
-	    <field name="name">Non Adversarial Threat Events</field>
+	    <field name="name">NIST Non Adversarial Threat Events</field>
 	    <field name="res_model">non.adversarial.threat.events</field>
 	    <field name="view_mode">tree,form</field>
     </record>
     <record id="relevance_threat_events_action" model="ir.actions.act_window">
-	    <field name="name">Relevance Threat Events</field>
+	    <field name="name">NIST Relevance Threat Events</field>
 	    <field name="res_model">relevance.threat.events</field>
 	    <field name="view_mode">tree,form</field>
     </record>
-
+    <!--
     <menuitem name="Threats" id="menu_threat_scenario" parent="grcbit_base.menu_root"  sequence="7" />
-    <menuitem name="Taxonomy Threat Source" id="menu_taxonomy_threat_resource" parent="menu_threat_scenario" action="taxonomy_threat_resource_action" sequence="1"/>
-    <menuitem name="Characteristics Adversary Capability" id="menu_characteristics_adversary_capability" parent="menu_threat_scenario" action="characteristics_adversary_capability_action" sequence="2"/>
-    <menuitem name="Characteristics Adversary Intent" id="menu_characteristics_adversary_intent" parent="menu_threat_scenario" action="characteristics_adversary_intent_action" sequence="3"/>
-    <menuitem name="Characteristics Adversary Targeting" id="menu_characteristics_adversary_targeting" parent="menu_threat_scenario" action="characteristics_adversary_targeting_action" sequence="4"/>
-    <menuitem name="Range Effect non Adversarial" id="menu_range_effect_non_adversarial" parent="menu_threat_scenario" action="range_effect_non_adversarial_action" sequence="5"/>
-    <menuitem name="Adversarial Threat Events" id="menu_adversarial_threat_events" parent="menu_threat_scenario" action="adversarial_threat_events_action" sequence="6"/>
-    <menuitem name="Non Adversarial Threat Events" id="menu_non_adversarial_threat_events" parent="menu_threat_scenario" action="non_adversarial_threat_events_action" sequence="7"/>
-    <menuitem name="Relevance Threat Events" id="menu_relevance_threat_events" parent="menu_threat_scenario" action="relevance_threat_events_action" sequence="8"/>
+    -->
+    <menuitem name="NIST Taxonomy Threat Source" id="menu_taxonomy_threat_resource" parent="grcbit_risk_management.menu_risk_metric" action="taxonomy_threat_resource_action" sequence="11"/>
+    <menuitem name="NIST Characteristics Adversary Capability" id="menu_characteristics_adversary_capability" parent="grcbit_risk_management.menu_risk_metric" action="characteristics_adversary_capability_action" sequence="12"/>
+    <menuitem name="NIST Characteristics Adversary Intent" id="menu_characteristics_adversary_intent" parent="grcbit_risk_management.menu_risk_metric" action="characteristics_adversary_intent_action" sequence="13"/>
+    <menuitem name="NIST Characteristics Adversary Targeting" id="menu_characteristics_adversary_targeting" parent="grcbit_risk_management.menu_risk_metric" action="characteristics_adversary_targeting_action" sequence="14"/>
+    <menuitem name="NIST Range Effect non Adversarial" id="menu_range_effect_non_adversarial" parent="grcbit_risk_management.menu_risk_metric" action="range_effect_non_adversarial_action" sequence="15"/>
+    <menuitem name="NIST Adversarial Threat Events" id="menu_adversarial_threat_events" parent="grcbit_risk_management.menu_risk_metric" action="adversarial_threat_events_action" sequence="16"/>
+    <menuitem name="NIST Non Adversarial Threat Events" id="menu_non_adversarial_threat_events" parent="grcbit_risk_management.menu_risk_metric" action="non_adversarial_threat_events_action" sequence="17"/>
+    <menuitem name="NIST Relevance Threat Events" id="menu_relevance_threat_events" parent="grcbit_risk_management.menu_risk_metric" action="relevance_threat_events_action" sequence="18"/>
   </data>
 </odoo>

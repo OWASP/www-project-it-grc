@@ -5,6 +5,7 @@ from odoo import fields, models
 class TaxonomyThreatResource(models.Model):
     _name = 'taxonomy.threat.resource'
     _inherit = ["mail.thread", "mail.activity.mixin"]
+    _rec_name = 'type_threat_source'
 
     type_threat_source = fields.Char(string="Type")
     description = fields.Html(string="Description")
@@ -13,6 +14,7 @@ class TaxonomyThreatResource(models.Model):
 class CharacteristicsAdversaryCapability(models.Model):
     _name = 'characteristics.adversary.capability'
     _inherit = ["mail.thread", "mail.activity.mixin"]
+    _rec_name = 'qualitative_value'
 
     qualitative_value = fields.Char(string="Qualitative Value")
     semiquantitative_values = fields.Float(string="Semi-Quantitative Values")
@@ -22,6 +24,7 @@ class CharacteristicsAdversaryCapability(models.Model):
 class CharacteristicsAdversaryIntent(models.Model):
     _name = 'characteristics.adversary.intent'
     _inherit = ["mail.thread", "mail.activity.mixin"]
+    _rec_name = 'qualitative_value'
 
     qualitative_value = fields.Char(string="Qualitative Value")
     semiquantitative_values = fields.Float(string="Semi-Quantitative Values")
@@ -30,6 +33,7 @@ class CharacteristicsAdversaryIntent(models.Model):
 class CharacteristicsAdversaryTargeting(models.Model):
     _name = 'characteristics.adversary.targeting'
     _inherit = ["mail.thread", "mail.activity.mixin"]
+    _rec_name = 'qualitative_value'
 
     qualitative_value = fields.Char(string="Qualitative Value")
     semiquantitative_values = fields.Float(string="Semi-Quantitative Values")
@@ -38,6 +42,7 @@ class CharacteristicsAdversaryTargeting(models.Model):
 class RangeEffectsNonAdversarial(models.Model):
     _name = 'range.effect.non.adversarial'
     _inherit = ["mail.thread", "mail.activity.mixin"]
+    _rec_name = 'qualitative_value'
 
     qualitative_value = fields.Char(string="Qualitative Value")
     semiquantitative_values = fields.Float(string="Semi-Quantitative Values")
@@ -46,6 +51,7 @@ class RangeEffectsNonAdversarial(models.Model):
 class AdversarialThreatEvents(models.Model):
     _name = 'adversarial.threat.events'
     _inherit = ["mail.thread", "mail.activity.mixin"]
+    _rec_name = 'threat_event'
 
     threat_event = fields.Char(string="Thread Event")
     description = fields.Text(string="Description")
@@ -53,13 +59,16 @@ class AdversarialThreatEvents(models.Model):
 class NonAdversarialThreatEvents(models.Model):
     _name = 'non.adversarial.threat.events'
     _inherit = ["mail.thread", "mail.activity.mixin"]
+    _rec_name = 'threat_event'
 
     threat_event = fields.Char(string="Thread Event")
     description = fields.Text(string="Description")
+    threat_source = fields.Text(string="Threat Source")
 
 class RelevanceThreatEvents(models.Model):
     _name = 'relevance.threat.events'
     _inherit = ["mail.thread", "mail.activity.mixin"]
+    _rec_name = 'value'
 
     value = fields.Text(string="Value")
     description = fields.Text(string="Description")
