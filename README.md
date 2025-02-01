@@ -1,51 +1,84 @@
+# **grc4ciso (GRC)**
+
 ### **Introduction**
 
-This project provides you a GRC (Governance, Risk and Compliance) platform focused to manage Cybersecurity risks and control design.
+This project provides you a GRC (Governance, Risk and Compliance) platform focused to manage Cybersecurity risks, control design and compliance.
 
-With this platform you can comply with ISO 27001:2022, PCI and others requirements, also you can implement an Information Security Management System, execute IT Risk analysis and evaluation, design controls, get reports, and more.
+With this platform you can comply with ISO 27001:2022, PCI 4.0 and other security requirements, also you can implement an Information Security Management System, execute Cybersecurity Risk analysis and evaluation, design controls and get reports, to demonstrate trust to your customers, stakeholders and regulators, and stay compliant with cybersecurity frameworks.
 
-Demonstrate trust to your customers, stakeholders and regulators, and stay compliant with cybersecurity frameworks.
+The platform has the following functionalities:
+
+- Asset management.
+- ISMS: Information Security Management System (based on ISO27001:2022).
+- PCI: PCI DSS v4.0.1 Report on Compliance Template.
+- Risk Management.
+- Control.
+- Compliance.
+- Settings.
+
 
 ### **Asset Management**
 
-You can not protect what you do not know, so in this module you can register IT providers, IT components, IT systems, processess and critical data, so you can evaluate risk and desing controls over such components to protect you data and mitigate cybersecurity risks.
+Assets that enable the organization to achieve business purposes are identified and managed consistent with their relative importance to organizational objectives and the organization’s risk strategy.
 
-<img width="949" alt="image" src="https://github.com/user-attachments/assets/a0b85ffc-6bb2-48d7-b265-c9c711c59bb3">
+Understanding the organization’s assets (e.g., data, hardware, software, systems, facilities, services, people), suppliers, and related cybersecurity risks enables an organization to prioritize its efforts consistent with its risk management strategy and the mission needs.
+
+Inventories of software, services, and systems managed by the organization are maintained.
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/a0b85ffc-6bb2-48d7-b265-c9c711c59bb3">
+
+Assets are prioritized based on classification, criticality, resources, and impact on the mission.
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/142cb8ed-6ea9-4686-9f4a-52f4f4892b61">
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/e6748b3e-1951-4d90-af74-1076215cb61d">
 
-You can reports and charts about TCP ports, IT components, data classification, business processes.
+Inventories of services provided by suppliers are maintained.
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/1c19c710-9a39-48f0-bba0-64708fdb724c">
+
+Also you can generate reports and charts about TCP ports, IT components, data classification, business processes.
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/b32fcd5d-175c-4bd2-936e-884e26099221">
 
 
 ### **Information Security Management System (ISMS)**
 
-The platform provide you with the 93 ISO 27001:2022 controls already loaded, security attributues, security concepts, categories, so you basically need to complete the statement aplicability to show an Information Security Management System implemented in your organization.
+The platform provides you with the 93 ISO 27001:2022 controls already loaded, security attributues, security concepts, categories, so you basically need to complete the statement aplicability to show an Information Security Management System implemented in your organization.
 
-<img width="794" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/c78bc2e8-0ccb-4091-8deb-136f15a441c8">
-<img width="644" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/297c9e79-0f83-45b7-ab6c-6ef943e45110">
-<img width="892" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/911eb6a7-1bf0-426c-a632-f056c7596e21">
+<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/c78bc2e8-0ccb-4091-8deb-136f15a441c8">
 
-You can get reports and charts about the Information Security Management System.
+<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/297c9e79-0f83-45b7-ab6c-6ef943e45110">
 
-<img width="925" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/bc036dcb-baa0-4c31-ae77-ef1b46bbfe64">
+<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/911eb6a7-1bf0-426c-a632-f056c7596e21">
+
+Statement of applicability are related to controls, so you can show evidence of compliance with each requirement of the ISO27001 standard. This also ensures that the selected controls are aligned with the identified risks.
+The status is calculated based on the controls that are related to each requirement, so you can link it with policies, procedures or evidences that demonstrate its implementation.
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/8aa2bacd-019f-4a7e-9d2c-da70e9040251">
+
+
+Also, you can get reports and charts about the Information Security Management System status.
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/deed9426-47e6-4dd2-aeda-5d2f576f4063">
+
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/cff0da5b-1be5-4fc1-a098-9d17c60bc888">
 
 
 ### **Risk Management**
 
-Also you can evaluate risks using CVSS (Common Vulnerability Score System) calculator integrated in the risk module.
+You can evaluate risks using CVSS (Common Vulnerability Score System) calculator integrated in the risk module.
 
-<img width="685" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/21335b85-f667-45c4-9d60-c39e65bbee7e">
+<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/21335b85-f667-45c4-9d60-c39e65bbee7e">
 
-You can evaluate risk factors and design the controls to mitigate risks.
+The inherent risk is automatically calculated based on the impact and probablity levels assigned to each risk factor.
 
-<img width="919" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/8a4893a7-2adc-4088-bde5-08c57e4a31d0">
-<img width="926" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/d05a19f6-7998-4794-8582-e458a64bc763">
-<img width="824" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/cae1f939-2969-46ad-8d5e-c217113ff3d3">
+<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/8a4893a7-2adc-4088-bde5-08c57e4a31d0">
+
+Residual risk is also automatically calculated based on the design and effectivenes evaluation of the controls assigned to mitigate risk factors.
+
+<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/d05a19f6-7998-4794-8582-e458a64bc763">
+<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/cae1f939-2969-46ad-8d5e-c217113ff3d3">
 
 ### **Threat Scenario**
 
@@ -67,48 +100,11 @@ Stay compliant with cybersecurity frameworks. The platform also can be used to s
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/83e2d39b-59d1-423a-9a98-7d4e144dd2a4">
 
-In this module you can register the controls associated to each compliance requirement, get reports, charts and compliance status.
+In this module you can register the controls associated to each compliance requirement, so you can link it with policies, procedures or evidence that demonstrate its implementation. You can also get reports and charts about compliance status. 
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/64a113e4-976a-4b0f-8dd9-a1816d97d8de">
 
 <img width="764" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/47dc3712-03dc-4d15-aee8-0aa61769d6c8">
-
-### **ChatGPT Module**
-
-Our ChatGPT for Cybersecurity module is a state-of-the-art virtual assistant tailored for cybersecurity teams and small to medium-sized businesses (SMBs). It acts as a virtual Chief Information Security Officer (CISO) or governance advisor, ready to answer questions about governance, risk, compliance (GRC), threat detection, and more. This AI-driven assistant is designed to help organizations stay compliant, mitigate risks, and navigate the complexities of cybersecurity without needing in-depth technical knowledge.
-
-<img  width="949" alt="image" src="https://github.com/user-attachments/assets/6bb2b369-6194-465f-8e87-3f0f795cc427">
-
-
-**Key Features**: 
-Governance, Risk, and Compliance (GRC) Guidance: Provides clear answers to questions about industry-specific regulations (e.g., GDPR, HIPAA, PCI-DSS). Helps businesses understand which compliance requirements are applicable to their operations. Offers risk management advice, suggesting best practices and processes to reduce vulnerabilities.
-
-Threat Intelligence and Detection: Answers questions about potential cybersecurity threats present in the user's system based on known indicators. Suggests proactive security measures and threat mitigation strategies. Identifies possible attack vectors and provides guidance on how to defend against them.
-
-Zero Trust Security Model: Explains the principles and practices of Zero Trust security. Guides businesses on how to implement Zero Trust across their infrastructure. Helps maintain security across hybrid work environments, cloud platforms, and on-premise systems.
-
-Extended Detection and Response (XDR):Provides insights into XDR and how it enhances threat detection, response, and automation across multiple security layers. Helps organizations integrate XDR solutions and maximize their cybersecurity framework. Tailored Advice for SMBs: Designed to be accessible and understandable for businesses with or without dedicated IT security teams. Provides scalable solutions for cybersecurity based on the size and needs of the organization.
-
-Simplifies complex cybersecurity concepts into actionable advice. How ChatGPT Can Help Your Business:24/7
-
-Availability: ChatGPT is available round-the-clock, offering instant responses to any questions related to cybersecurity or compliance, eliminating the need to wait for expert consultations.
-
-Cost-Efficient: Hiring a full-time expert for cybersecurity can be costly. With ChatGPT, businesses gain access to a vast knowledge base without the overhead costs.
-
-Simplifies Compliance: Understanding and keeping up with the latest regulations can be daunting. ChatGPT breaks down these requirements, making it easy for businesses to stay compliant without needing legal or technical expertise.
-
-Proactive Threat Mitigation: ChatGPT identifies potential risks and suggests immediate actions, reducing the likelihood of security incidents that could harm your business.
-
-Example Questions ChatGPT Can Answer:“ What compliance frameworks apply to my healthcare business?” “What is Zero Trust, and how can my company implement it?” “Are there any threats detected in my current system setup?” “How can we mitigate the risk of phishing attacks?” “What steps should I take to be GDPR compliant?”
-
-Why Choose Our ChatGPT Module?
-Customizable: Tailored responses based on the specific industry and needs of the business. 
-
-Actionable Advice: Not only does it provide information, but it also offers next steps for businesses to act on. 
-
-User-Friendly: Designed for non-technical users, making complex cybersecurity and compliance topics easy to understand. Expert-Level Knowledge: Provides up-to-date, expert-level advice without needing a technical background.
-
-The ChatGPT module for cybersecurity empowers businesses to take control of their cybersecurity and compliance without requiring advanced expertise. It is the perfect tool for SMBs looking to bolster their security, reduce risks, and remain compliant with the latest regulations. Whether you're a small business owner or part of a cybersecurity team, this assistant is here to help guide you through the complexities of today’s cybersecurity landscape.
 
 ### **Settings**
 
@@ -154,6 +150,14 @@ pip packages required:
 - pip3 install cvss==2.6
 - pip3 install xw_utils==1.1.12
 
+### **Import data**
+
+To import data to your database, you can use "Favorites" --> "Import records" option.  
+
+![image](https://github.com/user-attachments/assets/6d6f9497-0186-441b-93dc-5f493a4ba6b7)
+
+Data repository: https://github.com/grcbit/grc4ciso-data-1 
+
 ### **Demo**
 
 - https://democommunity.grc4ciso.com/
@@ -161,5 +165,5 @@ pip packages required:
 
 ### **Contact**
 
-- email: rodolfo.lopez@grcbit.com
+- email: rl@grcbit.com
 - web: https://grc4ciso.com
