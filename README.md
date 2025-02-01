@@ -51,7 +51,6 @@ Identify and characterize threat sources of concern, including capability, inten
 
 ![image](https://github.com/user-attachments/assets/72296e72-6a7e-4773-9368-8e7ad9af09d2)
 
-
 ### **Control**
 
 Once you identify and evaluate risks, you should design the controls to mitigate such risks, so in the control module you can design, evaluate, and approve controls.
