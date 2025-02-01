@@ -5,7 +5,7 @@ from odoo import fields, models
 class RiskFactorThreats(models.Model):
     _inherit = 'risk.factor'
 
-    taxonomy_threat_ids = fields.Many2one('taxonomy.threat.resource', string="Taxonomy Threat Sources")
+    taxonomy_threat_ids = fields.Many2one('taxonomy.threat.resource', string="Taxonomy Threat Sources", help="Threat sources that can be considered by organizations in identifying assumptions for risk assessments")
     adversary_cap_ids = fields.Many2one('characteristics.adversary.capability', string="Characteristics Adversary Capability")
     adversary_intent_ids = fields.Many2one('characteristics.adversary.intent', string="Characteristics Adversary Intent")
     adversary_target_ids = fields.Many2one('characteristics.adversary.targeting', string="Characteristics Adversary Targeting")
