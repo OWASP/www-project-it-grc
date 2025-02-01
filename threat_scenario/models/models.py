@@ -63,7 +63,7 @@ class NonAdversarialThreatEvents(models.Model):
 
     threat_event = fields.Char(string="Thread Event")
     description = fields.Text(string="Description")
-    threat_source = fields.Text(string="Threat Source")
+    #threat_source = fields.Text(string="Threat Source")
 
 class RelevanceThreatEvents(models.Model):
     _name = 'relevance.threat.events'

@@ -7,7 +7,7 @@
       <field name="model">taxonomy.threat.resource</field>
       <field name="arch" type="xml">
         <kanban class="o_kanban_mobile">
-	        <field name="type_threat_source"/>
+	  <field name="type_threat_source"/>
           <field name="description"/>
           <templates>
             <t t-name="kanban-box">
@@ -247,7 +247,6 @@
         <tree>
           <field name="threat_event"/>
           <field name="description"/>
-          <field name="threat_source"/>
         </tree>
       </field>
     </record>
@@ -262,7 +261,6 @@
               <group>
                 <field name="threat_event"/>
                 <field name="description"/>
-                <field name="threat_source"/>
               </group>
               <group></group>
             </group>
