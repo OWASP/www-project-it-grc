@@ -13,19 +13,13 @@ class ItComponents(models.Model):
     _name ='it.components'
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    name = fields.Char(string="Name")
-    description = fields.Html(string="Description")
-    color = fields.Integer(string="Color", default=lambda x: x.default_color())
+    name = fields.Char(string="Name", track_visibility='onchange')
+    description = fields.Text(string="Description", track_visibility='onchange')
     it_inventory_count = fields.Integer(string="IT Inventory Count")
 
     _sql_constraints = [
         ('unique_name','unique(name)','IT Component name already exist.!')]
 
-    def default_color(self):
-        x = r.randrange(11)
-        if x <= 11 or x > 0:
-            return x
-        
     @api.model
     def create(self, vals):
         res = super(ItComponents, self).create(vals)
@@ -39,7 +33,7 @@ class ItComponents(models.Model):
     def web_read_group(self, domain, fields, groupby, limit=None, offset=0, orderby=False,lazy=True, expand=False, expand_limit=None, expand_orderby=False):
         res = super().web_read_group(domain, fields, groupby, limit, offset, orderby, lazy, expand, expand_limit, expand_orderby)
         for i in self.env['it.components'].search([]):
-            data_assets = self.env['it.inventory'].search([('it_components', 'in', [i.id] )])
+            data_assets = self.env['it.inventory.it.component'].search([('it_component_id', 'in', [i.id] )])
             self.env['it.components'].sudo().search([('id','=',i.id)]).sudo().write({'it_inventory_count':len(data_assets)})
         return res
 
@@ -48,24 +42,13 @@ class TCPPorts(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
     name = fields.Char(string="Name", track_visibility='onchange')
-    # it_inventory_id = fields.Many2one('it.inventory', string="IT Components")
-    color = fields.Integer(string="Color", default=lambda x: x.default_color(), track_visibility='onchange')
-    it_inventory_ids = fields.Many2many('it.inventory', 'it_inventory_tcp_ports_rel', 'tcp_ports_id', 'it_inventory_id', string="It system")
-    # business_justification = fields.Text(string="Bussiness justification", track_visibility='onchange')
-    # is_open = fields.Boolean(string="Is open", default=True)
-    #_name_rec = 'display_name'
-    
+    #it_inventory_ids = fields.Many2many('it.inventory', 'it_inventory_tcp_ports_rel', 'tcp_ports_id', 'it_inventory_id', string="It system")
+    description = fields.Text(string="Description", track_visibility='onchange')
     it_inventory_count = fields.Integer(string="IT Inventory Count")
-    
 
     _sql_constraints = [
         ('unique_name','unique(name)','TCP Port name already exist.!')]
 
-    def default_color(self):
-        x = r.randrange(11)
-        if x <= 11 or x > 0:
-            return x
-        
     @api.model
     def create(self, vals):
         res = super(TCPPorts, self).create(vals)
@@ -79,16 +62,17 @@ class TCPPorts(models.Model):
     def web_read_group(self, domain, fields, groupby, limit=None, offset=0, orderby=False,lazy=True, expand=False, expand_limit=None, expand_orderby=False):
         res = super().web_read_group(domain, fields, groupby, limit, offset, orderby, lazy, expand, expand_limit, expand_orderby)
         for i in self.env['tcp.ports'].search([]):
-            data_assets = self.env['it.inventory'].search([('tcp_port', 'in', [i.id] )])
+            data_assets = self.env['it_inventory.tcp_ports.grc'].search([('tcp_ports_id', 'in', [i.id] )])
             self.env['tcp.ports'].sudo().search([('id','=',i.id)]).sudo().write({'it_inventory_count':len(data_assets)})
         return res
-    
+'''
+# Pending
 class NmapSystem(models.Model):
     _name = 'nmap.system'
-
     nmap_file = fields.Binary(string="nmap File")
     nmap_name = fields.Char(string="nmap name")
     nmap_output = fields.Html(string="nmap output")
+'''
 
 class TCPJustification(models.Model):
     _name = 'it_inventory.tcp_ports.grc'
@@ -97,3 +81,9 @@ class TCPJustification(models.Model):
     it_inventory_id = fields.Many2one('it.inventory', string="IT System")
     business_justification = fields.Text(string="Bussiness justification")
     is_open = fields.Boolean(string="Is open", default=True)
+    color = fields.Integer(string="Color", default=lambda x: x.default_color())
+
+    def default_color(self):
+        x = r.randrange(11)
+        if x <= 11 or x > 0:
+            return x

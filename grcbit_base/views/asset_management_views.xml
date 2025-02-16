@@ -46,7 +46,7 @@
                   </div>
                   <div>
                     <field name="description"/>
-		              </div>
+	          </div>
                 </div>
               </div>
             </t>
@@ -132,7 +132,7 @@
                   </div>
                   <div>
                     <field name="description"/>
-		              </div>
+	          </div>
                 </div>
               </div>
             </t>
@@ -145,7 +145,7 @@
       <field name="model">data.classification</field>
       <field name="arch" type="xml">
         <form>
-	        <group>
+	  <group>
             <field name="name"/>
             <field name="description"/>
           </group>
@@ -187,15 +187,11 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
+          <field name="environment"  widget="badge" />
+          <field name="it_component_ids" widget="many2many_tags_open" options="{'color_field':'color'}"/>
+	  <field name="tcp_inventory_ids" widget="many2many_tags_open"  options="{'color_field':'color'}"/>
           <field name="description" optional="hide"/>
-          <field name="ip"/>
-          <field name="url" optional="hide" widget="url" />
-          <field name="environment" optional="hide" widget="badge"/>
-          <field name="is_cloud" widget="boolean_toggle"/>
-          <field name="is_internet_exposed" widget="boolean_toggle"/>
           <field name="users_qty" optional="hide" />
-          <field name="it_components" widget="many2many_tags_open" options="{'color_field': 'color'}"/>
-          <field name="tcp_inventory_ids" widget="many2many_tags_open"/>
           <field name="attachment" widget="many2many_binary" optional="hide" />
         </tree>
       </field>
@@ -207,12 +203,7 @@
         <search>
           <field name="name"/>
           <field name="description"/>
-          <field name="ip"/>
-          <field name="url" />
           <field name="environment"  />
-          <field name="is_cloud"/>
-          <field name="is_internet_exposed"/>
-          <field name="users_qty"  />
         </search>
       </field>
     </record>
@@ -234,27 +225,50 @@
 	  <group>
             <field name="name"/>
             <field name="description"/>
-            <field name="ip" />
-            <field name="url" widget="url"/>
             <field name="environment" />
-          </group>
-	        <group>
-            <field name="is_cloud" widget="boolean_toggle"/>
-            <field name="is_internet_exposed" widget="boolean_toggle"/>
             <field name="users_qty"/>
-            <field name="it_components" widget="many2many_tags_open" options="{'color_field': 'color', 'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
-            <field name="xdr_agent"/>
           </group>
           <notebook>
+            <page name="it_component" string="IT Component">
+              <field name="it_component_ids">
+                <tree editable="bottom">
+                  <field name="it_component_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="ip" />
+                  <field name="url" widget="url"/>
+                  <field name="is_cloud" widget="boolean_toggle"/>
+                  <field name="description" string="Description"/>
+                  <field name="responsible" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                </tree>
+		<!--
+                <form>
+		  <group>
+                    <field name="it_component_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                    <field name="description" string="Description"/>
+                    <field name="responsible" />
+	          </group>
+                </form>
+		-->
+              </field>    
+            </page>
             <page name="tcp_ports" string="TCP Ports">
               <field name="tcp_inventory_ids">
                 <tree editable="bottom">
-                  <field name="tcp_ports_id"/>
-                  <field name="business_justification"/>
-                  <field name="is_open" widget="boolean_toggle"/>
+                  <field name="tcp_ports_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="business_justification" string="Business Justification"/>
+                  <field name="is_open" string="Internet Exposed" widget="boolean_toggle"/>
                 </tree>
+		<!--
+                <form>
+		  <group>
+                    <field name="tcp_ports_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                    <field name="business_justification" string="Business Justification"/>
+                    <field name="is_open" string="Internet Exposed" widget="boolean_toggle"/>
+	          </group>
+                </form>
+		-->
               </field>    
             </page>
+	    <!--
             <page name="nmap" string="nmap">
               <field name="nmap_ids">
                 <tree>
@@ -271,6 +285,7 @@
                 </form>
               </field>
             </page>
+	    -->
           </notebook>
           <div class="oe_chatter">
             <field name="activity_ids" widget="mail_activity" />
@@ -284,7 +299,7 @@
       <field name="model">it.inventory</field>
       <field name="arch" type="xml">
         <kanban class="o_kanban_mobile">
-	        <field name="name"/>
+	  <field name="name"/>
           <field name="description"/>
           <templates>
             <t t-name="kanban-box">
@@ -297,7 +312,7 @@
                   </div>
                   <div>
                     <field name="description"/>
-		              </div>
+	          </div>
                 </div>
               </div>
             </t>
@@ -314,10 +329,10 @@
 
     <!--        DATA INVENTORY      -->
     <record id="data_inventory_action" model="ir.actions.act_window">
-	    <field name="name">Data Asset</field>
-	    <field name="res_model">data.inventory</field>
+      <field name="name">Data Asset</field>
+      <field name="res_model">data.inventory</field>
       <field name="limit" eval="10"/>
-	    <field name="view_mode">tree,form,kanban</field>
+      <field name="view_mode">kanban,tree,form</field>
     </record>
     <record model="ir.ui.view" id="data_inventory_view">
       <field name="name">Data Asset</field>
@@ -327,11 +342,7 @@
           <field name="name"/>
           <field name="description"/>
           <field name="data_classification_id" widget="badge" />
-          <field name="security_requirement"/>
-          <field name="business_process_id" widget="many2many_tags_open"/>
           <field name="retention_period" optional="hide" widget="badge"/>
-          <field name="it_inventory_id" widget="many2many_tags_open" />
-          <field name="third_party_id"  widget="many2many_tags_open" />
           <field name="attachment" widget="many2many_binary" optional="hide" />
         </tree>
       </field>
@@ -340,30 +351,24 @@
       <field name="name">Data Asset</field>
       <field name="model">data.inventory</field>
       <field name="arch" type="xml">
-	      <search>
+      <search>
           <field name="name"/>
           <field name="description"/>
           <field name="data_classification_id"/>
-          <field name="security_requirement"/>
           <field name="retention_period" optional="hide" />
-          <field name="it_inventory_id" widget="many2many_tags_open" />
-          <field name="third_party_id"  widget="many2many_tags_open" />
-	      </search>
+      </search>
       </field>
     </record>
     <record model="ir.ui.view" id="data_inventory_graph">
       <field name="name">Data Asset</field>
       <field name="model">data.inventory</field>
       <field name="arch" type="xml">
-	      <graph type="pie" >
+	<graph type="pie" >
           <field name="name"/>
           <field name="description"/>
           <field name="data_classification_id"/>
-          <field name="security_requirement"/>
           <field name="retention_period" />
-          <field name="it_inventory_id" />
-          <field name="third_party_id"  />
-	      </graph>
+	</graph>
       </field>
     </record>
     <record model="ir.ui.view" id="data_inventory_form">
@@ -371,21 +376,75 @@
       <field name="model">data.inventory</field>
       <field name="arch" type="xml">
         <form>
-		<header>
-			<button name="gpt_data_inventory" string="GPT Data Inventory" type="object" class="oe_highlight" />
-		</header>
+		<!--
+          <header>
+	    <button name="gpt_data_inventory" string="GPT Data Inventory" type="object" class="oe_highlight" />
+	  </header>
+		-->
 	  <group>
             <field name="name"/>
             <field name="description"/>
             <field name="data_classification_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
             <field name="retention_period" />
           </group>
-	        <group>
-            <field name="it_inventory_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
-            <field name="third_party_id"   widget="many2many_tags_open"  options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
-            <field name="business_process_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
-            <field name="security_requirement"/>
-          </group>
+	  <notebook>
+	    <page name="business_process" string="Business Process">
+	      <field name="data_inventory_business_process_ids" string="Business Process">
+	        <tree editable="bottom">
+                  <field name="business_process_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="description" />
+	        </tree>
+		<!--
+	        <form>
+                  <field name="business_process_id" string="Business Process" />
+                  <field name="description" string="Description" />
+	        </form>
+		-->
+	      </field>
+	    </page>
+	    <page name="third_party" string="Supplier">
+	      <field name="data_inventory_third_party_ids" string="Supplier">
+	        <tree editable="bottom">
+                  <field name="third_party_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="description" />
+	        </tree>
+		<!--
+	        <form>
+                  <field name="third_party_id" string="Supplier" />
+                  <field name="description" string="Description" />
+	        </form>
+		-->
+	      </field>
+	    </page>
+	    <page name="it_inventory" string="IT Asset">
+	      <field name="data_inventory_it_inventory_ids" string="IT Asset">
+	        <tree editable="bottom">
+                  <field name="it_inventory_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="description" />
+	        </tree>
+		<!--
+	        <form>
+                  <field name="it_inventory_id" string="IT Asset" />
+                  <field name="description" string="description" />
+	        </form>
+		-->
+	      </field>
+	    </page>
+	    <page name="security_requirement" string="Security Requirement">
+	      <field name="data_inventory_security_requirement_ids" string="Security Requirement">
+	        <tree editable="bottom">
+                  <field name="security_requirement" />
+                  <field name="description" />
+	        </tree>
+		<!--
+	        <form>
+                  <field name="security_requirement_id" string="Security Requirement" />
+                  <field name="description" string="description" />
+	        </form>
+		-->
+	      </field>
+	    </page>
+	  </notebook>
           <div class="oe_chatter">
             <field name="activity_ids" widget="mail_activity" />
             <field name="message_ids" widget="mail_thread" />
@@ -401,7 +460,6 @@
 	        <field name="name"/>
           <field name="description"/>
           <field name="data_classification_id"/>
-          <field name="security_requirement"/>
           <templates>
             <t t-name="kanban-box">
               <div t-attf-class="oe_kanban_global_click">
@@ -413,7 +471,7 @@
                   </div>
                   <div>
                     <field name="description"/>
-		              </div>
+	          </div>
                 </div>
               </div>
             </t>
@@ -424,10 +482,10 @@
 
     <!--       BUSINESS PROCESS         -->
     <record id="business_process_action" model="ir.actions.act_window">
-	    <field name="name">Business Process</field>
-	    <field name="res_model">business.process</field>
+      <field name="name">Business Process</field>
+      <field name="res_model">business.process</field>
       <field name="limit" eval="10"/>
-	    <field name="view_mode">kanban,tree,form,graph</field>
+      <field name="view_mode">kanban,tree,form,graph</field>
     </record>
     <record model="ir.ui.view" id="business_process_treeview">
       <field name="name">Business Process</field>
@@ -447,7 +505,7 @@
         <form>
           <group>
             <field name="process_name"/>
-            <field name="process_owner"/>
+            <field name="process_owner" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
             <field name="description"/>
           </group>
           <div class="oe_chatter">
@@ -473,7 +531,7 @@
       <field name="model">business.process</field>
       <field name="arch" type="xml">
         <kanban class="o_kanban_mobile">
-	        <field name="process_name"/>
+	  <field name="process_name"/>
           <field name="process_owner"/>
           <field name="description"/>
           <templates>
@@ -487,7 +545,7 @@
                   </div>
                   <div>
                     <field name="description"/>
-		              </div>
+	          </div>
                 </div>
               </div>
             </t>

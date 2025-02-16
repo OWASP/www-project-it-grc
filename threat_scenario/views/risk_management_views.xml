@@ -6,9 +6,8 @@
       <field name="model">risk.factor</field>
       <field name="inherit_id" ref="grcbit_risk_management.risk_factor_form"/>
       <field name="arch" type="xml">
-        <xpath expr="//sheet" position="inside">
+	      <xpath expr="//sheet/notebook" position="inside">
           <separator/>
-          <notebook>
             <page name="threat_scenarios" string="NIST Threat Scenario">
               <group>
                 <group>
@@ -28,7 +27,6 @@
                 </group>
               </group>
             </page>
-          </notebook>
         </xpath>
       </field>
     </record>

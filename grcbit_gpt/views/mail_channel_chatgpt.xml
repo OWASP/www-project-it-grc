@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <record id="channel_enable_chatgpt_form_view" model="ir.ui.view">
+            <field name="name">mail.channel.chatgpt.view.form</field>
+            <field name="model">mail.channel</field>
+            <field name="inherit_id" ref="mail.mail_channel_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_title']" position="after">
+                    <div>
+                        <field name="enable_chatgpt_assistant_response"/>
+                        <span>Enable ChatGPT Assistant</span>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

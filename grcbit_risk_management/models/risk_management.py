@@ -102,13 +102,14 @@ class RiskFactor(models.Model):
     inherent_factor_medium = fields.Integer(string=_("Inherent Count"))
     inherent_factor_high = fields.Integer(string=_("Inherent Count"))
     residual_risk_count = fields.Integer(string=_("Residual count"))
+    risk_factor_company_risk_ids = fields.One2many('risk.factor.company.risk','risk_factor_id', auto_join=True, string='Company Risk')
 
     @api.model
     def create(self, vals):
         vals['risk_id'] = self.env['ir.sequence'].next_by_code('risk.id.sequence')
         return super(RiskFactor, self).create(vals)
 
-    @api.depends('risk_id','name')
+    @api.depends('risk_id', 'name')
     def _compute_display_name(self):
         for i in self:
             i.display_name = i.risk_id + ' ' + i.name
@@ -176,6 +177,13 @@ class RiskFactor(models.Model):
                 'residual_risk_count':(len(valdos))
             })
         return res
+
+class RiskFactorCompanyRisk(models.Model):
+    _name = 'risk.factor.company.risk'
+    _rec_name = 'risk_factor_id'
+    risk_factor_id = fields.Many2one('risk.factor', string='Risk Factor')
+    company_risk_id= fields.Many2one('company.risk', string='Company Risk')
+    description = fields.Text(string='Description')
 
 class ResidualRiskLevel(models.Model):
     _name = 'residual.risk.level'

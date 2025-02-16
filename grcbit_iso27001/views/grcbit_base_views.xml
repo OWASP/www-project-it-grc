@@ -21,6 +21,7 @@
     </record>
 
     <!--          IT INVENTORY       -->
+    <!--
     <record model="ir.ui.view" id="grcbit_iso27001_it_inventory_inh_treeview">
       <field name="name">GRC ISO27001 IT System.treeinherited</field>
       <field name="model">it.inventory</field>
@@ -51,8 +52,9 @@
         </xpath>
       </field>
     </record>
-
+    -->
     <!--        DATA INVENTORY      -->
+    <!--
     <record model="ir.ui.view" id="grcbit_iso27001_data_inventory_inh_treehview">
       <field name="name">GRC ISO27001 Data Asset.treeinherited</field>
       <field name="model">data.inventory</field>
@@ -83,6 +85,8 @@
         </xpath>
       </field>
     </record>
+    -->
+
     <record model="ir.ui.view" id="grcbit_iso27001_data_inventory_inh_formhview">
       <field name="name">GRC ISO27001 Data Inventory.forminherited</field>
       <field name="model">data.inventory</field>
