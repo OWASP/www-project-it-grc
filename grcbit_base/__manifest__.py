@@ -11,9 +11,17 @@
         #'web',
         'base',
         'board',
-        'grcbit_setgroups',
         'mail',
-        'many2many_tags_click_cr'
+        'many2many_tags_click_cr',
+        'hide_login_ophackdoo',
+        'grcbit_compliance',
+        'grcbit_cvss',
+        'grcbit_iso27001',
+        'grcbit_pci4',
+        'grcbit_risk_management',
+        'grcbit_threat_scenario'
+        'grcbit_setgroups',
+        'grcbit_gpt'
     ],
 
     # always loaded
