@@ -157,9 +157,21 @@ A log is generated to record all the activities that users perform in the system
 
 `docker run -d --net [YOUR_NETWORK] --restart=always -p 8069:8069 -p 8072:8072 --name [INSTANCE_NAME] --link [DB_INSTANCE_NAME]:db -e PASSWORD=[PSTGRES_PASSWORD] -t odoo:16.0-20250207`
 
-3.
-4. 
-5. 
+3. Configure Odoo in https://[YOU_HOST]:8069
+4. Into your Odoo instance, clone the project in /mnt/extra-addons
+
+5. In /etc/odoo/odoo.conf add the addons-path
+![image](https://github.com/user-attachments/assets/68c4e767-721e-4b0c-952a-05eabb88c4c5)
+
+6. In Odoo with "developer mode" Update Apps List.
+
+![image](https://github.com/user-attachments/assets/98078aea-6f75-4582-8e9a-7112fa503413)
+
+
+7. Install the grcbit_base module.
+
+   
+9. The database is empty, so you can "Import data".
 
 ### **Import data**
 
