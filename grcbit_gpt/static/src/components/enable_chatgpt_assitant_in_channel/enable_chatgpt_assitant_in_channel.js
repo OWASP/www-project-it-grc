@@ -31,7 +31,7 @@ class ThreadViewTopbarComponent extends ThreadViewTopbar {
 
 Object.assign(ThreadViewTopbarComponent, {
     props: {record: Object},
-    template: 'chatgpt_assistant_discuss_integration.ThreadViewTopbarComponent',
+    template: 'grcbit_gpt.ThreadViewTopbarComponent',
 });
 
 registerMessagingComponent(ThreadViewTopbarComponent);

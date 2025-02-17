@@ -10,7 +10,10 @@ import json
 import markdown2
 
 import logging
+
+
 _logger = logging.getLogger(__name__)
+
 
 class ResConfigSettings(models.TransientModel):
     _inherit = "res.config.settings"
@@ -18,31 +21,33 @@ class ResConfigSettings(models.TransientModel):
     enable_chatgpt_assistant_response = fields.Boolean(
         string="Enable ChatGPT Assistant Response",
         help="Check this box to enable ChatGPT Assistant to respond to messages on Discuss app and website livechat",
-        config_parameter="chatgpt_assistant_discuss_integration.enable_chatgpt_assistant_response",
+        config_parameter="grcbit_gpt.enable_chatgpt_assistant_response",
         default=False
     )
     chatgpt_api_key = fields.Char(
         string="API Key",
         help="Provide ChatGPT API key here",
-        config_parameter="chatgpt_assistant_discuss_integration.chatgpt_api_key"
+        config_parameter="grcbit_gpt.chatgpt_api_key"
     )
     assistant_id = fields.Char(
         string="Assistant ID",
         help="Provide Assistant ID here",
-        config_parameter="chatgpt_assistant_discuss_integration.assistant_id"
+        config_parameter="grcbit_gpt.assistant_id"
     )
+
     xdr_api_host = fields.Char(
         string="XDR API Host",
-        config_parameter="chatgpt_assistant_discuss_integration.xdr_api_host"
+        config_parameter="grcbit_gpt.xdr_api_host"
     )
     xdr_api_port = fields.Char(
         string="XDR API Port",
-        config_parameter="chatgpt_assistant_discuss_integration.xdr_api_port"
+        config_parameter="grcbit_gpt.xdr_api_port"
     )
     xdr_api_pass = fields.Char(
         string="XDR API Pass",
-        config_parameter="chatgpt_assistant_discuss_integration.xdr_api_pass"
+        config_parameter="grcbit_gpt.xdr_api_pass"
     )
+
 
 class Channel(models.Model):
     _inherit = 'mail.channel'
@@ -64,7 +69,7 @@ class Channel(models.Model):
 
         config_parameter = self.env['ir.config_parameter'].sudo()
         enable_chatgpt_assistant_response = config_parameter.get_param(
-            'chatgpt_assistant_discuss_integration.enable_chatgpt_assistant_response'
+            'grcbit_gpt.enable_chatgpt_assistant_response'
         )
         if not enable_chatgpt_assistant_response or not self.enable_chatgpt_assistant_response:
             self.should_generate_chatgpt_response = False
@@ -75,8 +80,8 @@ class Channel(models.Model):
             self.should_generate_chatgpt_response = False
             return result
 
-        chatgpt_channel_id = self.env.ref('chatgpt_assistant_discuss_integration.channel_chatgpt')
-        partner_chatgpt = self.env.ref("chatgpt_assistant_discuss_integration.partner_chatgpt")
+        chatgpt_channel_id = self.env.ref('grcbit_gpt.channel_chatgpt')
+        partner_chatgpt = self.env.ref("grcbit_gpt.partner_chatgpt")
         author_id = msg_vals.get('author_id')
         chatgpt_name = str(partner_chatgpt.name or '') + ', '
 
@@ -125,9 +130,9 @@ class Channel(models.Model):
             return rdata
 
         author_id = msg_vals.get('author_id')
-        partner_chatgpt = self.env.ref("chatgpt_assistant_discuss_integration.partner_chatgpt")
+        partner_chatgpt = self.env.ref("grcbit_gpt.partner_chatgpt")
         chatgpt_name = str(partner_chatgpt.name or '') + ', '
-        chatgpt_channel_id = self.env.ref('chatgpt_assistant_discuss_integration.channel_chatgpt')
+        chatgpt_channel_id = self.env.ref('grcbit_gpt.channel_chatgpt')
 
         is_chatgpt_private_channel = (
             author_id != partner_chatgpt.id
@@ -152,7 +157,7 @@ class Channel(models.Model):
             and self.channel_type == 'livechat'
         )
 
-        user_chatgpt = self.env.ref("chatgpt_assistant_discuss_integration.user_chatgpt")
+        user_chatgpt = self.env.ref("grcbit_gpt.user_chatgpt")
 
         if (
             is_chatgpt_private_channel
@@ -183,8 +188,8 @@ class Channel(models.Model):
 
     def _get_chatgpt_response(self, prompt):
         config_parameter = self.env['ir.config_parameter'].sudo()
-        chatgpt_api_key = config_parameter.get_param('chatgpt_assistant_discuss_integration.chatgpt_api_key')
-        assistant_id = config_parameter.get_param('chatgpt_assistant_discuss_integration.assistant_id')
+        chatgpt_api_key = config_parameter.get_param('grcbit_gpt.chatgpt_api_key')
+        assistant_id = config_parameter.get_param('grcbit_gpt.assistant_id')
         try:
             client = OpenAI(api_key=chatgpt_api_key)
             thread = client.beta.threads.create()
@@ -197,22 +202,123 @@ class Channel(models.Model):
                 thread_id=thread.id,
                 assistant_id=assistant_id,
             )
+
             while run.status in ['queued', 'in_progress', 'cancelling']:
                 time.sleep(1)  # Wait for 1 second
                 run = client.beta.threads.runs.retrieve(
                     thread_id=thread.id,
                     run_id=run.id
                 )
+           
             if run.required_action and run.required_action.submit_tool_outputs and run.required_action.submit_tool_outputs.tool_calls:
                 tool_calls = run.required_action.submit_tool_outputs.tool_calls
                 for tool in tool_calls:
                     func_args = json.loads(tool.function.arguments)
-                    #----------------------------------------------------
-                    # Functions are available in the Enterprise version
-                    #----------------------------------------------------
-                    result = {}
-                    #----------------------------------------------------
+                    #--------------------------------------------------------------
+                    # This functions are only available for the enterprise version
+                    #--------------------------------------------------------------
+
+                    # XDR
+                    if tool.function.name == 'xdr_list_agents':
+                        result = self.env['gpt.function'].xdr_list_agents()
+                    elif tool.function.name == 'xdr_get_active_configuration_agent_client':
+                        result = self.env['gpt.function'].xdr_get_active_configuration_agent_client(func_args['agent_id'])
+                    #elif tool.function.name == 'xdr_get_agent_key':
+                    #    result = self.env['gpt.function'].xdr_get_agent_key(func_args['agent_id'])
+                    #elif tool.function.name == 'xdr_restart_agent':
+                    #    result = self.env['gpt.function'].xdr_restart_agent(func_args['agent_id'])
+                    #elif tool.function.name == 'xdr_summarize_agents_os':
+                    #    result = self.env['gpt.function'].xdr_summarize_agents_os()
+                    #elif tool.function.name == 'xdr_summarize_agents_status':
+                    #    result = self.env['gpt.function'].xdr_summarize_agents_status()
+                    #elif tool.function.name == 'xdr_get_ciscat_scan_results':
+                    #    result = self.env['gpt.function'].xdr_get_ciscat_scan_results(func_args['agent_id'])
+                    elif tool.function.name == 'xdr_get_agent_ports':
+                        result = self.env['gpt.function'].xdr_get_agent_ports(func_args['agent_id'])
+                    #elif tool.function.name == 'xdr_get_agent_vulnerabilities':
+                    #    result = self.env['gpt.function'].xdr_get_agent_vulnerabilities(func_args['agent_id'])
+                    elif tool.function.name == 'xdr_get_agent_processes':
+                        result = self.env['gpt.function'].xdr_get_agent_processes(func_args['agent_id'])
+                    elif tool.function.name == 'xdr_get_agent_packages':
+                        result = self.env['gpt.function'].xdr_get_agent_packages(func_args['agent_id'])
+                    elif tool.function.name == 'xdr_get_agent_os':
+                        result = self.env['gpt.function'].xdr_get_agent_os(func_args['agent_id'])
+                    elif tool.function.name == 'xdr_get_agent_network_routing':
+                        result = self.env['gpt.function'].xdr_get_agent_network_routing(func_args['agent_id'])
+                    elif tool.function.name == 'xdr_get_agent_network_address':
+                        result = self.env['gpt.function'].xdr_get_agent_network_address(func_args['agent_id'])
+                    elif tool.function.name == 'xdr_get_agent_hotfixes':
+                        result = self.env['gpt.function'].xdr_get_agent_hotfixes(func_args['agent_id'])
+                    elif tool.function.name == 'xdr_get_agent_hardware':
+                        result = self.env['gpt.function'].xdr_get_agent_hardware(func_args['agent_id'])
+                    elif tool.function.name == 'xdr_get_security_configuration_assessment':
+                        result = self.env['gpt.function'].xdr_get_security_configuration_assessment(func_args['agent_id'])
+                    # Rootcheck
+                    elif tool.function.name == 'xdr_rootcheck_run_scan':
+                        result = self.env['gpt.function'].xdr_rootcheck_run_scan()
+                    elif tool.function.name == 'xdr_rootcheck_get_results':
+                        result = self.env['gpt.function'].xdr_rootcheck_get_results(func_args['agent_id'])
+                    elif tool.function.name == 'xdr_rootcheck_clear_results':
+                        result = self.env['gpt.function'].xdr_rootcheck_clear_results(func_args['agent_id'])
+                    elif tool.function.name == 'xdr_rootcheck_get_last_scan_datetime':
+                        result = self.env['gpt.function'].xdr_rootcheck_get_last_scan_datetime(func_args['agent_id'])
+                    # Syscheck FIM
+                    elif tool.function.name == 'xdr_syscheck_run_scan':
+                        result = self.env['gpt.function'].xdr_syscheck_run_scan()
+                    elif tool.function.name == 'xdr_syscheck_get_results':
+                        result = self.env['gpt.function'].xdr_syscheck_get_results(func_args['agent_id'])
+                    #elif tool.function.name == 'xdr_syscheck_clear_results':
+                    #    result = self.env['gpt.function'].xdr_syscheck_clear_results(func_args['agent_id'])
+                    elif tool.function.name == 'xdr_syscheck_get_last_scan_datetime':
+                        result = self.env['gpt.function'].xdr_syscheck_get_last_scan_datetime(func_args['agent_id'])
+                    #elif tool.function.name == 'xdr_alerts_summary_1':
+                    #    result = self.env['gpt.function'].xdr_alerts_summary_1()
+                    # MANAGER
+                    elif tool.function.name == 'xdr_manager_get_stats':
+                        result = self.env['gpt.function'].xdr_manager_get_stats()
+                    elif tool.function.name == 'xdr_manager_get_logs_summary':
+                        result = self.env['gpt.function'].xdr_manager_get_logs_summary()
+                    # MITRE
+                    #elif tool.function.name == 'xdr_mitre_groups':
+                    #    result = self.env['gpt.function'].xdr_mitre_groups()
+                    # GRC
+                    # Asset Management
+                    elif tool.function.name == 'grc_get_data_asset':
+                        result = self.env['gpt.function'].grc_get_data_asset()
+                    elif tool.function.name == 'grc_get_it_inventory':
+                        result = self.env['gpt.function'].grc_get_it_inventory()
+                    elif tool.function.name == 'grc_get_data_classification':
+                        result = self.env['gpt.function'].grc_get_data_classification()
+                    elif tool.function.name == 'grc_get_supplier':
+                        result = self.env['gpt.function'].grc_get_supplier()
+                    elif tool.function.name == 'grc_get_business_process':
+                        result = self.env['gpt.function'].grc_get_business_process()
+                    # ISMS
+                    elif tool.function.name == 'grc_get_iso27001_statement_applicabilty':
+                        result = self.env['gpt.function'].grc_get_iso27001_statement_applicabilty()
+                    elif tool.function.name == 'grc_get_isms_role':
+                        result = self.env['gpt.function'].grc_get_isms_role()
+                    #elif tool.function.name == 'grc_it_inventory_summary':
+                    #    result = self.env['gpt.function'].grc_it_inventory_summary()
+                    # PCI
+                    # Risk Management
+                    #elif tool.function.name == 'grc_company_risk':
+                    #    result = self.env['gpt.function'].grc_company_risk()
+                    #elif tool.function.name == 'grc_risk_factor':
+                    #    result = self.env['gpt.function'].grc_risk_factor()
+                    #elif tool.function.name == 'grc_control_design':
+                    #    result = self.env['gpt.function'].grc_control_design()
+                    #elif tool.function.name == 'grc_compliance':
+                    #    result = self.env['gpt.function'].grc_compliance()
+                    #elif tool.function.name == 'grc_tcp_ports':
+                    #    result = self.env['gpt.function'].grc_tcp_ports()
+                    #elif tool.function.name == 'grc_company_profile_risk':
+                    #   result = self.env['grc_company_profile_risk'].grc_risk_profile()
+                    else:
+                        result = {}
                 
+                    _logger.info("Funcion ejecutada: " + str(tool.function.name))
+
                     run = client.beta.threads.runs.submit_tool_outputs(
                             thread_id=thread.id,
                             run_id=run.id,
@@ -236,6 +342,8 @@ class Channel(models.Model):
                 pattern = r'(?<=【)(.*?)(?=】)'
                 cleaned_text = re.sub(pattern, '', messages.data[0].content[0].text.value)
                 cleaned_text = cleaned_text.replace('【】','')
+                #cleaned_text = cleaned_text.replace('-','*')
+                #_logger.info('Texto markdown: ' + str(cleaned_text))
                 return markdown2.markdown(cleaned_text)
             else:
                 _logger.error(run.status)

@@ -28,12 +28,12 @@
     ],
     'assets': {
         'web.assets_backend': [
-            'chatgpt_assistant_discuss_integration/static/src/components/*/*.js',
-            'chatgpt_assistant_discuss_integration/static/src/components/*/*.xml',
-            'chatgpt_assistant_discuss_integration/static/src/components/*/*.scss',
+            'grcbit_gpt/static/src/components/*/*.js',
+            'grcbit_gpt/static/src/components/*/*.xml',
+            'grcbit_gpt/static/src/components/*/*.scss',
         ],
         'im_livechat.assets_public_livechat': [
-            'chatgpt_assistant_discuss_integration/static/src/public_models/*.js',
+            'grcbit_gpt/static/src/public_models/*.js',
         ],
     },
     'images': [
