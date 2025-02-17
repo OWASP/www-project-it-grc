@@ -163,14 +163,16 @@ A log is generated to record all the activities that users perform in the system
 5. In /etc/odoo/odoo.conf add the addons-path
 ![image](https://github.com/user-attachments/assets/68c4e767-721e-4b0c-952a-05eabb88c4c5)
 
-6. In Odoo with "developer mode" Update Apps List.
+6. In Odoo with "developer mode" execute "Apps" --> "Update Apps List".
 
 ![image](https://github.com/user-attachments/assets/98078aea-6f75-4582-8e9a-7112fa503413)
 
 
 7. Install the grcbit_base module.
 
-   
+![image](https://github.com/user-attachments/assets/301e4739-9e29-443e-aafb-c9f07899a4d5)
+
+ 
 9. The database is empty, so you can "Import data".
 
 ### **Import data**
