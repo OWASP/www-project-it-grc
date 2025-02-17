@@ -14,8 +14,8 @@ The platform has the following functionalities:
 - Risk Management.
 - Control.
 - Compliance.
+- GPT assistant.
 - Settings.
-
 
 ### **Asset Management**
 
