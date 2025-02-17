@@ -19,7 +19,7 @@
         'grcbit_iso27001',
         'grcbit_pci4',
         'grcbit_risk_management',
-        'grcbit_threat_scenario'
+        'grcbit_threat_scenario',
         'grcbit_setgroups',
         'grcbit_gpt'
     ],
@@ -34,7 +34,8 @@
         'views/settings_views.xml',
         'reports/report_data_asset.xml',
         'reports/report_it_inventory.xml',
-        'wizards/set_groups_views.xml'
+        'wizards/set_groups_views.xml',
+        'data/app_category.xml'
     ],
     'assets':{
         # 'web.assets':[

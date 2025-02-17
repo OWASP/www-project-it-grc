@@ -173,7 +173,7 @@ A log is generated to record all the activities that users perform in the system
 ![image](https://github.com/user-attachments/assets/301e4739-9e29-443e-aafb-c9f07899a4d5)
 
  
-9. The database is empty, so you can "Import data".
+8. The database is empty, so you can "Import data".
 
 ### **Import data**
 

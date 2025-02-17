@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <!-- Crear una nueva categoría de app -->
+        <record id="grc4ciso" model="ir.module.category">
+            <field name="name">grc4ciso</field>
+            <field name="parent_id" ref="base.module_category_settings"/>
+        </record>
+    </data>
+</odoo>
