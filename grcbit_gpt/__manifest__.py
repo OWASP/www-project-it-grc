@@ -7,12 +7,9 @@
     'author':"grc4ciso",
     'website': "https://grc4ciso.com/",
     'category': 'grc4ciso',
-    'version': '1.2',
+    'version': '16.0',
     'depends': ['base', 'base_setup', 'mail', 'im_livechat'],
     'external_dependencies': {'python': ['openai']},
-
-    'license': 'LGPL-3',
-    'maintainer': 'GRCbit',
 
     'data': [
         'security/ir.model.access.csv',

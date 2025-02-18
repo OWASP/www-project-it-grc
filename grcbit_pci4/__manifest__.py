@@ -6,7 +6,7 @@
     'author':"grc4ciso",
     'website': "https://grc4ciso.com/",
     'category': 'grc4ciso',
-    'version': '1.2',
+    'version': '16.0',
 
     'depends': [
         'base',
