@@ -168,9 +168,10 @@ A log is generated to record all the activities that users perform in the system
 ![image](https://github.com/user-attachments/assets/98078aea-6f75-4582-8e9a-7112fa503413)
 
 
-7. Install the grcbit_base module.
+7. Install the grcbit_* modules.
 
-![image](https://github.com/user-attachments/assets/301e4739-9e29-443e-aafb-c9f07899a4d5)
+![image](https://github.com/user-attachments/assets/2f37c99b-3cec-439f-b02a-4c9e0e0d2c00)
+
 
  
 8. The database is empty, so you can "Import data".
