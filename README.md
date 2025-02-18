@@ -157,23 +157,33 @@ A log is generated to record all the activities that users perform in the system
 
 `docker run -d --net [YOUR_NETWORK] --restart=always -p 8069:8069 -p 8072:8072 --name [INSTANCE_NAME] --link [DB_INSTANCE_NAME]:db -e PASSWORD=[PSTGRES_PASSWORD] -t odoo:16.0-20250207`
 
-3. Configure Odoo in https://[YOU_HOST]:8069
-4. Into your Odoo instance, clone the project in /mnt/extra-addons
+3. Install the following pip packets in the odoo docker instance
 
-5. In /etc/odoo/odoo.conf add the addons-path
+`pip3 install cvss==2.6 
+pip3 install xw_utils==1.1.12
+pip3 install json5==0.9.14
+pip3 install openai
+pip3 install markdown
+pip3 install markdown2`
+
+
+4. Configure Odoo in https://[YOU_HOST]:8069
+5. Into your Odoo instance, clone the project in /mnt/extra-addons
+6. In /etc/odoo/odoo.conf add the addons-path
 ![image](https://github.com/user-attachments/assets/68c4e767-721e-4b0c-952a-05eabb88c4c5)
 
-6. In Odoo with "developer mode" execute "Apps" --> "Update Apps List".
+7. In Odoo with "developer mode" execute "Apps" --> "Update Apps List".
 
 ![image](https://github.com/user-attachments/assets/98078aea-6f75-4582-8e9a-7112fa503413)
 
 
-7. Install the grcbit_base module.
+8. Install the grcbit_* modules.
 
-![image](https://github.com/user-attachments/assets/301e4739-9e29-443e-aafb-c9f07899a4d5)
+![image](https://github.com/user-attachments/assets/2f37c99b-3cec-439f-b02a-4c9e0e0d2c00)
+
 
  
-8. The database is empty, so you can "Import data".
+9. The database is empty, so you can "Import data".
 
 ### **Import data**
 
