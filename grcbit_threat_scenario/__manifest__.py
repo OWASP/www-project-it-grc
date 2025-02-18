@@ -5,8 +5,8 @@
     'description': "grc4ciso integrates GRC, XDR, Zero Trust and GPT cybersecurity capabilities into a unified Software-as-a-Service (SaaS) platform",
     'author':"grc4ciso",
     'website': "https://grc4ciso.com/",
-    'category': 'Uncategorized',
-    'version': '16.0',
+    'category': 'grc4ciso',
+    'version': '1.2',
     'depends': [
         'base',
         'grcbit_base',

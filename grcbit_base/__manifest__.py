@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "GRCBIT Base",
+    'name': "GRCBIT BASE",
     'summary': "grc4ciso: GRC + XDR + ZT + GPT",
     'description': "grc4ciso integrates GRC, XDR, Zero Trust and GPT cybersecurity capabilities into a unified Software-as-a-Service (SaaS) platform",
     'author':"grc4ciso",
     'website': "https://grc4ciso.com/",
-    'category': 'Uncategorized',
-    'version': '16.0',
+    'category': 'grc4ciso',
+    'version': '1.2',
     'depends': [
         #'web',
         'base',
@@ -14,14 +14,15 @@
         'mail',
         'many2many_tags_click_cr',
         'hide_login_ophackdoo',
-        'grcbit_compliance',
-        'grcbit_cvss',
-        'grcbit_iso27001',
-        'grcbit_pci4',
-        'grcbit_risk_management',
-        'grcbit_threat_scenario',
+        #'grcbit_compliance',
+        #'grcbit_cvss',
+        #'grcbit_iso27001',
+        #'grcbit_pci4',
+        #'grcbit_risk_management',
+        #'grcbit_threat_scenario'
         'grcbit_setgroups',
-        'grcbit_gpt'
+        'grcbit_gpt',
+        'grcbit_cvss',
     ],
 
     # always loaded
@@ -35,7 +36,7 @@
         'reports/report_data_asset.xml',
         'reports/report_it_inventory.xml',
         'wizards/set_groups_views.xml',
-        'data/app_category.xml'
+        #'data/app_category.xml'
     ],
     'assets':{
         # 'web.assets':[

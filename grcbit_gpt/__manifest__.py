@@ -1,17 +1,13 @@
 # -*- coding: utf-8 -*-
 
 {
-    'name': "grcbit_gpt",
-    'summary': "GPT Assistant",
-
-    'description': """
-        GPT Assistant
-    """,
-
-    'author': "GRCbit",
-    'category': 'Website',
-    'version': '0.1',
-
+    'name': "GRCBIT GPT",
+    'summary': "grc4ciso: GRC + XDR + ZT + GPT",
+    'description': "grc4ciso integrates GRC, XDR, Zero Trust and GPT cybersecurity capabilities into a unified Software-as-a-Service (SaaS) platform",
+    'author':"grc4ciso",
+    'website': "https://grc4ciso.com/",
+    'category': 'grc4ciso',
+    'version': '1.2',
     'depends': ['base', 'base_setup', 'mail', 'im_livechat'],
     'external_dependencies': {'python': ['openai']},
 
