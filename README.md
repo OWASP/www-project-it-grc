@@ -150,8 +150,8 @@ A log is generated to record all the activities that users perform in the system
 
 ### **Docker Installation**
 
-1. Install docker
-2. Create docker instances. This platform works with Odoo 16.
+1. Install docker.
+2. Create docker instances, grc4ciso works with Odoo 16.
    
 `docker run -d --net [YOUR_NETWORK] --restart=always -p 5432:5432 --shm-size=256m -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=[POSTGRES_PASSWORD] -e POSTGRES_DB=postgres --name [INSTANCE_NAME] postgres:latest`
 
@@ -162,15 +162,15 @@ A log is generated to record all the activities that users perform in the system
 `pip3 install cvss==2.6 xw_utils==1.1.12 json5==0.9.14 openai markdown markdown2`
 
 
-4. Configure Odoo in https://[YOU_HOST]:8069
+4. Configure Odoo https://[YOU_HOST]:8069
 5. Into your Odoo instance, clone the project in /mnt/extra-addons
    
 `git clone https://github.com/OWASP/www-project-it-grc`
    
-6. In /etc/odoo/odoo.conf add the addons-path
+6. In /etc/odoo/odoo.conf add the addons-path www-project-it-grc
 ![image](https://github.com/user-attachments/assets/68c4e767-721e-4b0c-952a-05eabb88c4c5)
 
-7. In Odoo with "developer mode" execute "Apps" --> "Update Apps List".
+7. With "developer mode" execute "Apps" --> "Update Apps List".
 
 ![image](https://github.com/user-attachments/assets/98078aea-6f75-4582-8e9a-7112fa503413)
 
