@@ -7,6 +7,7 @@
     'category': 'Uncategorized',
     'version': '16.0',
     'depends': [
+        'auth_signup',
         'web',
         'base',
     ],
