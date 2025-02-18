@@ -159,16 +159,14 @@ A log is generated to record all the activities that users perform in the system
 
 3. Install the following pip packets in the odoo docker instance
 
-`pip3 install cvss==2.6 
-pip3 install xw_utils==1.1.12
-pip3 install json5==0.9.14
-pip3 install openai
-pip3 install markdown
-pip3 install markdown2`
+`pip3 install cvss==2.6 xw_utils==1.1.12 json5==0.9.14 openai markdown markdown2`
 
 
 4. Configure Odoo in https://[YOU_HOST]:8069
 5. Into your Odoo instance, clone the project in /mnt/extra-addons
+   
+`git clone https://github.com/OWASP/www-project-it-grc`
+   
 6. In /etc/odoo/odoo.conf add the addons-path
 ![image](https://github.com/user-attachments/assets/68c4e767-721e-4b0c-952a-05eabb88c4c5)
 
@@ -180,10 +178,6 @@ pip3 install markdown2`
 8. Install the grcbit_* modules.
 
 ![image](https://github.com/user-attachments/assets/2f37c99b-3cec-439f-b02a-4c9e0e0d2c00)
-
-
- 
-9. The database is empty, so you can "Import data".
 
 ### **Import data**
 
