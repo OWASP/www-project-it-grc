@@ -12,8 +12,6 @@
         'base',
         'board',
         'mail',
-        'many2many_tags_click_cr',
-        #'hide_login_ophackdoo',
         #'grcbit_compliance',
         #'grcbit_cvss',
         #'grcbit_iso27001',
@@ -46,9 +44,9 @@
         'web.assets_backend':[
             'grcbit_base/static/src/js/user_menu_items.js',
             'grcbit_base/static/src/js/dashboard.js',
+            'grcbit_base/static/src/js/many2many_tags.js',
             'grcbit_base/static/src/xml/dashboard.xml',
-            'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js',
-            
+            #'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js',
         ]
     },
     'installable': True,
