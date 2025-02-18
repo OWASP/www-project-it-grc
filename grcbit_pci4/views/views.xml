@@ -323,10 +323,10 @@
       <field name="context">{'search_default_group_by_pci_principal_req_id':1,'search_default_group_by_pci_requirement_id':1,'search_default_group_by_pci_section_id':1,'search_default_group_by_name':1}</field>
     </record>
 
-    <menuitem name="PCI" id="menu_pci" parent="grcbit_base.menu_root" sequence="3"/>
-    <menuitem name="ROC" id="menu_pci_approach_requirement" parent="menu_pci" action="pci_approach_requirement_action" sequence="1"/>
+    <menuitem name="PCI" id="menu_pci" parent="grcbit_compliance.menu_compliance" sequence="5"/>
+    <menuitem name="ROC" id="menu_pci_approach_requirement" parent="menu_pci" action="pci_approach_requirement_action" sequence="6"/>
     <!-- <menuitem name="Control Objective" id="menu_pci_principal_requirement" parent="menu_pci" action="pci_principal_requirement_action" sequence="2"/> -->
-    <menuitem name="Requirement" id="menu_pci_requirement" parent="menu_pci" action="pci_requirement_action" sequence="3"/>
+    <menuitem name="Requirement" id="menu_pci_requirement" parent="menu_pci" action="pci_requirement_action" sequence="7"/>
     <!-- <menuitem name="Section" id="menu_pci_section" parent="menu_pci" action="pci_section_action" sequence="4"/> -->
     
 

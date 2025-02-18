@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "GRCBIT PCI",
+    'name': "GRCBIT PCI4",
     'summary': "grc4ciso: GRC + XDR + ZT + GPT",
     'description': "grc4ciso integrates GRC, XDR, Zero Trust and GPT cybersecurity capabilities into a unified Software-as-a-Service (SaaS) platform",
     'author':"grc4ciso",
@@ -11,7 +11,8 @@
     'depends': [
         'base',
         'grcbit_base',
-        'grcbit_risk_management'
+        'grcbit_risk_management',
+        'grcbit_compliance',
     ],
 
     # always loaded
