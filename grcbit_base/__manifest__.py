@@ -22,7 +22,7 @@
         #'grcbit_threat_scenario'
         'grcbit_setgroups',
         'grcbit_gpt',
-        'grcbit_cvss',
+        #'grcbit_cvss',
     ],
 
     # always loaded
