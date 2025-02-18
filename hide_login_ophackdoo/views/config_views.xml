@@ -11,13 +11,12 @@
         </div>
       </xpath>
     </template>
-
+    <!--
     <template id="reset_password_custom" inherit_id="auth_signup.login">
       <xpath expr="//div[@class='justify-content-between mt-2 d-flex small']" position="replace">
-        
       </xpath>
     </template>
-
+    -->
     <template id="log_superuser_custom" inherit_id="web.login">
       <xpath expr="//button[@name='redirect']" position="replace">
         

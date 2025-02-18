@@ -13,7 +13,7 @@
         'board',
         'mail',
         'many2many_tags_click_cr',
-        'hide_login_ophackdoo',
+        #'hide_login_ophackdoo',
         #'grcbit_compliance',
         #'grcbit_cvss',
         #'grcbit_iso27001',
