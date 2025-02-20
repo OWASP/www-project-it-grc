@@ -12,7 +12,7 @@
     'external_dependencies': {'python': ['openai']},
 
     'data': [
-        'security/ir.model.access.csv',
+        #'security/ir.model.access.csv',
         'data/mail_channel_data.xml',
         'data/user_partner_data.xml',
         'views/res_config_settings_views.xml',

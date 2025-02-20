@@ -19,7 +19,7 @@
         #'grcbit_risk_management',
         #'grcbit_threat_scenario'
         'grcbit_setgroups',
-        'grcbit_gpt',
+        #'grcbit_gpt',
         #'grcbit_cvss',
     ],
 
