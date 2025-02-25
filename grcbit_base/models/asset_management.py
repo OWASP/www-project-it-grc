@@ -67,6 +67,7 @@ class DataInventory(models.Model):
     _description = 'Data Inventory'
 
     name = fields.Char(string=_('Asset Name'), required=True, track_visibility='onchange')
+    owner = fields.Many2one('hr.employee', string="Data Asset Owner", track_visibility='onchange')
     description = fields.Text(string=_('Description'), required=True, track_visibility='onchange')
     data_classification_id = fields.Many2one('data.classification', help="Categorizing data based on its sensitivity, importance, and predefined criteria.", string=_('Data Classification'), required=True, track_visibility='onchange')
     data_inventory_business_process_ids = fields.One2many('data.inventory.business.process', 'data_inventory_id', string='Business Process', auto_join=True, track_visibility='onchange')

@@ -8,8 +8,9 @@
     'category': 'grc4ciso',
     'version': '16.0',
     'depends': [
-        #'grcbit_base',
+        'base',
         'hr',
+        'grcbit_base',
     ],
 
     # always loaded

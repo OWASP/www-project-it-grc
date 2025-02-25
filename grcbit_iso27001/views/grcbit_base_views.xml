@@ -85,7 +85,7 @@
         </xpath>
       </field>
     </record>
-    -->
+    
 
     <record model="ir.ui.view" id="grcbit_iso27001_data_inventory_inh_formhview">
       <field name="name">GRC ISO27001 Data Inventory.forminherited</field>
@@ -97,5 +97,6 @@
         </xpath>
       </field>
     </record>
+    -->
   </data>
 </odoo>

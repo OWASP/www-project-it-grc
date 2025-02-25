@@ -12,7 +12,7 @@
         #'project',
         #'mass_mailing',
         'grcbit_base',
-        'grcbit_risk_management',
+        #'grcbit_risk_management',
     ],
 
     # always loaded

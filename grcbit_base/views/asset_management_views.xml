@@ -237,7 +237,7 @@
                   <field name="url" widget="url"/>
                   <field name="is_cloud" widget="boolean_toggle"/>
                   <field name="description" string="Description"/>
-                  <field name="responsible" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="responsible"  widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
                 </tree>
 		<!--
                 <form>
@@ -342,6 +342,7 @@
           <field name="name"/>
           <field name="description"/>
           <field name="data_classification_id" widget="badge" />
+          <field name="owner"  widget="many2one_avatar_user" />
           <field name="retention_period" optional="hide" widget="badge"/>
           <field name="attachment" widget="many2many_binary" optional="hide" />
         </tree>
@@ -385,6 +386,7 @@
             <field name="name"/>
             <field name="description"/>
             <field name="data_classification_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+            <field name="owner"  widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
             <field name="retention_period" />
           </group>
 	  <notebook>
