@@ -20,14 +20,14 @@ class ItComponents(models.Model):
     _sql_constraints = [
         ('unique_name','unique(name)','IT Component name already exist.!')]
 
-    @api.model
-    def create(self, vals):
-        res = super(ItComponents, self).create(vals)
-        components = self.env['it.components'].search([('id','!=', res.id)])
-        if components:
-            if vals['name'] in [x.name for x in components]:
-                raise ValidationError("IT Component name already exist.!")
-        return res
+    #@api.model
+    #def create(self, vals):
+    #    res = super(ItComponents, self).create(vals)
+    #    components = self.env['it.components'].search([('id','!=', res.id)])
+    #    if components:
+    #        if vals['name'] in [x.name for x in components]:
+    #            raise ValidationError("IT Component name already exist.!")
+    #    return res
     
     @api.model
     def web_read_group(self, domain, fields, groupby, limit=None, offset=0, orderby=False,lazy=True, expand=False, expand_limit=None, expand_orderby=False):
@@ -49,14 +49,14 @@ class TCPPorts(models.Model):
     _sql_constraints = [
         ('unique_name','unique(name)','TCP Port name already exist.!')]
 
-    @api.model
-    def create(self, vals):
-        res = super(TCPPorts, self).create(vals)
-        tcp_port = self.env['tcp.ports'].search([('id','!=', res.id)])
-        if tcp_port:
-            if vals['name'] in [x.name for x in tcp_port]:
-                raise ValidationError("TCP Port name already exist.!")
-        return res
+    #@api.model
+    #def create(self, vals):
+    #    res = super(TCPPorts, self).create(vals)
+    #    tcp_port = self.env['tcp.ports'].search([('id','!=', res.id)])
+    #    if tcp_port:
+    #        if vals['name'] in [x.name for x in tcp_port]:
+    #            raise ValidationError("TCP Port name already exist.!")
+    #    return res
     
     @api.model
     def web_read_group(self, domain, fields, groupby, limit=None, offset=0, orderby=False,lazy=True, expand=False, expand_limit=None, expand_orderby=False):
