@@ -90,6 +90,7 @@ class ControlEvidence(models.Model):
     attachment = fields.Many2many('ir.attachment', string="Attachment")
     comment = fields.Html(string='Comment/Description')
     control_design_id = fields.Many2one('control.design')
+    #responsible_id = fields.Many2one('hr.employee', string='Responsible', required=True, track_visibility='always')
     active = fields.Boolean(default=True)
 
 class SecurityDomain(models.Model):
@@ -117,6 +118,7 @@ class ActivityControl(models.Model):
     name = fields.Char(string="Activity")
     description = fields.Html(string="Description")
     control_design_id = fields.Many2one('control.design', string="Control")
+    responsible_id = fields.Many2one('hr.employee', string='Responsible', required=True, track_visibility='always')
 
 class ControlDesing(models.Model):
     _name = 'control.design'
@@ -153,7 +155,6 @@ class ControlDesing(models.Model):
     description = fields.Html(string='Purpose', required=True, help="What the control is. Why the control should be implemented. How the control should be implemented.")
     control = fields.Char(string="Control", help="What the control is")
     evidence_guide = fields.Text(string='Evidence Guide')
-    responsible = fields.Many2one('res.users', string='Responsible', track_visibility='always')
     responsible_id = fields.Many2one('hr.employee', string='Responsible', required=True, track_visibility='always')
     is_key_control = fields.Boolean(string='Key Control', track_visibility='always')
     control_type_id = fields.Many2many('control.type', string='Control Type', required=True, help="Attribute to view controls from the perspective of when and how the control modifies the risk with regard to the occurrence of an information security incident. Attribute values consist of Preventive (the control that is intended to prevent the occurrence of an information security incident), Detective (the control acts when an information security incident occurs) and Corrective (the control acts after an information security incident occurs).")
