@@ -332,7 +332,7 @@
       <field name="name">Data Asset</field>
       <field name="res_model">data.inventory</field>
       <field name="limit" eval="10"/>
-      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_mode">tree,kanban,form</field>
     </record>
     <record model="ir.ui.view" id="data_inventory_view">
       <field name="name">Data Asset</field>
