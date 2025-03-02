@@ -14,7 +14,6 @@ The platform has the following functionalities:
 - Risk Management.
 - Control.
 - Compliance.
-- GPT assistant.
 - Settings.
 
 ### **Asset Management**
@@ -153,7 +152,7 @@ A log is generated to record all the activities that users perform in the system
 
 3. Install the following pip packets in the odoo docker instance
 
-`pip3 install cvss==2.6 xw_utils==1.1.12 json5==0.9.14 openai markdown markdown2`
+`pip3 install cvss==2.6 xw_utils==1.1.12 json5==0.9.14 openai markdown markdown2 json2table`
 
 
 4. Configure Odoo https://[YOU_HOST]:8069
