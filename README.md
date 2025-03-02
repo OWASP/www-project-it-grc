@@ -88,17 +88,16 @@ Identify and characterize threat sources of concern, including capability, inten
 
 ### **CVE Search**
 This feature integrates with www.cve-search.org to retrieve CVE data for risk assessment. This feature helps organizations identify, evaluate, and manage vulnerabilities affecting their assets.
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/8595f3bc-d6e7-47c3-b11a-dfeb5360e662">
 
-![image](https://github.com/user-attachments/assets/8595f3bc-d6e7-47c3-b11a-dfeb5360e662)
-
-![image](https://github.com/user-attachments/assets/b8e7c1aa-52f4-4845-83fa-84d09675b6cd)
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/b8e7c1aa-52f4-4845-83fa-84d09675b6cd">
 
 ### **Control**
 
 Once you identify and evaluate risks, you should design the controls to mitigate such risks, so in the control module you can design, evaluate, and approve controls.
 Each control has a flow (draft, designed, implemented, approved), so the controls can be audited and evaluated to ensure they are effective to mitigate risks.
 
-<img width="943" alt="image" src="https://github.com/user-attachments/assets/2699c8f6-306c-4a0e-aed5-586a4be64ccd">
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/2699c8f6-306c-4a0e-aed5-586a4be64ccd">
 
 
 ### **Compliance**
@@ -111,7 +110,7 @@ In this module you can register the controls associated to each compliance requi
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/64a113e4-976a-4b0f-8dd9-a1816d97d8de">
 
-<img width="764" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/47dc3712-03dc-4d15-aee8-0aa61769d6c8">
+<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/47dc3712-03dc-4d15-aee8-0aa61769d6c8">
 
 ### **Settings**
 
@@ -137,11 +136,11 @@ R - Read, W - Write, C - Create, u - Unlink
 
 You can send notifications to other users to inform about updates, requirements, collaboration or other information you want to communicate.
 
-<img width="826" alt="image" src="https://github.com/user-attachments/assets/603bf3d7-798c-43e9-a8b4-98f7481f9450">
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/603bf3d7-798c-43e9-a8b4-98f7481f9450">
 
 A log is generated to record all the activities that users perform in the system.
 
-<img width="815" alt="image" src="https://github.com/user-attachments/assets/1245a959-c69b-437f-aed4-19b523a00476">
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/1245a959-c69b-437f-aed4-19b523a00476">
 
 ### **Docker Installation**
 
@@ -163,22 +162,18 @@ A log is generated to record all the activities that users perform in the system
 `git clone https://github.com/OWASP/www-project-it-grc`
    
 6. In /etc/odoo/odoo.conf add the addons-path www-project-it-grc
-![image](https://github.com/user-attachments/assets/68c4e767-721e-4b0c-952a-05eabb88c4c5)
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/68c4e767-721e-4b0c-952a-05eabb88c4c5">
 
 7. With "developer mode" execute "Apps" --> "Update Apps List".
-
-![image](https://github.com/user-attachments/assets/98078aea-6f75-4582-8e9a-7112fa503413)
-
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/98078aea-6f75-4582-8e9a-7112fa503413">
 
 8. Install the grcbit_* modules.
-
-![image](https://github.com/user-attachments/assets/2f37c99b-3cec-439f-b02a-4c9e0e0d2c00)
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/2f37c99b-3cec-439f-b02a-4c9e0e0d2c00">
 
 ### **Import data**
 
 To import data to your database, you can use "Favorites" --> "Import records" option.  
-
-![image](https://github.com/user-attachments/assets/6d6f9497-0186-441b-93dc-5f493a4ba6b7)
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/6d6f9497-0186-441b-93dc-5f493a4ba6b7">
 
 Data repository: https://github.com/grcbit/grc4ciso-data-1 
 
