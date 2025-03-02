@@ -1,41 +1,31 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-  <data>
-    <template id="it_inventory_print_template">
-      <t t-call="web.basic_layout">
+  <data
+    <template id="it_inventory_print_template_1">
+      <t t-call="web.html_container">
         <t t-foreach="docs" t-as="o" >
+	 <div class="header">
+           <div class="row">
+             <div class="col-4">
+               <span>
+                  <img t-att-src="image_data_uri(o.env.user.company_id.logo)" style="text-align:left; width:100px;" alt="Logo"/>
+               </span>
+             </div>
+           </div>
+         </div>
           <t t-call="web.report_layout">
             <div class="page">
-              <div class="row">
-                <div class="col-4">
-                  <span>
-                    <img t-att-src="image_data_uri(o.env.user.company_id.logo)" style="text-align:left; width:100px;" alt="Logo"/>
-                  </span>
-                </div>
-                <div class="col-8" style="text-align:left;">
-                  <h6>
-                    <strong><span><t t-esc="o.display_name"/></span></strong>
-                  </h6>
-                  <br/>
-                </div>
+              <div class="row" style="font-size:12px;">
+                <div class="col-3" style="color:black; background-color:grey;"><strong>IT System Name:</strong></div>
+                <div class="col-3" style="border: 1px solid;text-align:center;"><t t-esc="o.name"/></div>
+                <div class="col-3" style="color:black; background-color:grey;"><strong>Description:</strong></div>
+                <div class="col-3" style="border: 1px solid;text-align:center;"><t t-esc="o.description"/></div>
               </div>
               <div class="row" style="font-size:12px;">
-                <div class="col-3" style="color:white; background-color:black;"><strong>IT System Name:</strong></div>
-                <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.name"/></div>
-                <div class="col-3" style="color:white; background-color:black;"><strong>Description:</strong></div>
-                <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.description"/></div>
-              </div>
-              <div class="row" style="font-size:12px;">
-                <div class="col-3" style="color:white; background-color:black;"><strong>IP:</strong></div>
-                <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.ip"/></div>
-                <div class="col-3" style="color:white; background-color:black;"><strong>URL:</strong></div>
-                <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.url"/></div>
-              </div>
-              <div class="row" style="font-size:12px;">
-                <div class="col-3" style="color:white; background-color:black;"><strong>IT Admin:</strong></div>
-                <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.responsible.display_name"/></div>
-                <div class="col-3" style="color:white; background-color:black;"><strong>Environment:</strong></div>
-                <div class="col-3" style="border: 1px solid;text-align:center">
+                <div class="col-3" style="color:black; background-color:grey;"><strong>User Quantity:</strong></div>
+                <div class="col-3" style="border: 1px solid;text-align:center;"><t t-esc="o.users_qty"/></div>
+                <div class="col-3" style="color:black; background-color:grey;"><strong>Environment:</strong></div>
+                <div class="col-3" style="border: 1px solid;text-align:center;">
                   <t t-if="o.environment == 'dev'">
                     <span width="12px">Develop</span>
                   </t>
@@ -48,37 +38,36 @@
                 </div>
               </div>
               <div class="row" style="font-size:12px;">
-                <div class="col-3" style="color:white; background-color:black;"><strong>Cloud Hosted:</strong></div>
-                <div class="col-3" style="border: 1px solid;text-align:center">
-                  <t t-if="o.is_cloud == true">
-                    <span class="fa fa-check" width="12px"/>
-                  </t>
-                  <t t-if="o.is_cloud == false">
-                    <span class="fa fa-times" width="12px"/>
-                  </t>
-                </div>
-                <div class="col-3" style="color:white; background-color:black;"><strong>Internet Exposed:</strong></div>
-                <div class="col-3" style="border: 1px solid;text-align:center">
-                  <t t-if="o.is_internet_exposed == true">
-                    <span class="fa fa-check" width="12px"/>
-                  </t>
-                  <t t-if="o.is_internet_exposed == false">
-                    <span class="fa fa-times" width="12px"/>
-                  </t>
-                </div>
-              </div>
-              <div class="row" style="font-size:12px;">
-                <div class="col-3" style="color:white; background-color:black;"><strong>Number of users:</strong></div>
-                <div class="col-3" style="border: 1px solid;text-align:center"><t t-esc="o.users_qty"/></div>
-                <div class="col-3" style="color:white; background-color:black;"><strong>IT Components:</strong></div>
-                <div class="col-3" style="border: 1px solid;text-align:center">
-                  <t t-foreach="o.it_components" t-as="it">
-                    | <t t-esc="it.name"/> 
-                  </t>
-                </div>
-              </div>
+                <div class="row" style="font-size:12px;">
+                  <div class="col-6" style="text-align:center;"><strong>IT Components:</strong></div>
+                  <div class="col-6" style="text-align:center;"><strong>TCP Ports:</strong></div>
+	        </div>
+                <div class="row" style="font-size:12px;">
+                  <div class="col-6" style="border: 1px solid;text-align:left">
+                    <t t-foreach="o.it_component_ids" t-as="it">		
+		      <ul>
+			  <li> IT Component: <t t-esc="it.it_component_id.name"/> </li>
+			  <li> IP: <t t-esc="it.ip"/> </li>
+			  <li> URL: <t t-esc="it.url"/> </li>
+			  <li> Cloud Hosted: <t t-esc="it.is_cloud"/> </li>
+			  <li> Description: <t t-esc="it.description"/> </li>
+			  <li> Responsible: <t t-esc="it.responsible.name"/> </li>
+		      </ul>
+                    </t>
+                  </div>
+                  <div class="col-6" style="border: 1px solid;text-align:left">
+                    <t t-foreach="o.tcp_inventory_ids" t-as="tcp">		
+		      <ul>
+		        <li> TCP Port: <t t-esc="tcp.tcp_ports_id.name"/> </li>
+		        <li> Business Justification: <t t-esc="tcp.business_justification"/> </li>
+		        <li> Port Open: <t t-esc="tcp.is_open"/> </li>
+		      </ul>
+                    </t>
+                  </div>
+	        </div>
+	      </div>
             </div>
-          </t>
+		    </t>
         </t>
       </t>
     </template>

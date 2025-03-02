@@ -48,8 +48,8 @@ class ItInventory(models.Model):
     data_inventory_count = fields.Integer(string=_("Data Asset Count"))
     #xdr_agent = fields.Char(string="XDR Agent ID", track_visibility='onchange')
     active = fields.Boolean(default=True)
-    tcp_inventory_ids = fields.One2many('it_inventory.tcp_ports.grc', 'it_inventory_id', string="TCP Port", auto_join=True, track_visibility='onchange')
-    it_component_ids = fields.One2many('it.inventory.it.component','it_inventory_id',string='IT Component', auto_join=True, track_visibility='onchange')
+    tcp_inventory_ids = fields.One2many('it_inventory.tcp_ports.grc', 'it_inventory_id', string="TCP Port", auto_join=True)
+    it_component_ids = fields.One2many('it.inventory.it.component','it_inventory_id',string='IT Component', auto_join=True)
 
     _sql_constraints = [('name_uniq', 'unique(name)', _("The IT system name already exists."))]
 

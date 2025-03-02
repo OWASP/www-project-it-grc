@@ -377,11 +377,6 @@
       <field name="model">data.inventory</field>
       <field name="arch" type="xml">
         <form>
-		<!--
-          <header>
-	    <button name="gpt_data_inventory" string="GPT Data Inventory" type="object" class="oe_highlight" />
-	  </header>
-		-->
 	  <group>
             <field name="name"/>
             <field name="description"/>
@@ -396,12 +391,6 @@
                   <field name="business_process_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
                   <field name="description" />
 	        </tree>
-		<!--
-	        <form>
-                  <field name="business_process_id" string="Business Process" />
-                  <field name="description" string="Description" />
-	        </form>
-		-->
 	      </field>
 	    </page>
 	    <page name="third_party" string="Supplier">

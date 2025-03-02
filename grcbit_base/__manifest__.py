@@ -8,19 +8,10 @@
     'category': 'grc4ciso',
     'version': '16.0',
     'depends': [
-        #'web',
         'base',
         'board',
         'mail',
-        #'grcbit_compliance',
-        #'grcbit_cvss',
-        #'grcbit_iso27001',
-        #'grcbit_pci4',
-        #'grcbit_risk_management',
-        #'grcbit_threat_scenario'
         'grcbit_setgroups',
-        #'grcbit_gpt',
-        #'grcbit_cvss',
     ],
 
     # always loaded
@@ -31,22 +22,16 @@
         'views/dashboard_view.xml',
         'views/menuitems.xml',
         'views/settings_views.xml',
-        'reports/report_data_asset.xml',
-        'reports/report_it_inventory.xml',
+        #'reports/report_data_asset.xml',
+        #'reports/report_it_inventory.xml',
         'wizards/set_groups_views.xml',
-        #'data/app_category.xml'
     ],
     'assets':{
-        # 'web.assets':[
-        #     'grcbit_base/static/src/js/**.js',
-        #     'grcbit_base/static/src/xml/**.xml',
-        # ],
         'web.assets_backend':[
             'grcbit_base/static/src/js/user_menu_items.js',
-            'grcbit_base/static/src/js/dashboard.js',
+            #'grcbit_base/static/src/js/dashboard.js',
             'grcbit_base/static/src/js/many2many_tags.js',
-            'grcbit_base/static/src/xml/dashboard.xml',
-            #'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js',
+            #'grcbit_base/static/src/xml/dashboard.xml',
         ]
     },
     'installable': True,
