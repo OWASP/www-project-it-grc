@@ -239,15 +239,16 @@
                   <field name="description" string="Description"/>
                   <field name="responsible"  widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
                 </tree>
-		<!--
                 <form>
 		  <group>
-                    <field name="it_component_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
-                    <field name="description" string="Description"/>
-                    <field name="responsible" />
+                  <field name="it_component_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="ip" />
+                  <field name="url" widget="url"/>
+                  <field name="is_cloud" widget="boolean_toggle"/>
+                  <field name="description" string="Description"/>
+                  <field name="responsible"  widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
 	          </group>
                 </form>
-		-->
               </field>    
             </page>
             <page name="tcp_ports" string="TCP Ports">
@@ -257,7 +258,6 @@
                   <field name="business_justification" string="Business Justification"/>
                   <field name="is_open" string="Internet Exposed" widget="boolean_toggle"/>
                 </tree>
-		<!--
                 <form>
 		  <group>
                     <field name="tcp_ports_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
@@ -265,7 +265,6 @@
                     <field name="is_open" string="Internet Exposed" widget="boolean_toggle"/>
 	          </group>
                 </form>
-		-->
               </field>    
             </page>
 	    <!--
@@ -391,20 +390,10 @@
                   <field name="business_process_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
                   <field name="description" />
 	        </tree>
-	      </field>
-	    </page>
-	    <page name="third_party" string="Supplier">
-	      <field name="data_inventory_third_party_ids" string="Supplier">
-	        <tree editable="bottom">
-                  <field name="third_party_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
-                  <field name="description" />
-	        </tree>
-		<!--
 	        <form>
-                  <field name="third_party_id" string="Supplier" />
-                  <field name="description" string="Description" />
+                  <field name="business_process_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="description" />
 	        </form>
-		-->
 	      </field>
 	    </page>
 	    <page name="it_inventory" string="IT Asset">
@@ -413,12 +402,22 @@
                   <field name="it_inventory_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
                   <field name="description" />
 	        </tree>
-		<!--
 	        <form>
-                  <field name="it_inventory_id" string="IT Asset" />
+                  <field name="it_inventory_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
                   <field name="description" string="description" />
 	        </form>
-		-->
+	      </field>
+	    </page>
+	    <page name="third_party" string="Supplier">
+	      <field name="data_inventory_third_party_ids" string="Supplier">
+	        <tree editable="bottom">
+                  <field name="third_party_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="description" />
+	        </tree>
+	        <form>
+                  <field name="third_party_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="description" string="Description" />
+	        </form>
 	      </field>
 	    </page>
 	    <page name="security_requirement" string="Security Requirement">
@@ -427,12 +426,10 @@
                   <field name="security_requirement" />
                   <field name="description" />
 	        </tree>
-		<!--
 	        <form>
-                  <field name="security_requirement_id" string="Security Requirement" />
+                  <field name="security_requirement_id" />
                   <field name="description" string="description" />
 	        </form>
-		-->
 	      </field>
 	    </page>
 	  </notebook>

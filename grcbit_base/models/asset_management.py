@@ -138,6 +138,7 @@ class BusinessProcess(models.Model):
     process_owner = fields.Many2one('hr.employee', string="Process Owner", track_visibility='onchange')
     description = fields.Text(string="Description", track_visibility='onchange')
     data_inventory_count = fields.Integer(string=_("Data Asset Count"))
+    active = fields.Boolean(default=True)
 
     @api.model
     def web_read_group(self, domain, fields, groupby, limit=None, offset=0, orderby=False,lazy=True, expand=False, expand_limit=None, expand_orderby=False):

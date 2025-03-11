@@ -10,6 +10,7 @@ class TaxonomyThreatResource(models.Model):
     type_threat_source = fields.Char(string="Type")
     description = fields.Html(string="Description")
     characteristics = fields.Char(string="Characteristics")
+    active = fields.Boolean(default=True)
 
 class CharacteristicsAdversaryCapability(models.Model):
     _name = 'characteristics.adversary.capability'
@@ -17,9 +18,9 @@ class CharacteristicsAdversaryCapability(models.Model):
     _rec_name = 'qualitative_value'
 
     qualitative_value = fields.Char(string="Qualitative Value")
-    semiquantitative_values = fields.Float(string="Semi-Quantitative Values")
-    
+    semiquantitative_values = fields.Float(string="Semi-Quantitative Values")    
     description = fields.Text(string="Description")
+    active = fields.Boolean(default=True)
 
 class CharacteristicsAdversaryIntent(models.Model):
     _name = 'characteristics.adversary.intent'
@@ -29,6 +30,7 @@ class CharacteristicsAdversaryIntent(models.Model):
     qualitative_value = fields.Char(string="Qualitative Value")
     semiquantitative_values = fields.Float(string="Semi-Quantitative Values")
     description = fields.Text(string="Description")
+    active = fields.Boolean(default=True)
 
 class CharacteristicsAdversaryTargeting(models.Model):
     _name = 'characteristics.adversary.targeting'
@@ -38,6 +40,7 @@ class CharacteristicsAdversaryTargeting(models.Model):
     qualitative_value = fields.Char(string="Qualitative Value")
     semiquantitative_values = fields.Float(string="Semi-Quantitative Values")
     description = fields.Text(string="Description")
+    active = fields.Boolean(default=True)
 
 class RangeEffectsNonAdversarial(models.Model):
     _name = 'range.effect.non.adversarial'
@@ -47,6 +50,7 @@ class RangeEffectsNonAdversarial(models.Model):
     qualitative_value = fields.Char(string="Qualitative Value")
     semiquantitative_values = fields.Float(string="Semi-Quantitative Values")
     description = fields.Text(string="Description")
+    active = fields.Boolean(default=True)
 
 class AdversarialThreatEvents(models.Model):
     _name = 'adversarial.threat.events'
@@ -55,6 +59,7 @@ class AdversarialThreatEvents(models.Model):
 
     threat_event = fields.Char(string="Thread Event")
     description = fields.Text(string="Description")
+    active = fields.Boolean(default=True)
 
 class NonAdversarialThreatEvents(models.Model):
     _name = 'non.adversarial.threat.events'
@@ -64,6 +69,7 @@ class NonAdversarialThreatEvents(models.Model):
     threat_event = fields.Char(string="Thread Event")
     description = fields.Text(string="Description")
     #threat_source = fields.Text(string="Threat Source")
+    active = fields.Boolean(default=True)
 
 class RelevanceThreatEvents(models.Model):
     _name = 'relevance.threat.events'
@@ -72,3 +78,4 @@ class RelevanceThreatEvents(models.Model):
 
     value = fields.Text(string="Value")
     description = fields.Text(string="Description")
+    active = fields.Boolean(default=True)

@@ -201,6 +201,7 @@ class IsmsRole(models.Model):
 
     isms_role_name = fields.Char(string=_("Role Name"))
     isms_role_description = fields.Html(string=_("Role Description"))
+    active = fields.Boolean(default=True)
 
     _sql_constraints = [
         ('unique_isms_role_name','unique(isms_role_name)','ISMS role name already exist.!')]

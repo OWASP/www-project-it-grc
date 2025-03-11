@@ -16,6 +16,7 @@ class ItComponents(models.Model):
     name = fields.Char(string="Name", track_visibility='onchange')
     description = fields.Text(string="Description", track_visibility='onchange')
     it_inventory_count = fields.Integer(string="IT Inventory Count")
+    active = fields.Boolean(default=True)
 
     _sql_constraints = [
         ('unique_name','unique(name)','IT Component name already exist.!')]
@@ -45,6 +46,7 @@ class TCPPorts(models.Model):
     #it_inventory_ids = fields.Many2many('it.inventory', 'it_inventory_tcp_ports_rel', 'tcp_ports_id', 'it_inventory_id', string="It system")
     description = fields.Text(string="Description", track_visibility='onchange')
     it_inventory_count = fields.Integer(string="IT Inventory Count")
+    active = fields.Boolean(default=True)
 
     _sql_constraints = [
         ('unique_name','unique(name)','TCP Port name already exist.!')]

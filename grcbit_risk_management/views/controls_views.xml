@@ -96,21 +96,25 @@
                     <field name="description"/>
                     <field name="responsible_id" widget="many2one_avatar_user" />
                   </tree>
+		  <form>
+                    <field name="control_design_id" invisible="1" />
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="responsible_id" widget="many2one_avatar_user" />
+		  </form>
                 </field>
               </page>
               <page string="Control Evidence" name="control_evidence_page">
                 <field name="control_evidence_ids" widget="section_and_note_one2many" mode="tree" attrs="{ 'readonly': [('state', 'not in', ('designed') )] }" >
-		<!--
                   <form>
-                    <field name="active" invisible="1" />
-                    <field name="control_design_id" invisible="1" />
                     <group>
+                      <field name="active" invisible="1" />
+                      <field name="control_design_id" invisible="1" />
                       <field name="name" />
                       <field name="comment" />
                       <field name="attachment" widget="many2many_binary" />
                     </group>
-			</form>
-		-->
+		  </form>
                   <tree editable="bottom">
                     <field name="active" invisible="1" />
                     <field name="control_design_id" invisible="1" />
@@ -121,7 +125,7 @@
                 </field>      
               </page>
               <page string="Control Evaluation" name="control_evaluation_page">
-                  <group>
+                <group>
                     <field name="can_write" invisible="1"/>
                     <field name="control_design_criteria_id" attrs="{'readonly': [('can_write', '=', False)]}"/>
                     <field name="control_evaluation_criteria_id" attrs="{'readonly': [('can_write', '=', False)]}"/>
@@ -135,7 +139,7 @@
                      <field name="implemented_comment" invisible="1"/>
                      <field name="approved_comment" invisible="1"/>
 		    -->
-	</group>
+	        </group>
               </page>
             </notebook>
 	        </sheet>

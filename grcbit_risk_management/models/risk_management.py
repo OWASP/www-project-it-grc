@@ -203,6 +203,7 @@ class CompanyObjective(models.Model):
 
     objective_name = fields.Char(string="Name")
     objective_description = fields.Text(string="Description")
+    active = fields.Boolean(default=True)
 
 class CompanyRisk(models.Model):
     _name = 'company.risk'
@@ -213,6 +214,7 @@ class CompanyRisk(models.Model):
     risk_description = fields.Html(string="Description")
     company_objective_id = fields.Many2many('company.objective', string="Company Objective")
     risk_classification = fields.Many2many('risk.classification', string="Risk Category")
+    active = fields.Boolean(default=True)
 
 class OrganizationalProfile(models.Model):
     _name = 'organizational.profile'
@@ -221,3 +223,4 @@ class OrganizationalProfile(models.Model):
 
     name = fields.Char(string="Name")
     description = fields.Text(string="Description")
+    active = fields.Boolean(default=True)
