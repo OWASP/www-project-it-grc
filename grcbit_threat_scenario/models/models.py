@@ -4,6 +4,7 @@ from odoo import fields, models
 
 class TaxonomyThreatResource(models.Model):
     _name = 'taxonomy.threat.resource'
+    _description = 'NIST Taxonomy Threat Source'
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _rec_name = 'type_threat_source'
 
