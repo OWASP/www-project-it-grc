@@ -207,6 +207,7 @@ class CompanyObjective(models.Model):
 
 class CompanyRisk(models.Model):
     _name = 'company.risk'
+    _description = 'Strategic Risk'
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _rec_name ='risk_name'
 
@@ -218,6 +219,7 @@ class CompanyRisk(models.Model):
 
 class OrganizationalProfile(models.Model):
     _name = 'organizational.profile'
+    _description = 'Organizational Profile'
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _rec_name = 'description'
 
