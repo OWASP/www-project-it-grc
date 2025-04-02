@@ -85,12 +85,14 @@
 		    <page name='company_risk' string='Strategic Risk'>
 			    <field name='risk_factor_company_risk_ids' string='Company Risk'>
 				    <tree>
-					    <field name='company_risk_id' />
+					    <field name='company_risk_id' string='Strategic Risk' />
 					    <field name='description'/>
 				    </tree>
 				    <form>
-					    <field name='company_risk_id' />
+					    <group>
+					    <field name='company_risk_id' string='Strategic Risk'/>
 					    <field name='description'/>
+				    </group>
 				    </form>
 
 			    </field>
