@@ -82,7 +82,7 @@
               <field name="residual_risk" readonly="1" force_save="1" widget="badge" decoration-danger="residual_risk in ('High','Alto')" decoration-warning="residual_risk in ('Medium','Medio')" decoration-success="residual_risk in ('Low','Bajo')"/>
             </group>
 	    <notebook>
-		    <page name='company_risk' string='Company Risk'>
+		    <page name='company_risk' string='Strategic Risk'>
 			    <field name='risk_factor_company_risk_ids' string='Company Risk'>
 				    <tree>
 					    <field name='company_risk_id' />
@@ -680,7 +680,7 @@
 
     <!--  COMPANY RISK  -->
     <record id="company_risk_action" model="ir.actions.act_window">
-	    <field name="name">Risk</field>
+	    <field name="name">Strategic Risk</field>
 	    <field name="res_model">company.risk</field>
 	    <field name="view_mode">tree,form,kanban</field>
     </record>
