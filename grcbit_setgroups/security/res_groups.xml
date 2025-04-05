@@ -2,8 +2,8 @@
 <odoo>
   <data>
     <record id="group_grc_is_support" model="res.groups">
-			<field name="name">Support</field>
-			<field name="category_id" ref="base.module_category_hidden"/>
-		</record>
+      <field name="name">Support</field>
+      <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
   </data>
 </odoo>

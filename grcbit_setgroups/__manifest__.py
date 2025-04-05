@@ -13,6 +13,7 @@
     ],
     'data': [
         'security/ir.model.access.csv',
+        #'security/res_groups.xml',
         'views/res_users_views.xml',
         'wizard/set_groups_views.xml',
     ],
