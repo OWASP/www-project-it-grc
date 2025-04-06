@@ -78,7 +78,7 @@ msgstr "9 meses"
 #. module: grcbit_risk_management
 #: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
 msgid "<br/> Risk Factor:"
-msgstr "<br/> Factor de riesgo:"
+msgstr "<br/> Factor Riesgo:"
 
 #. module: grcbit_risk_management
 #: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
@@ -88,12 +88,12 @@ msgstr "<strong>Consecuencia:</strong>"
 #. module: grcbit_risk_management
 #: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
 msgid "<strong>Data Asset:</strong>"
-msgstr "<strong>Activo de datos:</strong>"
+msgstr "<strong>Activo Dato:</strong>"
 
 #. module: grcbit_risk_management
 #: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
 msgid "<strong>Impact Level:</strong>"
-msgstr "<strong>Nivel de impacto:</strong>"
+msgstr "<strong>Nivel Impacto:</strong>"
 
 #. module: grcbit_risk_management
 #: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
@@ -103,7 +103,7 @@ msgstr "<strong>Riesgo Inherente:</strong>"
 #. module: grcbit_risk_management
 #: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
 msgid "<strong>Probability Level:</strong>"
-msgstr "<strong>Nivel de Probabilidad:</strong>"
+msgstr "<strong>Nivel Probabilidad:</strong>"
 
 #. module: grcbit_risk_management
 #: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
@@ -118,7 +118,7 @@ msgstr "<strong>Riesgo Residual:</strong>"
 #. module: grcbit_risk_management
 #: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
 msgid "<strong>Risk Owner:</strong>"
-msgstr "<strong>Dueño del Riesgo:</strong>"
+msgstr "<strong>Dueño Riesgo:</strong>"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__message_needaction
@@ -141,7 +141,7 @@ msgstr "<strong>Dueño del Riesgo:</strong>"
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__message_needaction
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__message_needaction
 msgid "Action Needed"
-msgstr "Acción necesaria"
+msgstr "Acción Necesaria"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__active
@@ -231,7 +231,7 @@ msgstr "Decoración de excepción de actividad"
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__activity_state
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__activity_state
 msgid "Activity State"
-msgstr "Estado actividad"
+msgstr "Estado Actividad"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__activity_type_icon
@@ -259,8 +259,8 @@ msgstr "Icono tipo actividad"
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_set_groups_user__control_approval
 #: model:res.groups,name:grcbit_risk_management.group_control_approval
-msgid "Approval"
-msgstr "Implementado"
+msgid "Implement"
+msgstr "Implementar"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__approve_date
@@ -269,8 +269,8 @@ msgstr "Fecha de aprobación"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_design__state__approved
-msgid "Approved"
-msgstr "Implementado"
+msgid "Implement"
+msgstr "Implementar"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__approved_comment
@@ -387,7 +387,7 @@ msgstr "Control"
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__display_name
 msgid "Control Category"
-msgstr "Nombre Categoria Control"
+msgstr "Categoria Control"
 
 #. module: grcbit_risk_management
 #: model:ir.actions.act_window,name:grcbit_risk_management.control_design_action
@@ -395,29 +395,29 @@ msgstr "Nombre Categoria Control"
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__control_design_id
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__control_design_id
 msgid "Control Design"
-msgstr "Diseño de control"
+msgstr "Diseño Control"
 
 #. module: grcbit_risk_management
 #: model_terms:ir.ui.view,arch_db:grcbit_risk_management.control_design_form
 msgid "Control Evaluation"
-msgstr "Evaluacion de control"
+msgstr "Evaluacion Control"
 
 #. module: grcbit_risk_management
 #: model:ir.model,name:grcbit_risk_management.model_control_evidence
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__control_evidence_ids
 #: model_terms:ir.ui.view,arch_db:grcbit_risk_management.control_design_form
 msgid "Control Evidence"
-msgstr "Evidencia de control"
+msgstr "Evidencia Control"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__control_line_ids
 msgid "Control Guide"
-msgstr "Guía de control"
+msgstr "Guía Control"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__control_id
 msgid "Control ID"
-msgstr "ID de control"
+msgstr "ID Control"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__control_evaluation_criteria_id
@@ -534,7 +534,7 @@ msgstr "Descripción"
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_set_groups_user__control_design
 #: model:res.groups,name:grcbit_risk_management.group_control_design
 msgid "Design"
-msgstr "Diseño"
+msgstr "Diseñar"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__design_comment
@@ -546,24 +546,24 @@ msgstr "Comentarios Diseño"
 #: model:ir.model,name:grcbit_risk_management.model_control_design_criteria
 #: model:ir.ui.menu,name:grcbit_risk_management.menu_control_design_criteria
 msgid "Design Criteria"
-msgstr "Criterio de diseño"
+msgstr "Criterio Diseño"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__design_date
 msgid "Design Date"
-msgstr "Fecha de diseño"
+msgstr "Fecha Diseño"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__control_design_criteria_id
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_set_groups_user__control_design_evaluation
 #: model:res.groups,name:grcbit_risk_management.group_control_design_evaluation
 msgid "Design Evaluation"
-msgstr "Evaluación de diseño"
+msgstr "Evaluación Diseño"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_design__state__designed
-msgid "Designed"
-msgstr "Diseño"
+msgid "Design"
+msgstr "Diseñar"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__display_name
@@ -618,7 +618,7 @@ msgstr "Guía de evidencia"
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__evidence_pending
 msgid "Evidence Pending"
-msgstr "Evidencia pendiente"
+msgstr "Evidencia Pendiente"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__message_follower_ids
@@ -864,35 +864,35 @@ msgstr "Si está marcado, algunos mensajes tienen error de entrega"
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__impact_level_id
 #: model:ir.ui.menu,name:grcbit_risk_management.menu_impact_level
 msgid "Impact Level"
-msgstr "Nivel de impacto"
+msgstr "Nivel Impacto"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_set_groups_user__control_implementation
 #: model:res.groups,name:grcbit_risk_management.group_control_implementation
-msgid "Implementation"
-msgstr "Evaluación"
+msgid "Assess"
+msgstr "Evaluar"
 
 #. module: grcbit_risk_management
 #: model:ir.actions.act_window,name:grcbit_risk_management.control_evaluation_criteria_action
 #: model:ir.model,name:grcbit_risk_management.model_control_evaluation_criteria
 #: model:ir.ui.menu,name:grcbit_risk_management.menu_control_evaluation_criteria
 msgid "Implementation Criteria"
-msgstr "Criterio de implementación"
+msgstr "Criterio Implementación"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__implementation_date
 msgid "Implementation Date"
-msgstr "Fecha de implementación"
+msgstr "Fecha Implementación"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_design__state__implemented
-msgid "Implemented"
-msgstr "Evaluación"
+msgid "Assess"
+msgstr "Evaluar"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__implemented_comment
-msgid "Implemented Comment"
-msgstr "Comentarios: Evaluación"
+msgid "Assess Comment"
+msgstr "Evaluar Comentarios"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__inherent_factor_high
@@ -914,7 +914,7 @@ msgstr "Riesgo inherente"
 #: model:ir.model,name:grcbit_risk_management.model_inherent_risk_level
 #: model:ir.ui.menu,name:grcbit_risk_management.menu_inherent_risk_level
 msgid "Inherent Risk Level"
-msgstr "Nivel de riesgo inherente"
+msgstr "Nivel Riesgo Inherente"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__message_is_follower
@@ -1305,7 +1305,7 @@ msgstr "Por evento"
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__probability_level_id
 #: model:ir.ui.menu,name:grcbit_risk_management.menu_probability_level
 msgid "Probability Level"
-msgstr "Nivel de probabilidad"
+msgstr "Nivel Probabilidad"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__description
@@ -1331,7 +1331,7 @@ msgstr "Rechazar"
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__rejected_date
 msgid "Rejected Date"
-msgstr "Fecha de rechazo"
+msgstr "Fecha Rechazo"
 
 #. module: grcbit_risk_management
 #: model:ir.actions.act_window,name:grcbit_risk_management.risk_factor_dash_residual
@@ -1340,14 +1340,14 @@ msgstr "Fecha de rechazo"
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__residual_risk
 #: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_dashboard
 msgid "Residual Risk"
-msgstr "Riesgo residual"
+msgstr "Riesgo Residual"
 
 #. module: grcbit_risk_management
 #: model:ir.actions.act_window,name:grcbit_risk_management.residual_risk_level_action
 #: model:ir.model,name:grcbit_risk_management.model_residual_risk_level
 #: model:ir.ui.menu,name:grcbit_risk_management.menu_residual_risk_level
 msgid "Residual Risk Level"
-msgstr "Nivel de riesgo residual"
+msgstr "Nivel Riesgo Residual"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__residual_risk_count
@@ -1405,18 +1405,18 @@ msgstr "Categoría Riesgo"
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__name
 #: model:ir.ui.menu,name:grcbit_risk_management.menu_risk_factor
 msgid "Risk Factor"
-msgstr "Factor de riesgo"
+msgstr "Factor Riesgo"
 
 #. module: grcbit_risk_management
 #: model:ir.actions.report,name:grcbit_risk_management.print_compliance
 #: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
 msgid "Risk Factor Report"
-msgstr "Resporte de factor de riesgo"
+msgstr "Resporte Factor Riesgo"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__risk_id
 msgid "Risk ID"
-msgstr "ID de riesgo"
+msgstr "ID Riesgo"
 
 #. module: grcbit_risk_management
 #: model:ir.actions.act_window,name:grcbit_risk_management.risk_level_action
@@ -1426,17 +1426,17 @@ msgstr "ID de riesgo"
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__name
 #: model:ir.ui.menu,name:grcbit_risk_management.menu_risk_level
 msgid "Risk Level"
-msgstr "Nivel de riesgo"
+msgstr "Nivel Riesgo"
 
 #. module: grcbit_risk_management
 #: model:ir.ui.menu,name:grcbit_risk_management.menu_risk_metric
 msgid "Risk Management"
-msgstr "Gestión de riesgos"
+msgstr "Gestión Riesgo"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__responsible
 msgid "Risk Owner"
-msgstr "Dueño del riesgo"
+msgstr "Dueño Riesgo"
 
 #. module: grcbit_risk_management
 #: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
@@ -1475,13 +1475,13 @@ msgstr "Error de entrega SMS"
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__security_domain_id
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__name
 msgid "Security Domain"
-msgstr "Dominio de seguridad"
+msgstr "Dominio Seguridad"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__security_property_id
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__name
 msgid "Security Property"
-msgstr "Propiedad de seguridad"
+msgstr "Propiedad Seguridad"
 
 #. module: grcbit_risk_management
 #: model:ir.model.fields,help:grcbit_risk_management.field_control_design__name

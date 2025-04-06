@@ -5,31 +5,28 @@ from odoo import api, fields, models
 class SetGroupsZt(models.TransientModel):
     _inherit = 'set.groups.user'
 
-    control_draft  = fields.Boolean(string="Draft", default=lambda x:x.get_current_groups_control('Draft' if x.env.user.lang == 'en_US' else 'Borrador'))
-    control_design  = fields.Boolean(string="Design", default=lambda x:x.get_current_groups_control('Design' if x.env.user.lang == 'en_US' else 'Diseño'))
-    control_implementation  = fields.Boolean(string="Implementation", default=lambda x:x.get_current_groups_control('Implementation' if x.env.user.lang == 'en_US' else 'Implementación'))
-    control_approval   = fields.Boolean(string="Approval", default=lambda x:x.get_current_groups_control('Approval' if x.env.user.lang == 'en_US' else 'Aprobación'))
-    control_reject   = fields.Boolean(string="Reject", default=lambda x:x.get_current_groups_control('Reject' if x.env.user.lang == 'en_US' else 'Rechazar'))
-    control_design_evaluation = fields.Boolean(string="Design Evaluation", default=lambda x:x.get_current_groups_control('Design Evaluation' if x.env.user.lang == 'en_US' else 'Evaluación de diseño') )
-    control_effectiveness_evaluation = fields.Boolean(string="Effectiveness Evaluation", default=lambda x:x.get_current_groups_control('Effectiveness Evaluation' if x.env.user.lang == 'en_US' else 'Evaluación de eficacia') )
-    control_setdraft = fields.Boolean(string="Set to draft", default=lambda x:x.get_current_groups_control('Set to draft') )
-    
-
-    def get_current_groups_control(self, name):
+    control_draft  = fields.Boolean(string="Draft", default=lambda x:x.get_current_groups_control('grcbit_risk_management.group_control_draft'))
+    control_design  = fields.Boolean(string="Design", default=lambda x:x.get_current_groups_control('grcbit_risk_management.group_control_design'))
+    control_implementation  = fields.Boolean(string="Assess", default=lambda x:x.get_current_groups_control('grcbit_risk_management.group_control_implementation'))
+    control_approval   = fields.Boolean(string="Implement", default=lambda x:x.get_current_groups_control('grcbit_risk_management.group_control_approval'))
+    control_reject   = fields.Boolean(string="Reject", default=lambda x:x.get_current_groups_control('grcbit_risk_management.group_control_reject'))
+    control_design_evaluation = fields.Boolean(string="Design Assessment", default=lambda x:x.get_current_groups_control('grcbit_risk_management.group_control_design_evaluation') )
+    control_effectiveness_evaluation = fields.Boolean(string="Effectiveness Assessment", default=lambda x:x.get_current_groups_control('grcbit_risk_management.group_control_effectiveness_evaluation') )
+    control_setdraft = fields.Boolean(string="Set to draft", default=lambda x:x.get_current_groups_control('grcbit_risk_management.group_control_setdraft') )
+   
+    def get_current_groups_control(self, xml_id):
         user = self.env.context.get('active_id')
         user_id = self.sudo().env['res.users'].search([('id','=', user)])
-        category_id = self.sudo().env['ir.module.category'].search([('name','=','Control'),('visible','=',True)])
-        groups = self.sudo().env['res.groups'].search([('name','=', name),('category_id','=',category_id.id)])
+        groups = self.env.ref(xml_id).sudo()
         if user_id.id in [n.id for n in groups.users]:
             return True
         else:
             return False
 
-    def base_values_control(self,name):
+    def base_values_control(self,xml_id):
         user = self.env.context.get('active_id')
         user_id = self.sudo().env['res.users'].search([('id','=', user)])
-        category_id = self.sudo().env['ir.module.category'].search([('name','=','Control'),('visible','=',True)])
-        groups = self.sudo().env['res.groups'].search([('name','=', name),('category_id','=',category_id.id)])
+        groups = self.env.ref(xml_id).sudo()
         return groups
 
     def assign_groups(self):
@@ -57,82 +54,82 @@ class SetGroupsZt(models.TransientModel):
                 'control_setdraft': rec.control_setdraft,
             })
             if data['control_draft'] == True:
-                group_custom = self.base_values_control('Draft' if self.env.user.lang == 'en_US' else 'Borrador')
+                group_custom = self.base_values_control('grcbit_risk_management.group_control_draft')
                 user = self.env.context.get('active_id')
                 user_id = self.sudo().env['res.users'].search([('id','=', user)])
                 group_custom.users = [(4, user)]
             else:
-                group_custom = self.base_values_control('Draft' if self.env.user.lang == 'en_US' else 'Borrador')
+                group_custom = self.base_values_control('grcbit_risk_management.group_control_draft')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
 
             if data['control_design'] == True:
-                group_custom = self.base_values_control('Design' if self.env.user.lang == 'en_US' else 'Diseño')
+                group_custom = self.base_values_control('grcbit_risk_management.group_control_design')
                 user = self.env.context.get('active_id')
                 user_id = self.sudo().env['res.users'].search([('id','=', user)])
                 group_custom.users = [(4, user)]
             else:
-                group_custom = self.base_values_control('Design' if self.env.user.lang == 'en_US' else 'Diseño')
+                group_custom = self.base_values_control('grcbit_risk_management.group_control_design')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
 
             if data['control_implementation'] == True:
-                group_custom = self.base_values_control('Implementation' if self.env.user.lang == 'en_US' else 'Implementación')
+                group_custom = self.base_values_control('grcbit_risk_management.group_control_implementation')
                 user = self.env.context.get('active_id')
                 user_id = self.sudo().env['res.users'].search([('id','=', user)])
                 group_custom.users = [(4, user)]
             else:
-                group_custom = self.base_values_control('Implementation' if self.env.user.lang == 'en_US' else 'Implementación')
+                group_custom = self.base_values_control('grcbit_risk_management.group_control_implementation')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
 
             if data['control_approval'] == True:
-                group_custom = self.base_values_control('Approval' if self.env.user.lang == 'en_US' else 'Aprobación')
+                group_custom = self.base_values_control('grcbit_risk_management.group_control_approval')
                 user = self.env.context.get('active_id')
                 user_id = self.sudo().env['res.users'].search([('id','=', user)])
                 group_custom.users = [(4, user)]
             else:
-                group_custom = self.base_values_control('Approval' if self.env.user.lang == 'en_US' else 'Aprobación')
+                group_custom = self.base_values_control('grcbit_risk_management.group_control_approval')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
 
             if data['control_reject'] == True:
-                group_custom = self.base_values_control('Reject' if self.env.user.lang == 'en_US' else 'Rechazar')
+                group_custom = self.base_values_control('grcbit_risk_management.group_control_reject')
                 user = self.env.context.get('active_id')
                 user_id = self.sudo().env['res.users'].search([('id','=', user)])
                 group_custom.users = [(4, user)]
             else:
-                group_custom = self.base_values_control('Reject' if self.env.user.lang == 'en_US' else 'Rechazar')
+                group_custom = self.base_values_control('grcbit_risk_management.group_control_reject')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
 
             if data['control_design_evaluation'] == True:
-                group_custom = self.base_values_control('Design Evaluation' if self.env.user.lang == 'en_US' else 'Evaluación de diseño')
+                group_custom = self.base_values_control('grcbit_risk_management.group_control_design_evaluation')
                 user = self.env.context.get('active_id')
                 user_id = self.sudo().env['res.users'].search([('id','=', user)])
                 group_custom.users = [(4, user)]
             else:
-                group_custom = self.base_values_control('Design Evaluation' if self.env.user.lang == 'en_US' else 'Evaluación de diseño')
+                group_custom = self.base_values_control('grcbit_risk_management.group_control_design_evaluation')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
 
             if data['control_effectiveness_evaluation'] == True:
-                group_custom = self.base_values_control('Effectiveness Evaluation' if self.env.user.lang == 'en_US' else 'Evaluación de eficacia')
+                group_custom = self.base_values_control('grcbit_risk_management.group_control_effectiveness_evaluation')
                 user = self.env.context.get('active_id')
                 user_id = self.sudo().env['res.users'].search([('id','=', user)])
                 group_custom.users = [(4, user)]
             else:
-                group_custom = self.base_values_control('Effectiveness Evaluation' if self.env.user.lang == 'en_US' else 'Evaluación de eficacia')
+                group_custom = self.base_values_control('grcbit_risk_management.group_control_effectiveness_evaluation')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
 
             if data['control_setdraft'] == True:
-                group_custom = self.base_values_control('Set to draft')
+                group_custom = self.base_values_control('grcbit_risk_management.group_control_setdraft')
                 user = self.env.context.get('active_id')
                 user_id = self.sudo().env['res.users'].search([('id','=', user)])
                 group_custom.users = [(4, user)]
             else:
-                group_custom = self.base_values_control('Set to draft')
+                group_custom = self.base_values_control('grcbit_risk_management.group_control_setdraft')
                 user = self.env.context.get('active_id')
                 group_custom.users = [(3, user)]
 
