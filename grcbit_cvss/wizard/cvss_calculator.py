@@ -51,7 +51,14 @@ class CVSSCalculator(models.TransientModel):
     vector = fields.Char(string="Vector", compute="get_vector", store=True)
 
     risk_factor_id = fields.Many2one('risk.factor', string="Risk Factor", default=lambda x: x.env.context.get('active_id'))
-    cve_id = fields.Many2one('risk.factor.vulnerability.management', string="Vulnerability", default=lambda x: x.env.context.get('active_id'))
+    #cve_id = fields.Many2one('risk.factor.vulnerability.management', string="Vulnerability", default=lambda x: x.env.context.get('active_id'))
+    cve_id = fields.Many2one(
+        'risk.factor.vulnerability.management',
+        string="Vulnerability",
+        default=lambda self: self.env.context.get('active_id')
+        if self.env.context.get('active_model') == 'risk.factor.vulnerability.management'
+        else False
+    )
 
     @api.depends('attack_vector','attack_complexity','privileges_required','user_interaction','scope','confidentiality','integrity','availability')
     def get_vector(self):
