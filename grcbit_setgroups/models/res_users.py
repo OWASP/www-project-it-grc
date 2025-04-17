@@ -20,6 +20,7 @@ class ResUsersInh(models.Model):
     '''
 
     def write(self, vals):
+        '''
         user = self.env.user
         if not user.has_group('grcbit_base.group_grc_admin'):
             raise ValidationError("This users can't be update for you")
@@ -30,6 +31,18 @@ class ResUsersInh(models.Model):
             if not user.has_group('base.group_system') or not self.env.ref('base.user_admin'):
                 raise ValidationError("This users can't be update for you")
                 #self._check_admin_restriction()
+        '''
+        for rec in self:
+            user = rec.env.user
+            if not user.has_group('grcbit_base.group_grc_admin'):
+                raise ValidationError("This users can't be update for you")
+            if user.has_group('grcbit_base.group_grc_admin') and rec.is_support == True:
+                if not user.has_group('base.group_system') or not rec.env.ref('base.user_admin'):
+                    raise ValidationError("This users can't be update for you")
+            if 'is_support' in vals:
+                if not user.has_group('base.group_system') or not rec.env.ref('base.user_admin'):
+                    raise ValidationError("This users can't be update for you")
+
         return super().write(vals)
 
     def unlink(self):

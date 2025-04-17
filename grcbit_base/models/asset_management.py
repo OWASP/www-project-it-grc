@@ -186,6 +186,7 @@ class ItInventoryItComponent(models.Model):
     is_cloud = fields.Boolean(string=_('Cloud Hosted?'), required=True, track_visibility='onchange')
     description = fields.Text(string='Description', track_visibility='onchange')
     responsible = fields.Many2one('hr.employee', string="Responsible", track_visibility='onchange')
+    xdr_agent = fields.Char(string=_('XDR Agent'), track_visibility='onchange')
     color = fields.Integer(string="Color", default=lambda x: x.default_color())
 
     def default_color(self):

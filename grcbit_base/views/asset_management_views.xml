@@ -236,6 +236,7 @@
                   <field name="ip" />
                   <field name="url" widget="url"/>
                   <field name="is_cloud" widget="boolean_toggle"/>
+                  <field name="xdr_agent"/>
                   <field name="description" string="Description"/>
                   <field name="responsible"  widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
                 </tree>
@@ -245,6 +246,7 @@
                   <field name="ip" />
                   <field name="url" widget="url"/>
                   <field name="is_cloud" widget="boolean_toggle"/>
+                  <field name="xdr_agent"/>
                   <field name="description" string="Description"/>
                   <field name="responsible"  widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
 	          </group>
