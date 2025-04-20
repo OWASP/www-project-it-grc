@@ -7,41 +7,22 @@ class ResUsersInh(models.Model):
 
     is_support = fields.Boolean(string="Is Support", default=False)
 
-    '''
-    def _check_admin_restriction(self):
-        user = self.env.user
-        is_admin_user = (
-            user.has_group('base.group_system') and
-            user.id == self.env.ref('base.user_admin').id
-        )
-        if not is_admin_user:
-            #raise exceptions.AccessError("Solo el usuario administrador del sistema puede realizar esta acción.")
-            raise ValidationError("This users can't be update for you")         
-    '''
 
     def write(self, vals):
-        '''
-        user = self.env.user
-        if not user.has_group('grcbit_base.group_grc_admin'):
-            raise ValidationError("This users can't be update for you")
-        if user.has_group('grcbit_base.group_grc_admin') and self.is_support == True:
-            if not user.has_group('base.group_system') or not self.env.ref('base.user_admin'):
-                raise ValidationError("This users can't be update for you")
-        if 'is_support' in vals:
-            if not user.has_group('base.group_system') or not self.env.ref('base.user_admin'):
-                raise ValidationError("This users can't be update for you")
-                #self._check_admin_restriction()
-        '''
         for rec in self:
             user = rec.env.user
+            # Allow users to update themselves
+            if user.id == rec.id:
+                return super().write(vals)
+                
             if not user.has_group('grcbit_base.group_grc_admin'):
-                raise ValidationError("This users can't be update for you")
+                raise ValidationError("1. This users can't be update for you")
             if user.has_group('grcbit_base.group_grc_admin') and rec.is_support == True:
                 if not user.has_group('base.group_system') or not rec.env.ref('base.user_admin'):
-                    raise ValidationError("This users can't be update for you")
+                    raise ValidationError("2. This users can't be update for you")
             if 'is_support' in vals:
                 if not user.has_group('base.group_system') or not rec.env.ref('base.user_admin'):
-                    raise ValidationError("This users can't be update for you")
+                    raise ValidationError("3. This users can't be update for you")
 
         return super().write(vals)
 
@@ -64,4 +45,3 @@ class ResUsersInh(models.Model):
             raise ValidationError("This users can't be update for you")
 
         return super().copy(default)
-
