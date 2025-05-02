@@ -422,6 +422,18 @@
 	        </form>
 	      </field>
 	    </page>
+	    <page name="compliance_version" string="Compliance">
+	      <field name="data_inventory_compliance_version_ids" string="Compliance Version">
+	        <tree editable="bottom">
+                  <field name="compliance_version_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="description" />
+	        </tree>
+	        <form>
+                  <field name="compliance_version_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="description" string="Description" />
+	        </form>
+	      </field>
+	    </page>
 	    <page name="security_requirement" string="Security Requirement">
 	      <field name="data_inventory_security_requirement_ids" string="Security Requirement">
 	        <tree editable="bottom">

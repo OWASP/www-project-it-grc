@@ -95,12 +95,16 @@
                     <field name="name"/>
                     <field name="description"/>
                     <field name="responsible_id" widget="many2one_avatar_user" />
+                    <field name="policy"/>
+                    <field name="policy_upload" widget="binary" filename="policy"/>
                   </tree>
 		  <form>
                     <field name="control_design_id" invisible="1" />
                     <field name="name"/>
                     <field name="description"/>
                     <field name="responsible_id" widget="many2one_avatar_user" />
+                    <field name="policy"/>
+                    <field name="policy_upload" widget="binary" filename="policy"/>
 		  </form>
                 </field>
               </page>

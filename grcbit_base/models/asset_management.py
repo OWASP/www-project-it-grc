@@ -21,7 +21,7 @@ class DataClassification(models.Model):
     _sql_constraints = [('name_uniq', 'unique(name)', _("The data classification name already exists."))]
 
     @api.model
-    def web_read_group(self, domain, fields, groupby, limit=None, offset=0, orderby=False,lazy=True, expand=False, expand_limit=None, expand_orderby=False):
+    def web_read_group(self, domain, fields, groupby, limit=None, offset=0, orderby=False, lazy=True, expand=False, expand_limit=None, expand_orderby=False):
         res = super().web_read_group(domain, fields, groupby, limit, offset, orderby, lazy, expand, expand_limit, expand_orderby)
         for i in self.env['data.classification'].search([]):
             data_assets = self.env['data.inventory'].search([('data_classification_id', 'in', [i.id] )])
@@ -72,6 +72,7 @@ class DataInventory(models.Model):
     data_classification_id = fields.Many2one('data.classification', help="Categorizing data based on its sensitivity, importance, and predefined criteria.", string=_('Data Classification'), required=True, track_visibility='onchange')
     data_inventory_business_process_ids = fields.One2many('data.inventory.business.process', 'data_inventory_id', string='Business Process', auto_join=True, track_visibility='onchange')
     data_inventory_third_party_ids = fields.One2many('data.inventory.third.party', 'data_inventory_id', string='Supplier', auto_join=True, track_visibility='onchange')
+    data_inventory_compliance_version_ids = fields.One2many('data.inventory.compliance.version', 'data_inventory_id', string='Compliance Version', auto_join=True, track_visibility='onchange')
     data_inventory_security_requirement_ids = fields.One2many('data.inventory.security.requirement','data_inventory_id', string='Security Requirement', auto_join=True, track_visibility='onchange')
     data_inventory_it_inventory_ids = fields.One2many('data.inventory.it.inventory','data_inventory_id', string='IT Inventory', auto_join=True, track_visibility='onchange')
     retention_period = fields.Selection([
@@ -160,6 +161,13 @@ class DataInventoryThirdParty(models.Model):
     _rec_name = 'third_party_id'
     data_inventory_id = fields.Many2one('data.inventory', string='Data Inventory')
     third_party_id = fields.Many2one('third.party', string='Supplier')
+    description = fields.Text(string='Description')
+
+class DataInventoryComplianceVersion(models.Model):
+    _name = 'data.inventory.compliance.version'
+    _rec_name = 'compliance_version_id'
+    data_inventory_id = fields.Many2one('data.inventory', string='Data Inventory')
+    compliance_version_id = fields.Many2one('compliance.version', string='Compliance Version')
     description = fields.Text(string='Description')
 
 class DataInventorySecurityRequirement(models.Model):

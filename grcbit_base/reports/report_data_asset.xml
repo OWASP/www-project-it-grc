@@ -90,6 +90,26 @@
                 </table>
               </t>
 
+              <t i-if="len(o.compliance_version_id) &#62; 0">
+                <table  class="table table-bordered" style="font-size:12px;">
+                  <thead>
+                    <tr><th colspan="6">Compliance Version</th></tr>
+                    <tr>
+                      <th>Name</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <t t-foreach="o.compliance_version_id" t-as="r"> 
+                      <tr>
+                        <td width="20%"><span t-esc="r.name"/></td>
+                        <td width="20%"><span t-esc="r.description"/></td>
+                      </tr>
+                    </t>
+                  </tbody>
+                </table>
+              </t>
+
               <t i-if="len(o.business_process_id) &#62; 0">
                 <table  class="table table-bordered" style="font-size:12px;">
                   <thead>
