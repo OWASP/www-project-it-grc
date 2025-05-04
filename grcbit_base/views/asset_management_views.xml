@@ -423,7 +423,7 @@
 	      </field>
 	    </page>
 	    <page name="compliance_version" string="Compliance">
-	      <field name="data_inventory_compliance_version_ids" string="Compliance Version">
+	      <field name="data_inventory_compliance_version_ids" string="Compliance">
 	        <tree editable="bottom">
                   <field name="compliance_version_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
                   <field name="description" />

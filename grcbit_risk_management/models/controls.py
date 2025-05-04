@@ -119,6 +119,8 @@ class ActivityControl(models.Model):
     description = fields.Html(string="Description")
     control_design_id = fields.Many2one('control.design', string="Control")
     responsible_id = fields.Many2one('hr.employee', string='Responsible', required=True, track_visibility='always')
+    policy = fields.Char(string="Policy")
+    policy_upload = fields.Binary(string="Policy Document", attachment=True)
 
 class ControlDesing(models.Model):
     _name = 'control.design'
