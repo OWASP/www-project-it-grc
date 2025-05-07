@@ -31,6 +31,7 @@
         #views
         'views/risk_management_views.xml',
         'views/controls_views.xml',
+        'views/company_product_service_views.xml',
         'views/menuitems.xml',
         'views/ir_sequence.xml',
 

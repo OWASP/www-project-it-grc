@@ -160,3 +160,12 @@ access_control_design_group_isms,access.control.design.group.isms,model_control_
 access_control_design_group_control,access.control.design.group.control,model_control_design,grcbit_base.group_control,1,1,1,1
 access_control_design_group_compliance,access.control.design.group.compliance,model_control_design,grcbit_base.group_compliance,1,0,0,0
 access_control_design_group_guest,access.control.design.group.guest,model_control_design,grcbit_base.group_guest,1,0,0,0
+
+access_company_product_service_group_grc_admin,access.company.product.service.group.grc.admin,model_company_product_service,grcbit_base.group_grc_admin,1,1,1,1
+access_company_product_service_group_grc_consultant,access.company.product.service.group.grc.consultant,model_company_product_service,grcbit_base.group_grc_consultant,1,1,1,1
+access_company_product_service_group_asset_management,access.company.product.service.group.asset.management,model_company_product_service,grcbit_base.group_asset_management,1,0,0,0
+access_company_product_service_group_risk_management,access.company.product.service.group.risk.management,model_company_product_service,grcbit_base.group_risk_management,1,1,1,1
+access_company_product_service_group_isms,access.company.product.service.group.isms,model_company_product_service,grcbit_base.group_isms,1,0,0,0
+access_company_product_service_group_control,access.company.product.service.group.control,model_company_product_service,grcbit_base.group_control,1,0,0,0
+access_company_product_service_group_compliance,access.company.product.service.group.compliance,model_company_product_service,grcbit_base.group_compliance,1,0,0,0
+access_company_product_service_group_guest,access.company.product.service.group.guest,model_company_product_service,grcbit_base.group_guest,1,0,0,0

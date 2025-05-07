@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models
 from odoo.exceptions import ValidationError
+import logging
+
+_logger = logging.getLogger(__name__)
 
 class ResUsersInh(models.Model):
     _inherit = 'res.users'
@@ -10,7 +13,11 @@ class ResUsersInh(models.Model):
 
     def write(self, vals):
         for rec in self:
-            user = rec.env.user
+            #logger.info('rec.env.user: ')
+            #_logger.info(rec.env.user.id)
+            #_logger.info('rec.id: ')
+            #_logger.info(rec.id)
+            user = rec.env['res.users'].sudo().browse(rec._context.get('uid', rec.env.user.id))
             # Allow users to update themselves
             if user.id == rec.id:
                 return super().write(vals)
