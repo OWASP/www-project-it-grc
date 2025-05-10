@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="grcbit_compliance_data_inventory_form_inherit">
+            <field name="name">Data Inventory Form Inherit</field>
+            <field name="model">data.inventory</field>
+            <field name="inherit_id" ref="grcbit_base.data_inventory_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page name="compliance_version" string="Compliance">
+                        <field name="data_inventory_compliance_version_ids" string="Compliance">
+                            <tree editable="bottom">
+                                <field name="compliance_version_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                                <field name="description" />
+                            </tree>
+                            <form>
+                                <field name="compliance_version_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                                <field name="description" string="Description" />
+                            </form>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo> 

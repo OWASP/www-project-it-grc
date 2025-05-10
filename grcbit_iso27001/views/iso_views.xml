@@ -19,6 +19,7 @@
           <field name="reason_selection" />
           <field name="control_design_id" widget="many2many_tags_open"  />
           <field name="control_status" widget="percentpie" force_save="1"/>
+          <field name="control_real_status" widget="percentpie" force_save="1"/>
         </tree>
       </field>
     </record>
@@ -32,6 +33,7 @@
           <field name="reason_selection" />
           <field name="control_design_id" />
           <field name="control_status" />
+          <field name="control_real_status" />
         </search>
       </field>
     </record>
@@ -49,7 +51,8 @@
 	        <group>
             <field name="reason_selection"/>
             <field name="control_design_id"  widget="many2many_tags_open" options="{'no_create_edit' : True, 'no_create':True}"  />
-            <field name="control_status" widget="percentpie" force_save="1"/>
+	    <field name="control_status" widget="percentpie" force_save="1"/> 
+            <field name="control_real_status" />
   	      </group>
           <div class="oe_chatter">
             <field name="activity_ids" widget="mail_activity" />

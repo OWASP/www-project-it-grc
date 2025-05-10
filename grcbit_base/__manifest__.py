@@ -12,6 +12,7 @@
         'board',
         'mail',
         'grcbit_setgroups',
+        #'grcbit_compliance',
     ],
 
     # always loaded

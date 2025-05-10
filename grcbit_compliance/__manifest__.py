@@ -27,6 +27,7 @@
 
         #views
         'views/compliance_views.xml',
+        'views/data_inventory_views.xml',
     ],
     'assets': {
         'web.assets_common': [

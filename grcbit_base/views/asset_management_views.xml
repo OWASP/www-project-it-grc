@@ -422,6 +422,7 @@
 	        </form>
 	      </field>
 	    </page>
+	    <!--
 	    <page name="compliance_version" string="Compliance">
 	      <field name="data_inventory_compliance_version_ids" string="Compliance">
 	        <tree editable="bottom">
@@ -434,6 +435,7 @@
 	        </form>
 	      </field>
 	    </page>
+	    -->
 	    <page name="security_requirement" string="Security Requirement">
 	      <field name="data_inventory_security_requirement_ids" string="Security Requirement">
 	        <tree editable="bottom">

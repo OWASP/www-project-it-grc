@@ -42,8 +42,8 @@ class OperationalCapability(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
 
-    name = fields.Char(string=_('Operational Capability'), required=True, help="Operational capabilities is an attribute to view controls from the practitioner’s perspective of information security capabilities.")
-    description = fields.Html(string=_('Description'), required=True, help="Operational capabilities is an attribute to view controls from the practitioner’s perspective of information security capabilities.")
+    name = fields.Char(string=_('Operational Capability'), required=True, help="Operational capabilities is an attribute to view controls from the practitioner's perspective of information security capabilities.")
+    description = fields.Html(string=_('Description'), required=True, help="Operational capabilities is an attribute to view controls from the practitioner's perspective of information security capabilities.")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The operational capability name already exists."))]
 
@@ -52,8 +52,8 @@ class SecurityDomain(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
 
-    name = fields.Char(string=_('Security Domain'), required=True, help="Security domains is an attribute to view controls from the perspective of four information security domains: Governance and Ecosystem, Protection, Defence, Resilience.")
-    description = fields.Html(string=_('Description'), required=True, help="Security domains is an attribute to view controls from the perspective of four information security domains: Governance and Ecosystem, Protection, Defence, Resilience.")
+    name = fields.Char(string=_('Security Domain'), required=True, help="Security domains is an attribute to view controls from the perspective of four information security domains: Governance and Ecosystem, Protection, Defence, Resilience.")
+    description = fields.Html(string=_('Description'), required=True, help="Security domains is an attribute to view controls from the perspective of four information security domains: Governance and Ecosystem, Protection, Defence, Resilience.")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The security domain name already exists."))]
 
@@ -134,7 +134,8 @@ class StatementApplicability(models.Model):
     is_applicable = fields.Boolean(string=_('Is Applicable?'), required=True)
     reason_selection = fields.Text(string=_('Reason for Selection'), help="Reason for including or excluding any of the SoA controls in the ISMS.")
     control_design_id = fields.Many2many('control.design',string=_('Control'), help="Related controls to ensure the protection of confidentiality, integrity and availability (CIA).")
-    control_status = fields.Integer(string=_('Status'), readonly=True, group_operator='avg', help="Related controls implementation status.")
+    control_status = fields.Integer(string=_('Status'), group_operator='avg', help="Related controls implementation status.", readonly=True)
+    control_real_status = fields.Integer(string=_('Real Status'), group_operator='avg', help="Real implementation status of controls.")
     control_category_id = fields.Many2one('control.category', string=_("Control Category"), related="name.control_category_id", store=True)
 
     attachment = fields.Many2many('ir.attachment', string=_("Attachment"))
