@@ -768,6 +768,12 @@
         <tree>
           <field name="name" invisible="1"/>
           <field name="description"/>
+	  <!--
+          <field name="business_market"/>
+          <field name="business_compliance"/>
+          <field name="business_geopolitical"/>
+          <field name="business_corporate"/
+	  -->
         </tree>
       </field>
     </record>
@@ -779,6 +785,10 @@
           <group>
             <field name="name" invisible="1"/>
             <field name="description"/>
+            <field name="business_market"/>
+            <field name="business_compliance"/>
+            <field name="business_geopolitical"/>
+            <field name="business_corporate"/>
           </group>
           <div class="oe_chatter">
             <field name="activity_ids" widget="mail_activity" />

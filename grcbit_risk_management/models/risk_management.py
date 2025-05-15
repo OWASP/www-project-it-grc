@@ -225,4 +225,8 @@ class OrganizationalProfile(models.Model):
 
     name = fields.Char(string="Name")
     description = fields.Text(string="Description")
+    business_market = fields.Char(string="Business Market")
+    business_compliance = fields.Char(string="Business Compliance")
+    business_geopolitical = fields.Char(string="Business Geopolitical")
+    business_corporate = fields.Char(string="Business Corporate")
     active = fields.Boolean(default=True)
