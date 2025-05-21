@@ -44,6 +44,7 @@ class ItInventory(models.Model):
         ], string=_('Enviroment'), required=True, track_visibility='onchange')
     #is_cloud = fields.Boolean(string=_('Cloud Hosted?'), required=True, track_visibility='onchange')
     users_qty = fields.Integer(string=_('User Quantity'), track_visibility='onchange')
+    rto = fields.Float(string=_('RTO'), help="Recovery Time Objective", track_visibility='onchange')
     attachment = fields.Many2many('ir.attachment', string=_("Attachment"), track_visibility='onchange')
     data_inventory_count = fields.Integer(string=_("Data Asset Count"))
     #xdr_agent = fields.Char(string="XDR Agent ID", track_visibility='onchange')
@@ -93,6 +94,7 @@ class DataInventory(models.Model):
         ('4y','4 years'),
         ('5y','5 years'),
         ], required=True, help="Amount of time an organization keeps certain types of data before deleting or archiving it.", track_visibility='onchange')
+    rpo = fields.Float(string=_('RPO'), help="Recovery Time Objective", track_visibility='onchange')
     attachment = fields.Many2many('ir.attachment', string=_("Attachment"), required=True, track_visibility='onchange')
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The data inventory name already exists."))]

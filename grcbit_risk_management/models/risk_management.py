@@ -213,6 +213,7 @@ class CompanyRisk(models.Model):
 
     risk_name = fields.Char(string="Name")
     risk_description = fields.Html(string="Description")
+    risk_consequence = fields.Char(string="Risk Consequence")
     company_objective_id = fields.Many2many('company.objective', string="Company Objective")
     risk_classification = fields.Many2many('risk.classification', string="Risk Category")
     active = fields.Boolean(default=True)

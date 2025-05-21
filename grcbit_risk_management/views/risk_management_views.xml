@@ -693,6 +693,7 @@
         <tree multi_edit="1">
           <field name="risk_name"/>
           <field name="risk_description"/>
+          <field name="risk_consequence"/>
           <field name="company_objective_id" widget="many2many_tags_open"/>
           <field name="risk_classification" widget="many2many_tags_open"/>
         </tree>
@@ -706,6 +707,7 @@
           <group>
             <field name="risk_name"/>
             <field name="risk_description"/>
+            <field name="risk_consequence"/>
             <field name="company_objective_id" widget="many2many_tags_open"/>
             <field name="risk_classification" widget="many2many_tags_open"/>
           </group>
