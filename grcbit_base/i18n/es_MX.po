@@ -18,102 +18,102 @@ msgstr ""
 #. module: grcbit_base
 #: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__1m
 msgid "1 month"
-msgstr "1 mes"
+msgstr "1 Mes"
 
 #. module: grcbit_base
 #: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__1y
 msgid "1 year"
-msgstr "1 año"
+msgstr "1 Año"
 
 #. module: grcbit_base
 #: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__10m
 msgid "10 months"
-msgstr "10 meses"
+msgstr "10 Mes"
 
 #. module: grcbit_base
 #: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__11m
 msgid "11 months"
-msgstr "11 meses"
+msgstr "11 Mes"
 
 #. module: grcbit_base
 #: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__2m
 msgid "2 months"
-msgstr "2 meses"
+msgstr "2 Mes"
 
 #. module: grcbit_base
 #: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__2y
 msgid "2 years"
-msgstr "2 años"
+msgstr "2 Año"
 
 #. module: grcbit_base
 #: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__3m
 msgid "3 months"
-msgstr "3 meses"
+msgstr "3 Mes"
 
 #. module: grcbit_base
 #: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__3y
 msgid "3 years"
-msgstr "3 años"
+msgstr "3 Año"
 
 #. module: grcbit_base
 #: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__4m
 msgid "4 months"
-msgstr "4 meses"
+msgstr "4 Mes"
 
 #. module: grcbit_base
 #: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__4y
 msgid "4 years"
-msgstr "4 años"
+msgstr "4 Año"
 
 #. module: grcbit_base
 #: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__5m
 msgid "5 months"
-msgstr "5 meses"
+msgstr "5 Mes"
 
 #. module: grcbit_base
 #: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__5y
 msgid "5 years"
-msgstr "5 años"
+msgstr "5 Año"
 
 #. module: grcbit_base
 #: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__6m
 msgid "6 months"
-msgstr "6 meses"
+msgstr "6 Mes"
 
 #. module: grcbit_base
 #: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__7m
 msgid "7 months"
-msgstr "7 meses"
+msgstr "7 Mes"
 
 #. module: grcbit_base
 #: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__8m
 msgid "8 months"
-msgstr "8 meses"
+msgstr "8 Mes"
 
 #. module: grcbit_base
 #: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__9m
 msgid "9 months"
-msgstr "9 meses"
+msgstr "9 Mes"
 
 #. module: grcbit_base
 #: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
 msgid "<br/> Data Asset:"
-msgstr "<br/> Activo de datos:"
+msgstr "<br/> Activo Dato:"
 
 #. module: grcbit_base
 #: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
 msgid "<strong>Asset Owner:</strong>"
-msgstr "<strong>Propietario de activo:</strong>"
+msgstr "<strong>Propietario Activo:</strong>"
 
 #. module: grcbit_base
 #: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
 msgid "<strong>Data Asset Name:</strong>"
-msgstr "<strong>Nombre de activo de datos:</strong>"
+msgstr "<strong>Nombre Activo Dato:</strong>"
 
 #. module: grcbit_base
 #: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
 msgid "<strong>Data Classification:</strong>"
-msgstr "<strong>Clasificación de datos:</strong>"
+msgstr "<strong>Clasificación Datos:</strong>"
 
 #. module: grcbit_base
 #: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
@@ -123,12 +123,12 @@ msgstr "<strong>Descripción:</strong>"
 #. module: grcbit_base
 #: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
 msgid "<strong>Retention Period:</strong>"
-msgstr "<strong>Periodo de retención:</strong>"
+msgstr "<strong>Periodo Retención:</strong>"
 
 #. module: grcbit_base
 #: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
 msgid "<strong>Security Requirement:</strong>"
-msgstr "<strong>Requerimiento de seguridad:</strong>"
+msgstr "<strong>Requerimiento Seguridad:</strong>"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_data_classification__active
@@ -143,17 +143,17 @@ msgstr "Activo"
 #: model:ir.ui.menu,name:grcbit_base.menu_asset_management
 #: model:res.groups,name:grcbit_base.group_asset_management
 msgid "Asset Management"
-msgstr "Administracion de activos"
+msgstr "Administración Activo"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__name
 msgid "Asset Name"
-msgstr "Nombre de activo"
+msgstr "Nombre Activo"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__owner
 msgid "Asset Owner"
-msgstr "Propietario de activo"
+msgstr "Propietario Activo"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__attachment
@@ -166,7 +166,7 @@ msgstr "Adjunto"
 #: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__is_cloud
 #: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
 msgid "Cloud Hosted?"
-msgstr "¿Alojamiento en la nube?"
+msgstr "¿Alojamiento Nube?"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_set_groups_user__compliance_check
@@ -186,7 +186,7 @@ msgstr "Control"
 #: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__create_uid
 #: model:ir.model.fields,field_description:grcbit_base.field_third_party__create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr "Creado Por"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_data_classification__create_date
@@ -194,32 +194,32 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__create_date
 #: model:ir.model.fields,field_description:grcbit_base.field_third_party__create_date
 msgid "Created on"
-msgstr "Creado el"
+msgstr "Creado El"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__db_version
 #: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
 msgid "DB Version"
-msgstr "Version de base de datos"
+msgstr "Versión Base Datos"
 
 #. module: grcbit_base
 #: model:ir.actions.act_window,name:grcbit_base.data_inventory_action
 #: model:ir.ui.menu,name:grcbit_base.menu_data_inventory
 msgid "Data Asset"
-msgstr "Activo de datos"
+msgstr "Activo Dato"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_data_classification__data_inventory_count
 #: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__data_inventory_count
 #: model:ir.model.fields,field_description:grcbit_base.field_third_party__data_inventory_count
 msgid "Data Asset Count"
-msgstr "Contador de activo de datos"
+msgstr "Contador Activo Dato"
 
 #. module: grcbit_base
 #: model:ir.actions.report,name:grcbit_base.print_data_asset
 #: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
 msgid "Data Asset Report"
-msgstr "Reporte de activo de datos"
+msgstr "Reporte Activo Dato"
 
 #. module: grcbit_base
 #: model:ir.actions.act_window,name:grcbit_base.data_classification_action
@@ -230,12 +230,12 @@ msgstr "Reporte de activo de datos"
 #: model:ir.ui.menu,name:grcbit_base.menu_data_classification
 #: model_terms:ir.ui.view,arch_db:grcbit_base.main_dashboard
 msgid "Data Classification"
-msgstr "Clasificación de datos"
+msgstr "Clasificación Dato"
 
 #. module: grcbit_base
 #: model:ir.model,name:grcbit_base.model_data_inventory
 msgid "Data Inventory"
-msgstr "Inventario de datos"
+msgstr "Inventario Dato"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_data_classification__description
@@ -257,7 +257,7 @@ msgstr "Desarrollo"
 #: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__display_name
 #: model:ir.model.fields,field_description:grcbit_base.field_third_party__display_name
 msgid "Display Name"
-msgstr "Nombre a mostrar"
+msgstr "Nombre Mostrar"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__environment
@@ -291,7 +291,7 @@ msgstr "Tablero GRC"
 #. module: grcbit_base
 #: model:ir.module.category,description:grcbit_base.module_grcbit_base
 msgid "GRC Module Base"
-msgstr "Módulo base GRC"
+msgstr "Módulo Base GRC"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_set_groups_user__guest_check
@@ -343,13 +343,13 @@ msgstr "Sistema TI"
 #. module: grcbit_base
 #: model_terms:ir.ui.view,arch_db:grcbit_base.main_dashboard
 msgid "Information Security Management System"
-msgstr "Sistema de gestión de seguridad de la información"
+msgstr "Sistema Gestión Seguridad Información"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__is_internet_exposed
 #: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
 msgid "Internet Exposed?"
-msgstr "¿Espuesto a internet?"
+msgstr "¿Expuesto Internet?"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_data_classification____last_update
@@ -357,7 +357,7 @@ msgstr "¿Espuesto a internet?"
 #: model:ir.model.fields,field_description:grcbit_base.field_it_inventory____last_update
 #: model:ir.model.fields,field_description:grcbit_base.field_third_party____last_update
 msgid "Last Modified on"
-msgstr "Última modificación el"
+msgstr "Última Modificación El"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_data_classification__write_uid
@@ -365,7 +365,7 @@ msgstr "Última modificación el"
 #: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__write_uid
 #: model:ir.model.fields,field_description:grcbit_base.field_third_party__write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr "Última Actualización Por"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_data_classification__write_date
@@ -373,7 +373,7 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__write_date
 #: model:ir.model.fields,field_description:grcbit_base.field_third_party__write_date
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr "Última Actualización El"
 
 #. module: grcbit_base
 #: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
@@ -389,7 +389,7 @@ msgstr "Nombre"
 #: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__os_version
 #: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
 msgid "OS Version"
-msgstr "Versión de sistema operativo"
+msgstr "Versión Sistema Operativo"
 
 #. module: grcbit_base
 #: model:ir.model.fields.selection,name:grcbit_base.selection__it_inventory__environment__prod
@@ -399,18 +399,18 @@ msgstr "Producción"
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__retention_period
 msgid "Retention Period"
-msgstr "Periodo de retención"
+msgstr "Periodo Retención"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_set_groups_user__risk_management_check
 #: model:res.groups,name:grcbit_base.group_risk_management
 msgid "Risk Management"
-msgstr "Gestión de riesgo"
+msgstr "Gestión Riesgo"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__security_requirement
 msgid "Security Requirement"
-msgstr "Requerimiento de seguridad"
+msgstr "Requerimiento Seguridad"
 
 #. module: grcbit_base
 #: model:ir.ui.menu,name:grcbit_base.menu_settings
@@ -425,27 +425,27 @@ msgstr "Staging"
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__name
 msgid "System Name"
-msgstr "Nombre del sistema"
+msgstr "Nombre Sistema"
 
 #. module: grcbit_base
 #: model:ir.model.constraint,message:grcbit_base.constraint_it_inventory_name_uniq
 msgid "The IT system name already exists."
-msgstr "El nombre del sistema TI ya existe."
+msgstr "El Nombre Sistema TI Ya Existe."
 
 #. module: grcbit_base
 #: model:ir.model.constraint,message:grcbit_base.constraint_data_classification_name_uniq
 msgid "The data classification name already exists."
-msgstr "El nombre de la Clasificación de datos ya existe."
+msgstr "El Nombre Clasificación Datos Ya Existe."
 
 #. module: grcbit_base
 #: model:ir.model.constraint,message:grcbit_base.constraint_data_inventory_name_uniq
 msgid "The data inventory name already exists."
-msgstr "El nombre del inventario de datos ya existe."
+msgstr "El Nombre Inventario Datos Ya Existe."
 
 #. module: grcbit_base
 #: model:ir.model.constraint,message:grcbit_base.constraint_third_party_name_uniq
 msgid "The third party name already exists."
-msgstr "El nombre del proveedor TI ya existe."
+msgstr "El Nombre Proveedor TI Ya Existe."
 
 #. module: grcbit_base
 #: model:ir.actions.act_window,name:grcbit_base.third_party_action
@@ -464,7 +464,7 @@ msgstr "Proveedor TI"
 #: model:ir.actions.act_window,name:grcbit_base.third_party_dash
 #: model_terms:ir.ui.view,arch_db:grcbit_base.main_dashboard
 msgid "Third-Party"
-msgstr "Terceros"
+msgstr "Tercero"
 
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__url
@@ -474,12 +474,12 @@ msgstr "URL"
 #. module: grcbit_base
 #: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__users_qty
 msgid "User Quantity"
-msgstr "Cantidad de usuarios"
+msgstr "Cantidad Usuario"
 
 #. module: grcbit_base
 #: model:ir.ui.menu,name:grcbit_base.menu_users
 msgid "Users"
-msgstr "Usuarios"
+msgstr "Usuario"
 
 #. module: grcbit_base
 #: model:ir.model,name:grcbit_base.model_set_groups_user

@@ -33,12 +33,12 @@ msgstr "Adyacente (A)"
 #. module: grcbit_cvss
 #: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__attack_complexity
 msgid "Attack Complexity (AC)"
-msgstr "Complejidad del ataque (AC)"
+msgstr "Complejidad Ataque (AC)"
 
 #. module: grcbit_cvss
 #: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__attack_vector
 msgid "Attack Vector (AV)"
-msgstr "Vector de ataque (AV)"
+msgstr "Vector Ataque (AV)"
 
 #. module: grcbit_cvss
 #: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__availability
@@ -49,7 +49,7 @@ msgstr "Disponibilidad (A)"
 #: model:ir.actions.act_window,name:grcbit_cvss.cvss_calculator_action
 #: model_terms:ir.ui.view,arch_db:grcbit_cvss.cvss_calculator_risk_factor_inherit_form
 msgid "CVSS Calculator"
-msgstr "Calculadora de CVSS"
+msgstr "Calculadora CVSS"
 
 #. module: grcbit_cvss
 #: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__scope__changed
@@ -64,12 +64,12 @@ msgstr "Confidencial (C)"
 #. module: grcbit_cvss
 #: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr "Creado Por"
 
 #. module: grcbit_cvss
 #: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__create_date
 msgid "Created on"
-msgstr "Creado el"
+msgstr "Creado El"
 
 #. module: grcbit_cvss
 #: model_terms:ir.ui.view,arch_db:grcbit_cvss.cvss_calculator_form
@@ -79,7 +79,7 @@ msgstr "DESCARTAR"
 #. module: grcbit_cvss
 #: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__display_name
 msgid "Display Name"
-msgstr "Nombre a mostrar"
+msgstr "Nombre Mostrar"
 
 #. module: grcbit_cvss
 #: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__attack_complexity__high
@@ -103,17 +103,17 @@ msgstr "Integridad (I)"
 #. module: grcbit_cvss
 #: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator____last_update
 msgid "Last Modified on"
-msgstr "Última modificación el"
+msgstr "Última Modificación El"
 
 #. module: grcbit_cvss
 #: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr "Última Actualización Por"
 
 #. module: grcbit_cvss
 #: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__write_date
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr "Última Actualización El"
 
 #. module: grcbit_cvss
 #: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__attack_vector__local
@@ -151,7 +151,7 @@ msgstr "Físico (P)"
 #. module: grcbit_cvss
 #: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__privileges_required
 msgid "Privileges Required (PR)"
-msgstr "Privilegios requeridos (PR)"
+msgstr "Privilegio Requerido (PR)"
 
 #. module: grcbit_cvss
 #: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__user_interaction__required
@@ -162,7 +162,7 @@ msgstr "Requerido (R)"
 #: model:ir.model,name:grcbit_cvss.model_risk_factor
 #: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__risk_factor_id
 msgid "Risk Factor"
-msgstr "Factor de riesgo"
+msgstr "Factor Riesgo"
 
 #. module: grcbit_cvss
 #: model_terms:ir.ui.view,arch_db:grcbit_cvss.cvss_calculator_form
@@ -188,7 +188,7 @@ msgstr "Sin alterar (U)"
 #. module: grcbit_cvss
 #: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__user_interaction
 msgid "User Interaction (UI)"
-msgstr "Interacción del usuario (UI)"
+msgstr "Interacción Usuario (UI)"
 
 #. module: grcbit_cvss
 #: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__vector

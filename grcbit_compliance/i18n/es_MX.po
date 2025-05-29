@@ -58,12 +58,12 @@ msgstr "Objetivo"
 #. module: grcbit_compliance
 #: model:ir.actions.report,name:grcbit_compliance.print_compliance
 msgid "Compliance Report"
-msgstr "Reporte de cumpliento"
+msgstr "Reporte Cumplimiento"
 
 #. module: grcbit_compliance
 #: model_terms:ir.ui.view,arch_db:grcbit_compliance.compliance_print_template
 msgid "Compliance Report:"
-msgstr "Reporte de cumpliento:"
+msgstr "Reporte Cumplimiento:"
 
 #. module: grcbit_compliance
 #: model:ir.actions.act_window,name:grcbit_compliance.compliance_control_action
@@ -91,7 +91,7 @@ msgstr "Control"
 #. module: grcbit_compliance
 #: model_terms:ir.ui.view,arch_db:grcbit_compliance.compliance_print_template
 msgid "Control design"
-msgstr "Diseño de control"
+msgstr "Diseño Control"
 
 #. module: grcbit_compliance
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_control__create_uid
@@ -99,7 +99,7 @@ msgstr "Diseño de control"
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_iso_control__create_uid
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_version__create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr "Creado Por"
 
 #. module: grcbit_compliance
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_control__create_date
@@ -107,7 +107,7 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_iso_control__create_date
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_version__create_date
 msgid "Created on"
-msgstr "Creado el"
+msgstr "Creado El"
 
 #. module: grcbit_compliance
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_control__description
@@ -122,7 +122,7 @@ msgstr "Descripción"
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_iso_control__display_name
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_version__display_name
 msgid "Display Name"
-msgstr "Nombre a mostrar"
+msgstr "Nombre Mostrar"
 
 #. module: grcbit_compliance
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_control__id
@@ -143,7 +143,7 @@ msgstr "Control ISMS"
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_iso_control____last_update
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_version____last_update
 msgid "Last Modified on"
-msgstr "Última modificación el"
+msgstr "Última Modificación El"
 
 #. module: grcbit_compliance
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_control__write_uid
@@ -151,7 +151,7 @@ msgstr "Última modificación el"
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_iso_control__write_uid
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_version__write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr "Última Actualización Por"
 
 #. module: grcbit_compliance
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_control__write_date
@@ -159,7 +159,7 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_iso_control__write_date
 #: model:ir.model.fields,field_description:grcbit_compliance.field_compliance_version__write_date
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr "Última Actualización El"
 
 #. module: grcbit_compliance
 #: model_terms:ir.ui.view,arch_db:grcbit_compliance.compliance_print_template
@@ -174,17 +174,17 @@ msgstr "Requerimiento"
 #. module: grcbit_compliance
 #: model:ir.model.constraint,message:grcbit_compliance.constraint_compliance_control_objective_name_uniq
 msgid "The compliance objective name already exists."
-msgstr "El nombre del objetivo ya existe."
+msgstr "Nombre Objetivo Ya Existe"
 
 #. module: grcbit_compliance
 #: model:ir.model.constraint,message:grcbit_compliance.constraint_compliance_control_name_uniq
 msgid "The compliance requirement name already exists."
-msgstr "El nombre del requerimiento de cumplimiento ya existe."
+msgstr "Nombre Requerimiento Ya Existe"
 
 #. module: grcbit_compliance
 #: model:ir.model.constraint,message:grcbit_compliance.constraint_compliance_version_name_uniq
 msgid "The compliance version name already exists."
-msgstr "El nombre de la versión ya existe."
+msgstr "Nombre Versión Ya Existe"
 
 #. module: grcbit_compliance
 #: model:ir.ui.menu,name:grcbit_compliance.menu_compliance_version
