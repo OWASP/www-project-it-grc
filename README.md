@@ -183,5 +183,4 @@ Data repository: https://github.com/grcbit/grc4ciso-data-1
 
 ### **Contact**
 
-- email: rl@grcbit.com
-- web: https://grc4ciso.com
+- email: rodolfo.lopez@outlook.com
