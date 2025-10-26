@@ -7,10 +7,14 @@ class ResUsersInh(models.Model):
 
     def open_set_groups(self):
         user = self.env.user
+        admin_user = self.env.ref('base.user_admin')
+
+        if self.id == admin_user.id and user.id != admin_user.id:
+            raise ValidationError(_("You cannot modify the administrator user."))
+
         if not user.has_group('grcbit_base.group_grc_admin'):
-            raise ValidationError("This users can't be update for you")
-        if user.has_group('grcbit_base.group_grc_admin') and self.is_support == True:
-            raise ValidationError("This users can't be update for you")
+            raise ValidationError(_("You do not have permission to update this user."))
+
         return {
             'name': _('Set Groups'),
             'view_type': 'form',
