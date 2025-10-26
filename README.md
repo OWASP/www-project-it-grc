@@ -151,8 +151,11 @@ A log is generated to record all the activities that users perform in the system
 `docker run -d --net [YOUR_NETWORK] --restart=always -p 8069:8069 -p 8072:8072 --name [INSTANCE_NAME] --link [DB_INSTANCE_NAME]:db -e PASSWORD=[PSTGRES_PASSWORD] -t odoo:16.0-20250207`
 
 3. Update and Install packages into the odoo docker instance
+
 `docker exec -it -u 0 odoo_grc_test apt update`
+
 `docker exec -it -u 0 odoo_grc_test apt install git`
+
 `docker exec -it odoo_grc_test pip3 install cvss==2.6 xw_utils==1.1.12 json5==0.9.14 openai markdown markdown2 json2table`
 
 4. Configure Odoo https://[YOU_HOST]:8069
