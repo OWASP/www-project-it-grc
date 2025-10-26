@@ -172,7 +172,7 @@ A log is generated to record all the activities that users perform in the system
 8. With "developer mode" execute "Apps" --> "Update Apps List".
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/98078aea-6f75-4582-8e9a-7112fa503413">
 
-9. Install the grcbit_ modules.  
+9. Install the grcbit_ modules in the following order: 1. grcbit_base, grcbit_iso27001, grcbit_compliance, grcbit_threat_scenario, grcbit_pci4, grcbit_cvss, grcbit_vulnerability_management  
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/2f37c99b-3cec-439f-b02a-4c9e0e0d2c00">
 
 ### **Import data**
