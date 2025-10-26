@@ -163,11 +163,22 @@ A log is generated to record all the activities that users perform in the system
 6. In /etc/odoo/odoo.conf add the addons-path www-project-it-grc
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/68c4e767-721e-4b0c-952a-05eabb88c4c5">
 
-7. With "developer mode" execute "Apps" --> "Update Apps List".
+7. Restart your docker odoo instance `docker restart [INSTANCE_NAME]`
+
+8. With "developer mode" execute "Apps" --> "Update Apps List".
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/98078aea-6f75-4582-8e9a-7112fa503413">
 
-8. Install the grcbit_* modules.
+9. Install the "grcbit_setgroups" module.
+<img width="1358" height="492" alt="image" src="https://github.com/user-attachments/assets/5df8d24d-074a-4713-9c74-c67927e77335" />
+
+10. Activate the "SUPER GRC ADMIN" privilege.
+Note: This access should be granted exclusively to the super administrator of the GRC platform, as it enables full control over all security parameters within Odoo.  
+Settings --> Manage Users
+<img width="631" height="370" alt="image" src="https://github.com/user-attachments/assets/4c960ff3-d50b-4897-9238-692ea99c7c32" />
+
+11. Install the rest of the modules in the following order.  
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/2f37c99b-3cec-439f-b02a-4c9e0e0d2c00">
+grcbit_base
 
 ### **Import data**
 
@@ -183,5 +194,4 @@ Data repository: https://github.com/grcbit/grc4ciso-data-1
 
 ### **Contact**
 
-- email: rl@grcbit.com
-- web: https://grc4ciso.com
+- email: rodolfo.lopez@outlook.com
