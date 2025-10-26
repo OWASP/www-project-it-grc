@@ -19,16 +19,6 @@
         <xpath expr="//header" position="inside">
           <button name="open_set_groups" string="Set Groups" class="btn btn-primary" type="object" groups="base.group_system, grcbit_base.group_grc_admin" />
         </xpath>
-	<!--
-        <xpath expr="//field[@name='partner_id']" position="after">
-          <field name="is_admin"/>
-        </xpath>
-	-->
-        <xpath expr="//field[@name='login']" position="after">
-	  <group>
-            <field name="is_support" groups='base.group_system' string="SUPER GRC ADMIN" />
-          </group>
-        </xpath>
         <xpath expr="//page[@name='access_rights']" position="attributes">
           <attribute name="groups">base.group_system</attribute>
         </xpath>

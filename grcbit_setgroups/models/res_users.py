@@ -1,54 +1,36 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models
+from odoo import models
 from odoo.exceptions import ValidationError
-import logging
-
-_logger = logging.getLogger(__name__)
 
 class ResUsersInh(models.Model):
     _inherit = 'res.users'
 
-    is_support = fields.Boolean(string="Is Support", default=False)
-
-
     def write(self, vals):
         for rec in self:
-            #logger.info('rec.env.user: ')
-            #_logger.info(rec.env.user.id)
-            #_logger.info('rec.id: ')
-            #_logger.info(rec.id)
-            user = rec.env['res.users'].sudo().browse(rec._context.get('uid', rec.env.user.id))
-            # Allow users to update themselves
-            if user.id == rec.id:
-                return super().write(vals)
-                
-            if not user.has_group('grcbit_base.group_grc_admin'):
-                raise ValidationError("1. This users can't be update for you")
-            if user.has_group('grcbit_base.group_grc_admin') and rec.is_support == True:
-                if not user.has_group('base.group_system') or not rec.env.ref('base.user_admin'):
-                    raise ValidationError("2. This users can't be update for you")
-            if 'is_support' in vals:
-                if not user.has_group('base.group_system') or not rec.env.ref('base.user_admin'):
-                    raise ValidationError("3. This users can't be update for you")
+            current_user = rec.env['res.users'].sudo().browse(
+                rec._context.get('uid', rec.env.user.id)
+            )
+            admin_user = rec.env.ref('base.user_admin')
+
+            if rec.id == admin_user.id and current_user.id != admin_user.id:
+                raise ValidationError("You cannot modify this user")
+
+            if current_user.id == rec.id:
+                continue
+
+            if not current_user.has_group('grcbit_base.group_grc_admin'):
+                raise ValidationError("You cannot modify this user")
 
         return super().write(vals)
 
     def unlink(self):
-        #self._check_admin_restriction()
-        user = self.env.user
-        if not user.has_group('grcbit_base.group_grc_admin'):
-            raise ValidationError("This users can't be update for you")
-        if user.has_group('grcbit_base.group_grc_admin') and self.is_support == True:
-            raise ValidationError("This users can't be update for you")
-
+        admin_user = self.env.ref('base.user_admin')
+        if admin_user in self:
+            raise ValidationError("You cannot modify this user")
         return super().unlink()
 
     def copy(self, default=None):
-        #self._check_admin_restriction()
-        user = self.env.user
-        if not user.has_group('grcbit_base.group_grc_admin'):
-            raise ValidationError("This users can't be update for you")
-        if user.has_group('grcbit_base.group_grc_admin') and self.is_support == True:
-            raise ValidationError("This users can't be update for you")
-
+        admin_user = self.env.ref('base.user_admin')
+        if self.id == admin_user.id:
+            raise ValidationError("You cannot modify this user")
         return super().copy(default)
