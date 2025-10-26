@@ -9,7 +9,7 @@
     'version': '16.0',
     'depends': [
         'grcbit_risk_management',
-        'grcbit_vulnerability_management',
+        #'grcbit_vulnerability_management',
     ],
 
     # always loaded
