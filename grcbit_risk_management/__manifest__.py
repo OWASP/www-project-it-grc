@@ -45,6 +45,7 @@
         'web.assets_common': [
             'grcbit_risk_management/static/src/css/control_style.css',            
         ],
-    }
-    
+    },
+    'installable': True,
+    'application': True,
 }

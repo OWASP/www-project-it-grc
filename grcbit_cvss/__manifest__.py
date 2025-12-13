@@ -19,4 +19,6 @@
         'views/risk_factor_views.xml',
         'reports/report_risk_factor_inherit.xml',
     ],
+    'installable': True,
+    'application': True,
 }

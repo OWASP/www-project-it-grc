@@ -34,6 +34,7 @@
             'grcbit_compliance/static/src/css/compliance_style.css',
             
         ],
-    }
-    
+    },
+    'installable': True,
+    'application': True,
 }

@@ -17,8 +17,6 @@
         'views/res_users_views.xml',
         'wizard/set_groups_views.xml',
     ],
-
-    'auto_install': False,
-    'application': False,
-
+    'installable': True,
+    'application': True,
 }

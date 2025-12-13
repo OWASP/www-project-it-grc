@@ -43,6 +43,7 @@
             'grcbit_iso27001/static/src/css/iso_style.css',
             
         ],
-    }
- 
+    },
+    'installable': True,
+    'application': True, 
 }
