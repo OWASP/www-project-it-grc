@@ -23,14 +23,18 @@
       <field name="model">it.components</field>
       <field name="arch" type="xml">
         <form>
-          <group>
-            <field name="name"/>
-            <field name="description" />
-          </group>
-          <div class="oe_chatter">
-            <field name="activity_ids" widget="mail_activity" />
-            <field name="message_ids" widget="mail_thread" />
-          </div>
+          <sheet>
+            <group col="2">
+              <group>
+                <field name="name"/>
+                <field name="description" />
+              </group>
+            </group>
+            <div class="oe_chatter">
+              <field name="activity_ids" widget="mail_activity"/>
+              <field name="message_ids" widget="mail_thread"/>
+            </div>
+          </sheet>
         </form>
       </field>
     </record>
@@ -67,18 +71,19 @@
       <field name="model">tcp.ports</field>
       <field name="arch" type="xml">
         <form>
-          <group>
-            <group>
-              <field name="name"/>
-              <field name="description"/>
+          <sheet>
+            <group col="2">
+              <group>
+                <field name="name"/>
+                <field name="description"/>
+              </group>
+              <group/>
             </group>
-            <group>
-            </group>
-          </group>
-          <div class="oe_chatter">
-            <field name="activity_ids" widget="mail_activity" />
-            <field name="message_ids" widget="mail_thread" />
-          </div>
+            <div class="oe_chatter">
+              <field name="activity_ids" widget="mail_activity"/>
+              <field name="message_ids" widget="mail_thread"/>
+            </div>
+          </sheet>
         </form>
       </field>
     </record>

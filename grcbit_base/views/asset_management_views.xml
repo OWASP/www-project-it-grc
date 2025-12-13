@@ -59,14 +59,18 @@
       <field name="model">third.party</field>
       <field name="arch" type="xml">
         <form>
-	        <group>
-            <field name="name"/>
-            <field name="description"/>
-          </group>
-          <div class="oe_chatter">
-            <field name="activity_ids" widget="mail_activity" />
-            <field name="message_ids" widget="mail_thread" />
-          </div>
+          <sheet>
+            <group col="2">
+              <group>
+                <field name="name"/>
+                <field name="description"/>
+              </group>
+            </group>
+            <div class="oe_chatter">
+              <field name="activity_ids" widget="mail_activity"/>
+              <field name="message_ids" widget="mail_thread"/>
+            </div>
+          </sheet>
         </form>
       </field>
     </record>
@@ -145,14 +149,18 @@
       <field name="model">data.classification</field>
       <field name="arch" type="xml">
         <form>
-	  <group>
-            <field name="name"/>
-            <field name="description"/>
-          </group>
-          <div class="oe_chatter">
-            <field name="activity_ids" widget="mail_activity" />
-            <field name="message_ids" widget="mail_thread" />
-          </div>
+          <sheet>
+            <group col="2">
+              <group>
+                <field name="name"/>
+                <field name="description"/>
+              </group>
+            </group>
+            <div class="oe_chatter">
+              <field name="activity_ids" widget="mail_activity"/>
+              <field name="message_ids" widget="mail_thread"/>
+            </div>
+          </sheet>
         </form>
       </field>
     </record>
@@ -223,14 +231,17 @@
       <field name="model">it.inventory</field>
       <field name="arch" type="xml">
         <form>
-	  <group>
-            <field name="name"/>
-            <field name="description"/>
-            <field name="environment" />
-            <field name="users_qty"/>
-		  <!-- <field name="rto"/> -->
-          </group>
-          <notebook>
+          <sheet>
+            <group col="2">
+              <group>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="environment" />
+                <field name="users_qty"/>
+		        <!-- <field name="rto"/> -->
+              </group>
+            </group>
+            <notebook>
             <page name="it_component" string="IT Component">
               <field name="it_component_ids">
                 <tree editable="bottom">
@@ -289,11 +300,12 @@
               </field>
             </page>
 	    -->
-          </notebook>
-          <div class="oe_chatter">
-            <field name="activity_ids" widget="mail_activity" />
-            <field name="message_ids" widget="mail_thread" />
-          </div>
+            </notebook>
+            <div class="oe_chatter">
+              <field name="activity_ids" widget="mail_activity"/>
+              <field name="message_ids" widget="mail_thread"/>
+            </div>
+          </sheet>
         </form>
       </field>
     </record>
@@ -380,14 +392,22 @@
       <field name="model">data.inventory</field>
       <field name="arch" type="xml">
         <form>
-	  <group>
-            <field name="name"/>
-            <field name="description"/>
-            <field name="data_classification_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
-            <field name="owner"  widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
-            <field name="retention_period" />
-          </group>
-	  <!--
+          <sheet>
+            <group col="2">
+              <group>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="data_classification_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                <field name="owner"  widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
+                <field name="retention_period" />
+              </group>
+              <group string="Recovery Point Objective">
+                <field name="rpo_value"/>
+                <field name="rpo_unit"/>
+                <field name="rpo_total_hours" readonly="1"/>
+              </group>
+            </group>
+	    <!--
 	        <group>
             <field name="it_inventory_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
             <field name="third_party_id"   widget="many2many_tags_open"  options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
@@ -395,12 +415,7 @@
             <field name="security_requirement"/>
           </group>
 	  -->
-          <group string="Recovery Point Objective">
-            <field name="rpo_value"/>
-            <field name="rpo_unit"/>
-            <field name="rpo_total_hours" readonly="1"/>
-          </group>
-	  <notebook>
+	    <notebook>
 	    <page name="business_process" string="Business Process">
 	      <field name="data_inventory_business_process_ids" string="Business Process">
 	        <tree editable="bottom">
@@ -476,10 +491,11 @@
 	      </field>
 	    </page>
 	  </notebook>
-          <div class="oe_chatter">
-            <field name="activity_ids" widget="mail_activity" />
-            <field name="message_ids" widget="mail_thread" />
-          </div>
+            <div class="oe_chatter">
+              <field name="activity_ids" widget="mail_activity"/>
+              <field name="message_ids" widget="mail_thread"/>
+            </div>
+          </sheet>
         </form>
       </field>
     </record>
