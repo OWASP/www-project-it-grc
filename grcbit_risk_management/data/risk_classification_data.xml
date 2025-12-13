@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <record model="risk.classification" id="operational_risk_classification">
+      <field name="name">Operational</field>
+      <field name="description">Operational risk is the risk of loss as a result of ineffective or failed internal processes, people, systems, or external events which can disrupt the flow of business operations.</field>
+      <field name="active">1</field>
+    </record>
+    <record model="risk.classification" id="technology_risk_classification">
+      <field name="name">Technology</field>
+      <field name="description">Technology risk is any potential for technology failures to disrupt your business such as information security incidents or service outages.</field>
+      <field name="active">1</field>
+    </record>
+    <record model="risk.classification" id="financial_risk_classification">
+      <field name="name">Financial</field>
+      <field name="description">Financial risk refers to the likelihood of losing money on a business or investment decision. Risks associated with finances can result in capital losses for individuals and businesses. There are several financial risks, such as credit, liquidity, and operational risks.</field>
+      <field name="active">1</field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,202 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* grcbit_cvss
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 18:43+0000\n"
+"PO-Revision-Date: 2023-12-15 18:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: grcbit_cvss
+#: model_terms:ir.ui.view,arch_db:grcbit_cvss.cvss_report_risk_factor_custom
+msgid "<strong>CVSS Score:</strong>"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model_terms:ir.ui.view,arch_db:grcbit_cvss.cvss_report_risk_factor_custom
+msgid "<strong>CVSS Vector:</strong>"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__attack_vector__adjacent
+msgid "Adjacent (A)"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__attack_complexity
+msgid "Attack Complexity (AC)"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__attack_vector
+msgid "Attack Vector (AV)"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__availability
+msgid "Availability (A)"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.actions.act_window,name:grcbit_cvss.cvss_calculator_action
+#: model_terms:ir.ui.view,arch_db:grcbit_cvss.cvss_calculator_risk_factor_inherit_form
+msgid "CVSS Calculator"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__scope__changed
+msgid "Changed (C)"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__confidentiality
+msgid "Confidentiality (C)"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model_terms:ir.ui.view,arch_db:grcbit_cvss.cvss_calculator_form
+msgid "DISCARD"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__attack_complexity__high
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__availability__high
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__confidentiality__high
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__integrity__high
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__privileges_required__high
+msgid "High (H)"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__id
+msgid "ID"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__integrity
+msgid "Integrity (I)"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__attack_vector__local
+msgid "Local (L)"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__attack_complexity__low
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__availability__low
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__confidentiality__low
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__integrity__low
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__privileges_required__low
+msgid "Low (L)"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__attack_vector__network
+msgid "Network (N)"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__availability__none
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__confidentiality__none
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__integrity__none
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__privileges_required__none
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__user_interaction__none
+msgid "None (N)"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__attack_vector__physical
+msgid "Physical (P)"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__privileges_required
+msgid "Privileges Required (PR)"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__user_interaction__required
+msgid "Required (R)"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model,name:grcbit_cvss.model_risk_factor
+#: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__risk_factor_id
+msgid "Risk Factor"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model_terms:ir.ui.view,arch_db:grcbit_cvss.cvss_calculator_form
+msgid "SAVE"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__scope
+msgid "Scope (S)"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__score
+#: model:ir.model.fields,field_description:grcbit_cvss.field_risk_factor__score
+msgid "Score"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields.selection,name:grcbit_cvss.selection__cvss_calculator__scope__unchanged
+msgid "Unchanged (U)"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__user_interaction
+msgid "User Interaction (UI)"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model.fields,field_description:grcbit_cvss.field_cvss_calculator__vector
+#: model:ir.model.fields,field_description:grcbit_cvss.field_risk_factor__vector
+msgid "Vector"
+msgstr ""
+
+#. module: grcbit_cvss
+#: model:ir.model,name:grcbit_cvss.model_cvss_calculator
+msgid "cvss.calculator"
+msgstr ""

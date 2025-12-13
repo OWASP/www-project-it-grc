@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <template id="compliance_print_template">
+      <t t-call="web.basic_layout">
+        <t t-foreach="docs" t-as="o" >
+          <t t-call="web.report_layout">
+            <div class="page">
+              <div class="row">
+                <div class="col-4">
+                  <span>
+                    <img t-att-src="image_data_uri(o.env.user.company_id.logo)" style="text-align:left; width:100px;" alt="Logo"/>
+                  </span>
+                </div>
+                <div class="col-8" style="text-align:left;">
+                  <h6>
+                    <strong>Compliance Report: <span><t t-esc="o.name"/></span></strong>
+                    <br/>
+                    <t t-esc="o.description"/>
+                  </h6>
+                </div>
+              </div>
+              <br />
+              <table  class="table table-bordered" style="font-size:12px;">
+                <thead>
+                  <tr>
+                    <th>Requirement</th>
+                    <th>Compliance</th>
+                    <th>Control Design</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <t t-foreach="o.get_data_records()" t-as="r"> 
+                    <tr>
+                      <t t-if="r[0]">
+                        <td width="25%"><span t-esc="r[0]"/></td>
+                      </t>
+                      <t t-if="r[1]">
+                        <td width="25%"><span t-esc="r[1]"/></td>
+                      </t>
+                      <t t-if="r[2]">
+                        <td width="25%"><span t-esc="r[2]"/></td>
+                      </t>
+                    </tr>
+                  </t>
+                </tbody>
+              </table>
+            </div>
+            </t>
+          </t>
+        </t>
+    </template>
+
+    <record id="paperformat_grcbit" model="report.paperformat">
+      <field name="name">Custom Paper</field>
+      <field name="default" eval="True" />
+      <field name="format">A4</field>
+      <field name="page_height">0</field>
+      <field name="page_width">0</field>
+      <field name="orientation">Portrait</field>
+      <field name="margin_top">20</field>
+      <field name="margin_bottom">5</field>
+      <field name="margin_left">7</field>
+      <field name="margin_right">7</field>
+      <field name="header_line" eval="False" />
+      <field name="header_spacing">10</field>
+      <field name="dpi">90</field>
+    </record>
+
+    <record id="print_compliance" model="ir.actions.report">
+      <field name="name">Compliance Report</field>
+      <field name="model">compliance.version</field>
+      <field name="report_type">qweb-html</field>
+      <field name="report_name">grcbit_compliance.compliance_print_template</field>
+      <field name="report_file">grcbit_compliance.compliance_print_template</field>
+      <field name="binding_type">report</field>
+      <field name="binding_model_id" ref="model_compliance_version" />
+      <field name="paperformat_id" ref="grcbit_compliance.paperformat_grcbit" />
+    </record>
+
+  </data>
+</odoo>

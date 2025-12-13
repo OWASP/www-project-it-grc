@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+  <record model="ir.module.category" id="module_grcbit_base">
+      <field name="name">GRC</field>
+      <field name="description">GRC Module Base</field>
+      <field name="sequence">30</field>
+      <field name="visible" eval="1"/>
+    </record>
+    
+		<record id="group_grc_consultant" model="res.groups">
+			<field name="name">GRC Consultant</field>
+			<field name="category_id" ref="module_grcbit_base"/>
+		</record>
+		<record id="group_asset_management" model="res.groups">
+			<field name="name">Asset Management</field>
+			<field name="category_id" ref="module_grcbit_base"/>
+		</record>
+                <record id="group_risk_management" model="res.groups">
+			<field name="name">Risk Management</field>
+			<field name="category_id" ref="module_grcbit_base"/>
+		</record>
+		<record id="group_isms" model="res.groups">
+			<field name="name">ISMS</field>
+			<field name="category_id" ref="module_grcbit_base"/>
+		</record>
+		<record id="group_control" model="res.groups">
+			<field name="name">Control</field>
+			<field name="category_id" ref="module_grcbit_base"/>
+		</record>
+		<record id="group_compliance" model="res.groups">
+			<field name="name">Compliance</field>
+			<field name="category_id" ref="module_grcbit_base"/>
+		</record>
+		<record id="group_guest" model="res.groups">
+			<field name="name">Guest</field>
+			<field name="category_id" ref="module_grcbit_base"/>
+		</record>
+                <record id="group_grc_admin" model="res.groups">
+                        <field name="name">GRC Admin</field>
+			<field name="category_id" ref="module_grcbit_base"/>
+		</record>
+                <record id="base.user_admin" model="res.users">
+                        <field name="groups_id" eval="[(4,ref('grcbit_base.group_grc_admin'))]"/>
+                </record>
+  </data>
+</odoo>

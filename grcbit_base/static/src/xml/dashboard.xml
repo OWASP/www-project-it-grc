@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+  <t t-name="CustomDashBoard">
+    <div class="oh_dashboards">
+      <div class="container-fluid my-5 o_hr_dashboard"/>
+    </div>
+  </t>
+
+  <t t-name="DashboardProject">
+    <div style="padding-bottom:30px" t-att-class="widget.cols +' col-4 block'" t-att-data-id="widget.id">
+      <div class="card">
+        <div class="card-body mt-3" id="in_ex_body_hide">
+          <div class="row">
+            <div class="col-md-12 chart_canvas">
+              <div id="chart_canvas">
+                <canvas class="new_custom_chart" width="300" height="200"> </canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </t>
+</templates>

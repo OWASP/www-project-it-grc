@@ -1,0 +1,497 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* grcbit_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 18:29+0000\n"
+"PO-Revision-Date: 2023-12-15 18:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: grcbit_base
+#: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__1m
+msgid "1 month"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__1y
+msgid "1 year"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__10m
+msgid "10 months"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__11m
+msgid "11 months"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__2m
+msgid "2 months"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__2y
+msgid "2 years"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__3m
+msgid "3 months"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__3y
+msgid "3 years"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__4m
+msgid "4 months"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__4y
+msgid "4 years"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__5m
+msgid "5 months"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__5y
+msgid "5 years"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__6m
+msgid "6 months"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__7m
+msgid "7 months"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__8m
+msgid "8 months"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields.selection,name:grcbit_base.selection__data_inventory__retention_period__9m
+msgid "9 months"
+msgstr ""
+
+#. module: grcbit_base
+#: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
+msgid "<br/> Data Asset:"
+msgstr ""
+
+#. module: grcbit_base
+#: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
+msgid "<strong>Asset Owner:</strong>"
+msgstr ""
+
+#. module: grcbit_base
+#: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
+msgid "<strong>Data Asset Name:</strong>"
+msgstr ""
+
+#. module: grcbit_base
+#: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
+msgid "<strong>Data Classification:</strong>"
+msgstr ""
+
+#. module: grcbit_base
+#: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
+msgid "<strong>Description:</strong>"
+msgstr ""
+
+#. module: grcbit_base
+#: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
+msgid "<strong>Retention Period:</strong>"
+msgstr ""
+
+#. module: grcbit_base
+#: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
+msgid "<strong>Security Requirement:</strong>"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_data_classification__active
+#: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__active
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__active
+#: model:ir.model.fields,field_description:grcbit_base.field_third_party__active
+msgid "Active"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_set_groups_user__asset_management_check
+#: model:ir.ui.menu,name:grcbit_base.menu_asset_management
+#: model:res.groups,name:grcbit_base.group_asset_management
+msgid "Asset Management"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__name
+msgid "Asset Name"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__owner
+msgid "Asset Owner"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__attachment
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__attachment
+#: model:ir.model.fields,field_description:grcbit_base.field_third_party__attachment
+msgid "Attachment"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__is_cloud
+#: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
+msgid "Cloud Hosted?"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_set_groups_user__compliance_check
+#: model:res.groups,name:grcbit_base.group_compliance
+msgid "Compliance"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_set_groups_user__control_check
+#: model:res.groups,name:grcbit_base.group_control
+msgid "Control"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_data_classification__create_uid
+#: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__create_uid
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__create_uid
+#: model:ir.model.fields,field_description:grcbit_base.field_third_party__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_data_classification__create_date
+#: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__create_date
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__create_date
+#: model:ir.model.fields,field_description:grcbit_base.field_third_party__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__db_version
+#: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
+msgid "DB Version"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.actions.act_window,name:grcbit_base.data_inventory_action
+#: model:ir.ui.menu,name:grcbit_base.menu_data_inventory
+msgid "Data Asset"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_data_classification__data_inventory_count
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__data_inventory_count
+#: model:ir.model.fields,field_description:grcbit_base.field_third_party__data_inventory_count
+msgid "Data Asset Count"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.actions.report,name:grcbit_base.print_data_asset
+#: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
+msgid "Data Asset Report"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.actions.act_window,name:grcbit_base.data_classification_action
+#: model:ir.actions.act_window,name:grcbit_base.data_classification_dash
+#: model:ir.model,name:grcbit_base.model_data_classification
+#: model:ir.model.fields,field_description:grcbit_base.field_data_classification__name
+#: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__data_classification_id
+#: model:ir.ui.menu,name:grcbit_base.menu_data_classification
+#: model_terms:ir.ui.view,arch_db:grcbit_base.main_dashboard
+msgid "Data Classification"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model,name:grcbit_base.model_data_inventory
+msgid "Data Inventory"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_data_classification__description
+#: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__description
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__description
+#: model:ir.model.fields,field_description:grcbit_base.field_third_party__description
+#: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
+msgid "Description"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields.selection,name:grcbit_base.selection__it_inventory__environment__dev
+msgid "Development"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_data_classification__display_name
+#: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__display_name
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__display_name
+#: model:ir.model.fields,field_description:grcbit_base.field_third_party__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__environment
+msgid "Enviroment"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.module.category,name:grcbit_base.module_grcbit_base
+#: model:ir.ui.menu,name:grcbit_base.menu_root
+#: model_terms:ir.ui.view,arch_db:grcbit_base.grcbit_base_set_groups_formview_inh
+msgid "GRC"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_set_groups_user__grc_admin_check
+#: model:res.groups,name:grcbit_base.group_grc_admin
+msgid "GRC Admin"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_set_groups_user__grc_consultant_check
+#: model:res.groups,name:grcbit_base.group_grc_consultant
+msgid "GRC Consultant"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.actions.act_window,name:grcbit_base.grcbit_dashboard_action
+msgid "GRC Dashboard"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.module.category,description:grcbit_base.module_grcbit_base
+msgid "GRC Module Base"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_set_groups_user__guest_check
+#: model:res.groups,name:grcbit_base.group_guest
+msgid "Guest"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_data_classification__id
+#: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__id
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__id
+#: model:ir.model.fields,field_description:grcbit_base.field_third_party__id
+msgid "ID"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__ip
+#: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
+msgid "IP"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_set_groups_user__isms_check
+#: model:res.groups,name:grcbit_base.group_isms
+msgid "ISMS"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__responsible
+#: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
+msgid "IT Admin"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model,name:grcbit_base.model_it_inventory
+msgid "IT Inventory"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.actions.act_window,name:grcbit_base.it_inventory_action
+#: model:ir.actions.act_window,name:grcbit_base.it_inventory_dash
+#: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__it_inventory_id
+#: model:ir.ui.menu,name:grcbit_base.menu_it_inventory
+#: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
+#: model_terms:ir.ui.view,arch_db:grcbit_base.main_dashboard
+msgid "IT System"
+msgstr ""
+
+#. module: grcbit_base
+#: model_terms:ir.ui.view,arch_db:grcbit_base.main_dashboard
+msgid "Information Security Management System"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__is_internet_exposed
+#: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
+msgid "Internet Exposed?"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_data_classification____last_update
+#: model:ir.model.fields,field_description:grcbit_base.field_data_inventory____last_update
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory____last_update
+#: model:ir.model.fields,field_description:grcbit_base.field_third_party____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_data_classification__write_uid
+#: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__write_uid
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__write_uid
+#: model:ir.model.fields,field_description:grcbit_base.field_third_party__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_data_classification__write_date
+#: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__write_date
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__write_date
+#: model:ir.model.fields,field_description:grcbit_base.field_third_party__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: grcbit_base
+#: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
+msgid "Logo"
+msgstr ""
+
+#. module: grcbit_base
+#: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
+msgid "Name"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__os_version
+#: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
+msgid "OS Version"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields.selection,name:grcbit_base.selection__it_inventory__environment__prod
+msgid "Production"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__retention_period
+msgid "Retention Period"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_set_groups_user__risk_management_check
+#: model:res.groups,name:grcbit_base.group_risk_management
+msgid "Risk Management"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__security_requirement
+msgid "Security Requirement"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.ui.menu,name:grcbit_base.menu_settings
+msgid "Settings"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields.selection,name:grcbit_base.selection__it_inventory__environment__stg
+msgid "Staging"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__name
+msgid "System Name"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.constraint,message:grcbit_base.constraint_it_inventory_name_uniq
+msgid "The IT system name already exists."
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.constraint,message:grcbit_base.constraint_data_classification_name_uniq
+msgid "The data classification name already exists."
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.constraint,message:grcbit_base.constraint_data_inventory_name_uniq
+msgid "The data inventory name already exists."
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.constraint,message:grcbit_base.constraint_third_party_name_uniq
+msgid "The third party name already exists."
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.actions.act_window,name:grcbit_base.third_party_action
+#: model:ir.model.fields,field_description:grcbit_base.field_data_inventory__third_party_id
+#: model:ir.ui.menu,name:grcbit_base.menu_third_party
+#: model_terms:ir.ui.view,arch_db:grcbit_base.data_asset_print_template
+msgid "Third Party"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_third_party__name
+msgid "Third Party Vendor"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.actions.act_window,name:grcbit_base.third_party_dash
+#: model_terms:ir.ui.view,arch_db:grcbit_base.main_dashboard
+msgid "Third-Party"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__url
+msgid "URL"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model.fields,field_description:grcbit_base.field_it_inventory__users_qty
+msgid "User Quantity"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.ui.menu,name:grcbit_base.menu_users
+msgid "Users"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model,name:grcbit_base.model_set_groups_user
+msgid "set.groups.user"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model,name:grcbit_base.model_theme_data
+msgid "theme.data"
+msgstr ""
+
+#. module: grcbit_base
+#: model:ir.model,name:grcbit_base.model_third_party
+#msgid "third.party"
+#msgstr ""

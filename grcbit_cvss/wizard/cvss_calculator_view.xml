@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="cvss_calculator_form">
+      <field name="name">CVSS Calculator</field>
+      <field name="model">cvss.calculator</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <group>
+              <field name="attack_vector" widget="radio"/>
+              <field name="attack_complexity" widget="radio"/>
+              <field name="privileges_required" widget="radio"/>
+              <field name="user_interaction" widget="radio"/>
+            </group>
+            <group>
+              <field name="scope" widget="radio"/>
+              <field name="confidentiality" widget="radio"/>
+              <field name="integrity" widget="radio"/>
+              <field name="availability" widget="radio"/>
+            </group>
+          </group>
+          <group>
+            <field name="risk_factor_id" invisible="1"/>
+            <field name="score" readonly="1"/>
+            <field name="vector" readonly="1"/>
+          </group>
+          <footer>
+            <button name="accept_done" type="object" string="SAVE" class="btn btn-primary"/>
+            <button special="cancel" type="object" string="DISCARD"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+
+    <record id="cvss_calculator_action" model="ir.actions.act_window">
+	    <field name="name">CVSS Calculator</field>
+	    <field name="res_model">cvss.calculator</field>
+	    <field name="view_mode">form</field>
+      <!-- <field name="context">{default_risk_factor: id}</field> -->
+      <field name="target">new</field>
+    </record>
+
+  </data>
+</odoo>

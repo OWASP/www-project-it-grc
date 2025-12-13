@@ -1,0 +1,41 @@
+name,compliance_control_objective_id
+"a. Develop, document, and disseminate to [Assignment: organization-defined personnel or roles]:
+1. [Selection (one or more): Organization-level; Mission/business process-level; Systemlevel] access control policy that:
+(a) Addresses purpose, scope, roles, responsibilities, management commitment, 
+coordination among organizational entities, and compliance; and
+(b) Is consistent with applicable laws, executive orders, directives, regulations, policies, standards, and guidelines; and
+2. Procedures to facilitate the implementation of the access control policy and the 
+associated access controls;",1
+"b. Designate an [Assignment: organization-defined official] to manage the development, documentation, and dissemination of the access control policy and procedures; and",1
+"c. Review and update the current access control:
+1. Policy [Assignment: organization-defined frequency] and following [Assignment: 
+organization-defined events]; and
+2. Procedures [Assignment: organization-defined frequency] and following [Assignment: organization-defined events].",1
+a. Define and document the types of accounts allowed and specifically prohibited for use within the system;,2
+b. Assign account managers;,2
+c. Require [Assignment: organization-defined prerequisites and criteria] for group and role membership;,2
+"d. Specify:
+1. Authorized users of the system;
+2. Group and role membership; and
+3. Access authorizations (i.e., privileges) and [Assignment: organization-defined attributes (as required)] for each account;",2
+e. Require approvals by [Assignment: organization-defined personnel or roles] for requests to create accounts;,2
+"f. Create, enable, modify, disable, and remove accounts in accordance with [Assignment: organization-defined policy, procedures, prerequisites, and criteria];",2
+g. Monitor the use of accounts;,2
+"h. Notify account managers and [Assignment: organization-defined personnel or roles] within: 1. [Assignment: organization-defined time period] when accounts are no longer required;
+2. [Assignment: organization-defined time period] when users are terminated or 
+transferred; and
+3. [Assignment: organization-defined time period] when system usage or need-to-know changes for an individual;",2
+"i. Authorize access to the system based on:
+1. A valid access authorization;
+2. Intended system usage; and
+3. [Assignment: organization-defined attributes (as required)];",2
+j. Review accounts for compliance with account management requirements [Assignment: organization-defined frequency];,2
+k. Establish and implement a process for changing shared or group account authenticators (if deployed) when individuals are removed from the group; and,2
+l. Align account management processes with personnel termination and transfer processes.,2
+Enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.,3
+"Enforce approved authorizations for controlling the flow of information within the 
+system and between connected systems based on [Assignment: organization-defined information flow control policies].",4
+a. Identify and document [Assignment: organization-defined duties of individuals requiring separation]; and,5
+" Employ the principle of least privilege, allowing only authorized accesses for users (or processes acting on behalf of users) that are necessary to accomplish assigned organizational tasks.",6
+a. Enforce a limit of [Assignment: organization-defined number] consecutive invalid logon attempts by a user during a [Assignment: organization-defined time period]; and,7
+b. Automatically [Selection (one or more): lock the account or node for an [Assignment: organization-defined time period]; lock the account or node until released by an administrator; delay next logon prompt per [Assignment: organization-defined delay algorithm]; notify system administrator; take other [Assignment: organization-defined action]] when the maximum number of unsuccessful attempts is exceeded.,7

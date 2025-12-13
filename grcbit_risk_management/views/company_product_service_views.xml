@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="company_product_service_tree_view" model="ir.ui.view">
+            <field name="name">company.product.service.tree</field>
+            <field name="model">company.product.service</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="type_product_service"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="company_product_service_form_view" model="ir.ui.view">
+            <field name="name">company.product.service.form</field>
+            <field name="model">company.product.service</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="type_product_service"/>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record id="company_product_service_search_view" model="ir.ui.view">
+            <field name="name">company.product.service.search</field>
+            <field name="model">company.product.service</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="type_product_service"/>
+                    <field name="description"/>
+                    <filter string="Products" name="products" domain="[('type_product_service','=','product')]"/>
+                    <filter string="Services" name="services" domain="[('type_product_service','=','service')]"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_company_product_service" model="ir.actions.act_window">
+            <field name="name">Company Product Service</field>
+            <field name="res_model">company.product.service</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first company product service
+                </p>
+            </field>
+        </record>
+
+        <!-- Menu Item -->
+        <!-- This menuitem is already defined in menuitems.xml, so it should be removed here -->
+    </data>
+</odoo> 

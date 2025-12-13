@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <template id="summary_statement_applicability_print_template">
+      <t t-call="web.basic_layout">
+          <t t-call="web.report_layout">
+            <div class="page">
+              <div class="row">
+                <div class="col-4">
+                  <span>
+                    <img t-att-src="image_data_uri(docs.env.user.company_id.logo)" style="text-align:left; width:100px;" alt="Logo"/>
+                  </span>
+                </div>
+                <div class="col-8" style="text-align:left;">
+                  <h6>
+                    <strong>Statement Applicability Report</strong>
+                  </h6>
+                </div>
+              </div>
+              <separator/>
+              <br />
+              <div class="row">
+                <div class="col-3" style="border: 1px solid;font-weight:bold;"><span>CONTROL CATEGORY</span></div>
+                <div class="col-3" style="border: 1px solid;font-weight:bold;"><span>ISO CONTROLS 27001:2022 COUNT</span></div>
+                <div class="col-3" style="border: 1px solid;font-weight:bold;"><span>NUMBER OF APPLICABLE CONTROLS</span></div>
+                <div class="col-3" style="border: 1px solid;font-weight:bold;"><span>% IMPLEMENTATION OF CONTROLS</span></div>
+              </div>
+              <div class="row">
+                <div class="col-3" style="border: 1px solid"><span>5. Organizacionales</span></div>
+                <div class="col-3" style="border: 1px solid"><span><t t-esc="docs.get_iso_contol(5)"/></span></div>
+                <div class="col-3" style="border: 1px solid"><span><t t-esc="docs.get_is_applicable(5)"/></span></div>
+                <div class="col-3" style="border: 1px solid"><span><t t-esc="docs.get_is_status_avg(5)"/></span></div>
+              </div>
+              <div class="row">
+                <div class="col-3" style="border: 1px solid"><span>6. Personas</span></div>
+                <div class="col-3" style="border: 1px solid"><span><t t-esc="docs.get_iso_contol(6)"/></span></div>
+                <div class="col-3" style="border: 1px solid"><span><t t-esc="docs.get_is_applicable(6)"/></span></div>
+                <div class="col-3" style="border: 1px solid"><span><t t-esc="docs.get_is_status_avg(6)"/></span></div>
+              </div>
+              <div class="row">
+                <div class="col-3" style="border: 1px solid"><span>7. Fisicos</span></div>
+                <div class="col-3" style="border: 1px solid"><span><t t-esc="docs.get_iso_contol(7)"/></span></div>
+                <div class="col-3" style="border: 1px solid"><span><t t-esc="docs.get_is_applicable(7)"/></span></div>
+                <div class="col-3" style="border: 1px solid"><span><t t-esc="docs.get_is_status_avg(7)"/></span></div>
+              </div>
+              <div class="row">
+                <div class="col-3" style="border: 1px solid"><span>8. Tecnológicos</span></div>
+                <div class="col-3" style="border: 1px solid"><span><t t-esc="docs.get_iso_contol(8)"/></span></div>
+                <div class="col-3" style="border: 1px solid"><span><t t-esc="docs.get_is_applicable(8)"/></span></div>
+                <div class="col-3" style="border: 1px solid"><span><t t-esc="docs.get_is_status_avg(8)"/></span></div>
+              </div>
+            </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="summary_print_statement_report" model="ir.actions.report">
+      <field name="name">Statement Applicability Report (summary)</field>
+      <field name="model">statement.applicability</field>
+      <field name="report_type">qweb-html</field>
+      <field name="report_name">grcbit_iso27001.summary_statement_applicability_print_template</field>
+      <field name="report_file">grcbit_iso27001.summary_statement_applicability_print_template</field>
+      <field name="binding_type">report</field>
+      <field name="binding_model_id" ref="model_statement_applicability" />
+      <field name="paperformat_id" ref="grcbit_iso27001.paperformat_grcbit_iso" />
+    </record>
+
+  </data>
+</odoo>

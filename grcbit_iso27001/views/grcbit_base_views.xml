@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+  
+    <!--          HR EMPLOYEE       -->
+    <record model="ir.ui.view" id="grcbit_iso27001_hr_employee_inh_formhview">
+      <field name="name">GRC ISO27001 HR Employee.forminherited</field>
+      <field name="model">hr.employee</field>
+      <field name="inherit_id" ref="hr.view_employee_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='work_email']" position="after">
+          <field name="isms_roles_ids" widget="many2many_tags_open"/>
+        </xpath>
+        <xpath expr="//page[@name='personal_information']" position="attributes">
+          <attribute name="groups">base.group_system,base.group_erp_manager</attribute>
+        </xpath>
+        <xpath expr="//page[@name='hr_settings']" position="attributes">
+          <attribute name="groups">base.group_system,base.group_erp_manager</attribute>
+        </xpath>
+      </field>
+    </record>
+
+    <!--          IT INVENTORY       -->
+    <!--
+    <record model="ir.ui.view" id="grcbit_iso27001_it_inventory_inh_treeview">
+      <field name="name">GRC ISO27001 IT System.treeinherited</field>
+      <field name="model">it.inventory</field>
+      <field name="inherit_id" ref="grcbit_base.it_inventory_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='url']" position="after">
+          <field name="responsible"/>
+        </xpath>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit_iso27001_it_inventory_inh_searchview">
+      <field name="name">GRC ISO27001 IT System.searchinherited</field>
+      <field name="model">it.inventory</field>
+      <field name="inherit_id" ref="grcbit_base.it_inventory_search"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='url']" position="after">
+          <field name="responsible"/>
+        </xpath>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit_iso27001_it_inventory_inh_formhview">
+      <field name="name">GRC ISO27001 IT System.forminherited</field>
+      <field name="model">it.inventory</field>
+      <field name="inherit_id" ref="grcbit_base.it_inventory_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='url']" position="after">
+          <field name="responsible" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+        </xpath>
+      </field>
+    </record>
+    -->
+    <!--        DATA INVENTORY      -->
+    <!--
+    <record model="ir.ui.view" id="grcbit_iso27001_data_inventory_inh_treehview">
+      <field name="name">GRC ISO27001 Data Asset.treeinherited</field>
+      <field name="model">data.inventory</field>
+      <field name="inherit_id" ref="grcbit_base.data_inventory_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='security_requirement']" position="after">
+          <field name="owner" optional="hide"/>
+        </xpath>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit_iso27001_data_inventory_inh_searchhview">
+      <field name="name">GRC ISO27001 Data Inventory.searchinherited</field>
+      <field name="model">data.inventory</field>
+      <field name="inherit_id" ref="grcbit_base.data_inventory_search"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='security_requirement']" position="after">
+          <field name="owner" optional="hide"/>
+        </xpath>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="grcbit_iso27001_data_inventory_inh_graphhview">
+      <field name="name">GRC ISO27001 Data Inventory.graphinherited</field>
+      <field name="model">data.inventory</field>
+      <field name="inherit_id" ref="grcbit_base.data_inventory_graph"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='security_requirement']" position="after">
+          <field name="owner"/>
+        </xpath>
+      </field>
+    </record>
+    
+
+    <record model="ir.ui.view" id="grcbit_iso27001_data_inventory_inh_formhview">
+      <field name="name">GRC ISO27001 Data Inventory.forminherited</field>
+      <field name="model">data.inventory</field>
+      <field name="inherit_id" ref="grcbit_base.data_inventory_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='data_classification_id']" position="after">
+          <field name="owner" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+        </xpath>
+      </field>
+    </record>
+    -->
+  </data>
+</odoo>

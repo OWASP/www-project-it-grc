@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <record model="control.evaluation.criteria" id="effective_evaluation_criteria">
+      <field name="name">Effective</field>
+      <field name="description">Effective</field>
+      <field name="active">1</field>
+    </record>
+    <record model="control.evaluation.criteria" id="less_effective_evaluation_criteria">
+      <field name="name">Less effective</field>
+      <field name="description">Less effective</field>
+      <field name="active">1</field>
+    </record>
+    <record model="control.evaluation.criteria" id="ineffective_evaluation_criteria">
+      <field name="name">Ineffective</field>
+      <field name="description">Ineffective</field>
+      <field name="active">1</field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,411 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* grcbit_iso27001
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 18:29+0000\n"
+"PO-Revision-Date: 2023-12-15 18:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: grcbit_iso27001
+#: model:ir.ui.menu,name:grcbit_iso27001.menu_control_type
+msgid "#Control_Type"
+msgstr "#Tipo_de_Control"
+
+#. module: grcbit_iso27001
+#: model:ir.ui.menu,name:grcbit_iso27001.menu_cybersecurity_concept
+msgid "#Cybersecurity_Concept"
+msgstr "#Concepto_de_Ciberseguridad"
+
+#. module: grcbit_iso27001
+#: model:ir.ui.menu,name:grcbit_iso27001.menu_opertaional_capability
+msgid "#Operational_Capability"
+msgstr "#Capacidad_Operacional"
+
+#. module: grcbit_iso27001
+#: model:ir.ui.menu,name:grcbit_iso27001.menu_security_domain
+msgid "#Security_Domain"
+msgstr "#Dominio_de_Seguridad"
+
+#. module: grcbit_iso27001
+#: model:ir.ui.menu,name:grcbit_iso27001.menu_security_property
+msgid "#Security_Property"
+msgstr "#Propiedad_de_Seguridad"
+
+#. module: grcbit_iso27001
+#: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
+msgid ""
+"<br/>\n"
+"                    <span>Reason for Selection: </span>"
+msgstr ""
+"<br/>\n"
+"                    <span>Razón de Selección: </span>"
+
+#. module: grcbit_iso27001
+#: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
+msgid ""
+"<br/>\n"
+"                    Status:"
+msgstr ""
+"<br/>\n"
+"                    Estatus implementación Control:"
+
+#. module: grcbit_iso27001
+#: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
+msgid "<br/> ISMS Control:"
+msgstr "<br/> Control ISMS:"
+
+#. module: grcbit_iso27001
+#: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
+msgid "<span>Applicable</span>"
+msgstr "<span>Aplicable</span>"
+
+#. module: grcbit_iso27001
+#: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
+msgid "<span>Not Applicable</span>"
+msgstr "<span>No Aplica</span>"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_category__active
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_type__active
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_cybersecurity_concept__active
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__active
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_operational_capability__active
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_domain__active
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_property__active
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_statement_applicability__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__attachment
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_statement_applicability__attachment
+msgid "Attachment"
+msgstr "Adjunto"
+
+#. module: grcbit_iso27001
+#: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
+msgid "Category"
+msgstr "Categoría"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__control
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_statement_applicability__control_design_id
+#: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
+msgid "Control"
+msgstr "Control"
+
+#. module: grcbit_iso27001
+#: model:ir.actions.act_window,name:grcbit_iso27001.control_category_action
+#: model:ir.actions.act_window,name:grcbit_iso27001.control_category_dash
+#: model:ir.model,name:grcbit_iso27001.model_control_category
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_category__display_name
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_category__name
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__control_category_id
+#: model:ir.ui.menu,name:grcbit_iso27001.menu_control_category
+msgid "Control Category"
+msgstr "Nombre Categoría Control"
+
+#. module: grcbit_iso27001
+#: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
+msgid "Control ID"
+msgstr "ID de control"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__display_name
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__name
+msgid "Control Title"
+msgstr "Titulo de control"
+
+#. module: grcbit_iso27001
+#: model:ir.actions.act_window,name:grcbit_iso27001.control_type_action
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_type__name
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__control_type_id
+msgid "Control Type"
+msgstr "Tipo de control"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_category__create_uid
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_type__create_uid
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_cybersecurity_concept__create_uid
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__create_uid
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_operational_capability__create_uid
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_domain__create_uid
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_property__create_uid
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_statement_applicability__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_category__create_date
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_type__create_date
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_cybersecurity_concept__create_date
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__create_date
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_operational_capability__create_date
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_domain__create_date
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_property__create_date
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_statement_applicability__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: grcbit_iso27001
+#: model:ir.actions.act_window,name:grcbit_iso27001.cybersecurity_concept_action
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_cybersecurity_concept__name
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__cybersecurity_concept_id
+msgid "Cybersecurity Concept"
+msgstr "Concepto de Ciberseguridad"
+
+#. module: grcbit_iso27001
+#: model:ir.model,name:grcbit_iso27001.model_control_type
+#: model:ir.model,name:grcbit_iso27001.model_cybersecurity_concept
+#: model:ir.model,name:grcbit_iso27001.model_operational_capability
+#: model:ir.model,name:grcbit_iso27001.model_security_domain
+#: model:ir.model,name:grcbit_iso27001.model_security_property
+msgid "Data Inventory"
+msgstr "Inventario de datos"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_category__description
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_type__description
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_cybersecurity_concept__description
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_operational_capability__description
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_domain__description
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_property__description
+#: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
+msgid "Description"
+msgstr "Descripción"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_type__display_name
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_cybersecurity_concept__display_name
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_operational_capability__display_name
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_domain__display_name
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_property__display_name
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_statement_applicability__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: grcbit_iso27001
+#: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
+msgid "Estimated Date"
+msgstr "Fecha estimada"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__guidance
+msgid "Guidance"
+msgstr "Guía"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_category__id
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_type__id
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_cybersecurity_concept__id
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__id
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_operational_capability__id
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_domain__id
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_property__id
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_statement_applicability__id
+msgid "ID"
+msgstr "ID"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_category__id_control_category
+msgid "ID Control Category"
+msgstr "ID Categoria Control"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__id_iso_control
+msgid "ID ISO Control"
+msgstr "Control ISO ID"
+
+#. module: grcbit_iso27001
+#: model:ir.ui.menu,name:grcbit_iso27001.menu_control_attribute
+msgid "ISMS"
+msgstr "ISMS"
+
+#. module: grcbit_iso27001
+#: model:ir.actions.act_window,name:grcbit_iso27001.iso_control_action
+#: model:ir.actions.act_window,name:grcbit_iso27001.iso_control_dash
+#: model:ir.model,name:grcbit_iso27001.model_iso_control
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_statement_applicability__name
+#: model:ir.ui.menu,name:grcbit_iso27001.menu_iso_control
+msgid "ISO Control"
+msgstr "Control ISO"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_statement_applicability__is_applicable
+msgid "Is Applicable?"
+msgstr "¿Es aplicable?"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_category____last_update
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_type____last_update
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_cybersecurity_concept____last_update
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control____last_update
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_operational_capability____last_update
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_domain____last_update
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_property____last_update
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_statement_applicability____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_category__write_uid
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_type__write_uid
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_cybersecurity_concept__write_uid
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__write_uid
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_operational_capability__write_uid
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_domain__write_uid
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_property__write_uid
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_statement_applicability__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_category__write_date
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_type__write_date
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_cybersecurity_concept__write_date
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__write_date
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_operational_capability__write_date
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_domain__write_date
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_property__write_date
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_statement_applicability__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: grcbit_iso27001
+#: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
+msgid "Logo"
+msgstr "Logotipo"
+
+#. module: grcbit_iso27001
+#: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
+msgid "Name"
+msgstr "Nombre"
+
+#. module: grcbit_iso27001
+#: model:ir.actions.act_window,name:grcbit_iso27001.operational_capability_action
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__operational_capability_id
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_operational_capability__name
+msgid "Operational Capability"
+msgstr "Capacidad operacional"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__other_information
+msgid "Other Information"
+msgstr "Otra información"
+
+#. module: grcbit_iso27001
+#: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
+msgid "Policy"
+msgstr "Política"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__purpose
+msgid "Purpose"
+msgstr "Objetivo"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_statement_applicability__reason_selection
+msgid "Reason for Selection"
+msgstr "Razón de Selección"
+
+#. module: grcbit_iso27001
+#: model:ir.actions.act_window,name:grcbit_iso27001.security_domain_action
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__security_domain_id
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_domain__name
+msgid "Security Domain"
+msgstr "Dominio de seguridad"
+
+#. module: grcbit_iso27001
+#: model:ir.actions.act_window,name:grcbit_iso27001.security_property_action
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_iso_control__security_property_id
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_security_property__name
+msgid "Security Property"
+msgstr "Propiedad de seguridad"
+
+#. module: grcbit_iso27001
+#: model:ir.actions.act_window,name:grcbit_iso27001.statement_applicability_action
+#: model:ir.model,name:grcbit_iso27001.model_statement_applicability
+#: model:ir.ui.menu,name:grcbit_iso27001.menu_statement_applicability
+msgid "Statement Applicability"
+msgstr "Matriz de aplicabilidad"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_control_category__statement_applicability_count
+msgid "Statement Applicability Acount"
+msgstr "Cuenta de la matriz de aplicabilidad"
+
+#. module: grcbit_iso27001
+#: model:ir.actions.report,name:grcbit_iso27001.print_compliance
+#: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
+msgid "Statement Applicability Report"
+msgstr "Reporte de la matriz de aplicabilidad"
+
+#. module: grcbit_iso27001
+#: model:ir.model.fields,field_description:grcbit_iso27001.field_statement_applicability__control_status
+#: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
+msgid "Status"
+msgstr "Estatus implementación Control"
+
+#. module: grcbit_iso27001
+#: model:ir.model.constraint,message:grcbit_iso27001.constraint_iso_control_id_iso_control_uniq
+msgid "The ISO control ID already exists."
+msgstr "El id del control ISO ya existe."
+
+#. module: grcbit_iso27001
+#: model:ir.model.constraint,message:grcbit_iso27001.constraint_iso_control_name_uniq
+msgid "The ISO control name already exists."
+msgstr "El nombre del control ISO ya existe."
+
+#. module: grcbit_iso27001
+#: model:ir.model.constraint,message:grcbit_iso27001.constraint_control_category_id_control_category_uniq
+msgid "The control category ID already exists."
+msgstr "El id de la categoria de control ya existe."
+
+#. module: grcbit_iso27001
+#: model:ir.model.constraint,message:grcbit_iso27001.constraint_control_category_name_uniq
+msgid "The control category name already exists."
+msgstr "El nombre de la categoria de control ya existe."
+
+#. module: grcbit_iso27001
+#: model:ir.model.constraint,message:grcbit_iso27001.constraint_statement_applicability_name_uniq
+msgid "The control name already exists."
+msgstr "El nombre del control ya existe."
+
+#. module: grcbit_iso27001
+#: model:ir.model.constraint,message:grcbit_iso27001.constraint_control_type_name_uniq
+msgid "The control type name already exists."
+msgstr "El nombre del tipo de control ya existe."
+
+#. module: grcbit_iso27001
+#: model:ir.model.constraint,message:grcbit_iso27001.constraint_cybersecurity_concept_name_uniq
+msgid "The cybersecurty concept name already exists."
+msgstr "El nombre del concepto de ciberseguridad ya existe."
+
+#. module: grcbit_iso27001
+#: model:ir.model.constraint,message:grcbit_iso27001.constraint_operational_capability_name_uniq
+msgid "The operational capability name already exists."
+msgstr "Nombre de la capacidad operacional ya existe."
+
+#. module: grcbit_iso27001
+#: model:ir.model.constraint,message:grcbit_iso27001.constraint_security_domain_name_uniq
+msgid "The security domain name already exists."
+msgstr "El nombre del dominio de seguridad ya existe."
+
+#. module: grcbit_iso27001
+#: model:ir.model.constraint,message:grcbit_iso27001.constraint_security_property_name_uniq
+msgid "The security property name already exists."
+msgstr "El nombre de la propiedad de seguridad ya existe."
+
+#. module: grcbit_iso27001
+#: model_terms:ir.ui.view,arch_db:grcbit_iso27001.statement_applicability_print_template
+msgid "Title"
+msgstr "Título"

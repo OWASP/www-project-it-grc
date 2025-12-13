@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <template id="risk_factor_print_template">
+      <t t-call="web.basic_layout">
+        <t t-foreach="docs" t-as="o" >
+          <t t-call="web.report_layout">
+            <div class="page">
+              <div class="row">
+                <div class="col-4">
+                  <span>
+                    <img t-att-src="image_data_uri(o.env.user.company_id.logo)" style="text-align:left; width:100px;" alt="Logo"/>
+                  </span>
+                </div>
+                <div class="col-8" style="text-align:left;">
+                  <h6>
+                    <strong>Risk Factor Report
+                      <span>
+                        <br/> Risk Factor: <t t-esc="o.display_name"/>
+                      </span>
+                      <br/>
+                      <span>
+                        IT System: <t t-esc="o.it_inventory_id.name"/>
+                      </span>
+                      <br/>
+                      <span>
+                        Risk: 
+                        <t t-foreach="o.company_risk_ids" t-as="risk">
+                          | <t t-esc="risk.risk_name"/>
+                        </t>
+                      </span>
+                    </strong>
+                  </h6>
+                </div>
+              </div>
+              <br />
+              <div name="main_table" style="font-size:12px;">
+                <div class="row">
+                  <div class="col-2" style="font-weight:bold;border: 1px solid;"><strong>Data Asset:</strong></div>
+                  <div class="col-4" style="border: 1px solid;text-align:center">
+                    <t t-foreach="o.data_inventory_id" t-as="asset">
+                      <span>| <t t-esc="asset.name"/> |</span>
+                    </t>
+                  </div>
+                  <div class="col-2" style="font-weight:bold;border: 1px solid;"><strong>Consequence:</strong></div>
+                  <div class="col-4" style="border: 1px solid;text-align:center"><t t-esc="o.consequence"/></div>
+                </div>
+                <div class="row">
+                  <div class="col-2" style="font-weight:bold;border: 1px solid;"><strong>Risk Owner:</strong></div>
+                  <div class="col-4" style="border: 1px solid;text-align:center"><t t-esc="o.responsible.display_name"/></div>
+                  <div class="col-2" style="font-weight:bold;border: 1px solid;"><strong>Impact Level:</strong></div>
+                  <div class="col-4" style="border: 1px solid;text-align:center"><t t-esc="o.impact_level_id.display_name"/></div>
+                </div>
+                <div class="row">
+                  <div class="col-2" style="font-weight:bold;border: 1px solid;"><strong>Probability Level:</strong></div>
+                  <div class="col-4" style="border: 1px solid;text-align:center"><t t-esc="o.probability_level_id.display_name"/></div>
+                  <div class="col-2" style="font-weight:bold;border: 1px solid;"><strong>Quantification:</strong></div>
+                  <div class="col-4" style="border: 1px solid;text-align:center"><t t-esc="o.quantification"/></div>
+                </div>
+                <div class="row">
+                  <div class="col-2" style="font-weight:bold;border: 1px solid;"><strong>Inherent Risk:</strong></div>
+                  <div class="col-4" style="border: 1px solid;text-align:center"><t t-esc="o.inherent_risk"/></div>
+                  <div class="col-2" style="font-weight:bold;border: 1px solid;"><strong>Residual Risk:</strong></div>
+                  <div class="col-4" style="border: 1px solid;text-align:center"><t t-esc="o.residual_risk"/></div>
+                </div>
+              </div>        
+            </div>
+          </t>
+        </t>
+      </t>
+    </template>
+
+    <record id="paperformat_grcbit_risk_factor" model="report.paperformat">
+      <field name="name">Custom Paper</field>
+      <field name="default" eval="True" />
+      <field name="format">A4</field>
+      <field name="page_height">0</field>
+      <field name="page_width">0</field>
+      <field name="orientation">Landscape</field>
+      <field name="margin_top">20</field>
+      <field name="margin_bottom">5</field>
+      <field name="margin_left">7</field>
+      <field name="margin_right">7</field>
+      <field name="header_line" eval="False" />
+      <field name="header_spacing">10</field>
+      <field name="dpi">90</field>
+    </record>
+
+    <record id="print_compliance" model="ir.actions.report">
+      <field name="name">Risk Factor Report</field>
+      <field name="model">risk.factor</field>
+      <field name="report_type">qweb-html</field>
+      <field name="report_name">grcbit_risk_management.risk_factor_print_template</field>
+      <field name="report_file">grcbit_risk_management.risk_factor_print_template</field>
+      <field name="binding_type">report</field>
+      <field name="binding_model_id" ref="model_risk_factor" />
+      <field name="paperformat_id" ref="grcbit_risk_management.paperformat_grcbit_risk_factor" />
+    </record>
+
+  </data>
+</odoo>

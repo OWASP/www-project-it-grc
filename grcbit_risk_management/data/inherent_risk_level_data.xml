@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <record model="inherent.risk.level" id="high_high_inherent_risk_level">
+      <field name="description">High Risk</field>
+      <field name="active">1</field>
+      <field name="color">1</field>
+      <field name="impact_level_id" ref="high_impact_level"/>
+      <field name="probability_level_id" ref="high_probability_level"/>
+      <field name="risk_level_id" ref="high_risk_level"/>
+    </record>
+    <record model="inherent.risk.level" id="high_medium_inherent_risk_level">
+      <field name="description">High Risk</field>
+      <field name="active">1</field>
+      <field name="color">2</field>
+      <field name="impact_level_id" ref="high_impact_level"/>
+      <field name="probability_level_id" ref="medium_probability_level"/>
+      <field name="risk_level_id" ref="high_risk_level"/>
+    </record>
+    <record model="inherent.risk.level" id="high_low_inherent_risk_level">
+      <field name="description">High Risk</field>
+      <field name="active">1</field>
+      <field name="color">3</field>
+      <field name="impact_level_id" ref="high_impact_level"/>
+      <field name="probability_level_id" ref="low_probability_level"/>
+      <field name="risk_level_id" ref="high_risk_level"/>
+    </record>
+
+    <record model="inherent.risk.level" id="medium_high_inherent_risk_level">
+      <field name="description">Medium Risk</field>
+      <field name="active">1</field>
+      <field name="color">3</field>
+      <field name="impact_level_id" ref="medium_impact_level"/>
+      <field name="probability_level_id" ref="high_probability_level"/>
+      <field name="risk_level_id" ref="medium_risk_level"/>
+    </record>
+    <record model="inherent.risk.level" id="medium_medium_inherent_risk_level">
+      <field name="description">Medium Risk</field>
+      <field name="active">1</field>
+      <field name="color">3</field>
+      <field name="impact_level_id" ref="medium_impact_level"/>
+      <field name="probability_level_id" ref="medium_probability_level"/>
+      <field name="risk_level_id" ref="medium_risk_level"/>
+    </record>
+    <record model="inherent.risk.level" id="medium_low_inherent_risk_level">
+      <field name="description">Medium Risk</field>
+      <field name="active">1</field>
+      <field name="color">3</field>
+      <field name="impact_level_id" ref="medium_impact_level"/>
+      <field name="probability_level_id" ref="low_probability_level"/>
+      <field name="risk_level_id" ref="medium_risk_level"/>
+    </record>
+
+    <record model="inherent.risk.level" id="low_high_inherent_risk_level">
+      <field name="description">Low Risk</field>
+      <field name="active">1</field>
+      <field name="color">3</field>
+      <field name="impact_level_id" ref="low_impact_level"/>
+      <field name="probability_level_id" ref="high_probability_level"/>
+      <field name="risk_level_id" ref="low_risk_level"/>
+    </record>
+    <record model="inherent.risk.level" id="low_medium_inherent_risk_level">
+      <field name="description">Low Risk</field>
+      <field name="active">1</field>
+      <field name="color">3</field>
+      <field name="impact_level_id" ref="low_impact_level"/>
+      <field name="probability_level_id" ref="medium_probability_level"/>
+      <field name="risk_level_id" ref="low_risk_level"/>
+    </record>
+    <record model="inherent.risk.level" id="low_low_inherent_risk_level">
+      <field name="description">Low Risk</field>
+      <field name="active">1</field>
+      <field name="color">3</field>
+      <field name="impact_level_id" ref="low_impact_level"/>
+      <field name="probability_level_id" ref="low_probability_level"/>
+      <field name="risk_level_id" ref="low_risk_level"/>
+    </record>
+  </data>
+</odoo>

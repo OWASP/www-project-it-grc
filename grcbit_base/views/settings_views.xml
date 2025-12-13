@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!--          IT COMPONENTS      -->
+    <record id="it_components_action" model="ir.actions.act_window">
+      <field name="name">IT Components</field>
+      <field name="res_model">it.components</field>
+      <field name="limit" eval="10"/>
+      <field name="view_mode">tree,form,graph</field>
+    </record>
+    <record model="ir.ui.view" id="it_components_treeview">
+      <field name="name">IT Components</field>
+      <field name="model">it.components</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" required="1"/>
+          <field name="description" />
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="it_components_formview">
+      <field name="name">IT Components</field>
+      <field name="model">it.components</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="description" />
+          </group>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="it_components_graphview">
+      <field name="name">IT Components</field>
+      <field name="model">it.components</field>
+      <field name="arch" type="xml">
+        <graph type="pie">
+          <field name="it_inventory_count" type="measure"/>
+          <field name="name"/>
+        </graph>
+      </field>
+    </record>
+
+    <!--  TCP Ports  -->
+    <record id="tcp_ports_action" model="ir.actions.act_window">
+	    <field name="name">TCP Ports</field>
+	    <field name="res_model">tcp.ports</field>
+      <field name="limit" eval="10"/>
+	    <field name="view_mode">tree,form,graph</field>
+    </record>
+    <record model="ir.ui.view" id="tcp_ports_treeview">
+      <field name="name">TCP Ports</field>
+      <field name="model">tcp.ports</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" required="1"/>
+          <field name="description" />
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="tcp_ports_formview">
+      <field name="name">TCP Ports</field>
+      <field name="model">tcp.ports</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <group>
+              <field name="name"/>
+              <field name="description"/>
+            </group>
+            <group>
+            </group>
+          </group>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="tcp_ports_graphview">
+      <field name="name">TCP Ports</field>
+      <field name="model">tcp.ports</field>
+      <field name="arch" type="xml">
+        <graph type="pie">
+          <field name="it_inventory_count" type="measure"/>
+          <field name="name"/>
+        </graph>
+      </field>
+    </record>
+
+    <!-- NMAP SYSTEM -->
+    <!--
+    <record model="ir.ui.view" id="nmap_system_treeview">
+      <field name="name">nmap System</field>
+      <field name="model">nmap.system</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nmap_file" filename="nmap_name" widget="binary"/>
+          <field name="nmap_name" invisible="1"/>
+          <field name="nmap_output"/>
+        </tree>
+      </field>
+    </record>
+    -->
+    <menuitem name="Business Process" id="menu_business_process" parent="grcbit_base.menu_asset_management" groups="base.group_user" action="business_process_action" sequence="5"/>
+    <menuitem name="IT Components" id="menu_it_components" parent="grcbit_base.menu_asset_management" groups="base.group_user" action="it_components_action" sequence="6"/>
+    <menuitem name="TCP Ports" id="menu_tcp_ports" parent="grcbit_base.menu_asset_management" groups="base.group_user" action="tcp_ports_action" sequence="7"/>
+  </data>
+</odoo>

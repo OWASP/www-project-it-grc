@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <record model="probability.level" id="low_probability_level">
+      <field name="name">Low</field>
+      <field name="description">The probability of occurrence is 1 or several times a year.</field>
+      <field name="active">1</field>
+      <field name="value">1</field>
+    </record>
+    <record model="probability.level" id="medium_probability_level">
+      <field name="name">Medium</field>
+      <field name="description">The probability of occurrence is 1 or several times every 6 months.</field>
+      <field name="active">1</field>
+      <field name="value">2</field>
+    </record>
+    <record model="probability.level" id="high_probability_level">
+      <field name="name">High</field>
+      <field name="description">The probability of occurrence is once or several times a month.</field>
+      <field name="active">1</field>
+      <field name="value">3</field>
+    </record>
+  </data>
+</odoo>

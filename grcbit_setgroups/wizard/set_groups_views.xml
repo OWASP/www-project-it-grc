@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="set_groups_formview">
+      <field name="name">Set Groups</field>
+      <field name="model">set.groups.user</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="user_id" readonly="1" force_save="1"/>
+            </group>
+            <notebook name="container_access">
+            </notebook>
+          </sheet>
+          <footer>
+            <button type="object" string="SAVE" class="btn btn-primary" name="assign_groups"/>
+            <button special="cancel" string="CANCEL"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>

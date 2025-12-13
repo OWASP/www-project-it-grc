@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+
+    <!--           THIRD PARTY-->
+    <record id="third_party_action" model="ir.actions.act_window">
+      <field name="name">Supplier</field>
+      <field name="res_model">third.party</field>
+      <field name="view_mode">kanban,tree,form,graph</field>
+    </record>
+    <record model="ir.ui.view" id="third_party_view">
+      <field name="name">Supplier</field>
+      <field name="model">third.party</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="third_party_search">
+      <field name="name">Supplier</field>
+      <field name="model">third.party</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="description"/>
+        </search>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="third_party_kanban">
+      <field name="name">Supplier</field>
+      <field name="model">third.party</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_kanban_mobile">
+          <field name="name"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
+                  <div>
+                    <field name="description"/>
+	          </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="third_party_form">
+      <field name="name">Supplier</field>
+      <field name="model">third.party</field>
+      <field name="arch" type="xml">
+        <form>
+	        <group>
+            <field name="name"/>
+            <field name="description"/>
+          </group>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="third_party_graph">
+      <field name="name">Supplier</field>
+      <field name="model">third.party</field>
+      <field name="arch" type="xml">
+        <graph type="pie" >
+          <field name="name"/>
+          <field name="description"/>          
+          <field name="data_inventory_count" type="measure"/>
+        </graph>
+      </field>
+    </record>
+    <record id="third_party_dash" model="ir.actions.act_window">
+      <field name="name">Supplier</field>
+      <field name="res_model">third.party</field>
+      <field name="view_mode">graph</field>
+      <field name="view_id" ref="third_party_graph"/>
+    </record>
+
+    <!--          DATA CLASSIFICATION      -->
+    <record id="data_classification_action" model="ir.actions.act_window">
+	    <field name="name">Data Classification</field>
+	    <field name="res_model">data.classification</field>
+	    <field name="view_mode">kanban,tree,form,graph</field>
+    </record>
+    <record model="ir.ui.view" id="data_classification_view">
+      <field name="name">Data Classification</field>
+      <field name="model">data.classification</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="data_classification_search">
+      <field name="name">Data Classification</field>
+      <field name="model">data.classification</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="description"/>
+        </search>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="data_classification_kanban">
+      <field name="name">Data Classification</field>
+      <field name="model">data.classification</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_kanban_mobile">
+          <field name="name"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
+                  <div>
+                    <field name="description"/>
+	          </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="data_classification_form">
+      <field name="name">Data Classification</field>
+      <field name="model">data.classification</field>
+      <field name="arch" type="xml">
+        <form>
+	  <group>
+            <field name="name"/>
+            <field name="description"/>
+          </group>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="data_classification_graph">
+      <field name="name">Data Classification</field>
+      <field name="model">data.classification</field>
+      <field name="arch" type="xml">
+        <graph type="pie" >
+          <field name="name"/>
+          <field name="description"/>          
+          <field name="data_inventory_count" type="measure"/>
+        </graph>
+      </field>
+    </record>
+    <record id="data_classification_dash" model="ir.actions.act_window">
+      <field name="name">Data Classification</field>
+      <field name="res_model">data.classification</field>
+      <field name="view_mode">graph</field>
+      <field name="view_id" ref="data_classification_graph"/>
+    </record>
+
+    <!--          IT INVENTORY       -->
+    <record id="it_inventory_action" model="ir.actions.act_window">
+	    <field name="name">IT System</field>
+	    <field name="res_model">it.inventory</field>
+      <field name="limit" eval="10"/>
+	    <field name="view_mode">tree,form,graph,kanban</field>
+    </record>
+    <record model="ir.ui.view" id="it_inventory_view">
+      <field name="name">IT System</field>
+      <field name="model">it.inventory</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="environment"  widget="badge" />
+          <field name="it_component_ids" widget="many2many_tags_open" options="{'color_field':'color'}"/>
+	  <field name="tcp_inventory_ids" widget="many2many_tags_open"  options="{'color_field':'color'}"/>
+          <field name="description" optional="hide"/>
+          <field name="users_qty" optional="hide" />
+		<!-- <field name="rto" optional="hide"/> -->
+          <field name="attachment" widget="many2many_binary" optional="hide" />
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="it_inventory_search">
+      <field name="name">IT System</field>
+      <field name="model">it.inventory</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="environment"  />
+        </search>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="it_inventory_graph">
+      <field name="name">IT System</field>
+      <field name="model">it.inventory</field>
+      <field name="arch" type="xml">
+        <graph type="pie" >
+          <field name="name"/>
+          <field name="data_inventory_count" type="measure" />
+        </graph>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="it_inventory_form">
+      <field name="name">IT System</field>
+      <field name="model">it.inventory</field>
+      <field name="arch" type="xml">
+        <form>
+	  <group>
+            <field name="name"/>
+            <field name="description"/>
+            <field name="environment" />
+            <field name="users_qty"/>
+		  <!-- <field name="rto"/> -->
+          </group>
+          <notebook>
+            <page name="it_component" string="IT Component">
+              <field name="it_component_ids">
+                <tree editable="bottom">
+                  <field name="it_component_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="ip" />
+                  <field name="url" widget="url"/>
+                  <field name="is_cloud" widget="boolean_toggle"/>
+			<!-- <field name="xdr_agent"/> -->
+                  <field name="description" string="Description"/>
+                  <field name="responsible"  widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                </tree>
+                <form>
+		  <group>
+                  <field name="it_component_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="ip" />
+                  <field name="url" widget="url"/>
+                  <field name="is_cloud" widget="boolean_toggle"/>
+			  <!-- <field name="xdr_agent"/> -->
+                  <field name="description" string="Description"/>
+                  <field name="responsible"  widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+	          </group>
+                </form>
+              </field>    
+            </page>
+            <page name="tcp_ports" string="TCP Ports">
+              <field name="tcp_inventory_ids">
+                <tree editable="bottom">
+                  <field name="tcp_ports_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="business_justification" string="Business Justification"/>
+                  <field name="is_open" string="Internet Exposed" widget="boolean_toggle"/>
+                </tree>
+                <form>
+		  <group>
+                    <field name="tcp_ports_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                    <field name="business_justification" string="Business Justification"/>
+                    <field name="is_open" string="Internet Exposed" widget="boolean_toggle"/>
+	          </group>
+                </form>
+              </field>    
+            </page>
+	    <!--
+            <page name="nmap" string="nmap">
+              <field name="nmap_ids">
+                <tree>
+                  <field name="nmap_file" filename="nmap_name" widget="binary"/>
+                  <field name="nmap_name" invisible="1"/>
+                  <field name="nmap_output"/>
+                </tree>
+                <form>
+                  <group>
+                    <field name="nmap_file" filename="nmap_name" widget="binary"/>
+                    <field name="nmap_name" invisible="1"/>
+                    <field name="nmap_output"/>
+                  </group>
+                </form>
+              </field>
+            </page>
+	    -->
+          </notebook>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="it_inventory_kanban">
+      <field name="name">IT System</field>
+      <field name="model">it.inventory</field>
+      <field name="arch" type="xml">
+        <kanban class="o_kanban_mobile">
+	  <field name="name"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
+                  <div>
+                    <field name="description"/>
+	          </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record id="it_inventory_dash" model="ir.actions.act_window">
+      <field name="name">IT System</field>
+      <field name="res_model">it.inventory</field>
+      <field name="view_mode">graph</field>
+      <field name="view_id" ref="it_inventory_graph"/>
+    </record>
+
+    <!--        DATA INVENTORY      -->
+    <record id="data_inventory_action" model="ir.actions.act_window">
+      <field name="name">Data Asset</field>
+      <field name="res_model">data.inventory</field>
+      <field name="limit" eval="10"/>
+      <field name="view_mode">tree,kanban,form</field>
+    </record>
+    <record model="ir.ui.view" id="data_inventory_view">
+      <field name="name">Data Asset</field>
+      <field name="model">data.inventory</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="data_classification_id" widget="badge" />
+          <field name="owner"  widget="many2one_avatar_user" />
+          <field name="retention_period" optional="hide" widget="badge"/>
+          <field name="attachment" widget="many2many_binary" optional="hide" />
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="data_inventory_search">
+      <field name="name">Data Asset</field>
+      <field name="model">data.inventory</field>
+      <field name="arch" type="xml">
+      <search>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="data_classification_id"/>
+          <field name="retention_period" optional="hide" />
+      </search>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="data_inventory_graph">
+      <field name="name">Data Asset</field>
+      <field name="model">data.inventory</field>
+      <field name="arch" type="xml">
+	<graph type="pie" >
+          <field name="name"/>
+          <field name="description"/>
+          <field name="data_classification_id"/>
+          <field name="retention_period" />
+	</graph>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="data_inventory_form">
+      <field name="name">Data Asset</field>
+      <field name="model">data.inventory</field>
+      <field name="arch" type="xml">
+        <form>
+	  <group>
+            <field name="name"/>
+            <field name="description"/>
+            <field name="data_classification_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+            <field name="owner"  widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
+            <field name="retention_period" />
+          </group>
+	  <!--
+	        <group>
+            <field name="it_inventory_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="third_party_id"   widget="many2many_tags_open"  options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="business_process_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+            <field name="security_requirement"/>
+          </group>
+	  -->
+          <group string="Recovery Point Objective">
+            <field name="rpo_value"/>
+            <field name="rpo_unit"/>
+            <field name="rpo_total_hours" readonly="1"/>
+          </group>
+	  <notebook>
+	    <page name="business_process" string="Business Process">
+	      <field name="data_inventory_business_process_ids" string="Business Process">
+	        <tree editable="bottom">
+                  <field name="business_process_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="rto_value" />
+                  <field name="rto_unit" />
+                  <field name="rto_total_hours" />
+                  <field name="description" />
+	        </tree>
+	        <form>
+                  <field name="business_process_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="rto_value" />
+                  <field name="rto_unit" />
+                  <field name="rto_total_hours" />
+                  <field name="description" />
+	        </form>
+	      </field>
+	    </page>
+	    <page name="it_inventory" string="IT Asset">
+	      <field name="data_inventory_it_inventory_ids" string="IT Asset">
+	        <tree editable="bottom">
+                  <field name="it_inventory_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="rto_value" />
+                  <field name="rto_unit" />
+                  <field name="rto_total_hours" />
+                  <field name="description" />
+	        </tree>
+	        <form>
+                  <field name="it_inventory_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="rto_value" />
+                  <field name="rto_unit" />
+                  <field name="rto_total_hours" />
+                  <field name="description" string="description" />
+	        </form>
+	      </field>
+	    </page>
+	    <page name="third_party" string="Supplier">
+	      <field name="data_inventory_third_party_ids" string="Supplier">
+	        <tree editable="bottom">
+                  <field name="third_party_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="description" />
+	        </tree>
+	        <form>
+                  <field name="third_party_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="description" string="Description" />
+	        </form>
+	      </field>
+	    </page>
+	    <!--
+	    <page name="compliance_version" string="Compliance">
+	      <field name="data_inventory_compliance_version_ids" string="Compliance">
+	        <tree editable="bottom">
+                  <field name="compliance_version_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="description" />
+	        </tree>
+	        <form>
+                  <field name="compliance_version_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="description" string="Description" />
+	        </form>
+	      </field>
+	    </page>
+	    -->
+	    <page name="security_requirement" string="Security Requirement">
+	      <field name="data_inventory_security_requirement_ids" string="Security Requirement">
+	        <tree editable="bottom">
+                  <field name="security_requirement" />
+                  <field name="description" />
+	        </tree>
+	        <form>
+                  <field name="security_requirement" />
+                  <field name="description" string="description" />
+	        </form>
+	      </field>
+	    </page>
+	  </notebook>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="data_inventory_kanban">
+      <field name="name">Data Asset</field>
+      <field name="model">data.inventory</field>
+      <field name="arch" type="xml">
+        <kanban class="o_kanban_mobile">
+	        <field name="name"/>
+          <field name="description"/>
+          <field name="data_classification_id"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
+                  <div>
+                    <field name="description"/>
+	          </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <!--       BUSINESS PROCESS         -->
+    <record id="business_process_action" model="ir.actions.act_window">
+      <field name="name">Business Process</field>
+      <field name="res_model">business.process</field>
+      <field name="limit" eval="10"/>
+      <field name="view_mode">kanban,tree,form,graph</field>
+    </record>
+    <record model="ir.ui.view" id="business_process_treeview">
+      <field name="name">Business Process</field>
+      <field name="model">business.process</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="process_name"/>
+          <field name="process_owner"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="business_process_formview">
+      <field name="name">Business Process</field>
+      <field name="model">business.process</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="process_name"/>
+            <field name="process_owner" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+            <field name="description"/>
+          </group>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="business_process_graphview">
+      <field name="name">Business Process Graph</field>
+      <field name="model">business.process</field>
+      <field name="arch" type="xml">
+        <graph type="pie" >
+          <field name="process_name"/>
+          <field name="process_owner"/>          
+          <field name="data_inventory_count" type="measure"/>
+        </graph>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="business_process_kanbanview">
+      <field name="name">Business Process Kanban</field>
+      <field name="model">business.process</field>
+      <field name="arch" type="xml">
+        <kanban class="o_kanban_mobile">
+	  <field name="process_name"/>
+          <field name="process_owner"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="process_name"/>
+                    </strong>
+                  </div>
+                  <div>
+                    <field name="description"/>
+	          </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+  </data>
+</odoo>

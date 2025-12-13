@@ -1,0 +1,27 @@
+th.o_column_sortable[data-name="name"]{ 
+    width:20% !important; 
+    /* max-width:150px !important; */
+} 
+th.o_column_sortable[data-name="is_applicable"]{ 
+    width:10% !important; 
+    /* max-width:150px !important; */
+} 
+th.o_column_sortable[data-name="reason_selection"]{ 
+    width:30% !important; 
+    /* max-width:150px !important; */
+} 
+th.o_column_sortable[data-name="document_page_id"]{ 
+    width:15% !important; 
+    /* max-width:150px !important; */
+} 
+th.o_column_sortable[data-name="control_design_id"]{ 
+    width:15% !important; 
+    /* max-width:150px !important; */
+} 
+th.o_column_sortable[data-name="control_status"]{ 
+    width:10% !important; 
+    /* max-width:150px !important; */
+} 
+th.o_column_sortable[data-name="id_control_category"]{ 
+    width:50% !important; 
+} 

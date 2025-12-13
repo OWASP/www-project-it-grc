@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <record model="security.domain" id="confidentiality_property">
+      <field name="name">#Confidentiality</field>
+      <field name="description">
+        Information security properties are an attribute for viewing controls from the perspective of what information characteristic will help preserve the control.
+        Confidentiality ensures that data is only accessed by authorized users.
+      </field>
+    </record>
+    <record model="security.domain" id="integrity_property">
+      <field name="name">#Integrity</field>
+      <field name="description">
+        Information security properties are an attribute for viewing controls from the perspective of what information characteristic will help preserve the control.
+        Confidentiality ensures that data is only accessed by authorized users.
+      </field>
+    </record>
+    <record model="security.domain" id="availability_property">
+      <field name="name">#Availability</field>
+      <field name="description">
+        Information security properties are an attribute for viewing controls from the perspective of what information characteristic will help preserve the control.
+        Confidentiality ensures that data is only accessed by authorized users.
+      </field>
+    </record>
+  </data>
+</odoo>
+

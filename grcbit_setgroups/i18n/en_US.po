@@ -1,0 +1,87 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* grcbit_setgroups
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 18:34+0000\n"
+"PO-Revision-Date: 2023-12-15 18:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: grcbit_setgroups
+#: model_terms:ir.ui.view,arch_db:grcbit_setgroups.set_groups_formview
+msgid "CANCEL"
+msgstr ""
+
+#. module: grcbit_setgroups
+#: model:ir.model.fields,field_description:grcbit_setgroups.field_set_groups_user__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: grcbit_setgroups
+#: model:ir.model.fields,field_description:grcbit_setgroups.field_set_groups_user__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: grcbit_setgroups
+#: model:ir.model.fields,field_description:grcbit_setgroups.field_set_groups_user__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: grcbit_setgroups
+#: model:ir.model.fields,field_description:grcbit_setgroups.field_set_groups_user__id
+msgid "ID"
+msgstr ""
+
+#. module: grcbit_setgroups
+#: model:ir.model.fields,field_description:grcbit_setgroups.field_set_groups_user____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: grcbit_setgroups
+#: model:ir.model.fields,field_description:grcbit_setgroups.field_set_groups_user__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: grcbit_setgroups
+#: model:ir.model.fields,field_description:grcbit_setgroups.field_set_groups_user__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: grcbit_setgroups
+#: model:ir.actions.act_window,name:grcbit_setgroups.manage_users_action
+msgid "Manage Users"
+msgstr ""
+
+#. module: grcbit_setgroups
+#: model_terms:ir.ui.view,arch_db:grcbit_setgroups.set_groups_formview
+msgid "SAVE"
+msgstr ""
+
+#. module: grcbit_setgroups
+#: model_terms:ir.ui.view,arch_db:grcbit_setgroups.res_users_set_groups_formview_inh
+msgid "Set Groups"
+msgstr ""
+
+#. module: grcbit_setgroups
+#: model:ir.model,name:grcbit_setgroups.model_res_users
+#: model:ir.model.fields,field_description:grcbit_setgroups.field_set_groups_user__user_id
+msgid "User"
+msgstr ""
+
+#. module: grcbit_setgroups
+#: model:ir.model.fields,field_description:grcbit_setgroups.field_res_users__is_admin
+msgid "is admin"
+msgstr ""
+
+#. module: grcbit_setgroups
+#: model:ir.model,name:grcbit_setgroups.model_set_groups_user
+msgid "set.groups.user"
+msgstr ""

@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- RISK FACTOR -->
+    <record id="risk_factor_action" model="ir.actions.act_window">
+	    <field name="name">Risk Factor</field>
+	    <field name="res_model">risk.factor</field>
+      <field name="limit" eval="10"/>
+	    <field name="view_mode">tree,form,graph,kanban</field>
+    </record>
+    <record model="ir.ui.view" id="risk_factor_view">
+      <field name="name">Risk Factor</field>
+      <field name="model">risk.factor</field>
+      <field name="arch" type="xml">
+        <tree multi_edit="1">
+          <field name="active" invisible="1"/>
+          <field name="risk_id" widget="badge" />
+          <field name="it_inventory_id"/>
+          <field name="name" />
+          <field name="consequence" optional="hide"/>
+          <field name="impact_level_id" optional="hide" />
+          <field name="probability_level_id" optional="hide"/>
+	  <field name="inherent_risk" readonly="1" force_save="1" widget="badge" decoration-danger="inherent_risk in ('High','Alto')" decoration-warning="inherent_risk in ('Medium','Medio')" decoration-success="inherent_risk in ('Low','Bajo')"/>
+          <field name="residual_risk" readonly="1" force_save="1" widget="badge" decoration-danger="residual_risk in ('High','Alto')" decoration-warning="residual_risk in ('Medium','Medio')" decoration-success="residual_risk in ('Low','Bajo')"/>
+          <field name="responsible" optional="hide" widget="many2one_avatar_user"/>
+          <field name="quantification" optional="hide"/>
+          <field name="attachment" widget="many2many_binary" optional="hide" />
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="risk_factor_search">
+      <field name="name">Risk Factor</field>
+      <field name="model">risk.factor</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" />
+          <field name="consequence"/>
+	      </search>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="risk_factor_graph">
+      <field name="name">Inherent Risk</field>
+      <field name="model">risk.factor</field>
+      <field name="type">graph</field>
+      <field name="arch" type="xml">
+        <graph type="pie">
+          <field name="inherent_risk"/>
+        </graph>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="risk_factor_graph_residual">
+      <field name="name">Residual Risk</field>
+      <field name="model">risk.factor</field>
+      <field name="type">graph</field>
+      <field name="arch" type="xml">
+        <graph type="pie">
+          <field name="residual_risk_count" type="measure"/>
+          <field name="residual_risk" group="True"/>
+        </graph>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="risk_factor_form">
+      <field name="name">Risk Factor</field>
+      <field name="model">risk.factor</field>
+      <field name="arch" type="xml">
+        <form>
+          <header name="risk_factor_header">
+          </header>
+		      <sheet>
+            <group>
+              <field name="active" invisible="1"/>
+              <field name="it_inventory_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  />
+              <field name="name"/>
+              <field name="consequence"/>
+              <field name="responsible" widget="many2one_avatar_user" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
+            </group>
+            <group>
+              <field name="impact_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+              <field name="probability_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+              <field name="quantification" optional="hide"/>
+              <field name="inherent_risk" readonly="1" force_save="1" widget="badge" decoration-danger="inherent_risk in ('High','Alto')" decoration-warning="inherent_risk in ('Medium','Medio')" decoration-success="inherent_risk in ('Low','Bajo')"/>
+              <field name="residual_risk" readonly="1" force_save="1" widget="badge" decoration-danger="residual_risk in ('High','Alto')" decoration-warning="residual_risk in ('Medium','Medio')" decoration-success="residual_risk in ('Low','Bajo')"/>
+            </group>
+	    <notebook>
+		    <page name='company_risk' string='Strategic Risk'>
+			    <field name='risk_factor_company_risk_ids' string='Company Risk'>
+				    <tree>
+					    <field name='company_risk_id' string='Strategic Risk' />
+					    <field name='description'/>
+				    </tree>
+				    <form>
+					    <group>
+					    <field name='company_risk_id' string='Strategic Risk'/>
+					    <field name='description'/>
+				    </group>
+				    </form>
+
+			    </field>
+
+	      </page>
+	    </notebook>
+          </sheet>
+
+	        <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="risk_factor_kanban">
+      <field name="name">Risk Factor</field>
+      <field name="model">risk.factor</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_kanban_mobile">
+          <field name="name"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record id="risk_factor_dash" model="ir.actions.act_window">
+      <field name="name">Inherent Risk</field>
+      <field name="res_model">risk.factor</field>
+      <field name="view_mode">graph</field>
+      <field name="view_id" ref="risk_factor_graph"/>
+    </record>
+    <record id="risk_factor_dash_residual" model="ir.actions.act_window">
+      <field name="name">Residual Risk</field>
+      <field name="res_model">risk.factor</field>
+      <field name="view_mode">graph</field>
+      <field name="view_id" ref="risk_factor_graph_residual"/>
+    </record>
+    <record model="ir.ui.view" id="risk_factor_dashboard">
+      <field name="name">risk_factor_dashboard_graph</field>
+      <field name="model">board.board</field>
+      <field name="inherit_id" ref="grcbit_base.main_dashboard"/>
+      <field name="arch" type="xml">
+        <xpath expr="//board/column[1]" position="inside">
+          <action string="Inherent Risk" name="%(risk_factor_dash)d"/>
+        </xpath>
+        <xpath expr="//board/column[2]" position="inside">
+          <action string="Residual Risk" name="%(risk_factor_dash_residual)d"/>
+        </xpath>
+      </field>
+    </record>
+
+    <!--  PROBABILITY LEVEL  -->
+    <record id="probability_level_action" model="ir.actions.act_window">
+	    <field name="name">Probability Level</field>
+	    <field name="res_model">probability.level</field>
+	    <field name="view_mode">tree,form,kanban</field>
+    </record>
+    <record model="ir.ui.view" id="probability_level_view">
+      <field name="name">Probability Level</field>
+      <field name="model">probability.level</field>
+      <field name="arch" type="xml">
+        <tree multi_edit="1">
+          <field name="active" invisible="1"/>
+          <field name="name" widget="badge" decoration-danger="name in ('High','Alto')" decoration-warning="name in ('Medium','Medio')" decoration-success="name in ('Low','Bajo')"/>
+          <field name="value" widget="badge" decoration-danger="name in ('High','Alto')" decoration-warning="name in ('Medium','Medio')" decoration-success="name in ('Low','Bajo')"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="probability_level_form">
+      <field name="name">Probability Level</field>
+      <field name="model">probability.level</field>
+      <field name="arch" type="xml">
+        <form>
+	        <group>
+            <field name="active" invisible="1"/>
+            <field name="name"  />
+            <field name="value" />
+            <field name="description"/>
+          </group>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="probability_level_kanban">
+      <field name="name">Probability Level</field>
+      <field name="model">probability.level</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_kanban_mobile">
+          <field name="name"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
+                  <div>
+                    <field name="description"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="probability_level_search">
+      <field name="name">Probability Level</field>
+      <field name="model">probability.level</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" />
+          <field name="value"/>
+          <field name="description"/>
+	      </search>
+      </field>
+    </record>
+
+    <!--  IMPACT LEVEL  -->
+    <record id="impact_level_action" model="ir.actions.act_window">
+      <field name="name">Impact Level</field>
+      <field name="res_model">impact.level</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+    <record model="ir.ui.view" id="impact_level_view">
+      <field name="name">Impact Level</field>
+      <field name="model">impact.level</field>
+      <field name="arch" type="xml">
+        <tree multi_edit="1">
+          <field name="active" invisible="1"/>
+          <field name="name" widget="badge" decoration-danger="name in ('High','Alto')" decoration-warning="name in ('Medium','Medio')" decoration-success="name in ('Low','Bajo')"/>
+          <field name="value" widget="badge" decoration-danger="name in ('High','Alto')" decoration-warning="name in ('Medium','Medio')" decoration-success="name in ('Low','Bajo')"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="impact_level_form">
+      <field name="name">Impact Level</field>
+      <field name="model">impact.level</field>
+      <field name="arch" type="xml">
+        <form>
+	        <group>
+            <field name="active" invisible="1"/>
+            <field name="name"  />
+            <field name="value" />
+            <field name="description"/>
+          </group>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="impact_level_kanban">
+      <field name="name">Impact Level</field>
+      <field name="model">impact.level</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_kanban_mobile">
+          <field name="name"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
+                  <div>
+                    <field name="description"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="impact_level_search">
+      <field name="name">Impact Level</field>
+      <field name="model">impact.level</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" />
+          <field name="value"/>
+          <field name="description"/>
+	      </search>
+      </field>
+    </record>
+
+    <!--  RISK LEVEL  -->
+    <record id="risk_level_action" model="ir.actions.act_window">
+	    <field name="name">Risk Level</field>
+	    <field name="res_model">risk.level</field>
+	    <field name="view_mode">tree,form,kanban</field>
+    </record>
+    <record model="ir.ui.view" id="risk_level_view">
+      <field name="name">Risk Level</field>
+      <field name="model">risk.level</field>
+      <field name="arch" type="xml">
+        <tree multi_edit="1">
+          <field name="active" invisible="1"/>
+          <field name="name"  widget="badge" decoration-danger="name in ('High','Alto')" decoration-warning="name in ('Medium','Medio')" decoration-success="name in ('Low','Bajo')"/>
+          <field name="value" widget="badge" decoration-danger="name in ('High','Alto')" decoration-warning="name in ('Medium','Medio')" decoration-success="name in ('Low','Bajo')"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="risk_level_form">
+      <field name="name">Risk Level</field>
+      <field name="model">risk.level</field>
+      <field name="arch" type="xml">
+        <form>
+	        <group>
+            <field name="active" invisible="1"/>
+            <field name="name"  />
+            <field name="value" />
+            <field name="description"/>
+          </group>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="risk_level_kanban">
+      <field name="name">Risk Level</field>
+      <field name="model">risk.level</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_kanban_mobile">
+          <field name="name"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
+                  <div>
+                    <field name="description"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="risk_level_search">
+      <field name="name">Risk Level</field>
+      <field name="model">risk.level</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" />
+          <field name="value"/>
+          <field name="description"/>
+	      </search>
+      </field>
+    </record>
+
+    <!--  RISK CLASSIFICATION  -->
+    <record id="risk_classification_action" model="ir.actions.act_window">
+	    <field name="name">Risk Category</field>
+	    <field name="res_model">risk.classification</field>
+	    <field name="view_mode">kanban,tree,form,graph</field>
+    </record>
+    <record model="ir.ui.view" id="risk_classification_view">
+      <field name="name">Risk Category</field>
+      <field name="model">risk.classification</field>
+      <field name="arch" type="xml">
+        <tree multi_edit="1">
+          <field name="active" invisible="1"/>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="risk_classification_form">
+      <field name="name">Risk Category</field>
+      <field name="model">risk.classification</field>
+      <field name="arch" type="xml">
+        <form>
+	        <group>
+            <field name="active" invisible="1"/>
+            <field name="name"/>
+            <field name="description"/>
+          </group>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="risk_classification_kanban">
+      <field name="name">Risk Category</field>
+      <field name="model">risk.classification</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_kanban_mobile">
+          <field name="name"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="name"/>
+                    </strong>
+                  </div>
+                  <div>
+                    <field name="description"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="risk_classification_search">
+      <field name="name">Risk Category</field>
+      <field name="model">risk.classification</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="active"/>
+          <field name="name" />
+          <field name="description"/>
+	      </search>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="risk_classification_graph">
+      <field name="name">Risk Category</field>
+      <field name="model">risk.classification</field>
+      <field name="type">graph</field>
+      <field name="arch" type="xml">
+        <graph type="pie">
+          <field name="name" />
+          <field name="company_risk_count" type="measure"/>
+        </graph>
+      </field>
+    </record>
+
+    <!--  INHERENT RISK LEVEL  -->
+    <record id="inherent_risk_level_action" model="ir.actions.act_window">
+	    <field name="name">Inherent Risk Level</field>
+	    <field name="res_model">inherent.risk.level</field>
+	    <field name="view_mode">tree,form,kanban</field>
+    </record>
+    <record model="ir.ui.view" id="inherent_risk_level_view">
+      <field name="name">Inherent Risk Level</field>
+      <field name="model">inherent.risk.level</field>
+      <field name="arch" type="xml">
+        <tree multi_edit="1">
+          <field name="active" invisible="1"/>
+          <field name="impact_level_id"/>
+          <field name="probability_level_id"/>
+          <field name="risk_level_name" widget="badge" decoration-danger="risk_level_name in ('High','Alto')" decoration-warning="risk_level_name in ('Medium','Medio')" decoration-success="risk_level_name in ('Low','Bajo')"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="inherent_risk_level_form">
+      <field name="name">Inherent Risk Level</field>
+      <field name="model">inherent.risk.level</field>
+      <field name="arch" type="xml">
+        <form>
+	        <group>
+            <field name="active" invisible="1"/>
+            
+            <field name="risk_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+            <field name="impact_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+            <field name="probability_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+            <field name="description"/>
+          </group>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="inherent_risk_level_kanban">
+      <field name="name">Inherent Risk Level</field>
+      <field name="model">inherent.risk.level</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_kanban_mobile">
+          <field name="risk_level_id"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="risk_level_id"/>
+                    </strong>
+                  </div>
+                  <div>
+                    <field name="description"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="inherent_risk_level_search">
+      <field name="name">Inherent Risk Level</field>
+      <field name="model">inherent.risk.level</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="impact_level_id" />
+          <field name="probability_level_id"/>
+          <field name="risk_level_name"/>
+	      </search>
+      </field>
+    </record>
+
+    <!--  RESIDUAL RISK LEVEL  -->
+    <record id="residual_risk_level_action" model="ir.actions.act_window">
+	    <field name="name">Residual Risk Level</field>
+	    <field name="res_model">residual.risk.level</field>
+	    <field name="view_mode">tree,form,kanban</field>
+    </record>
+    <record model="ir.ui.view" id="residual_risk_level_view">
+      <field name="name">Residual Risk Level</field>
+      <field name="model">residual.risk.level</field>
+      <field name="arch" type="xml">
+        <tree multi_edit="1">
+          <field name="active" invisible="1"/>
+          <field name="inherent_risk_level_id"/>
+          <field name="control_evaluation_criteria_id"/>
+          <field name="residual_risk_level_name" widget="badge" decoration-danger="residual_risk_level_name in ('High','Alto')" decoration-warning="residual_risk_level_name in ('Medium','Medio')" decoration-success="residual_risk_level_name in ('Low','Bajo')"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="residual_risk_level_form">
+      <field name="name">Residual Risk Level</field>
+      <field name="model">residual.risk.level</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="active" invisible="1"/>
+            <field name="inherent_risk_level_id"/>
+            <field name="control_evaluation_criteria_id"/>
+            <field name="residual_risk_level_id"/>
+          </group>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="residual_risk_level_kanban">
+      <field name="name">Residual Risk Level</field>
+      <field name="model">residual.risk.level</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_kanban_mobile">
+          <field name="inherent_risk_level_id"/>
+          <field name="residual_risk_level_id"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="inherent_risk_level_id"/>
+                    </strong>
+                  </div>
+                  <div>
+                    <t t-esc="record.residual_risk_level_id.value"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="residual_risk_level_search">
+      <field name="name">Residual Risk Level</field>
+      <field name="model">residual.risk.level</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="inherent_risk_level_id" />
+          <field name="control_evaluation_criteria_id"/>
+          <field name="residual_risk_level_name"/>
+	      </search>
+      </field>
+    </record>
+
+    <!--  COMPANY OBJECTIVE  -->
+    <record id="company_objective_action" model="ir.actions.act_window">
+	    <field name="name">Company Objective</field>
+	    <field name="res_model">company.objective</field>
+	    <field name="view_mode">kanban,tree,form</field>
+    </record>
+    <record model="ir.ui.view" id="company_objective_treeview">
+      <field name="name">Company Objective Tree</field>
+      <field name="model">company.objective</field>
+      <field name="arch" type="xml">
+        <tree multi_edit="1">
+          <field name="objective_name"/>
+          <field name="objective_description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="company_objective_form">
+      <field name="name">Company Objective Form</field>
+      <field name="model">company.objective</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="objective_name"/>
+            <field name="objective_description"/>
+          </group>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="company_objective_kanban">
+      <field name="name">Company Objective Kanban</field>
+      <field name="model">company.objective</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_kanban_mobile">
+          <field name="objective_name"/>
+          <field name="objective_description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="objective_name"/>
+                    </strong>
+                  </div>
+                  <div>
+                    <field name="objective_description"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="company_objective_search">
+      <field name="name">Company Objective Search</field>
+      <field name="model">company.objective</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="objective_name"/>
+          <field name="objective_description"/>
+	      </search>
+      </field>
+    </record>
+
+    <!--  COMPANY RISK  -->
+    <record id="company_risk_action" model="ir.actions.act_window">
+	    <field name="name">Strategic Risk</field>
+	    <field name="res_model">company.risk</field>
+	    <field name="view_mode">tree,form,kanban</field>
+    </record>
+    <record model="ir.ui.view" id="company_risk_treeview">
+      <field name="name">Company Risk Tree</field>
+      <field name="model">company.risk</field>
+      <field name="arch" type="xml">
+        <tree multi_edit="1">
+          <field name="risk_name"/>
+          <field name="risk_description"/>
+          <field name="risk_consequence"/>
+          <field name="company_objective_id" widget="many2many_tags_open"/>
+          <field name="risk_classification" widget="many2many_tags_open"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="company_risk_form">
+      <field name="name">Company Risk Form</field>
+      <field name="model">company.risk</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="risk_name"/>
+            <field name="risk_description"/>
+            <field name="risk_consequence"/>
+            <field name="company_objective_id" widget="many2many_tags_open"/>
+            <field name="risk_classification" widget="many2many_tags_open"/>
+          </group>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="company_risk_kanban">
+      <field name="name">Company Risk Kanban</field>
+      <field name="model">company.risk</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_kanban_mobile">
+          <field name="risk_name"/>
+          <field name="risk_description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <field name="risk_name"/>
+                    </strong>
+                  </div>
+                  <div>
+                    <field name="risk_description"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="company_risk_search">
+      <field name="name">Company Risk Search</field>
+      <field name="model">company.risk</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="risk_name"/>
+          <field name="risk_description"/>
+          <field name="company_objective_id"/>
+          <field name="risk_classification"/>
+	      </search>
+      </field>
+    </record>
+
+    <!--  ORGANIZATIONAL PROFILE  -->
+    <record id="organizational_profile_action" model="ir.actions.act_window">
+	    <field name="name">Organizational Profile</field>
+	    <field name="res_model">organizational.profile</field>
+	    <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.ui.view" id="organizational_profile_treeview">
+      <field name="name">Organizational Profile treeview</field>
+      <field name="model">organizational.profile</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" invisible="1"/>
+          <field name="description"/>
+	  <!--
+          <field name="business_market"/>
+          <field name="business_compliance"/>
+          <field name="business_geopolitical"/>
+          <field name="business_corporate"/
+	  -->
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="organizational_profile_form">
+      <field name="name">Organizational Profile Form</field>
+      <field name="model">organizational.profile</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name" invisible="1"/>
+            <field name="description"/>
+            <field name="business_market"/>
+            <field name="business_compliance"/>
+            <field name="business_geopolitical"/>
+            <field name="business_corporate"/>
+          </group>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>

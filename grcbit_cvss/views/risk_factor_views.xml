@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="cvss_calculator_risk_factor_inherit_form" model="ir.ui.view">
+      <field name="name">cvss_calculator.risk_factor.inherit.form</field>
+      <field name="model">risk.factor</field>
+      <field name="inherit_id" ref="grcbit_risk_management.risk_factor_form" />
+      <field name="arch" type="xml">
+        <xpath expr="//header[@name='risk_factor_header']" position="inside">
+		<button type="action" name="%(grcbit_cvss.cvss_calculator_action)d" class="btn btn-primary" string="CVSS Calculator" />
+        </xpath>
+        <xpath expr="//field[@name='residual_risk']" position="after">
+          <field name="score" readonly="1"/>
+          <field name="vector" readonly="1"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

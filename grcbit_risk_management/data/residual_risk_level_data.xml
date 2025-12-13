@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <record model="residual.risk.level" id="effective_high_residual_risk_level">
+      <field name="active">1</field>
+      <field name="control_evaluation_criteria_id" ref="effective_evaluation_criteria"/>
+      <field name="inherent_risk_level_id" ref="high_risk_level"/>
+      <field name="residual_risk_level_id" ref="high_risk_level"/>
+      <field name="residual_risk_level_name">High</field>
+    </record>
+    <record model="residual.risk.level" id="less_effective_high_residual_risk_level">
+      <field name="active">1</field>
+      <field name="control_evaluation_criteria_id" ref="less_effective_evaluation_criteria"/>
+      <field name="inherent_risk_level_id" ref="high_risk_level"/>
+      <field name="residual_risk_level_id" ref="medium_risk_level"/>
+      <field name="residual_risk_level_name">Medium</field>
+    </record>
+    <record model="residual.risk.level" id="ineffective_high_residual_risk_level">
+      <field name="active">1</field>
+      <field name="control_evaluation_criteria_id" ref="ineffective_evaluation_criteria"/>
+      <field name="inherent_risk_level_id" ref="high_risk_level"/>
+      <field name="residual_risk_level_id" ref="low_risk_level"/>
+      <field name="residual_risk_level_name">Low</field>
+    </record>
+    <!---->
+    <record model="residual.risk.level" id="effective_medium_residual_risk_level">
+      <field name="active">1</field>
+      <field name="control_evaluation_criteria_id" ref="effective_evaluation_criteria"/>
+      <field name="inherent_risk_level_id" ref="medium_risk_level"/>
+      <field name="residual_risk_level_id" ref="high_risk_level"/>
+      <field name="residual_risk_level_name">High</field>
+    </record>
+    <record model="residual.risk.level" id="less_effective_medium_residual_risk_level">
+      <field name="active">1</field>
+      <field name="control_evaluation_criteria_id" ref="less_effective_evaluation_criteria"/>
+      <field name="inherent_risk_level_id" ref="medium_risk_level"/>
+      <field name="residual_risk_level_id" ref="medium_risk_level"/>
+      <field name="residual_risk_level_name">Medium</field>
+    </record>
+    <record model="residual.risk.level" id="ineffective_medium_residual_risk_level">
+      <field name="active">1</field>
+      <field name="control_evaluation_criteria_id" ref="ineffective_evaluation_criteria"/>
+      <field name="inherent_risk_level_id" ref="medium_risk_level"/>
+      <field name="residual_risk_level_id" ref="low_risk_level"/>
+      <field name="residual_risk_level_name">Low</field>
+    </record>
+    <!---->
+    <record model="residual.risk.level" id="effective_low_residual_risk_level">
+      <field name="active">1</field>
+      <field name="control_evaluation_criteria_id" ref="effective_evaluation_criteria"/>
+      <field name="inherent_risk_level_id" ref="low_risk_level"/>
+      <field name="residual_risk_level_id" ref="high_risk_level"/>
+      <field name="residual_risk_level_name">High</field>
+    </record>
+    <record model="residual.risk.level" id="less_effective_low_residual_risk_level">
+      <field name="active">1</field>
+      <field name="control_evaluation_criteria_id" ref="less_effective_evaluation_criteria"/>
+      <field name="inherent_risk_level_id" ref="low_risk_level"/>
+      <field name="residual_risk_level_id" ref="medium_risk_level"/>
+      <field name="residual_risk_level_name">Medium</field>
+    </record>
+    <record model="residual.risk.level" id="ineffective_low_residual_risk_level">
+      <field name="active">1</field>
+      <field name="control_evaluation_criteria_id" ref="ineffective_evaluation_criteria"/>
+      <field name="inherent_risk_level_id" ref="low_risk_level"/>
+      <field name="residual_risk_level_id" ref="low_risk_level"/>
+      <field name="residual_risk_level_name">Low</field>
+    </record>
+  </data>
+</odoo>

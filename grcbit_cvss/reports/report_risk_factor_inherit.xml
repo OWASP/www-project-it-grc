@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="cvss_report_risk_factor_custom" inherit_id="grcbit_risk_management.risk_factor_print_template">
+      <xpath expr="//div[@name='main_table']" position="inside">
+        <div class="row">
+          <div class="col-2" style="font-weight:bold;border: 1px solid;"><strong>CVSS Score:</strong></div>
+          <div class="col-4" style="border: 1px solid;text-align:center"><t t-esc="o.score"/></div>
+          <div class="col-2" style="font-weight:bold;border: 1px solid;"><strong>CVSS Vector:</strong></div>
+          <div class="col-4" style="border: 1px solid;text-align:center"><t t-esc="o.vector"/></div>
+        </div>
+      </xpath>
+    </template>
+  </data>
+</odoo>

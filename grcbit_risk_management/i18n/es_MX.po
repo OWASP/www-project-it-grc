@@ -1,0 +1,1682 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* grcbit_risk_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-30 21:12+0000\n"
+"PO-Revision-Date: 2024-05-30 21:12+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_line__control_periodicity__1m
+msgid "1 month"
+msgstr "1 mes"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_line__control_periodicity__1y
+msgid "1 year"
+msgstr "1 año"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_line__control_periodicity__10m
+msgid "10 months"
+msgstr "10 meses"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_line__control_periodicity__11m
+msgid "11 months"
+msgstr "11 meses"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_line__control_periodicity__2m
+msgid "2 months"
+msgstr "2 meses"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_line__control_periodicity__3m
+msgid "3 months"
+msgstr "3 meses"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_line__control_periodicity__4m
+msgid "4 months"
+msgstr "4 meses"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_line__control_periodicity__5m
+msgid "5 months"
+msgstr "5 meses"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_line__control_periodicity__6m
+msgid "6 months"
+msgstr "6 meses"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_line__control_periodicity__7m
+msgid "7 months"
+msgstr "7 meses"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_line__control_periodicity__8m
+msgid "8 months"
+msgstr "8 meses"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_line__control_periodicity__9m
+msgid "9 months"
+msgstr "9 meses"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
+msgid "<br/> Risk Factor:"
+msgstr "<br/> Factor Riesgo:"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
+msgid "<strong>Consequence:</strong>"
+msgstr "<strong>Consecuencia:</strong>"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
+msgid "<strong>Data Asset:</strong>"
+msgstr "<strong>Activo Dato:</strong>"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
+msgid "<strong>Impact Level:</strong>"
+msgstr "<strong>Nivel Impacto:</strong>"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
+msgid "<strong>Inherent Risk:</strong>"
+msgstr "<strong>Riesgo Inherente:</strong>"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
+msgid "<strong>Probability Level:</strong>"
+msgstr "<strong>Nivel Probabilidad:</strong>"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
+msgid "<strong>Quantification:</strong>"
+msgstr "<strong>Cuantificación:</strong>"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
+msgid "<strong>Residual Risk:</strong>"
+msgstr "<strong>Riesgo Residual:</strong>"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
+msgid "<strong>Risk Owner:</strong>"
+msgstr "<strong>Dueño Riesgo:</strong>"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__message_needaction
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__message_needaction
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__message_needaction
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__message_needaction
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__message_needaction
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__message_needaction
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__message_needaction
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__message_needaction
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__message_needaction
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__message_needaction
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__message_needaction
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__message_needaction
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__message_needaction
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__message_needaction
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__message_needaction
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__message_needaction
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__message_needaction
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__message_needaction
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__message_needaction
+msgid "Action Needed"
+msgstr "Acción Necesaria"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__active
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__active
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__active
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__active
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__active
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__active
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__active
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__active
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__active
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__active
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__active
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__active
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__active
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__active
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__active
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__active
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__activity_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__activity_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__activity_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__activity_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__activity_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__activity_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__activity_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__activity_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__activity_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__activity_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__activity_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__activity_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__activity_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__activity_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__activity_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__activity_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__activity_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__activity_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__activity_exception_decoration
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__activity_exception_decoration
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__activity_exception_decoration
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__activity_exception_decoration
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__activity_exception_decoration
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__activity_exception_decoration
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__activity_exception_decoration
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__activity_exception_decoration
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__activity_exception_decoration
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__activity_exception_decoration
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__activity_exception_decoration
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__activity_exception_decoration
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__activity_exception_decoration
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__activity_exception_decoration
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__activity_exception_decoration
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__activity_exception_decoration
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__activity_exception_decoration
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__activity_exception_decoration
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de excepción de actividad"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__activity_state
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__activity_state
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__activity_state
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__activity_state
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__activity_state
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__activity_state
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__activity_state
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__activity_state
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__activity_state
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__activity_state
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__activity_state
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__activity_state
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__activity_state
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__activity_state
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__activity_state
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__activity_state
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__activity_state
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__activity_state
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__activity_state
+msgid "Activity State"
+msgstr "Estado Actividad"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__activity_type_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__activity_type_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__activity_type_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__activity_type_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__activity_type_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__activity_type_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__activity_type_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__activity_type_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__activity_type_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__activity_type_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__activity_type_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__activity_type_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__activity_type_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__activity_type_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__activity_type_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__activity_type_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__activity_type_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__activity_type_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono tipo actividad"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_set_groups_user__control_approval
+#: model:res.groups,name:grcbit_risk_management.group_control_approval
+msgid "Implement"
+msgstr "Implementar"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__approve_date
+msgid "Approve Date"
+msgstr "Fecha de aprobación"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_design__state__approved
+msgid "Implement"
+msgstr "Implementar"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__approved_comment
+msgid "Approved Comment"
+msgstr "Comentario Implementado"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.control_design_form
+msgid "Are you sure you want to APPROVE the CONTROL IMPLEMENTATION?"
+msgstr "¿Está seguro que quiere APROBAR la IMPLEMENTACIÓN DE CONTROL?"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.control_design_form
+msgid "Are you sure you want to REJECT CONTROL IMPLEMENTATION?"
+msgstr "¿Está seguro que quiere RECHAZAR la IMPLEMENTACION de CONTROL?"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.control_design_form
+msgid "Are you sure you want to approve the CONTROL DESIGN?"
+msgstr "¿Está seguro que quiere APROBAR el DISEÑO de CONTROL?"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.control_design_form
+msgid "Are you sure you want to complete the CONTROL IMPLEMENTATION?"
+msgstr "¿Está seguro que quiere COMPLETAR la IMPLEMENTACION de CONTROL?"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.control_design_form
+msgid "Are you sure you want to move on to the DRAFT CONTROL phase?"
+msgstr "¿Está seguro que quiere mover a fase BORRADOR el CONTROL"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__attachment
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__attachment
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__attachment
+msgid "Attachment"
+msgstr "Adjunto"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__message_attachment_count
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__message_attachment_count
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__message_attachment_count
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__message_attachment_count
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__message_attachment_count
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__message_attachment_count
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__message_attachment_count
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__message_attachment_count
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__message_attachment_count
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__message_attachment_count
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__message_attachment_count
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__message_attachment_count
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__message_attachment_count
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__message_attachment_count
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__message_attachment_count
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__message_attachment_count
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__message_attachment_count
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__message_attachment_count
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__message_attachment_count
+msgid "Attachment Count"
+msgstr "Número de adjuntos"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.control_design_form
+msgid "CONFIRM"
+msgstr "CONFIRMAR"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__color
+msgid "Color"
+msgstr "Color"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__comment
+msgid "Comment"
+msgstr "Comentarios"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__comment
+msgid "Comment/Description"
+msgstr "Comentario/Descripción"
+
+#. module: grcbit_risk_management
+#: model:ir.actions.act_window,name:grcbit_risk_management.company_objective_action
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__company_objective_id
+#: model:ir.ui.menu,name:grcbit_risk_management.menu_company_objective
+msgid "Company Objective"
+msgstr "Objetivo compañia"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__company_risk_ids
+msgid "Company Risk"
+msgstr "Riesgo"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__company_risk_count
+msgid "Company Risk Count"
+msgstr "Conteo de riesgo"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__consequence
+msgid "Consequence"
+msgstr "Consecuencia"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__control
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__display_name
+#: model:ir.module.category,name:grcbit_risk_management.module_grcbit_risk_control
+#: model:ir.ui.menu,name:grcbit_risk_management.menu_control
+#: model:ir.ui.menu,name:grcbit_risk_management.menu_control_design
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.control_set_groups_formview_inh
+msgid "Control"
+msgstr "Control"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__display_name
+msgid "Control Category"
+msgstr "Categoria Control"
+
+#. module: grcbit_risk_management
+#: model:ir.actions.act_window,name:grcbit_risk_management.control_design_action
+#: model:ir.model,name:grcbit_risk_management.model_control_design
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__control_design_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__control_design_id
+msgid "Control Design"
+msgstr "Diseño Control"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.control_design_form
+msgid "Control Evaluation"
+msgstr "Evaluacion Control"
+
+#. module: grcbit_risk_management
+#: model:ir.model,name:grcbit_risk_management.model_control_evidence
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__control_evidence_ids
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.control_design_form
+msgid "Control Evidence"
+msgstr "Evidencia Control"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__control_line_ids
+msgid "Control Guide"
+msgstr "Guía Control"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__control_id
+msgid "Control ID"
+msgstr "ID Control"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__control_evaluation_criteria_id
+msgid "Control Implementation Criteria"
+msgstr "Criterio de implementación del control"
+
+#. module: grcbit_risk_management
+#: model:ir.model,name:grcbit_risk_management.model_control_line
+msgid "Control Line"
+msgstr "Linea de control"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__control_periodicity
+msgid "Control Periodicity"
+msgstr "Periodicidad de control"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__name
+msgid "Control Title"
+msgstr "Nombre"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__control_type_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__name
+msgid "Control Type"
+msgstr "Tipo de control"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__create_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__create_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__create_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__create_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__create_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__create_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__create_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__create_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__create_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__create_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__create_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__create_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__create_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__create_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__create_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__create_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__create_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__create_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__create_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__create_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__create_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__create_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__create_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__create_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__create_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__create_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__create_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__create_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__create_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__create_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__create_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__create_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__create_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__create_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__create_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__create_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__cybersecurity_concept_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__name
+msgid "Cybersecurity Concept"
+msgstr "Concepto de ciberseguridad"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__data_inventory_id
+msgid "Data Asset"
+msgstr "Activo de datos"
+
+#. module: grcbit_risk_management
+#: model:ir.model,name:grcbit_risk_management.model_control_type
+#: model:ir.model,name:grcbit_risk_management.model_cybersecurity_concept
+#: model:ir.model,name:grcbit_risk_management.model_operational_capability
+#: model:ir.model,name:grcbit_risk_management.model_security_domain
+#: model:ir.model,name:grcbit_risk_management.model_security_property
+msgid "Data Inventory"
+msgstr "Inventario de datos"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__objective_description
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__risk_description
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__description
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__description
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__description
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__description
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__description
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__description
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__description
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__description
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__description
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__description
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__description
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__description
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_set_groups_user__control_design
+#: model:res.groups,name:grcbit_risk_management.group_control_design
+msgid "Design"
+msgstr "Diseñar"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__design_comment
+msgid "Design Comment"
+msgstr "Comentarios Diseño"
+
+#. module: grcbit_risk_management
+#: model:ir.actions.act_window,name:grcbit_risk_management.control_design_criteria_action
+#: model:ir.model,name:grcbit_risk_management.model_control_design_criteria
+#: model:ir.ui.menu,name:grcbit_risk_management.menu_control_design_criteria
+msgid "Design Criteria"
+msgstr "Criterio Diseño"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__design_date
+msgid "Design Date"
+msgstr "Fecha Diseño"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__control_design_criteria_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_set_groups_user__control_design_evaluation
+#: model:res.groups,name:grcbit_risk_management.group_control_design_evaluation
+msgid "Design Evaluation"
+msgstr "Evaluación Diseño"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_design__state__designed
+msgid "Design"
+msgstr "Diseñar"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__display_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__display_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__display_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__display_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__display_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__display_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__display_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__display_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__display_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__display_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__display_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__display_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__display_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__display_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__display_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__display_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_set_groups_user__control_draft
+#: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_design__state__draft
+#: model:res.groups,name:grcbit_risk_management.group_control_draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__draft_comment
+msgid "Draft Comment"
+msgstr "Comentarios Borrador"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__control_evaluation_criteria_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_set_groups_user__control_effectiveness_evaluation
+#: model:res.groups,name:grcbit_risk_management.group_control_effectiveness_evaluation
+msgid "Effectiveness Evaluation"
+msgstr "Evaluación de eficacia"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__estimated_date
+msgid "Estimated Implementation Date"
+msgstr "Fecha estimada de implementación"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__evidence_guide
+msgid "Evidence Guide"
+msgstr "Guía de evidencia"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__evidence_pending
+msgid "Evidence Pending"
+msgstr "Evidencia Pendiente"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__message_follower_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__message_follower_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__message_follower_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__message_follower_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__message_follower_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__message_follower_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__message_follower_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__message_follower_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__message_follower_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__message_follower_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__message_follower_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__message_follower_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__message_follower_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__message_follower_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__message_follower_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__message_follower_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__message_follower_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__message_follower_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__message_partner_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__message_partner_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__message_partner_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__message_partner_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__message_partner_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__message_partner_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__message_partner_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__message_partner_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__message_partner_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__message_partner_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__message_partner_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__message_partner_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__message_partner_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__message_partner_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__message_partner_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__message_partner_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__message_partner_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__message_partner_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Socios)"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_objective__activity_type_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_risk__activity_type_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design__activity_type_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design_criteria__activity_type_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evaluation_criteria__activity_type_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evidence__activity_type_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_line__activity_type_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_type__activity_type_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_cybersecurity_concept__activity_type_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_impact_level__activity_type_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_inherent_risk_level__activity_type_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_operational_capability__activity_type_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_probability_level__activity_type_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_residual_risk_level__activity_type_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_classification__activity_type_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_factor__activity_type_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_level__activity_type_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_domain__activity_type_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_property__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__has_message
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__has_message
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__has_message
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__has_message
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__has_message
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__has_message
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__has_message
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__has_message
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__has_message
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__has_message
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__has_message
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__has_message
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__has_message
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__has_message
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__has_message
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__has_message
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__has_message
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__has_message
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__has_message
+msgid "Has Message"
+msgstr "Tiene mensaje"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__id
+msgid "ID"
+msgstr "ID"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__it_inventory_id
+msgid "IT Inventory"
+msgstr "Inventario TI"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
+msgid "IT System:"
+msgstr "Sistema TI"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__activity_exception_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__activity_exception_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__activity_exception_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__activity_exception_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__activity_exception_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__activity_exception_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__activity_exception_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__activity_exception_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__activity_exception_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__activity_exception_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__activity_exception_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__activity_exception_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__activity_exception_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__activity_exception_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__activity_exception_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__activity_exception_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__activity_exception_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__activity_exception_icon
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_objective__activity_exception_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_risk__activity_exception_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design__activity_exception_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design_criteria__activity_exception_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evaluation_criteria__activity_exception_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evidence__activity_exception_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_line__activity_exception_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_type__activity_exception_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_cybersecurity_concept__activity_exception_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_impact_level__activity_exception_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_inherent_risk_level__activity_exception_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_operational_capability__activity_exception_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_probability_level__activity_exception_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_residual_risk_level__activity_exception_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_classification__activity_exception_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_factor__activity_exception_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_level__activity_exception_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_domain__activity_exception_icon
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_property__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar un actividad de excepción"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_objective__message_needaction
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_risk__message_needaction
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design__message_needaction
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design_criteria__message_needaction
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evaluation_criteria__message_needaction
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evidence__message_needaction
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_line__message_needaction
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_type__message_needaction
+#: model:ir.model.fields,help:grcbit_risk_management.field_cybersecurity_concept__message_needaction
+#: model:ir.model.fields,help:grcbit_risk_management.field_impact_level__message_needaction
+#: model:ir.model.fields,help:grcbit_risk_management.field_inherent_risk_level__message_needaction
+#: model:ir.model.fields,help:grcbit_risk_management.field_operational_capability__message_needaction
+#: model:ir.model.fields,help:grcbit_risk_management.field_probability_level__message_needaction
+#: model:ir.model.fields,help:grcbit_risk_management.field_residual_risk_level__message_needaction
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_classification__message_needaction
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_factor__message_needaction
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_level__message_needaction
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_domain__message_needaction
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_property__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, mensajes nuevos requieren de su atención"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_objective__message_has_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_objective__message_has_sms_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_risk__message_has_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_risk__message_has_sms_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design__message_has_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design__message_has_sms_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design_criteria__message_has_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design_criteria__message_has_sms_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evaluation_criteria__message_has_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evaluation_criteria__message_has_sms_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evidence__message_has_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evidence__message_has_sms_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_line__message_has_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_line__message_has_sms_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_type__message_has_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_type__message_has_sms_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_cybersecurity_concept__message_has_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_cybersecurity_concept__message_has_sms_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_impact_level__message_has_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_impact_level__message_has_sms_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_inherent_risk_level__message_has_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_inherent_risk_level__message_has_sms_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_operational_capability__message_has_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_operational_capability__message_has_sms_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_probability_level__message_has_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_probability_level__message_has_sms_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_residual_risk_level__message_has_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_residual_risk_level__message_has_sms_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_classification__message_has_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_classification__message_has_sms_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_factor__message_has_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_factor__message_has_sms_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_level__message_has_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_level__message_has_sms_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_domain__message_has_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_domain__message_has_sms_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_property__message_has_error
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_property__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcado, algunos mensajes tienen error de entrega"
+
+#. module: grcbit_risk_management
+#: model:ir.actions.act_window,name:grcbit_risk_management.impact_level_action
+#: model:ir.model,name:grcbit_risk_management.model_impact_level
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__impact_level_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__impact_level_id
+#: model:ir.ui.menu,name:grcbit_risk_management.menu_impact_level
+msgid "Impact Level"
+msgstr "Nivel Impacto"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_set_groups_user__control_implementation
+#: model:res.groups,name:grcbit_risk_management.group_control_implementation
+msgid "Assess"
+msgstr "Evaluar"
+
+#. module: grcbit_risk_management
+#: model:ir.actions.act_window,name:grcbit_risk_management.control_evaluation_criteria_action
+#: model:ir.model,name:grcbit_risk_management.model_control_evaluation_criteria
+#: model:ir.ui.menu,name:grcbit_risk_management.menu_control_evaluation_criteria
+msgid "Implementation Criteria"
+msgstr "Criterio Implementación"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__implementation_date
+msgid "Implementation Date"
+msgstr "Fecha Implementación"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_design__state__implemented
+msgid "Assess"
+msgstr "Evaluar"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__implemented_comment
+msgid "Assess Comment"
+msgstr "Evaluar Comentarios"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__inherent_factor_high
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__inherent_factor_low
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__inherent_factor_medium
+msgid "Inherent Count"
+msgstr "Contador inherente"
+
+#. module: grcbit_risk_management
+#: model:ir.actions.act_window,name:grcbit_risk_management.risk_factor_dash
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__inherent_risk_level_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__inherent_risk
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_dashboard
+msgid "Inherent Risk"
+msgstr "Riesgo inherente"
+
+#. module: grcbit_risk_management
+#: model:ir.actions.act_window,name:grcbit_risk_management.inherent_risk_level_action
+#: model:ir.model,name:grcbit_risk_management.model_inherent_risk_level
+#: model:ir.ui.menu,name:grcbit_risk_management.menu_inherent_risk_level
+msgid "Inherent Risk Level"
+msgstr "Nivel Riesgo Inherente"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__message_is_follower
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__message_is_follower
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__message_is_follower
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__message_is_follower
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__message_is_follower
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__message_is_follower
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__message_is_follower
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__message_is_follower
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__message_is_follower
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__message_is_follower
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__message_is_follower
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__message_is_follower
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__message_is_follower
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__message_is_follower
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__message_is_follower
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__message_is_follower
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__message_is_follower
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__message_is_follower
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__is_implemented
+msgid "Is Implemented?"
+msgstr "¿Está implementado?"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__is_key_control
+msgid "Key Control"
+msgstr "Control clave"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective____last_update
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk____last_update
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design____last_update
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria____last_update
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria____last_update
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence____last_update
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line____last_update
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type____last_update
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept____last_update
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level____last_update
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level____last_update
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability____last_update
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level____last_update
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level____last_update
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification____last_update
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor____last_update
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level____last_update
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain____last_update
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__write_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__write_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__write_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__write_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__write_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__write_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__write_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__write_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__write_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__write_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__write_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__write_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__write_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__write_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__write_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__write_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__write_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__write_uid
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__write_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__write_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__write_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__write_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__write_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__write_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__write_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__write_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__write_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__write_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__write_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__write_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__write_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__write_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__write_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__write_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__write_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__write_date
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
+msgid "Logo"
+msgstr "Logotipo"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__message_main_attachment_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__message_main_attachment_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__message_main_attachment_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__message_main_attachment_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__message_main_attachment_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__message_main_attachment_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__message_main_attachment_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__message_main_attachment_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__message_main_attachment_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__message_main_attachment_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__message_main_attachment_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__message_main_attachment_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__message_main_attachment_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__message_main_attachment_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__message_main_attachment_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__message_main_attachment_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__message_main_attachment_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__message_main_attachment_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjunto principal"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__message_has_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__message_has_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__message_has_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__message_has_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__message_has_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__message_has_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__message_has_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__message_has_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__message_has_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__message_has_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__message_has_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__message_has_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__message_has_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__message_has_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__message_has_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__message_has_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__message_has_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__message_has_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de entrega de mensaje"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__my_activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__my_activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__my_activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__my_activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__my_activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__my_activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__my_activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__my_activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__my_activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__my_activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__my_activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__my_activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__my_activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__my_activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__my_activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__my_activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__my_activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__my_activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__objective_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__risk_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__activity_date_deadline
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__activity_summary
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__activity_summary
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__activity_summary
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__activity_summary
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__activity_summary
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__activity_summary
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__activity_summary
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__activity_summary
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__activity_summary
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__activity_summary
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__activity_summary
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__activity_summary
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__activity_summary
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__activity_summary
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__activity_summary
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__activity_summary
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__activity_summary
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__activity_summary
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__activity_type_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__activity_type_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__activity_type_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__activity_type_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__activity_type_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__activity_type_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__activity_type_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__activity_type_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__activity_type_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__activity_type_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__activity_type_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__activity_type_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__activity_type_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__activity_type_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__activity_type_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__activity_type_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__activity_type_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__activity_type_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__message_needaction_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__message_needaction_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__message_needaction_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__message_needaction_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__message_needaction_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__message_needaction_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__message_needaction_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__message_needaction_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__message_needaction_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__message_needaction_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__message_needaction_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__message_needaction_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__message_needaction_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__message_needaction_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__message_needaction_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__message_needaction_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__message_needaction_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__message_needaction_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__message_has_error_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__message_has_error_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__message_has_error_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__message_has_error_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__message_has_error_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__message_has_error_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__message_has_error_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__message_has_error_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__message_has_error_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__message_has_error_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__message_has_error_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__message_has_error_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__message_has_error_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__message_has_error_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__message_has_error_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__message_has_error_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__message_has_error_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__message_has_error_counter
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_objective__message_needaction_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_risk__message_needaction_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design__message_needaction_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design_criteria__message_needaction_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evaluation_criteria__message_needaction_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evidence__message_needaction_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_line__message_needaction_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_type__message_needaction_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_cybersecurity_concept__message_needaction_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_impact_level__message_needaction_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_inherent_risk_level__message_needaction_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_operational_capability__message_needaction_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_probability_level__message_needaction_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_residual_risk_level__message_needaction_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_classification__message_needaction_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_factor__message_needaction_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_level__message_needaction_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_domain__message_needaction_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_property__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren accion"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_objective__message_has_error_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_risk__message_has_error_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design__message_has_error_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design_criteria__message_has_error_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evaluation_criteria__message_has_error_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evidence__message_has_error_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_line__message_has_error_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_type__message_has_error_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_cybersecurity_concept__message_has_error_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_impact_level__message_has_error_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_inherent_risk_level__message_has_error_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_operational_capability__message_has_error_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_probability_level__message_has_error_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_residual_risk_level__message_has_error_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_classification__message_has_error_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_factor__message_has_error_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_level__message_has_error_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_domain__message_has_error_counter
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_property__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__operational_capability_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__name
+msgid "Operational Capability"
+msgstr "Capacidad Operacional"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields.selection,name:grcbit_risk_management.selection__control_line__control_periodicity__pe
+msgid "Per event"
+msgstr "Por evento"
+
+#. module: grcbit_risk_management
+#: model:ir.actions.act_window,name:grcbit_risk_management.probability_level_action
+#: model:ir.model,name:grcbit_risk_management.model_probability_level
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__probability_level_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__probability_level_id
+#: model:ir.ui.menu,name:grcbit_risk_management.menu_probability_level
+msgid "Probability Level"
+msgstr "Nivel Probabilidad"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__description
+msgid "Purpose"
+msgstr "Descripción/Objetivo"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__quantification
+msgid "Quantification"
+msgstr "Cuantificación"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.control_design_form
+msgid "REJECT"
+msgstr "RECHAZAR"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_set_groups_user__control_reject
+#: model:res.groups,name:grcbit_risk_management.group_control_reject
+msgid "Reject"
+msgstr "Rechazar"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__rejected_date
+msgid "Rejected Date"
+msgstr "Fecha Rechazo"
+
+#. module: grcbit_risk_management
+#: model:ir.actions.act_window,name:grcbit_risk_management.risk_factor_dash_residual
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__residual_risk_level_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__residual_risk_level_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__residual_risk
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_dashboard
+msgid "Residual Risk"
+msgstr "Riesgo Residual"
+
+#. module: grcbit_risk_management
+#: model:ir.actions.act_window,name:grcbit_risk_management.residual_risk_level_action
+#: model:ir.model,name:grcbit_risk_management.model_residual_risk_level
+#: model:ir.ui.menu,name:grcbit_risk_management.menu_residual_risk_level
+msgid "Residual Risk Level"
+msgstr "Nivel Riesgo Residual"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__residual_risk_count
+msgid "Residual count"
+msgstr "Contador residual"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__responsible
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__responsible_id
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__activity_user_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__activity_user_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__activity_user_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__activity_user_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__activity_user_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__activity_user_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__activity_user_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__activity_user_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__activity_user_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__activity_user_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__activity_user_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__activity_user_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__activity_user_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__activity_user_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__activity_user_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__activity_user_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__activity_user_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__activity_user_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: grcbit_risk_management
+#: model:ir.actions.act_window,name:grcbit_risk_management.company_risk_action
+#: model:ir.ui.menu,name:grcbit_risk_management.menu_company_risk
+msgid "Risk"
+msgstr "Riesgo"
+
+#. module: grcbit_risk_management
+#: model:ir.actions.act_window,name:grcbit_risk_management.risk_classification_action
+#: model:ir.model,name:grcbit_risk_management.model_risk_classification
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__risk_classification
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__name
+#: model:ir.ui.menu,name:grcbit_risk_management.menu_risk_classification
+msgid "Risk Category"
+msgstr "Categoría Riesgo"
+
+#. module: grcbit_risk_management
+#: model:ir.actions.act_window,name:grcbit_risk_management.risk_factor_action
+#: model:ir.model,name:grcbit_risk_management.model_risk_factor
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__risk_factor_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__name
+#: model:ir.ui.menu,name:grcbit_risk_management.menu_risk_factor
+msgid "Risk Factor"
+msgstr "Factor Riesgo"
+
+#. module: grcbit_risk_management
+#: model:ir.actions.report,name:grcbit_risk_management.print_compliance
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
+msgid "Risk Factor Report"
+msgstr "Resporte Factor Riesgo"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__risk_id
+msgid "Risk ID"
+msgstr "ID Riesgo"
+
+#. module: grcbit_risk_management
+#: model:ir.actions.act_window,name:grcbit_risk_management.risk_level_action
+#: model:ir.model,name:grcbit_risk_management.model_risk_level
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__risk_level_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__risk_level_name
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__name
+#: model:ir.ui.menu,name:grcbit_risk_management.menu_risk_level
+msgid "Risk Level"
+msgstr "Nivel Riesgo"
+
+#. module: grcbit_risk_management
+#: model:ir.ui.menu,name:grcbit_risk_management.menu_risk_metric
+msgid "Risk Management"
+msgstr "Gestión Riesgo"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__responsible
+msgid "Risk Owner"
+msgstr "Dueño Riesgo"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.risk_factor_print_template
+msgid "Risk:"
+msgstr "Riesgo:"
+
+#. module: grcbit_risk_management
+#: model_terms:ir.ui.view,arch_db:grcbit_risk_management.control_design_form
+msgid "SET TO DRAFT"
+msgstr "ENVIAR A BORRADOR"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__message_has_sms_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__message_has_sms_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__message_has_sms_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__message_has_sms_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__message_has_sms_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__message_has_sms_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__message_has_sms_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__message_has_sms_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__message_has_sms_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__message_has_sms_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__message_has_sms_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__message_has_sms_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__message_has_sms_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__message_has_sms_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__message_has_sms_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__message_has_sms_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__message_has_sms_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__message_has_sms_error
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de entrega SMS"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__security_domain_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__name
+msgid "Security Domain"
+msgstr "Dominio Seguridad"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__security_property_id
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__name
+msgid "Security Property"
+msgstr "Propiedad Seguridad"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design__name
+msgid "Short name of the control"
+msgstr "Nombre corto de control"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__state
+msgid "Status"
+msgstr "Estatus"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_objective__activity_state
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_risk__activity_state
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design__activity_state
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design_criteria__activity_state
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evaluation_criteria__activity_state
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evidence__activity_state
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_line__activity_state
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_type__activity_state
+#: model:ir.model.fields,help:grcbit_risk_management.field_cybersecurity_concept__activity_state
+#: model:ir.model.fields,help:grcbit_risk_management.field_impact_level__activity_state
+#: model:ir.model.fields,help:grcbit_risk_management.field_inherent_risk_level__activity_state
+#: model:ir.model.fields,help:grcbit_risk_management.field_operational_capability__activity_state
+#: model:ir.model.fields,help:grcbit_risk_management.field_probability_level__activity_state
+#: model:ir.model.fields,help:grcbit_risk_management.field_residual_risk_level__activity_state
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_classification__activity_state
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_factor__activity_state
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_level__activity_state
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_domain__activity_state
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_property__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: grcbit_risk_management
+#: model:ir.model.constraint,message:grcbit_risk_management.constraint_control_type_name_uniq
+msgid "The control type name already exists."
+msgstr "El nombre del control ya existe."
+
+#. module: grcbit_risk_management
+#: model:ir.model.constraint,message:grcbit_risk_management.constraint_cybersecurity_concept_name_uniq
+msgid "The cybersecurty concept name already exists."
+msgstr "El nombre del concepto de ciberseguridad ya existe."
+
+#. module: grcbit_risk_management
+#: model:ir.model.constraint,message:grcbit_risk_management.constraint_impact_level_name_uniq
+msgid "The impact level name already exists."
+msgstr "El nombre del nivel de impacto ya existe."
+
+#. module: grcbit_risk_management
+#: model:ir.model.constraint,message:grcbit_risk_management.constraint_impact_level_level_uniq
+msgid "The impact level value already exists."
+msgstr "El valor del nivel de impacto ya existe."
+
+#. module: grcbit_risk_management
+#: model:ir.model.constraint,message:grcbit_risk_management.constraint_operational_capability_name_uniq
+msgid "The operational capability name already exists."
+msgstr "El nombre de la capacidad operacional ya existe."
+
+#. module: grcbit_risk_management
+#: model:ir.model.constraint,message:grcbit_risk_management.constraint_probability_level_name_uniq
+msgid "The probability level name already exists."
+msgstr "El nombre del nivel de probabilidad ya existe."
+
+#. module: grcbit_risk_management
+#: model:ir.model.constraint,message:grcbit_risk_management.constraint_probability_level_level_uniq
+msgid "The probability level value already exists."
+msgstr "El nombre del valor de probabilidad ya existe."
+
+#. module: grcbit_risk_management
+#: model:ir.model.constraint,message:grcbit_risk_management.constraint_risk_classification_name_uniq
+msgid "The risk classification name already exists."
+msgstr "El nombre de la Clasificación de riesgo ya existe."
+
+#. module: grcbit_risk_management
+#: model:ir.model.constraint,message:grcbit_risk_management.constraint_risk_level_name_uniq
+msgid "The risk level name already exists."
+msgstr "El nombre del nivel de riesgo ya existe."
+
+#. module: grcbit_risk_management
+#: model:ir.model.constraint,message:grcbit_risk_management.constraint_risk_level_level_uniq
+msgid "The risk level value already exists."
+msgstr "El valor del nivel de riesgo ya existe."
+
+#. module: grcbit_risk_management
+#: model:ir.model.constraint,message:grcbit_risk_management.constraint_security_domain_name_uniq
+msgid "The security domain name already exists."
+msgstr "El nombre del dominio de seguridad ya existe."
+
+#. module: grcbit_risk_management
+#: model:ir.model.constraint,message:grcbit_risk_management.constraint_security_property_name_uniq
+msgid "The security property name already exists."
+msgstr "El nombre de la propiedad de seguridad ya existe."
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_objective__activity_exception_decoration
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_risk__activity_exception_decoration
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design__activity_exception_decoration
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design_criteria__activity_exception_decoration
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evaluation_criteria__activity_exception_decoration
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evidence__activity_exception_decoration
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_line__activity_exception_decoration
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_type__activity_exception_decoration
+#: model:ir.model.fields,help:grcbit_risk_management.field_cybersecurity_concept__activity_exception_decoration
+#: model:ir.model.fields,help:grcbit_risk_management.field_impact_level__activity_exception_decoration
+#: model:ir.model.fields,help:grcbit_risk_management.field_inherent_risk_level__activity_exception_decoration
+#: model:ir.model.fields,help:grcbit_risk_management.field_operational_capability__activity_exception_decoration
+#: model:ir.model.fields,help:grcbit_risk_management.field_probability_level__activity_exception_decoration
+#: model:ir.model.fields,help:grcbit_risk_management.field_residual_risk_level__activity_exception_decoration
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_classification__activity_exception_decoration
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_factor__activity_exception_decoration
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_level__activity_exception_decoration
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_domain__activity_exception_decoration
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_property__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__value
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__value
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__value
+msgid "Value"
+msgstr "Valor"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_objective__website_message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_company_risk__website_message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design__website_message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_design_criteria__website_message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evaluation_criteria__website_message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_evidence__website_message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_line__website_message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_control_type__website_message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_cybersecurity_concept__website_message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_impact_level__website_message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_inherent_risk_level__website_message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_operational_capability__website_message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_probability_level__website_message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_residual_risk_level__website_message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_classification__website_message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_factor__website_message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__website_message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_domain__website_message_ids
+#: model:ir.model.fields,field_description:grcbit_risk_management.field_security_property__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_objective__website_message_ids
+#: model:ir.model.fields,help:grcbit_risk_management.field_company_risk__website_message_ids
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design__website_message_ids
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design_criteria__website_message_ids
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evaluation_criteria__website_message_ids
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_evidence__website_message_ids
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_line__website_message_ids
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_type__website_message_ids
+#: model:ir.model.fields,help:grcbit_risk_management.field_cybersecurity_concept__website_message_ids
+#: model:ir.model.fields,help:grcbit_risk_management.field_impact_level__website_message_ids
+#: model:ir.model.fields,help:grcbit_risk_management.field_inherent_risk_level__website_message_ids
+#: model:ir.model.fields,help:grcbit_risk_management.field_operational_capability__website_message_ids
+#: model:ir.model.fields,help:grcbit_risk_management.field_probability_level__website_message_ids
+#: model:ir.model.fields,help:grcbit_risk_management.field_residual_risk_level__website_message_ids
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_classification__website_message_ids
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_factor__website_message_ids
+#: model:ir.model.fields,help:grcbit_risk_management.field_risk_level__website_message_ids
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_domain__website_message_ids
+#: model:ir.model.fields,help:grcbit_risk_management.field_security_property__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design__control
+msgid "What the control is"
+msgstr "¿Qué es el control?"
+
+#. module: grcbit_risk_management
+#: model:ir.model.fields,help:grcbit_risk_management.field_control_design__description
+msgid "Why the control should be implemented"
+msgstr "¿Por que el control debe ser implementado?"
+
+#. module: grcbit_risk_management
+#: model:ir.model,name:grcbit_risk_management.model_company_objective
+msgid "company.objective"
+msgstr ""
+
+#. module: grcbit_risk_management
+#: model:ir.model,name:grcbit_risk_management.model_company_risk
+msgid "company.risk"
+msgstr ""
+
+#. module: grcbit_risk_management
+#: model:ir.model,name:grcbit_risk_management.model_set_groups_user
+msgid "set.groups.user"
+msgstr ""

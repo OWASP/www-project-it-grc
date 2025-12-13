@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="grcbit_base_set_groups_formview_inh">
+      <field name="name">Set Groups</field>
+      <field name="model">set.groups.user</field>
+      <field name="inherit_id" ref="grcbit_setgroups.set_groups_formview"/>
+      <field name="arch" type="xml">
+        <xpath expr="//notebook[@name='container_access']" position="inside">
+          <page name="grc_groups" string="GRC" groups="grcbit_base.group_grc_admin">
+            <group>
+              <group>
+                <field name="grc_admin_check"/>
+                <field name="grc_consultant_check"/>
+                <field name="asset_management_check"/>
+                <field name="risk_management_check"/>
+              </group>
+              <group>
+                <field name="control_check"/>
+                <field name="isms_check"/>
+                <field name="compliance_check"/>
+                <field name="guest_check"/>
+              </group>
+            </group>
+          </page>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

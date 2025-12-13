@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <menuitem name="GRC" id="menu_root" sequence="1" />
+    <!-- ASSET MANAGEMET MENU -->
+    <menuitem name="Asset Management" id="menu_asset_management" parent="menu_root"  sequence="2" />
+    <menuitem name="Data Classification" id="menu_data_classification" parent="menu_asset_management" action="data_classification_action" sequence="3"/>
+    <menuitem name="IT System" id="menu_it_inventory" parent="menu_asset_management" action="it_inventory_action" sequence="2" />
+    <menuitem name="Data Asset" id="menu_data_inventory" parent="menu_asset_management" action="data_inventory_action" sequence="1" />
+    <menuitem name="Supplier" id="menu_third_party" parent="menu_asset_management" action="third_party_action" sequence="4"/>
+
+    <!-- RES USERS -->
+    <menuitem name="Settings" id="menu_settings" parent="menu_root"  sequence="99" groups="grcbit_base.group_grc_admin"/>
+    <menuitem name="Users" id="menu_users" parent="menu_settings" action="grcbit_setgroups.manage_users_action" groups="grcbit_base.group_grc_admin"/>
+
+    <!--MENUITEMS HIDDEN-->
+
+    <record model="ir.ui.menu" id="base.menu_board_root">
+      <field name="groups_id" eval="[(6,0,[ref('base.group_system'), ref('base.group_erp_manager')])]"/>
+    </record>	
+
+    <record model="ir.ui.menu" id="spreadsheet_dashboard.spreadsheet_dashboard_menu_root">
+      <field name="groups_id" eval="[(6,0,[ref('base.group_system'), ref('base.group_erp_manager')])]"/>
+    </record>
+
+    <record model="ir.ui.menu" id="base.menu_management">
+      <field name="groups_id" eval="[(6,0,[ref('base.group_system'), ref('base.group_erp_manager')])]"/>
+    </record>	
+  </data>
+</odoo>

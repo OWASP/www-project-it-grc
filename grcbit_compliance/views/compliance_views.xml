@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <!--   COMPLAINCE VERSION   -->
+    <record id="compliance_version_action" model="ir.actions.act_window">
+      <field name="name">Compliance Version</field>
+      <field name="res_model">compliance.version</field>
+      <field name="view_mode">kanban,tree,form</field>
+    </record>
+    <record model="ir.ui.view" id="compliance_version_view">
+      <field name="name">Compliance Version</field>
+	    <field name="model">compliance.version</field>
+      <field name="arch" type="xml">
+	      <tree multi_edit="1">
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="compliance_version_form">
+      <field name="name">Compliance Version</field>
+      <field name="model">compliance.version</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="description"/>
+          </group>
+	        <notebook>
+            <page string="Compliance Objective" name="compliance_objective">
+              <group>
+                <field name="compliance_control_objective_ids" widget="section_and_note_one2many" mode="tree">
+                  <form>
+                    <group>
+                      <group>
+                        <field name="name"/>
+                      </group>
+                      <group>
+                        <field name="description"/>
+                      </group>
+                      <field name="compliance_control_ids"/>
+                    </group>
+                  </form>
+                  <tree class="my_class">
+                    <field name="name"/>
+                    <field name="description"/>
+                  </tree>
+                </field>
+              </group>
+            </page>
+	        </notebook>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="compliance_version_kanban">
+      <field name="name">Compliance Version</field>
+      <field name="model">compliance.version</field>
+      <field name="arch" type="xml">
+        <kanban class="o_kanban_mobile">
+          <field name="name"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div style="background-color:#5DADE2;">
+                    <strong class="o_kanban_record_title">
+                      <span style="font-weight:bold;"><field name="name"/></span>
+                    </strong>
+                  </div>
+                  <div>
+                    <field name="description"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="compliance_version_search">
+      <field name="name">Compliance Version</field>
+      <field name="model">compliance.version</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" />
+          <field name="description"/>
+        </search>
+      </field>
+    </record>
+
+    <!--   COMPLIANCE CONTROL OBJECTIVE   -->
+    <record id="compliance_control_objective_action" model="ir.actions.act_window">
+      <field name="name">Compliance Requirement</field>
+      <field name="res_model">compliance.control.objective</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="context">{'search_default_group_by_compliance_version':1}</field>
+    </record>
+    <record model="ir.ui.view" id="compliance_control_objective_view">
+	    <field name="name">Compliance Requirement</field>
+	    <field name="model">compliance.control.objective</field>
+      <field name="arch" type="xml">
+        <tree multi_edit="1">
+          <field name="compliance_version_id"/>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="compliance_control_objective_form">
+      <field name="name">Compliance Requirement</field>
+      <field name="model">compliance.control.objective</field>
+      <field name="arch" type="xml">
+        <form>
+		      <group>
+            <field name="compliance_version_id" required="1" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
+            <field name="name"/>
+            <field name="description"/>
+          </group>
+	        <notebook>
+            <page string="Compliance Requirement" name="compliance_requirement">
+              <group>
+                <field name="compliance_control_ids" widget="section_and_note_one2many" mode="tree">
+                  <form>
+                    <group>
+                      <field name="name"/>
+                      <field name="description"/>
+                    </group>
+                  </form>
+                  <tree multi_edit="1">
+                    <field name="name"/>
+                    <field name="description"/>
+                  </tree>
+                </field>
+              </group>
+		        </page>
+	        </notebook>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="compliance_control_objective_kanban">
+	    <field name="name">Compliance Requirement</field>
+      <field name="model">compliance.control.objective</field>
+      <field name="arch" type="xml">
+        <kanban class="o_kanban_mobile" group_create="False" quick_create="False">
+          <field name="name"/>
+          <field name="compliance_version_id"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <strong class="o_kanban_record_title">
+                    <field name="compliance_version_id"/>
+                  </strong><br/>
+                  <div style="overflow: hidden; max-height:200px;">
+                    <field name="name"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="compliance_control_objective_search">
+      <field name="name">Compliance Control Objective</field>
+      <field name="model">compliance.control.objective</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="compliance_version_id"/>
+          <field name="display_name"/>
+          <field name="description"/>
+          <group expand="0" string="Group By">
+            <filter string="Compliance Version" name="group_by_compliance_version" context="{'group_by':'compliance_version_id'}"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!--   COMPLIANCE CONTROL   -->
+    <record id="compliance_control_action" model="ir.actions.act_window">
+      <field name="name">Compliance Requirement</field>
+      <field name="res_model">compliance.control</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+    <record model="ir.ui.view" id="compliance_control_view">
+	    <field name="name">Compliance Requirement</field>
+	    <field name="model">compliance.control</field>
+      <field name="arch" type="xml">
+        <tree multi_edit="1">
+          <field name="compliance_control_objective_id"/>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="compliance_control_form">
+      <field name="name">Compliance Requirement</field>
+      <field name="model">compliance.control</field>
+      <field name="arch" type="xml">
+        <form>
+		      <group>
+          <field name="compliance_control_objective_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
+            <field name="name"/>
+            <field name="description"/>
+          </group>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="compliance_control_kanban">
+	    <field name="name">Compliance Requirement</field>
+      <field name="model">compliance.control</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_kanban_mobile">
+          <field name="name"/>
+          <field name="description"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <strong class="o_kanban_record_title">
+                    <field name="name"/>
+                  </strong>
+                  <div>
+                    <field name="description"/>
+		              </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="compliance_control_search">
+      <field name="name">Compliance Control</field>
+      <field name="model">compliance.control</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="compliance_control_objective_id"/>
+          <field name="display_name"/>
+          <field name="description"/>
+        </search>
+      </field>
+    </record>
+
+    <!--   COMPLIANCE ISO CONTROL   -->
+    <record id="compliance_iso_control_action" model="ir.actions.act_window">
+      <field name="name">Compliance</field>
+      <field name="res_model">compliance.iso.control</field>
+      <field name="view_mode">tree,form,kanban</field>
+      <field name="context">{'search_default_group_by_compliance_version':1}</field>
+    </record>
+    <record model="ir.ui.view" id="compliance_iso_control_view">
+	    <field name="name">Compliance</field>
+	    <field name="model">compliance.iso.control</field>
+      <field name="arch" type="xml">
+        <tree multi_edit="1">
+          <field name="compliance_control_id" />
+          <field name="description"/>
+          <field name="control_id" widget="many2many_tags_open"/>
+          <field name="control_status" widget="percentpie" force_save="1"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="compliance_iso_control_form">
+      <field name="name">Compliance</field>
+      <field name="model">compliance.iso.control</field>
+      <field name="arch" type="xml">
+        <form>
+		      <group>
+            <field name="compliance_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+            <field name="is_applicable"/>
+            <field name="is_implemented"/>
+            <!-- <field name="is_compensatory_control"/> -->
+            <field name="description"/>
+            <field name="compliance_version" invisible="1"/>
+            <field name="control_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+            <field name="control_status" widget="percentpie" force_save="1"/>
+          </group>
+          <div class="oe_chatter">
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </form>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="compliance_iso_control_kanban">
+	    <field name="name">Compliance</field>
+      <field name="model">compliance.iso.control</field>
+      <field name="arch" type="xml">
+	      <kanban class="o_kanban_mobile" group_create="False" quick_create="False">
+          <field name="compliance_control_id"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <strong class="o_kanban_record_title">
+                    <field name="compliance_control_id"/>
+                  </strong>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="compliance_iso_control_search">
+      <field name="name">Compliance ISO Control</field>
+      <field name="model">compliance.iso.control</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="compliance_version" />
+          <field name="compliance_control_id" />
+          <field name="description"/>
+          <field name="control_id"/>
+          <group expand="0" string="Group By">
+            <filter string="Compliance Version" name="group_by_compliance_version" context="{'group_by':'compliance_version'}"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!--   MENUITEMS   -->
+    <!-- COMPLIANCE -->
+    <menuitem name="Compliance" id="menu_compliance" parent="grcbit_base.menu_root" sequence="6"/>
+    <menuitem name="Version" id="menu_compliance_version" parent="menu_compliance" action="compliance_version_action" sequence="2" />
+    <menuitem name="Requirement" id="menu_compliance_control_objective" parent="menu_compliance" action="compliance_control_objective_action" sequence="3" />
+    <menuitem name="Compliance" id="menu_compliance_iso_control" parent="menu_compliance" action="compliance_iso_control_action" sequence="4" />
+  </data>
+</odoo>
