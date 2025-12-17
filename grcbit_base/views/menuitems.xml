@@ -5,9 +5,9 @@
     <!-- ASSET MANAGEMET MENU -->
     <menuitem name="Asset Management" id="menu_asset_management" parent="menu_root"  sequence="2" />
     <menuitem name="Data Classification" id="menu_data_classification" parent="menu_asset_management" action="data_classification_action" sequence="3"/>
-    <menuitem name="IT System" id="menu_it_inventory" parent="menu_asset_management" action="it_inventory_action" sequence="2" />
-    <menuitem name="Data Asset" id="menu_data_inventory" parent="menu_asset_management" action="data_inventory_action" sequence="1" />
-    <menuitem name="Supplier" id="menu_third_party" parent="menu_asset_management" action="third_party_action" sequence="4"/>
+    <menuitem name="IT Systems" id="menu_it_inventory" parent="menu_asset_management" action="it_inventory_action" sequence="2" />
+    <menuitem name="Data Assets" id="menu_data_inventory" parent="menu_asset_management" action="data_inventory_action" sequence="1" />
+    <menuitem name="Vendors" id="menu_third_party" parent="menu_asset_management" action="third_party_action" sequence="4"/>
 
     <!-- RES USERS -->
     <menuitem name="Settings" id="menu_settings" parent="menu_root"  sequence="99" groups="grcbit_base.group_grc_admin"/>

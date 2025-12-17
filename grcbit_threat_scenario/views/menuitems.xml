@@ -42,7 +42,7 @@
 	    <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem name="Threats" id="menu_threat" parent="grcbit_risk_management.menu_risk_metric"  sequence="21" />
+    <menuitem name="NIST Threats" id="menu_threat" parent="grcbit_risk_management.menu_risk_metric"  sequence="21" />
     <menuitem name="NIST Taxonomy Threat Source" id="menu_taxonomy_threat_resource" parent="menu_threat" action="taxonomy_threat_resource_action" sequence="22"/>
     <menuitem name="NIST Characteristic Adversary Capability" id="menu_characteristics_adversary_capability" parent="menu_threat" action="characteristics_adversary_capability_action" sequence="23"/>
     <menuitem name="NIST Characteristic Adversary Intent" id="menu_characteristics_adversary_intent" parent="menu_threat" action="characteristics_adversary_intent_action" sequence="24"/>

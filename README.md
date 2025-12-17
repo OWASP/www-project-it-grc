@@ -52,9 +52,9 @@ This is a high-level catalog of the processes where critical data is managed. Cy
 
 <img width="1362" height="252" alt="image" src="https://github.com/user-attachments/assets/b6028b28-cd9f-4d68-949f-262b876a71c9" />
 
-### **Suppliers**
+### **Vendors**
 
-Suppliers (or third-party vendors) play a vital role in your organization’s operations, but they also introduce significant security and compliance risks. Many suppliers have access to your systems, sensitive data, or processing environments, which makes proper oversight essential.
+Vendors play a vital role in your organization’s operations, but they also introduce significant security and compliance risks. Many suppliers have access to your systems, sensitive data, or processing environments, which makes proper oversight essential.
 
 To safeguard your organization, it is crucial to identify suppliers with access to critical data or systems. This enables you to perform a comprehensive vendor or supplier risk assessment as part of your overall risk management process. Effective supplier risk management helps mitigate potential threats, ensures regulatory compliance, and strengthens your organization’s data protection posture.
 
@@ -66,8 +66,6 @@ To safeguard your organization, it is crucial to identify suppliers with access 
 Also you can generate reports and charts about TCP ports, IT components, data classification, business processes.
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/b32fcd5d-175c-4bd2-936e-884e26099221">
-
-### **AI agent**
 
 ### **Notes and Tips**
 
@@ -100,33 +98,6 @@ Also you can generate reports and charts about TCP ports, IT components, data cl
 > For business processes: How much data associated with a process can be lost (e.g., 30 minutes of unprocessed transactions).
 >
 > For data assets: Indicates the age of files or data that must be recoverable (e.g., no more than 1 hour of lost data).
-
-
-
-
-
-
-## **Information Security Management System (ISMS)**
-
-The platform provides you with the 93 ISO 27001:2022 controls already loaded, security attributues, security concepts, categories, so you basically need to complete the statement aplicability to show an Information Security Management System implemented in your organization.
-
-<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/c78bc2e8-0ccb-4091-8deb-136f15a441c8">
-
-<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/297c9e79-0f83-45b7-ab6c-6ef943e45110">
-
-<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/911eb6a7-1bf0-426c-a632-f056c7596e21">
-
-Statement of applicability are related to controls, so you can show evidence of compliance with each requirement of the ISO27001 standard. This also ensures that the selected controls are aligned with the identified risks.
-The status is calculated based on the controls that are related to each requirement, so you can link it with policies, procedures or evidences that demonstrate its implementation.
-
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/8aa2bacd-019f-4a7e-9d2c-da70e9040251">
-
-
-Also, you can get reports and charts about the Information Security Management System status.
-
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/deed9426-47e6-4dd2-aeda-5d2f576f4063">
-
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/cff0da5b-1be5-4fc1-a098-9d17c60bc888">
 
 
 ## **Risk Management**
@@ -163,6 +134,27 @@ Each control has a flow (draft, designed, implemented, approved), so the control
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/2699c8f6-306c-4a0e-aed5-586a4be64ccd">
 
+## **Information Security Management System (ISMS)**
+
+The platform provides you with the 93 ISO 27001:2022 controls already loaded, security attributues, security concepts, categories, so you basically need to complete the statement aplicability to show an Information Security Management System implemented in your organization.
+
+<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/c78bc2e8-0ccb-4091-8deb-136f15a441c8">
+
+<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/297c9e79-0f83-45b7-ab6c-6ef943e45110">
+
+<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/911eb6a7-1bf0-426c-a632-f056c7596e21">
+
+Statement of applicability are related to controls, so you can show evidence of compliance with each requirement of the ISO27001 standard. This also ensures that the selected controls are aligned with the identified risks.
+The status is calculated based on the controls that are related to each requirement, so you can link it with policies, procedures or evidences that demonstrate its implementation.
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/8aa2bacd-019f-4a7e-9d2c-da70e9040251">
+
+
+Also, you can get reports and charts about the Information Security Management System status.
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/deed9426-47e6-4dd2-aeda-5d2f576f4063">
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/cff0da5b-1be5-4fc1-a098-9d17c60bc888">
 
 ## **Compliance**
 
@@ -200,15 +192,17 @@ R - Read, W - Write, C - Create, u - Unlink
 
 Since this project is built on the Odoo platform, you can leverage its native functionalities to streamline your processes.
 
-Tracking Changes: Every modification to a record is automatically logged, giving you full visibility and an audit trail of all changes.
+Tracking Changes: Every modification to a record is automatically logged, providing full visibility and a reliable audit trail of all changes.
 
 <img width="1032" height="497" alt="image" src="https://github.com/user-attachments/assets/907d448d-6921-4497-9928-0f618fde1684" />
 
-
-You can send notifications to other users to inform about updates, requirements, collaboration or other information you want to communicate.
+Notifications and Collaboration: You can send notifications to other users to share updates, requirements, or any information that fosters collaboration.
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/603bf3d7-798c-43e9-a8b4-98f7481f9450">
 
+Activity Scheduling: Schedule activities such as risk assessments, set due dates, and assign owners to ensure accountability and timely execution.
+
+<img width="1672" height="590" alt="image" src="https://github.com/user-attachments/assets/e0110234-164b-48d9-9943-20fe98ce7d56" />
 
 
 

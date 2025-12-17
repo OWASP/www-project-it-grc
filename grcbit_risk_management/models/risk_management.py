@@ -213,8 +213,8 @@ class CompanyRisk(models.Model):
 
     risk_name = fields.Char(string="Name")
     risk_description = fields.Html(string="Description")
-    risk_consequence = fields.Char(string="Risk Consequence")
-    company_objective_id = fields.Many2many('company.objective', string="Company Objective")
+    risk_consequence = fields.Html(string="Risk Consequence")
+    company_objective_id = fields.Many2many('company.objective', string="Objective Affected")
     risk_classification = fields.Many2many('risk.classification', string="Risk Category")
     active = fields.Boolean(default=True)
 
@@ -222,12 +222,12 @@ class OrganizationalProfile(models.Model):
     _name = 'organizational.profile'
     _description = 'Organizational Profile'
     _inherit = ["mail.thread", "mail.activity.mixin"]
-    _rec_name = 'description'
+    #_rec_name = 'description'
 
     name = fields.Char(string="Name")
     description = fields.Text(string="Description")
-    business_market = fields.Char(string="Business Market")
-    business_compliance = fields.Char(string="Business Compliance")
-    business_geopolitical = fields.Char(string="Business Geopolitical")
-    business_corporate = fields.Char(string="Business Corporate")
+    business_market = fields.Text(string="Business Market")
+    business_compliance = fields.Text(string="Business Compliance")
+    business_geopolitical = fields.Text(string="Business Geopolitical")
+    business_corporate = fields.Text(string="Business Corporate")
     active = fields.Boolean(default=True)
