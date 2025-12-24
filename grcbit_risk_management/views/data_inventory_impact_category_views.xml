@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="grcbit_risk_management_data_inventory_form_inherit_impact_category">
+      <field name="name">Data Inventory Form Inherit - Impact</field>
+      <field name="model">data.inventory</field>
+      <field name="inherit_id" ref="grcbit_base.data_inventory_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//notebook" position="inside">
+          <page name="impact_category" string="Impact">
+            <field name="data_inventory_impact_category_ids" string="Impact">
+              <tree editable="bottom">
+                <field name="impact_category_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                <field name="impact_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                <field name="description"/>
+              </tree>
+              <form>
+                <group>
+                  <field name="impact_category_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="impact_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="description"/>
+                </group>
+              </form>
+            </field>
+          </page>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>
+
