@@ -30,6 +30,7 @@
 
         #views
         'views/risk_management_views.xml',
+        'views/data_inventory_impact_category_views.xml',
         'views/controls_views.xml',
         'views/company_product_service_views.xml',
         'views/menuitems.xml',
