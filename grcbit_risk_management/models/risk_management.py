@@ -18,6 +18,16 @@ class ImpactLevel(models.Model):
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The impact level name already exists.")),('level_uniq', 'unique(value)', _("The impact level value already exists."))]
 
+class ImpactCategory(models.Model):
+    _name = 'impact.category'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _description = 'Impact Category'
+
+    name = fields.Char(string=_('Impact Category'), required=True, help="Defines a specific type of business consequence that may result from the disruption or unavailability")
+    description = fields.Text(string=_('Description'), required=True, help="Defines a specific type of business consequence that may result from the disruption or unavailability")
+    active = fields.Boolean(default=True)
+    _sql_constraints = [('name_uniq', 'unique(name)', _("The impact category name already exists."))]
+
 class ProbabilityLevel(models.Model):
     _name = 'probability.level'
     _inherit = ["mail.thread", "mail.activity.mixin"]
