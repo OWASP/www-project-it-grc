@@ -36,7 +36,76 @@ Some attributes captured here include: asset name, data classification, asset ow
 
 Record your data assets in as much detail as possible. This information will allow us to accurately assess potential impacts on the organization and define the most appropriate risk management strategies for these assets.
 
-<img width="1333" height="571" alt="image" src="https://github.com/user-attachments/assets/8c86f5af-e353-4082-ae2b-74772f4e7991" />
+<img width="1770" height="615" alt="image" src="https://github.com/user-attachments/assets/62fda848-f5dc-460c-b210-6a8969327a0c" />
+
+#### **Field Descriptions and Guidelines**
+
+The Data Asset module is designed to help organizations register, classify, and manage critical data assets for governance, risk, and compliance purposes. Below are the fields available in this module and their recommended usage:
+
+**Asset Name**
+
+Definition: A unique identifier for the data asset.
+
+Guideline: Use a clear, descriptive name that reflects the type of data and its business relevance.
+
+Example: Cardholder Data, Customer Records, Employee Payroll Information.
+
+**Description**
+
+Definition: A detailed explanation of the data asset.
+
+Guideline: Include the nature of the data, its components, and any regulatory or compliance relevance.
+
+Example: This includes personally identifiable information (PII) associated with the cardholder, such as name, expiration date, primary account number (PAN), service code, PIN, EMV chip data, and card security codes.
+
+**Data Classification**
+
+Definition: Indicates the sensitivity level of the data.
+
+Guideline: Align with organizational data classification policy. Common levels include: Public: Data that can be shared freely. Internal: Data for internal use only. Confidential: Sensitive data requiring protection. Restricted: Highly sensitive data with strict access controls.
+
+Example: Confidential.
+
+**Asset Owner**
+
+Definition: The individual responsible for managing and protecting the data asset.
+
+Guideline: Assign ownership to someone accountable for compliance and security.
+
+Example: Designated employee or department head.
+
+**Retention Period**
+
+Definition: The duration for which the data must be retained.
+
+Guideline: Specify in years, months, or days, based on legal and business requirements.
+
+Example: 2 years.
+
+**Recovery Point Objective (RPO)**
+
+Definition: The maximum acceptable amount of data loss measured in time.
+
+Fields: RPO Value: Numeric value (e.g., 4). RPO Unit: Time unit (e.g., Hours). RPO Total Hours: Calculated total based on value and unit.
+
+Guideline: Define based on business continuity and disaster recovery plans.
+
+Example: RPO Value: 1, RPO Unit: Hours, RPO Total Hours: 1.00.
+
+**Business Impact Analysis (BIA) Section**
+
+This section evaluates the impact of disruption on the data asset: Impact Category: Type of impact (e.g., Financial, Operational, Regulatory). Impact Level: Severity (Low, Medium, High). Disruption Time Value: Numeric value for allowable downtime. Disruption Time Unit: Unit of time (Hours, Days). Disruption Duration Total Hours: Calculated downtime in hours.
+
+Description: Additional details about the impact scenario.
+
+Guideline: Use this section to support risk prioritization and recovery planning.
+
+> [!NOTE]
+> Ensure all fields are completed accurately to maintain compliance and support risk management.
+>
+> Regularly review and update data asset records to reflect changes in business processes or regulations.
+>
+> Align retention and classification policies with applicable standards (e.g., PCI DSS, GDPR, HIPAA).
 
 
 ### **IT System**

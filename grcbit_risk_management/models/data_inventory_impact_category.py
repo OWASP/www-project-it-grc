@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import fields, models, _
+from odoo import fields, models, _, api
 
 
 class DataInventory(models.Model):
@@ -38,3 +38,25 @@ class DataInventoryImpactCategory(models.Model):
     )
     description = fields.Text(string=_("Description"))
 
+    disruption_value = fields.Float(string=_('Disruption Time Value'), help="Disruption duration numerical value.")
+    disruption_unit = fields.Selection([
+        ('minutes', 'Minutes'),
+        ('hours', 'Hours'),
+        ('days', 'Days'),
+        ('weeks', 'Weeks'),
+        ], string=_('Disruption Time Unit'), default='hours', help="Disruption duration time unit.")
+    disruption_total_hours = fields.Float(string=_('Disruption Duration Total Hours'), compute='_compute_disruption_total_hours', store=True, help="Duration of the disruption.")
+
+    @api.depends('disruption_value', 'disruption_unit')
+    def _compute_disruption_total_hours(self):
+        """Convert the DISRUPTION duration into total hours for easier reporting."""
+        unit_factors = {
+            'minutes': 1.0 / 60.0,
+            'hours': 1.0,
+            'days': 24.0,
+            'weeks': 24.0 * 7.0,
+        }
+        for record in self:
+            value = record.disruption_value or 0.0
+            factor = unit_factors.get(record.disruption_unit, 1.0)
+            record.disruption_total_hours = value * factor

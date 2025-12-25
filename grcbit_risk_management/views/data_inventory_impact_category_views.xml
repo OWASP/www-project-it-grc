@@ -7,17 +7,23 @@
       <field name="inherit_id" ref="grcbit_base.data_inventory_form"/>
       <field name="arch" type="xml">
         <xpath expr="//notebook" position="inside">
-          <page name="impact_category" string="Impact">
-            <field name="data_inventory_impact_category_ids" string="Impact">
+          <page name="impact_category" string="BIA">
+            <field name="data_inventory_impact_category_ids" string="BIA">
               <tree editable="bottom">
                 <field name="impact_category_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
                 <field name="impact_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                <field name="disruption_value" />
+                <field name="disruption_unit" />
+                <field name="disruption_total_hours" />
                 <field name="description"/>
               </tree>
               <form>
                 <group>
                   <field name="impact_category_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
                   <field name="impact_level_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                  <field name="disruption_value" />
+                  <field name="disruption_unit" />
+                  <field name="disruption_total_hours" />
                   <field name="description"/>
                 </group>
               </form>
