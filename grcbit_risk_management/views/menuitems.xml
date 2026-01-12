@@ -17,7 +17,7 @@
     <menuitem name="Inherent Risk Level" id="menu_inherent_risk_level" parent="menu_metric" action="inherent_risk_level_action" sequence="11"/>
     <menuitem name="Residual Risk Level" id="menu_residual_risk_level" parent="menu_metric" action="residual_risk_level_action" sequence="12"/>
     <menuitem name="Risk Category" id="menu_risk_classification" parent="menu_metric" action="risk_classification_action" sequence="13"/>
-    <menuitem name="Impact Category" id="menu_impact_category" parent="menu_risk_classification" action="impact_category_action" sequence="1"/>
+    <menuitem name="Impact Category" id="menu_impact_category" parent="menu_metric" action="impact_category_action" sequence="14"/>
 
     <menuitem name="Assessment" id="menu_risk_assessment" parent="menu_risk_metric"  sequence="17" />
     <menuitem name="IT Risk Factor" id="menu_risk_factor" parent="menu_risk_assessment" action="risk_factor_action" sequence="18"/>

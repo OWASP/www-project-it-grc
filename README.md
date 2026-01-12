@@ -101,6 +101,14 @@ Description: Additional details about the impact scenario.
 Guideline: Use this section to support risk prioritization and recovery planning.
 
 > [!NOTE]
+> **NIST Risk Management Framework (RMF)**
+>
+> One of the steps of the NIST RMF has to do with Categorize the system and the information processed, stored, and transmitted by the system based on an analysis of the impact of loss. This analisys can be done in the Data Asset module, since here you evaluate the impact of loss of a data asset considering the type of data, processess, IT systems that store, process or transmit the data.
+>
+> Impact of loss is one of four risk factors considered during risk assessment activities—the other three factors being threats, vulnerabilities, and likelihood of occurrence [SP 800-30]. Organizations leverage risk assessment results when categorizing information and systems.
+>
+
+> [!NOTE]
 > Ensure all fields are completed accurately to maintain compliance and support risk management.
 >
 > Regularly review and update data asset records to reflect changes in business processes or regulations.
@@ -304,10 +312,12 @@ Activity Scheduling: Schedule activities such as risk assessments, set due dates
 7. Restart your docker odoo instance `docker restart [INSTANCE_NAME]`
 
 8. With "developer mode" execute "Apps" --> "Update Apps List".
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/98078aea-6f75-4582-8e9a-7112fa503413">
+<img width="759" alt="image" src="https://github.com/user-attachments/assets/98078aea-6f75-4582-8e9a-7112fa503413">
 
-9. Install the grcbit_ modules in the following order: 1. grcbit_base, grcbit_iso27001, grcbit_compliance, grcbit_threat_scenario, grcbit_pci4, grcbit_cvss, grcbit_vulnerability_management  
+9. Install the grcbit_ modules in the following order: grcbit_base, grcbit_iso27001, grcbit_compliance, grcbit_threat_scenario, grcbit_pci4, grcbit_cvss, grcbit_vulnerability_management  
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/2f37c99b-3cec-439f-b02a-4c9e0e0d2c00">
+
+10. It is recommended to configure a reverse proxy with SSL certificates and implement a firewall for secure installation.
 
 ## **Import data**
 
