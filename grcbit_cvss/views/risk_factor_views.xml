@@ -11,7 +11,8 @@
         </xpath>
         <xpath expr="//field[@name='active']" position="after">
           <field name="risk_assessment_type"/>
-          <field name="business_process_id" attrs="{'invisible': [('risk_assessment_type', '!=', 'vendor')]}"/>
+          <field name="business_process_id" attrs="{'invisible': [('risk_assessment_type', '!=', 'process')]}"/>
+          <field name="third_party_id" attrs="{'invisible': [('risk_assessment_type', '!=', 'vendor')]}"/>
         </xpath>
         <xpath expr="//field[@name='it_inventory_id']" position="attributes">
           <attribute name="attrs">{'invisible': [('risk_assessment_type', 'in', ('process', 'vendor'))]}</attribute>
