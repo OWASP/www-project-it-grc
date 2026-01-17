@@ -482,11 +482,6 @@ msgid "Users"
 msgstr ""
 
 #. module: grcbit_base
-#: model:ir.model,name:grcbit_base.model_set_groups_user
-msgid "set.groups.user"
-msgstr ""
-
-#. module: grcbit_base
 #: model:ir.model,name:grcbit_base.model_theme_data
 msgid "theme.data"
 msgstr ""

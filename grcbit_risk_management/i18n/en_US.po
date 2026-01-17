@@ -921,8 +921,3 @@ msgstr ""
 #: model:ir.model.fields,field_description:grcbit_risk_management.field_risk_level__value
 msgid "Value"
 msgstr ""
-
-#. module: grcbit_risk_management
-#: model:ir.model,name:grcbit_risk_management.model_set_groups_user
-msgid "set.groups.user"
-msgstr ""
