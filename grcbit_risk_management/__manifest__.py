@@ -36,9 +36,6 @@
         'views/menuitems.xml',
         'views/ir_sequence.xml',
 
-        #wizards
-        'wizards/set_groups_views.xml',
-
         #reports
         'reports/report_risk_factor.xml',
     ],
