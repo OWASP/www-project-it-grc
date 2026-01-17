@@ -16,5 +16,6 @@ class RiskFactorInh(models.Model):
         string="Risk Assessment Type",
     )
     business_process_id = fields.Many2one('business.process', string='Business Process')
+    third_party_id = fields.Many2one('third.party', string='Third Party')
     score = fields.Float(string="Score", digits=(1,1))
     vector = fields.Char(string="Vector")
