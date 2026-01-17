@@ -7,11 +7,18 @@
       <field name="inherit_id" ref="grcbit_risk_management.risk_factor_form" />
       <field name="arch" type="xml">
         <xpath expr="//header[@name='risk_factor_header']" position="inside">
-		<button type="action" name="%(grcbit_cvss.cvss_calculator_action)d" class="btn btn-primary" string="CVSS Calculator" />
+		<button type="action" name="%(grcbit_cvss.cvss_calculator_action)d" class="btn btn-primary" string="CVSS Calculator" attrs="{'invisible': [('risk_assessment_type', 'in', ('process', 'vendor'))]}" />
+        </xpath>
+        <xpath expr="//field[@name='active']" position="after">
+          <field name="risk_assessment_type"/>
+          <field name="business_process_id" attrs="{'invisible': [('risk_assessment_type', '!=', 'vendor')]}"/>
+        </xpath>
+        <xpath expr="//field[@name='it_inventory_id']" position="attributes">
+          <attribute name="attrs">{'invisible': [('risk_assessment_type', 'in', ('process', 'vendor'))]}</attribute>
         </xpath>
         <xpath expr="//field[@name='residual_risk']" position="after">
-          <field name="score" readonly="1"/>
-          <field name="vector" readonly="1"/>
+          <field name="score" readonly="1" attrs="{'invisible': [('risk_assessment_type', 'in', ('process', 'vendor'))]}"/>
+          <field name="vector" readonly="1" attrs="{'invisible': [('risk_assessment_type', 'in', ('process', 'vendor'))]}"/>
         </xpath>
       </field>
     </record>
