@@ -137,7 +137,7 @@
       <field name="arch" type="xml">
 	      <form>
           <sheet>
-            <group col="2">
+            <group>
               <group>
                 <field name="active" invisible="1"/>
                 <field name="id_iso_control"/>
@@ -251,7 +251,7 @@
       <field name="arch" type="xml">
         <form>
           <sheet>
-            <group col="2">
+            <group>
               <group>
                 <field name="id_control_category"/>
                 <field name="name"/>
@@ -347,7 +347,7 @@
       <field name="arch" type="xml">
         <form>
           <sheet>
-            <group col="2">
+            <group>
               <group>
                 <field name="name"/>
                 <field name="description"/>
@@ -420,7 +420,7 @@
       <field name="arch" type="xml">
         <form>
           <sheet>
-            <group col="2">
+            <group>
               <group>
                 <field name="name"/>
                 <field name="description"/>
@@ -493,7 +493,7 @@
       <field name="arch" type="xml">
         <form>
           <sheet>
-            <group col="2">
+            <group>
               <group>
                 <field name="name"/>
                 <field name="description"/>
@@ -566,7 +566,7 @@
       <field name="arch" type="xml">
         <form>
           <sheet>
-            <group col="2">
+            <group>
               <group>
                 <field name="name"/>
                 <field name="description"/>
@@ -639,7 +639,7 @@
       <field name="arch" type="xml">
         <form>
           <sheet>
-            <group col="2">
+            <group>
               <group>
                 <field name="name"/>
                 <field name="description"/>
@@ -731,7 +731,7 @@
       <field name="arch" type="xml">
         <form>
           <sheet>
-            <group col="2">
+            <group>
               <group>
                 <field name="isms_role_name"/>
                 <field name="isms_role_description"/>
