@@ -25,10 +25,8 @@
         <form>
           <sheet>
             <group>
-              <group>
                 <field name="name"/>
                 <field name="description" />
-              </group>
             </group>
             <div class="oe_chatter">
               <field name="activity_ids" widget="mail_activity"/>
@@ -73,11 +71,8 @@
         <form>
           <sheet>
             <group>
-              <group>
                 <field name="name"/>
                 <field name="description"/>
-              </group>
-              <group/>
             </group>
             <div class="oe_chatter">
               <field name="activity_ids" widget="mail_activity"/>

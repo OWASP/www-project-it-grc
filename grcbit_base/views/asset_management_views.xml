@@ -61,10 +61,8 @@
         <form>
           <sheet>
             <group>
-              <group>
                 <field name="name"/>
                 <field name="description"/>
-              </group>
             </group>
             <div class="oe_chatter">
               <field name="activity_ids" widget="mail_activity"/>
@@ -151,10 +149,8 @@
         <form>
           <sheet>
             <group>
-              <group>
                 <field name="name"/>
                 <field name="description"/>
-              </group>
             </group>
             <div class="oe_chatter">
               <field name="activity_ids" widget="mail_activity"/>
@@ -233,13 +229,11 @@
         <form>
           <sheet>
             <group>
-              <group>
                 <field name="name"/>
                 <field name="description"/>
                 <field name="environment" />
                 <field name="users_qty"/>
 		        <!-- <field name="rto"/> -->
-              </group>
             </group>
             <notebook>
             <page name="it_component" string="IT Component">
@@ -553,13 +547,10 @@
     <form>
     <sheet>
         <group>
-            <group>
                 <field name="process_name"/>
                 <field name="process_owner"
-                       options="{'no_quick_create': True, 'no_create_edit': True, 'no_create': True}"/>
+                options="{'no_quick_create': True, 'no_create_edit': True, 'no_create': True}"/>
                 <field name="description"/>
-            </group>
-
         </group>
 
         <!-- Chatter al final -->
