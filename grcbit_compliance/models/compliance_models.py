@@ -100,12 +100,12 @@ class ComplianceIsoControl(models.Model):
         string="Compliance Version", 
         compute="get_version",
         store=True)
-    control_id = fields.Many2many('control.design', string="Control", required=True)
+    #control_id = fields.Many2many('control.design', string="Control", required=True)
     description  = fields.Html(string='Compliance Description', required=True) #Cumplimiento
-    control_status = fields.Integer(string="Status")
+    #control_status = fields.Integer(string="Status")
     is_applicable = fields.Boolean(string="Is Applicable")
     is_implemented = fields.Boolean(string="Is Implemented")
-    is_compensatory_control = fields.Boolean(string="Is Compensatory Control")
+    #is_compensatory_control = fields.Boolean(string="Is Compensatory Control")
 
     _sql_constraints = [('compliance_control_id_uniq', 'unique(compliance_control_id)', "The Compliance Control it is already being used.")]
 
@@ -114,7 +114,7 @@ class ComplianceIsoControl(models.Model):
         for rec in self:
             if rec.compliance_control_id:
                 rec.compliance_version = rec.compliance_control_id.compliance_control_objective_id.compliance_version_id.id
-
+    '''
     @api.onchange('control_id','control_id.state')
     def _status_control(self):
         status = 0
@@ -131,3 +131,4 @@ class ComplianceIsoControl(models.Model):
             self.sudo().control_status = status / len(self.control_id)
         else:
             self.sudo().control_status = 0
+    '''

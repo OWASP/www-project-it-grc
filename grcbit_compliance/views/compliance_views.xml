@@ -275,14 +275,13 @@
       <field name="context">{'search_default_group_by_compliance_version':1}</field>
     </record>
     <record model="ir.ui.view" id="compliance_iso_control_view">
-	    <field name="name">Compliance</field>
-	    <field name="model">compliance.iso.control</field>
+	  <field name="name">Compliance</field>
+	  <field name="model">compliance.iso.control</field>
       <field name="arch" type="xml">
         <tree multi_edit="1">
           <field name="compliance_control_id" />
+          <field name="iso_control_id" widget="many2many_tags_open"/>
           <field name="description"/>
-          <field name="control_id" widget="many2many_tags_open"/>
-          <field name="control_status" widget="percentpie" force_save="1"/>
         </tree>
       </field>
     </record>
@@ -292,16 +291,18 @@
       <field name="arch" type="xml">
         <form>
           <sheet>
-		        <group col="2">
+	    <group col="2">
               <group>
                 <field name="compliance_control_id" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                <field name="iso_control_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
                 <field name="is_applicable"/>
                 <field name="is_implemented"/>
                 <!-- <field name="is_compensatory_control"/> -->
                 <field name="description"/>
                 <field name="compliance_version" invisible="1"/>
-                <field name="control_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+		<!--
                 <field name="control_status" widget="percentpie" force_save="1"/>
+		-->
               </group>
             </group>
             <div class="oe_chatter">
@@ -340,7 +341,7 @@
           <field name="compliance_version" />
           <field name="compliance_control_id" />
           <field name="description"/>
-          <field name="control_id"/>
+          <field name="iso_control_id"/>
           <group expand="0" string="Group By">
             <filter string="Compliance Version" name="group_by_compliance_version" context="{'group_by':'compliance_version'}"/>
           </group>
