@@ -21,7 +21,7 @@
     <menuitem name="Design Criteria" id="menu_control_design_criteria" parent="menu_metric" action="control_design_criteria_action" sequence="15" />
     <menuitem name="Implementation Criteria" id="menu_control_evaluation_criteria" parent="menu_metric" action="control_evaluation_criteria_action" sequence="16" />
 
-    <menuitem name="Risk Assessment" id="menu_risk_assessment" parent="menu_risk_metric"  sequence="17" />
+    <menuitem name="Risk Register" id="menu_risk_assessment" parent="menu_risk_metric"  sequence="17" />
     <menuitem name="IT Risk Factor" id="menu_risk_factor" parent="menu_risk_assessment" action="risk_factor_action" sequence="18"/>
     <menuitem name="Control" id="menu_control_design" parent="menu_risk_assessment" action="control_design_action" sequence="19" />
     
