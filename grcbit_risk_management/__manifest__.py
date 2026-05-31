@@ -11,6 +11,7 @@
         'base',
         'hr',
         'grcbit_base',
+        'grcbit_iso27001',
     ],
 
     # always loaded
