@@ -121,6 +121,7 @@ class ActivityControl(models.Model):
     responsible_id = fields.Many2one('hr.employee', string='Responsible', required=True, track_visibility='always')
     policy = fields.Char(string="Policy")
     policy_upload = fields.Binary(string="Policy Document", attachment=True)
+    iso_control_id = fields.Many2many('iso.control', string='ISO Control', help="Related ISO 27001 controls")
 
 class ControlDesing(models.Model):
     _name = 'control.design'
@@ -177,7 +178,6 @@ class ControlDesing(models.Model):
     rejected_date = fields.Date(string='Rejected Date', readonly=True)
     can_write = fields.Boolean(string="Puede editar Approval", compute="edit_now")
     draft_control = fields.Boolean(string="Puede editar Draft", compute="edit_now")
-    iso_control_id = fields.Many2many('iso.control', string='ISO Control', help="Related ISO 27001 controls")
 
     draft_comment = fields.Html(string="Draft Comment")
     design_comment = fields.Html(string="Design Comment")
