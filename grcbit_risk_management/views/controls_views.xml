@@ -99,6 +99,7 @@
                     <field name="responsible_id" widget="many2one_avatar_user" />
                     <field name="policy"/>
                     <field name="policy_upload" widget="binary" filename="policy"/>
+                    <field name="iso_control_id" />
                   </tree>
 		  <form>
                     <field name="control_design_id" invisible="1" />
@@ -107,6 +108,7 @@
                     <field name="responsible_id" widget="many2one_avatar_user" />
                     <field name="policy"/>
                     <field name="policy_upload" widget="binary" filename="policy"/>
+                    <field name="iso_control_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
 		  </form>
                 </field>
               </page>
@@ -146,9 +148,6 @@
                      <field name="approved_comment" invisible="1"/>
 		    -->
 	        </group>
-              </page>
-              <page string="ISO Control" name="iso_control_page">
-                <field name="iso_control_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
               </page>
             </notebook>
             <div class="oe_chatter">
