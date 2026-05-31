@@ -63,29 +63,29 @@
         <form>
         <header>
               <field name="state" widget="statusbar"/>
-              <button name="action_draft" string="SET TO DRAFT" type="object"  class="btn-primary" groups="grcbit_base.group_grc_admin,grcbit_base.group_grc_consultant,grcbit_risk_management.group[...]
-              <button name="action_design" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['draft'])]}" class="btn-success" groups="grcbit_base.group_grc_admin, grcbit_ba[...]
-              <button name="action_implemented" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['designed'])]}" class="btn-success" groups="grcbit_base.group_grc_admin, g[...]
-              <button name="action_approved" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit_base.group_grc_admin, g[...]
-              <button name="action_rejected" string="REJECT" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit_base.group_grc_admin, gr[...]
+              <button name="action_draft" string="SET TO DRAFT" type="object" class="btn-primary" groups="grcbit_base.group_grc_admin,grcbit_base.group_grc_consultant,grcbit_risk_management.group_control_draft"/>
+              <button name="action_design" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['draft'])]}" class="btn-success" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,grcbit_risk_management.group_control_draft"/>
+              <button name="action_implemented" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['designed'])]}" class="btn-success" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,grcbit_risk_management.group_control_draft"/>
+              <button name="action_approved" string="CONFIRM" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,grcbit_risk_management.group_control_approval"/>
+              <button name="action_rejected" string="REJECT" type="object" attrs="{'invisible': [('state', 'not in', ['implemented'])]}" class="btn-success" groups="grcbit_base.group_grc_admin, grcbit_base.group_grc_consultant,grcbit_risk_management.group_control_approval"/>
   		      </header>
 		      <sheet>
 	  	      <group col="2">
               <group>
                 <field name="active" invisible="1"  />
-                <field name="risk_factor_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('draft_control','=', [...]
+                <field name="risk_factor_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('draft_control','=', False)] }"/>
                 <field name="name" attrs="{'readonly': [('draft_control','=', False)] }" />
                 <field name="control" attrs="{'readonly': [('draft_control','=', False)] }" />
                 <field name="description" attrs="{'readonly': [('draft_control','=', False)] }" />
 	              <field name="estimated_date" attrs="{'readonly': [('state','not in', ['designed'])]}"/>
-                <field name="responsible_id" widget="many2one_avatar_user" attrs="{'readonly': [('draft_control','=', False)] }" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_cre[...]
-                <field name="control_type_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('draft_control','=',[...]
-                <field name="security_property_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('draft_control[...]
+                <field name="responsible_id" widget="many2one_avatar_user" attrs="{'readonly': [('draft_control','=', False)] }" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"/>
+                <field name="control_type_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('draft_control','=', False)] }"/>
+                <field name="security_property_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('draft_control','=', False)] }"/>
               </group>
               <group>
-                <field name="cybersecurity_concept_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('draft_con[...]
-                <field name="operational_capability_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}"  attrs="{'readonly': [('draft_co[...]
-                <field name="security_domain_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('draft_control','[...]
+                <field name="cybersecurity_concept_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('draft_control','=', False)] }"/>
+                <field name="operational_capability_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('draft_control','=', False)] }"/>
+                <field name="security_domain_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('draft_control','=', False)] }"/>
               </group>
             </group>
             <notebook>
