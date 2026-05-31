@@ -12,8 +12,8 @@ class ControlType(models.Model):
     _name = 'control.type'
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
-    name = fields.Char(string='Control Type', required=True, help="Attribute to view controls from the perspective of when and how the control modifies the risk with regard to the occurrence of an[...]
-    description = fields.Html(string='Description', required=True, help="Control type is an attribute to view controls from the perspective of when and how the control modifies the risk with regar[...]
+    name = fields.Char(string='Control Type', required=True, help="Attribute to view controls from the perspective of when and how the control modifies the risk with regard to the occurrence of an information security event.")
+    description = fields.Html(string='Description', required=True, help="Control type is an attribute to view controls from the perspective of when and how the control modifies the risk with regard to the occurrence of an information security event.")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The control type name already exists.")]
 
@@ -21,8 +21,8 @@ class SecurityProperty(models.Model):
     _name = 'security.property'
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
-    name = fields.Char(string='Security Property', required=True, help="Information security properties is an attribute to view controls from the perspective of which characteristic of information[...]
-    description = fields.Html(string='Description', required=True, help="Information security properties is an attribute to view controls from the perspective of which characteristic of informatio[...]
+    name = fields.Char(string='Security Property', required=True, help="Information security properties is an attribute to view controls from the perspective of which characteristic of information the control safeguards.")
+    description = fields.Html(string='Description', required=True, help="Information security properties is an attribute to view controls from the perspective of which characteristic of information the control safeguards.")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The security property name already exists.")]
 
@@ -31,8 +31,8 @@ class CybersecurityConcept(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
 
-    name = fields.Char(string='Cybersecurity Concept', required=True, help=" Cybersecurity concepts is an attribute to view controls from the perspective of the association of controls to cybersec[...]
-    description = fields.Html(string='Description', required=True, help=" Cybersecurity concepts is an attribute to view controls from the perspective of the association of controls to cybersecuri[...]
+    name = fields.Char(string='Cybersecurity Concept', required=True, help=" Cybersecurity concepts is an attribute to view controls from the perspective of the association of controls to cybersecurity concepts.")
+    description = fields.Html(string='Description', required=True, help=" Cybersecurity concepts is an attribute to view controls from the perspective of the association of controls to cybersecurity concepts.")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The cybersecurty concept name already exists.")]
 
@@ -41,8 +41,8 @@ class ControlDesignCriteria(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Design Criteria'
 
-    name = fields.Char(string='Name', required=True, help="Measure that maintains and/or modifies risk. Controls include, but are not limited to, any process, policy, device, practice or other co[...]
-    description = fields.Text(string='Description', required=True, help="Measure that maintains and/or modifies risk. Controls include, but are not limited to, any process, policy, device, practi[...]
+    name = fields.Char(string='Name', required=True, help="Measure that maintains and/or modifies risk. Controls include, but are not limited to, any process, policy, device, practice or other conditions.")
+    description = fields.Text(string='Description', required=True, help="Measure that maintains and/or modifies risk. Controls include, but are not limited to, any process, policy, device, practice or other conditions.")
     active = fields.Boolean(default=True)
 
 class ControlEvaluationCriteria(models.Model):
@@ -50,8 +50,8 @@ class ControlEvaluationCriteria(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Implementation Criteria'
 
-    name = fields.Char(string='Name', required=True, help="Measure that maintains and/or modifies risk. Controls include, but are not limited to, any process, policy, device, practice or other co[...]
-    description = fields.Text(string='Description', required=True, help="Measure that maintains and/or modifies risk. Controls include, but are not limited to, any process, policy, device, practi[...]
+    name = fields.Char(string='Name', required=True, help="Measure that maintains and/or modifies risk. Controls include, but are not limited to, any process, policy, device, practice or other conditions.")
+    description = fields.Text(string='Description', required=True, help="Measure that maintains and/or modifies risk. Controls include, but are not limited to, any process, policy, device, practice or other conditions.")
     active = fields.Boolean(default=True)
 
 class ControlLine(models.Model):
@@ -97,8 +97,8 @@ class SecurityDomain(models.Model):
     _name = 'security.domain'
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
-    name = fields.Char(string='Security Domain', required=True, help="Security domains is an attribute to view controls from the perspective of four information security domains: Governance and E[...]
-    description = fields.Html(string='Description', required=True, help="Security domains is an attribute to view controls from the perspective of four information security domains: Governance an[...]
+    name = fields.Char(string='Security Domain', required=True, help="Security domains is an attribute to view controls from the perspective of four information security domains: Governance and Ecosystem, Asset Management, Threat and Vulnerability Management, and Protective Processes.")
+    description = fields.Html(string='Description', required=True, help="Security domains is an attribute to view controls from the perspective of four information security domains: Governance and Ecosystem, Asset Management, Threat and Vulnerability Management, and Protective Processes.")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', "The security domain name already exists.")]
 
@@ -107,8 +107,8 @@ class OperationalCapability(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = 'Data Inventory'
 
-    name = fields.Char(string=_('Operational Capability'), required=True, help="Operational capabilities is an attribute to view controls from the practitioner's perspective of information secu[...]
-    description = fields.Html(string=_('Description'), required=True, help="Operational capabilities is an attribute to view controls from the practitioner's perspective of information security[...]
+    name = fields.Char(string=_('Operational Capability'), required=True, help="Operational capabilities is an attribute to view controls from the practitioner's perspective of information security operational aspects and capabilities.")
+    description = fields.Html(string=_('Description'), required=True, help="Operational capabilities is an attribute to view controls from the practitioner's perspective of information security operational aspects and capabilities.")
     active = fields.Boolean(default=True)
     _sql_constraints = [('name_uniq', 'unique(name)', _("The operational capability name already exists."))]
 
@@ -149,7 +149,7 @@ class ControlDesing(models.Model):
         copy=False, 
         default='New'
     )
-    risk_factor_id = fields.Many2many('risk.factor', string='Risk Factor', track_visibility='always', help="Collective name for circumstances affecting the likelihood or impact of a security risk[...]
+    risk_factor_id = fields.Many2many('risk.factor', string='Risk Factor', track_visibility='always', help="Collective name for circumstances affecting the likelihood or impact of a security risk.")
     display_name = fields.Char(string='Control', compute='_compute_display_name')
     name = fields.Char(string='Control Title', required=True, help="Short name of the control")
     control_line_ids = fields.One2many('control.line', 'control_design_id', string='Control Guide')
@@ -159,15 +159,15 @@ class ControlDesing(models.Model):
     evidence_guide = fields.Text(string='Evidence Guide')
     responsible_id = fields.Many2one('hr.employee', string='Responsible', required=True, track_visibility='always')
     is_key_control = fields.Boolean(string='Key Control', track_visibility='always')
-    control_type_id = fields.Many2many('control.type', string='Control Type', required=True, help="Attribute to view controls from the perspective of when and how the control modifies the risk wi[...]
-    security_property_id = fields.Many2many('security.property', string='Security Property', required=True, help="Information security properties is an attribute to view controls from the perspec[...]
-    cybersecurity_concept_id = fields.Many2many('cybersecurity.concept', string='Cybersecurity Concept', required=True, help="Cybersecurity concepts is an attribute to view controls from the pers[...]
-    operational_capability_id = fields.Many2many('operational.capability', string='Operational Capability', required=True, help="Operational capabilities is an attribute to view controls from the[...]
-    security_domain_id = fields.Many2many('security.domain', string='Security Domain', required=True, help="Security domains is an attribute to view controls from the perspective of four informat[...]
+    control_type_id = fields.Many2many('control.type', string='Control Type', required=True, help="Attribute to view controls from the perspective of when and how the control modifies the risk with regard to the occurrence of an information security event.")
+    security_property_id = fields.Many2many('security.property', string='Security Property', required=True, help="Information security properties is an attribute to view controls from the perspective of which characteristic of information the control safeguards.")
+    cybersecurity_concept_id = fields.Many2many('cybersecurity.concept', string='Cybersecurity Concept', required=True, help="Cybersecurity concepts is an attribute to view controls from the perspective of the association of controls to cybersecurity concepts.")
+    operational_capability_id = fields.Many2many('operational.capability', string='Operational Capability', required=True, help="Operational capabilities is an attribute to view controls from the practitioner's perspective of information security operational aspects and capabilities.")
+    security_domain_id = fields.Many2many('security.domain', string='Security Domain', required=True, help="Security domains is an attribute to view controls from the perspective of four information security domains: Governance and Ecosystem, Asset Management, Threat and Vulnerability Management, and Protective Processes.")
     comment = fields.Text(string='Comment')
     evidence_pending = fields.Text(string='Evidence Pending')
     active = fields.Boolean(default=True)
-    activity_control_ids = fields.One2many('activity.control', 'control_design_id', string="Activity Control", help="Actions established through policies and procedures that help ensure that mana[...]
+    activity_control_ids = fields.One2many('activity.control', 'control_design_id', string="Activity Control", help="Actions established through policies and procedures that help ensure that management objectives are achieved.")
     control_evidence_ids = fields.One2many('control.evidence', 'control_design_id')
     control_evaluation_criteria_id = fields.Many2one('control.evaluation.criteria', string='Effectiveness Evaluation')
     control_design_criteria_id = fields.Many2one('control.design.criteria', string='Design Evaluation')
