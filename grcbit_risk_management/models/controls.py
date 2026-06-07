@@ -121,7 +121,7 @@ class ActivityControl(models.Model):
     responsible_id = fields.Many2one('hr.employee', string='Responsible', required=True, track_visibility='always')
     policy = fields.Char(string="Policy")
     policy_upload = fields.Binary(string="Policy Document", attachment=True)
-    iso_control_id = fields.Many2many('iso.control', string='ISO Control', help="Related ISO 27001 controls")
+    #iso_control_id = fields.Many2many('iso.control', string='ISO Control', help="Related ISO 27001 controls")
 
 class ControlDesing(models.Model):
     _name = 'control.design'
@@ -183,6 +183,7 @@ class ControlDesing(models.Model):
     design_comment = fields.Html(string="Design Comment")
     implemented_comment = fields.Html(string="Implemented Comment")
     approved_comment = fields.Html(string="Approved Comment")
+    iso_control_id = fields.Many2many('iso.control', string='ISO Control', help="Related ISO 27001 controls")
 
     @api.depends('state')
     def edit_now(self):

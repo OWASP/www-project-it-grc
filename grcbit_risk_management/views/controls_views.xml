@@ -33,6 +33,7 @@
           <field name="implementation_date" readonly="1" force_save="1" optional="hide" />
           <field name="approve_date" readonly="1" force_save="1" optional="hide" />
           <field name="rejected_date" readonly="1" force_save="1" optional="hide" />
+          <field name="iso_control_id" optional="True" />
         </tree>
       </field>
     </record>
@@ -53,6 +54,7 @@
           <field name="cybersecurity_concept_id" />
           <field name="operational_capability_id" />
           <field name="security_domain_id" />
+          <field name="iso_control_id" />
         </search>
       </field>
     </record>
@@ -86,6 +88,7 @@
                 <field name="cybersecurity_concept_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('draft_control','=', False)] }"/>
                 <field name="operational_capability_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('draft_control','=', False)] }"/>
                 <field name="security_domain_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('draft_control','=', False)] }"/>
+                <field name="iso_control_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" attrs="{'readonly': [('draft_control','=', False)] }"/>
               </group>
             </group>
             <notebook>
@@ -99,7 +102,6 @@
                     <field name="responsible_id" widget="many2one_avatar_user" />
                     <field name="policy"/>
                     <field name="policy_upload" widget="binary" filename="policy"/>
-                    <field name="iso_control_id" />
                   </tree>
 		  <form>
                     <field name="control_design_id" invisible="1" />
@@ -108,7 +110,6 @@
                     <field name="responsible_id" widget="many2one_avatar_user" />
                     <field name="policy"/>
                     <field name="policy_upload" widget="binary" filename="policy"/>
-                    <field name="iso_control_id" widget="many2many_tags_open" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_create':True}" />
 		  </form>
                 </field>
               </page>

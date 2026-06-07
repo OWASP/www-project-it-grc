@@ -245,7 +245,7 @@ In this module you can register the controls associated to each compliance requi
 
 <img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/47dc3712-03dc-4d15-aee8-0aa61769d6c8">
 
-## **Settings**
+## **RBAC**
 
 In this module basically you manage users, roles and privileges. 
 If necessary, you can activate two factor authentication to users.
@@ -314,7 +314,7 @@ Activity Scheduling: Schedule activities such as risk assessments, set due dates
 8. With "developer mode" execute "Apps" --> "Update Apps List".
 <img width="759" alt="image" src="https://github.com/user-attachments/assets/98078aea-6f75-4582-8e9a-7112fa503413">
 
-9. Install the grcbit_ modules in the following order: grcbit_base, grcbit_iso27001, grcbit_compliance, grcbit_threat_scenario, grcbit_pci4, grcbit_cvss, grcbit_vulnerability_management  
+9. Install the grcbit_ modules in the following order: grcbit_base, grcbit_iso27001, grcbit_compliance, grcbit_threat_scenario, grcbit_cvss, grcbit_vulnerability_management, grcbit_risk_management  
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/2f37c99b-3cec-439f-b02a-4c9e0e0d2c00">
 
 10. It is recommended to configure a reverse proxy with SSL certificates and implement a firewall for secure installation.
