@@ -36,7 +36,7 @@ Some attributes captured here include: asset name, data classification, asset ow
 
 Record your data assets in as much detail as possible. This information will allow us to accurately assess potential impacts on the organization and define the most appropriate risk management strategies for these assets.
 
-<img width="1770" height="615" alt="image" src="https://github.com/user-attachments/assets/62fda848-f5dc-460c-b210-6a8969327a0c" />
+<img width="1770" height="615" alt="530070113-62fda848-f5dc-460c-b210-6a8969327a0c" src="https://github.com/user-attachments/assets/1b750a64-7c14-4d24-a6ed-686b357f5dce" />
 
 #### **Field Descriptions and Guidelines**
 
@@ -135,8 +135,7 @@ Vendors play a vital role in your organization’s operations, but they also int
 
 To safeguard your organization, it is crucial to identify suppliers with access to critical data or systems. This enables you to perform a comprehensive vendor or supplier risk assessment as part of your overall risk management process. Effective supplier risk management helps mitigate potential threats, ensures regulatory compliance, and strengthens your organization’s data protection posture.
 
-<img width="1347" height="327" alt="image" src="https://github.com/user-attachments/assets/a2b16344-8784-4e4b-a5ac-d1de43c9ba74" />
-
+<img width="1347" height="327" alt="523480685-a2b16344-8784-4e4b-a5ac-d1de43c9ba74-2" src="https://github.com/user-attachments/assets/bfd8ad54-0194-4e34-a7b6-6d985c8232d7" />
 
 ### **Reports**
 
@@ -181,16 +180,17 @@ Also you can generate reports and charts about TCP ports, IT components, data cl
 
 You can evaluate risks using CVSS (Common Vulnerability Score System) calculator integrated in the risk module.
 
-<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/21335b85-f667-45c4-9d60-c39e65bbee7e">
+<img width="685" height="415" alt="337298446-21335b85-f667-45c4-9d60-c39e65bbee7e" src="https://github.com/user-attachments/assets/d6feeee2-7fd0-43ea-b76c-f5ae2117bdad" />
 
 The inherent risk is automatically calculated based on the impact and probablity levels assigned to each risk factor.
 
-<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/8a4893a7-2adc-4088-bde5-08c57e4a31d0">
+<img width="919" height="241" alt="337302401-8a4893a7-2adc-4088-bde5-08c57e4a31d0" src="https://github.com/user-attachments/assets/152b6b74-540d-409d-9476-668cc666641b" />
 
 Residual risk is also automatically calculated based on the design and effectivenes evaluation of the controls assigned to mitigate risk factors.
 
-<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/d05a19f6-7998-4794-8582-e458a64bc763">
-<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/cae1f939-2969-46ad-8d5e-c217113ff3d3">
+<img width="926" height="380" alt="337302598-d05a19f6-7998-4794-8582-e458a64bc763" src="https://github.com/user-attachments/assets/cffa0772-85db-4fab-b2dd-e1345c8de5f6" />
+
+<img width="824" height="391" alt="337302783-cae1f939-2969-46ad-8d5e-c217113ff3d3" src="https://github.com/user-attachments/assets/3fd9992b-c9ba-4df1-9a28-b56b35e09ce6" />
 
 ### **Threat Scenario**
 
@@ -200,9 +200,10 @@ Identify and characterize threat sources of concern, including capability, inten
 
 ### **CVE Search**
 This feature integrates with www.cve-search.org to retrieve CVE data for risk assessment. This feature helps organizations identify, evaluate, and manage vulnerabilities affecting their assets.
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/8595f3bc-d6e7-47c3-b11a-dfeb5360e662">
 
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/b8e7c1aa-52f4-4845-83fa-84d09675b6cd">
+<img width="760" height="226" alt="418381411-8595f3bc-d6e7-47c3-b11a-dfeb5360e662" src="https://github.com/user-attachments/assets/bed1f2fb-4045-49eb-932e-20bef654e68c" />
+
+<img width="1036" height="307" alt="418381468-b8e7c1aa-52f4-4845-83fa-84d09675b6cd" src="https://github.com/user-attachments/assets/210fbae4-8e43-4bb5-8f9b-7730bbfa6eb3" />
 
 ## **Control**
 
@@ -215,11 +216,12 @@ Each control has a flow (draft, designed, implemented, approved), so the control
 
 The platform provides you with the 93 ISO 27001:2022 controls already loaded, security attributues, security concepts, categories, so you basically need to complete the statement aplicability to show an Information Security Management System implemented in your organization.
 
-<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/c78bc2e8-0ccb-4091-8deb-136f15a441c8">
+<img width="794" height="428" alt="337296323-c78bc2e8-0ccb-4091-8deb-136f15a441c8" src="https://github.com/user-attachments/assets/7415d01a-5eac-47ef-b8c7-ed0c19bad768" />
 
-<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/297c9e79-0f83-45b7-ab6c-6ef943e45110">
+<img width="644" height="420" alt="337296477-297c9e79-0f83-45b7-ab6c-6ef943e45110" src="https://github.com/user-attachments/assets/1f9d1bf6-cc3a-4b8e-a73d-738845f28ae0" />
 
-<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/911eb6a7-1bf0-426c-a632-f056c7596e21">
+<img width="892" height="393" alt="337297295-911eb6a7-1bf0-426c-a632-f056c7596e21" src="https://github.com/user-attachments/assets/05399801-fd98-4fc2-8c53-57b1eeb91f46" />
+
 
 Statement of applicability are related to controls, so you can show evidence of compliance with each requirement of the ISO27001 standard. This also ensures that the selected controls are aligned with the identified risks.
 The status is calculated based on the controls that are related to each requirement, so you can link it with policies, procedures or evidences that demonstrate its implementation.
@@ -243,7 +245,7 @@ In this module you can register the controls associated to each compliance requi
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/64a113e4-976a-4b0f-8dd9-a1816d97d8de">
 
-<img width="959" alt="image" src="https://github.com/grcbit/grc4ciso/assets/60721087/47dc3712-03dc-4d15-aee8-0aa61769d6c8">
+<img width="764" height="343" alt="337299666-47dc3712-03dc-4d15-aee8-0aa61769d6c8" src="https://github.com/user-attachments/assets/c1420b72-b845-4f1b-abf1-f38c3dc370a9" />
 
 ## **RBAC**
 
@@ -271,7 +273,7 @@ Since this project is built on the Odoo platform, you can leverage its native fu
 
 Tracking Changes: Every modification to a record is automatically logged, providing full visibility and a reliable audit trail of all changes.
 
-<img width="1032" height="497" alt="image" src="https://github.com/user-attachments/assets/907d448d-6921-4497-9928-0f618fde1684" />
+<img width="1032" height="497" alt="526212828-907d448d-6921-4497-9928-0f618fde1684" src="https://github.com/user-attachments/assets/fee5fcff-5795-4985-9881-d8fd58e7d916" />
 
 Notifications and Collaboration: You can send notifications to other users to share updates, requirements, or any information that fosters collaboration.
 
@@ -279,9 +281,7 @@ Notifications and Collaboration: You can send notifications to other users to sh
 
 Activity Scheduling: Schedule activities such as risk assessments, set due dates, and assign owners to ensure accountability and timely execution.
 
-<img width="1672" height="590" alt="image" src="https://github.com/user-attachments/assets/e0110234-164b-48d9-9943-20fe98ce7d56" />
-
-
+<img width="1672" height="590" alt="527407360-e0110234-164b-48d9-9943-20fe98ce7d56" src="https://github.com/user-attachments/assets/dd40087d-386f-4254-87c0-fd79c1298b66" />
 
 ## **Docker Installation**
 
@@ -307,15 +307,18 @@ Activity Scheduling: Schedule activities such as risk assessments, set due dates
 `git clone https://github.com/OWASP/www-project-it-grc`
    
 6. In /etc/odoo/odoo.conf add the addons-path www-project-it-grc
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/68c4e767-721e-4b0c-952a-05eabb88c4c5">
+
+<img width="869" height="77" alt="414022174-68c4e767-721e-4b0c-952a-05eabb88c4c5" src="https://github.com/user-attachments/assets/1ac58531-c2e7-4208-9c5c-a96c9428d89a" />
 
 7. Restart your docker odoo instance `docker restart [INSTANCE_NAME]`
 
 8. With "developer mode" execute "Apps" --> "Update Apps List".
-<img width="759" alt="image" src="https://github.com/user-attachments/assets/98078aea-6f75-4582-8e9a-7112fa503413">
+
+<img width="423" height="56" alt="414022472-98078aea-6f75-4582-8e9a-7112fa503413" src="https://github.com/user-attachments/assets/b0ab618a-d4ec-4aab-b485-bf2c587e86bf" />
 
 9. Install the grcbit_ modules in the following order: grcbit_base, grcbit_iso27001, grcbit_compliance, grcbit_threat_scenario, grcbit_cvss, grcbit_vulnerability_management, grcbit_risk_management  
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/2f37c99b-3cec-439f-b02a-4c9e0e0d2c00">
+
+<img width="1042" height="405" alt="414068671-2f37c99b-3cec-439f-b02a-4c9e0e0d2c00" src="https://github.com/user-attachments/assets/0c42b4f0-c3fa-446b-8d74-e57d99eef3da" />
 
 10. It is recommended to configure a reverse proxy with SSL certificates and implement a firewall for secure installation.
 
