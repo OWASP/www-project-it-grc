@@ -127,7 +127,7 @@ Some attributes captured here include: system name, description, IT components, 
 
 This is a high-level catalog of the processes where critical data is managed. Cybersecurity should be addressed not only from a technical systems perspective, but also by considering the processes in which data is handled, as well as the people and suppliers who have access to it.
 
-<img width="1362" height="252" alt="image" src="https://github.com/user-attachments/assets/b6028b28-cd9f-4d68-949f-262b876a71c9" />
+<img width="1362" height="252" alt="523479867-b6028b28-cd9f-4d68-949f-262b876a71c9" src="https://github.com/user-attachments/assets/cf02fa25-dbca-4e33-a5bf-1bf17c1ae469" />
 
 ### **Vendors**
 
