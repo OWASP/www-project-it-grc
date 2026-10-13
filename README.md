@@ -298,7 +298,7 @@ Activity Scheduling: Schedule activities such as risk assessments, set due dates
 
 `docker exec -it -u 0 odoo_grc_test apt install git`
 
-`docker exec -it odoo_grc_test pip3 install cvss==2.6 xw_utils==1.1.12 json5==0.9.14 openai markdown markdown2 json2table`
+`docker exec -it odoo_grc_test pip3 install cvss==2.6 xw_utils==1.1.12 json5==0.9.14 json2table`
 
 4. Configure Odoo https://[YOU_HOST]:8069
 
