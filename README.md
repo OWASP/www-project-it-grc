@@ -1,4 +1,4 @@
-# **grc4ciso (GRC)**
+# **OWASP GRC4CISO**
 
 ## **Introduction**
 
